@@ -1,4 +1,4 @@
-## IN DEVELOPMENT
+# IN DEVELOPMENT
 ## Open Journal System Clean, Responsive Theme
 
 Open Journal System is the leading scientific journal manager. It is awesome.
