@@ -8,52 +8,30 @@
  */
 
 body {
-	margin: 0;
-	padding: 0;
-	// Se debe indicar explícito en color de fondo
+	// Must explicitly override the background color. TODO: ¿Set in variable?
 	background-color: transparent;
 	color: $font-color;
 	font-family: $base-font-family;
-	text-align: center;
-}
-
-div {
-	text-align: left;
 }
 
 p {
-	// Usamos rem
+	// We use rem
 	margin: 1rem 0; /* Making default stylesheet explicit - fixes IE7 margin collapsing. */
 }
 
 table {
-	border: 0;
-	border-spacing: 0;
+	// We use rem
 	font-size: 1.0rem;
 }
 
-form {
-	margin: 0;
-}
-
-a {
-	text-decoration: underline;
-}
-
-a.plain {
-	text-decoration: none;
-}
-
 ul {
-	margin: 0.25em 0 0.75em 0;
-	padding: 0 0 0 2.5em;
+	// Set values using compass' vertical rhythm
+	margin: rhythm(0.25) 0 rhythm(0.75) 0;
+	padding: 0 0 0 rhythm(2);
 }
 
 tt {
-	font-size: 1.25em;
-}
-
-label {
+	// font-size: 1.25em;
 }
 
 label.error {
@@ -63,7 +41,8 @@ label.error {
 input.textField, select.selectMenu, textarea.textArea, input.uploadField {
 	background-color: #F0F0E8;
 	color: #000;
-	font-family: Verdana,Arial,Helvetica,sans-serif;
+	// Font-family from $base-font-size
+	font-family: inherit;
 	border-top: 2px solid #666;
 	border-left: 2px solid #666;
 	border-bottom: 2px solid #E8E8E1;
@@ -90,10 +69,10 @@ input.defaultButton {
  */
 
 #container {
-	width: 100% !important;
-	min-width: 730px !important;
-	margin: 0px auto;
-	text-align: center;
+	// Existent min-width disables responsive web design.
+	// We have to explicitly override it and keep the !important tag.
+	// Sadly, OJS's approach here was against best practices...
+	min-width: 0 !important;
 }
 
 #header {
@@ -109,8 +88,10 @@ input.defaultButton {
 }
 
 #header h1 {
-	margin: 0 auto;
-	padding: 0.5em 0 0.25em 10%;
+	// Use vertical rhythm
+	padding: rhythm(0.5) 0 rhythm(0.25) 10%;
+	// We need to override again the font-family
+	// Can't understad why this wasn't defined simply as h1, h2, h3 { } ...
 	font-family: $headlines;
 	font-weight: normal;
 }
@@ -162,7 +143,7 @@ input.defaultButton {
 	margin: 0;
 	padding: 0;
 	padding-top: 0.5em;
-	font-size: 0.7em;
+	font-size: inherit;
 	border-top: 2px dotted #000;
 }
 
