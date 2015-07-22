@@ -71,7 +71,6 @@ input.defaultButton {
 #container {
 	// Existent min-width disables responsive web design.
 	// We have to explicitly override it and keep the !important tag.
-	// Sadly, OJS's approach here was against best practices...
 	min-width: 0 !important;
 }
 
@@ -80,22 +79,18 @@ input.defaultButton {
 	text-align: center;
 }
 
-#headerTitle {
-	text-align: left !important;
-	margin: 0 auto;
-	padding: 0;
-	width: 100%;
-}
-
 #header h1 {
 	// Use vertical rhythm
 	padding: rhythm(0.5) 0 rhythm(0.25) 10%;
 	// We need to override again the font-family
 	// Can't understad why this wasn't defined simply as h1, h2, h3 { } ...
 	font-family: $headlines;
-	font-weight: normal;
+	font-weight: bold;
 }
 
+
+// Why? OJS seems to have only "journal footers", not "general" ones.
+// Can't understand some things.
 #footer {
 	width: 100%;
 	min-height: 50px;
@@ -111,27 +106,30 @@ input.defaultButton {
 }
 
 #main {
-	padding: 0.5em 0em 2em 0em;
+	// Reset padding to 0
+	padding: 0;
 }
 
 #main h2 {
-	margin: 0em 1em 0.5em 0em;
-	padding-top: 0.5em;
+	// Reset padding and set correct font
+	margin: 0;
+	padding-top: 0;
 	font-family: $headlines;
-	font-weight: normal;
+	font-weight: 300;
 }
 
 #main h3 {
-	margin: 0em 1em 0.5em 0em;
-	padding-top: 0em;
+	margin: 0;
+	padding-top: 0;
 	font-family: $headlines;
-	font-weight: normal;
+	font-weight: 300;
 }
 
 #navbar {
+	// Reset to 0 and use a lighter border
 	margin-right: 0;
-	padding-bottom: 0.5em;
-	border-bottom: 2px dotted #000;
+	padding-bottom: 0;
+	border-bottom: 1px solid #000;
 }
 
 #breadcrumb {
