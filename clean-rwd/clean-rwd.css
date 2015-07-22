@@ -1090,3 +1090,550 @@ div.separator {
   font-size: 0.5em;
   line-height: 25%;
 }
+
+/**
+ * Overrides OJS's base stylesheet /styles/common.css.
+ *
+ */
+/* line 6, ../sass/pkp/_common.scss */
+.ui-pnotify-title {
+  font-size: 0.8em;
+}
+
+/* line 10, ../sass/pkp/_common.scss */
+.ui-pnotify-text {
+  font-size: 0.6em;
+}
+
+/* line 14, ../sass/pkp/_common.scss */
+.ui-pnotify-history-container .ui-pnotify-history-header {
+  font-size: 0.8em;
+}
+
+/**
+ * Common HTML elements
+ */
+/* line 22, ../sass/pkp/_common.scss */
+a:link {
+  color: #375;
+}
+
+/* line 26, ../sass/pkp/_common.scss */
+a:active {
+  color: #253;
+}
+
+/* line 30, ../sass/pkp/_common.scss */
+a:visited {
+  color: #375;
+}
+
+/* line 34, ../sass/pkp/_common.scss */
+a:hover {
+  color: #253;
+  background: #CDC;
+}
+
+/**
+ * Main layout elements
+ */
+/* line 44, ../sass/pkp/_common.scss */
+#header {
+  background-color: transparent;
+}
+
+/* line 49, ../sass/pkp/_common.scss */
+#footer {
+  background-color: transparent;
+}
+
+/**
+ * Access icons and key
+ */
+/* line 64, ../sass/pkp/_common.scss */
+#accessKey {
+  margin-bottom: 2em;
+}
+
+/* line 68, ../sass/pkp/_common.scss */
+#accessKey img {
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 74, ../sass/pkp/_common.scss */
+#content img.accessLogo {
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Navigation bar
+ */
+/* line 85, ../sass/pkp/_common.scss */
+#navbar a {
+  font-size: 0.65em;
+  letter-spacing: 0.05em;
+}
+
+/**
+ * Announcements
+ */
+/* line 95, ../sass/pkp/_common.scss */
+#announcementsHome {
+  width: 100%;
+  margin: 2em 0 2em 0;
+}
+
+/* line 100, ../sass/pkp/_common.scss */
+#announcementsHome h3 {
+  text-align: center;
+}
+
+/* line 104, ../sass/pkp/_common.scss */
+#announcements {
+  width: 100%;
+}
+
+/* line 108, ../sass/pkp/_common.scss */
+#announcements h3 {
+  text-align: center;
+}
+
+/* line 112, ../sass/pkp/_common.scss */
+table.announcements {
+  width: 100%;
+}
+
+/* line 116, ../sass/pkp/_common.scss */
+table.announcements td {
+  padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+/* line 120, ../sass/pkp/_common.scss */
+table.announcements td.nodata {
+  text-align: center;
+  font-style: italic;
+}
+
+/* line 125, ../sass/pkp/_common.scss */
+table.announcements td.headseparator {
+  border-top: 1px dotted #000;
+  font-size: 0.1em;
+  line-height: 1%;
+}
+
+/* line 131, ../sass/pkp/_common.scss */
+table.announcements td.endseparator {
+  border-top: 1px dotted #000;
+  font-size: 0.25em;
+  line-height: 10%;
+}
+
+/* line 137, ../sass/pkp/_common.scss */
+table.announcements td.separator {
+  border-top: 1px dotted #DDDDD0;
+  font-size: 0.1em;
+  line-height: 1%;
+}
+
+/* line 149, ../sass/pkp/_common.scss */
+table.announcements tr.title {
+  vertical-align: top;
+}
+
+/* line 153, ../sass/pkp/_common.scss */
+table.announcements td.title {
+  width: 85%;
+}
+
+/* line 160, ../sass/pkp/_common.scss */
+table.announcements tr.description {
+  vertical-align: top;
+}
+
+/* line 164, ../sass/pkp/_common.scss */
+table.announcements td.description {
+  width: 85%;
+}
+
+/* line 168, ../sass/pkp/_common.scss */
+table.announcements tr.details {
+  vertical-align: bottom;
+}
+
+/* line 172, ../sass/pkp/_common.scss */
+table.announcements td.posted {
+  padding-top: 1em;
+  font-style: italic;
+}
+
+/* line 177, ../sass/pkp/_common.scss */
+table.announcements td.more {
+  width: 15%;
+  text-align: right;
+}
+
+/* line 182, ../sass/pkp/_common.scss */
+table.announcementsMore {
+  width: 100%;
+}
+
+/* line 186, ../sass/pkp/_common.scss */
+table.announcementsMore td {
+  padding-top: 1.5em;
+  text-align: right;
+}
+
+/**
+ * Table of contents
+ */
+/* line 196, ../sass/pkp/_common.scss */
+.tocArticle {
+  width: 100%;
+  padding: 5px 0;
+}
+
+/* line 201, ../sass/pkp/_common.scss */
+.tocArticleCoverImage {
+  display: none;
+}
+
+/* line 204, ../sass/pkp/_common.scss */
+.tocArticleCoverImage.showCoverImage {
+  display: table-cell;
+  width: 15%;
+}
+
+/* line 208, ../sass/pkp/_common.scss */
+.tocCoverImage {
+  width: 100%;
+}
+
+/* line 211, ../sass/pkp/_common.scss */
+.tocCoverImage img {
+  border: 0;
+  width: 100%;
+}
+
+/* line 216, ../sass/pkp/_common.scss */
+.tocArticleTitleAuthors {
+  width: 80%;
+}
+
+/* line 219, ../sass/pkp/_common.scss */
+.tocArticleTitleAuthors.showCoverImage {
+  width: 65%;
+  padding-left: 10px;
+}
+
+/* line 223, ../sass/pkp/_common.scss */
+.tocAuthors {
+  padding-left: 10px;
+}
+
+/* line 227, ../sass/pkp/_common.scss */
+.tocArticleGalleysPages {
+  width: 20%;
+}
+
+/* line 230, ../sass/pkp/_common.scss */
+.tocGalleys, .tocPages {
+  text-align: right;
+}
+
+/**
+ * Homepage image
+ */
+/* line 238, ../sass/pkp/_common.scss */
+#homepageImage img {
+  display: block;
+  margin: 0 auto;
+  border: 0;
+  text-align: center;
+}
+
+/* line 245, ../sass/pkp/_common.scss */
+.homepageImage img {
+  margin: 0 auto;
+  border: 0;
+  float: left;
+  width: 100px;
+  margin: 1em 1em 1em 0;
+  text-align: center;
+}
+
+/**
+ * Issue cover image
+ */
+/* line 259, ../sass/pkp/_common.scss */
+#issueCoverImage img {
+  display: block;
+  border: 0;
+}
+
+/* line 264, ../sass/pkp/_common.scss */
+.issueCoverImage img {
+  border: 0;
+  float: left;
+  width: 100px;
+  margin: 1em 1em 1em 0;
+}
+
+/**
+ * Editorial Team Lists
+ */
+/* line 291, ../sass/pkp/_common.scss */
+ol.editorialTeam li {
+  list-style: none;
+}
+
+/* line 295, ../sass/pkp/_common.scss */
+ol.editorialTeam, ol.editorialTeam li {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/**
+ * Additional text styles
+ */
+/* line 305, ../sass/pkp/_common.scss */
+pre {
+  background-color: #F0F0E8;
+  color: #000;
+  font-size: 1.25em;
+}
+
+/**
+ * Table styles
+ */
+/* line 315, ../sass/pkp/_common.scss */
+.highlightReviewerNotNotified, .highlightCopyediting {
+  background: #EDEBC4;
+}
+
+/* line 318, ../sass/pkp/_common.scss */
+.highlightNoDecision, .highlightLayoutEditing {
+  background: #D8E9BD;
+}
+
+/* line 321, ../sass/pkp/_common.scss */
+.highlightRevisedCopyUploaded, .higlightProofreading {
+  background: #C6EBE4;
+}
+
+/* line 324, ../sass/pkp/_common.scss */
+.highlightReviewerConfirmationOverdue {
+  background: #9DD1E6;
+}
+
+/* line 327, ../sass/pkp/_common.scss */
+.highlightReviewerCompletionOverdue {
+  background: #74C5D8;
+}
+
+/* line 331, ../sass/pkp/_common.scss */
+.fastTracked {
+  background-color: #ABA;
+}
+
+/* line 335, ../sass/pkp/_common.scss */
+table.listing tr.data td {
+  border-top: 1px dotted #DDDDD0;
+  border-bottom: 1px dotted #DDDDD0;
+}
+
+/* line 340, ../sass/pkp/_common.scss */
+table.listing tr.data td.drag {
+  cursor: move;
+}
+
+/**
+ * Other organizational elements
+ */
+/* line 349, ../sass/pkp/_common.scss */
+div.progressbar {
+  background-image: url(../templates/images/progbg.gif);
+  background-repeat: no-repeat;
+  height: 27px;
+  width: 505px;
+  z-index: 1;
+}
+
+/* line 357, ../sass/pkp/_common.scss */
+td.notificationContent {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 362, ../sass/pkp/_common.scss */
+td.notificationFunction {
+  padding-left: 5px;
+  padding-right: 5px;
+  text-align: right;
+}
+
+/* line 368, ../sass/pkp/_common.scss */
+.throbber {
+  display: none;
+  background: url(../lib/pkp/templates/images/throbber.gif) no-repeat;
+  width: 25px;
+  height: 25px;
+  margin-left: 50%;
+  margin-top: 5%;
+}
+
+/* Font Sizer */
+/* line 378, ../sass/pkp/_common.scss */
+#sizer a {
+  outline: none;
+  text-indent: -9999px;
+  display: block;
+  float: left;
+  width: 20px;
+  height: 23px;
+  margin-right: 4px;
+  margin-left: 8px;
+}
+
+/* line 389, ../sass/pkp/_common.scss */
+#journalListPageInfo {
+  float: right;
+}
+
+/* line 393, ../sass/pkp/_common.scss */
+#journalListPageLinks {
+  float: left;
+}
+
+/* @group Tag-it */
+/* line 400, ../sass/pkp/_common.scss */
+ul.tagit {
+  padding: 1px 5px;
+  overflow: auto;
+  margin-left: inherit;
+  /* usually we don't want the regular ul margins. */
+  margin-right: inherit;
+}
+
+/* line 407, ../sass/pkp/_common.scss */
+.hidden {
+  display: none;
+}
+
+/* line 411, ../sass/pkp/_common.scss */
+ul.tagit li {
+  display: block;
+  float: left;
+  margin: 2px 5px 2px 0;
+}
+
+/* line 417, ../sass/pkp/_common.scss */
+ul.tagit li.tagit-choice {
+  padding: .2em 18px .2em .5em;
+  position: relative;
+  line-height: inherit;
+}
+
+/* line 422, ../sass/pkp/_common.scss */
+ul.tagit li.tagit-new {
+  padding: .25em 4px .25em 0;
+}
+
+/* line 426, ../sass/pkp/_common.scss */
+ul.tagit li.tagit-choice a.tagit-label {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* line 430, ../sass/pkp/_common.scss */
+ul.tagit li.tagit-choice .tagit-close {
+  cursor: pointer;
+  position: absolute;
+  right: .1em;
+  top: 50%;
+  margin-top: -8px;
+}
+
+/* used for some custom themes that don't need image icons */
+/* line 439, ../sass/pkp/_common.scss */
+ul.tagit li.tagit-choice .tagit-close .text-icon {
+  display: none;
+}
+
+/* line 442, ../sass/pkp/_common.scss */
+.ui-autocomplete .ui-menu-item a {
+  font-size: .6em;
+}
+
+/* line 445, ../sass/pkp/_common.scss */
+ul.tagit li.tagit-choice input {
+  display: block;
+  float: left;
+  margin: 2px 5px 2px 0;
+}
+
+/* line 450, ../sass/pkp/_common.scss */
+ul.tagit input[type="text"] {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: inherit;
+  background-color: inherit;
+  outline: none;
+}
+
+/* @end */
+/**
+ * styles/rightSidebar.css
+ *
+ * Copyright (c) 2013-2015 Simon Fraser University Library
+ * Copyright (c) 2003-2015 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * Site-wide shared elements for pages including a right-hand sidebar.
+ *
+ */
+/**
+ * Common HTML elements
+ */
+/* line 17, ../sass/pkp/_rightSidebar.scss */
+#headerTitle {
+  text-align: center;
+  width: 100%;
+}
+
+/* line 22, ../sass/pkp/_rightSidebar.scss */
+#body {
+  width: 100%;
+}
+
+/* line 26, ../sass/pkp/_rightSidebar.scss */
+#rightSidebar {
+  float: right;
+  width: 14%;
+  padding: 1em 0em 1em 0em;
+  font-size: inherit;
+  height: 100%;
+  margin-right: 10%;
+  margin-left: 2%;
+}
+
+/* line 37, ../sass/pkp/_rightSidebar.scss */
+* html #rightSidebar {
+  margin-right: 5%;
+}
+
+/* line 39, ../sass/pkp/_rightSidebar.scss */
+#main {
+  float: left;
+  width: 63%;
+  margin-left: 10%;
+  display: inline;
+  overflow: hidden;
+}

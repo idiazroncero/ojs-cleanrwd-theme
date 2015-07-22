@@ -42,17 +42,20 @@ a:hover {
  */
 
 #header {
-	background-color: #ABA;
+	// Explicitly overrides ANY color. TODO: ¿set in variable? 
+	background-color: transparent;
 }
 
 #footer {
-	background-color: #ABA;
+	// Explicitly overrides ANY color. TODO: ¿set in variable? 
+	background-color: transparent;
 }
 
-#main {
-	width: 80%;
-	margin: 0 auto;
-}
+// Esto cambia el layout y no se muy bien que hacer con ello
+// #main {
+// 	width: 80%;
+// 	margin: 0 auto;
+// }
 
 
 /**
