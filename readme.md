@@ -13,4 +13,4 @@ This theme aims to give OJS a clean, minimalistic, responsive and modern-looking
 
 ## Limitations
 
-Sadly, an OJS 2.x theme plugin *only affects CSS*. This means that some outdated techniques - like the excessive use of `table` - can't be changed, only "outstyled" via CSS.
+Sadly, an OJS 2.x theme plugin *only affects CSS*. This means that some outdated techniques - like the excessive use of `table`s - can't be changed, only "outstyled" via CSS.

@@ -1,0 +1,12 @@
+// Variables
+@import "init/init";
+
+// Font loading first to improve performance
+@import "init/fonts";
+
+// Normalize.css + reset OJS default styling
+@import "init/normalize";
+
+// OJS overrides
+@import "pkp/pkp_common";
+@import "pkp/common"
