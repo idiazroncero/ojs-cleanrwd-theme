@@ -14,7 +14,7 @@
  */
 /* line 106, ../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
-  font-size: 112.5%;
+  font-size: 100%;
   line-height: 1.5em;
 }
 
@@ -144,8 +144,8 @@ strong {
  */
 /* line 154, ../sass/init/_normalize.scss */
 blockquote {
-  margin: 27px 40px;
-  margin: 1.5rem 2.22222rem;
+  margin: 24px 40px;
+  margin: 1.5rem 2.5rem;
 }
 
 /**
@@ -163,74 +163,74 @@ dfn {
 /* line 172, ../sass/init/_normalize.scss */
 h1 {
   /* Set the font-size and line-height while keeping a proper vertical rhythm. */
-  font-size: 36px;
-  font-size: 2rem;
-  line-height: 54px;
-  line-height: 3rem;
+  font-size: 51px;
+  font-size: 3.157rem;
+  line-height: 72px;
+  line-height: 4.5rem;
   /* Set 1 unit of vertical rhythm on the top and bottom margins. */
-  margin-top: 27px;
+  margin-top: 24px;
   margin-top: 1.5rem;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 
 /* line 187, ../sass/init/_normalize.scss */
 h2 {
-  font-size: 27px;
-  font-size: 1.5rem;
-  line-height: 54px;
+  font-size: 38px;
+  font-size: 2.369rem;
+  line-height: 48px;
   line-height: 3rem;
-  margin-top: 27px;
+  margin-top: 24px;
   margin-top: 1.5rem;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 
 /* line 193, ../sass/init/_normalize.scss */
 h3 {
-  font-size: 21px;
-  font-size: 1.17rem;
-  line-height: 27px;
-  line-height: 1.5rem;
-  margin-top: 27px;
+  font-size: 28px;
+  font-size: 1.777rem;
+  line-height: 48px;
+  line-height: 3rem;
+  margin-top: 24px;
   margin-top: 1.5rem;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 
 /* line 199, ../sass/init/_normalize.scss */
 h4 {
-  font-size: 18px;
-  font-size: 1rem;
-  line-height: 27px;
-  line-height: 1.5rem;
-  margin-top: 27px;
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 48px;
+  line-height: 3rem;
+  margin-top: 24px;
   margin-top: 1.5rem;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 
 /* line 205, ../sass/init/_normalize.scss */
 h5 {
-  font-size: 15px;
+  font-size: 13px;
   font-size: 0.83rem;
-  line-height: 27px;
+  line-height: 24px;
   line-height: 1.5rem;
-  margin-top: 27px;
+  margin-top: 24px;
   margin-top: 1.5rem;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 
 /* line 211, ../sass/init/_normalize.scss */
 h6 {
-  font-size: 12px;
+  font-size: 11px;
   font-size: 0.67rem;
-  line-height: 27px;
+  line-height: 24px;
   line-height: 1.5rem;
-  margin-top: 27px;
+  margin-top: 24px;
   margin-top: 1.5rem;
-  margin-bottom: 27px;
+  margin-bottom: 24px;
   margin-bottom: 1.5rem;
 }
 
@@ -249,7 +249,7 @@ mark {
 /* line 234, ../sass/init/_normalize.scss */
 p,
 pre {
-  margin: 27px 0;
+  margin: 24px 0;
   margin: 1.5rem 0;
 }
 
@@ -293,8 +293,19 @@ dl,
 menu,
 ol,
 ul {
-  margin: 27px 0;
+  margin: 24px 0;
   margin: 1.5rem 0;
+}
+
+/**
+ * Turn off margins on nested lists.
+ */
+/* line 290, ../sass/init/_normalize.scss */
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 0;
 }
 
 /* line 297, ../sass/init/_normalize.scss */
@@ -349,8 +360,8 @@ svg:not(:root) {
  */
 /* line 357, ../sass/init/_normalize.scss */
 figure {
-  margin: 27px 40px;
-  margin: 1.5rem 2.22222rem;
+  margin: 24px 40px;
+  margin: 1.5rem 2.5rem;
 }
 
 /**
@@ -562,25 +573,25 @@ fieldset {
   /* Apply borders and padding that keep the vertical rhythm. */
   border-color: #c0c0c0;
   border-top-width: 1px;
-  border-top-width: 0.05556rem;
+  border-top-width: 0.0625rem;
   border-top-style: solid;
-  padding-top: 8px;
-  padding-top: 0.46944rem;
+  padding-top: 7px;
+  padding-top: 0.4625rem;
   border-bottom-width: 1px;
-  border-bottom-width: 0.05556rem;
+  border-bottom-width: 0.0625rem;
   border-bottom-style: solid;
-  padding-bottom: 17px;
-  padding-bottom: 0.91944rem;
+  padding-bottom: 15px;
+  padding-bottom: 0.9125rem;
   border-left-width: 1px;
-  border-left-width: 0.05556rem;
+  border-left-width: 0.0625rem;
   border-left-style: solid;
-  padding-left: 16px;
-  padding-left: 0.88194rem;
+  padding-left: 14px;
+  padding-left: 0.875rem;
   border-right-width: 1px;
-  border-right-width: 0.05556rem;
+  border-right-width: 0.0625rem;
   border-right-style: solid;
-  padding-right: 16px;
-  padding-right: 0.88194rem;
+  padding-right: 14px;
+  padding-right: 0.875rem;
 }
 
 /**
