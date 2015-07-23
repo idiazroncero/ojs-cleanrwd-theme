@@ -53,7 +53,15 @@ $indent-amount: 40px !default;
 // COLORS
 //
 
+// The default color of text, headings, etc...
 $font-color: #333;
+
+// Colors of the different states of the links
+$link: #000 ;
+$link-active: #000 ;
+$link-visited: tint($link, 25%);
+$link-hover: tint($link, 25%);
+
 
 // After the default variables are set, import the required Compass partials.
 @import "compass/support";

@@ -19,21 +19,24 @@
  * Common HTML elements
  */
 
+// Specify colors as SCSS variables, instead of hard-coding them.
 a:link {
-	color: #375;
+	color: $link;
 }
 
 a:active {
-	color: #253;
+	color: $link-active;
 }
 
 a:visited {
-	color: #375;
+	color: $link-visited;
 }
 
 a:hover {
-	color: #253;
-	background: #CDC;
+	color: $link-hover;
+	background: transparent;
+	// We prefer border dotted. Should we put this as a config variable?
+	border-bottom:1px dotted $link-hover;
 }
 
 

@@ -1116,36 +1116,37 @@ div.separator {
 /**
  * Common HTML elements
  */
-/* line 22, ../sass/pkp/_common.scss */
+/* line 23, ../sass/pkp/_common.scss */
 a:link {
-  color: #375;
+  color: #000;
 }
 
-/* line 26, ../sass/pkp/_common.scss */
+/* line 27, ../sass/pkp/_common.scss */
 a:active {
-  color: #253;
+  color: #000;
 }
 
-/* line 30, ../sass/pkp/_common.scss */
+/* line 31, ../sass/pkp/_common.scss */
 a:visited {
-  color: #375;
+  color: #404040;
 }
 
-/* line 34, ../sass/pkp/_common.scss */
+/* line 35, ../sass/pkp/_common.scss */
 a:hover {
-  color: #253;
-  background: #CDC;
+  color: #404040;
+  background: transparent;
+  border-bottom: 1px dotted #404040;
 }
 
 /**
  * Main layout elements
  */
-/* line 44, ../sass/pkp/_common.scss */
+/* line 47, ../sass/pkp/_common.scss */
 #header {
   background-color: transparent;
 }
 
-/* line 49, ../sass/pkp/_common.scss */
+/* line 52, ../sass/pkp/_common.scss */
 #footer {
   background-color: transparent;
 }
@@ -1153,19 +1154,19 @@ a:hover {
 /**
  * Access icons and key
  */
-/* line 64, ../sass/pkp/_common.scss */
+/* line 67, ../sass/pkp/_common.scss */
 #accessKey {
   margin-bottom: 2em;
 }
 
-/* line 68, ../sass/pkp/_common.scss */
+/* line 71, ../sass/pkp/_common.scss */
 #accessKey img {
   vertical-align: middle;
   margin: 0;
   padding: 0;
 }
 
-/* line 74, ../sass/pkp/_common.scss */
+/* line 77, ../sass/pkp/_common.scss */
 #content img.accessLogo {
   vertical-align: middle;
   margin: 0;
@@ -1175,7 +1176,7 @@ a:hover {
 /**
  * Navigation bar
  */
-/* line 85, ../sass/pkp/_common.scss */
+/* line 88, ../sass/pkp/_common.scss */
 #navbar a {
   font-size: 16px;
   font-size: 1rem;
@@ -1187,107 +1188,107 @@ a:hover {
 /**
  * Announcements
  */
-/* line 97, ../sass/pkp/_common.scss */
+/* line 100, ../sass/pkp/_common.scss */
 #announcementsHome {
   width: 100%;
   margin: 2em 0 2em 0;
 }
 
-/* line 102, ../sass/pkp/_common.scss */
+/* line 105, ../sass/pkp/_common.scss */
 #announcementsHome h3 {
   text-align: center;
 }
 
-/* line 106, ../sass/pkp/_common.scss */
+/* line 109, ../sass/pkp/_common.scss */
 #announcements {
   width: 100%;
 }
 
-/* line 110, ../sass/pkp/_common.scss */
+/* line 113, ../sass/pkp/_common.scss */
 #announcements h3 {
   text-align: center;
 }
 
-/* line 114, ../sass/pkp/_common.scss */
+/* line 117, ../sass/pkp/_common.scss */
 table.announcements {
   width: 100%;
 }
 
-/* line 118, ../sass/pkp/_common.scss */
+/* line 121, ../sass/pkp/_common.scss */
 table.announcements td {
   padding: 0.25em 0.5em 0.25em 0.5em;
 }
 
-/* line 122, ../sass/pkp/_common.scss */
+/* line 125, ../sass/pkp/_common.scss */
 table.announcements td.nodata {
   text-align: center;
   font-style: italic;
 }
 
-/* line 127, ../sass/pkp/_common.scss */
+/* line 130, ../sass/pkp/_common.scss */
 table.announcements td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 133, ../sass/pkp/_common.scss */
+/* line 136, ../sass/pkp/_common.scss */
 table.announcements td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%;
 }
 
-/* line 139, ../sass/pkp/_common.scss */
+/* line 142, ../sass/pkp/_common.scss */
 table.announcements td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 151, ../sass/pkp/_common.scss */
+/* line 154, ../sass/pkp/_common.scss */
 table.announcements tr.title {
   vertical-align: top;
 }
 
-/* line 155, ../sass/pkp/_common.scss */
+/* line 158, ../sass/pkp/_common.scss */
 table.announcements td.title {
   width: 85%;
 }
 
-/* line 162, ../sass/pkp/_common.scss */
+/* line 165, ../sass/pkp/_common.scss */
 table.announcements tr.description {
   vertical-align: top;
 }
 
-/* line 166, ../sass/pkp/_common.scss */
+/* line 169, ../sass/pkp/_common.scss */
 table.announcements td.description {
   width: 85%;
 }
 
-/* line 170, ../sass/pkp/_common.scss */
+/* line 173, ../sass/pkp/_common.scss */
 table.announcements tr.details {
   vertical-align: bottom;
 }
 
-/* line 174, ../sass/pkp/_common.scss */
+/* line 177, ../sass/pkp/_common.scss */
 table.announcements td.posted {
   padding-top: 1em;
   font-style: italic;
 }
 
-/* line 179, ../sass/pkp/_common.scss */
+/* line 182, ../sass/pkp/_common.scss */
 table.announcements td.more {
   width: 15%;
   text-align: right;
 }
 
-/* line 184, ../sass/pkp/_common.scss */
+/* line 187, ../sass/pkp/_common.scss */
 table.announcementsMore {
   width: 100%;
 }
 
-/* line 188, ../sass/pkp/_common.scss */
+/* line 191, ../sass/pkp/_common.scss */
 table.announcementsMore td {
   padding-top: 1.5em;
   text-align: right;
@@ -1296,56 +1297,56 @@ table.announcementsMore td {
 /**
  * Table of contents
  */
-/* line 198, ../sass/pkp/_common.scss */
+/* line 201, ../sass/pkp/_common.scss */
 .tocArticle {
   width: 100%;
   padding: 5px 0;
 }
 
-/* line 203, ../sass/pkp/_common.scss */
+/* line 206, ../sass/pkp/_common.scss */
 .tocArticleCoverImage {
   display: none;
 }
 
-/* line 206, ../sass/pkp/_common.scss */
+/* line 209, ../sass/pkp/_common.scss */
 .tocArticleCoverImage.showCoverImage {
   display: table-cell;
   width: 15%;
 }
 
-/* line 210, ../sass/pkp/_common.scss */
+/* line 213, ../sass/pkp/_common.scss */
 .tocCoverImage {
   width: 100%;
 }
 
-/* line 213, ../sass/pkp/_common.scss */
+/* line 216, ../sass/pkp/_common.scss */
 .tocCoverImage img {
   border: 0;
   width: 100%;
 }
 
-/* line 218, ../sass/pkp/_common.scss */
+/* line 221, ../sass/pkp/_common.scss */
 .tocArticleTitleAuthors {
   width: 80%;
 }
 
-/* line 221, ../sass/pkp/_common.scss */
+/* line 224, ../sass/pkp/_common.scss */
 .tocArticleTitleAuthors.showCoverImage {
   width: 65%;
   padding-left: 10px;
 }
 
-/* line 225, ../sass/pkp/_common.scss */
+/* line 228, ../sass/pkp/_common.scss */
 .tocAuthors {
   padding-left: 10px;
 }
 
-/* line 229, ../sass/pkp/_common.scss */
+/* line 232, ../sass/pkp/_common.scss */
 .tocArticleGalleysPages {
   width: 20%;
 }
 
-/* line 232, ../sass/pkp/_common.scss */
+/* line 235, ../sass/pkp/_common.scss */
 .tocGalleys, .tocPages {
   text-align: right;
 }
@@ -1353,7 +1354,7 @@ table.announcementsMore td {
 /**
  * Homepage image
  */
-/* line 240, ../sass/pkp/_common.scss */
+/* line 243, ../sass/pkp/_common.scss */
 #homepageImage img {
   display: block;
   margin: 0 auto;
@@ -1361,7 +1362,7 @@ table.announcementsMore td {
   text-align: center;
 }
 
-/* line 247, ../sass/pkp/_common.scss */
+/* line 250, ../sass/pkp/_common.scss */
 .homepageImage img {
   margin: 0 auto;
   border: 0;
@@ -1374,13 +1375,13 @@ table.announcementsMore td {
 /**
  * Issue cover image
  */
-/* line 261, ../sass/pkp/_common.scss */
+/* line 264, ../sass/pkp/_common.scss */
 #issueCoverImage img {
   display: block;
   border: 0;
 }
 
-/* line 266, ../sass/pkp/_common.scss */
+/* line 269, ../sass/pkp/_common.scss */
 .issueCoverImage img {
   border: 0;
   float: left;
@@ -1391,12 +1392,12 @@ table.announcementsMore td {
 /**
  * Editorial Team Lists
  */
-/* line 293, ../sass/pkp/_common.scss */
+/* line 296, ../sass/pkp/_common.scss */
 ol.editorialTeam li {
   list-style: none;
 }
 
-/* line 297, ../sass/pkp/_common.scss */
+/* line 300, ../sass/pkp/_common.scss */
 ol.editorialTeam, ol.editorialTeam li {
   margin-left: 0;
   padding-left: 0;
@@ -1405,7 +1406,7 @@ ol.editorialTeam, ol.editorialTeam li {
 /**
  * Additional text styles
  */
-/* line 307, ../sass/pkp/_common.scss */
+/* line 310, ../sass/pkp/_common.scss */
 pre {
   background-color: #F0F0E8;
   color: #000;
@@ -1415,43 +1416,43 @@ pre {
 /**
  * Table styles
  */
-/* line 317, ../sass/pkp/_common.scss */
+/* line 320, ../sass/pkp/_common.scss */
 .highlightReviewerNotNotified, .highlightCopyediting {
   background: #EDEBC4;
 }
 
-/* line 320, ../sass/pkp/_common.scss */
+/* line 323, ../sass/pkp/_common.scss */
 .highlightNoDecision, .highlightLayoutEditing {
   background: #D8E9BD;
 }
 
-/* line 323, ../sass/pkp/_common.scss */
+/* line 326, ../sass/pkp/_common.scss */
 .highlightRevisedCopyUploaded, .higlightProofreading {
   background: #C6EBE4;
 }
 
-/* line 326, ../sass/pkp/_common.scss */
+/* line 329, ../sass/pkp/_common.scss */
 .highlightReviewerConfirmationOverdue {
   background: #9DD1E6;
 }
 
-/* line 329, ../sass/pkp/_common.scss */
+/* line 332, ../sass/pkp/_common.scss */
 .highlightReviewerCompletionOverdue {
   background: #74C5D8;
 }
 
-/* line 333, ../sass/pkp/_common.scss */
+/* line 336, ../sass/pkp/_common.scss */
 .fastTracked {
   background-color: #ABA;
 }
 
-/* line 337, ../sass/pkp/_common.scss */
+/* line 340, ../sass/pkp/_common.scss */
 table.listing tr.data td {
   border-top: 1px dotted #DDDDD0;
   border-bottom: 1px dotted #DDDDD0;
 }
 
-/* line 342, ../sass/pkp/_common.scss */
+/* line 345, ../sass/pkp/_common.scss */
 table.listing tr.data td.drag {
   cursor: move;
 }
@@ -1459,7 +1460,7 @@ table.listing tr.data td.drag {
 /**
  * Other organizational elements
  */
-/* line 351, ../sass/pkp/_common.scss */
+/* line 354, ../sass/pkp/_common.scss */
 div.progressbar {
   background-image: url(../templates/images/progbg.gif);
   background-repeat: no-repeat;
@@ -1468,20 +1469,20 @@ div.progressbar {
   z-index: 1;
 }
 
-/* line 359, ../sass/pkp/_common.scss */
+/* line 362, ../sass/pkp/_common.scss */
 td.notificationContent {
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 364, ../sass/pkp/_common.scss */
+/* line 367, ../sass/pkp/_common.scss */
 td.notificationFunction {
   padding-left: 5px;
   padding-right: 5px;
   text-align: right;
 }
 
-/* line 370, ../sass/pkp/_common.scss */
+/* line 373, ../sass/pkp/_common.scss */
 .throbber {
   display: none;
   background: url(../lib/pkp/templates/images/throbber.gif) no-repeat;
@@ -1492,7 +1493,7 @@ td.notificationFunction {
 }
 
 /* Font Sizer */
-/* line 380, ../sass/pkp/_common.scss */
+/* line 383, ../sass/pkp/_common.scss */
 #sizer a {
   outline: none;
   text-indent: -9999px;
@@ -1504,18 +1505,18 @@ td.notificationFunction {
   margin-left: 8px;
 }
 
-/* line 391, ../sass/pkp/_common.scss */
+/* line 394, ../sass/pkp/_common.scss */
 #journalListPageInfo {
   float: right;
 }
 
-/* line 395, ../sass/pkp/_common.scss */
+/* line 398, ../sass/pkp/_common.scss */
 #journalListPageLinks {
   float: left;
 }
 
 /* @group Tag-it */
-/* line 402, ../sass/pkp/_common.scss */
+/* line 405, ../sass/pkp/_common.scss */
 ul.tagit {
   padding: 1px 5px;
   overflow: auto;
@@ -1524,37 +1525,37 @@ ul.tagit {
   margin-right: inherit;
 }
 
-/* line 409, ../sass/pkp/_common.scss */
+/* line 412, ../sass/pkp/_common.scss */
 .hidden {
   display: none;
 }
 
-/* line 413, ../sass/pkp/_common.scss */
+/* line 416, ../sass/pkp/_common.scss */
 ul.tagit li {
   display: block;
   float: left;
   margin: 2px 5px 2px 0;
 }
 
-/* line 419, ../sass/pkp/_common.scss */
+/* line 422, ../sass/pkp/_common.scss */
 ul.tagit li.tagit-choice {
   padding: .2em 18px .2em .5em;
   position: relative;
   line-height: inherit;
 }
 
-/* line 424, ../sass/pkp/_common.scss */
+/* line 427, ../sass/pkp/_common.scss */
 ul.tagit li.tagit-new {
   padding: .25em 4px .25em 0;
 }
 
-/* line 428, ../sass/pkp/_common.scss */
+/* line 431, ../sass/pkp/_common.scss */
 ul.tagit li.tagit-choice a.tagit-label {
   cursor: pointer;
   text-decoration: none;
 }
 
-/* line 432, ../sass/pkp/_common.scss */
+/* line 435, ../sass/pkp/_common.scss */
 ul.tagit li.tagit-choice .tagit-close {
   cursor: pointer;
   position: absolute;
@@ -1564,24 +1565,24 @@ ul.tagit li.tagit-choice .tagit-close {
 }
 
 /* used for some custom themes that don't need image icons */
-/* line 441, ../sass/pkp/_common.scss */
+/* line 444, ../sass/pkp/_common.scss */
 ul.tagit li.tagit-choice .tagit-close .text-icon {
   display: none;
 }
 
-/* line 444, ../sass/pkp/_common.scss */
+/* line 447, ../sass/pkp/_common.scss */
 .ui-autocomplete .ui-menu-item a {
   font-size: .6em;
 }
 
-/* line 447, ../sass/pkp/_common.scss */
+/* line 450, ../sass/pkp/_common.scss */
 ul.tagit li.tagit-choice input {
   display: block;
   float: left;
   margin: 2px 5px 2px 0;
 }
 
-/* line 452, ../sass/pkp/_common.scss */
+/* line 455, ../sass/pkp/_common.scss */
 ul.tagit input[type="text"] {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
