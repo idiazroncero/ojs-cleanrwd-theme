@@ -83,14 +83,14 @@ input.defaultButton {
 	// Use vertical rhythm
 	padding: rhythm(0.5) 0 rhythm(0.25) 10%;
 	// We need to override again the font-family
-	// Can't understad why this wasn't defined simply as h1, h2, h3 { } ...
+	// Can't understad why this wasn't defined as h1, h2, h3 { } ...
 	font-family: $headlines;
 	font-weight: bold;
 }
 
 
 // Why? OJS seems to have only "journal footers", not "general" ones.
-// Can't understand some things.
+// These IDs seem to be useless... (let's see)
 #footer {
 	width: 100%;
 	min-height: 50px;
@@ -111,7 +111,7 @@ input.defaultButton {
 }
 
 #main h2 {
-	// Reset padding and set correct font
+	// Reset padding/margin and set correct font
 	margin: 0;
 	padding-top: 0;
 	font-family: $headlines;
@@ -133,8 +133,11 @@ input.defaultButton {
 }
 
 #breadcrumb {
-	padding-top: 1em;
-	font-size: 0.7em;
+	// Set padding top / bottom to half a vertical unit
+	padding: rhythm(0.5) 0;
+	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
+	// This font-sizes were calculated using "perfect fourth" aspect ratio.
+	@include adjust-font-size-to($h5-font-size);
 }
 
 #content {
@@ -146,25 +149,23 @@ input.defaultButton {
 }
 
 #content h3 {
-	margin: 0em 1em 0.25em 0em;
-	padding-top: 0.75em;
+	// Reset padding/margin and set correct font
+	margin:0;
+	padding:0;
 	font-family: $headlines;
-	font-weight: normal;
-	font-size: 1.8em;
+	@include adjust-font-size-to($h3-font-size);
 }
 
 #content h4 {
-	margin: .75em 1em 0.25em 0em;
+	margin: 0;
 	font-family: $headlines;
-	font-weight: normal;
-	font-size: 1.5em;
+	@include adjust-font-size-to($h4-font-size);
 }
 
 #content h5 {
-	margin: 0em 1em 0.25em 0em;
-	padding-top: 0.75em;
-	font-weight: bold;
-	font-size: 1em;
+	margin: 0;
+	padding:0;
+	@include adjust-font-size-to($h5-font-size);
 }
 
 
@@ -172,10 +173,7 @@ input.defaultButton {
  * Breadcrumbs
  */
 
-#breadcrumb a {
-	text-decoration: none;
-}
-
+// Should we set a different style for "active" pages in crumbs??
 #breadcrumb a.current {
 	font-weight: bold;
 }
@@ -194,6 +192,7 @@ input.defaultButton {
  * Additional text styles
  */
 
+// Still need to see those in action
 span.disabled, label.disabled {
 	color: #666;
 }
@@ -348,26 +347,27 @@ ul.pkp_form_error_list { /* Named for compatibility with new lessphp structure *
  * Other organizational elements
  */
 
-ul.menu {
-	margin: 0;
-	padding: 0;
-}
-
 ul.menu li {
-	margin: 0;
-	padding: 0;
-	padding-right: 1.5em;
-	display: inline;
+	// Use vertical rhythm units also for horizontal spacing.
+	padding-right: rhythm(1);
+	// We want to give menu items more space for touch-enabled devices...
+	display:inline-block;
 }
 
+// Should we use a different, more original, way to mark "active" items??
 ul.menu li.current {
 	font-weight: bold;
 }
 
 ul.menu a {
-	font-size: 0.85em;
-	text-transform: uppercase;
-	text-decoration: none;
+	// Let the link expand to fill all available space
+	display:block;
+	// Some padding is needed
+	padding:0 rhythm(0.5);
+	// Use our font sizes
+	@include adjust-font-size-to($base-font-size);
+	// Use our headings font
+	font-family: $headlines;
 }
 
 ul.steplist {
