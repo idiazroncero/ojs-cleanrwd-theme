@@ -24,10 +24,16 @@ table {
 	font-size: 1.0rem;
 }
 
+a {
+	// No text underline at all.
+	// If needed, we prefer to use border-bottom
+	text-decoration:none;
+}
+
 ul {
 	// Set values using compass' vertical rhythm
-	margin: rhythm(0.25) 0 rhythm(0.75) 0;
-	padding: 0 0 0 rhythm(2);
+	margin: rhythm(0.5) 0;
+	padding: 0 0 0 rhythm(1);
 }
 
 tt {
@@ -39,27 +45,58 @@ label.error {
 }
 
 input.textField, select.selectMenu, textarea.textArea, input.uploadField {
-	background-color: #F0F0E8;
-	color: #000;
-	// Font-family from $base-font-size
-	font-family: inherit;
-	border-top: 2px solid #666;
-	border-left: 2px solid #666;
-	border-bottom: 2px solid #E8E8E1;
-	border-right: 2px solid #E8E8E1;
-	font-size: 1em;
+	// No background for inpunts, just a clean box
+	background-color: #fff;
+	// As an exception, we use Helvetica/Arial for the sake of legibility
+	font-family: $helvetica;
+	// We want a clean, plain border.
+	border: 1px solid #999;
+	// Some padding to enhance legibility
+	padding:0 rhythm(0.5);
+	// A small border-radius.
+	// It is a convention that user inout (buttons, forms) have some kind of radius.
+	// we try to follow convention without exxagerating to keep the design clean and minimal.
+	@include border-radius(2px);
+	// Font size
+	@include adjust-font-size-to($base-font-size);
 }
 
 input.button {
-	padding-left: 0.5em;
-	padding-right: 0.5em;
-	background-color: #E8E8E1;
-	font-size: 1em;
+	// Padding as vertical rhythm.
+	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
+	padding:rhythm(0.125) rhythm(0.5);
+	// Stop using that green!
+	background-color: $button;
+	// We check the user input value and decide the color of our font:
+	@if lightness($button) >= 50 {
+		color: #000;
+	} @else {
+		color: #fff;
+	}
+	// Inherit font but make it smaller
+	@include adjust-font-size-to($base-font-size);
+	font-family:$headlines;
+	// Flat design
+	border:none;
+	// Uppercase works better than lowercase.
+	text-transform:uppercase;
+	// A small border-radius.
+	// It is a convention that user inout (buttons, forms) have some kind of radius.
+	// we try to follow convention without exxagerating to keep the design clean and minimal.
+	@include border-radius(3px);
+	// WTF
+	letter-spacing:1px;
 }
 
 input.defaultButton {
-	background-color: #375;
-	color: #FBFBF3;
+	// Stop using that green!
+	background-color: $default-button;
+	// We check the user input value and decide the color of our font:
+	@if lightness($default-button) >= 50 {
+		color: #000;
+	} @else {
+		color: #fff;
+	}
 	font-weight: bold;
 }
 
@@ -141,11 +178,15 @@ input.defaultButton {
 }
 
 #content {
+	// No margins or paddings
 	margin: 0;
 	padding: 0;
-	padding-top: 0.5em;
+	// We need to inherit the original $base-font-family
 	font-size: inherit;
-	border-top: 2px dotted #000;
+	// Border should be a property of <h2>, <h3> elements.
+	// 2px dotted borders are out of discussion.
+	// Explicitly override all borders
+	border: none;
 }
 
 #content h3 {

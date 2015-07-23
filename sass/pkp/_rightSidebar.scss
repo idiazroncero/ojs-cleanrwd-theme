@@ -1,12 +1,5 @@
 /**
- * styles/rightSidebar.css
- *
- * Copyright (c) 2013-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
- *
- * Site-wide shared elements for pages including a right-hand sidebar.
- *
+ * Overrides OJS's styles/rightSidebar.css
  */
 
 /**
@@ -14,19 +7,12 @@
  */
 
 
-#headerTitle {
-	text-align: center;
-	width: 100%;
-}
-
-#body {
-	width: 100%;
-}
-
+// Modificaremos el layout en proximas ediciones
 #rightSidebar {
 	float: right;
 	width: 14%;
-	padding: 1em 0em 1em 0em;
+	// No padding
+	padding: 0;
 	// Inherits from $base-font-size
 	font-size: inherit;
 	height: 100%;
@@ -34,12 +20,7 @@
 	margin-left: 2%;
 }
 
-* html #rightSidebar { margin-right: 5%; }
-
-#main {
-	float: left;
-	width: 63%;
-	margin-left: 10%;
-	display: inline;
-	overflow: hidden;
+* html #rightSidebar {
+	// Won't be needing margin here, but still need to explicitly override
+	margin-right: 0%;
 }

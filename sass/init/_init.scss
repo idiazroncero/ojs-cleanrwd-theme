@@ -62,6 +62,10 @@ $link-active: #000 ;
 $link-visited: tint($link, 25%);
 $link-hover: tint($link, 25%);
 
+// Buttons
+$default-button: #000;
+$button: #fff;
+
 
 // After the default variables are set, import the required Compass partials.
 @import "compass/support";

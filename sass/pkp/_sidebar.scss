@@ -1,0 +1,45 @@
+/**
+ * styles/sidebar.css
+ *
+ * Copyright (c) 2013-2015 Simon Fraser University Library
+ * Copyright (c) 2003-2015 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * Site-wide shared elements for pages including sidebar(s).
+ *
+ */
+
+/**
+ * Sidebar
+ */
+
+#developedBy {
+	text-transform: uppercase;
+	font-size: 0.95em;
+}
+
+#sidebar div.block {
+	font-size: 1em;
+	padding-bottom: 1.5em;
+}
+
+#sidebar div.block span.blockTitle {
+	// Padding as vertical rhythm units
+	padding: rhythm(1) 0;
+	// Font size
+	@include adjust-font-size-to($base-font-size);
+	// No more letter spacing than usual
+	letter-spacing: normal;
+	// We use headlines' font for everything that indicates sectioning or divisions
+	font-family: $headlines;
+}
+
+#sidebar div.block span.blockSubtitle {
+	display: block;
+	padding: 0;
+}
+
+#sidebar input.textField, #sidebar select.selectMenu, #sidebar input.button {
+	font-size: 1em;
+}
+
