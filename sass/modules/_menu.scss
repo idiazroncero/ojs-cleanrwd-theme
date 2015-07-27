@@ -1,6 +1,4 @@
 #navbar {
-	// Let's get more room!!
-	margin-bottom:rhythm(1);
 	// We need a clearfix here
 	@include pie-clearfix();
 	// Reset all link underlines, highlights and/or borders. We want navegation always the same.

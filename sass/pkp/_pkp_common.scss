@@ -110,6 +110,17 @@ input.defaultButton {
 	}
 }
 
+// All cases on which submits need to be smaller
+
+td.value, // Inside value cells
+#sidebar .block // Inside sidebar blocks, #id is for complete override
+	{
+	input[type="submit"] {
+		@include adjust-font-size-to($h5-font-size, 0.75);
+		padding: 0 5px;
+	}
+}
+
 
 /**
  * Main layout elements
@@ -199,11 +210,15 @@ input.defaultButton {
 }
 
 #breadcrumb {
-	// Set padding top / bottom to half a vertical unit
-	padding: rhythm(0.5) 0;
+	// Set padding to zero and margin bottom
+	padding: 0;
+	margin-bottom:$base-line-height;
 	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
 	// This font-sizes were calculated using "perfect fourth" aspect ratio.
-	@include adjust-font-size-to($h5-font-size);
+	@include adjust-font-size-to($h6-font-size);
+	font-family:$helvetica;
+	letter-spacing:0.05rem;
+	text-transform:uppercase;
 }
 
 #content {

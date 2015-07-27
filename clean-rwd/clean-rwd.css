@@ -735,30 +735,40 @@ input.defaultButton:hover {
   border-color: #000;
 }
 
+/* line 118, ../sass/pkp/_pkp_common.scss */
+td.value input[type="submit"],
+#sidebar .block input[type="submit"] {
+  font-size: 11px;
+  font-size: 0.707rem;
+  line-height: 18px;
+  line-height: 1.125rem;
+  padding: 0 5px;
+}
+
 /**
  * Main layout elements
  */
-/* line 118, ../sass/pkp/_pkp_common.scss */
+/* line 129, ../sass/pkp/_pkp_common.scss */
 #container {
   min-width: 0 !important;
   max-width: 1200px;
 }
 
-/* line 127, ../sass/pkp/_pkp_common.scss */
+/* line 138, ../sass/pkp/_pkp_common.scss */
 #header {
   width: 100%;
   text-align: center;
   margin-bottom: 1.5rem;
 }
 
-/* line 134, ../sass/pkp/_pkp_common.scss */
+/* line 145, ../sass/pkp/_pkp_common.scss */
 #header h1 {
   padding: 1.5rem 0 0 0;
   font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
   font-weight: bold;
 }
 
-/* line 144, ../sass/pkp/_pkp_common.scss */
+/* line 155, ../sass/pkp/_pkp_common.scss */
 #body {
   *zoom: 1;
 }
@@ -769,7 +779,7 @@ input.defaultButton:hover {
   clear: both;
 }
 
-/* line 151, ../sass/pkp/_pkp_common.scss */
+/* line 162, ../sass/pkp/_pkp_common.scss */
 #footer {
   width: 100%;
   min-height: 50px;
@@ -778,14 +788,14 @@ input.defaultButton:hover {
   text-align: center;
 }
 
-/* line 159, ../sass/pkp/_pkp_common.scss */
+/* line 170, ../sass/pkp/_pkp_common.scss */
 #footerContent {
   width: 100%;
   margin: 0 auto;
   padding-left: 10%;
 }
 
-/* line 165, ../sass/pkp/_pkp_common.scss */
+/* line 176, ../sass/pkp/_pkp_common.scss */
 #main {
   width: auto;
   padding: 0;
@@ -794,7 +804,7 @@ input.defaultButton:hover {
   float: none;
 }
 
-/* line 179, ../sass/pkp/_pkp_common.scss */
+/* line 190, ../sass/pkp/_pkp_common.scss */
 #main h2 {
   margin: 0 0 1.5rem 0;
   padding-top: 0;
@@ -802,7 +812,7 @@ input.defaultButton:hover {
   font-weight: 700;
 }
 
-/* line 187, ../sass/pkp/_pkp_common.scss */
+/* line 198, ../sass/pkp/_pkp_common.scss */
 #main h3 {
   margin: 0 0 1.5rem 0;
   padding-top: 0;
@@ -810,23 +820,27 @@ input.defaultButton:hover {
   font-weight: 300;
 }
 
-/* line 194, ../sass/pkp/_pkp_common.scss */
+/* line 205, ../sass/pkp/_pkp_common.scss */
 #navbar {
   margin-right: 0;
   padding-bottom: 0;
   border-bottom: 1px solid #000;
 }
 
-/* line 201, ../sass/pkp/_pkp_common.scss */
+/* line 212, ../sass/pkp/_pkp_common.scss */
 #breadcrumb {
-  padding: 0.75rem 0;
-  font-size: 11px;
-  font-size: 0.707rem;
+  padding: 0;
+  margin-bottom: 24px;
+  font-size: 8px;
+  font-size: 0.5rem;
   line-height: 24px;
   line-height: 1.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
 }
 
-/* line 209, ../sass/pkp/_pkp_common.scss */
+/* line 224, ../sass/pkp/_pkp_common.scss */
 #content {
   margin: 0;
   padding: 0;
@@ -834,7 +848,7 @@ input.defaultButton:hover {
   border: none;
 }
 
-/* line 221, ../sass/pkp/_pkp_common.scss */
+/* line 236, ../sass/pkp/_pkp_common.scss */
 #content h3 {
   margin: 0;
   padding: 0;
@@ -845,7 +859,7 @@ input.defaultButton:hover {
   line-height: 3rem;
 }
 
-/* line 229, ../sass/pkp/_pkp_common.scss */
+/* line 244, ../sass/pkp/_pkp_common.scss */
 #content h4 {
   margin: 0;
   font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
@@ -855,7 +869,7 @@ input.defaultButton:hover {
   line-height: 3rem;
 }
 
-/* line 235, ../sass/pkp/_pkp_common.scss */
+/* line 250, ../sass/pkp/_pkp_common.scss */
 #content h5 {
   margin: 0;
   padding: 0;
@@ -868,7 +882,7 @@ input.defaultButton:hover {
 /**
  * Breadcrumbs
  */
-/* line 247, ../sass/pkp/_pkp_common.scss */
+/* line 262, ../sass/pkp/_pkp_common.scss */
 #breadcrumb a.current {
   font-weight: bold;
 }
@@ -876,7 +890,7 @@ input.defaultButton:hover {
 /**
  * Footer elements
  */
-/* line 256, ../sass/pkp/_pkp_common.scss */
+/* line 271, ../sass/pkp/_pkp_common.scss */
 #footer div.debugStats {
   font-size: 0.6em;
 }
@@ -884,51 +898,51 @@ input.defaultButton:hover {
 /**
  * Additional text styles
  */
-/* line 266, ../sass/pkp/_pkp_common.scss */
+/* line 281, ../sass/pkp/_pkp_common.scss */
 span.disabled, label.disabled {
   color: #666;
 }
 
-/* line 270, ../sass/pkp/_pkp_common.scss */
+/* line 285, ../sass/pkp/_pkp_common.scss */
 a.action, a.file {
   font-size: 0.85em;
   text-transform: uppercase;
 }
 
-/* line 275, ../sass/pkp/_pkp_common.scss */
+/* line 290, ../sass/pkp/_pkp_common.scss */
 a.icon {
   text-decoration: none;
 }
 
-/* line 279, ../sass/pkp/_pkp_common.scss */
+/* line 294, ../sass/pkp/_pkp_common.scss */
 a.icon img {
   border: 0;
 }
 
-/* line 283, ../sass/pkp/_pkp_common.scss */
+/* line 298, ../sass/pkp/_pkp_common.scss */
 a.icon:hover {
   background: none;
 }
 
-/* line 287, ../sass/pkp/_pkp_common.scss */
+/* line 302, ../sass/pkp/_pkp_common.scss */
 span.heading {
   font-size: 0.85em;
   text-transform: uppercase;
 }
 
-/* line 292, ../sass/pkp/_pkp_common.scss */
+/* line 307, ../sass/pkp/_pkp_common.scss */
 span.highlight {
   border-bottom: 1px dotted #000;
 }
 
-/* line 296, ../sass/pkp/_pkp_common.scss */
+/* line 311, ../sass/pkp/_pkp_common.scss */
 div.warningMessage {
   background: url(../templates/images/icons/icon_alert.gif) no-repeat 3px 40%;
   margin: 5px;
   padding: 5px 5px 5px 25px;
 }
 
-/* line 302, ../sass/pkp/_pkp_common.scss */
+/* line 317, ../sass/pkp/_pkp_common.scss */
 .nowrap {
   white-space: nowrap;
 }
@@ -936,19 +950,19 @@ div.warningMessage {
 /**
  * Table styles
  */
-/* line 310, ../sass/pkp/_pkp_common.scss */
+/* line 325, ../sass/pkp/_pkp_common.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em;
 }
 
-/* line 316, ../sass/pkp/_pkp_common.scss */
+/* line 331, ../sass/pkp/_pkp_common.scss */
 table.listing td {
   padding: 0.25em 1.5em 0.25em 0.5em;
 }
 
-/* line 320, ../sass/pkp/_pkp_common.scss */
+/* line 335, ../sass/pkp/_pkp_common.scss */
 table.listing tr.heading td, table.listing td.heading, table.info td.heading {
   font-size: 0.85em;
   text-transform: uppercase;
@@ -956,44 +970,44 @@ table.listing tr.heading td, table.listing td.heading, table.info td.heading {
   padding: 0.75em 1.5em 1em 0.5em;
 }
 
-/* line 327, ../sass/pkp/_pkp_common.scss */
+/* line 342, ../sass/pkp/_pkp_common.scss */
 table.info td.heading {
   padding-left: 0;
 }
 
-/* line 332, ../sass/pkp/_pkp_common.scss */
+/* line 347, ../sass/pkp/_pkp_common.scss */
 table.listing td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic;
 }
 
-/* line 337, ../sass/pkp/_pkp_common.scss */
+/* line 352, ../sass/pkp/_pkp_common.scss */
 table.listing td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 343, ../sass/pkp/_pkp_common.scss */
+/* line 358, ../sass/pkp/_pkp_common.scss */
 table.listing td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%;
 }
 
-/* line 349, ../sass/pkp/_pkp_common.scss */
+/* line 364, ../sass/pkp/_pkp_common.scss */
 table.listing td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 355, ../sass/pkp/_pkp_common.scss */
+/* line 370, ../sass/pkp/_pkp_common.scss */
 table.data td {
   padding-bottom: 0.75rem;
 }
 
-/* line 360, ../sass/pkp/_pkp_common.scss */
+/* line 375, ../sass/pkp/_pkp_common.scss */
 table.data td.label {
   padding-right: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1004,32 +1018,32 @@ table.data td.label {
   font-weight: bold;
 }
 
-/* line 369, ../sass/pkp/_pkp_common.scss */
+/* line 384, ../sass/pkp/_pkp_common.scss */
 table.data td.separator {
   padding: 0.5em;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 375, ../sass/pkp/_pkp_common.scss */
+/* line 390, ../sass/pkp/_pkp_common.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 380, ../sass/pkp/_pkp_common.scss */
+/* line 395, ../sass/pkp/_pkp_common.scss */
 table.nested tr {
   padding: 0;
   margin: 0;
 }
 
-/* line 385, ../sass/pkp/_pkp_common.scss */
+/* line 400, ../sass/pkp/_pkp_common.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em;
 }
 
-/* line 392, ../sass/pkp/_pkp_common.scss */
+/* line 407, ../sass/pkp/_pkp_common.scss */
 .instruct, span.formRequired {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1038,7 +1052,7 @@ span.nested {
   line-height: 1.5rem;
 }
 
-/* line 402, ../sass/pkp/_pkp_common.scss */
+/* line 417, ../sass/pkp/_pkp_common.scss */
 td.value {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1046,7 +1060,7 @@ td.value {
   line-height: 24px;
   line-height: 1.5rem;
 }
-/* line 406, ../sass/pkp/_pkp_common.scss */
+/* line 421, ../sass/pkp/_pkp_common.scss */
 td.value input {
   font-size: 16px;
   font-size: 1rem;
@@ -1057,7 +1071,7 @@ td.value input {
 /**
  * Form-specific elements
  */
-/* line 416, ../sass/pkp/_pkp_common.scss */
+/* line 431, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_error {
   /* Named for compatibility with new lessphp structure */
   color: #900;
@@ -1065,7 +1079,7 @@ span.pkp_form_error {
   font-size: 1em;
 }
 
-/* line 422, ../sass/pkp/_pkp_common.scss */
+/* line 437, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_success {
   /* Named for compatibility with new lessphp structure */
   color: #090;
@@ -1073,7 +1087,7 @@ span.pkp_form_success {
   font-size: 1em;
 }
 
-/* line 428, ../sass/pkp/_pkp_common.scss */
+/* line 443, ../sass/pkp/_pkp_common.scss */
 ul.pkp_form_error_list {
   /* Named for compatibility with new lessphp structure */
   color: #900;
@@ -1082,7 +1096,7 @@ ul.pkp_form_error_list {
 /**
  * Other organizational elements
  */
-/* line 437, ../sass/pkp/_pkp_common.scss */
+/* line 452, ../sass/pkp/_pkp_common.scss */
 ul.menu li {
   margin-right: 1.5rem;
   padding: 0;
@@ -1090,12 +1104,12 @@ ul.menu li {
   display: block;
 }
 
-/* line 447, ../sass/pkp/_pkp_common.scss */
+/* line 462, ../sass/pkp/_pkp_common.scss */
 ul.menu li.current {
   font-weight: bold;
 }
 
-/* line 451, ../sass/pkp/_pkp_common.scss */
+/* line 466, ../sass/pkp/_pkp_common.scss */
 ul.menu a {
   display: block;
   font-size: 16px;
@@ -1105,14 +1119,14 @@ ul.menu a {
   font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
 }
 
-/* line 460, ../sass/pkp/_pkp_common.scss */
+/* line 475, ../sass/pkp/_pkp_common.scss */
 ul.steplist {
   margin: 0;
   padding: 0;
   list-style-type: decimal;
 }
 
-/* line 466, ../sass/pkp/_pkp_common.scss */
+/* line 481, ../sass/pkp/_pkp_common.scss */
 ul.steplist li {
   margin: 0;
   padding: 0;
@@ -1122,30 +1136,30 @@ ul.steplist li {
   text-transform: uppercase;
 }
 
-/* line 475, ../sass/pkp/_pkp_common.scss */
+/* line 490, ../sass/pkp/_pkp_common.scss */
 ul.steplist li.current {
   font-weight: bold;
 }
 
-/* line 479, ../sass/pkp/_pkp_common.scss */
+/* line 494, ../sass/pkp/_pkp_common.scss */
 ul.steplist a {
   text-decoration: none;
 }
 
-/* line 483, ../sass/pkp/_pkp_common.scss */
+/* line 498, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em;
 }
 
-/* line 488, ../sass/pkp/_pkp_common.scss */
+/* line 503, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none;
 }
 
-/* line 494, ../sass/pkp/_pkp_common.scss */
+/* line 509, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline;
@@ -1154,7 +1168,7 @@ ul.filter li {
 /**
  * Other organizational elements
  */
-/* line 504, ../sass/pkp/_pkp_common.scss */
+/* line 519, ../sass/pkp/_pkp_common.scss */
 div.separator {
   width: 100%;
   margin-top: 1em;
@@ -1730,7 +1744,7 @@ td.notificationFunction {
 }
 
 /* line 44, ../sass/pkp/_sidebar.scss */
-#sidebar input.textField, #sidebar select.selectMenu, #sidebar input.button {
+#sidebar input.textField, #sidebar select.selectMenu {
   font-size: inherit;
 }
 
@@ -1741,12 +1755,11 @@ td.notificationFunction {
 }
 /* line 54, ../sass/pkp/_sidebar.scss */
 #sidebar ul li {
-  list--style-type: none;
+  list-style-type: none;
 }
 
 /* line 1, ../sass/modules/_menu.scss */
 #navbar {
-  margin-bottom: 1.5rem;
   *zoom: 1;
 }
 /* line 38, ../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
@@ -1755,16 +1768,16 @@ td.notificationFunction {
   display: table;
   clear: both;
 }
-/* line 7, ../sass/modules/_menu.scss */
+/* line 5, ../sass/modules/_menu.scss */
 #navbar a, #navbar a:hover {
   text-decoration: none;
   border: none;
 }
-/* line 11, ../sass/modules/_menu.scss */
+/* line 9, ../sass/modules/_menu.scss */
 #navbar a, #navbar a:link, #navbar a:visited, #navbar a:hover, #navbar a:active {
   color: #333;
 }
-/* line 14, ../sass/modules/_menu.scss */
+/* line 12, ../sass/modules/_menu.scss */
 #navbar li {
   border-bottom: 0.375rem solid transparent;
   border-top: 1px solid transparent;
@@ -1774,7 +1787,7 @@ td.notificationFunction {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-/* line 21, ../sass/modules/_menu.scss */
+/* line 19, ../sass/modules/_menu.scss */
 #navbar li:hover {
   border-color: #000;
 }
