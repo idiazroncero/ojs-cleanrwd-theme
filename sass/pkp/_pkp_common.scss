@@ -127,11 +127,13 @@ input.defaultButton {
 #header {
 	width: 100%;
 	text-align: center;
+	// Separate header from main elements... let it breathe
+	margin-bottom:rhythm(1);
 }
 
 #header h1 {
 	// Use vertical rhythm & stop using 10% to separate it from the left side since we use the #container wrapper.
-	padding: rhythm(0.5) 0 rhythm(0.25) 0;
+	padding: rhythm(1) 0 0 0;
 	// We need to override again the font-family
 	// Can't understad why this wasn't defined as h1, h2, h3 { } ...
 	font-family: $headlines;
@@ -415,9 +417,11 @@ ul.pkp_form_error_list { /* Named for compatibility with new lessphp structure *
 
 ul.menu li {
 	// Use vertical rhythm units also for horizontal spacing.
-	padding-right: rhythm(1);
+	margin-right: rhythm(1);
+	padding:0;
 	// We want to give menu items more space for touch-enabled devices...
-	display:inline-block;
+	float:left;
+	display:block;
 }
 
 // Should we use a different, more original, way to mark "active" items??
@@ -428,8 +432,6 @@ ul.menu li.current {
 ul.menu a {
 	// Let the link expand to fill all available space
 	display:block;
-	// Some padding is needed
-	padding:0 rhythm(0.5);
 	// Use our font sizes
 	@include adjust-font-size-to($base-font-size);
 	// Use our headings font

@@ -1,0 +1,22 @@
+#navbar {
+	// Let's get more room!!
+	margin-bottom:rhythm(1);
+	// We need a clearfix here
+	@include pie-clearfix();
+	// Reset all link underlines and/or borders
+	a, a:hover {
+		text-decoration:none;
+		border:none;
+	}
+	li {
+		// We use a border effect
+		border-bottom: rhythm(0.25) solid transparent;
+		border-top:1px solid transparent;
+		margin-bottom:rhythm(-0.25);
+		// Animate a little
+		@include transition(all 0.25s ease-in-out);
+		&:hover {
+			border-color:#000;
+		}
+	}
+}

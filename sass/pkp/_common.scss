@@ -99,7 +99,7 @@ a:hover {
 	// This conflicts with pkp/common.css ul.menu a.
 	// We need to repeat the properties. Ugly, but needed.
 	@include adjust-font-size-to($base-font-size);
-	letter-spacing: normal;
+	letter-spacing: 0.1rem;
 }
 
 
