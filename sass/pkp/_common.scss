@@ -22,6 +22,11 @@
 // Specify colors as SCSS variables, instead of hard-coding them.
 a:link {
 	color: $link;
+	@if $link-style == dotted-before {
+		border-bottom:1px dotted $link-hover;
+	} @else if $link-style == classic {
+		text-decoration:underline;
+	}
 }
 
 a:active {
@@ -35,8 +40,13 @@ a:visited {
 a:hover {
 	color: $link-hover;
 	background: transparent;
-	// We prefer border dotted. Should we put this as a config variable?
-	border-bottom:1px dotted $link-hover;
+	@if $link-style == dotted-before {
+		border-bottom:none;
+	} @else if $link-style == dotted-after {
+		border-bottom:1px dotted $link-hover;
+	} @else if $link-style == classic {
+		text-decoration:underline;
+	}
 }
 
 
@@ -426,6 +436,7 @@ td.notificationFunction {
 		border-color:#999;
 		color:$font-color;
 		background:none;
+		font-weight:normal;
 		// No border radius
 		@include border-radius(0);
 	}	
@@ -445,32 +456,12 @@ td.notificationFunction {
 	}	
 
 	ul.tagit li.tagit-choice .tagit-close {
-		cursor: pointer;
-	    position: absolute;
-	    right: .1em;
-	    top: 50%;
-	    margin-top: -8px;
+		//Override color
+		color:$font-color;
 	}	
 
-	/* used for some custom themes that don't need image icons */
-	ul.tagit li.tagit-choice .tagit-close .text-icon {
-	    display: none;
-	}
 	.ui-autocomplete .ui-menu-item a {
 		@include adjust-font-size-to($h5-font-size);
-	}
-	ul.tagit li.tagit-choice input {
-		display: block;
-		float: left;
-		margin: 2px 5px 2px 0;
-	}
-	ul.tagit input[type="text"] {
-	    border: none;
-		margin: 0;
-		padding: 0;
-		width: inherit;
-		background-color: inherit;
-	    outline: none;
 	}
 }
 

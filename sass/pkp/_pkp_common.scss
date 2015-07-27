@@ -86,6 +86,13 @@ input.button {
 	@include border-radius(3px);
 	// WTF
 	letter-spacing:1px;
+	// Animate border on hover
+	border:rhythm(0.125) solid transparent;
+	&:hover {
+		border-color:$button;
+		background:none;
+		color:$font-color;
+	}
 }
 
 input.defaultButton {
@@ -98,6 +105,9 @@ input.defaultButton {
 		color: #fff;
 	}
 	font-weight: bold;
+	&:hover {
+		border-color: $default-button;
+	}
 }
 
 

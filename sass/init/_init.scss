@@ -58,14 +58,23 @@ $indent-amount: 40px !default;
 $font-color: #333;
 
 // Colors of the different states of the links
-$link: darkslateblue ;
-$link-active: darkslateblue;
+$link: #666 ;
+$link-active: #666;
 $link-visited: tint($link, 25%);
 $link-hover: tint($link, 25%);
 
 // Buttons
 $default-button: #000;
 $button: #eee;
+
+//
+// LINKS
+//
+
+// Choose your preferred link styling
+$link-style: dotted-before; // border-bottom dotted before :hover (disabled on :hover)
+// dotted-after = border-bottom dotted before :hover (active on :hover)
+// classic = text-decoration:underline after :hover
 
 
 //
