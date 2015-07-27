@@ -3,10 +3,13 @@
 	margin-bottom:rhythm(1);
 	// We need a clearfix here
 	@include pie-clearfix();
-	// Reset all link underlines and/or borders
+	// Reset all link underlines, highlights and/or borders. We want navegation always the same.
 	a, a:hover {
 		text-decoration:none;
 		border:none;
+	}
+	a, a:link, a:visited, a:hover, a:active {
+		color:$font-color;
 	}
 	li {
 		// We use a border effect

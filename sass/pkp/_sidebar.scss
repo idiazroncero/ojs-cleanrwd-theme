@@ -25,13 +25,15 @@
 
 #sidebar div.block span.blockTitle {
 	// Padding as vertical rhythm units
-	padding: rhythm(1) 0;
+	padding: rhythm(0.25) 0 rhythm(1) 0;
 	// Font size
 	@include adjust-font-size-to($base-font-size);
 	// No more letter spacing than usual
 	letter-spacing: normal;
 	// We use headlines' font for everything that indicates sectioning or divisions
 	font-family: $headlines;
+	// Boder-top as divider
+	border-top:rhythm(0.25) solid tint($font-color, 85%);
 }
 
 #sidebar div.block span.blockSubtitle {
@@ -42,5 +44,16 @@
 #sidebar input.textField, #sidebar select.selectMenu, #sidebar input.button {
 	// Same size throughout the web, please
 	font-size: inherit;
+}
+
+#sidebar {
+	// No bullets inside sidebar
+	ul {
+		margin:0;
+		padding:0;
+		li {
+			list-style-type:none;
+		}
+	}
 }
 

@@ -163,13 +163,17 @@ input.defaultButton {
 }
 
 #main {
-	// We want #main to sum up 80% and sidebar 20%
-	width:80%;
+	// We want #main to occupy all space left by sidebars
+	width:auto;
 	// Reset padding to 0
 	padding: 0;
 	// We don't use 10% margin to separate content from the left since we're using #container
 	// as a main wrapper.
-	margin-left:0;
+	margin:0;
+	// We don't want it to behave inline
+	display:block;
+	// And we don't want a float
+	float:none;
 }
 
 #main h2 {
@@ -388,6 +392,21 @@ span.nested {
 .instruct, span.formRequired {
 	font-family:$helvetica;
 	@include adjust-font-size-to($h45-font-size);
+}
+
+// There are strong inconsistencies inside OJS tables. 
+// Some instructions have a .instruct and span in their own <tr> row 
+// while others are put inside the main <td>, alongside the <input> and without class.
+// We have to be hacky: we style every td.value and then undo the changes inside every input.
+// OJS tables are very poorly styled indeed...
+td.value {
+	// Those are the .instruct styles
+	font-family:$helvetica;
+	@include adjust-font-size-to($h45-font-size);
+	input {
+		// And those are the general input styles.
+		@include adjust-font-size-to($base-font-size);
+	}
 }
 
 /**
