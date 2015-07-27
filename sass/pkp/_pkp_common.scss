@@ -52,7 +52,7 @@ input.textField, select.selectMenu, textarea.textArea, input.uploadField {
 	// We want a clean, plain border.
 	border: 1px solid #999;
 	// Some padding to enhance legibility
-	padding:0 rhythm(0.5);
+	padding:0 rhythm(0.25);
 	// A small border-radius.
 	// It is a convention that user inout (buttons, forms) have some kind of radius.
 	// we try to follow convention without exxagerating to keep the design clean and minimal.
@@ -109,6 +109,9 @@ input.defaultButton {
 	// Existent min-width disables responsive web design.
 	// We have to explicitly override it and keep the !important tag.
 	min-width: 0 !important;
+	// We prefer centered content. It's just an opinionated design choice - and it's easier for RWD
+	// To completely redo the main layout, we start by making #container the main wrapper.
+	max-width: $max-width;
 }
 
 #header {
@@ -117,12 +120,17 @@ input.defaultButton {
 }
 
 #header h1 {
-	// Use vertical rhythm
-	padding: rhythm(0.5) 0 rhythm(0.25) 10%;
+	// Use vertical rhythm & stop using 10% to separate it from the left side since we use the #container wrapper.
+	padding: rhythm(0.5) 0 rhythm(0.25) 0;
 	// We need to override again the font-family
 	// Can't understad why this wasn't defined as h1, h2, h3 { } ...
 	font-family: $headlines;
 	font-weight: bold;
+}
+
+// We insert a clearfix inside body because we don't want it to lose its height (all its child elements are floated)
+#body {
+	@include pie-clearfix();
 }
 
 
@@ -143,20 +151,25 @@ input.defaultButton {
 }
 
 #main {
+	// We want #main to sum up 80% and sidebar 20%
+	width:80%;
 	// Reset padding to 0
 	padding: 0;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-left:0;
 }
 
 #main h2 {
 	// Reset padding/margin and set correct font
-	margin: 0;
+	margin: 0 0 rhythm(1) 0;
 	padding-top: 0;
 	font-family: $headlines;
-	font-weight: 300;
+	font-weight: 700;
 }
 
 #main h3 {
-	margin: 0;
+	margin: 0 0 rhythm(1) 0;
 	padding-top: 0;
 	font-family: $headlines;
 	font-weight: 300;
@@ -255,11 +268,6 @@ a.icon:hover {
 	background: none;
 }
 
-span.formRequired {
-	color: #333;
-	font-size: 0.9em;
-}
-
 span.heading {
 	font-size: 0.85em;
 	text-transform: uppercase;
@@ -328,18 +336,18 @@ table.listing td.separator, table.info td.separator {
 	line-height: 1%;
 }
 
-table.data tr {
-}
-
 table.data td {
-	padding-bottom: 0.25em;
+	// Express it as vertical rhythm units
+	padding-bottom: rhythm(0.5);
 }
 
 table.data td.label {
-	padding-right: 1em;
-}
-
-table.data td.value {
+	// Express it as vetical rhythm units
+	padding-right: rhythm(1);
+	// We prefer to style labels differently:
+	font-family:$helvetica;
+	@include adjust-font-size-to($h45-font-size);
+	font-weight:bold;
 }
 
 table.data td.separator {
@@ -361,6 +369,13 @@ table.nested tr {
 span.nested {
 	padding: 0 4px 0 0;
 	font-size: 1.2em;
+}
+
+
+// We prefer to style isntructions and form helpers differently:
+.instruct, span.formRequired {
+	font-family:$helvetica;
+	@include adjust-font-size-to($h45-font-size);
 }
 
 /**

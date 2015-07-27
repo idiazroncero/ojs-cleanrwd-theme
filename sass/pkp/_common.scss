@@ -401,68 +401,77 @@ td.notificationFunction {
 
 
 /* @group Tag-it */
+// We have to normalize tagit inputs
+// We wrap it inside #interests to ensure override
 
-ul.tagit {
-	padding: 1px 5px;
-	overflow: auto;
-    margin-left: inherit; /* usually we don't want the regular ul margins. */
-    margin-right: inherit;
-}
+#interests {
+	ul.tagit {
+		// Normalize padding as inputs
+		padding: 0 rhythm(0.25);
+		//Overrides jQuery UI colors
+		border: 1px solid #999;
+		background:none;
+		color:$font-color;
+		// Border radius as input
+		@include border-radius(2px);
+		// Overrides jquery UI font size and family:
+		@include adjust-font-size-to($h45-font-size);
+		font-family:$helvetica;
+	}
 
-.hidden {
-	display: none;
-}
+	ul.tagit li {
+		// Normalize margins
+		margin: 1px 5px 1px 0;
+		// Overrides jQuery UI colors & background:
+		border-color:#999;
+		color:$font-color;
+		background:none;
+		// No border radius
+		@include border-radius(0);
+	}	
 
-ul.tagit li {
-	display: block;
-	float: left;
-	margin: 2px 5px 2px 0;
-}
+	ul.tagit li.tagit-choice {
+		// Normalize padding and reduce size
+		padding: 0 18px 0 5px;
+	}
+	ul.tagit li.tagit-new {
+		// Normalize padding and reduce size. The extra pixel equals heights with already tagged <li>s
+		padding: 1px 18px 1px 5px;
+		input {
+			// We need to be extra specific and repeat ourselves. Jquery UI really messes it up here
+			font-family:$helvetica;
+			@include adjust-font-size-to($h45-font-size);
+		}
+	}	
 
-ul.tagit li.tagit-choice {
-	padding: .2em 18px .2em .5em;
-    position: relative;
-    line-height: inherit;
-}
-ul.tagit li.tagit-new {
-	padding: .25em 4px .25em 0;
-}
+	ul.tagit li.tagit-choice .tagit-close {
+		cursor: pointer;
+	    position: absolute;
+	    right: .1em;
+	    top: 50%;
+	    margin-top: -8px;
+	}	
 
-ul.tagit li.tagit-choice a.tagit-label {
-	cursor: pointer;
-	text-decoration: none;
-}
-ul.tagit li.tagit-choice .tagit-close {
-	cursor: pointer;
-    position: absolute;
-    right: .1em;
-    top: 50%;
-    margin-top: -8px;
-}
-
-/* used for some custom themes that don't need image icons */
-ul.tagit li.tagit-choice .tagit-close .text-icon {
-    display: none;
-}
-.ui-autocomplete .ui-menu-item a {
-	font-size: .6em;
-}
-ul.tagit li.tagit-choice input {
-	display: block;
-	float: left;
-	margin: 2px 5px 2px 0;
-}
-ul.tagit input[type="text"] {
-    -moz-box-sizing:    border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing:         border-box;
-
-    border: none;
-	margin: 0;
-	padding: 0;
-	width: inherit;
-	background-color: inherit;
-    outline: none;
+	/* used for some custom themes that don't need image icons */
+	ul.tagit li.tagit-choice .tagit-close .text-icon {
+	    display: none;
+	}
+	.ui-autocomplete .ui-menu-item a {
+		@include adjust-font-size-to($h5-font-size);
+	}
+	ul.tagit li.tagit-choice input {
+		display: block;
+		float: left;
+		margin: 2px 5px 2px 0;
+	}
+	ul.tagit input[type="text"] {
+	    border: none;
+		margin: 0;
+		padding: 0;
+		width: inherit;
+		background-color: inherit;
+	    outline: none;
+	}
 }
 
 

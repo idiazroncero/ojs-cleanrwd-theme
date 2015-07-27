@@ -1,0 +1,30 @@
+//
+// Alters /user/register form
+//
+
+#registerForm {
+	tr {
+		// Hardcoded values 20% / 80% are a bit too tight for label text
+		.label {
+			width:25%
+		}
+		.value {
+			width:75%;
+		}
+	}
+
+	// There are strong inconsistencies inside OJS tables. 
+	// Some instructions have a .instruct and span in their own <tr> row 
+	// while others are put inside the main <td>, alongside the <input> and without class.
+	// We have to be hacky: we style every td.value and then undo the changes inside every input.
+	// OJS tables are very poorly styled indeed...
+	td.value {
+		// Those are the .instruct styles
+		font-family:$helvetica;
+		@include adjust-font-size-to($h45-font-size);
+		input {
+			// And those are the general input styles.
+			@include adjust-font-size-to($base-font-size);
+		}
+	}
+}

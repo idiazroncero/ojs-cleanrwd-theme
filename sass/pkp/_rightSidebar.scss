@@ -10,14 +10,16 @@
 // Modificaremos el layout en proximas ediciones
 #rightSidebar {
 	float: right;
-	width: 14%;
+	width: 17%;
 	// No padding
 	padding: 0;
 	// Inherits from $base-font-size
 	font-size: inherit;
-	height: 100%;
-	margin-right: 10%;
-	margin-left: 2%;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-right: 0%;
+	// We want sidebar to sum up 20% of total width
+	margin-left: 3%;
 }
 
 * html #rightSidebar {

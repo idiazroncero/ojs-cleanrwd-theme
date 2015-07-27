@@ -43,6 +43,7 @@ $h1-font-size: 3.157    * $base-font-size !default;
 $h2-font-size: 2.369  * $base-font-size !default;
 $h3-font-size: 1.777 * $base-font-size !default;
 $h4-font-size: 1.333    * $base-font-size !default;
+$h45-font-size: 0.85   * $base-font-size !default;
 $h5-font-size: 0.707 * $base-font-size !default;
 $h6-font-size: 0.5 * $base-font-size !default;
 
@@ -57,17 +58,26 @@ $indent-amount: 40px !default;
 $font-color: #333;
 
 // Colors of the different states of the links
-$link: #000 ;
-$link-active: #000 ;
+$link: darkslateblue ;
+$link-active: darkslateblue;
 $link-visited: tint($link, 25%);
 $link-hover: tint($link, 25%);
 
 // Buttons
 $default-button: #000;
-$button: #fff;
+$button: #eee;
+
+
+//
+// LAYOUT
+//
+
+// Max-width of the main container
+$max-width:1200px;
 
 
 // After the default variables are set, import the required Compass partials.
 @import "compass/support";
 @import "compass/typography/vertical_rhythm";
 @import "compass/css3";
+@import "compass/utilities/general/clearfix"
