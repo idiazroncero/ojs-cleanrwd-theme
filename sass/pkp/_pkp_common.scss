@@ -211,7 +211,7 @@ td.value, // Inside value cells
 
 #breadcrumb {
 	// Set padding to zero and margin bottom
-	padding: 0;
+	padding: rhythm(0.125) 0 0 0;
 	margin-bottom:$base-line-height;
 	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
 	// This font-sizes were calculated using "perfect fourth" aspect ratio.

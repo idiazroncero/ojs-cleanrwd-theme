@@ -19,13 +19,15 @@
 }
 
 #sidebar div.block {
-	font-size: 1em;
-	padding-bottom: 1.5em;
+	// INherit font sizes and set correct margin (not padding!!)
+	font-size: inherit;
+	padding:0;
+	margin-bottom: rhythm(1);
 }
 
 #sidebar div.block span.blockTitle {
 	// Padding as vertical rhythm units
-	padding: rhythm(0.25) 0 rhythm(1) 0;
+	padding: rhythm(0.25) 0 rhythm(0.5) 0;
 	// Font size
 	@include adjust-font-size-to($base-font-size);
 	// No more letter spacing than usual
@@ -47,6 +49,11 @@
 }
 
 #sidebar {
+	* {
+		@include adjust-font-size-to($h5-font-size);
+		font-family:$helvetica;
+		text-transform:uppercase;
+	}
 	// No bullets inside sidebar
 	ul {
 		margin:0;
@@ -54,6 +61,9 @@
 		li {
 			list-style-type:none;
 		}
+	}
+	// Text a little smaller
+	p, a, label {
 	}
 }
 
