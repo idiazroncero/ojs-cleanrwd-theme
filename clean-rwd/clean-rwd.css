@@ -1763,6 +1763,312 @@ td.notificationFunction {
   text-transform: uppercase;
 }
 
+/* Layout */
+/* line 6, ../sass/pkp/_tinymce.scss */
+.defaultSkin table.mceLayout {
+  width: 100% !important;
+}
+
+/* line 10, ../sass/pkp/_tinymce.scss */
+.defaultSkin table.mceLayout tr.mceFirst td {
+  border-top: 1px solid #CCC;
+}
+
+/* line 11, ../sass/pkp/_tinymce.scss */
+.defaultSkin table.mceLayout tr.mceLast td {
+  border-bottom: 1px solid #CCC;
+}
+
+/* line 12, ../sass/pkp/_tinymce.scss */
+.defaultSkin table.mceToolbar, .defaultSkin tr.mceFirst .mceToolbar tr td, .defaultSkin tr.mceLast .mceToolbar tr td {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 13, ../sass/pkp/_tinymce.scss */
+.defaultSkin td.mceToolbar {
+  background: #F0F0EE;
+  padding-top: 1px;
+  vertical-align: top;
+}
+
+/* line 14, ../sass/pkp/_tinymce.scss */
+.defaultSkin .mceIframeContainer {
+  border-top: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+}
+
+/* line 15, ../sass/pkp/_tinymce.scss */
+.defaultSkin .mceStatusbar {
+  background: #F0F0EE;
+  font-family: 'MS Sans Serif',sans-serif,Verdana,Arial;
+  font-size: 9pt;
+  line-height: 16px;
+  overflow: visible;
+  color: #000;
+  display: block;
+  height: 20px;
+}
+
+/* line 16, ../sass/pkp/_tinymce.scss */
+.defaultSkin .mceStatusbar div {
+  float: left;
+  margin: 2px;
+}
+
+/* line 17, ../sass/pkp/_tinymce.scss */
+.defaultSkin .mceStatusbar a.mceResize {
+  display: block;
+  float: right;
+  background: url(../../img/icons.gif) -800px 0;
+  width: 20px;
+  height: 20px;
+  cursor: se-resize;
+  outline: 0;
+}
+
+/* line 18, ../sass/pkp/_tinymce.scss */
+.defaultSkin .mceStatusbar a:hover {
+  text-decoration: underline;
+}
+
+/* line 19, ../sass/pkp/_tinymce.scss */
+.defaultSkin table.mceToolbar {
+  margin-left: 3px;
+}
+
+/* line 20, ../sass/pkp/_tinymce.scss */
+.defaultSkin span.mceIcon, .defaultSkin img.mceIcon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 21, ../sass/pkp/_tinymce.scss */
+.defaultSkin .mceIcon {
+  background: url(../../img/icons.gif) no-repeat 20px 20px;
+}
+
+/* line 22, ../sass/pkp/_tinymce.scss */
+.defaultSkin td.mceCenter {
+  text-align: center;
+}
+
+/* line 23, ../sass/pkp/_tinymce.scss */
+.defaultSkin td.mceCenter table {
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* line 24, ../sass/pkp/_tinymce.scss */
+.defaultSkin td.mceRight table {
+  margin: 0 0 0 auto;
+}
+
+/* line 27, ../sass/pkp/_tinymce.scss */
+body, td, pre {
+  font-family: Merriweather, Georgia, Times, serif;
+  font-size: inherit;
+  margin: 0.75rem;
+}
+
+/* line 33, ../sass/pkp/_tinymce.scss */
+h1 {
+  font-size: inherit;
+}
+
+/* line 34, ../sass/pkp/_tinymce.scss */
+h2 {
+  font-size: inherit;
+}
+
+/* line 35, ../sass/pkp/_tinymce.scss */
+h3 {
+  font-size: inherit;
+}
+
+/* line 36, ../sass/pkp/_tinymce.scss */
+h4 {
+  font-size: inherit;
+}
+
+/* line 37, ../sass/pkp/_tinymce.scss */
+h5 {
+  font-size: inherit;
+}
+
+/* line 38, ../sass/pkp/_tinymce.scss */
+h6 {
+  font-size: inherit;
+}
+
+/* line 39, ../sass/pkp/_tinymce.scss */
+.mceItemTable, .mceItemTable td, .mceItemTable th, .mceItemTable caption, .mceItemVisualAid {
+  border: 1px dashed #BBB;
+}
+
+/* line 40, ../sass/pkp/_tinymce.scss */
+a.mceItemAnchor {
+  display: inline-block;
+  -webkit-user-select: all;
+  -webkit-user-modify: read-only;
+  -moz-user-select: all;
+  -moz-user-modify: read-only;
+  width: 11px !important;
+  height: 11px !important;
+  background: url(img/items.gif) no-repeat center center;
+}
+
+/* line 41, ../sass/pkp/_tinymce.scss */
+span.mceItemNbsp {
+  background: #DDD;
+}
+
+/* line 42, ../sass/pkp/_tinymce.scss */
+td.mceSelected, th.mceSelected {
+  background-color: #3399ff !important;
+}
+
+/* line 43, ../sass/pkp/_tinymce.scss */
+img {
+  border: 0;
+}
+
+/* line 44, ../sass/pkp/_tinymce.scss */
+table, img, hr, .mceItemAnchor {
+  cursor: default;
+}
+
+/* line 45, ../sass/pkp/_tinymce.scss */
+table td, table th {
+  cursor: text;
+}
+
+/* line 46, ../sass/pkp/_tinymce.scss */
+ins {
+  border-bottom: 1px solid green;
+  text-decoration: none;
+  color: green;
+}
+
+/* line 47, ../sass/pkp/_tinymce.scss */
+del {
+  color: red;
+  text-decoration: line-through;
+}
+
+/* line 48, ../sass/pkp/_tinymce.scss */
+cite {
+  border-bottom: 1px dashed blue;
+}
+
+/* line 49, ../sass/pkp/_tinymce.scss */
+acronym {
+  border-bottom: 1px dotted #CCC;
+  cursor: help;
+}
+
+/* line 50, ../sass/pkp/_tinymce.scss */
+abbr {
+  border-bottom: 1px dashed #CCC;
+  cursor: help;
+}
+
+/* IE */
+/* line 53, ../sass/pkp/_tinymce.scss */
+* html body {
+  scrollbar-3dlight-color: #F0F0EE;
+  scrollbar-arrow-color: #676662;
+  scrollbar-base-color: #F0F0EE;
+  scrollbar-darkshadow-color: #DDD;
+  scrollbar-face-color: #E0E0DD;
+  scrollbar-highlight-color: #F0F0EE;
+  scrollbar-shadow-color: #F0F0EE;
+  scrollbar-track-color: #F5F5F5;
+}
+
+/* line 64, ../sass/pkp/_tinymce.scss */
+img:-moz-broken {
+  -moz-force-broken-image-icon: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* line 65, ../sass/pkp/_tinymce.scss */
+font[face=mceinline] {
+  font-family: inherit !important;
+}
+
+/* line 66, ../sass/pkp/_tinymce.scss */
+*[contentEditable]:focus {
+  outline: 0;
+}
+
+/* line 68, ../sass/pkp/_tinymce.scss */
+.mceItemMedia {
+  border: 1px dotted #cc0000;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ffffcc;
+}
+
+/* line 69, ../sass/pkp/_tinymce.scss */
+.mceItemShockWave {
+  background-image: url(../../img/shockwave.gif);
+}
+
+/* line 70, ../sass/pkp/_tinymce.scss */
+.mceItemFlash {
+  background-image: url(../../img/flash.gif);
+}
+
+/* line 71, ../sass/pkp/_tinymce.scss */
+.mceItemQuickTime {
+  background-image: url(../../img/quicktime.gif);
+}
+
+/* line 72, ../sass/pkp/_tinymce.scss */
+.mceItemWindowsMedia {
+  background-image: url(../../img/windowsmedia.gif);
+}
+
+/* line 73, ../sass/pkp/_tinymce.scss */
+.mceItemRealMedia {
+  background-image: url(../../img/realmedia.gif);
+}
+
+/* line 74, ../sass/pkp/_tinymce.scss */
+.mceItemVideo {
+  background-image: url(../../img/video.gif);
+}
+
+/* line 75, ../sass/pkp/_tinymce.scss */
+.mceItemAudio {
+  background-image: url(../../img/video.gif);
+}
+
+/* line 76, ../sass/pkp/_tinymce.scss */
+.mceItemEmbeddedAudio {
+  background-image: url(../../img/video.gif);
+}
+
+/* line 77, ../sass/pkp/_tinymce.scss */
+.mceItemIframe {
+  background-image: url(../../img/iframe.gif);
+}
+
+/* line 78, ../sass/pkp/_tinymce.scss */
+.mcePageBreak {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: 12px;
+  border-top: 1px dotted #ccc;
+  margin-top: 15px;
+  background: #fff url(../../img/pagebreak.gif) no-repeat center top;
+}
+
 /* line 1, ../sass/modules/_menu.scss */
 #navbar {
   *zoom: 1;
