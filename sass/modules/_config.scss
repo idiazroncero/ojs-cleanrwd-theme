@@ -50,7 +50,9 @@
 }
 
 // We need to be over-specific to override this h3
-#parserFilterGridContainer h3 {
-   @include adjust-font-size-to($h4-font-size);
-   font-weight:bold;
+#parserFilterGridContainer, #lookupFilterGridContainer {
+	h3 {
+		@include adjust-font-size-to($h45-font-size);
+		font-weight:bold;
+	}
 }

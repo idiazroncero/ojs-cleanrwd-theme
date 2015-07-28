@@ -452,6 +452,10 @@ select {
   text-transform: none;
 }
 
+select, input {
+  // Sometimes, the overflow:hidden cuts 1px out of select boxes.
+  margin-left:1px
+}
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.

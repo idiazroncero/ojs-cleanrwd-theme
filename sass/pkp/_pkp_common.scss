@@ -69,7 +69,7 @@ input.uploadField {
 	background:none;
 }
 
-input.button {
+input.button, button.ui-button.ui-button-text-only .ui-button-text {
 	// Padding as vertical rhythm.
 	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
 	padding:rhythm(0.125) rhythm(0.5);
@@ -423,7 +423,7 @@ span.nested {
 // while others are put inside the main <td>, alongside the <input> and without class.
 // We have to be hacky: we style every td.value and then undo the changes inside every input.
 // OJS tables are very poorly styled indeed...
-td.value, td.data {
+td.value, td.data, td label {
 	// Those are the .instruct styles
 	font-family:$helvetica;
 	@include adjust-font-size-to($h45-font-size);

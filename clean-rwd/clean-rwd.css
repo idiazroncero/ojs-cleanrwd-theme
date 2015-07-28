@@ -455,6 +455,11 @@ select {
   text-transform: none;
 }
 
+/* line 455, ../sass/init/_normalize.scss */
+select, input {
+  margin-left: 1px;
+}
+
 /**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
@@ -464,7 +469,7 @@ select {
  * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
  *    Known issue: inner spacing remains in IE 6.
  */
-/* line 465, ../sass/init/_normalize.scss */
+/* line 469, ../sass/init/_normalize.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -480,7 +485,7 @@ input[type="submit"] {
 /**
  * Re-set default cursor for disabled elements.
  */
-/* line 480, ../sass/init/_normalize.scss */
+/* line 484, ../sass/init/_normalize.scss */
 button[disabled],
 html input[disabled] {
   cursor: default;
@@ -489,7 +494,7 @@ html input[disabled] {
 /**
  * Remove inner padding and border in Firefox 4+.
  */
-/* line 489, ../sass/init/_normalize.scss */
+/* line 493, ../sass/init/_normalize.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -500,7 +505,7 @@ input::-moz-focus-inner {
  * Address Firefox 4+ setting `line-height` on `input` using `!important` in
  * the UA stylesheet.
  */
-/* line 500, ../sass/init/_normalize.scss */
+/* line 504, ../sass/init/_normalize.scss */
 input {
   line-height: normal;
 }
@@ -514,7 +519,7 @@ input {
  * 3. Remove excess padding in IE 7.
  *    Known issue: excess padding remains in IE 6.
  */
-/* line 515, ../sass/init/_normalize.scss */
+/* line 519, ../sass/init/_normalize.scss */
 input[type="checkbox"],
 input[type="radio"] {
   -moz-box-sizing: border-box;
@@ -534,7 +539,7 @@ input[type="radio"] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 532, ../sass/init/_normalize.scss */
+/* line 536, ../sass/init/_normalize.scss */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto;
@@ -545,7 +550,7 @@ input[type="number"]::-webkit-outer-spin-button {
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
  *    (include `-moz` to future-proof).
  */
-/* line 543, ../sass/init/_normalize.scss */
+/* line 547, ../sass/init/_normalize.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -559,7 +564,7 @@ input[type="search"] {
    * padding (and `textfield` appearance).
    */
 }
-/* line 553, ../sass/init/_normalize.scss */
+/* line 557, ../sass/init/_normalize.scss */
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
@@ -567,7 +572,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 /**
  * Define consistent border, margin, and padding.
  */
-/* line 563, ../sass/init/_normalize.scss */
+/* line 567, ../sass/init/_normalize.scss */
 fieldset {
   margin: 0 2px;
   /* Apply borders and padding that keep the vertical rhythm. */
@@ -599,7 +604,7 @@ fieldset {
  * 2. Remove padding so people aren't caught out if they zero out fieldsets.
  * 3. Correct alignment displayed oddly in IE 6/7.
  */
-/* line 579, ../sass/init/_normalize.scss */
+/* line 583, ../sass/init/_normalize.scss */
 legend {
   border: 0;
   /* 1 */
@@ -612,7 +617,7 @@ legend {
 /**
  * Remove default vertical scrollbar in IE 8/9/10/11.
  */
-/* line 593, ../sass/init/_normalize.scss */
+/* line 597, ../sass/init/_normalize.scss */
 textarea {
   overflow: auto;
 }
@@ -621,7 +626,7 @@ textarea {
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 602, ../sass/init/_normalize.scss */
+/* line 606, ../sass/init/_normalize.scss */
 optgroup {
   font-weight: bold;
 }
@@ -631,13 +636,13 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-/* line 613, ../sass/init/_normalize.scss */
+/* line 617, ../sass/init/_normalize.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 618, ../sass/init/_normalize.scss */
+/* line 622, ../sass/init/_normalize.scss */
 td,
 th {
   padding: 0;
@@ -711,7 +716,7 @@ input.uploadField {
 }
 
 /* line 72, ../sass/pkp/_pkp_common.scss */
-input.button {
+input.button, button.ui-button.ui-button-text-only .ui-button-text {
   padding: 0.1875rem 0.75rem;
   background-color: #eee;
   color: #000;
@@ -729,7 +734,7 @@ input.button {
   border: 0.1875rem solid transparent;
 }
 /* line 99, ../sass/pkp/_pkp_common.scss */
-input.button:hover {
+input.button:hover, button.ui-button.ui-button-text-only .ui-button-text:hover {
   border-color: #eee;
   background: none;
   color: #333;
@@ -1062,7 +1067,7 @@ span.nested {
 }
 
 /* line 426, ../sass/pkp/_pkp_common.scss */
-td.value, td.data {
+td.value, td.data, td label {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-size: 0.85rem;
@@ -1981,13 +1986,64 @@ div.pkp_controllers_grid {
 
 /* line 11, ../sass/pkp/_compiled.scss */
 div.pkp_controllers_grid .wrapper {
-  margin-bottom: 0;
+  margin-bottom: 1.5rem;
 }
 
 /* line 16, ../sass/pkp/_compiled.scss */
 div.pkp_controllers_grid .grid_header_bar {
-  background-color: transparent;
+  background-color: #eee;
+  padding: 0.375rem 0.75rem;
+}
+
+/* line 22, ../sass/pkp/_compiled.scss */
+div.pkp_controllers_grid .options {
+  float: none;
+}
+/* line 24, ../sass/pkp/_compiled.scss */
+div.pkp_controllers_grid .options a {
+  float: none;
+  font-size: 11px;
+  font-size: 0.707rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left: 1.5rem;
+}
+
+/* line 34, ../sass/pkp/_compiled.scss */
+div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty td {
+  padding-left: 0;
+}
+
+/* line 40, ../sass/pkp/_compiled.scss */
+.ui-dialog {
+  background: #fff;
+  padding: 0.75rem;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 49, ../sass/pkp/_compiled.scss */
+.ui-dialog .ui-dialog-content {
   padding: 0;
+}
+/* line 52, ../sass/pkp/_compiled.scss */
+.ui-dialog .ui-dialog-content h3 {
+  font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
+  margin-top: 0;
+}
+
+/* line 60, ../sass/pkp/_compiled.scss */
+.ui-widget {
+  font-family: Merriweather, Georgia, Times, serif;
+}
+
+/* line 65, ../sass/pkp/_compiled.scss */
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  border: none;
+  background: none;
+  color: inherit;
 }
 
 /* line 1, ../sass/modules/_menu.scss */
@@ -2079,11 +2135,11 @@ div.pkp_controllers_grid .grid_header_bar {
   padding: 0;
 }
 
-/* line 53, ../sass/modules/_config.scss */
-#parserFilterGridContainer h3 {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 48px;
-  line-height: 3rem;
+/* line 54, ../sass/modules/_config.scss */
+#parserFilterGridContainer h3, #lookupFilterGridContainer h3 {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
   font-weight: bold;
 }

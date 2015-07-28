@@ -10,11 +10,60 @@
 
  div.pkp_controllers_grid .wrapper {
  	// use vertical rhythm
- 	margin-bottom:0;
+ 	margin-bottom:rhythm(1);
  }
 
  div.pkp_controllers_grid .grid_header_bar {
- 	// No styling: black & white
- 	background-color: transparent;
-    padding: 0;
+ 	// use our gray
+ 	background-color: #eee;
+ 	padding:rhythm(0.25) rhythm(0.5);
+ }
+
+ div.pkp_controllers_grid .options {
+ 	float:none;
+ 	a {
+ 		// Place "add element" next to the title and smaller
+ 		float:none;
+ 		@include adjust-font-size-to($h5-font-size);
+ 		font-family:$helvetica;
+ 		margin-left:rhythm(1);
+ 	}
+ }
+
+ // Unnecesary padding
+ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty td {
+ 	padding-left:0;
+ }
+
+ // Dialog modals
+
+ .ui-dialog {
+ 	// White bg
+ 	background:#fff;
+ 	// padding in vrhythm
+ 	padding:rhythm(0.5);
+ 	// No border radius
+ 	@include border-radius(0);
+ }
+
+ .ui-dialog .ui-dialog-content {
+ 	// Padding was already set
+ 	padding:0;
+ 	h3 {
+ 		// Explicit override because theme.css messes it all!
+ 		font-family: $headlines;
+ 		// No margin inside modal
+ 		margin-top:0;
+ 	}
+ }
+
+ .ui-widget {
+ 	// Reset to original font
+ 	font-family: $base-font-family;
+ }
+
+ .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+ 	border:none;
+ 	background:none;
+ 	color:inherit;
  }
