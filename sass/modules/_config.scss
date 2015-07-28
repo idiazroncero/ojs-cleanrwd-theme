@@ -2,14 +2,7 @@
 // page revista/manager/setup/
 //
 
-#setupForm {
-	td input[type="checkbox"] {
-		// valign = top on <td> elements unaligns checkboxes. Hacky fix, since we can't access the HTML
-		margin-top:5px;
-	}
-}
-
-// This is a mess...
+// Layout configuracion table
 #assignBlocksToSidebars {
 	background:#eee;
 	@include border-radius(4px);
@@ -26,4 +19,38 @@
 			}
 		}
 	}
+}
+
+// Corrects some missing spacing on the submission checklist
+#submissionPreparationChecklist {
+	input[type="submit"] {
+		margin-left:rhythm(1);
+	}
+}
+
+// Sudden use of <h4> inside tables breaks design...
+#forAuthorsToIndexTheirWork {
+	h4 {
+		@include adjust-font-size-to($base-font-size);
+		margin:0;
+	}
+	table.data td.value {
+		padding-bottom:0;
+	}
+	// The table is a mess with separators used bot outside and inside sections.
+	// We specify the separators we want to hide.
+	// Never felt so hacky...
+	tr:nth-child(11),
+	tr:nth-child(13),
+	tr:nth-child(15) {
+		td.separator {
+			padding:0;
+		}
+	}
+}
+
+// We need to be over-specific to override this h3
+#parserFilterGridContainer h3 {
+   @include adjust-font-size-to($h4-font-size);
+   font-weight:bold;
 }

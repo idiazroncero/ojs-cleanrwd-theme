@@ -1,0 +1,20 @@
+/**
+ * Overrides OJS's base stylesheet /styles/compiled.css.
+ *
+ */
+
+ div.pkp_controllers_grid {
+ 	// use vertical rhythm
+ 	margin-top:rhythm(1);
+ }
+
+ div.pkp_controllers_grid .wrapper {
+ 	// use vertical rhythm
+ 	margin-bottom:0;
+ }
+
+ div.pkp_controllers_grid .grid_header_bar {
+ 	// No styling: black & white
+ 	background-color: transparent;
+    padding: 0;
+ }

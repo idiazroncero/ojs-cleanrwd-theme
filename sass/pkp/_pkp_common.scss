@@ -44,7 +44,7 @@ label.error {
 	color: #900;
 }
 
-input.textField, select.selectMenu, textarea.textArea, input.uploadField {
+input.textField, select.selectMenu, textarea.textArea {
 	// No background for inpunts, just a clean box
 	background-color: #fff;
 	// As an exception, we use Helvetica/Arial for the sake of legibility
@@ -59,6 +59,14 @@ input.textField, select.selectMenu, textarea.textArea, input.uploadField {
 	@include border-radius(2px);
 	// Font size
 	@include adjust-font-size-to($base-font-size);
+}
+
+input.uploadField {
+	// Upload fields are a bit different
+	border:none;
+	@include adjust-font-size-to($h5-font-size, 1);
+	font-family: $helvetica;
+	background:none;
 }
 
 input.button {
@@ -192,7 +200,7 @@ td.value, // Inside value cells
 	margin: 0 0 rhythm(1) 0;
 	padding-top: 0;
 	font-family: $headlines;
-	font-weight: 700;
+	font-weight: normal;
 }
 
 #main h3 {
@@ -235,20 +243,20 @@ td.value, // Inside value cells
 
 #content h3 {
 	// Reset padding/margin and set correct font
-	margin:0;
+	margin: 0 0 rhythm(1) 0;
 	padding:0;
 	font-family: $headlines;
 	@include adjust-font-size-to($h3-font-size);
 }
 
 #content h4 {
-	margin: 0;
+	margin: 0 0 rhythm(1) 0;
 	font-family: $headlines;
 	@include adjust-font-size-to($h4-font-size);
 }
 
 #content h5 {
-	margin: 0;
+	margin: 0 0 rhythm(1) 0;
 	padding:0;
 	@include adjust-font-size-to($h5-font-size);
 }
@@ -382,9 +390,8 @@ table.data td.label {
 }
 
 table.data td.separator {
-	padding: 0.5em;
-	font-size: 0.1em;
-	line-height: 1%;
+	// Make the separator bigger
+	padding: rhythm(1);
 }
 
 table.data td.heading {
@@ -403,7 +410,9 @@ span.nested {
 }
 
 
-// We prefer to style isntructions and form helpers differently:
+// TABLE HACKS AND FIXES
+
+// We prefer to style instructions and form helpers differently:
 .instruct, span.formRequired {
 	font-family:$helvetica;
 	@include adjust-font-size-to($h45-font-size);
@@ -414,14 +423,16 @@ span.nested {
 // while others are put inside the main <td>, alongside the <input> and without class.
 // We have to be hacky: we style every td.value and then undo the changes inside every input.
 // OJS tables are very poorly styled indeed...
-td.value {
+td.value, td.data {
 	// Those are the .instruct styles
 	font-family:$helvetica;
 	@include adjust-font-size-to($h45-font-size);
-	input {
-		// And those are the general input styles.
-		@include adjust-font-size-to($base-font-size);
-	}
+}
+
+// Harcoded valign = top on <td> elements unaligns checkboxes and select boxes respect to the text
+// This is a Hacky fix, since we can't access the HTML.
+td input[type="checkbox"], td input[type="radio"] {
+	margin-top:7px;
 }
 
 /**
@@ -472,27 +483,26 @@ ul.menu a {
 	font-family: $headlines;
 }
 
+// Steplist is used in config sections
 ul.steplist {
-	margin: 0;
-	padding: 0;
-	list-style-type: decimal;
+	// Respect vrhythm
+	margin: rhythm(1) 0;
+	// list-style-type: decimal; // WHY in hell use an <ul> instead of <ol> and then give it a decimal style type???
 }
 
 ul.steplist li {
-	margin: 0;
-	padding: 0;
-	font-size: 0.85em;
-	padding-right: 0.5em;
-	display: inline;
-	text-transform: uppercase;
+	// Use our font sizing
+	@include adjust-font-size-to($base-font-size);
+	// Separate using a border
+	margin-right: rhythm(0.5);
+	padding-right:rhythm(0.5);
+	border-right: 1px solid #ccc;
 }
 
-ul.steplist li.current {
-	font-weight: bold;
-}
-
-ul.steplist a {
-	text-decoration: none;
+ul.steplist li.current a {
+	// add a border
+	border-bottom:rhythm(0.125) solid #ccc;
+	margin-bottom:rhythm(-0.125);
 }
 
 ul.plain {
@@ -519,5 +529,16 @@ ul.filter li {
 div.separator {
 	// Set a bigger margin
 	margin:rhythm(1) 0;
-	border-bottom: 1px dotted #000;
+	border-bottom: 2px solid #CCC;
+	position:relative;
+	// let's embellish it
+	&:before {
+		content:"";
+		border-width:rhythm(0.33);
+		border-style:solid;
+		border-color:#CCC #CCC transparent transparent;
+		position:absolute;
+		top:0;
+		right:0;
+	}
 }
