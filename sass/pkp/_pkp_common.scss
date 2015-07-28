@@ -517,11 +517,7 @@ ul.filter li {
  */
 
 div.separator {
-	width: 100%;
-	margin-top: 1em;
-	margin-bottom: 0.25em;
-	padding: 0;
+	// Set a bigger margin
+	margin:rhythm(1) 0;
 	border-bottom: 1px dotted #000;
-	font-size: 0.5em;
-	line-height: 25%;
 }

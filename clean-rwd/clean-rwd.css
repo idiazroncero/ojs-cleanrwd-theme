@@ -1170,13 +1170,8 @@ ul.filter li {
  */
 /* line 519, ../sass/pkp/_pkp_common.scss */
 div.separator {
-  width: 100%;
-  margin-top: 1em;
-  margin-bottom: 0.25em;
-  padding: 0;
+  margin: 1.5rem 0;
   border-bottom: 1px dotted #000;
-  font-size: 0.5em;
-  line-height: 25%;
 }
 
 /**
@@ -1749,23 +1744,23 @@ td.notificationFunction {
   font-size: inherit;
 }
 
-/* line 52, ../sass/pkp/_sidebar.scss */
-#sidebar * {
+/* line 53, ../sass/pkp/_sidebar.scss */
+#sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 56, ../sass/pkp/_sidebar.scss */
+#sidebar ul li {
+  list-style-type: none;
+}
+/* line 61, ../sass/pkp/_sidebar.scss */
+#sidebar p, #sidebar a, #sidebar label, #sidebar div, #sidebar strong, #sidebar select {
   font-size: 11px;
   font-size: 0.707rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-}
-/* line 58, ../sass/pkp/_sidebar.scss */
-#sidebar ul {
-  margin: 0;
-  padding: 0;
-}
-/* line 61, ../sass/pkp/_sidebar.scss */
-#sidebar ul li {
-  list-style-type: none;
 }
 
 /* line 1, ../sass/modules/_menu.scss */
@@ -1809,4 +1804,31 @@ td.notificationFunction {
 /* line 11, ../sass/modules/_registerform.scss */
 #registerForm tr .value {
   width: 75%;
+}
+
+/* line 6, ../sass/modules/_config.scss */
+#setupForm td input[type="checkbox"] {
+  margin-top: 5px;
+}
+
+/* line 13, ../sass/modules/_config.scss */
+#assignBlocksToSidebars {
+  background: #eee;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 17, ../sass/modules/_config.scss */
+#assignBlocksToSidebars tr td {
+  padding: 0.75rem;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* line 20, ../sass/modules/_config.scss */
+#assignBlocksToSidebars tr td input.button {
+  border: none;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  background-color: #ccc;
+  color: #000;
 }

@@ -49,11 +49,6 @@
 }
 
 #sidebar {
-	* {
-		@include adjust-font-size-to($h5-font-size);
-		font-family:$helvetica;
-		text-transform:uppercase;
-	}
 	// No bullets inside sidebar
 	ul {
 		margin:0;
@@ -62,8 +57,11 @@
 			list-style-type:none;
 		}
 	}
-	// Text a little smaller
-	p, a, label {
+	// Text smaller, uppercase
+	p, a, label, div, strong, select {
+		@include adjust-font-size-to($h5-font-size);
+		font-family:$helvetica;
+		text-transform:uppercase;
 	}
 }
 

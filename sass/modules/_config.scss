@@ -1,0 +1,29 @@
+//
+// page revista/manager/setup/
+//
+
+#setupForm {
+	td input[type="checkbox"] {
+		// valign = top on <td> elements unaligns checkboxes. Hacky fix, since we can't access the HTML
+		margin-top:5px;
+	}
+}
+
+// This is a mess...
+#assignBlocksToSidebars {
+	background:#eee;
+	@include border-radius(4px);
+	tr {
+		td {
+			padding:rhythm(0.5);
+			font-family:$helvetica;
+			input.button {
+				// Reset the original button
+				border:none;
+				@include border-radius(0);
+				background-color:#ccc;
+				color:#000;
+			}
+		}
+	}
+}
