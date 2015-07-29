@@ -120,11 +120,18 @@ input.defaultButton {
 
 // All cases on which submits need to be smaller
 
-td.value, // Inside value cells
-#sidebar .block // Inside sidebar blocks, #id is for complete override
+td.value // Inside value cells
 	{
 	input[type="submit"] {
 		@include adjust-font-size-to($h5-font-size, 0.75);
+		padding: 0 5px;
+	}
+}
+
+#sidebar .block // Inside sidebar blocks, #id is for complete override
+	{
+	input[type="submit"] {
+		@include adjust-font-size-to($h5-font-size, 0.5);
 		padding: 0 5px;
 	}
 }

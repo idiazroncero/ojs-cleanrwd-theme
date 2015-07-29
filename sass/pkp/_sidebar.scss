@@ -39,8 +39,9 @@
 }
 
 #sidebar div.block span.blockSubtitle {
-	display: block;
-	padding: 0;
+	// We need to mark subtitle's hierarchy inside the block
+	font-weight:bold;
+	font-family:$headlines;
 }
 
 #sidebar input.textField, #sidebar select.selectMenu {
