@@ -1,0 +1,48 @@
+//
+// Styles sidebar blocks
+//
+
+#sidebarLanguageToggle {
+	// Separate list and button
+	select {
+		width:50%;
+		@include box-sizing(border-box);
+	}
+	.button {
+		width:39%;
+		margin-left:10%;
+		@include box-sizing(border-box);
+	}
+}
+
+#simpleSearchForm {
+	// All inputs get fullwidth
+	input {
+		width:100%;
+		@include box-sizing(border-box);
+	}
+	// Separate using some margin
+	.button {
+		margin-top:rhythm(0.5);
+	}
+}
+
+#sidebarFontSize {
+	#sizer {
+		a {
+			margin: 0 rhythm(0.5) 0 0;
+		}
+	}
+}
+
+#sidebarUser {
+	td {
+		label {
+			@include adjust-leading-to(0.75);
+		}
+		input[type="submit"] {
+			margin-top:rhythm(0.5);
+			width:100%;
+		}
+	}
+}
