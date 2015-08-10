@@ -205,9 +205,10 @@ td.value // Inside value cells
 #main h2 {
 	// Reset padding/margin and set correct font
 	margin: 0 0 rhythm(1) 0;
-	padding-top: 0;
+	padding: 0;
 	font-family: $headlines;
 	font-weight: normal;
+	border-bottom:1px dotted #ccc;
 }
 
 #main h3 {

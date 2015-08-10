@@ -831,12 +831,13 @@ td.value input[type="submit"] {
 /* line 205, ../sass/pkp/_pkp_common.scss */
 #main h2 {
   margin: 0 0 1.5rem 0;
-  padding-top: 0;
+  padding: 0;
   font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
   font-weight: normal;
+  border-bottom: 1px dotted #ccc;
 }
 
-/* line 213, ../sass/pkp/_pkp_common.scss */
+/* line 214, ../sass/pkp/_pkp_common.scss */
 #main h3 {
   margin: 0 0 1.5rem 0;
   padding-top: 0;
@@ -844,14 +845,14 @@ td.value input[type="submit"] {
   font-weight: 300;
 }
 
-/* line 220, ../sass/pkp/_pkp_common.scss */
+/* line 221, ../sass/pkp/_pkp_common.scss */
 #navbar {
   margin-right: 0;
   padding-bottom: 0;
   border-bottom: 1px solid #000;
 }
 
-/* line 227, ../sass/pkp/_pkp_common.scss */
+/* line 228, ../sass/pkp/_pkp_common.scss */
 #breadcrumb {
   padding: 0.1875rem 0 0 0;
   margin-bottom: 24px;
@@ -864,7 +865,7 @@ td.value input[type="submit"] {
   text-transform: uppercase;
 }
 
-/* line 239, ../sass/pkp/_pkp_common.scss */
+/* line 240, ../sass/pkp/_pkp_common.scss */
 #content {
   margin: 0;
   padding: 0;
@@ -872,7 +873,7 @@ td.value input[type="submit"] {
   border: none;
 }
 
-/* line 251, ../sass/pkp/_pkp_common.scss */
+/* line 252, ../sass/pkp/_pkp_common.scss */
 #content h3 {
   margin: 0 0 1.5rem 0;
   padding: 0;
@@ -883,7 +884,7 @@ td.value input[type="submit"] {
   line-height: 3rem;
 }
 
-/* line 259, ../sass/pkp/_pkp_common.scss */
+/* line 260, ../sass/pkp/_pkp_common.scss */
 #content h4 {
   margin: 0 0 1.5rem 0;
   font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
@@ -893,7 +894,7 @@ td.value input[type="submit"] {
   line-height: 3rem;
 }
 
-/* line 265, ../sass/pkp/_pkp_common.scss */
+/* line 266, ../sass/pkp/_pkp_common.scss */
 #content h5 {
   margin: 0 0 1.5rem 0;
   padding: 0;
@@ -906,7 +907,7 @@ td.value input[type="submit"] {
 /**
  * Breadcrumbs
  */
-/* line 277, ../sass/pkp/_pkp_common.scss */
+/* line 278, ../sass/pkp/_pkp_common.scss */
 #breadcrumb a.current {
   font-weight: bold;
 }
@@ -914,7 +915,7 @@ td.value input[type="submit"] {
 /**
  * Footer elements
  */
-/* line 286, ../sass/pkp/_pkp_common.scss */
+/* line 287, ../sass/pkp/_pkp_common.scss */
 #footer div.debugStats {
   font-size: 0.6em;
 }
@@ -922,51 +923,51 @@ td.value input[type="submit"] {
 /**
  * Additional text styles
  */
-/* line 296, ../sass/pkp/_pkp_common.scss */
+/* line 297, ../sass/pkp/_pkp_common.scss */
 span.disabled, label.disabled {
   color: #666;
 }
 
-/* line 300, ../sass/pkp/_pkp_common.scss */
+/* line 301, ../sass/pkp/_pkp_common.scss */
 a.action, a.file {
   font-size: 0.85em;
   text-transform: uppercase;
 }
 
-/* line 305, ../sass/pkp/_pkp_common.scss */
+/* line 306, ../sass/pkp/_pkp_common.scss */
 a.icon {
   text-decoration: none;
 }
 
-/* line 309, ../sass/pkp/_pkp_common.scss */
+/* line 310, ../sass/pkp/_pkp_common.scss */
 a.icon img {
   border: 0;
 }
 
-/* line 313, ../sass/pkp/_pkp_common.scss */
+/* line 314, ../sass/pkp/_pkp_common.scss */
 a.icon:hover {
   background: none;
 }
 
-/* line 317, ../sass/pkp/_pkp_common.scss */
+/* line 318, ../sass/pkp/_pkp_common.scss */
 span.heading {
   font-size: 0.85em;
   text-transform: uppercase;
 }
 
-/* line 322, ../sass/pkp/_pkp_common.scss */
+/* line 323, ../sass/pkp/_pkp_common.scss */
 span.highlight {
   border-bottom: 1px dotted #000;
 }
 
-/* line 326, ../sass/pkp/_pkp_common.scss */
+/* line 327, ../sass/pkp/_pkp_common.scss */
 div.warningMessage {
   background: url(../templates/images/icons/icon_alert.gif) no-repeat 3px 40%;
   margin: 5px;
   padding: 5px 5px 5px 25px;
 }
 
-/* line 332, ../sass/pkp/_pkp_common.scss */
+/* line 333, ../sass/pkp/_pkp_common.scss */
 .nowrap {
   white-space: nowrap;
 }
@@ -974,19 +975,19 @@ div.warningMessage {
 /**
  * Table styles
  */
-/* line 340, ../sass/pkp/_pkp_common.scss */
+/* line 341, ../sass/pkp/_pkp_common.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em;
 }
 
-/* line 346, ../sass/pkp/_pkp_common.scss */
+/* line 347, ../sass/pkp/_pkp_common.scss */
 table.listing td {
   padding: 0.25em 1.5em 0.25em 0.5em;
 }
 
-/* line 350, ../sass/pkp/_pkp_common.scss */
+/* line 351, ../sass/pkp/_pkp_common.scss */
 table.listing tr.heading td, table.listing td.heading, table.info td.heading {
   font-size: 0.85em;
   text-transform: uppercase;
@@ -994,44 +995,44 @@ table.listing tr.heading td, table.listing td.heading, table.info td.heading {
   padding: 0.75em 1.5em 1em 0.5em;
 }
 
-/* line 357, ../sass/pkp/_pkp_common.scss */
+/* line 358, ../sass/pkp/_pkp_common.scss */
 table.info td.heading {
   padding-left: 0;
 }
 
-/* line 362, ../sass/pkp/_pkp_common.scss */
+/* line 363, ../sass/pkp/_pkp_common.scss */
 table.listing td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic;
 }
 
-/* line 367, ../sass/pkp/_pkp_common.scss */
+/* line 368, ../sass/pkp/_pkp_common.scss */
 table.listing td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 373, ../sass/pkp/_pkp_common.scss */
+/* line 374, ../sass/pkp/_pkp_common.scss */
 table.listing td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%;
 }
 
-/* line 379, ../sass/pkp/_pkp_common.scss */
+/* line 380, ../sass/pkp/_pkp_common.scss */
 table.listing td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%;
 }
 
-/* line 385, ../sass/pkp/_pkp_common.scss */
+/* line 386, ../sass/pkp/_pkp_common.scss */
 table.data td {
   padding-bottom: 0.75rem;
 }
 
-/* line 390, ../sass/pkp/_pkp_common.scss */
+/* line 391, ../sass/pkp/_pkp_common.scss */
 table.data td.label {
   padding-right: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1042,30 +1043,30 @@ table.data td.label {
   font-weight: bold;
 }
 
-/* line 399, ../sass/pkp/_pkp_common.scss */
+/* line 400, ../sass/pkp/_pkp_common.scss */
 table.data td.separator {
   padding: 1.5rem;
 }
 
-/* line 404, ../sass/pkp/_pkp_common.scss */
+/* line 405, ../sass/pkp/_pkp_common.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0;
 }
 
-/* line 409, ../sass/pkp/_pkp_common.scss */
+/* line 410, ../sass/pkp/_pkp_common.scss */
 table.nested tr {
   padding: 0;
   margin: 0;
 }
 
-/* line 414, ../sass/pkp/_pkp_common.scss */
+/* line 415, ../sass/pkp/_pkp_common.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em;
 }
 
-/* line 423, ../sass/pkp/_pkp_common.scss */
+/* line 424, ../sass/pkp/_pkp_common.scss */
 .instruct, span.formRequired {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1074,7 +1075,7 @@ span.nested {
   line-height: 1.5rem;
 }
 
-/* line 433, ../sass/pkp/_pkp_common.scss */
+/* line 434, ../sass/pkp/_pkp_common.scss */
 td.value, td.data, td label {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1083,7 +1084,7 @@ td.value, td.data, td label {
   line-height: 1.5rem;
 }
 
-/* line 441, ../sass/pkp/_pkp_common.scss */
+/* line 442, ../sass/pkp/_pkp_common.scss */
 td input[type="checkbox"], td input[type="radio"] {
   margin-top: 7px;
 }
@@ -1091,7 +1092,7 @@ td input[type="checkbox"], td input[type="radio"] {
 /**
  * Form-specific elements
  */
-/* line 449, ../sass/pkp/_pkp_common.scss */
+/* line 450, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_error {
   /* Named for compatibility with new lessphp structure */
   color: #900;
@@ -1099,7 +1100,7 @@ span.pkp_form_error {
   font-size: 1em;
 }
 
-/* line 455, ../sass/pkp/_pkp_common.scss */
+/* line 456, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_success {
   /* Named for compatibility with new lessphp structure */
   color: #090;
@@ -1107,7 +1108,7 @@ span.pkp_form_success {
   font-size: 1em;
 }
 
-/* line 461, ../sass/pkp/_pkp_common.scss */
+/* line 462, ../sass/pkp/_pkp_common.scss */
 ul.pkp_form_error_list {
   /* Named for compatibility with new lessphp structure */
   color: #900;
@@ -1116,7 +1117,7 @@ ul.pkp_form_error_list {
 /**
  * Other organizational elements
  */
-/* line 470, ../sass/pkp/_pkp_common.scss */
+/* line 471, ../sass/pkp/_pkp_common.scss */
 ul.menu li {
   margin-right: 1.5rem;
   padding: 0;
@@ -1124,12 +1125,12 @@ ul.menu li {
   display: block;
 }
 
-/* line 480, ../sass/pkp/_pkp_common.scss */
+/* line 481, ../sass/pkp/_pkp_common.scss */
 ul.menu li.current {
   font-weight: bold;
 }
 
-/* line 484, ../sass/pkp/_pkp_common.scss */
+/* line 485, ../sass/pkp/_pkp_common.scss */
 ul.menu a {
   display: block;
   font-size: 16px;
@@ -1139,12 +1140,12 @@ ul.menu a {
   font-family: Oswald, Impact, Helvetica, Arial, sans-serif;
 }
 
-/* line 494, ../sass/pkp/_pkp_common.scss */
+/* line 495, ../sass/pkp/_pkp_common.scss */
 ul.steplist {
   margin: 1.5rem 0;
 }
 
-/* line 500, ../sass/pkp/_pkp_common.scss */
+/* line 501, ../sass/pkp/_pkp_common.scss */
 ul.steplist li {
   font-size: 16px;
   font-size: 1rem;
@@ -1155,26 +1156,26 @@ ul.steplist li {
   border-right: 1px solid #ccc;
 }
 
-/* line 509, ../sass/pkp/_pkp_common.scss */
+/* line 510, ../sass/pkp/_pkp_common.scss */
 ul.steplist li.current a {
   border-bottom: 0.1875rem solid #ccc;
   margin-bottom: -0.1875rem;
 }
 
-/* line 515, ../sass/pkp/_pkp_common.scss */
+/* line 516, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em;
 }
 
-/* line 520, ../sass/pkp/_pkp_common.scss */
+/* line 521, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none;
 }
 
-/* line 526, ../sass/pkp/_pkp_common.scss */
+/* line 527, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline;
@@ -1183,13 +1184,13 @@ ul.filter li {
 /**
  * Other organizational elements
  */
-/* line 536, ../sass/pkp/_pkp_common.scss */
+/* line 537, ../sass/pkp/_pkp_common.scss */
 div.separator {
   margin: 1.5rem 0;
   border-bottom: 2px solid #CCC;
   position: relative;
 }
-/* line 542, ../sass/pkp/_pkp_common.scss */
+/* line 543, ../sass/pkp/_pkp_common.scss */
 div.separator:before {
   content: "";
   border-width: 0.495rem;
