@@ -44,6 +44,10 @@
  	padding:rhythm(0.5);
  	// No border radius
  	@include border-radius(0);
+ 	// Forces to take 99% width to avoid overflow (present in original CSS; but overriden)
+ 	.pkp_form select {
+		width:99%;
+ 	}
  }
 
  .ui-dialog .ui-dialog-content {
@@ -67,3 +71,4 @@
  	background:none;
  	color:inherit;
  }
+

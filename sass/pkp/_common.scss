@@ -117,7 +117,8 @@ a:hover {
 }
 
 #announcements {
-	width: 100%;
+	// Corrects menu item taking 100% of width
+	width: auto;
 }
 
 #announcements h3 {
