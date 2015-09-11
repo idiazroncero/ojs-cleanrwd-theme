@@ -22,7 +22,7 @@
 	// INherit font sizes and set correct margin (not padding!!)
 	font-size: inherit;
 	padding:0;
-	margin-bottom: rhythm(1);
+	margin-bottom: rhythm(1) !important; // #sidebarFontSize block has inline CSS that sets margin to 4px. Can't understand why.
 }
 
 #sidebar div.block span.blockTitle {
@@ -50,12 +50,20 @@
 }
 
 #sidebar {
-	// No bullets inside sidebar
+	// Custom bullet (em dash)
 	ul {
 		margin:0;
 		padding:0;
 		li {
+			padding-left:rhythm(1);
 			list-style-type:none;
+			&:before {
+				content: "—";
+				display: inline;
+				float: left;
+				margin-left: rhythm(-1);
+				color:$lighter-font-color;
+			}
 		}
 	}
 	// Text smaller, uppercase

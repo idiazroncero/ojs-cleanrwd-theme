@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic|Oswald:400,300,700);
 /*
 /* OJS-specific version of Normalize.css
@@ -1745,7 +1746,7 @@ td.notificationFunction {
 #sidebar div.block {
   font-size: inherit;
   padding: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 
 /* line 28, ../sass/pkp/_sidebar.scss */
@@ -1778,9 +1779,18 @@ td.notificationFunction {
 }
 /* line 57, ../sass/pkp/_sidebar.scss */
 #sidebar ul li {
+  padding-left: 1.5rem;
   list-style-type: none;
 }
-/* line 62, ../sass/pkp/_sidebar.scss */
+/* line 60, ../sass/pkp/_sidebar.scss */
+#sidebar ul li:before {
+  content: "—";
+  display: inline;
+  float: left;
+  margin-left: -1.5rem;
+  color: #666666;
+}
+/* line 70, ../sass/pkp/_sidebar.scss */
 #sidebar p, #sidebar a, #sidebar label, #sidebar div, #sidebar strong, #sidebar select {
   font-size: 11px;
   font-size: 0.707rem;
@@ -2170,31 +2180,39 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 }
 
 /* line 20, ../sass/modules/_sidebar_blocks.scss */
+#simpleSearchForm table {
+  width: 100%;
+}
+/* line 24, ../sass/modules/_sidebar_blocks.scss */
 #simpleSearchForm input {
   width: 100%;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 25, ../sass/modules/_sidebar_blocks.scss */
+/* line 29, ../sass/modules/_sidebar_blocks.scss */
 #simpleSearchForm .button {
   margin-top: 0.75rem;
 }
 
-/* line 32, ../sass/modules/_sidebar_blocks.scss */
+/* line 36, ../sass/modules/_sidebar_blocks.scss */
 #sidebarFontSize #sizer a {
   margin: 0 0.75rem 0 0;
 }
 
-/* line 40, ../sass/modules/_sidebar_blocks.scss */
+/* line 44, ../sass/modules/_sidebar_blocks.scss */
 #sidebarUser td label {
   line-height: 18px;
   line-height: 1.125rem;
 }
-/* line 43, ../sass/modules/_sidebar_blocks.scss */
+/* line 47, ../sass/modules/_sidebar_blocks.scss */
 #sidebarUser td input[type="submit"] {
   margin-top: 0.75rem;
   width: 100%;
+}
+/* line 54, ../sass/modules/_sidebar_blocks.scss */
+#sidebarUser > br {
+  display: none;
 }
 
 /* line 1, ../sass/modules/_footer.scss */

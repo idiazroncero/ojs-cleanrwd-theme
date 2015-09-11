@@ -16,6 +16,10 @@
 }
 
 #simpleSearchForm {
+	// We need the table to span all width
+	table {
+		width:100%;
+	}
 	// All inputs get fullwidth
 	input {
 		width:100%;
@@ -44,5 +48,10 @@
 			margin-top:rhythm(0.5);
 			width:100%;
 		}
+	}
+	// A bit hacky... make the first <br> disappear in order to avoid a newline between
+	// "logged in as" and the current user name.
+	> br {
+		display:none;
 	}
 }

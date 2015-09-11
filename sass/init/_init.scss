@@ -57,6 +57,10 @@ $indent-amount: 40px !default;
 // The default color of text, headings, etc...
 $font-color: #333;
 
+// Derivations of font-color (used for bullets, emphasis, etc)
+$lighter-font-color: tint($font-color, 25%);
+//$darker-font-color: shade($font-color, 33%);
+
 // Colors of the different states of the links
 $link: #666 ;
 $link-active: #666;
