@@ -1,6 +1,6 @@
 # IN DEVELOPMENT - NOT READY FOR PRODUCTION
 ## Open Journal System Clean, Responsive Theme
-*v0.0.1*
+*v0.0.2*
 
 ### What is this
 
