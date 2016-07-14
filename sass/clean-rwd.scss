@@ -10,13 +10,12 @@
 // OJS overrides
 @import "pkp/pkp_common";
 @import "pkp/common";
-@import "pkp/rightSidebar";
-@import "pkp/leftSidebar";
 @import "pkp/sidebar";
 @import "pkp/tinymce";
 @import "pkp/compiled";
 
 // Specific modules
+@import "modules/forms";
 @import "modules/menu";
 @import "modules/registerform";
 @import "modules/config";

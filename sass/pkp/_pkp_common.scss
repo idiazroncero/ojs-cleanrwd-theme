@@ -44,23 +44,6 @@ label.error {
 	color: #900;
 }
 
-input.textField, select.selectMenu, textarea.textArea {
-	// No background for inpunts, just a clean box
-	background-color: #fff;
-	// As an exception, we use Helvetica/Arial for the sake of legibility
-	font-family: $helvetica;
-	// We want a clean, plain border.
-	border: 1px solid #999;
-	// Some padding to enhance legibility
-	padding:0 rhythm(0.25);
-	// A small border-radius.
-	// It is a convention that user inout (buttons, forms) have some kind of radius.
-	// we try to follow convention without exxagerating to keep the design clean and minimal.
-	@include border-radius(2px);
-	// Font size
-	@include adjust-font-size-to($base-font-size);
-}
-
 input.uploadField {
 	// Upload fields are a bit different
 	border:none;
@@ -69,39 +52,7 @@ input.uploadField {
 	background:none;
 }
 
-input.button, button.ui-button.ui-button-text-only .ui-button-text {
-	// Padding as vertical rhythm.
-	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
-	padding:rhythm(0.125) rhythm(0.5);
-	// Stop using that green!
-	background-color: $button;
-	// We check the user input value and decide the color of our font:
-	@if lightness($button) >= 50 {
-		color: #000;
-	} @else {
-		color: #fff;
-	}
-	// Inherit font but make it smaller
-	@include adjust-font-size-to($base-font-size);
-	font-family:$headlines;
-	// Flat design
-	border:none;
-	// Uppercase works better than lowercase.
-	text-transform:uppercase;
-	// A small border-radius.
-	// It is a convention that user inout (buttons, forms) have some kind of radius.
-	// we try to follow convention without exxagerating to keep the design clean and minimal.
-	@include border-radius(3px);
-	// WTF
-	letter-spacing:1px;
-	// Animate border on hover
-	border:rhythm(0.125) solid transparent;
-	&:hover {
-		border-color:$button;
-		background:none;
-		color:$font-color;
-	}
-}
+
 
 input.defaultButton {
 	// Stop using that green!
@@ -128,49 +79,6 @@ td.value // Inside value cells
 	}
 }
 
-#sidebar .block // Inside sidebar blocks, #id is for complete override
-	{
-	input[type="submit"] {
-		@include adjust-font-size-to($h5-font-size, 0.5);
-		padding: 0 5px;
-	}
-}
-
-
-/**
- * Main layout elements
- */
-
-#container {
-	// Existent min-width disables responsive web design.
-	// We have to explicitly override it and keep the !important tag.
-	min-width: 0 !important;
-	// We prefer centered content. It's just an opinionated design choice - and it's easier for RWD
-	// To completely redo the main layout, we start by making #container the main wrapper.
-	max-width: $max-width;
-}
-
-#header {
-	width: 100%;
-	text-align: center;
-	// Separate header from main elements... let it breathe
-	margin-bottom:rhythm(1);
-}
-
-#header h1 {
-	// Use vertical rhythm & stop using 10% to separate it from the left side since we use the #container wrapper.
-	padding: rhythm(1) 0 0 0;
-	// We need to override again the font-family
-	// Can't understad why this wasn't defined as h1, h2, h3 { } ...
-	font-family: $headlines;
-	font-weight: bold;
-}
-
-// We insert a clearfix inside body because we don't want it to lose its height (all its child elements are floated)
-#body {
-	@include pie-clearfix();
-}
-
 
 // Why? OJS seems to have only "journal footers", not "general" ones.
 // These IDs seem to be useless... (let's see)
@@ -186,20 +94,6 @@ td.value // Inside value cells
 	width: 100%;
 	margin: 0 auto;
 	padding-left: 10%;
-}
-
-#main {
-	// We want #main to occupy all space left by sidebars
-	width:auto;
-	// Reset padding to 0
-	padding: 0;
-	// We don't use 10% margin to separate content from the left since we're using #container
-	// as a main wrapper.
-	margin:0;
-	// We don't want it to behave inline
-	display:block;
-	// And we don't want a float
-	float:none;
 }
 
 #main h2 {

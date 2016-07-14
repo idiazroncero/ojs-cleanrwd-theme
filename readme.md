@@ -33,26 +33,20 @@ The right thing should be to completely revamp OJS's markup. Again: this is not 
 
 ### Install
 
-TODO
+- Download or clone the last release
+- Place the clean-rwd folder inside your OJS installation. The path is /plugins/themes
+- Go to /index/admin/settings and enable the theme
 
-### Customization and file structure
+### Config and develop
 
-In order to tailor the theme to your needs, you will have to be familiar at least with CSS.
+The `SASS` folder includes all the files that compile to `/clean-rwd/clean-rwd.css`.
 
-The beta version ships with little configuration options. Next versions will be ready to be easily customizable by using SCSS variables. Just access _init.scss, read the documentation, change the variables to meet your needs and compile your CSS using your weapon of choice.
-
-Use the following files in SASS folder to modify the theme and re-compile clean-rwd.css.
-
-### init
+The following files, placed under `/sass/init` hold the theme configuration.
 
 #### _fonts.scss
 
-Modify the `@import` statement to use your preferred fonts from Google Fonts.
-Remember you'll have to modify the font variables as well.
-
-#### _normalize.scss
-
-__This file is not intended to be modified.__
+Modify the `@import` statement to use your preferred fonts from Google Fonts. We can't support `<link>` tags since we decided not to modify the templates. 
+Remember you'll have to include a new font variable as well on `/sass/init/_init.scss`.
 
 #### _init.scss
 
@@ -60,25 +54,24 @@ This is where almost all configuration takes place.
 
 Use the SCSS variables to customize your theme. Every variable is documented and explained.
 
-If you need to @import any SCSS libraries such as Susy, Zen Grids, etc... do it here.
+If you need to @import any SCSS gems such as Susy, etc... do it here.
 
-### pkp
+### Build
 
-This folder contains an overriden copy of OJS __original__ CSS files.
+A rather basic grunt workflow is included:
+- `grunt default` is the same as `grunt prod`. It preprocesses the SASS files via Compass and then postprocess the result with Autoprefixer and puts the result into `/clean-rwd/clean-rwd.css` minified.
+- `grunt dev` does the same thing but it outputs the css nested and mapped to the original SCSS files.
+- `grunt csslint` lints the CSS file
+- `grunt watch:prod` and `grunt watch:dev` watch every .scss file and do either the dev or prod tasks.
 
-This files only contain the needed explicit overrides. For example, it overrides background colors for `#header`, sets our `font-size` and `line-height` to heading elements and changes the paddings and margins to use compass' vertical rhythm.
+### Dependencies
 
-However, it does not *redesign* them. It only normalizes them according to our pre-defined set of rules (namely: a given vertical rhythm that has to be honored, a tipographic aspect ratio and some basic rules of thumb about lines, links and font-weights).
+If you need to do your own build of the project, you'll need to have locally installed Compass and Breakpoint.
 
-The aim is to make the re-styling of OJS a three-step process: normalisation of generic HTML, normalization and adaptation of OJS's HTML and re-design.
+It is as easy as typing `gem install breakpoint` and `gem install compass` in your terminal.
 
-This folder __only__ takes care of the second step.
+In future versions, I will include a gemfile to indicate the correct versions. 
 
-### modules
-
-Following SMACSS naming convention, this is where theme re-design takes place in the form of 'modules'.
-
-Each module has its own .scss file. Names are self-explanatory.
 
 
 [ojs]: https://pkp.sfu.ca/ojs/

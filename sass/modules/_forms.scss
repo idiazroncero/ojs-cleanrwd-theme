@@ -1,0 +1,74 @@
+/*
+ * Forms are messy.
+ * Everything around OJS is messy.
+ * But forms are a disaster
+ * Please forgive all the nonsensical CSS here.
+ */
+
+
+input.textField, 
+select.selectMenu, 
+textarea.textArea, 
+input.uploadField { // We try to normalize all heights and font sízes.
+	@include adjust-font-size-to($base-font-size);
+	@include adjust-leading-to(1);
+	height:rhythm(1.5);
+	// No background for inputs, just a clean box
+	background-color: #fff !important;
+	// Custom border-radius
+	border-radius: $border-radius;
+	// We want a clean, plain border.
+	border: 1px solid $line-color;
+}
+
+select.selectMenu {
+	// Select needs a little help to conform to line-height standards
+	padding:rhythm(0.125) 0;
+	height:rhythm(1.5);
+}
+
+input[type="text"] {
+	// Some padding to enhance legibility
+	padding:0 rhythm(0.25);
+}
+
+input[type="submit"] {
+	@include adjust-font-size-to($h5-font-size, 0.5);
+	padding: 0 5px;
+}
+
+
+//
+// BUTTONS
+//
+
+input.button, button.ui-button.ui-button-text-only .ui-button-text {
+	// Padding as vertical rhythm.
+	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
+	padding:0 rhythm(0.5);
+	height:rhythm(1.5);
+	// Stop using that green!
+	background-color: $button-color;
+	// We check the user input value and decide the color of our font:
+	@if lightness($button-color) >= 50 {
+		color: #000;
+	} @else {
+		color: #fff;
+	}
+	// Inherit font but make it smaller
+	@include adjust-font-size-to($base-font-size);
+	@include adjust-leading-to(1);
+	font-family:$headlines;
+	// Flat design
+	border:none;
+	// Uppercase works better than lowercase.
+	text-transform:uppercase;
+	border-radius:$border-radius;
+	// Animate border on hover
+	border:$button-border-width solid $button-border-color;
+	cursor:pointer;
+	&:hover {
+		background:darken($button-color, 15%);
+		border-color:darken($button-border-color, 15%);
+	}
+}

@@ -22,6 +22,7 @@ $strict-normalize: false !default;
 // 2 - TYPOGRAPHY & VERTICAL RHYTHM
 //
 
+// We use Compass' mixins and functions: http://compass-style.org/reference/compass/typography/vertical_rhythm/
 // The font size set on the root html element.
 $base-font-size: 16px !default;
 // The base line height determines the basic unit of vertical rhythm.
@@ -29,6 +30,8 @@ $base-line-height: 24px !default;
 // The length unit in which to output vertical rhythm values.
 // Supported values: px, em.
 $rhythm-unit: 'rem' !default;
+// Allow big sizes to cut to 1/2 line-height to above excessive spacing
+$round-to-nearest-half-line: true;
 
 // Library of ready-to-use fonts
 $merriweather: Merriweather, Georgia, Times, serif;
@@ -48,7 +51,7 @@ $monospace: $courier;
 // Choose the font type we want to use for main texts (paragraphs, etc);
 $base-font-family: $serif;
 // Choose an alternate font to combine with the main font.
-$alt-font-family: $sans-serif;
+$alt-font-family: $headlines;
 // We will also use $headlines for the headings and $monospace for code.
 
 // The font sizes for h1-h6.
@@ -72,6 +75,8 @@ $indent-amount: 40px !default;
 
 // The default color of text, headings, etc...
 $font-color: #333;
+// Default color for lines, separators, etc.
+$line-color: orange;
 
 // Derivations of font-color (used for bullets, emphasis, etc)
 $light-font-color: tint($font-color, 25%);
@@ -85,7 +90,9 @@ $link-hover: tint($link, 25%);
 
 // Buttons
 $default-button: #000;
-$button: #eee;
+$button-color: #fff;
+$button-border-width: 2px; // Want plain buttons? Set this value to 0
+$button-border-color: #eee;
 
 
 
@@ -105,11 +112,31 @@ $link-style: solid-after; 		// dotted-before = border-bottom is dotted before :h
 //
 
 // Max-width of the main container
-$max-width:1000px;
+$max-width:960px;
 
+// Sidebar size (recommended as % of width)
+$left-sidebar-width: 25%;
+$right-sidebar-width: 25%;
+
+// Breakpoints
+$small: 480px;
+$medium: 768px;
+$screen: 960px;
+
+// Define the specific breakpoint on which the sidebar and content move to a column
+// You can use one of the breakpoints above or define your own.
+$sidebar-breakpoint: 600px;
+
+
+//
+// 6 - FORMS
+//
+
+$border-radius: 0; // In px.
 
 // After the default variables are set, import the required Compass partials.
 @import "compass/support";
 @import "compass/typography/vertical_rhythm";
 @import "compass/utilities/general/clearfix";
 @import "compass/css3";
+@import "breakpoint";
