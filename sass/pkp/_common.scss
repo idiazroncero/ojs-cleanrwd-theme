@@ -24,7 +24,7 @@ a:link {
 	color: $link;
 	@if $link-style == dotted-before {
 		border-bottom:1px dotted $link-hover;
-	} @else if $link-style == classic {
+	} @else if $link-style == solid-before {
 		text-decoration:underline;
 	}
 }
@@ -40,11 +40,11 @@ a:visited {
 a:hover {
 	color: $link-hover;
 	background: transparent;
-	@if $link-style == dotted-before {
+	@if $link-style == dotted-before or $link-style == solid-before {
 		border-bottom:none;
 	} @else if $link-style == dotted-after {
 		border-bottom:1px dotted $link-hover;
-	} @else if $link-style == classic {
+	} @else if $link-style == solid-after {
 		text-decoration:underline;
 	}
 }
@@ -63,12 +63,6 @@ a:hover {
 	// Explicitly overrides ANY color. TODO: ¿set in variable? 
 	background-color: transparent;
 }
-
-// Esto cambia el layout y no se muy bien que hacer con ello
-// #main {
-// 	width: 80%;
-// 	margin: 0 auto;
-// }
 
 
 /**
@@ -426,7 +420,7 @@ td.notificationFunction {
 		// Border radius as input
 		@include border-radius(2px);
 		// Overrides jquery UI font size and family:
-		@include adjust-font-size-to($h45-font-size);
+		@include adjust-font-size-to($h5-font-size);
 		font-family:$helvetica;
 	}
 
@@ -452,7 +446,7 @@ td.notificationFunction {
 		input {
 			// We need to be extra specific and repeat ourselves. Jquery UI really messes it up here
 			font-family:$helvetica;
-			@include adjust-font-size-to($h45-font-size);
+			@include adjust-font-size-to($h5-font-size);
 		}
 	}	
 

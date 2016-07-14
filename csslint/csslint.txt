@@ -1,0 +1,104 @@
+clean-rwd/clean-rwd.css: line 70, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 71, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 88, col 1, Error - Unqualified attribute selectors are known to be slow.
+clean-rwd/clean-rwd.css: line 111, col 1, Error - Outlines should only be modified using :focus.
+clean-rwd/clean-rwd.css: line 394, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 396, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 435, col 3, Error - The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+clean-rwd/clean-rwd.css: line 439, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 483, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 485, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 505, col 3, Error - The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+clean-rwd/clean-rwd.css: line 516, col 5, Error - The property -moz-appearance is compatible with -webkit-appearance and should be included as well.
+clean-rwd/clean-rwd.css: line 522, col 1, Error - The properties padding-top, padding-bottom, padding-left, padding-right can be replaced by padding.
+clean-rwd/clean-rwd.css: line 558, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 623, col 1, Error - Element (label.error) is overqualified, just use .error without element name.
+clean-rwd/clean-rwd.css: line 627, col 37, Error - Element (textarea.textArea) is overqualified, just use .textArea without element name.
+clean-rwd/clean-rwd.css: line 639, col 1, Error - Element (input.uploadField) is overqualified, just use .uploadField without element name.
+clean-rwd/clean-rwd.css: line 649, col 15, Error - Don't use adjoining classes.
+clean-rwd/clean-rwd.css: line 662, col 3, Error - Duplicate property 'border' found.
+clean-rwd/clean-rwd.css: line 664, col 23, Error - Don't use adjoining classes.
+clean-rwd/clean-rwd.css: line 709, col 9, Error - Heading (h1) has already been defined.
+clean-rwd/clean-rwd.css: line 709, col 9, Error - Heading (h1) should not be qualified.
+clean-rwd/clean-rwd.css: line 716, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 735, col 3, Error - Using width with padding-left can sometimes make elements larger than you expect.
+clean-rwd/clean-rwd.css: line 746, col 7, Error - Heading (h2) should not be qualified.
+clean-rwd/clean-rwd.css: line 746, col 7, Error - Heading (h2) has already been defined.
+clean-rwd/clean-rwd.css: line 754, col 7, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 754, col 7, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 786, col 10, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 786, col 10, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 796, col 10, Error - Heading (h4) has already been defined.
+clean-rwd/clean-rwd.css: line 796, col 10, Error - Heading (h4) should not be qualified.
+clean-rwd/clean-rwd.css: line 805, col 10, Error - Heading (h5) has already been defined.
+clean-rwd/clean-rwd.css: line 805, col 10, Error - Heading (h5) should not be qualified.
+clean-rwd/clean-rwd.css: line 824, col 9, Error - Element (div.debugStats) is overqualified, just use .debugStats without element name.
+clean-rwd/clean-rwd.css: line 835, col 11, Error - Element (a.file) is overqualified, just use .file without element name.
+clean-rwd/clean-rwd.css: line 835, col 1, Error - Element (a.action) is overqualified, just use .action without element name.
+clean-rwd/clean-rwd.css: line 857, col 1, Error - Element (span.highlight) is overqualified, just use .highlight without element name.
+clean-rwd/clean-rwd.css: line 861, col 1, Error - Element (div.warningMessage) is overqualified, just use .warningMessage without element name.
+clean-rwd/clean-rwd.css: line 951, col 12, Error - Element (span.formRequired) is overqualified, just use .formRequired without element name.
+clean-rwd/clean-rwd.css: line 974, col 1, Error - Element (span.pkp_form_error) is overqualified, just use .pkp_form_error without element name.
+clean-rwd/clean-rwd.css: line 981, col 1, Error - Element (span.pkp_form_success) is overqualified, just use .pkp_form_success without element name.
+clean-rwd/clean-rwd.css: line 988, col 1, Error - Element (ul.pkp_form_error_list) is overqualified, just use .pkp_form_error_list without element name.
+clean-rwd/clean-rwd.css: line 1035, col 1, Error - Element (ul.plain) is overqualified, just use .plain without element name.
+clean-rwd/clean-rwd.css: line 1130, col 10, Error - Element (img.accessLogo) is overqualified, just use .accessLogo without element name.
+clean-rwd/clean-rwd.css: line 1155, col 20, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 1155, col 20, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 1163, col 16, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 1163, col 16, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 1214, col 21, Error - Element (tr.details) is overqualified, just use .details without element name.
+clean-rwd/clean-rwd.css: line 1218, col 21, Error - Element (td.posted) is overqualified, just use .posted without element name.
+clean-rwd/clean-rwd.css: line 1223, col 21, Error - Element (td.more) is overqualified, just use .more without element name.
+clean-rwd/clean-rwd.css: line 1249, col 1, Error - Don't use adjoining classes.
+clean-rwd/clean-rwd.css: line 1267, col 1, Error - Don't use adjoining classes.
+clean-rwd/clean-rwd.css: line 1269, col 3, Error - Using width with padding-left can sometimes make elements larger than you expect.
+clean-rwd/clean-rwd.css: line 1299, col 3, Error - Duplicate property 'margin' found.
+clean-rwd/clean-rwd.css: line 1371, col 23, Error - Element (td.drag) is overqualified, just use .drag without element name.
+clean-rwd/clean-rwd.css: line 1378, col 1, Error - Element (div.progressbar) is overqualified, just use .progressbar without element name.
+clean-rwd/clean-rwd.css: line 1386, col 1, Error - Element (td.notificationContent) is overqualified, just use .notificationContent without element name.
+clean-rwd/clean-rwd.css: line 1391, col 1, Error - Element (td.notificationFunction) is overqualified, just use .notificationFunction without element name.
+clean-rwd/clean-rwd.css: line 1407, col 1, Error - Outlines should only be modified using :focus.
+clean-rwd/clean-rwd.css: line 1409, col 3, Error - Negative text-indent doesn't work well with RTL. If you use text-indent for image replacement explicitly set direction for that item to ltr.
+clean-rwd/clean-rwd.css: line 1482, col 17, Error - Values of 0 shouldn't have units specified.
+clean-rwd/clean-rwd.css: line 1484, col 3, Error - Using width with padding-left can sometimes make elements larger than you expect.
+clean-rwd/clean-rwd.css: line 1485, col 3, Error - Using width with border-left can sometimes make elements larger than you expect.
+clean-rwd/clean-rwd.css: line 1489, col 17, Error - Values of 0 shouldn't have units specified.
+clean-rwd/clean-rwd.css: line 1503, col 16, Error - Values of 0 shouldn't have units specified.
+clean-rwd/clean-rwd.css: line 1508, col 17, Error - Values of 0 shouldn't have units specified.
+clean-rwd/clean-rwd.css: line 1535, col 20, Error - Element (span.blockTitle) is overqualified, just use .blockTitle without element name.
+clean-rwd/clean-rwd.css: line 1546, col 20, Error - Element (span.blockSubtitle) is overqualified, just use .blockSubtitle without element name.
+clean-rwd/clean-rwd.css: line 1566, col 7, Error - display:inline has no effect on floated elements (but may be used to fix the IE6 double-margin bug).
+clean-rwd/clean-rwd.css: line 1625, col 28, Error - Element (a.mceResize) is overqualified, just use .mceResize without element name.
+clean-rwd/clean-rwd.css: line 1625, col 1, Error - Outlines should only be modified using :focus.
+clean-rwd/clean-rwd.css: line 1650, col 3, Error - Background image '../../img/icons.gif' was used multiple times, first declared at line 1628, col 3.
+clean-rwd/clean-rwd.css: line 1662, col 14, Error - Element (td.mceRight) is overqualified, just use .mceRight without element name.
+clean-rwd/clean-rwd.css: line 1671, col 10, Error - Heading (h1) should not be qualified.
+clean-rwd/clean-rwd.css: line 1671, col 10, Error - Heading (h1) has already been defined.
+clean-rwd/clean-rwd.css: line 1674, col 10, Error - Heading (h2) has already been defined.
+clean-rwd/clean-rwd.css: line 1674, col 10, Error - Heading (h2) should not be qualified.
+clean-rwd/clean-rwd.css: line 1677, col 10, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 1677, col 10, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 1680, col 10, Error - Heading (h4) should not be qualified.
+clean-rwd/clean-rwd.css: line 1680, col 10, Error - Heading (h4) has already been defined.
+clean-rwd/clean-rwd.css: line 1683, col 10, Error - Heading (h5) should not be qualified.
+clean-rwd/clean-rwd.css: line 1683, col 10, Error - Heading (h5) has already been defined.
+clean-rwd/clean-rwd.css: line 1686, col 10, Error - Heading (h6) should not be qualified.
+clean-rwd/clean-rwd.css: line 1686, col 10, Error - Heading (h6) has already been defined.
+clean-rwd/clean-rwd.css: line 1694, col 3, Error - The property -ms-user-select is compatible with -webkit-user-select and -moz-user-select and should be included as well.
+clean-rwd/clean-rwd.css: line 1694, col 3, Error - Missing standard property 'user-select' to go along with '-webkit-user-select'.
+clean-rwd/clean-rwd.css: line 1696, col 3, Error - Missing standard property 'user-select' to go along with '-moz-user-select'.
+clean-rwd/clean-rwd.css: line 1702, col 10, Error - Element (span.mceItemNbsp) is overqualified, just use .mceItemNbsp without element name.
+clean-rwd/clean-rwd.css: line 1784, col 33, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 1784, col 33, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 1800, col 3, Error - Property with star prefix found.
+clean-rwd/clean-rwd.css: line 1818, col 5, Error - The property -moz-transition is compatible with -webkit-transition and should be included as well.
+clean-rwd/clean-rwd.css: line 1818, col 5, Error - The property -o-transition is compatible with -webkit-transition and should be included as well.
+clean-rwd/clean-rwd.css: line 1851, col 29, Error - Heading (h4) has already been defined.
+clean-rwd/clean-rwd.css: line 1851, col 29, Error - Heading (h4) should not be qualified.
+clean-rwd/clean-rwd.css: line 1867, col 59, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 1867, col 28, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: line 1867, col 28, Error - Heading (h3) should not be qualified.
+clean-rwd/clean-rwd.css: line 1867, col 59, Error - Heading (h3) has already been defined.
+clean-rwd/clean-rwd.css: Warning - Too many font-size declarations (94), abstraction needed.
+clean-rwd/clean-rwd.css: Warning - You have 3 h1s, 3 h2s, 9 h3s, 4 h4s, 3 h5s, 2 h6s defined in this stylesheet.

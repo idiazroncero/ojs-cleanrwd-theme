@@ -1,7 +1,8 @@
 # IN DEVELOPMENT - NOT READY FOR PRODUCTION
 ## Open Journal System Clean, Responsive Theme
+*v0.0.2*
 
-![Preview](http://idiazroncero.com/images/ojsclean.png)
+### What is this
 
 [Open Journal System][ojs] is the leading scientific journal manager. 
 
@@ -11,48 +12,41 @@ However, Open Journal System's 2.x look and feel is __very__ outdated. If you us
 
 Scientific journals *can* and *should* be attractive.
 
-This theme aims to give OJS a clean, minimalistic, responsive and modern-looking air by using nowadays' standards lacking in the original themes:
+This theme aims to give OJS a clean, minimalistic, responsive and modern-looking air by using modern standards lacking in the original themes:
 
-- Use of @font-face.
+- Custom fonts using @font-face.
 - Responsive, mobile-first web design.
-- Vertical rhythm
+- Vertical rhythm-
+- SASS and Grunt-based workflow
 
 You can use this theme as it is, but you might find it rather dull. This is because it is intended to serve __both__ as a minimalistic theme AND a starter kit to be extended and customised.
 
-## Know your limits: why are there so many CSS hacks?
+### Why so hackish? (a note for developers)
 
-Sadly, an OJS 2.x theme plugin *can only affect the styling (CSS) layer*. This theme *won't change HTML structure", meaning that some outdated techniques - like the excessive use of `table`s - and some painfully evident HTML errors can't be changed, only "outstyled" via CSS.
+By design, an OJS 2.x theme plugin *can only affect the styling (CSS) layer*. This means *we can't change HTML structure*. Of course we could, but I want to make this theme as straightforward as possible. For non tech-savvy users, it should be just plug and play.
 
-OJS 2.x doesn't respect the "separation of concerns" principle and ships with too many inline CSS, explicit table cell widths and so on.
+This is a major drawback and means that most outdated techniques (like the use of `table` for layout or tags like `font`) and some painfully evident HTML errors can't be changed, only overriden via CSS.
 
-You may be surprised by the amount of !important declarations and CSS hacks (display:none and so on) found in the CSS. Those are not to be considered bad practices but necesary hacks in order to completely "reset" OJS's default layout and set a consistent and flexible base to work upon.
+This is why developers may be surprised by the abuse of !important declarations and CSS hacks (display:none and so on) to be found inside the CSS files. Please consider them not as bad practices but necessary hacks in order to completely "reset" OJS's default layout and set a consistent and flexible base to work upon.
 
-And yes, it would be better to completely revamp OJS's markup. This is not the scope of this project, as it aims to create a simple, plug-and-play theme plugin. 
+The right thing should be to completely revamp OJS's markup. Again: this is not the scope of this project, as it aims to create a simple, plug-and-play theme plugin that just works out of the box.
 
-[ojs]: https://pkp.sfu.ca/ojs/
+### Install
 
-## Install
+- Download or clone the last release
+- Place the clean-rwd folder inside your OJS installation. The path is /plugins/themes
+- Go to /index/admin/settings and enable the theme
 
-TODO
+### Config and develop
 
-## Customization and file structure
+The `SASS` folder includes all the files that compile to `/clean-rwd/clean-rwd.css`.
 
-In order to tailor the theme to your needs, you will have to be familiar at least with CSS.
-
-The beta version will ships with little configuration options. Next versions will be ready to be easily customizable by using SCSS variables. Just access _init.scss, read the documentation, change the variables to meet your needs and compile your CSS using your weapon of choice.
-
-Use the following files in SASS folder to modify the theme and re-compile clean-rwd.css.
-
-### init
+The following files, placed under `/sass/init` hold the theme configuration.
 
 #### _fonts.scss
 
-Modify the `@import` statement to use your preferred fonts from Google Fonts.
-Remember you'll have to modify the font variables as well.
-
-#### _normalize.scss
-
-__This file is not intended to be modified.__
+Modify the `@import` statement to use your preferred fonts from Google Fonts. We can't support `<link>` tags since we decided not to modify the templates. 
+Remember you'll have to include a new font variable as well on `/sass/init/_init.scss`.
 
 #### _init.scss
 
@@ -60,22 +54,24 @@ This is where almost all configuration takes place.
 
 Use the SCSS variables to customize your theme. Every variable is documented and explained.
 
-If you need to @import any SCSS libraries such as Susy, Zen Grids, etc... do it here.
+If you need to @import any SCSS gems such as Susy, etc... do it here.
 
-### pkp
+### Build
 
-This folder contains an overriden copy of OJS __original__ CSS files.
+A rather basic grunt workflow is included:
+- `grunt default` is the same as `grunt prod`. It preprocesses the SASS files via Compass and then postprocess the result with Autoprefixer and puts the result into `/clean-rwd/clean-rwd.css` minified.
+- `grunt dev` does the same thing but it outputs the css nested and mapped to the original SCSS files.
+- `grunt csslint` lints the CSS file
+- `grunt watch:prod` and `grunt watch:dev` watch every .scss file and do either the dev or prod tasks.
 
-This files only contain the needed explicit overrides. For example, it overrides background colors for `#header`, sets our `font-size` and `line-height` to heading elements and changes the paddings and margins to use compass' vertical rhythm.
+### Dependencies
 
-However, it does not *redesign* them. It only normalizes them according to our pre-defined set of rules (namely: a given vertical rhythm that has to be honored, a tipographic aspect ratio and some basic rules of thumb about lines, links and font-weights).
+If you need to do your own build of the project, you'll need to have locally installed Compass and Breakpoint.
 
-The aim is to make the re-styling of OJS a three-step process: normalisation of generic HTML, normalization and adaptation of OJS's HTML and re-design.
+It is as easy as typing `gem install breakpoint` and `gem install compass` in your terminal.
 
-This folder __only__ takes care of the second step.
+In future versions, I will include a gemfile to indicate the correct versions. 
 
-### modules
 
-Following SMACSS naming convention, this is where theme re-design takes place in the form of 'modules'.
 
-Each module has its own .scss file. Names are self-explanatory.
+[ojs]: https://pkp.sfu.ca/ojs/

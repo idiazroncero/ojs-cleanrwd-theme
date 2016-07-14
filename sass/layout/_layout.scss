@@ -1,0 +1,128 @@
+/**
+ * We re-group here all layout-related properties scattered along the original OJS' stylesheets
+ */
+
+#container {
+	// Existent min-width disables responsive web design.
+	// We have to explicitly override it and keep the !important tag.
+	min-width: 0 !important;
+	// We prefer centered content. It's just an opinionated design choice - and it's easier for RWD
+	// To completely redo the main layout, we start by making #container the main wrapper.
+	max-width: $max-width;
+	padding:0 rhythm(1);
+	@include breakpoint($max-width) {
+		padding:0;
+	}
+}
+
+#header {
+	width: 100%;
+	text-align: center;
+	// Separate header from top and main elements... let it breathe
+	// We break the only-margin-bottom rule because this is the first element in page.
+	margin:rhythm(1) 0;
+}
+
+#main {
+	// We want #main to occupy all space left by sidebars
+	width:auto;
+	// Reset padding to 0
+	padding: 0;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin:0;
+	// We don't want it to behave inline
+	display:block;
+	// And we don't want a float
+	float:none;
+}
+
+// Modificaremos el layout en proximas ediciones
+#leftSidebar {
+	// We need to specifically override these also
+	float:none;
+	width:100%;
+	@include breakpoint($sidebar-breakpoint) {
+		float: left;
+		width: $left-sidebar-width;
+		// Separator
+		margin-right: rhythm(1);
+		padding-right:rhythm(1);
+		border-right:1px solid $line-color;
+	}
+	// No padding
+	padding: 0;
+	// Inherits from $base-font-size
+	font-size: inherit;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-left: 0%;
+}
+
+// Modificaremos el layout en proximas ediciones
+#rightSidebar {
+	// We need to specifically override these also
+	float:none;
+	width:100%;
+	@include breakpoint($sidebar-breakpoint) {
+		float: right;
+		width: $left-sidebar-width;
+		// Separator
+		margin-left: rhythm(1);
+		padding-left:rhythm(1);
+		border-left:1px solid $line-color;
+	}
+	// No padding
+	padding: 0;
+	// Inherits from $base-font-size
+	font-size: inherit;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-right: 0%;
+}
+
+
+// We insert a clearfix inside body because we don't want it to lose its height (all its child elements are floated)
+#body {
+	@include clearfix();
+	// The HTML markup places sidebar avobe main, but on mobile phones we'd rather see the main content first.
+	// We can leverage flexbox to achieve this.
+	@include breakpoint(max-width $sidebar-breakpoint) {
+		display:flex;
+		flex-direction:column;
+	}
+}
+
+#sidebar {
+	order:2
+}
+
+#main {
+	order:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ESTO SE TIENE QUE IR
+
+#header h1 {
+	// We need to explicitply override AGAIN the font-family
+	font-family:$headlines;
+	// Use vertical rhythm & stop using 10% to separate it from the left side since we use the #container wrapper.
+	padding:0;
+	font-weight: bold;
+}

@@ -1,0 +1,42 @@
+{
+  // We'll use a lot of important overrides and don't want the linter to throw errors
+  "important": false,
+  "adjoining-classes": 2,
+  "known-properties": 2,
+  // We dropped support for IE 6 & 7. We need box-sizing to pass
+  "box-sizing": false,
+  "box-model": 2,
+  "overqualified-elements": 2,
+  "display-property-grouping": 2,
+  "bulletproof-font-face": 2,
+  "compatible-vendor-prefixes": 2,
+  "regex-selectors": 2,
+  "errors": true,
+  "duplicate-background-images": 2,
+  "duplicate-properties": 2,
+  "empty-rules": 2,
+  "selector-max-approaching": 2,
+  "gradients": 2,
+  "fallback-colors": 2,
+  "font-sizes": 2,
+  "font-faces": 2,
+  "floats": false,
+  // Normalize.css uses star property hacks
+  "star-property-hack": false,
+  "outline-none": 2,
+  // We are forced to use @imports for external fonts
+  "import": false,
+  // We will inherit many IDs
+  "ids": false,
+  "underscore-property-hack": 2,
+  "rules-count": 2,
+  "qualified-headings": 2,
+  "selector-max": 2,
+  "shorthand": 2,
+  "text-indent": 2,
+  "unique-headings": 2,
+  "universal-selector": 2,
+  "unqualified-attributes": 2,
+  "vendor-prefix": 2,
+  "zero-units": 2
+}

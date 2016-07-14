@@ -1,0 +1,30 @@
+{
+  "name": "ojs-cleanrwd-theme",
+  "version": "0.0.2",
+  "description": "OJS' minimalistic and responsive theme. Aims to modernize the old-fashioned look and feel of Open Journal System 2.x themes.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/idiazroncero/ojs-cleanrwd-theme.git"
+  },
+  "keywords": [
+    "ojs",
+    "theme",
+    "plugin",
+    "responsive"
+  ],
+  "author": "Nacho Diaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/idiazroncero/ojs-cleanrwd-theme/issues"
+  },
+  "homepage": "https://github.com/idiazroncero/ojs-cleanrwd-theme#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "grunt": "^1.0.1",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-csslint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-csscomb": "^3.1.1",
+    "grunt-postcss": "^0.8.0"
+  }
+}

@@ -62,15 +62,14 @@
 				display: inline;
 				float: left;
 				margin-left: rhythm(-1);
-				color:$lighter-font-color;
+				color:$light-font-color;
 			}
 		}
 	}
 	// Text smaller, uppercase
-	p, a, label, div, strong, select {
+	p, a, label, div, strong {
 		@include adjust-font-size-to($h5-font-size);
-		font-family:$helvetica;
+		font-family:$alt-font-family;
 		text-transform:uppercase;
 	}
 }
-

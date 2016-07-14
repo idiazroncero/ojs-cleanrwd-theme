@@ -1,2 +1,8 @@
+# Ignore sass-generated cache files
 .sass-cache
+
+# Don't commit OSx files
 .DS_Store
+
+# Don't commit npm modules, let every user do the install
+node_modules
