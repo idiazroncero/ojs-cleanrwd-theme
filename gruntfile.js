@@ -2,33 +2,36 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		compass : {
 			options: {
-				config: 'config.rb',
-				require: 'susy'
+				// Loads compass config from its own file
+				config: 'config.rb'
 			},
 			prod : {
 				options : {
-					config: 'config.rb',
 					environment: 'production',
 					outputStyle: 'compressed',
 					trace: false,
-				}
-			},
-			source : {
-				options : {
-					config: 'config.rb',
-					environment: 'development',
-					outputStyle: 'nested',
-					cssDir : 'css/source/',
-					trace: false,
+					force:true,
 				}
 			},
 			dev : {
 				options : {
-					config: 'config.rb',
 					environment: 'development',
 					outputStyle: 'nested',
 					trace: true,
+					force:true,
 				}
+			}
+		},
+
+		csslint: {
+			options: {
+			  csslintrc: '.csslintrc',
+			  formatters: [
+			    {id: 'compact', dest: 'csslint/csslint.txt'}
+			  ]
+			},
+			custom: {
+			  src: ['clean-rwd/clean-rwd.css']
 			}
 		},
 
@@ -36,54 +39,42 @@ module.exports = function(grunt) {
 			options : {
 				map : {
 					inline: false, // save all sourcemaps as separate files...
-          			annotation: 'css/maps' // ...to the specified directory
+          			annotation: 'clean-rwd/maps' // ...to the specified directory
 				},
 				processors: [
                     require('autoprefixer')({
-                        browsers: ['> 0.1%']
+                        browsers: ['> 0.5%']
                     })
-                ]
+                ],
 			},
-			prod: {
-				src: 'css/*.css'
-			},
-			dev : {
-				src: 'css/*.css'
+			process : {
+				src: 'clean-rwd/*.css'
 			}
 		},
 
-	    csscomb: {
-	    	comb: {
-	            files: {
-	            	'css/source/styles.css' : ['css/source/styles.css']
-	            }
-        	}
-	    },
-
 		watch : {
 			dev: {
-				files: ['**/*.js', '**/*.scss', '**/*.css'],
+				files: ['**/*.scss'],
 				tasks: ['dev']
 			},
 			prod: {
-				files: ['**/*.js', '**/*.scss', '**/*.css'],
-				tasks: ['prod']
-			},
-			compass: {
 				files: ['**/*.scss'],
-				tasks: ['compass:dev']
+				tasks: ['prod']
 			}
 		}
 	}); // Init Config
-
+	
+	// Load plugins
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-postcss');
-	grunt.loadNpmTasks('grunt-csscomb');
 
-	// Carga los plugins
-	grunt.registerTask('default', ['compass:prod', 'csscomb:comb', 'postcss:prod']);
-	grunt.registerTask('compass-watch', ['watch:compass']);
-	grunt.registerTask('dev', ['compass:dev', 'postcss:dev']);
+	// Load tasks
+	grunt.registerTask('default', ['compass:prod', 'postcss:process']);
+	grunt.registerTask('dev', ['compass:dev', 'postcss:process']);
+	grunt.registerTask('prod', ['compass:prod', 'postcss:process']);
+	// And we also have watch:dev and watch:prod to automate both of them
+	// and csslint to check the health of our CSS
 
-}; // Función wrapper
+}; // Grunt's wrapper function

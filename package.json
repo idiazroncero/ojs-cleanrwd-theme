@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/idiazroncero/ojs-cleanrwd-theme#readme",
   "devDependencies": {
+    "autoprefixer": "^6.3.7",
     "grunt": "^1.0.1",
     "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-csslint": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-csscomb": "^3.1.1",
     "grunt-postcss": "^0.8.0"
