@@ -1,11 +1,11 @@
 // Variables
 @import "init/init";
-
 // Font loading first to improve performance
 @import "init/fonts";
-
-// Normalize.css + reset OJS default styling
+// Normalize.css
 @import "init/normalize";
+// Our own normalization: tipography and form fields
+@import "init/ojs-normalize";
 
 // OJS overrides
 @import "pkp/pkp_common";
@@ -22,3 +22,6 @@
 @import "modules/config";
 @import "modules/sidebar_blocks";
 @import "modules/footer";
+
+// Layout
+@import "layout/layout";

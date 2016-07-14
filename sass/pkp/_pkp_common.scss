@@ -393,7 +393,7 @@ table.data td.label {
 	padding-right: rhythm(1);
 	// We prefer to style labels differently:
 	font-family:$helvetica;
-	@include adjust-font-size-to($h45-font-size);
+	@include adjust-font-size-to($h5-font-size);
 	font-weight:bold;
 }
 
@@ -423,7 +423,7 @@ span.nested {
 // We prefer to style instructions and form helpers differently:
 .instruct, span.formRequired {
 	font-family:$helvetica;
-	@include adjust-font-size-to($h45-font-size);
+	@include adjust-font-size-to($h5-font-size);
 }
 
 // There are strong inconsistencies inside OJS tables. 
@@ -434,7 +434,7 @@ span.nested {
 td.value, td.data, td label {
 	// Those are the .instruct styles
 	font-family:$helvetica;
-	@include adjust-font-size-to($h45-font-size);
+	@include adjust-font-size-to($h5-font-size);
 }
 
 // Harcoded valign = top on <td> elements unaligns checkboxes and select boxes respect to the text

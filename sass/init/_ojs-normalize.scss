@@ -1,0 +1,50 @@
+// TYPOGRAPHY
+// ========================================================
+
+// Set font families and colors
+
+p, h1, h2, h3, h4, h5, h6 {
+	color:$font-color
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $headlines;
+}
+
+// Implements h1-h6 aspect ratio
+
+h1 {
+	@include adjust-font-size-to($h1-font-size);	
+}
+
+h2 {
+	@include adjust-font-size-to($h2-font-size);
+}
+
+h3 {
+	@include adjust-font-size-to($h3-font-size);
+}
+
+h4 {
+	@include adjust-font-size-to($h4-font-size);
+}
+
+h5 {
+	@include adjust-font-size-to($h5-font-size);
+}
+
+h6 {
+	@include adjust-font-size-to($h6-font-size);	
+}
+
+
+
+// VERTICAL RHYTHM
+// ========================================================
+
+// Every margin generating vertical whitespace should always be expressed as a margin-bottom.
+// We always use one (1) measure of vertical rhythm;
+
+p, h1, h2, h3, h4, h5, h6 {
+	margin:0 0 0 rhythm(1);
+}

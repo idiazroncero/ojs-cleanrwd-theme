@@ -52,7 +52,7 @@
 // We need to be over-specific to override this h3
 #parserFilterGridContainer, #lookupFilterGridContainer {
 	h3 {
-		@include adjust-font-size-to($h45-font-size);
+		@include adjust-font-size-to($h5-font-size);
 		font-weight:bold;
 	}
 }
