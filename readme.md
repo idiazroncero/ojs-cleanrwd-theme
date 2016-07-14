@@ -1,5 +1,6 @@
 # IN DEVELOPMENT - NOT READY FOR PRODUCTION
 ## Open Journal System Clean, Responsive Theme
+_v0.0.1_
 
 ![Preview](http://idiazroncero.com/images/ojsclean.png)
 
