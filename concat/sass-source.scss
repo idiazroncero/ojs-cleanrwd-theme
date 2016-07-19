@@ -1,0 +1,2276 @@
+//--------------------------
+// MENU
+// 1 - General Settings
+// 2 - Typography & Vertical Rhythm
+// 3 - Colors
+// 4 - Links
+// 5 - Layout
+//--------------------------
+
+
+
+//
+// 1 - GENERAL SETTINGS
+//
+
+// Set this to true to force CSS output to exactly match normalize.css.
+$strict-normalize: false !default;
+
+
+
+//
+// 2 - TYPOGRAPHY & VERTICAL RHYTHM
+//
+
+// We use Compass' mixins and functions: http://compass-style.org/reference/compass/typography/vertical_rhythm/
+// The font size set on the root html element.
+$base-font-size: 16px !default;
+// The base line height determines the basic unit of vertical rhythm.
+$base-line-height: 24px !default;
+// The length unit in which to output vertical rhythm values.
+// Supported values: px, em.
+$rhythm-unit: 'rem' !default;
+// Allow big sizes to cut to 1/2 line-height to above excessive spacing
+$round-to-nearest-half-line: true;
+
+// Library of ready-to-use fonts
+$merriweather: Merriweather, Georgia, Times, serif;
+$roboto: 'Roboto Condensed', Impact, Helvetica, Arial, sans-serif;
+$oswald: Oswald, Impact, Helvetica, Arial, sans-serif;
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$georgia: Georgia, "Times News Roman", Times, serif;
+$courier: "Courier New", Courier, monospace;
+// Add your font sets here. Don't forget to @import them at init/_fonts.scss
+
+// Font sets
+$serif: $merriweather;
+$sans-serif: $helvetica;
+$headlines: $roboto;
+$monospace: $courier;
+
+// Choose the font type we want to use for main texts (paragraphs, etc);
+$base-font-family: $serif;
+// Choose an alternate font to combine with the main font.
+$alt-font-family: $headlines;
+// We will also use $headlines for the headings and $monospace for code.
+
+// The font sizes for h1-h6.
+// Using "perfect fourth" aspect ratio borrowed from http://type-scale.com/
+$h1-font-size: 3.157    * $base-font-size !default;
+$h2-font-size: 2.369  * $base-font-size !default;
+$h3-font-size: 1.777 * $base-font-size !default;
+$h4-font-size: 1.333    * $base-font-size !default;
+$h5-font-size: 0.85   * $base-font-size !default;
+$h6-font-size: 0.707 * $base-font-size !default;
+//$h6-font-size: 0.5 * $base-font-size !default;
+
+// The amount lists and blockquotes are indented.
+$indent-amount: 40px !default;
+
+
+
+//
+// 3 - COLORS
+//
+
+// The default color of text, headings, etc...
+$font-color: #333;
+// A light color and a dark color, used for separators, etc...
+// It is a good idea to define them as variations of font-color to achieve a simple scale of grays
+$light-color: tint($font-color, 40%);
+$dark-color: shade($font-color, 40%);
+
+// Default color for lines, separators, etc.
+$line-color: $light-color;
+// Background-color for the wholw webpage
+$background-color: #fff;
+
+// Colors of the different states of the links
+$link: #666 ;
+$link-active: #666;
+$link-visited: tint($link, 25%);
+$link-hover: tint($link, 25%);
+
+// Buttons
+$default-button: #000;
+$button-color: #fff;
+$button-border-width: 2px; // Want plain buttons? Set this value to 0
+$button-border-color: $font-color;
+
+
+
+//
+// 4 - LINKS
+//
+
+// Choose your preferred link styling. There are four options available:
+$link-style: solid-after; 		// dotted-before = border-bottom is dotted before :hover and disabled on :hover
+								// dotted-after = border-bottom is disabled before :hover and enabled on :hover
+								// solid-before = same as dotted-before, with solid border
+								// solid-after = same as dotted-after, with solid border
+
+
+//
+// 5 - LAYOUT
+//
+
+// Max-width of the main container
+$max-width:960px;
+
+// Sidebar size (recommended as % of width)
+$left-sidebar-width: 25%;
+$right-sidebar-width: 25%;
+
+// Breakpoints
+$small: 480px;
+$medium: 768px;
+$screen: 960px;
+
+// Define the specific breakpoint on which the sidebar and content move to a column
+// You can use one of the breakpoints above or define your own.
+$sidebar-breakpoint: 600px;
+
+
+//
+// 6 - FORMS
+//
+
+$border-radius: 0; // In px.
+
+// After the default variables are set, import the required Compass partials.
+@import "compass/support";
+@import "compass/typography/vertical_rhythm";
+@import "compass/utilities/general/clearfix";
+@import "compass/css3";
+@import "breakpoint";
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+// We pull our fonts from Google Fonts directly via CSS.
+// We decided not to modify the <head> tag. This is because we don't want to mess with templating in order
+// to keep this project as simple and CSS-only as possible.
+
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic|Oswald:400,300,700);
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i');
+// You can @import here your own fonts.
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/*
+/* OJS-specific version of Normalize.css
+/* - It DOES NOT address issues already resolved by OJS's own reset
+/* - It DOES address and overrride OJS's default styling (colors, headings, etc)
+/*
+
+
+/**
+ * Establish a vertical rhythm unit using $base-font-size, $base-line-height,
+ * and $rhythm-unit variables. Also, correct text resizing oddly in IE 6/7 when
+ * body `font-size` is set using `em` units.
+ */
+
+@include establish-baseline();
+
+
+/*
+ * Establish a global box-sizing
+ */
+
+* {
+  box-sizing:border-box;
+}
+
+/* Based upon:
+ *! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+
+html {
+  font-family: $base-font-family; /* 1 */
+  -ms-text-size-adjust: 100%; /* 2 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+
+body {
+  margin: 0;
+}
+
+/* HTML5 display definitions
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+
+article,
+aside,
+details, /* 1 */
+figcaption,
+figure,
+footer,
+header,
+main, /* 2 */
+menu,
+nav,
+section,
+summary { /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+
+template, /* 1 */
+[hidden] {
+  display: none;
+}
+
+/* Links
+   ========================================================================== */
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+
+dfn {
+  font-style: italic;
+}
+
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+
+small {
+  @include adjust-font-size-to($h5-font-size);
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+sub,
+sup {
+  @include adjust-font-size-to($h6-font-size);
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em $indent-amount;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/* Forms
+   ========================================================================== */
+
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+button,
+input,
+select,
+textarea {
+  font: inherit; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+button,
+input { /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+button,
+select { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+
+button,
+html [type="button"], /* 1 */
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+// TYPOGRAPHY
+// ========================================================
+
+// Set font families and colors
+
+p, h1, h2, h3, h4, h5, h6 {
+	color:$font-color
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $headlines;
+}
+
+// Implements h1-h6 aspect ratio
+
+h1 {
+	@include adjust-font-size-to($h1-font-size);	
+}
+
+h2 {
+	@include adjust-font-size-to($h2-font-size);
+}
+
+h3 {
+	@include adjust-font-size-to($h3-font-size);
+}
+
+h4 {
+	@include adjust-font-size-to($h4-font-size);
+}
+
+h5 {
+	@include adjust-font-size-to($h5-font-size);
+}
+
+h6 {
+	@include adjust-font-size-to($h6-font-size);	
+}
+
+
+
+// VERTICAL RHYTHM
+// ========================================================
+
+// Every margin generating vertical whitespace should always be expressed as a margin-bottom.
+// We always use one (1) measure of vertical rhythm;
+
+p, h1, h2, h3, h4, h5, h6, ul {
+	margin:0 0 0 rhythm(1);
+}
+
+ul {
+	// Set values using compass' vertical rhythm
+	padding: 0 0 0 rhythm(1);
+}
+
+// DEFAULTS
+// ========================================================
+
+
+body {
+	// Must explicitly override the background color. TODO: ¿Set in variable?
+	background-color: $background-color;
+	color: $font-color;
+	font-family: $base-font-family;
+}
+
+table {
+	// We use rem
+	font-size: 1.0rem;
+}
+
+
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/**
+ * Overrides OJS's base stylesheet /lib/pkp/styles/common.css.
+ *
+ */
+
+/**
+ * Common HTML elements
+ */
+
+label.error {
+	color: #900;
+}
+
+input.uploadField {
+	// Upload fields are a bit different
+	border:none;
+	@include adjust-font-size-to($h5-font-size, 1);
+	font-family: $helvetica;
+	background:none;
+}
+
+
+
+input.defaultButton {
+	// Stop using that green!
+	background-color: $default-button;
+	// We check the user input value and decide the color of our font:
+	@if lightness($default-button) >= 50 {
+		color: #000;
+	} @else {
+		color: #fff;
+	}
+	font-weight: bold;
+	&:hover {
+		border-color: $default-button;
+	}
+}
+
+// All cases on which submits need to be smaller
+
+td.value // Inside value cells
+	{
+	input[type="submit"] {
+		@include adjust-font-size-to($h5-font-size, 0.75);
+		padding: 0 5px;
+	}
+}
+
+
+// Why? OJS seems to have only "journal footers", not "general" ones.
+// These IDs seem to be useless... (let's see)
+#footer {
+	width: 100%;
+	min-height: 50px;
+	position: static;
+	clear: both;
+	text-align: center;
+}
+
+#footerContent {
+	width: 100%;
+	margin: 0 auto;
+	padding-left: 10%;
+}
+
+#main h2 {
+	// Reset padding/margin and set correct font
+	margin: 0 0 rhythm(1) 0;
+	padding: 0;
+	font-family: $headlines;
+	font-weight: normal;
+	border-bottom:1px solid $line-color;
+}
+
+#main h3 {
+	margin: 0 0 rhythm(1) 0;
+	padding-top: 0;
+	font-family: $headlines;
+	font-weight: 300;
+}
+
+#content {
+	// No margins or paddings
+	margin: 0;
+	padding: 0;
+	// We need to inherit the original $base-font-family
+	font-size: inherit;
+	// Border should be a property of <h2>, <h3> elements.
+	// 2px dotted borders are out of discussion.
+	// Explicitly override all borders
+	border: none;
+}
+
+#content h3 {
+	// Reset padding/margin and set correct font
+	margin: 0 0 rhythm(1) 0;
+	padding:0;
+	font-family: $headlines;
+	@include adjust-font-size-to($h3-font-size);
+}
+
+#content h4 {
+	margin: 0 0 rhythm(1) 0;
+	font-family: $headlines;
+	@include adjust-font-size-to($h4-font-size);
+}
+
+#content h5 {
+	margin: 0 0 rhythm(1) 0;
+	padding:0;
+	@include adjust-font-size-to($h5-font-size);
+}
+
+
+/**
+ * Breadcrumbs
+ */
+
+// Should we set a different style for "active" pages in crumbs??
+#breadcrumb a.current {
+	font-weight: bold;
+}
+
+
+/**
+ * Footer elements
+ */
+
+#footer div.debugStats {
+	font-size: 0.6em;
+}
+
+
+/**
+ * Additional text styles
+ */
+
+// Still need to see those in action
+span.disabled, label.disabled {
+	color: #666;
+}
+
+a.action, a.file {
+	font-size: 0.85em;
+	text-transform: uppercase;
+}
+
+a.icon {
+	text-decoration: none;
+}
+
+a.icon img {
+	border: 0;
+}
+
+a.icon:hover {
+	background: none;
+}
+
+span.heading {
+	font-size: 0.85em;
+	text-transform: uppercase;
+}
+
+span.highlight {
+	border-bottom: 1px dotted #000;
+}
+
+div.warningMessage {
+	background: url(../templates/images/icons/icon_alert.gif) no-repeat 3px 40%;
+	margin: 5px;
+	padding: 5px 5px 5px 25px;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+/**
+ * Table styles
+ */
+
+table.info td {
+	padding: 0;
+	padding-bottom: 0.5em;
+	padding-right: 0.5em;
+}
+
+table.listing td {
+	padding: 0.25em 1.5em 0.25em 0.5em;
+}
+
+table.listing tr.heading td, table.listing td.heading, table.info td.heading {
+	font-size: 0.85em;
+	text-transform: uppercase;
+	font-weight: normal;
+	padding: 0.75em 1.5em 1em 0.5em;
+}
+
+table.info td.heading {
+	padding-left: 0;
+}
+
+
+table.listing td.nodata, table.info td.nodata {
+	text-align: center;
+	font-style: italic;
+}
+
+table.listing td.headseparator {
+	border-top: 1px dotted #000;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.listing td.endseparator {
+	border-top: 1px dotted #000;
+	font-size: 0.25em;
+	line-height: 10%;
+}
+
+table.listing td.separator, table.info td.separator {
+	border-top: 1px dotted #DDDDD0;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.data td {
+	// Express it as vertical rhythm units
+	padding-bottom: rhythm(0.5);
+}
+
+table.data td.label {
+	// Express it as vetical rhythm units
+	padding-right: rhythm(1);
+	// We prefer to style labels differently:
+	font-family:$helvetica;
+	@include adjust-font-size-to($h5-font-size);
+	font-weight:bold;
+}
+
+table.data td.separator {
+	// Make the separator bigger
+	padding: rhythm(1);
+}
+
+table.data td.heading {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+table.nested tr {
+	padding: 0;
+	margin: 0;
+}
+
+span.nested {
+	padding: 0 4px 0 0;
+	font-size: 1.2em;
+}
+
+
+// TABLE HACKS AND FIXES
+
+// We prefer to style instructions and form helpers differently:
+.instruct, span.formRequired {
+	font-family:$helvetica;
+	@include adjust-font-size-to($h5-font-size);
+}
+
+// There are strong inconsistencies inside OJS tables. 
+// Some instructions have a .instruct and span in their own <tr> row 
+// while others are put inside the main <td>, alongside the <input> and without class.
+// We have to be hacky: we style every td.value and then undo the changes inside every input.
+// OJS tables are very poorly styled indeed...
+td.value, td.data, td label {
+	// Those are the .instruct styles
+	font-family:$helvetica;
+	@include adjust-font-size-to($h5-font-size);
+}
+
+// Harcoded valign = top on <td> elements unaligns checkboxes and select boxes respect to the text
+// This is a Hacky fix, since we can't access the HTML.
+td input[type="checkbox"], td input[type="radio"] {
+	margin-top:7px;
+}
+
+/**
+ * Form-specific elements
+ */
+
+span.pkp_form_error { /* Named for compatibility with new lessphp structure */
+	color: #900;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+span.pkp_form_success { /* Named for compatibility with new lessphp structure */
+	color: #090;
+	font-weight: bold;
+	font-size: 1em;
+}
+
+ul.pkp_form_error_list { /* Named for compatibility with new lessphp structure */
+	color: #900;
+}
+
+
+/**
+ * Other organizational elements
+ */
+
+ul.menu li {
+	// Use vertical rhythm units also for horizontal spacing.
+	margin-right: rhythm(1);
+	padding:0;
+	// We want to give menu items more space for touch-enabled devices...
+	float:left;
+	display:block;
+}
+
+// Should we use a different, more original, way to mark "active" items??
+ul.menu li.current {
+	font-weight: bold;
+}
+
+ul.menu a {
+	// Let the link expand to fill all available space
+	display:block;
+	// Use our font sizes
+	@include adjust-font-size-to($base-font-size);
+	// Use our headings font
+	font-family: $headlines;
+}
+
+// Steplist is used in config sections
+ul.steplist {
+	// Respect vrhythm
+	margin: rhythm(1) 0;
+	// list-style-type: decimal; // WHY in hell use an <ul> instead of <ol> and then give it a decimal style type???
+}
+
+ul.steplist li {
+	// Use our font sizing
+	@include adjust-font-size-to($base-font-size);
+	// Separate using a border
+	margin-right: rhythm(0.5);
+	padding-right:rhythm(0.5);
+	border-right: 1px solid #ccc;
+}
+
+ul.steplist li.current a {
+	// add a border
+	border-bottom:rhythm(0.125) solid #ccc;
+	margin-bottom:rhythm(-0.125);
+}
+
+ul.plain {
+	list-style-type: none;
+	padding-left: 1.5em;
+}
+
+ul.filter {
+	margin: 0;
+	padding: 1.5em 0 1.5em 0;
+	list-style-type: none;
+}
+
+ul.filter li {
+	padding-right: 1.5em;
+	display: inline;
+}
+
+
+/**
+ * Other organizational elements
+ */
+
+div.separator {
+	// Set a bigger margin
+	margin:rhythm(1) 0;
+	border-bottom: 2px solid #CCC;
+	position:relative;
+	// let's embellish it
+	&:before {
+		content:"";
+		border-width:rhythm(0.33);
+		border-style:solid;
+		border-color:#CCC #CCC transparent transparent;
+		position:absolute;
+		top:0;
+		right:0;
+	}
+}
+
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/**
+ * Overrides OJS's base stylesheet /styles/common.css.
+ *
+ */
+
+.ui-pnotify-title {
+	font-size: 0.8em;
+}
+
+.ui-pnotify-text {
+	font-size: 0.6em;
+}
+
+.ui-pnotify-history-container .ui-pnotify-history-header {
+	font-size: 0.8em;
+}
+
+/**
+ * Common HTML elements
+ */
+
+// Specify colors as SCSS variables, instead of hard-coding them.
+a:link {
+	color: $link;
+	@if $link-style == dotted-before {
+		border-bottom:1px dotted $link-hover;
+	} @else if $link-style == solid-before {
+		text-decoration:underline;
+	}
+}
+
+a:active {
+	color: $link-active;
+}
+
+a:visited {
+	color: $link-visited;
+}
+
+a:hover {
+	color: $link-hover;
+	background: transparent;
+	@if $link-style == dotted-before or $link-style == solid-before {
+		border-bottom:none;
+	} @else if $link-style == dotted-after {
+		border-bottom:1px dotted $link-hover;
+	} @else if $link-style == solid-after {
+		text-decoration:underline;
+	}
+}
+
+
+/**
+ * Main layout elements
+ */
+
+#header {
+	// Explicitly overrides ANY color. TODO: ¿set in variable? 
+	background-color: transparent;
+}
+
+#footer {
+	// Explicitly overrides ANY color. TODO: ¿set in variable? 
+	background-color: transparent;
+}
+
+
+/**
+ * Access icons and key
+ */
+#accessKey {
+	margin-bottom: 2em;
+}
+
+#accessKey img {
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+}
+
+#content img.accessLogo {
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+}
+
+
+/**
+ * Navigation bar
+ */
+
+#navbar a {
+	// This conflicts with pkp/common.css ul.menu a.
+	// We need to repeat the properties. Ugly, but needed.
+	@include adjust-font-size-to($base-font-size);
+	letter-spacing: 0.1rem;
+}
+
+
+/**
+ * Announcements
+ */
+
+#announcementsHome {
+	width: 100%;
+	margin: 2em 0 2em 0;
+}
+
+#announcementsHome h3 {
+	text-align: center;
+}
+
+#announcements {
+	// Corrects menu item taking 100% of width
+	width: auto;
+}
+
+#announcements h3 {
+	text-align: center;
+}
+
+table.announcements {
+	width: 100%;
+}
+
+table.announcements td {
+	padding: 0.25em 0.5em 0.25em 0.5em;
+}
+
+table.announcements td.nodata {
+	text-align: center;
+	font-style: italic;
+}
+
+table.announcements td.headseparator {
+	border-top: 1px dotted #000;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.announcements td.endseparator {
+	border-top: 1px dotted #000;
+	font-size: 0.25em;
+	line-height: 10%;
+}
+
+table.announcements td.separator {
+	border-top: 1px dotted #DDDDD0;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+table.announcements tr.intro {
+}
+
+table.announcements td.intro {
+}
+
+table.announcements tr.title {
+	vertical-align: top;
+}
+
+table.announcements td.title {
+	width: 85%;
+}
+
+table.announcements td.title h4 {
+}
+
+table.announcements tr.description {
+	vertical-align: top;
+}
+
+table.announcements td.description {
+	width: 85%;
+}
+
+table.announcements tr.details {
+	vertical-align: bottom;
+}
+
+table.announcements td.posted {
+	padding-top: 1em;
+	font-style: italic;
+}
+
+table.announcements td.more {
+	width: 15%;
+	text-align: right;
+}
+
+table.announcementsMore {
+	width: 100%;
+}
+
+table.announcementsMore td {
+	padding-top: 1.5em;
+	text-align: right;
+}
+
+
+/**
+ * Table of contents
+ */
+
+.tocArticle {
+	width: 100%;
+	padding: 5px 0;
+}
+
+.tocArticleCoverImage {
+	display:none;
+}
+.tocArticleCoverImage.showCoverImage {
+	display: table-cell;
+	width: 15%;
+}
+.tocCoverImage {
+	width: 100%;
+}
+.tocCoverImage img {
+	border: 0;
+	width: 100%;
+}
+
+.tocArticleTitleAuthors {
+	width: 80%;
+}
+.tocArticleTitleAuthors.showCoverImage {
+	width: 65%;
+	padding-left: 10px;
+}
+.tocAuthors {
+	padding-left: 10px;
+}
+
+.tocArticleGalleysPages {
+	width: 20%;
+}
+.tocGalleys, .tocPages {
+	text-align: right;
+}
+
+/**
+ * Homepage image
+ */
+
+#homepageImage img {
+	display: block;
+	margin: 0 auto;
+	border: 0;
+	text-align: center;
+}
+
+.homepageImage img {
+	margin: 0 auto;
+	border: 0;
+	float: left;
+	width: 100px;
+	margin: 1em 1em 1em 0;
+	text-align: center;
+}
+
+
+/**
+ * Issue cover image
+ */
+
+#issueCoverImage img {
+	display: block;
+	border: 0;
+}
+
+.issueCoverImage img {
+	border: 0;
+	float: left;
+	width: 100px;
+	margin: 1em 1em 1em 0;
+}
+
+#issueCoverImage a:link, .issueCoverImage a:link {
+}
+
+#issueCoverImage a:active, .issueCoverImage a:active {
+}
+
+#issueCoverImage a:visited, .issueCoverImage a:visited {
+}
+
+#issueCoverImage a:hover, .issueCoverImage a:hover {
+}
+
+
+/**
+ * Editorial Team Lists
+ */
+
+ol.editorialTeam {
+}
+
+ol.editorialTeam li {
+	list-style: none;
+}
+
+ol.editorialTeam, ol.editorialTeam li {
+	margin-left: 0;
+	padding-left: 0;
+}
+
+
+/**
+ * Additional text styles
+ */
+
+pre {
+	background-color: #F0F0E8;
+	color: #000;
+	font-size: 1.25em;
+}
+
+/**
+ * Table styles
+ */
+
+.highlightReviewerNotNotified, .highlightCopyediting {
+	background: #EDEBC4;
+}
+.highlightNoDecision, .highlightLayoutEditing {
+	background: #D8E9BD;
+}
+.highlightRevisedCopyUploaded, .higlightProofreading {
+	background: #C6EBE4;
+}
+.highlightReviewerConfirmationOverdue {
+	background: #9DD1E6;
+}
+.highlightReviewerCompletionOverdue {
+	background: #74C5D8;
+}
+
+.fastTracked {
+	background-color: #ABA;
+}
+
+table.listing tr.data td {
+	border-top: 1px dotted #DDDDD0;
+	border-bottom: 1px dotted #DDDDD0;
+}
+
+table.listing tr.data td.drag {
+	cursor: move;
+}
+
+
+/**
+ * Other organizational elements
+ */
+
+div.progressbar {
+	background-image: url(../templates/images/progbg.gif);
+	background-repeat: no-repeat;
+	height: 27px;
+	width: 505px;
+	z-index:1;
+}
+
+td.notificationContent {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+td.notificationFunction {
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: right;
+}
+
+.throbber {
+	display: none;
+	background: url(../lib/pkp/templates/images/throbber.gif) no-repeat;
+	width: 25px;
+	height: 25px;
+	margin-left: 50%;
+	margin-top: 5%;
+}
+
+/* Font Sizer */
+#sizer a {
+	outline: none;
+	text-indent: -9999px;
+	display: block;
+	float: left;
+	width: 20px;
+	height: 23px;
+	margin-right: 4px;
+	margin-left: 8px;
+}
+
+#journalListPageInfo {
+	float: right;
+}
+
+#journalListPageLinks {
+	float: left;
+}
+
+
+/* @group Tag-it */
+// We have to normalize tagit inputs
+// We wrap it inside #interests to ensure override
+
+#interests {
+	ul.tagit {
+		// Normalize padding as inputs
+		padding: 0 rhythm(0.25);
+		//Overrides jQuery UI colors
+		border: 1px solid #999;
+		background:none;
+		color:$font-color;
+		// Border radius as input
+		@include border-radius(2px);
+		// Overrides jquery UI font size and family:
+		@include adjust-font-size-to($h5-font-size);
+		font-family:$helvetica;
+	}
+
+	ul.tagit li {
+		// Normalize margins
+		margin: 1px 5px 1px 0;
+		// Overrides jQuery UI colors & background:
+		border-color:#999;
+		color:$font-color;
+		background:none;
+		font-weight:normal;
+		// No border radius
+		@include border-radius(0);
+	}	
+
+	ul.tagit li.tagit-choice {
+		// Normalize padding and reduce size
+		padding: 0 18px 0 5px;
+	}
+	ul.tagit li.tagit-new {
+		// Normalize padding and reduce size. The extra pixel equals heights with already tagged <li>s
+		padding: 1px 18px 1px 5px;
+		input {
+			// We need to be extra specific and repeat ourselves. Jquery UI really messes it up here
+			font-family:$helvetica;
+			@include adjust-font-size-to($h5-font-size);
+		}
+	}	
+
+	ul.tagit li.tagit-choice .tagit-close {
+		//Override color
+		color:$font-color;
+	}	
+
+	.ui-autocomplete .ui-menu-item a {
+		@include adjust-font-size-to($h5-font-size);
+	}
+}
+
+
+/* @end */
+
+
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/**
+ * styles/sidebar.css
+ *
+ * Copyright (c) 2013-2015 Simon Fraser University Library
+ * Copyright (c) 2003-2015 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * Site-wide shared elements for pages including sidebar(s).
+ *
+ */
+
+/**
+ * Sidebar
+ */
+
+#developedBy {
+	text-transform: uppercase;
+	font-size: 0.95em;
+}
+
+#sidebar div.block {
+	// INherit font sizes and set correct margin (not padding!!)
+	font-size: inherit;
+	padding:0;
+	margin-bottom: rhythm(1) !important; // #sidebarFontSize block has inline CSS that sets margin to 4px. Can't understand why.
+}
+
+#sidebar div.block span.blockTitle {
+	// Padding as vertical rhythm units
+	padding: rhythm(0.25) 0 rhythm(0.5) 0;
+	// Font size
+	@include adjust-font-size-to($base-font-size);
+	// No more letter spacing than usual
+	letter-spacing: normal;
+	// We use headlines' font for everything that indicates sectioning or divisions
+	font-family: $headlines;
+	// Boder-top as divider
+	border-top:rhythm(0.25) solid tint($font-color, 85%);
+}
+
+#sidebar div.block span.blockSubtitle {
+	// We need to mark subtitle's hierarchy inside the block
+	font-weight:bold;
+	font-family:$headlines;
+}
+
+#sidebar input.textField, #sidebar select.selectMenu {
+	// Same size throughout the web, please
+	font-size: inherit;
+}
+
+#sidebar {
+	// Custom bullet (em dash)
+	ul {
+		margin:0;
+		padding:0;
+		li {
+			padding-left:rhythm(1);
+			list-style-type:none;
+			&:before {
+				content: "—";
+				display: inline;
+				float: left;
+				margin-left: rhythm(-1);
+				color:$light-color;
+			}
+		}
+	}
+	// Text smaller, uppercase
+	p, a, label, div, strong {
+		@include adjust-font-size-to($h5-font-size);
+		font-family:$alt-font-family;
+		text-transform:uppercase;
+	}
+}
+
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+//
+// TinyMce styling needs fixing as well
+//
+
+/* Layout */
+.defaultSkin table.mceLayout {
+	// Editor has to span all width
+	width:100% !important;
+}
+.defaultSkin table.mceLayout tr.mceFirst td {border-top:1px solid #CCC}
+.defaultSkin table.mceLayout tr.mceLast td {border-bottom:1px solid #CCC}
+.defaultSkin table.mceToolbar, .defaultSkin tr.mceFirst .mceToolbar tr td, .defaultSkin tr.mceLast .mceToolbar tr td {border:0; margin:0; padding:0;}
+.defaultSkin td.mceToolbar {background:#F0F0EE; padding-top:1px; vertical-align:top}
+.defaultSkin .mceIframeContainer {border-top:1px solid #CCC; border-bottom:1px solid #CCC}
+.defaultSkin .mceStatusbar {background:#F0F0EE; font-family:'MS Sans Serif',sans-serif,Verdana,Arial; font-size:9pt; line-height:16px; overflow:visible; color:#000; display:block; height:20px}
+.defaultSkin .mceStatusbar div {float:left; margin:2px}
+.defaultSkin .mceStatusbar a.mceResize {display:block; float:right; background:url(../../img/icons.gif) -800px 0; width:20px; height:20px; cursor:se-resize; outline:0}
+.defaultSkin .mceStatusbar a:hover {text-decoration:underline}
+.defaultSkin table.mceToolbar {margin-left:3px}
+.defaultSkin span.mceIcon, .defaultSkin img.mceIcon {display:block; width:20px; height:20px}
+.defaultSkin .mceIcon {background:url(../../img/icons.gif) no-repeat 20px 20px}
+.defaultSkin td.mceCenter {text-align:center;}
+.defaultSkin td.mceCenter table {margin:0 auto; text-align:left;}
+.defaultSkin td.mceRight table {margin:0 0 0 auto;}
+
+#tinymce {
+	body, td, pre {
+		font-family:$base-font-family; 
+		font-size:inherit; 
+		margin:rhythm(0.5);
+	}	
+
+	h1 {font-size: inherit}
+	h2 {font-size: inherit}
+	h3 {font-size: inherit}
+	h4 {font-size: inherit}
+	h5 {font-size: inherit}
+	h6 {font-size: inherit}
+	.mceItemTable, .mceItemTable td, .mceItemTable th, .mceItemTable caption, .mceItemVisualAid {border: 1px dashed #BBB;}
+	a.mceItemAnchor {display:inline-block; -webkit-user-select:all; -webkit-user-modify:read-only; -moz-user-select:all; -moz-user-modify:read-only; width:11px !important; height:11px !important; background:url(img/items.gif) no-repeat center center}
+	span.mceItemNbsp {background: #DDD}
+	td.mceSelected, th.mceSelected {background-color:#3399ff !important}
+	img {border:0;}
+	table, img, hr, .mceItemAnchor {cursor:default}
+	table td, table th {cursor:text}
+	ins {border-bottom:1px solid green; text-decoration: none; color:green}
+	del {color:red; text-decoration:line-through}
+	cite {border-bottom:1px dashed blue}
+	acronym {border-bottom:1px dotted #CCC; cursor:help}
+	abbr {border-bottom:1px dashed #CCC; cursor:help}
+}
+
+
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/**
+ * Overrides OJS's base stylesheet /styles/compiled.css.
+ *
+ */
+
+ div.pkp_controllers_grid {
+ 	// use vertical rhythm
+ 	margin-top:rhythm(1);
+ }
+
+ div.pkp_controllers_grid .wrapper {
+ 	// use vertical rhythm
+ 	margin-bottom:rhythm(1);
+ }
+
+ div.pkp_controllers_grid .grid_header_bar {
+ 	// use our gray
+ 	background-color: #eee;
+ 	padding:rhythm(0.25) rhythm(0.5);
+ }
+
+ div.pkp_controllers_grid .options {
+ 	float:none;
+ 	a {
+ 		// Place "add element" next to the title and smaller
+ 		float:none;
+ 		@include adjust-font-size-to($h5-font-size);
+ 		font-family:$helvetica;
+ 		margin-left:rhythm(1);
+ 	}
+ }
+
+ // Unnecesary padding
+ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty td {
+ 	padding-left:0;
+ }
+
+ // Dialog modals
+
+ .ui-dialog {
+ 	// White bg
+ 	background:#fff;
+ 	// padding in vrhythm
+ 	padding:rhythm(0.5);
+ 	// No border radius
+ 	@include border-radius(0);
+ 	// Forces to take 99% width to avoid overflow (present in original CSS; but overriden)
+ 	.pkp_form select {
+		width:99%;
+ 	}
+ }
+
+ .ui-dialog .ui-dialog-content {
+ 	// Padding was already set
+ 	padding:0;
+ 	h3 {
+ 		// Explicit override because theme.css messes it all!
+ 		font-family: $headlines;
+ 		// No margin inside modal
+ 		margin-top:0;
+ 	}
+ }
+
+ .ui-widget {
+ 	// Reset to original font
+ 	font-family: $base-font-family;
+ }
+
+ .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+ 	border:none;
+ 	background:none;
+ 	color:inherit;
+ }
+
+
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/*
+ * Forms are messy.
+ * Everything around OJS is messy.
+ * But forms are a disaster
+ * Please forgive all the nonsensical CSS here.
+ */
+
+
+input.textField, 
+select.selectMenu, 
+textarea.textArea, 
+input.uploadField { // We try to normalize all heights and font sízes.
+	@include adjust-font-size-to($base-font-size);
+	@include adjust-leading-to(1);
+	height:rhythm(1.5);
+	// No background for inputs, just a clean box
+	background-color: #fff !important;
+	// Custom border-radius
+	border-radius: $border-radius;
+	// We want a clean, plain border.
+	border: 1px solid $light-color;
+}
+
+select.selectMenu {
+	// Select needs a little help to conform to line-height standards
+	padding:rhythm(0.125) 0;
+	height:rhythm(1.5);
+}
+
+input[type="text"] {
+	// Some padding to enhance legibility
+	padding:0 rhythm(0.25);
+}
+
+input[type="submit"] {
+	@include adjust-font-size-to($h5-font-size, 0.5);
+	padding: 0 5px;
+}
+
+
+//
+// BUTTONS
+//
+
+input.button, button.ui-button.ui-button-text-only .ui-button-text {
+	// Padding as vertical rhythm.
+	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
+	padding:0 rhythm(0.5);
+	height:rhythm(1.5);
+	// Stop using that green!
+	background-color: $button-color;
+	// We check the user input value and decide the color of our font:
+	@if lightness($button-color) >= 50 {
+		color: #000;
+	} @else {
+		color: #fff;
+	}
+	// Inherit font but make it smaller
+	@include adjust-font-size-to($base-font-size);
+	@include adjust-leading-to(1);
+	font-family:$headlines;
+	// Flat design
+	border:none;
+	// Uppercase works better than lowercase.
+	text-transform:uppercase;
+	border-radius:$border-radius;
+	// Animate border on hover
+	border:$button-border-width solid $button-border-color;
+	cursor:pointer;
+	&:hover {
+		background:darken($button-color, 15%);
+		border-color:darken($button-border-color, 15%);
+	}
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+#breadcrumb {
+	// Set padding to zero and margin bottom
+	padding: rhythm(0.125) 0 0 0;
+	margin-bottom:$base-line-height;
+	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
+	// This font-sizes were calculated using "perfect fourth" aspect ratio.
+	@include adjust-font-size-to($h6-font-size);
+	font-family:$helvetica;
+	letter-spacing:0.05rem;
+	text-transform:uppercase;
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+#navbar {
+	// Reset to 0 and use user-defined colors;
+	margin-right: 0;
+	padding-bottom: 0;
+	border-bottom: 1px solid $line-color;
+	// We need a clearfix here
+	@include pie-clearfix();
+	// Reset all link underlines, highlights and/or borders. We want navegation always the same.
+	a, a:hover {
+		text-decoration:none;
+		border:none;
+	}
+	a, a:link, a:visited, a:hover, a:active {
+		color:$font-color;
+	}
+	li {
+		// We use a border effect
+		border-bottom: rhythm(0.25) solid transparent;
+		border-top:1px solid transparent;
+		margin-bottom:rhythm(-0.25);
+		// Animate a little
+		@include transition(all 0.25s ease-in-out);
+		&:hover {
+			border-color:#000;
+		}
+	}
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+//
+// Alters /user/register form
+//
+
+#registerForm {
+	tr {
+		// Hardcoded values 20% / 80% are a bit too tight for label text
+		.label {
+			width:25%
+		}
+		.value {
+			width:75%;
+		}
+	}
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+//
+// page revista/manager/setup/
+//
+
+// Layout configuracion table
+#assignBlocksToSidebars {
+	background:#eee;
+	@include border-radius(4px);
+	tr {
+		td {
+			padding:rhythm(0.5);
+			font-family:$helvetica;
+			input.button {
+				// Reset the original button
+				border:none;
+				@include border-radius(0);
+				background-color:#ccc;
+				color:#000;
+			}
+		}
+	}
+}
+
+// Corrects some missing spacing on the submission checklist
+#submissionPreparationChecklist {
+	input[type="submit"] {
+		margin-left:rhythm(1);
+	}
+}
+
+// Sudden use of <h4> inside tables breaks design...
+#forAuthorsToIndexTheirWork {
+	h4 {
+		@include adjust-font-size-to($base-font-size);
+		margin:0;
+	}
+	table.data td.value {
+		padding-bottom:0;
+	}
+	// The table is a mess with separators used bot outside and inside sections.
+	// We specify the separators we want to hide.
+	// Never felt so hacky...
+	tr:nth-child(11),
+	tr:nth-child(13),
+	tr:nth-child(15) {
+		td.separator {
+			padding:0;
+		}
+	}
+}
+
+// We need to be over-specific to override this h3
+#parserFilterGridContainer, #lookupFilterGridContainer {
+	h3 {
+		@include adjust-font-size-to($h5-font-size);
+		font-weight:bold;
+	}
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+//
+// Styles sidebar blocks
+//
+
+#sidebarLanguageToggle {
+	// Separate list and button
+	select {
+		width:50%;
+		@include box-sizing(border-box);
+	}
+	.button {
+		width:39%;
+		margin-left:10%;
+		@include box-sizing(border-box);
+	}
+}
+
+#simpleSearchForm {
+	// We need the table to span all width
+	table {
+		width:100%;
+	}
+	// All inputs get fullwidth
+	input {
+		width:100%;
+		@include box-sizing(border-box);
+	}
+	// Separate using some margin
+	.button {
+		margin-top:rhythm(0.5);
+	}
+}
+
+#sidebarFontSize {
+	#sizer {
+		a {
+			margin: 0 rhythm(0.5) 0 0;
+		}
+	}
+}
+
+#sidebarUser {
+	td {
+		label {
+			@include adjust-leading-to(0.75);
+		}
+		input[type="submit"] {
+			margin-top:rhythm(0.5);
+			width:100%;
+		}
+	}
+	// A bit hacky... make the first <br> disappear in order to avoid a newline between
+	// "logged in as" and the current user name.
+	> br {
+		display:none;
+	}
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+#pageFooter {
+	border-top:1px solid #000;
+	margin-top:rhythm(0.5);
+	padding-top:rhythm(0.5);
+}
+
+
+
+
+
+//====== CONCAT ======//
+
+
+
+
+
+/**
+ * We re-group here all layout-related properties scattered along the original OJS' stylesheets
+ */
+
+#container {
+	// Existent min-width disables responsive web design.
+	// We have to explicitly override it and keep the !important tag.
+	min-width: 0 !important;
+	// We prefer centered content. It's just an opinionated design choice - and it's easier for RWD
+	// To completely redo the main layout, we start by making #container the main wrapper.
+	max-width: $max-width;
+	padding:0 rhythm(1);
+	@include breakpoint($max-width) {
+		padding:0;
+	}
+}
+
+#header {
+	width: 100%;
+	text-align: center;
+	// Separate header from top and main elements... let it breathe
+	// We break the only-margin-bottom rule because this is the first element in page.
+	margin:rhythm(1) 0;
+}
+
+#main {
+	// We want #main to occupy all space left by sidebars
+	width:auto;
+	// Reset padding to 0
+	padding: 0;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin:0;
+	// We don't want it to behave inline
+	display:block;
+	// And we don't want a float
+	float:none;
+}
+
+// Modificaremos el layout en proximas ediciones
+#leftSidebar {
+	// We need to specifically override these also
+	float:none;
+	width:100%;
+	@include breakpoint($sidebar-breakpoint) {
+		float: left;
+		width: $left-sidebar-width;
+		// Separator
+		margin-right: rhythm(1);
+		padding-right:rhythm(1);
+		border-right:1px solid $line-color;
+	}
+	// No padding
+	padding: 0;
+	// Inherits from $base-font-size
+	font-size: inherit;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-left: 0%;
+}
+
+// Modificaremos el layout en proximas ediciones
+#rightSidebar {
+	// We need to specifically override these also
+	float:none;
+	width:100%;
+	@include breakpoint($sidebar-breakpoint) {
+		float: right;
+		width: $left-sidebar-width;
+		// Separator
+		margin-left: rhythm(1);
+		padding-left:rhythm(1);
+		border-left:1px solid $line-color;
+	}
+	// No padding
+	padding: 0;
+	// Inherits from $base-font-size
+	font-size: inherit;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-right: 0%;
+}
+
+
+// We insert a clearfix inside body because we don't want it to lose its height (all its child elements are floated)
+#body {
+	@include clearfix();
+	// The HTML markup places sidebar avobe main, but on mobile phones we'd rather see the main content first.
+	// We can leverage flexbox to achieve this.
+	@include breakpoint(max-width $sidebar-breakpoint) {
+		display:flex;
+		flex-direction:column;
+	}
+}
+
+#sidebar {
+	order:2
+}
+
+#main {
+	order:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ESTO SE TIENE QUE IR
+
+#header h1 {
+	// We need to explicitply override AGAIN the font-family
+	font-family:$headlines;
+	// Use vertical rhythm & stop using 10% to separate it from the left side since we use the #container wrapper.
+	padding:0;
+	font-weight: bold;
+}

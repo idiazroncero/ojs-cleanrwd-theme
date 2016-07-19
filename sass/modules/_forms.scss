@@ -18,7 +18,7 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	// Custom border-radius
 	border-radius: $border-radius;
 	// We want a clean, plain border.
-	border: 1px solid $line-color;
+	border: 1px solid $light-color;
 }
 
 select.selectMenu {
@@ -27,7 +27,7 @@ select.selectMenu {
 	height:rhythm(1.5);
 }
 
-input[type="text"] {
+input[type="text"], input[type="password"] {
 	// Some padding to enhance legibility
 	padding:0 rhythm(0.25);
 }
@@ -42,33 +42,45 @@ input[type="submit"] {
 // BUTTONS
 //
 
-input.button, button.ui-button.ui-button-text-only .ui-button-text {
+input.button,
+input.defaultButton,
+button.ui-button.ui-button-text-only .ui-button-text {
 	// Padding as vertical rhythm.
 	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
 	padding:0 rhythm(0.5);
 	height:rhythm(1.5);
-	// Stop using that green!
-	background-color: $button-color;
-	// We check the user input value and decide the color of our font:
-	@if lightness($button-color) >= 50 {
-		color: #000;
-	} @else {
-		color: #fff;
-	}
 	// Inherit font but make it smaller
 	@include adjust-font-size-to($base-font-size);
 	@include adjust-leading-to(1);
-	font-family:$headlines;
-	// Flat design
-	border:none;
+	font-family:$font-button;
+	@if $button-style == fill  {
+		background-color: $button-color;
+		border:none;
+		// We check the user input value and decide the color of our font:
+		@if lightness($button-color) >= 50 {
+			color: $font-color;
+		} @else {
+			color: $white;
+		}
+		&:hover {
+			background:shade($button-color, 33%);
+		}
+	} @else if $button-style == outline {
+		background-color: transparent;
+		border:$button-border-width solid $button-color;
+		&:hover {
+			background:$button-color;
+			@if lightness($button-color) >= 50 {
+				color: $font-color;
+			} @else {
+				color: $white;
+			}
+		}
+	} @else {
+		@error "Invalid value for $button-style in _init.scss. It must be either outline or fill"
+	}
 	// Uppercase works better than lowercase.
 	text-transform:uppercase;
-	border-radius:$border-radius;
-	// Animate border on hover
-	border:$button-border-width solid $button-border-color;
+	border-radius:$button-border-radius;
 	cursor:pointer;
-	&:hover {
-		background:darken($button-color, 15%);
-		border-color:darken($button-border-color, 15%);
-	}
 }

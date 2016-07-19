@@ -45,6 +45,62 @@ h6 {
 // Every margin generating vertical whitespace should always be expressed as a margin-bottom.
 // We always use one (1) measure of vertical rhythm;
 
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, ul {
 	margin:0 0 0 rhythm(1);
 }
+
+ul {
+	// Set values using compass' vertical rhythm
+	padding: 0 0 0 rhythm(1);
+}
+
+
+// LINKS
+// ========================================================
+
+a:link {
+	color: $link-color;
+	@if $link-style == dotted-before {
+		border-bottom:1px dotted $link-hover-color;
+	} @else if $link-style == solid-before {
+		text-decoration:underline;
+	}
+}
+
+a:active {
+	color: $link-active-color;
+}
+
+a:visited {
+	color: $link-visited-color;
+}
+
+a:hover {
+	color: $link-hover-color;
+	background: transparent;
+	@if $link-style == dotted-before or $link-style == solid-before {
+		border-bottom:none;
+	} @else if $link-style == dotted-after {
+		border-bottom:1px dotted $link-hover-color;
+	} @else if $link-style == solid-after {
+		text-decoration:underline;
+	}
+}
+
+
+// DEFAULTS
+// ========================================================
+
+
+body {
+	// Must explicitly override the background color. TODO: ¿Set in variable?
+	background-color: $background-color;
+	color: $font-color;
+	font-family: $base-font-family;
+}
+
+table {
+	// We use rem
+	font-size: 1.0rem;
+}
+

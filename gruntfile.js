@@ -52,6 +52,34 @@ module.exports = function(grunt) {
 			}
 		},
 
+		concat : {
+			options: {
+			  separator: '\n\n\n\n\n\n//====== CONCAT ======//\n\n\n\n\n\n',
+			},
+			scss: {
+			  src: [
+						"sass/init/_init.scss",
+						"sass/init/_fonts.scss",
+						"sass/init/_normalize.scss",
+						"sass/init/_ojs-normalize.scss",
+						"sass/pkp/_pkp_common.scss",
+						"sass/pkp/_common.scss",
+						"sass/pkp/_sidebar.scss",
+						"sass/pkp/_tinymce.scss",
+						"sass/pkp/_compiled.scss",
+						"sass/modules/_forms.scss",
+						"sass/modules/_breadcrumbs.scss",
+						"sass/modules/_menu.scss",
+						"sass/modules/_registerform.scss",
+						"sass/modules/_config.scss",
+						"sass/modules/_sidebar_blocks.scss",
+						"sass/modules/_footer.scss",
+						"sass/layout/_layout.scss"
+			  		],
+			  dest: 'concat/sass-source.scss',
+			},
+		},
+
 		watch : {
 			dev: {
 				files: ['**/*.scss'],
@@ -68,6 +96,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-postcss');
 
 	// Load tasks

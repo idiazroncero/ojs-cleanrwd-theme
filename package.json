@@ -1,6 +1,6 @@
 {
   "name": "ojs-cleanrwd-theme",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "OJS' minimalistic and responsive theme. Aims to modernize the old-fashioned look and feel of Open Journal System 2.x themes.",
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "autoprefixer": "^6.3.7",
     "grunt": "^1.0.1",
     "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-csslint": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-csscomb": "^3.1.1",

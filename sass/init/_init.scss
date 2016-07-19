@@ -51,8 +51,10 @@ $monospace: $courier;
 // Choose the font type we want to use for main texts (paragraphs, etc);
 $base-font-family: $serif;
 // Choose an alternate font to combine with the main font.
-$alt-font-family: $headlines;
 // We will also use $headlines for the headings and $monospace for code.
+$alt-font-family: $headlines;
+// Choose the font for the butons
+$font-button: $headlines;
 
 // The font sizes for h1-h6.
 // Using "perfect fourth" aspect ratio borrowed from http://type-scale.com/
@@ -74,31 +76,39 @@ $indent-amount: 40px !default;
 //
 
 // The default color of text, headings, etc...
+
 $font-color: #333;
+
+// Define our "black" and "white" (for  improved legibility we sometimes use slightly lighter versions of black)
+$black: #1b1b1b;
+$white: #f5f5f5;
+
+// A light and a dark colors (usually grays, as your font-color will be a shade of black).
+// It is a good idea to define them as variations of $font-color in order to achieve a simple scale of grays
+// You can modify the percents in order to achieve lighter/darker versions.
+$light-color: tint($font-color, 40%);
+$dark-color: shade($font-color, 40%);
+
+// Optionally, define a main-color and a secondary-color to reuse on single components.
+$main-color: #3C7861;
+$secondary-color: #008080;
+
 // Default color for lines, separators, etc.
-$line-color: orange;
-
-// Derivations of font-color (used for bullets, emphasis, etc)
-$light-font-color: tint($font-color, 25%);
-$dark-font-color: shade($font-color, 25%);
-
-// Colors of the different states of the links
-$link: #666 ;
-$link-active: #666;
-$link-visited: tint($link, 25%);
-$link-hover: tint($link, 25%);
-
-// Buttons
-$default-button: #000;
-$button-color: #fff;
-$button-border-width: 2px; // Want plain buttons? Set this value to 0
-$button-border-color: #eee;
+$line-color: $light-color;
+// Background-color for the whole webpage
+$background-color: #fff;
 
 
 
 //
 // 4 - LINKS
 //
+
+// Colors of the different states of the links
+$link-color: #666 ;
+$link-active-color: #666;
+$link-visited-color: tint($link-color, 25%);
+$link-hover-color: tint($link-color, 25%);
 
 // Choose your preferred link styling. There are four options available:
 $link-style: solid-after; 		// dotted-before = border-bottom is dotted before :hover and disabled on :hover
@@ -132,7 +142,15 @@ $sidebar-breakpoint: 600px;
 // 6 - FORMS
 //
 
-$border-radius: 0; // In px.
+$border-radius: 3px; // In px.
+
+// Buttons
+$button-style: outline;		// Possible values:
+							// outline: only border, gets background-color on :hover
+							// fill: background-color, gets darker on :hover, no border
+$button-color: $main-color ; // Background or border color
+$button-border-width: 1px; // Want plain buttons? Set this value to 0
+$button-border-radius: $border-radius; // Want square buttons? Se tthis value to 0
 
 // After the default variables are set, import the required Compass partials.
 @import "compass/support";

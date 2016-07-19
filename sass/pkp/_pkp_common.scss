@@ -7,39 +7,6 @@
  * Common HTML elements
  */
 
-body {
-	// Must explicitly override the background color. TODO: ¿Set in variable?
-	background-color: transparent;
-	color: $font-color;
-	font-family: $base-font-family;
-}
-
-p {
-	// We use rem
-	margin: 1rem 0; /* Making default stylesheet explicit - fixes IE7 margin collapsing. */
-}
-
-table {
-	// We use rem
-	font-size: 1.0rem;
-}
-
-a {
-	// No text underline at all.
-	// If needed, we prefer to use border-bottom
-	text-decoration:none;
-}
-
-ul {
-	// Set values using compass' vertical rhythm
-	margin: rhythm(0.5) 0;
-	padding: 0 0 0 rhythm(1);
-}
-
-tt {
-	// font-size: 1.25em;
-}
-
 label.error {
 	color: #900;
 }
@@ -50,23 +17,6 @@ input.uploadField {
 	@include adjust-font-size-to($h5-font-size, 1);
 	font-family: $helvetica;
 	background:none;
-}
-
-
-
-input.defaultButton {
-	// Stop using that green!
-	background-color: $default-button;
-	// We check the user input value and decide the color of our font:
-	@if lightness($default-button) >= 50 {
-		color: #000;
-	} @else {
-		color: #fff;
-	}
-	font-weight: bold;
-	&:hover {
-		border-color: $default-button;
-	}
 }
 
 // All cases on which submits need to be smaller
@@ -102,7 +52,7 @@ td.value // Inside value cells
 	padding: 0;
 	font-family: $headlines;
 	font-weight: normal;
-	border-bottom:1px dotted #ccc;
+	border-bottom:1px solid $line-color;
 }
 
 #main h3 {
@@ -110,25 +60,6 @@ td.value // Inside value cells
 	padding-top: 0;
 	font-family: $headlines;
 	font-weight: 300;
-}
-
-#navbar {
-	// Reset to 0 and use a lighter border
-	margin-right: 0;
-	padding-bottom: 0;
-	border-bottom: 1px solid #000;
-}
-
-#breadcrumb {
-	// Set padding to zero and margin bottom
-	padding: rhythm(0.125) 0 0 0;
-	margin-bottom:$base-line-height;
-	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
-	// This font-sizes were calculated using "perfect fourth" aspect ratio.
-	@include adjust-font-size-to($h6-font-size);
-	font-family:$helvetica;
-	letter-spacing:0.05rem;
-	text-transform:uppercase;
 }
 
 #content {

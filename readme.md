@@ -1,35 +1,38 @@
 # IN DEVELOPMENT - NOT READY FOR PRODUCTION
-## Open Journal System Clean, Responsive Theme
-*v0.0.2*
+## Open Journal System Clean and Responsive Theme
+### Development is sponsored by [http://openjournalsystems.cl/][ojscl]
+*v0.0.3*
 
 ### What is this
 
-[Open Journal System][ojs] is the leading scientific journal manager. 
+[Open Journal System][ojs] is the leading scientific journal manager. It is awesome.
 
-It is awesome.
-
-However, Open Journal System's 2.x look and feel is __very__ outdated. If you use the themes shipped with the platform, you'll get a rather old-fashioned website.
+However, Open Journal System's stable version (2.x) has a __very__ outdated look and feel. If you stick to the themes shipped with the platform, you'll get a rather old-fashioned website.
 
 Scientific journals *can* and *should* be attractive.
 
-This theme aims to give OJS a clean, minimalistic, responsive and modern-looking air by using modern standards lacking in the original themes:
+This theme aims to give OJS a clean, minimalistic, responsive and modern-looking skin by using modern standards lacking in the original themes:
 
 - Custom fonts using @font-face.
 - Responsive, mobile-first web design.
-- Vertical rhythm-
-- SASS and Grunt-based workflow
+- Vertical rhythm.
+- SASS and Grunt-based workflow.
 
-You can use this theme as it is, but you might find it rather dull. This is because it is intended to serve __both__ as a minimalistic theme AND a starter kit to be extended and customised.
+You can use this theme as it is, but you might find it dull. This is because it is intended to serve __both__ as a minimalistic theme AND a starter kit to be extended and customised.
 
 ### Why so hackish? (a note for developers)
 
-By design, an OJS 2.x theme plugin *can only affect the styling (CSS) layer*. This means *we can't change HTML structure*. Of course we could, but I want to make this theme as straightforward as possible. For non tech-savvy users, it should be just plug and play.
+By design, OJS 2.x theme plugins are expected to affect __only the CSS layer__. This means *we can't (or are not supposed to) change HTML structure*. 
 
-This is a major drawback and means that most outdated techniques (like the use of `table` for layout or tags like `font`) and some painfully evident HTML errors can't be changed, only overriden via CSS.
+__Note:__ We actually *can*, and it has been done before in such themes as [Mason Theme][mason] or [Modern Theme][modern]. They work by replicating the whole template structure __inside__ the theme plugin folder and then forcing the system to load files from that path instead of the original. However, there are some problems with this strategy. Unlike systems like Drupal or Wordpress, OJS is __not__ expecting core template files to be overridden or inherited from templates inside the theme plugin (and viceversa). So, this tecnhique opens the door to potential fatal errors: any alteration of core template files (i.e in future OJS releases) has to be mirrored inside the theme plugin or there is a potential for PHP fatal errors and WSOD.
 
-This is why developers may be surprised by the abuse of !important declarations and CSS hacks (display:none and so on) to be found inside the CSS files. Please consider them not as bad practices but necessary hacks in order to completely "reset" OJS's default layout and set a consistent and flexible base to work upon.
+This is why this theme won't tamper with the template structure. This is a major drawback and means that most outdated techniques (like the use of `table` for layout or tags like `font`) and some painfully evident HTML errors won't be changed, only overriden via CSS.
+
+And this is why developers may be surprised by the abuse of !important declarations and CSS hacks (display:none and so on) to be found inside the CSS files. Please consider them not as bad practices but necessary hacks in order to completely "reset" OJS's default layout and set a consistent and flexible base to work upon.
 
 The right thing should be to completely revamp OJS's markup. Again: this is not the scope of this project, as it aims to create a simple, plug-and-play theme plugin that just works out of the box.
+
+In the future we may fork this project in order to add support for template override.
 
 ### Install
 
@@ -64,14 +67,28 @@ A rather basic grunt workflow is included:
 - `grunt csslint` lints the CSS file
 - `grunt watch:prod` and `grunt watch:dev` watch every .scss file and do either the dev or prod tasks.
 
+### Build (alternative)
+
+If you don't have access to grunt or a CLI - or you don't feel comfortable - you can manually compile the CSS.
+
+1 - Go to [SassMeister](http://www.sassmeister.com].
+2 - ¡IMPORTANT! On the 'Options' menu, activate "Autoprefixer".
+3 - Copy the content of `/concat/sass-source.scss` in the left side.
+4 - Make your modifications on the file (variables, etc...)
+5 - Wait for sassmeister to compile your CSS file.
+6 - Substitute /themes/plugins/clean-rwd/clean-rwd.css with the result
+
 ### Dependencies
 
 If you need to do your own build of the project, you'll need to have locally installed Compass and Breakpoint.
 
 It is as easy as typing `gem install breakpoint` and `gem install compass` in your terminal.
 
-In future versions, I will include a gemfile to indicate the correct versions. 
+Future versions, will include a .gemfile.
 
 
 
 [ojs]: https://pkp.sfu.ca/ojs/
+[ojscl]: http://openjournalsystems.cl/
+[mason]: https://github.com/masonpublishing/OJS-Theme
+[modern]: https://github.com/cu-library/OJS-Modern-Theme
