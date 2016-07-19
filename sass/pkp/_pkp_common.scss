@@ -19,23 +19,6 @@ input.uploadField {
 	background:none;
 }
 
-
-
-input.defaultButton {
-	// Stop using that green!
-	background-color: $default-button;
-	// We check the user input value and decide the color of our font:
-	@if lightness($default-button) >= 50 {
-		color: #000;
-	} @else {
-		color: #fff;
-	}
-	font-weight: bold;
-	&:hover {
-		border-color: $default-button;
-	}
-}
-
 // All cases on which submits need to be smaller
 
 td.value // Inside value cells

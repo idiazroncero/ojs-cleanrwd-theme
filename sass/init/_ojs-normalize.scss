@@ -54,6 +54,40 @@ ul {
 	padding: 0 0 0 rhythm(1);
 }
 
+
+// LINKS
+// ========================================================
+
+a:link {
+	color: $link-color;
+	@if $link-style == dotted-before {
+		border-bottom:1px dotted $link-hover-color;
+	} @else if $link-style == solid-before {
+		text-decoration:underline;
+	}
+}
+
+a:active {
+	color: $link-active-color;
+}
+
+a:visited {
+	color: $link-visited-color;
+}
+
+a:hover {
+	color: $link-hover-color;
+	background: transparent;
+	@if $link-style == dotted-before or $link-style == solid-before {
+		border-bottom:none;
+	} @else if $link-style == dotted-after {
+		border-bottom:1px dotted $link-hover-color;
+	} @else if $link-style == solid-after {
+		text-decoration:underline;
+	}
+}
+
+
 // DEFAULTS
 // ========================================================
 

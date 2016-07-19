@@ -16,41 +16,6 @@
 }
 
 /**
- * Common HTML elements
- */
-
-// Specify colors as SCSS variables, instead of hard-coding them.
-a:link {
-	color: $link;
-	@if $link-style == dotted-before {
-		border-bottom:1px dotted $link-hover;
-	} @else if $link-style == solid-before {
-		text-decoration:underline;
-	}
-}
-
-a:active {
-	color: $link-active;
-}
-
-a:visited {
-	color: $link-visited;
-}
-
-a:hover {
-	color: $link-hover;
-	background: transparent;
-	@if $link-style == dotted-before or $link-style == solid-before {
-		border-bottom:none;
-	} @else if $link-style == dotted-after {
-		border-bottom:1px dotted $link-hover;
-	} @else if $link-style == solid-after {
-		text-decoration:underline;
-	}
-}
-
-
-/**
  * Main layout elements
  */
 
