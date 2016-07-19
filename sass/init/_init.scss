@@ -75,12 +75,15 @@ $indent-amount: 40px !default;
 
 // The default color of text, headings, etc...
 $font-color: #333;
-// Default color for lines, separators, etc.
-$line-color: orange;
+// A light color and a dark color, used for separators, etc...
+// It is a good idea to define them as variations of font-color to achieve a simple scale of grays
+$light-color: tint($font-color, 40%);
+$dark-color: shade($font-color, 40%);
 
-// Derivations of font-color (used for bullets, emphasis, etc)
-$light-font-color: tint($font-color, 25%);
-$dark-font-color: shade($font-color, 25%);
+// Default color for lines, separators, etc.
+$line-color: $light-color;
+// Background-color for the wholw webpage
+$background-color: #fff;
 
 // Colors of the different states of the links
 $link: #666 ;
@@ -92,7 +95,7 @@ $link-hover: tint($link, 25%);
 $default-button: #000;
 $button-color: #fff;
 $button-border-width: 2px; // Want plain buttons? Set this value to 0
-$button-border-color: #eee;
+$button-border-color: $font-color;
 
 
 
