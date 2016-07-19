@@ -23,6 +23,7 @@
 @import "modules/sidebar_blocks";
 @import "modules/footer";
 @import "modules/main";
+@import "modules/ui-pnotify";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
 @import "pages/userhome";

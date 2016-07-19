@@ -813,35 +813,19 @@ div.separator {
     right: 0; }
 
 /**
- * Overrides OJS's base stylesheet /styles/common.css.
- *
- */
-/* line 6, ../sass/pkp/_common.scss */
-.ui-pnotify-title {
-  font-size: 0.8em; }
-
-/* line 10, ../sass/pkp/_common.scss */
-.ui-pnotify-text {
-  font-size: 0.6em; }
-
-/* line 14, ../sass/pkp/_common.scss */
-.ui-pnotify-history-container .ui-pnotify-history-header {
-  font-size: 0.8em; }
-
-/**
  * Access icons and key
  */
-/* line 22, ../sass/pkp/_common.scss */
+/* line 7, ../sass/pkp/_common.scss */
 #accessKey {
   margin-bottom: 2em; }
 
-/* line 26, ../sass/pkp/_common.scss */
+/* line 11, ../sass/pkp/_common.scss */
 #accessKey img {
   vertical-align: middle;
   margin: 0;
   padding: 0; }
 
-/* line 32, ../sass/pkp/_common.scss */
+/* line 17, ../sass/pkp/_common.scss */
 #content img.accessLogo {
   vertical-align: middle;
   margin: 0;
@@ -850,89 +834,89 @@ div.separator {
 /**
  * Announcements
  */
-/* line 43, ../sass/pkp/_common.scss */
+/* line 28, ../sass/pkp/_common.scss */
 #announcementsHome {
   width: 100%;
   margin: 2em 0 2em 0; }
 
-/* line 48, ../sass/pkp/_common.scss */
+/* line 33, ../sass/pkp/_common.scss */
 #announcementsHome h3 {
   text-align: center; }
 
-/* line 52, ../sass/pkp/_common.scss */
+/* line 37, ../sass/pkp/_common.scss */
 #announcements {
   width: auto; }
 
-/* line 57, ../sass/pkp/_common.scss */
+/* line 42, ../sass/pkp/_common.scss */
 #announcements h3 {
   text-align: center; }
 
-/* line 61, ../sass/pkp/_common.scss */
+/* line 46, ../sass/pkp/_common.scss */
 table.announcements {
   width: 100%; }
 
-/* line 65, ../sass/pkp/_common.scss */
+/* line 50, ../sass/pkp/_common.scss */
 table.announcements td {
   padding: 0.25em 0.5em 0.25em 0.5em; }
 
-/* line 69, ../sass/pkp/_common.scss */
+/* line 54, ../sass/pkp/_common.scss */
 table.announcements td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 74, ../sass/pkp/_common.scss */
+/* line 59, ../sass/pkp/_common.scss */
 table.announcements td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 80, ../sass/pkp/_common.scss */
+/* line 65, ../sass/pkp/_common.scss */
 table.announcements td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%; }
 
-/* line 86, ../sass/pkp/_common.scss */
+/* line 71, ../sass/pkp/_common.scss */
 table.announcements td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 98, ../sass/pkp/_common.scss */
+/* line 83, ../sass/pkp/_common.scss */
 table.announcements tr.title {
   vertical-align: top; }
 
-/* line 102, ../sass/pkp/_common.scss */
+/* line 87, ../sass/pkp/_common.scss */
 table.announcements td.title {
   width: 85%; }
 
-/* line 109, ../sass/pkp/_common.scss */
+/* line 94, ../sass/pkp/_common.scss */
 table.announcements tr.description {
   vertical-align: top; }
 
-/* line 113, ../sass/pkp/_common.scss */
+/* line 98, ../sass/pkp/_common.scss */
 table.announcements td.description {
   width: 85%; }
 
-/* line 117, ../sass/pkp/_common.scss */
+/* line 102, ../sass/pkp/_common.scss */
 table.announcements tr.details {
   vertical-align: bottom; }
 
-/* line 121, ../sass/pkp/_common.scss */
+/* line 106, ../sass/pkp/_common.scss */
 table.announcements td.posted {
   padding-top: 1em;
   font-style: italic; }
 
-/* line 126, ../sass/pkp/_common.scss */
+/* line 111, ../sass/pkp/_common.scss */
 table.announcements td.more {
   width: 15%;
   text-align: right; }
 
-/* line 131, ../sass/pkp/_common.scss */
+/* line 116, ../sass/pkp/_common.scss */
 table.announcementsMore {
   width: 100%; }
 
-/* line 135, ../sass/pkp/_common.scss */
+/* line 120, ../sass/pkp/_common.scss */
 table.announcementsMore td {
   padding-top: 1.5em;
   text-align: right; }
@@ -940,61 +924,61 @@ table.announcementsMore td {
 /**
  * Table of contents
  */
-/* line 145, ../sass/pkp/_common.scss */
+/* line 130, ../sass/pkp/_common.scss */
 .tocArticle {
   width: 100%;
   padding: 5px 0; }
 
-/* line 150, ../sass/pkp/_common.scss */
+/* line 135, ../sass/pkp/_common.scss */
 .tocArticleCoverImage {
   display: none; }
 
-/* line 153, ../sass/pkp/_common.scss */
+/* line 138, ../sass/pkp/_common.scss */
 .tocArticleCoverImage.showCoverImage {
   display: table-cell;
   width: 15%; }
 
-/* line 157, ../sass/pkp/_common.scss */
+/* line 142, ../sass/pkp/_common.scss */
 .tocCoverImage {
   width: 100%; }
 
-/* line 160, ../sass/pkp/_common.scss */
+/* line 145, ../sass/pkp/_common.scss */
 .tocCoverImage img {
   border: 0;
   width: 100%; }
 
-/* line 165, ../sass/pkp/_common.scss */
+/* line 150, ../sass/pkp/_common.scss */
 .tocArticleTitleAuthors {
   width: 80%; }
 
-/* line 168, ../sass/pkp/_common.scss */
+/* line 153, ../sass/pkp/_common.scss */
 .tocArticleTitleAuthors.showCoverImage {
   width: 65%;
   padding-left: 10px; }
 
-/* line 172, ../sass/pkp/_common.scss */
+/* line 157, ../sass/pkp/_common.scss */
 .tocAuthors {
   padding-left: 10px; }
 
-/* line 176, ../sass/pkp/_common.scss */
+/* line 161, ../sass/pkp/_common.scss */
 .tocArticleGalleysPages {
   width: 20%; }
 
-/* line 179, ../sass/pkp/_common.scss */
+/* line 164, ../sass/pkp/_common.scss */
 .tocGalleys, .tocPages {
   text-align: right; }
 
 /**
  * Homepage image
  */
-/* line 187, ../sass/pkp/_common.scss */
+/* line 172, ../sass/pkp/_common.scss */
 #homepageImage img {
   display: block;
   margin: 0 auto;
   border: 0;
   text-align: center; }
 
-/* line 194, ../sass/pkp/_common.scss */
+/* line 179, ../sass/pkp/_common.scss */
 .homepageImage img {
   margin: 0 auto;
   border: 0;
@@ -1006,12 +990,12 @@ table.announcementsMore td {
 /**
  * Issue cover image
  */
-/* line 208, ../sass/pkp/_common.scss */
+/* line 193, ../sass/pkp/_common.scss */
 #issueCoverImage img {
   display: block;
   border: 0; }
 
-/* line 213, ../sass/pkp/_common.scss */
+/* line 198, ../sass/pkp/_common.scss */
 .issueCoverImage img {
   border: 0;
   float: left;
@@ -1021,11 +1005,11 @@ table.announcementsMore td {
 /**
  * Editorial Team Lists
  */
-/* line 240, ../sass/pkp/_common.scss */
+/* line 225, ../sass/pkp/_common.scss */
 ol.editorialTeam li {
   list-style: none; }
 
-/* line 244, ../sass/pkp/_common.scss */
+/* line 229, ../sass/pkp/_common.scss */
 ol.editorialTeam, ol.editorialTeam li {
   margin-left: 0;
   padding-left: 0; }
@@ -1033,7 +1017,7 @@ ol.editorialTeam, ol.editorialTeam li {
 /**
  * Additional text styles
  */
-/* line 254, ../sass/pkp/_common.scss */
+/* line 239, ../sass/pkp/_common.scss */
 pre {
   background-color: #F0F0E8;
   color: #000;
@@ -1042,43 +1026,43 @@ pre {
 /**
  * Table styles
  */
-/* line 264, ../sass/pkp/_common.scss */
+/* line 249, ../sass/pkp/_common.scss */
 .highlightReviewerNotNotified, .highlightCopyediting {
   background: #EDEBC4; }
 
-/* line 267, ../sass/pkp/_common.scss */
+/* line 252, ../sass/pkp/_common.scss */
 .highlightNoDecision, .highlightLayoutEditing {
   background: #D8E9BD; }
 
-/* line 270, ../sass/pkp/_common.scss */
+/* line 255, ../sass/pkp/_common.scss */
 .highlightRevisedCopyUploaded, .higlightProofreading {
   background: #C6EBE4; }
 
-/* line 273, ../sass/pkp/_common.scss */
+/* line 258, ../sass/pkp/_common.scss */
 .highlightReviewerConfirmationOverdue {
   background: #9DD1E6; }
 
-/* line 276, ../sass/pkp/_common.scss */
+/* line 261, ../sass/pkp/_common.scss */
 .highlightReviewerCompletionOverdue {
   background: #74C5D8; }
 
-/* line 280, ../sass/pkp/_common.scss */
+/* line 265, ../sass/pkp/_common.scss */
 .fastTracked {
   background-color: #ABA; }
 
-/* line 284, ../sass/pkp/_common.scss */
+/* line 269, ../sass/pkp/_common.scss */
 table.listing tr.data td {
   border-top: 1px dotted #DDDDD0;
   border-bottom: 1px dotted #DDDDD0; }
 
-/* line 289, ../sass/pkp/_common.scss */
+/* line 274, ../sass/pkp/_common.scss */
 table.listing tr.data td.drag {
   cursor: move; }
 
 /**
  * Other organizational elements
  */
-/* line 298, ../sass/pkp/_common.scss */
+/* line 283, ../sass/pkp/_common.scss */
 div.progressbar {
   background-image: url(../templates/images/progbg.gif);
   background-repeat: no-repeat;
@@ -1086,18 +1070,18 @@ div.progressbar {
   width: 505px;
   z-index: 1; }
 
-/* line 306, ../sass/pkp/_common.scss */
+/* line 291, ../sass/pkp/_common.scss */
 td.notificationContent {
   padding-left: 5px;
   padding-right: 5px; }
 
-/* line 311, ../sass/pkp/_common.scss */
+/* line 296, ../sass/pkp/_common.scss */
 td.notificationFunction {
   padding-left: 5px;
   padding-right: 5px;
   text-align: right; }
 
-/* line 317, ../sass/pkp/_common.scss */
+/* line 302, ../sass/pkp/_common.scss */
 .throbber {
   display: none;
   background: url(../lib/pkp/templates/images/throbber.gif) no-repeat;
@@ -1107,7 +1091,7 @@ td.notificationFunction {
   margin-top: 5%; }
 
 /* Font Sizer */
-/* line 327, ../sass/pkp/_common.scss */
+/* line 312, ../sass/pkp/_common.scss */
 #sizer a {
   outline: none;
   text-indent: -9999px;
@@ -1118,16 +1102,16 @@ td.notificationFunction {
   margin-right: 4px;
   margin-left: 8px; }
 
-/* line 338, ../sass/pkp/_common.scss */
+/* line 323, ../sass/pkp/_common.scss */
 #journalListPageInfo {
   float: right; }
 
-/* line 342, ../sass/pkp/_common.scss */
+/* line 327, ../sass/pkp/_common.scss */
 #journalListPageLinks {
   float: left; }
 
 /* @group Tag-it */
-/* line 352, ../sass/pkp/_common.scss */
+/* line 337, ../sass/pkp/_common.scss */
 #interests ul.tagit {
   padding: 0 0.375rem;
   border: 1px solid #999;
@@ -1139,7 +1123,7 @@ td.notificationFunction {
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* line 366, ../sass/pkp/_common.scss */
+/* line 351, ../sass/pkp/_common.scss */
 #interests ul.tagit li {
   margin: 1px 5px 1px 0;
   border-color: #999;
@@ -1147,23 +1131,23 @@ td.notificationFunction {
   background: none;
   font-weight: normal;
   border-radius: 0; }
-/* line 378, ../sass/pkp/_common.scss */
+/* line 363, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-choice {
   padding: 0 18px 0 5px; }
-/* line 382, ../sass/pkp/_common.scss */
+/* line 367, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-new {
   padding: 1px 18px 1px 5px; }
-  /* line 385, ../sass/pkp/_common.scss */
+  /* line 370, ../sass/pkp/_common.scss */
   #interests ul.tagit li.tagit-new input {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
-/* line 392, ../sass/pkp/_common.scss */
+/* line 377, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-choice .tagit-close {
   color: #333; }
-/* line 397, ../sass/pkp/_common.scss */
+/* line 382, ../sass/pkp/_common.scss */
 #interests .ui-autocomplete .ui-menu-item a {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1478,7 +1462,7 @@ input.uploadField {
   line-height: 1.5rem;
   height: 2.25rem;
   background-color: #fff !important;
-  border-radius: 3px;
+  border-radius: 0px;
   border: 1px solid #858585; }
 
 /* line 24, ../sass/modules/_forms.scss */
@@ -1513,7 +1497,7 @@ button.ui-button.ui-button-text-only .ui-button-text {
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  border-radius: 3px;
+  border-radius: 0px;
   cursor: pointer;
   text-decoration: none;
   background-color: transparent;
@@ -1726,6 +1710,31 @@ button.ui-button.ui-button-text-only .ui-button-text {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+
+/* line 1, ../sass/modules/_ui-pnotify.scss */
+.ui-pnotify-history-container {
+  background: #3C7861;
+  padding: 0 0.75rem; }
+
+/* line 6, ../sass/modules/_ui-pnotify.scss */
+.ui-pnotify-history-header {
+  font-size: 11px;
+  font-size: 0.707rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+
+/* line 11, ../sass/modules/_ui-pnotify.scss */
+.ui-pnotify-title {
+  font-size: 0.8em; }
+
+/* line 15, ../sass/modules/_ui-pnotify.scss */
+.ui-pnotify-text {
+  font-size: 0.6em; }
+
+/* line 19, ../sass/modules/_ui-pnotify.scss */
+.ui-pnotify-history-container .ui-pnotify-history-header {
+  font-size: 0.8em; }
 
 /* line 3, ../sass/pages/_userhome.scss */
 #pkp-user-userHome #content > a:first-child {
