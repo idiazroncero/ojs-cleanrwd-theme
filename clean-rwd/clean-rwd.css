@@ -1741,6 +1741,11 @@ button.ui-button.ui-button-text-only .ui-button-text {
   display: inline-block;
   margin-bottom: 1.5rem; }
 
+/* line 5, ../sass/pages/_siteadmin.scss */
+#siteManagement,
+#adminFunctions {
+  margin-bottom: 1.5rem; }
+
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets
  */
