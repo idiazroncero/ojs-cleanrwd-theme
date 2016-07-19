@@ -60,7 +60,7 @@ h6 {
 // We always use one (1) measure of vertical rhythm;
 
 p, h1, h2, h3, h4, h5, h6, ul {
-	margin:0 0 0 rhythm(1);
+	margin:0 0 rhythm(1) 0;
 }
 
 ul {
