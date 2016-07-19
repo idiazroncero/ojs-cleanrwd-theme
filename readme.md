@@ -71,12 +71,12 @@ A rather basic grunt workflow is included:
 
 If you don't have access to grunt or a CLI - or you don't feel comfortable - you can manually compile the CSS.
 
-1 - Go to [SassMeister](http://www.sassmeister.com].
-2 - ¡IMPORTANT! On the 'Options' menu, activate "Autoprefixer".
-3 - Copy the content of `/concat/sass-source.scss` in the left side.
-4 - Make your modifications on the file (variables, etc...)
-5 - Wait for sassmeister to compile your CSS file.
-6 - Substitute /themes/plugins/clean-rwd/clean-rwd.css with the result
+1. Go to [SassMeister](http://www.sassmeister.com).
+2. ¡IMPORTANT! On the 'Options' menu, activate "Autoprefixer".
+3. Copy the content of `/concat/sass-source.scss` in the left side.
+4. Make your modifications on the file (variables, etc...)
+5. Wait for sassmeister to compile your CSS file.
+6. Substitute /themes/plugins/clean-rwd/clean-rwd.css with the result
 
 ### Dependencies
 
