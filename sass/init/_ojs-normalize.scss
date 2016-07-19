@@ -1,3 +1,17 @@
+//--------------------------
+//
+// This file resets all elements to their new defaults
+// explictly overriding OJS' previous stylesheets.
+//
+//
+// MENU
+// 1 - Typography
+// 2 - Vertical rhythm
+// 3 - Links
+// 4 - Other defaults
+//--------------------------
+
+
 // TYPOGRAPHY
 // ========================================================
 
@@ -93,10 +107,16 @@ a:hover {
 
 
 body {
-	// Must explicitly override the background color. TODO: ¿Set in variable?
-	background-color: $background-color;
 	color: $font-color;
 	font-family: $base-font-family;
+}
+
+body,
+#header,
+#footer {
+	// We have to explicitly override the background color (even if we choose transparent)
+	// TODO: ¿should we separate header, footer and body colors?
+	background-color: $background-color;
 }
 
 table {

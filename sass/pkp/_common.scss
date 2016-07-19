@@ -15,20 +15,6 @@
 	font-size: 0.8em;
 }
 
-/**
- * Main layout elements
- */
-
-#header {
-	// Explicitly overrides ANY color. TODO: ¿set in variable? 
-	background-color: transparent;
-}
-
-#footer {
-	// Explicitly overrides ANY color. TODO: ¿set in variable? 
-	background-color: transparent;
-}
-
 
 /**
  * Access icons and key
@@ -47,18 +33,6 @@
 	vertical-align: middle;
 	margin: 0;
 	padding: 0;
-}
-
-
-/**
- * Navigation bar
- */
-
-#navbar a {
-	// This conflicts with pkp/common.css ul.menu a.
-	// We need to repeat the properties. Ugly, but needed.
-	@include adjust-font-size-to($base-font-size);
-	letter-spacing: 0.1rem;
 }
 
 

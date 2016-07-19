@@ -429,89 +429,94 @@ textarea {
   font: inherit;
   /* 2 */ }
 
-/* line 6, ../sass/init/_ojs-normalize.scss */
+/* line 20, ../sass/init/_ojs-normalize.scss */
 p, h1, h2, h3, h4, h5, h6 {
   color: #333; }
 
-/* line 10, ../sass/init/_ojs-normalize.scss */
+/* line 24, ../sass/init/_ojs-normalize.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
-/* line 16, ../sass/init/_ojs-normalize.scss */
+/* line 30, ../sass/init/_ojs-normalize.scss */
 h1 {
   font-size: 51px;
   font-size: 3.157rem;
   line-height: 60px;
   line-height: 3.75rem; }
 
-/* line 20, ../sass/init/_ojs-normalize.scss */
+/* line 34, ../sass/init/_ojs-normalize.scss */
 h2 {
   font-size: 38px;
   font-size: 2.369rem;
   line-height: 48px;
   line-height: 3rem; }
 
-/* line 24, ../sass/init/_ojs-normalize.scss */
+/* line 38, ../sass/init/_ojs-normalize.scss */
 h3 {
   font-size: 28px;
   font-size: 1.777rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 28, ../sass/init/_ojs-normalize.scss */
+/* line 42, ../sass/init/_ojs-normalize.scss */
 h4 {
   font-size: 21px;
   font-size: 1.333rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 32, ../sass/init/_ojs-normalize.scss */
+/* line 46, ../sass/init/_ojs-normalize.scss */
 h5 {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 36, ../sass/init/_ojs-normalize.scss */
+/* line 50, ../sass/init/_ojs-normalize.scss */
 h6 {
   font-size: 11px;
   font-size: 0.707rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 48, ../sass/init/_ojs-normalize.scss */
+/* line 62, ../sass/init/_ojs-normalize.scss */
 p, h1, h2, h3, h4, h5, h6, ul {
   margin: 0 0 0 1.5rem; }
 
-/* line 52, ../sass/init/_ojs-normalize.scss */
+/* line 66, ../sass/init/_ojs-normalize.scss */
 ul {
   padding: 0 0 0 1.5rem; }
 
-/* line 61, ../sass/init/_ojs-normalize.scss */
+/* line 75, ../sass/init/_ojs-normalize.scss */
 a:link {
   color: #666; }
 
-/* line 70, ../sass/init/_ojs-normalize.scss */
+/* line 84, ../sass/init/_ojs-normalize.scss */
 a:active {
   color: #666; }
 
-/* line 74, ../sass/init/_ojs-normalize.scss */
+/* line 88, ../sass/init/_ojs-normalize.scss */
 a:visited {
   color: #8c8c8c; }
 
-/* line 78, ../sass/init/_ojs-normalize.scss */
+/* line 92, ../sass/init/_ojs-normalize.scss */
 a:hover {
   color: #8c8c8c;
   background: transparent;
   text-decoration: underline; }
 
-/* line 95, ../sass/init/_ojs-normalize.scss */
+/* line 109, ../sass/init/_ojs-normalize.scss */
 body {
-  background-color: #fff;
   color: #333;
   font-family: Merriweather, Georgia, Times, serif; }
 
-/* line 102, ../sass/init/_ojs-normalize.scss */
+/* line 114, ../sass/init/_ojs-normalize.scss */
+body,
+#header,
+#footer {
+  background-color: #fff; }
+
+/* line 122, ../sass/init/_ojs-normalize.scss */
 table {
   font-size: 1.0rem; }
 
@@ -880,132 +885,110 @@ div.separator {
   font-size: 0.8em; }
 
 /**
- * Main layout elements
- */
-/* line 22, ../sass/pkp/_common.scss */
-#header {
-  background-color: transparent; }
-
-/* line 27, ../sass/pkp/_common.scss */
-#footer {
-  background-color: transparent; }
-
-/**
  * Access icons and key
  */
-/* line 36, ../sass/pkp/_common.scss */
+/* line 22, ../sass/pkp/_common.scss */
 #accessKey {
   margin-bottom: 2em; }
 
-/* line 40, ../sass/pkp/_common.scss */
+/* line 26, ../sass/pkp/_common.scss */
 #accessKey img {
   vertical-align: middle;
   margin: 0;
   padding: 0; }
 
-/* line 46, ../sass/pkp/_common.scss */
+/* line 32, ../sass/pkp/_common.scss */
 #content img.accessLogo {
   vertical-align: middle;
   margin: 0;
   padding: 0; }
 
 /**
- * Navigation bar
- */
-/* line 57, ../sass/pkp/_common.scss */
-#navbar a {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  letter-spacing: 0.1rem; }
-
-/**
  * Announcements
  */
-/* line 69, ../sass/pkp/_common.scss */
+/* line 43, ../sass/pkp/_common.scss */
 #announcementsHome {
   width: 100%;
   margin: 2em 0 2em 0; }
 
-/* line 74, ../sass/pkp/_common.scss */
+/* line 48, ../sass/pkp/_common.scss */
 #announcementsHome h3 {
   text-align: center; }
 
-/* line 78, ../sass/pkp/_common.scss */
+/* line 52, ../sass/pkp/_common.scss */
 #announcements {
   width: auto; }
 
-/* line 83, ../sass/pkp/_common.scss */
+/* line 57, ../sass/pkp/_common.scss */
 #announcements h3 {
   text-align: center; }
 
-/* line 87, ../sass/pkp/_common.scss */
+/* line 61, ../sass/pkp/_common.scss */
 table.announcements {
   width: 100%; }
 
-/* line 91, ../sass/pkp/_common.scss */
+/* line 65, ../sass/pkp/_common.scss */
 table.announcements td {
   padding: 0.25em 0.5em 0.25em 0.5em; }
 
-/* line 95, ../sass/pkp/_common.scss */
+/* line 69, ../sass/pkp/_common.scss */
 table.announcements td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 100, ../sass/pkp/_common.scss */
+/* line 74, ../sass/pkp/_common.scss */
 table.announcements td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 106, ../sass/pkp/_common.scss */
+/* line 80, ../sass/pkp/_common.scss */
 table.announcements td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%; }
 
-/* line 112, ../sass/pkp/_common.scss */
+/* line 86, ../sass/pkp/_common.scss */
 table.announcements td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 124, ../sass/pkp/_common.scss */
+/* line 98, ../sass/pkp/_common.scss */
 table.announcements tr.title {
   vertical-align: top; }
 
-/* line 128, ../sass/pkp/_common.scss */
+/* line 102, ../sass/pkp/_common.scss */
 table.announcements td.title {
   width: 85%; }
 
-/* line 135, ../sass/pkp/_common.scss */
+/* line 109, ../sass/pkp/_common.scss */
 table.announcements tr.description {
   vertical-align: top; }
 
-/* line 139, ../sass/pkp/_common.scss */
+/* line 113, ../sass/pkp/_common.scss */
 table.announcements td.description {
   width: 85%; }
 
-/* line 143, ../sass/pkp/_common.scss */
+/* line 117, ../sass/pkp/_common.scss */
 table.announcements tr.details {
   vertical-align: bottom; }
 
-/* line 147, ../sass/pkp/_common.scss */
+/* line 121, ../sass/pkp/_common.scss */
 table.announcements td.posted {
   padding-top: 1em;
   font-style: italic; }
 
-/* line 152, ../sass/pkp/_common.scss */
+/* line 126, ../sass/pkp/_common.scss */
 table.announcements td.more {
   width: 15%;
   text-align: right; }
 
-/* line 157, ../sass/pkp/_common.scss */
+/* line 131, ../sass/pkp/_common.scss */
 table.announcementsMore {
   width: 100%; }
 
-/* line 161, ../sass/pkp/_common.scss */
+/* line 135, ../sass/pkp/_common.scss */
 table.announcementsMore td {
   padding-top: 1.5em;
   text-align: right; }
@@ -1013,61 +996,61 @@ table.announcementsMore td {
 /**
  * Table of contents
  */
-/* line 171, ../sass/pkp/_common.scss */
+/* line 145, ../sass/pkp/_common.scss */
 .tocArticle {
   width: 100%;
   padding: 5px 0; }
 
-/* line 176, ../sass/pkp/_common.scss */
+/* line 150, ../sass/pkp/_common.scss */
 .tocArticleCoverImage {
   display: none; }
 
-/* line 179, ../sass/pkp/_common.scss */
+/* line 153, ../sass/pkp/_common.scss */
 .tocArticleCoverImage.showCoverImage {
   display: table-cell;
   width: 15%; }
 
-/* line 183, ../sass/pkp/_common.scss */
+/* line 157, ../sass/pkp/_common.scss */
 .tocCoverImage {
   width: 100%; }
 
-/* line 186, ../sass/pkp/_common.scss */
+/* line 160, ../sass/pkp/_common.scss */
 .tocCoverImage img {
   border: 0;
   width: 100%; }
 
-/* line 191, ../sass/pkp/_common.scss */
+/* line 165, ../sass/pkp/_common.scss */
 .tocArticleTitleAuthors {
   width: 80%; }
 
-/* line 194, ../sass/pkp/_common.scss */
+/* line 168, ../sass/pkp/_common.scss */
 .tocArticleTitleAuthors.showCoverImage {
   width: 65%;
   padding-left: 10px; }
 
-/* line 198, ../sass/pkp/_common.scss */
+/* line 172, ../sass/pkp/_common.scss */
 .tocAuthors {
   padding-left: 10px; }
 
-/* line 202, ../sass/pkp/_common.scss */
+/* line 176, ../sass/pkp/_common.scss */
 .tocArticleGalleysPages {
   width: 20%; }
 
-/* line 205, ../sass/pkp/_common.scss */
+/* line 179, ../sass/pkp/_common.scss */
 .tocGalleys, .tocPages {
   text-align: right; }
 
 /**
  * Homepage image
  */
-/* line 213, ../sass/pkp/_common.scss */
+/* line 187, ../sass/pkp/_common.scss */
 #homepageImage img {
   display: block;
   margin: 0 auto;
   border: 0;
   text-align: center; }
 
-/* line 220, ../sass/pkp/_common.scss */
+/* line 194, ../sass/pkp/_common.scss */
 .homepageImage img {
   margin: 0 auto;
   border: 0;
@@ -1079,12 +1062,12 @@ table.announcementsMore td {
 /**
  * Issue cover image
  */
-/* line 234, ../sass/pkp/_common.scss */
+/* line 208, ../sass/pkp/_common.scss */
 #issueCoverImage img {
   display: block;
   border: 0; }
 
-/* line 239, ../sass/pkp/_common.scss */
+/* line 213, ../sass/pkp/_common.scss */
 .issueCoverImage img {
   border: 0;
   float: left;
@@ -1094,11 +1077,11 @@ table.announcementsMore td {
 /**
  * Editorial Team Lists
  */
-/* line 266, ../sass/pkp/_common.scss */
+/* line 240, ../sass/pkp/_common.scss */
 ol.editorialTeam li {
   list-style: none; }
 
-/* line 270, ../sass/pkp/_common.scss */
+/* line 244, ../sass/pkp/_common.scss */
 ol.editorialTeam, ol.editorialTeam li {
   margin-left: 0;
   padding-left: 0; }
@@ -1106,7 +1089,7 @@ ol.editorialTeam, ol.editorialTeam li {
 /**
  * Additional text styles
  */
-/* line 280, ../sass/pkp/_common.scss */
+/* line 254, ../sass/pkp/_common.scss */
 pre {
   background-color: #F0F0E8;
   color: #000;
@@ -1115,43 +1098,43 @@ pre {
 /**
  * Table styles
  */
-/* line 290, ../sass/pkp/_common.scss */
+/* line 264, ../sass/pkp/_common.scss */
 .highlightReviewerNotNotified, .highlightCopyediting {
   background: #EDEBC4; }
 
-/* line 293, ../sass/pkp/_common.scss */
+/* line 267, ../sass/pkp/_common.scss */
 .highlightNoDecision, .highlightLayoutEditing {
   background: #D8E9BD; }
 
-/* line 296, ../sass/pkp/_common.scss */
+/* line 270, ../sass/pkp/_common.scss */
 .highlightRevisedCopyUploaded, .higlightProofreading {
   background: #C6EBE4; }
 
-/* line 299, ../sass/pkp/_common.scss */
+/* line 273, ../sass/pkp/_common.scss */
 .highlightReviewerConfirmationOverdue {
   background: #9DD1E6; }
 
-/* line 302, ../sass/pkp/_common.scss */
+/* line 276, ../sass/pkp/_common.scss */
 .highlightReviewerCompletionOverdue {
   background: #74C5D8; }
 
-/* line 306, ../sass/pkp/_common.scss */
+/* line 280, ../sass/pkp/_common.scss */
 .fastTracked {
   background-color: #ABA; }
 
-/* line 310, ../sass/pkp/_common.scss */
+/* line 284, ../sass/pkp/_common.scss */
 table.listing tr.data td {
   border-top: 1px dotted #DDDDD0;
   border-bottom: 1px dotted #DDDDD0; }
 
-/* line 315, ../sass/pkp/_common.scss */
+/* line 289, ../sass/pkp/_common.scss */
 table.listing tr.data td.drag {
   cursor: move; }
 
 /**
  * Other organizational elements
  */
-/* line 324, ../sass/pkp/_common.scss */
+/* line 298, ../sass/pkp/_common.scss */
 div.progressbar {
   background-image: url(../templates/images/progbg.gif);
   background-repeat: no-repeat;
@@ -1159,18 +1142,18 @@ div.progressbar {
   width: 505px;
   z-index: 1; }
 
-/* line 332, ../sass/pkp/_common.scss */
+/* line 306, ../sass/pkp/_common.scss */
 td.notificationContent {
   padding-left: 5px;
   padding-right: 5px; }
 
-/* line 337, ../sass/pkp/_common.scss */
+/* line 311, ../sass/pkp/_common.scss */
 td.notificationFunction {
   padding-left: 5px;
   padding-right: 5px;
   text-align: right; }
 
-/* line 343, ../sass/pkp/_common.scss */
+/* line 317, ../sass/pkp/_common.scss */
 .throbber {
   display: none;
   background: url(../lib/pkp/templates/images/throbber.gif) no-repeat;
@@ -1180,7 +1163,7 @@ td.notificationFunction {
   margin-top: 5%; }
 
 /* Font Sizer */
-/* line 353, ../sass/pkp/_common.scss */
+/* line 327, ../sass/pkp/_common.scss */
 #sizer a {
   outline: none;
   text-indent: -9999px;
@@ -1191,16 +1174,16 @@ td.notificationFunction {
   margin-right: 4px;
   margin-left: 8px; }
 
-/* line 364, ../sass/pkp/_common.scss */
+/* line 338, ../sass/pkp/_common.scss */
 #journalListPageInfo {
   float: right; }
 
-/* line 368, ../sass/pkp/_common.scss */
+/* line 342, ../sass/pkp/_common.scss */
 #journalListPageLinks {
   float: left; }
 
 /* @group Tag-it */
-/* line 378, ../sass/pkp/_common.scss */
+/* line 352, ../sass/pkp/_common.scss */
 #interests ul.tagit {
   padding: 0 0.375rem;
   border: 1px solid #999;
@@ -1212,7 +1195,7 @@ td.notificationFunction {
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* line 392, ../sass/pkp/_common.scss */
+/* line 366, ../sass/pkp/_common.scss */
 #interests ul.tagit li {
   margin: 1px 5px 1px 0;
   border-color: #999;
@@ -1220,23 +1203,23 @@ td.notificationFunction {
   background: none;
   font-weight: normal;
   border-radius: 0; }
-/* line 404, ../sass/pkp/_common.scss */
+/* line 378, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-choice {
   padding: 0 18px 0 5px; }
-/* line 408, ../sass/pkp/_common.scss */
+/* line 382, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-new {
   padding: 1px 18px 1px 5px; }
-  /* line 411, ../sass/pkp/_common.scss */
+  /* line 385, ../sass/pkp/_common.scss */
   #interests ul.tagit li.tagit-new input {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
-/* line 418, ../sass/pkp/_common.scss */
+/* line 392, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-choice .tagit-close {
   color: #333; }
-/* line 423, ../sass/pkp/_common.scss */
+/* line 397, ../sass/pkp/_common.scss */
 #interests .ui-autocomplete .ui-menu-item a {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1608,7 +1591,7 @@ button.ui-button.ui-button-text-only .ui-button-text {
   letter-spacing: 0.05rem;
   text-transform: uppercase; }
 
-/* line 1, ../sass/modules/_menu.scss */
+/* line 1, ../sass/modules/_navbar.scss */
 #navbar {
   margin-right: 0;
   padding-bottom: 0;
@@ -1619,21 +1602,28 @@ button.ui-button.ui-button-text-only .ui-button-text {
     content: "";
     display: table;
     clear: both; }
-  /* line 9, ../sass/modules/_menu.scss */
+  /* line 8, ../sass/modules/_navbar.scss */
+  #navbar a {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem; }
+  /* line 15, ../sass/modules/_navbar.scss */
   #navbar a, #navbar a:hover {
     text-decoration: none;
     border: none; }
-  /* line 13, ../sass/modules/_menu.scss */
+  /* line 19, ../sass/modules/_navbar.scss */
   #navbar a, #navbar a:link, #navbar a:visited, #navbar a:hover, #navbar a:active {
     color: #333; }
-  /* line 16, ../sass/modules/_menu.scss */
+  /* line 22, ../sass/modules/_navbar.scss */
   #navbar li {
     border-bottom: 0.375rem solid transparent;
     border-top: 1px solid transparent;
     margin-bottom: -0.375rem;
     -webkit-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out; }
-    /* line 23, ../sass/modules/_menu.scss */
+    /* line 30, ../sass/modules/_navbar.scss */
     #navbar li:hover {
       border-color: #000; }
 
