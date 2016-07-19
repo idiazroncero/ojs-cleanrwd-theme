@@ -21,13 +21,18 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	border: 1px solid $light-color;
 }
 
+input.uploadField {
+	// Border is ugly...
+	border:none;
+}
+
 select.selectMenu {
 	// Select needs a little help to conform to line-height standards
 	padding:rhythm(0.125) 0;
 	height:rhythm(1.5);
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="file"] {
 	// Some padding to enhance legibility
 	padding:0 rhythm(0.25);
 }

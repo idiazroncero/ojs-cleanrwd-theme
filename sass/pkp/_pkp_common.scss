@@ -19,16 +19,6 @@ input.uploadField {
 	background:none;
 }
 
-// All cases on which submits need to be smaller
-
-td.value // Inside value cells
-	{
-	input[type="submit"] {
-		@include adjust-font-size-to($h5-font-size, 0.75);
-		padding: 0 5px;
-	}
-}
-
 
 // Why? OJS seems to have only "journal footers", not "general" ones.
 // These IDs seem to be useless... (let's see)
@@ -101,114 +91,7 @@ div.warningMessage {
 	white-space: nowrap;
 }
 
-/**
- * Table styles
- */
 
-table.info td {
-	padding: 0;
-	padding-bottom: 0.5em;
-	padding-right: 0.5em;
-}
-
-table.listing td {
-	padding: 0.25em 1.5em 0.25em 0.5em;
-}
-
-table.listing tr.heading td, table.listing td.heading, table.info td.heading {
-	font-size: 0.85em;
-	text-transform: uppercase;
-	font-weight: normal;
-	padding: 0.75em 1.5em 1em 0.5em;
-}
-
-table.info td.heading {
-	padding-left: 0;
-}
-
-
-table.listing td.nodata, table.info td.nodata {
-	text-align: center;
-	font-style: italic;
-}
-
-table.listing td.headseparator {
-	border-top: 1px dotted #000;
-	font-size: 0.1em;
-	line-height: 1%;
-}
-
-table.listing td.endseparator {
-	border-top: 1px dotted #000;
-	font-size: 0.25em;
-	line-height: 10%;
-}
-
-table.listing td.separator, table.info td.separator {
-	border-top: 1px dotted #DDDDD0;
-	font-size: 0.1em;
-	line-height: 1%;
-}
-
-table.data td {
-	// Express it as vertical rhythm units
-	padding-bottom: rhythm(0.5);
-}
-
-table.data td.label {
-	// Express it as vetical rhythm units
-	padding-right: rhythm(1);
-	// We prefer to style labels differently:
-	font-family:$helvetica;
-	@include adjust-font-size-to($h5-font-size);
-	font-weight:bold;
-}
-
-table.data td.separator {
-	// Make the separator bigger
-	padding: rhythm(1);
-}
-
-table.data td.heading {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-table.nested tr {
-	padding: 0;
-	margin: 0;
-}
-
-span.nested {
-	padding: 0 4px 0 0;
-	font-size: 1.2em;
-}
-
-
-// TABLE HACKS AND FIXES
-
-// We prefer to style instructions and form helpers differently:
-.instruct, span.formRequired {
-	font-family:$helvetica;
-	@include adjust-font-size-to($h5-font-size);
-}
-
-// There are strong inconsistencies inside OJS tables. 
-// Some instructions have a .instruct and span in their own <tr> row 
-// while others are put inside the main <td>, alongside the <input> and without class.
-// We have to be hacky: we style every td.value and then undo the changes inside every input.
-// OJS tables are very poorly styled indeed...
-td.value, td.data, td label {
-	// Those are the .instruct styles
-	font-family:$helvetica;
-	@include adjust-font-size-to($h5-font-size);
-}
-
-// Harcoded valign = top on <td> elements unaligns checkboxes and select boxes respect to the text
-// This is a Hacky fix, since we can't access the HTML.
-td input[type="checkbox"], td input[type="radio"] {
-	margin-top:7px;
-}
 
 /**
  * Form-specific elements
