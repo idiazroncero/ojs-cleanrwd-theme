@@ -489,7 +489,8 @@ ul {
 
 /* line 75, ../sass/init/_ojs-normalize.scss */
 a:link {
-  color: #666; }
+  color: #666;
+  text-decoration: underline; }
 
 /* line 84, ../sass/init/_ojs-normalize.scss */
 a:active {
@@ -503,7 +504,7 @@ a:visited {
 a:hover {
   color: #8c8c8c;
   background: transparent;
-  text-decoration: underline; }
+  border-bottom: none; }
 
 /* line 109, ../sass/init/_ojs-normalize.scss */
 body {
@@ -563,165 +564,108 @@ td.value input[type="submit"] {
   margin: 0 auto;
   padding-left: 10%; }
 
-/* line 49, ../sass/pkp/_pkp_common.scss */
-#main h2 {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  border-bottom: 1px solid #858585; }
-
-/* line 58, ../sass/pkp/_pkp_common.scss */
-#main h3 {
-  margin: 0 0 1.5rem 0;
-  padding-top: 0;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  font-weight: 300; }
-
-/* line 65, ../sass/pkp/_pkp_common.scss */
-#content {
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  border: none; }
-
-/* line 77, ../sass/pkp/_pkp_common.scss */
-#content h3 {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  font-size: 28px;
-  font-size: 1.777rem;
-  line-height: 36px;
-  line-height: 2.25rem; }
-
-/* line 85, ../sass/pkp/_pkp_common.scss */
-#content h4 {
-  margin: 0 0 1.5rem 0;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 36px;
-  line-height: 2.25rem; }
-
-/* line 91, ../sass/pkp/_pkp_common.scss */
-#content h5 {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  font-size: 14px;
-  font-size: 0.85rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
-
-/**
- * Breadcrumbs
- */
-/* line 103, ../sass/pkp/_pkp_common.scss */
-#breadcrumb a.current {
-  font-weight: bold; }
-
 /**
  * Footer elements
  */
-/* line 112, ../sass/pkp/_pkp_common.scss */
+/* line 54, ../sass/pkp/_pkp_common.scss */
 #footer div.debugStats {
   font-size: 0.6em; }
 
 /**
  * Additional text styles
  */
-/* line 122, ../sass/pkp/_pkp_common.scss */
+/* line 64, ../sass/pkp/_pkp_common.scss */
 span.disabled, label.disabled {
   color: #666; }
 
-/* line 126, ../sass/pkp/_pkp_common.scss */
+/* line 68, ../sass/pkp/_pkp_common.scss */
 a.action, a.file {
   font-size: 0.85em;
   text-transform: uppercase; }
 
-/* line 131, ../sass/pkp/_pkp_common.scss */
+/* line 73, ../sass/pkp/_pkp_common.scss */
 a.icon {
   text-decoration: none; }
 
-/* line 135, ../sass/pkp/_pkp_common.scss */
+/* line 77, ../sass/pkp/_pkp_common.scss */
 a.icon img {
   border: 0; }
 
-/* line 139, ../sass/pkp/_pkp_common.scss */
+/* line 81, ../sass/pkp/_pkp_common.scss */
 a.icon:hover {
   background: none; }
 
-/* line 143, ../sass/pkp/_pkp_common.scss */
+/* line 85, ../sass/pkp/_pkp_common.scss */
 span.heading {
   font-size: 0.85em;
   text-transform: uppercase; }
 
-/* line 148, ../sass/pkp/_pkp_common.scss */
+/* line 90, ../sass/pkp/_pkp_common.scss */
 span.highlight {
   border-bottom: 1px dotted #000; }
 
-/* line 152, ../sass/pkp/_pkp_common.scss */
+/* line 94, ../sass/pkp/_pkp_common.scss */
 div.warningMessage {
   background: url(../templates/images/icons/icon_alert.gif) no-repeat 3px 40%;
   margin: 5px;
   padding: 5px 5px 5px 25px; }
 
-/* line 158, ../sass/pkp/_pkp_common.scss */
+/* line 100, ../sass/pkp/_pkp_common.scss */
 .nowrap {
   white-space: nowrap; }
 
 /**
  * Table styles
  */
-/* line 166, ../sass/pkp/_pkp_common.scss */
+/* line 108, ../sass/pkp/_pkp_common.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em; }
 
-/* line 172, ../sass/pkp/_pkp_common.scss */
+/* line 114, ../sass/pkp/_pkp_common.scss */
 table.listing td {
   padding: 0.25em 1.5em 0.25em 0.5em; }
 
-/* line 176, ../sass/pkp/_pkp_common.scss */
+/* line 118, ../sass/pkp/_pkp_common.scss */
 table.listing tr.heading td, table.listing td.heading, table.info td.heading {
   font-size: 0.85em;
   text-transform: uppercase;
   font-weight: normal;
   padding: 0.75em 1.5em 1em 0.5em; }
 
-/* line 183, ../sass/pkp/_pkp_common.scss */
+/* line 125, ../sass/pkp/_pkp_common.scss */
 table.info td.heading {
   padding-left: 0; }
 
-/* line 188, ../sass/pkp/_pkp_common.scss */
+/* line 130, ../sass/pkp/_pkp_common.scss */
 table.listing td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 193, ../sass/pkp/_pkp_common.scss */
+/* line 135, ../sass/pkp/_pkp_common.scss */
 table.listing td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 199, ../sass/pkp/_pkp_common.scss */
+/* line 141, ../sass/pkp/_pkp_common.scss */
 table.listing td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%; }
 
-/* line 205, ../sass/pkp/_pkp_common.scss */
+/* line 147, ../sass/pkp/_pkp_common.scss */
 table.listing td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 211, ../sass/pkp/_pkp_common.scss */
+/* line 153, ../sass/pkp/_pkp_common.scss */
 table.data td {
   padding-bottom: 0.75rem; }
 
-/* line 216, ../sass/pkp/_pkp_common.scss */
+/* line 158, ../sass/pkp/_pkp_common.scss */
 table.data td.label {
   padding-right: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -731,26 +675,26 @@ table.data td.label {
   line-height: 1.5rem;
   font-weight: bold; }
 
-/* line 225, ../sass/pkp/_pkp_common.scss */
+/* line 167, ../sass/pkp/_pkp_common.scss */
 table.data td.separator {
   padding: 1.5rem; }
 
-/* line 230, ../sass/pkp/_pkp_common.scss */
+/* line 172, ../sass/pkp/_pkp_common.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 235, ../sass/pkp/_pkp_common.scss */
+/* line 177, ../sass/pkp/_pkp_common.scss */
 table.nested tr {
   padding: 0;
   margin: 0; }
 
-/* line 240, ../sass/pkp/_pkp_common.scss */
+/* line 182, ../sass/pkp/_pkp_common.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em; }
 
-/* line 249, ../sass/pkp/_pkp_common.scss */
+/* line 191, ../sass/pkp/_pkp_common.scss */
 .instruct, span.formRequired {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -758,7 +702,7 @@ span.nested {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 259, ../sass/pkp/_pkp_common.scss */
+/* line 201, ../sass/pkp/_pkp_common.scss */
 td.value, td.data, td label {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -766,28 +710,28 @@ td.value, td.data, td label {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 267, ../sass/pkp/_pkp_common.scss */
+/* line 209, ../sass/pkp/_pkp_common.scss */
 td input[type="checkbox"], td input[type="radio"] {
   margin-top: 7px; }
 
 /**
  * Form-specific elements
  */
-/* line 275, ../sass/pkp/_pkp_common.scss */
+/* line 217, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_error {
   /* Named for compatibility with new lessphp structure */
   color: #900;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 281, ../sass/pkp/_pkp_common.scss */
+/* line 223, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_success {
   /* Named for compatibility with new lessphp structure */
   color: #090;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 287, ../sass/pkp/_pkp_common.scss */
+/* line 229, ../sass/pkp/_pkp_common.scss */
 ul.pkp_form_error_list {
   /* Named for compatibility with new lessphp structure */
   color: #900; }
@@ -795,18 +739,18 @@ ul.pkp_form_error_list {
 /**
  * Other organizational elements
  */
-/* line 296, ../sass/pkp/_pkp_common.scss */
+/* line 238, ../sass/pkp/_pkp_common.scss */
 ul.menu li {
   margin-right: 1.5rem;
   padding: 0;
   float: left;
   display: block; }
 
-/* line 306, ../sass/pkp/_pkp_common.scss */
+/* line 248, ../sass/pkp/_pkp_common.scss */
 ul.menu li.current {
   font-weight: bold; }
 
-/* line 310, ../sass/pkp/_pkp_common.scss */
+/* line 252, ../sass/pkp/_pkp_common.scss */
 ul.menu a {
   display: block;
   font-size: 16px;
@@ -815,11 +759,11 @@ ul.menu a {
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
-/* line 320, ../sass/pkp/_pkp_common.scss */
+/* line 262, ../sass/pkp/_pkp_common.scss */
 ul.steplist {
   margin: 1.5rem 0; }
 
-/* line 326, ../sass/pkp/_pkp_common.scss */
+/* line 268, ../sass/pkp/_pkp_common.scss */
 ul.steplist li {
   font-size: 16px;
   font-size: 1rem;
@@ -829,23 +773,23 @@ ul.steplist li {
   padding-right: 0.75rem;
   border-right: 1px solid #ccc; }
 
-/* line 335, ../sass/pkp/_pkp_common.scss */
+/* line 277, ../sass/pkp/_pkp_common.scss */
 ul.steplist li.current a {
   border-bottom: 0.1875rem solid #ccc;
   margin-bottom: -0.1875rem; }
 
-/* line 341, ../sass/pkp/_pkp_common.scss */
+/* line 283, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em; }
 
-/* line 346, ../sass/pkp/_pkp_common.scss */
+/* line 288, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none; }
 
-/* line 352, ../sass/pkp/_pkp_common.scss */
+/* line 294, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline; }
@@ -853,12 +797,12 @@ ul.filter li {
 /**
  * Other organizational elements
  */
-/* line 362, ../sass/pkp/_pkp_common.scss */
+/* line 304, ../sass/pkp/_pkp_common.scss */
 div.separator {
   margin: 1.5rem 0;
   border-bottom: 2px solid #CCC;
   position: relative; }
-  /* line 368, ../sass/pkp/_pkp_common.scss */
+  /* line 310, ../sass/pkp/_pkp_common.scss */
   div.separator:before {
     content: "";
     border-width: 0.495rem;
@@ -1555,25 +1499,37 @@ input[type="submit"] {
   padding: 0 5px; }
 
 /* line 45, ../sass/modules/_forms.scss */
+.button,
 input.button,
+#pkp-user-userHome #content > a:first-child,
 input.defaultButton,
 button.ui-button.ui-button-text-only .ui-button-text {
-  padding: 0 0.75rem;
+  padding: 0.375rem 0.75rem;
   height: 2.25rem;
+  display: inline-block;
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem;
-  line-height: 24px;
-  line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  background-color: transparent;
-  border: 1px solid #3C7861;
   text-transform: uppercase;
   border-radius: 3px;
-  cursor: pointer; }
-  /* line 71, ../sass/modules/_forms.scss */
+  cursor: pointer;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #3C7861;
+  color: #333; }
+  /* line 64, ../sass/modules/_forms.scss */
+  .button:hover,
   input.button:hover,
+  #pkp-user-userHome #content > a:hover:first-child,
+  input.defaultButton:hover,
+  button.ui-button.ui-button-text-only .ui-button-text:hover {
+    text-decoration: none; }
+  /* line 83, ../sass/modules/_forms.scss */
+  .button:hover,
+  input.button:hover,
+  #pkp-user-userHome #content > a:hover:first-child,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     background: #3C7861;
@@ -1581,15 +1537,17 @@ button.ui-button.ui-button-text-only .ui-button-text {
 
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
-  padding: 0.1875rem 0 0 0;
-  margin-bottom: 24px;
-  font-size: 11px;
-  font-size: 0.707rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  letter-spacing: 0.05rem;
-  text-transform: uppercase; }
+  padding: 0;
+  margin-bottom: 24px; }
+  /* line 7, ../sass/modules/_breadcrumbs.scss */
+  #breadcrumb a {
+    font-size: 11px;
+    font-size: 0.707rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -0.02rem;
+    text-transform: uppercase; }
 
 /* line 1, ../sass/modules/_navbar.scss */
 #navbar {
@@ -1643,7 +1601,7 @@ button.ui-button.ui-button-text-only .ui-button-text {
     padding: 0.75rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     /* line 13, ../sass/modules/_config.scss */
-    #assignBlocksToSidebars tr td input.button {
+    #assignBlocksToSidebars tr td input.button, #assignBlocksToSidebars tr td #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #assignBlocksToSidebars tr td #content > a:first-child {
       border: none;
       border-radius: 0;
       background-color: #ccc;
@@ -1719,6 +1677,60 @@ button.ui-button.ui-button-text-only .ui-button-text {
   border-top: 1px solid #000;
   margin-top: 0.75rem;
   padding-top: 0.75rem; }
+
+/* line 1, ../sass/modules/_main.scss */
+#main h2 {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  border-bottom: 1px solid #858585; }
+
+/* line 10, ../sass/modules/_main.scss */
+#main h3 {
+  margin: 0 0 1.5rem 0;
+  padding-top: 0;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+
+/* line 17, ../sass/modules/_main.scss */
+#content {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  border: none; }
+
+/* line 29, ../sass/modules/_main.scss */
+#content h3 {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-size: 1.777rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+
+/* line 37, ../sass/modules/_main.scss */
+#content h4 {
+  margin: 0 0 1.5rem 0;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+
+/* line 43, ../sass/modules/_main.scss */
+#content h5 {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+
+/* line 3, ../sass/pages/_userhome.scss */
+#pkp-user-userHome #content > a:first-child {
+  display: inline-block;
+  margin-bottom: 1.5rem; }
 
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets

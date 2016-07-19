@@ -1,11 +1,13 @@
 #breadcrumb {
 	// Set padding to zero and margin bottom
-	padding: rhythm(0.125) 0 0 0;
+	padding: 0;
 	margin-bottom:$base-line-height;
 	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
 	// This font-sizes were calculated using "perfect fourth" aspect ratio.
-	@include adjust-font-size-to($h6-font-size);
-	font-family:$helvetica;
-	letter-spacing:0.05rem;
-	text-transform:uppercase;
+	a {
+		@include adjust-font-size-to($h6-font-size);
+		font-family:$helvetica;
+		letter-spacing:-0.02rem;
+		text-transform:uppercase;
+	}
 }

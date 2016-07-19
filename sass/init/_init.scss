@@ -111,7 +111,7 @@ $link-visited-color: tint($link-color, 25%);
 $link-hover-color: tint($link-color, 25%);
 
 // Choose your preferred link styling. There are four options available:
-$link-style: solid-after; 		// dotted-before = border-bottom is dotted before :hover and disabled on :hover
+$link-style: solid-before; 		// dotted-before = border-bottom is dotted before :hover and disabled on :hover
 								// dotted-after = border-bottom is disabled before :hover and enabled on :hover
 								// solid-before = same as dotted-before, with solid border
 								// solid-after = same as dotted-after, with solid border

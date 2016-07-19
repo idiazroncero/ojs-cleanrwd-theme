@@ -42,17 +42,28 @@ input[type="submit"] {
 // BUTTONS
 //
 
+.button,
 input.button,
 input.defaultButton,
 button.ui-button.ui-button-text-only .ui-button-text {
 	// Padding as vertical rhythm.
 	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
-	padding:0 rhythm(0.5);
+	padding:rhythm(0.25) rhythm(0.5);
 	height:rhythm(1.5);
+	display:inline-block;
 	// Inherit font but make it smaller
 	@include adjust-font-size-to($base-font-size);
-	@include adjust-leading-to(1);
+	// @include adjust-leading-to(1);
 	font-family:$font-button;
+	// Uppercase works better than lowercase.
+	text-transform:uppercase;
+	border-radius:$button-border-radius;
+	cursor:pointer;
+	// In case it was a link button
+	text-decoration:none;
+	&:hover {
+		text-decoration:none;
+	}
 	@if $button-style == fill  {
 		background-color: $button-color;
 		border:none;
@@ -68,6 +79,7 @@ button.ui-button.ui-button-text-only .ui-button-text {
 	} @else if $button-style == outline {
 		background-color: transparent;
 		border:$button-border-width solid $button-color;
+		color: $font-color;
 		&:hover {
 			background:$button-color;
 			@if lightness($button-color) >= 50 {
@@ -79,8 +91,4 @@ button.ui-button.ui-button-text-only .ui-button-text {
 	} @else {
 		@error "Invalid value for $button-style in _init.scss. It must be either outline or fill"
 	}
-	// Uppercase works better than lowercase.
-	text-transform:uppercase;
-	border-radius:$button-border-radius;
-	cursor:pointer;
 }
