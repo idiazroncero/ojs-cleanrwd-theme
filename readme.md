@@ -1,7 +1,7 @@
 # IN DEVELOPMENT - NOT READY FOR PRODUCTION
 ## Open Journal System Clean and Responsive Theme
 ### Development is sponsored by [http://openjournalsystems.cl/][ojscl]
-*v0.0.2*
+*v0.0.3*
 
 ### What is this
 
