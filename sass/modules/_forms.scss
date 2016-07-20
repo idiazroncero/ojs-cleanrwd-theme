@@ -21,11 +21,18 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	border: 1px solid $light-color;
 	// Explicityly override color
 	color: $font-color;
+	// NEVER grow bigger than the container
+	max-width:100%;
 }
 
 input.uploadField {
 	// Border is ugly...
 	border:none;
+}
+
+textarea.textArea {
+	// Height is defined by the [rows] value
+	height:auto;
 }
 
 select.selectMenu {

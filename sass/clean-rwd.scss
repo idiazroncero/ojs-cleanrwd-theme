@@ -10,7 +10,6 @@
 // OJS overrides (deprecated)
 @import "pkp/pkp_common";
 @import "pkp/common";
-@import "pkp/tinymce";
 @import "pkp/compiled";
 
 // Modular styles (when possible)
@@ -25,6 +24,7 @@
 @import "modules/ui-pnotify";
 @import "modules/tables";
 @import "modules/header";
+@import "modules/tinymce";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
 @import "pages/userhome";

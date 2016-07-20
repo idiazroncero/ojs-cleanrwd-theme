@@ -1,6 +1,103 @@
-/**
- * Table styles
- */
+//--------------------------
+//
+// This file resets tables and fixes its  many use cases and behaviors one by one
+//
+//
+// MENU
+// 1 - General
+// 2 - .data tables
+//--------------------------
+
+
+
+//
+// 1 - GENERAL
+//
+
+table.data {
+	max-width:100%;
+	width:100%;
+	font-size:inherit;
+	@include breakpoint(max-width $small) { // Destroy table layout in responsive
+		> tbody, 
+		> tbody > tr, 
+		> tbody > tr > td, { // Affect only the first-level children
+			display:block;
+			width:100%;
+		}
+	}
+}
+
+// There are strong inconsistencies inside OJS tables. 
+// Some instructions have a .instruct and span in their own <tr> row 
+// while others are put inside the main <td>, alongside the <input> and without class
+// Seame happens for labels inside td.labels.
+// We have to be hackish: we style generally and then override.
+
+.instruct,
+span.formRequired,
+table.data td.label,
+td.value,
+td.data,
+td label  {
+	font-family:$alt-font-family;
+	@include breakpoint($small) {
+		@include adjust-font-size-to($h5-font-size);
+	}
+}
+
+
+td {
+	// Make all form elements inside tables align correctly
+	select,
+	input {
+		vertical-align:middle;
+		display:inline-block;
+	}
+	select + input[type="submit"],
+	input + input[type="submit"]  {
+		// If there is a select and a input, we make the borders collapse.
+		// Hackish, but beautiful and degrades gracefully.
+		margin-left:-1px;
+	}
+}
+
+td.label {
+	padding-right: rhythm(1);
+	font-weight:bold;
+}
+
+
+//
+// 2 - .data TABLES
+//
+
+table.data tr {
+	// For small screens
+	padding-bottom: rhythm(1);
+}
+
+table.data td {
+	@include breakpoint($small) {
+		padding-bottom: rhythm(1);
+	}
+}
+
+table.data td.separator {
+	// Make the separator bigger
+	padding: rhythm(1);
+}
+
+table.data td.heading {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+
+
+///////
+
 
 table.info td {
 	padding: 0;
@@ -47,20 +144,7 @@ table.listing td.separator, table.info td.separator {
 	line-height: 1%;
 }
 
-table.data td {
-	// Express it as vertical rhythm units
-	padding-bottom: rhythm(1);
-}
 
-table.data td.separator {
-	// Make the separator bigger
-	padding: rhythm(1);
-}
-
-table.data td.heading {
-	padding-left: 0;
-	padding-right: 0;
-}
 
 table.nested tr {
 	padding: 0;
@@ -73,43 +157,3 @@ span.nested {
 }
 
 
-// TABLE HACKS AND FIXES
-
-
-// There are strong inconsistencies inside OJS tables. 
-// Some instructions have a .instruct and span in their own <tr> row 
-// while others are put inside the main <td>, alongside the <input> and without class
-// Seame happens for labels inside td.labels.
-// We have to be hackish: we style generally and then override.
-
-.instruct,
-span.formRequired,
-table.data td.label,
-td.value,
-td.data,
-td label  {
-	font-family:$alt-font-family;
-	@include adjust-font-size-to($h5-font-size);
-}
-
-table.data td.label {
-	// Express it as vetical rhythm units
-	padding-right: rhythm(1);
-	font-weight:bold;
-}
-
-
-td {
-	// Make all form elements inside tables align correctly
-	select,
-	input {
-		vertical-align:middle;
-		display:inline-block;
-	}
-	select + input[type="submit"],
-	input + input[type="submit"]  {
-		// If there is a select and a input, we make the borders collapse.
-		// Hackish, but beautiful and degrades gracefully.
-		margin-left:-1px;
-	}
-}

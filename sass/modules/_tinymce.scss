@@ -6,6 +6,7 @@
 .defaultSkin table.mceLayout {
 	// Editor has to span all width
 	width:100% !important;
+	max-width:100% !important;
 }
 .defaultSkin table.mceLayout tr.mceFirst td {border-top:1px solid #CCC}
 .defaultSkin table.mceLayout tr.mceLast td {border-bottom:1px solid #CCC}
