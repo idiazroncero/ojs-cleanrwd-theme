@@ -212,12 +212,14 @@ sup {
  */
 /* line 218, ../sass/init/_normalize.scss */
 img {
-  border-style: none; }
+  border-style: none;
+  max-width: 100%;
+  height: auto; }
 
 /**
  * Hide the overflow in IE.
  */
-/* line 226, ../sass/init/_normalize.scss */
+/* line 229, ../sass/init/_normalize.scss */
 svg:not(:root) {
   overflow: hidden; }
 
@@ -227,7 +229,7 @@ svg:not(:root) {
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
-/* line 238, ../sass/init/_normalize.scss */
+/* line 241, ../sass/init/_normalize.scss */
 code,
 kbd,
 pre,
@@ -240,7 +242,7 @@ samp {
 /**
  * Add the correct margin in IE 8.
  */
-/* line 250, ../sass/init/_normalize.scss */
+/* line 253, ../sass/init/_normalize.scss */
 figure {
   margin: 1em 40px; }
 
@@ -248,7 +250,7 @@ figure {
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 259, ../sass/init/_normalize.scss */
+/* line 262, ../sass/init/_normalize.scss */
 hr {
   box-sizing: content-box;
   /* 1 */
@@ -263,7 +265,7 @@ hr {
  * 1. Change font properties to `inherit` in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 273, ../sass/init/_normalize.scss */
+/* line 276, ../sass/init/_normalize.scss */
 button,
 input,
 select,
@@ -276,7 +278,7 @@ textarea {
 /**
  * Restore the font weight unset by the previous rule.
  */
-/* line 285, ../sass/init/_normalize.scss */
+/* line 288, ../sass/init/_normalize.scss */
 optgroup {
   font-weight: bold; }
 
@@ -284,7 +286,7 @@ optgroup {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 294, ../sass/init/_normalize.scss */
+/* line 297, ../sass/init/_normalize.scss */
 button,
 input {
   /* 1 */
@@ -294,7 +296,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 304, ../sass/init/_normalize.scss */
+/* line 307, ../sass/init/_normalize.scss */
 button,
 select {
   /* 1 */
@@ -305,7 +307,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 315, ../sass/init/_normalize.scss */
+/* line 318, ../sass/init/_normalize.scss */
 button,
 html [type="button"],
 [type="reset"],
@@ -316,7 +318,7 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 326, ../sass/init/_normalize.scss */
+/* line 329, ../sass/init/_normalize.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -327,7 +329,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 338, ../sass/init/_normalize.scss */
+/* line 341, ../sass/init/_normalize.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -337,7 +339,7 @@ button:-moz-focusring,
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
  */
-/* line 349, ../sass/init/_normalize.scss */
+/* line 352, ../sass/init/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -349,7 +351,7 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 362, ../sass/init/_normalize.scss */
+/* line 365, ../sass/init/_normalize.scss */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -367,7 +369,7 @@ legend {
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 375, ../sass/init/_normalize.scss */
+/* line 378, ../sass/init/_normalize.scss */
 textarea {
   overflow: auto; }
 
@@ -375,7 +377,7 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 384, ../sass/init/_normalize.scss */
+/* line 387, ../sass/init/_normalize.scss */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -386,7 +388,7 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 394, ../sass/init/_normalize.scss */
+/* line 397, ../sass/init/_normalize.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto; }
@@ -395,7 +397,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 404, ../sass/init/_normalize.scss */
+/* line 407, ../sass/init/_normalize.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -405,7 +407,7 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
-/* line 413, ../sass/init/_normalize.scss */
+/* line 416, ../sass/init/_normalize.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -413,7 +415,7 @@ textarea {
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-/* line 422, ../sass/init/_normalize.scss */
+/* line 425, ../sass/init/_normalize.scss */
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: 0.54; }
@@ -422,100 +424,114 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 432, ../sass/init/_normalize.scss */
+/* line 435, ../sass/init/_normalize.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
   font: inherit;
   /* 2 */ }
 
-/* line 20, ../sass/init/_ojs-normalize.scss */
+/* line 21, ../sass/init/_ojs-normalize.scss */
 p, h1, h2, h3, h4, h5, h6 {
   color: #333; }
 
-/* line 24, ../sass/init/_ojs-normalize.scss */
+/* line 25, ../sass/init/_ojs-normalize.scss */
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
-/* line 30, ../sass/init/_ojs-normalize.scss */
+/* line 31, ../sass/init/_ojs-normalize.scss */
 h1 {
   font-size: 51px;
   font-size: 3.157rem;
   line-height: 60px;
   line-height: 3.75rem; }
 
-/* line 34, ../sass/init/_ojs-normalize.scss */
+/* line 35, ../sass/init/_ojs-normalize.scss */
 h2 {
   font-size: 38px;
   font-size: 2.369rem;
   line-height: 48px;
   line-height: 3rem; }
 
-/* line 38, ../sass/init/_ojs-normalize.scss */
+/* line 39, ../sass/init/_ojs-normalize.scss */
 h3 {
   font-size: 28px;
   font-size: 1.777rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 42, ../sass/init/_ojs-normalize.scss */
+/* line 43, ../sass/init/_ojs-normalize.scss */
 h4 {
   font-size: 21px;
   font-size: 1.333rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 46, ../sass/init/_ojs-normalize.scss */
+/* line 47, ../sass/init/_ojs-normalize.scss */
 h5 {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 50, ../sass/init/_ojs-normalize.scss */
+/* line 51, ../sass/init/_ojs-normalize.scss */
 h6 {
   font-size: 11px;
   font-size: 0.707rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 62, ../sass/init/_ojs-normalize.scss */
+/* line 63, ../sass/init/_ojs-normalize.scss */
 p, h1, h2, h3, h4, h5, h6, ul {
   margin: 0 0 1.5rem 0; }
 
-/* line 66, ../sass/init/_ojs-normalize.scss */
+/* line 67, ../sass/init/_ojs-normalize.scss */
 ul {
   padding: 0 0 0 1.5rem; }
 
-/* line 76, ../sass/init/_ojs-normalize.scss */
+/* line 77, ../sass/init/_ojs-normalize.scss */
 a, a:link {
   color: #666;
   text-decoration: none; }
 
-/* line 90, ../sass/init/_ojs-normalize.scss */
+/* line 91, ../sass/init/_ojs-normalize.scss */
 a:active {
   color: #666; }
 
-/* line 94, ../sass/init/_ojs-normalize.scss */
+/* line 95, ../sass/init/_ojs-normalize.scss */
 a:visited {
   color: #8c8c8c; }
 
-/* line 98, ../sass/init/_ojs-normalize.scss */
+/* line 99, ../sass/init/_ojs-normalize.scss */
 a:hover {
   color: #8c8c8c;
   background: transparent;
   border-bottom: 1px dotted #8c8c8c; }
 
-/* line 117, ../sass/init/_ojs-normalize.scss */
+/* line 118, ../sass/init/_ojs-normalize.scss */
 body {
   color: #333;
   font-family: Merriweather, Georgia, Times, serif; }
 
-/* line 122, ../sass/init/_ojs-normalize.scss */
+/* line 123, ../sass/init/_ojs-normalize.scss */
 body,
 #header,
 #footer {
   background-color: #fff; }
+
+/* line 135, ../sass/init/_ojs-normalize.scss */
+div.separator {
+  margin: 1.5rem 0;
+  border-bottom: 2px solid #CCC;
+  position: relative; }
+
+/* line 142, ../sass/init/_ojs-normalize.scss */
+a.action, a.file {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  text-transform: inherit; }
 
 /**
  * Overrides OJS's base stylesheet /lib/pkp/styles/common.css.
@@ -567,59 +583,54 @@ span.disabled, label.disabled {
   color: #666; }
 
 /* line 58, ../sass/pkp/_pkp_common.scss */
-a.action, a.file {
-  font-size: 0.85em;
-  text-transform: uppercase; }
-
-/* line 63, ../sass/pkp/_pkp_common.scss */
 a.icon {
   text-decoration: none; }
 
-/* line 67, ../sass/pkp/_pkp_common.scss */
+/* line 62, ../sass/pkp/_pkp_common.scss */
 a.icon img {
   border: 0; }
 
-/* line 71, ../sass/pkp/_pkp_common.scss */
+/* line 66, ../sass/pkp/_pkp_common.scss */
 a.icon:hover {
   background: none; }
 
-/* line 75, ../sass/pkp/_pkp_common.scss */
+/* line 70, ../sass/pkp/_pkp_common.scss */
 span.heading {
   font-size: 0.85em;
   text-transform: uppercase; }
 
-/* line 80, ../sass/pkp/_pkp_common.scss */
+/* line 75, ../sass/pkp/_pkp_common.scss */
 span.highlight {
   border-bottom: 1px dotted #000; }
 
-/* line 84, ../sass/pkp/_pkp_common.scss */
+/* line 79, ../sass/pkp/_pkp_common.scss */
 div.warningMessage {
   background: url(../templates/images/icons/icon_alert.gif) no-repeat 3px 40%;
   margin: 5px;
   padding: 5px 5px 5px 25px; }
 
-/* line 90, ../sass/pkp/_pkp_common.scss */
+/* line 85, ../sass/pkp/_pkp_common.scss */
 .nowrap {
   white-space: nowrap; }
 
 /**
  * Form-specific elements
  */
-/* line 100, ../sass/pkp/_pkp_common.scss */
+/* line 95, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_error {
   /* Named for compatibility with new lessphp structure */
   color: #900;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 106, ../sass/pkp/_pkp_common.scss */
+/* line 101, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_success {
   /* Named for compatibility with new lessphp structure */
   color: #090;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 112, ../sass/pkp/_pkp_common.scss */
+/* line 107, ../sass/pkp/_pkp_common.scss */
 ul.pkp_form_error_list {
   /* Named for compatibility with new lessphp structure */
   color: #900; }
@@ -627,18 +638,18 @@ ul.pkp_form_error_list {
 /**
  * Other organizational elements
  */
-/* line 121, ../sass/pkp/_pkp_common.scss */
+/* line 116, ../sass/pkp/_pkp_common.scss */
 ul.menu li {
   margin-right: 1.5rem;
   padding: 0;
   float: left;
   display: block; }
 
-/* line 131, ../sass/pkp/_pkp_common.scss */
+/* line 126, ../sass/pkp/_pkp_common.scss */
 ul.menu li.current {
   font-weight: bold; }
 
-/* line 135, ../sass/pkp/_pkp_common.scss */
+/* line 130, ../sass/pkp/_pkp_common.scss */
 ul.menu a {
   display: block;
   font-size: 16px;
@@ -647,11 +658,11 @@ ul.menu a {
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
-/* line 145, ../sass/pkp/_pkp_common.scss */
+/* line 140, ../sass/pkp/_pkp_common.scss */
 ul.steplist {
   margin: 1.5rem 0; }
 
-/* line 151, ../sass/pkp/_pkp_common.scss */
+/* line 146, ../sass/pkp/_pkp_common.scss */
 ul.steplist li {
   font-size: 16px;
   font-size: 1rem;
@@ -661,23 +672,23 @@ ul.steplist li {
   padding-right: 0.75rem;
   border-right: 1px solid #ccc; }
 
-/* line 160, ../sass/pkp/_pkp_common.scss */
+/* line 155, ../sass/pkp/_pkp_common.scss */
 ul.steplist li.current a {
   border-bottom: 0.1875rem solid #ccc;
   margin-bottom: -0.1875rem; }
 
-/* line 166, ../sass/pkp/_pkp_common.scss */
+/* line 161, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em; }
 
-/* line 171, ../sass/pkp/_pkp_common.scss */
+/* line 166, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none; }
 
-/* line 177, ../sass/pkp/_pkp_common.scss */
+/* line 172, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline; }
@@ -685,21 +696,6 @@ ul.filter li {
 /**
  * Other organizational elements
  */
-/* line 187, ../sass/pkp/_pkp_common.scss */
-div.separator {
-  margin: 1.5rem 0;
-  border-bottom: 2px solid #CCC;
-  position: relative; }
-  /* line 193, ../sass/pkp/_pkp_common.scss */
-  div.separator:before {
-    content: "";
-    border-width: 0.495rem;
-    border-style: solid;
-    border-color: #CCC #CCC transparent transparent;
-    position: absolute;
-    top: 0;
-    right: 0; }
-
 /**
  * Access icons and key
  */
@@ -1479,31 +1475,50 @@ button.ui-button.ui-button-text-only .ui-button-text {
   font-size: 0.8em; }
 
 /* line 17, ../sass/modules/_tables.scss */
-table.data {
+table.data,
+table.form {
   max-width: 100%;
   width: 100%;
   font-size: inherit; }
-  @media (max-width: 480px) {
-    /* line 22, ../sass/modules/_tables.scss */
+  @media (max-width: 768px) {
+    /* line 23, ../sass/modules/_tables.scss */
     table.data > tbody,
     table.data > tbody > tr,
-    table.data > tbody > tr > td {
+    table.data > tbody > tr > td,
+    table.form > tbody,
+    table.form > tbody > tr,
+    table.form > tbody > tr > td {
       display: block;
       width: 100%; } }
+  /* line 30, ../sass/modules/_tables.scss */
+  table.data tr,
+  table.form tr {
+    padding-bottom: 1.5rem; }
+  @media (min-width: 768px) {
+    /* line 35, ../sass/modules/_tables.scss */
+    table.data td,
+    table.form td {
+      padding-bottom: 1.5rem; } }
 
-/* line 37, ../sass/modules/_tables.scss */
+/* line 50, ../sass/modules/_tables.scss */
 .instruct,
 span.formRequired,
-table.data td.label,
+td.label,
+#installLanguages tr td:first-child,
+#installNewLocales label,
+#installNewLocales .formError,
 td.value,
 td.data,
 td label {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
   @media (min-width: 480px) {
-    /* line 37, ../sass/modules/_tables.scss */
+    /* line 50, ../sass/modules/_tables.scss */
     .instruct,
     span.formRequired,
-    table.data td.label,
+    td.label,
+    #installLanguages tr td:first-child,
+    #installNewLocales label,
+    #installNewLocales .formError,
     td.value,
     td.data,
     td label {
@@ -1512,89 +1527,83 @@ td label {
       line-height: 24px;
       line-height: 1.5rem; } }
 
-/* line 52, ../sass/modules/_tables.scss */
+/* line 65, ../sass/modules/_tables.scss */
 td select,
 td input {
   vertical-align: middle;
   display: inline-block; }
-/* line 57, ../sass/modules/_tables.scss */
+/* line 70, ../sass/modules/_tables.scss */
 td select + input[type="submit"],
 td input + input[type="submit"] {
   margin-left: -1px; }
+/* line 76, ../sass/modules/_tables.scss */
+td input[type="file"] + input[type="submit"] {
+  margin-left: 5px; }
 
-/* line 65, ../sass/modules/_tables.scss */
-td.label {
+/* line 82, ../sass/modules/_tables.scss */
+td.label, #installLanguages tr td:first-child, #installNewLocales label, #installNewLocales .formError {
   padding-right: 1.5rem;
   font-weight: bold; }
 
-/* line 75, ../sass/modules/_tables.scss */
-table.data tr {
-  padding-bottom: 1.5rem; }
-
-@media (min-width: 480px) {
-  /* line 80, ../sass/modules/_tables.scss */
-  table.data td {
-    padding-bottom: 1.5rem; } }
-
-/* line 86, ../sass/modules/_tables.scss */
+/* line 92, ../sass/modules/_tables.scss */
 table.data td.separator {
   padding: 1.5rem; }
 
-/* line 91, ../sass/modules/_tables.scss */
+/* line 97, ../sass/modules/_tables.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 102, ../sass/modules/_tables.scss */
+/* line 108, ../sass/modules/_tables.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em; }
 
-/* line 108, ../sass/modules/_tables.scss */
+/* line 114, ../sass/modules/_tables.scss */
 table.listing td {
   padding: 0.25em 1.5em 0.25em 0.5em; }
 
-/* line 112, ../sass/modules/_tables.scss */
+/* line 118, ../sass/modules/_tables.scss */
 table.listing tr.heading td, table.listing td.heading, table.info td.heading {
   font-size: 0.85em;
   text-transform: uppercase;
   font-weight: normal;
   padding: 0.75em 1.5em 1em 0.5em; }
 
-/* line 119, ../sass/modules/_tables.scss */
+/* line 125, ../sass/modules/_tables.scss */
 table.info td.heading {
   padding-left: 0; }
 
-/* line 124, ../sass/modules/_tables.scss */
+/* line 130, ../sass/modules/_tables.scss */
 table.listing td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 129, ../sass/modules/_tables.scss */
+/* line 135, ../sass/modules/_tables.scss */
 table.listing td.headseparator {
   border-top: 1px dotted #000;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 135, ../sass/modules/_tables.scss */
+/* line 141, ../sass/modules/_tables.scss */
 table.listing td.endseparator {
   border-top: 1px dotted #000;
   font-size: 0.25em;
   line-height: 10%; }
 
-/* line 141, ../sass/modules/_tables.scss */
+/* line 147, ../sass/modules/_tables.scss */
 table.listing td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 149, ../sass/modules/_tables.scss */
+/* line 155, ../sass/modules/_tables.scss */
 table.nested tr {
   padding: 0;
   margin: 0; }
 
-/* line 154, ../sass/modules/_tables.scss */
+/* line 160, ../sass/modules/_tables.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em; }
@@ -1781,6 +1790,20 @@ span.nested {
 #pkp-admin-siteSettings input[name="deletePageHeaderTitleImage"] {
   margin: 0.75rem 0;
   float: right; }
+/* line 6, ../sass/pages/_sitesettings.scss */
+#pkp-admin-siteSettings #oneStepReset {
+  margin-top: 0.495rem; }
+
+/* line 11, ../sass/pages/_languages.scss */
+#installLanguages tr td:last-child a {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+
+/* line 21, ../sass/pages/_languages.scss */
+#installNewLocales .button {
+  margin-top: 1.5rem; }
 
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets

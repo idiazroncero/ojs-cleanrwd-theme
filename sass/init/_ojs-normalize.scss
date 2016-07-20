@@ -9,6 +9,7 @@
 // 2 - Vertical rhythm
 // 3 - Links
 // 4 - Other defaults
+// 4 - OJS elements
 //--------------------------
 
 
@@ -127,3 +128,18 @@ body,
 	background-color: $background-color;
 }
 
+
+// OJS ELEMENTS
+// ========================================================
+
+div.separator {
+	// Set a bigger margin
+	margin:rhythm(1) 0;
+	border-bottom: 2px solid #CCC;
+	position:relative;
+}
+
+a.action, a.file {
+	@include adjust-font-size-to($base-font-size);
+	text-transform: inherit;
+}

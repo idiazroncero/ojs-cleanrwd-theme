@@ -55,11 +55,6 @@ span.disabled, label.disabled {
 	color: #666;
 }
 
-a.action, a.file {
-	font-size: 0.85em;
-	text-transform: uppercase;
-}
-
 a.icon {
 	text-decoration: none;
 }
@@ -183,20 +178,3 @@ ul.filter li {
 /**
  * Other organizational elements
  */
-
-div.separator {
-	// Set a bigger margin
-	margin:rhythm(1) 0;
-	border-bottom: 2px solid #CCC;
-	position:relative;
-	// let's embellish it
-	&:before {
-		content:"";
-		border-width:rhythm(0.33);
-		border-style:solid;
-		border-color:#CCC #CCC transparent transparent;
-		position:absolute;
-		top:0;
-		right:0;
-	}
-}

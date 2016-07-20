@@ -14,11 +14,12 @@
 // 1 - GENERAL
 //
 
-table.data {
+table.data,
+table.form {
 	max-width:100%;
 	width:100%;
 	font-size:inherit;
-	@include breakpoint(max-width $small) { // Destroy table layout in responsive
+	@include breakpoint(max-width $medium) { // Destroy table layout in responsive
 		> tbody, 
 		> tbody > tr, 
 		> tbody > tr > td, { // Affect only the first-level children
@@ -26,7 +27,19 @@ table.data {
 			width:100%;
 		}
 	}
+	tr {
+		// For small screens
+		padding-bottom: rhythm(1);
+	}
+
+	td {
+		@include breakpoint($medium) {
+			padding-bottom: rhythm(1);
+		}
+	}
 }
+
+
 
 // There are strong inconsistencies inside OJS tables. 
 // Some instructions have a .instruct and span in their own <tr> row 
@@ -36,7 +49,7 @@ table.data {
 
 .instruct,
 span.formRequired,
-table.data td.label,
+td.label,
 td.value,
 td.data,
 td label  {
@@ -60,6 +73,10 @@ td {
 		// Hackish, but beautiful and degrades gracefully.
 		margin-left:-1px;
 	}
+	input[type="file"] + input[type="submit"]  {
+		// Exception: file upload fields
+		margin-left:5px;
+	}
 }
 
 td.label {
@@ -71,17 +88,6 @@ td.label {
 //
 // 2 - .data TABLES
 //
-
-table.data tr {
-	// For small screens
-	padding-bottom: rhythm(1);
-}
-
-table.data td {
-	@include breakpoint($small) {
-		padding-bottom: rhythm(1);
-	}
-}
 
 table.data td.separator {
 	// Make the separator bigger

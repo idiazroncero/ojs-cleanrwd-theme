@@ -1,0 +1,25 @@
+#pkp-common-languages {
+
+}
+
+#installLanguages {
+	tr td:first-child {
+		// We force it to mimic the label behavior
+		@extend td.label;
+	}
+	tr td:last-child {
+		a {
+			@include adjust-font-size-to($h5-font-size);
+		}
+	}
+}
+
+#installNewLocales {
+	label, .formError {
+		@extend td.label;
+	}
+	.button {
+		// This is not a table so we have to apply manually the margin
+		margin-top:rhythm(1);
+	}
+}
