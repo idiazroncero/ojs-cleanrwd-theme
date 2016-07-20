@@ -489,35 +489,34 @@ ul {
 
 /* line 75, ../sass/init/_ojs-normalize.scss */
 a:link {
-  color: #666;
-  text-decoration: underline; }
-
-/* line 84, ../sass/init/_ojs-normalize.scss */
-a:active {
   color: #666; }
 
 /* line 88, ../sass/init/_ojs-normalize.scss */
+a:active {
+  color: #666; }
+
+/* line 92, ../sass/init/_ojs-normalize.scss */
 a:visited {
   color: #8c8c8c; }
 
-/* line 92, ../sass/init/_ojs-normalize.scss */
+/* line 96, ../sass/init/_ojs-normalize.scss */
 a:hover {
   color: #8c8c8c;
   background: transparent;
-  border-bottom: none; }
+  text-decoration: underline; }
 
-/* line 109, ../sass/init/_ojs-normalize.scss */
+/* line 115, ../sass/init/_ojs-normalize.scss */
 body {
   color: #333;
   font-family: Merriweather, Georgia, Times, serif; }
 
-/* line 114, ../sass/init/_ojs-normalize.scss */
+/* line 120, ../sass/init/_ojs-normalize.scss */
 body,
 #header,
 #footer {
   background-color: #fff; }
 
-/* line 122, ../sass/init/_ojs-normalize.scss */
+/* line 128, ../sass/init/_ojs-normalize.scss */
 table {
   font-size: 1.0rem; }
 
@@ -1287,22 +1286,23 @@ input.uploadField {
   height: 2.25rem;
   background-color: #fff !important;
   border-radius: 0px;
-  border: 1px solid #858585; }
+  border: 1px solid #858585;
+  color: #333; }
 
-/* line 24, ../sass/modules/_forms.scss */
+/* line 26, ../sass/modules/_forms.scss */
 input.uploadField {
   border: none; }
 
-/* line 29, ../sass/modules/_forms.scss */
+/* line 31, ../sass/modules/_forms.scss */
 select.selectMenu {
   padding: 0.1875rem 0;
   height: 2.25rem; }
 
-/* line 35, ../sass/modules/_forms.scss */
+/* line 37, ../sass/modules/_forms.scss */
 input[type="text"], input[type="password"], input[type="file"] {
   padding: 0 0.375rem; }
 
-/* line 40, ../sass/modules/_forms.scss */
+/* line 42, ../sass/modules/_forms.scss */
 input[type="submit"] {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1310,7 +1310,7 @@ input[type="submit"] {
   line-height: 0.75rem;
   padding: 0 5px; }
 
-/* line 50, ../sass/modules/_forms.scss */
+/* line 52, ../sass/modules/_forms.scss */
 .button,
 input.button,
 #pkp-user-userHome #content > a:first-child,
@@ -1331,14 +1331,14 @@ button.ui-button.ui-button-text-only .ui-button-text {
   background-color: transparent;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 69, ../sass/modules/_forms.scss */
+  /* line 71, ../sass/modules/_forms.scss */
   .button:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     text-decoration: none; }
-  /* line 88, ../sass/modules/_forms.scss */
+  /* line 90, ../sass/modules/_forms.scss */
   .button:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,

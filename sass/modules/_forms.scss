@@ -19,6 +19,8 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	border-radius: $border-radius;
 	// We want a clean, plain border.
 	border: 1px solid $light-color;
+	// Explicityly override color
+	color: $font-color;
 }
 
 input.uploadField {
