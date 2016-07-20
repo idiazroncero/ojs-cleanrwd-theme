@@ -72,14 +72,16 @@ ul {
 // LINKS
 // ========================================================
 
-a:link {
+
+a, a:link {
 	color: $link-color;
 	@if $link-style == dotted-before {
+		text-decoration:none;
 		border-bottom:1px dotted $link-hover-color;
 	} @else if $link-style == solid-before {
 		text-decoration:underline;
 	} @else if $link-style == solid-after or $link-style == dotted-after {
-		// Haz nada
+		text-decoration:none;
 	} @else {
 		@error "Invalid value for $link-style. Please use one of the following: dotted-before, dotted-after, solid-before, solid-after"
 	}

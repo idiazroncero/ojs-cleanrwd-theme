@@ -487,30 +487,31 @@ p, h1, h2, h3, h4, h5, h6, ul {
 ul {
   padding: 0 0 0 1.5rem; }
 
-/* line 75, ../sass/init/_ojs-normalize.scss */
-a:link {
-  color: #666; }
+/* line 76, ../sass/init/_ojs-normalize.scss */
+a, a:link {
+  color: #666;
+  text-decoration: none; }
 
-/* line 88, ../sass/init/_ojs-normalize.scss */
+/* line 90, ../sass/init/_ojs-normalize.scss */
 a:active {
   color: #666; }
 
-/* line 92, ../sass/init/_ojs-normalize.scss */
+/* line 94, ../sass/init/_ojs-normalize.scss */
 a:visited {
   color: #8c8c8c; }
 
-/* line 96, ../sass/init/_ojs-normalize.scss */
+/* line 98, ../sass/init/_ojs-normalize.scss */
 a:hover {
   color: #8c8c8c;
   background: transparent;
-  text-decoration: underline; }
+  border-bottom: 1px dotted #8c8c8c; }
 
-/* line 115, ../sass/init/_ojs-normalize.scss */
+/* line 117, ../sass/init/_ojs-normalize.scss */
 body {
   color: #333;
   font-family: Merriweather, Georgia, Times, serif; }
 
-/* line 120, ../sass/init/_ojs-normalize.scss */
+/* line 122, ../sass/init/_ojs-normalize.scss */
 body,
 #header,
 #footer {
@@ -1141,7 +1142,7 @@ select.selectMenu {
   height: 2.25rem; }
 
 /* line 44, ../sass/modules/_forms.scss */
-input[type="text"], input[type="password"], input[type="file"] {
+input[type="text"], input[type="password"] {
   padding: 0 0.375rem; }
 
 /* line 49, ../sass/modules/_forms.scss */
@@ -1600,7 +1601,7 @@ span.nested {
 
 /* line 1, ../sass/modules/_header.scss */
 #headerTitle {
-  text-align: center !important; }
+  text-align: left !important; }
   /* line 3, ../sass/modules/_header.scss */
   #headerTitle h1 img {
     max-width: 100%;
