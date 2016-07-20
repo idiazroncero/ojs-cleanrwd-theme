@@ -16,6 +16,9 @@
 // Set this to true to force CSS output to exactly match normalize.css.
 $strict-normalize: false !default;
 
+// Alignment of title (text or image)
+$header-alignment: left; 
+
 
 
 //
@@ -86,8 +89,8 @@ $white: #f5f5f5;
 // A light and a dark colors (usually grays, as your font-color will be a shade of black).
 // It is a good idea to define them as variations of $font-color in order to achieve a simple scale of grays
 // You can modify the percents in order to achieve lighter/darker versions.
-$light-color: tint($font-color, 40%);
-$dark-color: shade($font-color, 40%);
+$light-color: tint($font-color, 60%);
+$dark-color: shade($font-color, 60%);
 
 // Optionally, define a main-color and a secondary-color to reuse on single components.
 $main-color: #3C7861;
@@ -95,6 +98,8 @@ $secondary-color: #008080;
 
 // Default color for lines, separators, etc.
 $line-color: $light-color;
+$line-color-light: tint($line-color, 40%);
+
 // Background-color for the whole webpage
 $background-color: #fff;
 
@@ -111,7 +116,7 @@ $link-visited-color: tint($link-color, 25%);
 $link-hover-color: tint($link-color, 25%);
 
 // Choose your preferred link styling. There are four options available:
-$link-style: solid-after; 		// dotted-before = border-bottom is dotted before :hover and disabled on :hover
+$link-style: dotted-after; 		// dotted-before = border-bottom is dotted before :hover and disabled on :hover
 								// dotted-after = border-bottom is disabled before :hover and enabled on :hover
 								// solid-before = same as dotted-before, with solid border
 								// solid-after = same as dotted-after, with solid border
@@ -142,7 +147,7 @@ $sidebar-breakpoint: 600px;
 // 6 - FORMS
 //
 
-$border-radius: 3px; // In px.
+$border-radius: 0px; // In px.
 
 // Buttons
 $button-style: outline;		// Possible values:

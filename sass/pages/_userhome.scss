@@ -1,0 +1,8 @@
+#pkp-user-userHome {
+	// THIS IS PAINFUL AND MAKE MY EYES BLEED but we've got NO css selectors available!!
+	#content > a:first-child {
+		@extend input.button;
+		display:inline-block;
+		margin-bottom:rhythm(1);
+	}
+}

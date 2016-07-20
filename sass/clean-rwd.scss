@@ -7,21 +7,31 @@
 // Our own normalization: tipography and form fields
 @import "init/ojs-normalize";
 
-// OJS overrides
+// OJS overrides (deprecated)
 @import "pkp/pkp_common";
 @import "pkp/common";
-@import "pkp/sidebar";
-@import "pkp/tinymce";
 @import "pkp/compiled";
 
-// Specific modules
+// Modular styles (when possible)
 @import "modules/forms";
 @import "modules/breadcrumbs";
-@import "modules/menu";
+@import "modules/navbar";
 @import "modules/registerform";
 @import "modules/config";
-@import "modules/sidebar_blocks";
+@import "modules/sidebar";
 @import "modules/footer";
+@import "modules/main";
+@import "modules/ui-pnotify";
+@import "modules/tables";
+@import "modules/header";
+@import "modules/tinymce";
+@import "modules/announcements";
+
+// Page-specific hacks (oftentimes, this is the only way to override the original CSS)
+@import "pages/userhome";
+@import "pages/siteadmin";
+@import "pages/sitesettings";
+@import "pages/languages";
 
 // Layout
 @import "layout/layout";

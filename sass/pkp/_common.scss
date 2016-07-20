@@ -1,33 +1,4 @@
-/**
- * Overrides OJS's base stylesheet /styles/common.css.
- *
- */
 
-.ui-pnotify-title {
-	font-size: 0.8em;
-}
-
-.ui-pnotify-text {
-	font-size: 0.6em;
-}
-
-.ui-pnotify-history-container .ui-pnotify-history-header {
-	font-size: 0.8em;
-}
-
-/**
- * Main layout elements
- */
-
-#header {
-	// Explicitly overrides ANY color. TODO: ¿set in variable? 
-	background-color: transparent;
-}
-
-#footer {
-	// Explicitly overrides ANY color. TODO: ¿set in variable? 
-	background-color: transparent;
-}
 
 
 /**
@@ -47,120 +18,6 @@
 	vertical-align: middle;
 	margin: 0;
 	padding: 0;
-}
-
-
-/**
- * Navigation bar
- */
-
-#navbar a {
-	// This conflicts with pkp/common.css ul.menu a.
-	// We need to repeat the properties. Ugly, but needed.
-	@include adjust-font-size-to($base-font-size);
-	letter-spacing: 0.1rem;
-}
-
-
-/**
- * Announcements
- */
-
-#announcementsHome {
-	width: 100%;
-	margin: 2em 0 2em 0;
-}
-
-#announcementsHome h3 {
-	text-align: center;
-}
-
-#announcements {
-	// Corrects menu item taking 100% of width
-	width: auto;
-}
-
-#announcements h3 {
-	text-align: center;
-}
-
-table.announcements {
-	width: 100%;
-}
-
-table.announcements td {
-	padding: 0.25em 0.5em 0.25em 0.5em;
-}
-
-table.announcements td.nodata {
-	text-align: center;
-	font-style: italic;
-}
-
-table.announcements td.headseparator {
-	border-top: 1px dotted #000;
-	font-size: 0.1em;
-	line-height: 1%;
-}
-
-table.announcements td.endseparator {
-	border-top: 1px dotted #000;
-	font-size: 0.25em;
-	line-height: 10%;
-}
-
-table.announcements td.separator {
-	border-top: 1px dotted #DDDDD0;
-	font-size: 0.1em;
-	line-height: 1%;
-}
-
-table.announcements tr.intro {
-}
-
-table.announcements td.intro {
-}
-
-table.announcements tr.title {
-	vertical-align: top;
-}
-
-table.announcements td.title {
-	width: 85%;
-}
-
-table.announcements td.title h4 {
-}
-
-table.announcements tr.description {
-	vertical-align: top;
-}
-
-table.announcements td.description {
-	width: 85%;
-}
-
-table.announcements tr.details {
-	vertical-align: bottom;
-}
-
-table.announcements td.posted {
-	padding-top: 1em;
-	font-style: italic;
-}
-
-table.announcements td.more {
-	width: 15%;
-	text-align: right;
-}
-
-table.announcementsMore {
-	width: 100%;
-}
-
-table.announcementsMore td {
-	padding-top: 1.5em;
-	text-align: right;
 }
 
 
@@ -305,15 +162,6 @@ pre {
 
 .fastTracked {
 	background-color: #ABA;
-}
-
-table.listing tr.data td {
-	border-top: 1px dotted #DDDDD0;
-	border-bottom: 1px dotted #DDDDD0;
-}
-
-table.listing tr.data td.drag {
-	cursor: move;
 }
 
 

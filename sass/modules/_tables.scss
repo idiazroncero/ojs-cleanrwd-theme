@@ -1,0 +1,183 @@
+//--------------------------
+//
+// This file resets tables and fixes its  many use cases and behaviors one by one
+//
+//
+// MENU
+// 1 - General
+// 2 - .data tables
+// 3 - .listing tables
+//--------------------------
+
+
+
+//
+// 1 - GENERAL
+//
+
+table.data,
+table.form {
+	max-width:100%;
+	width:100%;
+	font-size:inherit;
+	@include breakpoint(max-width $medium) { // Destroy table layout in responsive
+		> tbody, 
+		> tbody > tr, 
+		> tbody > tr > td, { // Affect only the first-level children
+			display:block;
+			width:100%;
+		}
+	}
+	tr {
+		// For small screens
+		padding-bottom: rhythm(1);
+	}
+
+	td {
+		@include breakpoint($medium) {
+			padding-bottom: rhythm(1);
+		}
+	}
+}
+
+
+
+// There are strong inconsistencies inside OJS tables. 
+// Some instructions have a .instruct and span in their own <tr> row 
+// while others are put inside the main <td>, alongside the <input> and without class
+// Seame happens for labels inside td.labels.
+// We have to be hackish: we style generally and then override.
+
+.instruct,
+span.formRequired,
+td.label,
+td.value,
+td.data,
+td label  {
+	font-family:$alt-font-family;
+	@include breakpoint($small) {
+		@include adjust-font-size-to($h5-font-size);
+	}
+}
+
+
+td {
+	// Make all form elements inside tables align correctly
+	select,
+	input {
+		vertical-align:middle;
+		display:inline-block;
+	}
+	select + input[type="submit"],
+	input + input[type="submit"]  {
+		// If there is a select and a input, we make the borders collapse.
+		// Hackish, but beautiful and degrades gracefully.
+		margin-left:-1px;
+	}
+	input[type="file"] + input[type="submit"]  {
+		// Exception: file upload fields
+		margin-left:5px;
+	}
+}
+
+td.label {
+	padding-right: rhythm(1);
+	font-weight:bold;
+}
+
+table.listing,
+table.info {
+	tr.heading td,
+	td.heading, 
+	td.heading { // Table headings in all flavours
+		font-family:$alt-font-family;
+		font-weight: bold;
+		padding: rhythm(0.25);
+	}
+}
+
+
+
+//
+// 2 - .data TABLES
+//
+
+table.data td.separator {
+	// Make the separator bigger
+	padding: rhythm(1);
+}
+
+table.data td.heading {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+//
+// 3 - .listing TABLES
+//
+
+table.listing td.headseparator {
+	// Dear OJS coders: this is outrageous and not a bad, a WORST practice...
+	border-top:1px solid $line-color;
+	padding:0;
+}
+
+
+table.listing tr.data td {
+	border-top: none;
+	border-bottom: 1px solid $line-color-light;
+}
+
+table.listing tr.data td.drag {
+	cursor: move;
+}
+
+table.listing td.separator, table.info td.separator {
+	border-top: 1px dotted #DDDDD0;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+table.listing td.endseparator {
+	// We don't need this
+	display:none;
+}
+
+table.listing td {
+	padding: rhythm(0.25)
+}
+
+///////
+
+
+table.info td {
+	padding: 0;
+	padding-bottom: 0.5em;
+	padding-right: 0.5em;
+}
+
+
+table.listing td.nodata, table.info td.nodata {
+	text-align: center;
+	font-style: italic;
+}
+
+table.info td.separator {
+	border-top: 1px dotted #DDDDD0;
+	font-size: 0.1em;
+	line-height: 1%;
+}
+
+
+
+table.nested tr {
+	padding: 0;
+	margin: 0;
+}
+
+span.nested {
+	padding: 0 4px 0 0;
+	font-size: 1.2em;
+}
+
+

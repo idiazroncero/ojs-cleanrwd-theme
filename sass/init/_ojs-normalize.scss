@@ -1,3 +1,18 @@
+//--------------------------
+//
+// This file resets all elements to their new defaults
+// explictly overriding OJS' previous stylesheets.
+//
+//
+// MENU
+// 1 - Typography
+// 2 - Vertical rhythm
+// 3 - Links
+// 4 - Other defaults
+// 4 - OJS elements
+//--------------------------
+
+
 // TYPOGRAPHY
 // ========================================================
 
@@ -46,7 +61,7 @@ h6 {
 // We always use one (1) measure of vertical rhythm;
 
 p, h1, h2, h3, h4, h5, h6, ul {
-	margin:0 0 0 rhythm(1);
+	margin:0 0 rhythm(1) 0;
 }
 
 ul {
@@ -58,12 +73,18 @@ ul {
 // LINKS
 // ========================================================
 
-a:link {
+
+a, a:link {
 	color: $link-color;
 	@if $link-style == dotted-before {
+		text-decoration:none;
 		border-bottom:1px dotted $link-hover-color;
 	} @else if $link-style == solid-before {
 		text-decoration:underline;
+	} @else if $link-style == solid-after or $link-style == dotted-after {
+		text-decoration:none;
+	} @else {
+		@error "Invalid value for $link-style. Please use one of the following: dotted-before, dotted-after, solid-before, solid-after"
 	}
 }
 
@@ -84,6 +105,8 @@ a:hover {
 		border-bottom:1px dotted $link-hover-color;
 	} @else if $link-style == solid-after {
 		text-decoration:underline;
+	} @else {
+		@error "Invalid value for $link-style. Please use one of the following: dotted-before, dotted-after, solid-before, solid-after"
 	}
 }
 
@@ -93,14 +116,30 @@ a:hover {
 
 
 body {
-	// Must explicitly override the background color. TODO: ¿Set in variable?
-	background-color: $background-color;
 	color: $font-color;
 	font-family: $base-font-family;
 }
 
-table {
-	// We use rem
-	font-size: 1.0rem;
+body,
+#header,
+#footer {
+	// We have to explicitly override the background color (even if we choose transparent)
+	// TODO: ¿should we separate header, footer and body colors?
+	background-color: $background-color;
 }
 
+
+// OJS ELEMENTS
+// ========================================================
+
+div.separator {
+	// Set a bigger margin
+	margin:rhythm(1) 0;
+	border-bottom: 2px solid #CCC;
+	position:relative;
+}
+
+a.action, a.file {
+	@include adjust-font-size-to($base-font-size);
+	text-transform: inherit;
+}

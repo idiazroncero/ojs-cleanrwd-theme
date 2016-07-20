@@ -1,0 +1,21 @@
+.ui-pnotify-history-container {
+	background:$main-color;
+	padding:0 rhythm(0.5);
+}
+
+.ui-pnotify-history-header {
+	@include adjust-font-size-to($h6-font-size);
+	font-family:$alt-font-family;
+}
+
+.ui-pnotify-title {
+	font-size: 0.8em;
+}
+
+.ui-pnotify-text {
+	font-size: 0.6em;
+}
+
+.ui-pnotify-history-container .ui-pnotify-history-header {
+	font-size: 0.8em;
+}

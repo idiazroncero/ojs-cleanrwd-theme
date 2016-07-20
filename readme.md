@@ -1,7 +1,7 @@
-# IN DEVELOPMENT - NOT READY FOR PRODUCTION
-## Open Journal System Clean and Responsive Theme
-### Development is sponsored by [http://openjournalsystems.cl/][ojscl]
-*v0.0.3*
+# Clean and Responsive Theme for Open Journal Systems
+__IN DEVELOPMENT - NOT READY FOR PRODUCTION__
+## Development is sponsored by [http://openjournalsystems.cl/][ojscl]
+*v0.0.4*
 
 ### What is this
 
@@ -76,15 +76,17 @@ If you don't have access to grunt or a CLI - or you don't feel comfortable - you
 3. Copy the content of `/concat/sass-source.scss` in the left side.
 4. Make your modifications on the file (variables, etc...)
 5. Wait for sassmeister to compile your CSS file.
-6. Substitute /themes/plugins/clean-rwd/clean-rwd.css with the result
+6. Substitute `/themes/plugins/clean-rwd/clean-rwd.css` with the result
 
 ### Dependencies
 
 If you need to do your own build of the project, you'll need to have locally installed Compass and Breakpoint.
+Type `gem install breakpoint` and `gem install compass` in your terminal to get them.
 
-It is as easy as typing `gem install breakpoint` and `gem install compass` in your terminal.
+## TODO
 
-Future versions, will include a .gemfile.
+- Include a .gemfile.
+- Separate OJS resets and opinionated styles (i.e. menu hover effects).
 
 
 
