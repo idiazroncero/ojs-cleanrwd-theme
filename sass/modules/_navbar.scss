@@ -22,9 +22,9 @@
 	li {
 		// We use a border effect
 		// TODO: This is highly opinionated
-		border-bottom: rhythm(0.25) solid transparent;
-		border-top:1px solid transparent;
-		margin-bottom:rhythm(-0.25);
+		border-top: rhythm(0.125) solid transparent;
+		border-bottom:1px solid transparent;
+		margin-bottom:-1px;
 		// Animate a little
 		@include transition(all 0.25s ease-in-out);
 		&:hover {

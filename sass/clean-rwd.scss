@@ -10,7 +10,6 @@
 // OJS overrides (deprecated)
 @import "pkp/pkp_common";
 @import "pkp/common";
-@import "pkp/sidebar";
 @import "pkp/tinymce";
 @import "pkp/compiled";
 
@@ -20,15 +19,17 @@
 @import "modules/navbar";
 @import "modules/registerform";
 @import "modules/config";
-@import "modules/sidebar_blocks";
+@import "modules/sidebar";
 @import "modules/footer";
 @import "modules/main";
 @import "modules/ui-pnotify";
 @import "modules/tables";
+@import "modules/header";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
 @import "pages/userhome";
 @import "pages/siteadmin";
+@import "pages/sitesettings";
 
 // Layout
 @import "layout/layout";

@@ -10,7 +10,7 @@ input.textField,
 select.selectMenu, 
 textarea.textArea, 
 input.uploadField { // We try to normalize all heights and font sízes.
-	@include adjust-font-size-to($base-font-size);
+	@include adjust-font-size-to($h5-font-size);
 	@include adjust-leading-to(1);
 	height:rhythm(1.5);
 	// No background for inputs, just a clean box
