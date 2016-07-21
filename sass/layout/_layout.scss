@@ -30,7 +30,7 @@
 	padding: 0;
 	// We don't use 10% margin to separate content from the left since we're using #container
 	// as a main wrapper.
-	margin:0;
+	margin:0 0 rhythm(1) 0;
 	// We don't want it to behave inline
 	display:block;
 	// And we don't want a float
