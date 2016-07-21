@@ -42,6 +42,14 @@
 	// We need to specifically override these also
 	float:none;
 	width:100%;
+	// No padding
+	padding: 0;
+	// Inherits from $base-font-size
+	font-size: inherit;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-left: 0;
+	margin-right:0;
 	@include breakpoint($sidebar-breakpoint) {
 		float: left;
 		width: $left-sidebar-width;
@@ -50,13 +58,6 @@
 		padding-right:rhythm(1);
 		border-right:1px solid $line-color;
 	}
-	// No padding
-	padding: 0;
-	// Inherits from $base-font-size
-	font-size: inherit;
-	// We don't use 10% margin to separate content from the left since we're using #container
-	// as a main wrapper.
-	margin-left: 0%;
 }
 
 // Modificaremos el layout en proximas ediciones
@@ -64,6 +65,14 @@
 	// We need to specifically override these also
 	float:none;
 	width:100%;
+	// No padding
+	padding: 0;
+	// Inherits from $base-font-size
+	font-size: inherit;
+	// We don't use 10% margin to separate content from the left since we're using #container
+	// as a main wrapper.
+	margin-left:0;
+	margin-right: 0;
 	@include breakpoint($sidebar-breakpoint) {
 		float: right;
 		width: $left-sidebar-width;
@@ -72,13 +81,6 @@
 		padding-left:rhythm(1);
 		border-left:1px solid $line-color;
 	}
-	// No padding
-	padding: 0;
-	// Inherits from $base-font-size
-	font-size: inherit;
-	// We don't use 10% margin to separate content from the left since we're using #container
-	// as a main wrapper.
-	margin-right: 0%;
 }
 
 
