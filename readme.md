@@ -3,6 +3,8 @@ __IN DEVELOPMENT - NOT READY FOR PRODUCTION__
 ## Development is sponsored by [http://openjournalsystems.cl/][ojscl]
 *v0.0.5*
 
+![preview](http://i66.tinypic.com/2eeviw4.jpg)
+
 ### What is this
 
 [Open Journal System][ojs] is the leading scientific journal manager. It is awesome.
