@@ -18,7 +18,7 @@
 
 #sidebar input.textField, #sidebar select.selectMenu {
 	// We have to explicitly override again the font-size property
-	@include adjust-font-size-to($base-font-size);
+	@include adjust-font-size-to($h5-font-size);
 }
 
 #sidebar div.block {

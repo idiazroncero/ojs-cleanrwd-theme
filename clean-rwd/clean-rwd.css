@@ -1193,8 +1193,8 @@ button.ui-button.ui-button-text-only .ui-button-text {
 
 /* line 19, ../sass/modules/_sidebar.scss */
 #sidebar input.textField, #sidebar select.selectMenu {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 14px;
+  font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
@@ -1442,69 +1442,71 @@ table.info tr.heading td,
 table.info td.heading,
 table.info td.heading {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  line-height: 18px;
+  line-height: 1.125rem;
   font-weight: bold;
   padding: 0.375rem; }
 
-/* line 105, ../sass/modules/_tables.scss */
+/* line 106, ../sass/modules/_tables.scss */
 table.data td.separator {
   padding: 1.5rem; }
 
-/* line 110, ../sass/modules/_tables.scss */
+/* line 111, ../sass/modules/_tables.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 120, ../sass/modules/_tables.scss */
+/* line 121, ../sass/modules/_tables.scss */
 table.listing td.headseparator {
   border-top: 1px solid #adadad;
   padding: 0; }
 
-/* line 127, ../sass/modules/_tables.scss */
+/* line 128, ../sass/modules/_tables.scss */
 table.listing tr.data td {
   border-top: none;
   border-bottom: 1px solid #cecece; }
 
-/* line 132, ../sass/modules/_tables.scss */
+/* line 133, ../sass/modules/_tables.scss */
 table.listing tr.data td.drag {
   cursor: move; }
 
-/* line 136, ../sass/modules/_tables.scss */
+/* line 137, ../sass/modules/_tables.scss */
 table.listing td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 141, ../sass/modules/_tables.scss */
+/* line 142, ../sass/modules/_tables.scss */
 table.listing td.endseparator {
   display: none; }
 
-/* line 146, ../sass/modules/_tables.scss */
+/* line 147, ../sass/modules/_tables.scss */
 table.listing td {
   padding: 0.375rem; }
 
-/* line 153, ../sass/modules/_tables.scss */
+/* line 154, ../sass/modules/_tables.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em; }
 
-/* line 160, ../sass/modules/_tables.scss */
+/* line 161, ../sass/modules/_tables.scss */
 table.listing td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 165, ../sass/modules/_tables.scss */
+/* line 166, ../sass/modules/_tables.scss */
 table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 173, ../sass/modules/_tables.scss */
+/* line 174, ../sass/modules/_tables.scss */
 table.nested tr {
   padding: 0;
   margin: 0; }
 
-/* line 178, ../sass/modules/_tables.scss */
+/* line 179, ../sass/modules/_tables.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em; }

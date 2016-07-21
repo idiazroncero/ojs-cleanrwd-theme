@@ -91,6 +91,7 @@ table.info {
 	td.heading, 
 	td.heading { // Table headings in all flavours
 		font-family:$alt-font-family;
+		@include adjust-leading-to(0.75);
 		font-weight: bold;
 		padding: rhythm(0.25);
 	}
