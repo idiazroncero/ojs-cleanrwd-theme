@@ -1,0 +1,18 @@
+#pkp-common-openJournalSystems {
+	#main h4 {
+		// Pseudo main title
+		@include adjust-font-size-to($h1-font-size);
+		font-family:$headlines;
+		// Vertical rhythm units, please
+		padding-top:rhythm(1);
+		// Closer to the lseparator
+		margin-bottom:0;;
+	}
+	div.thickSeparator {
+		border-bottom:1px solid $line-color;
+	}
+	#sidebar {
+		// Same margin as main
+		padding-top:rhythm(1);
+	}
+}
