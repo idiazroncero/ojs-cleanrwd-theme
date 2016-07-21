@@ -55,8 +55,9 @@ td.value,
 td.data,
 td label  {
 	font-family:$alt-font-family;
+	@include adjust-leading-to(0.75);
 	@include breakpoint($small) {
-		@include adjust-font-size-to($h5-font-size);
+		@include adjust-font-size-to($h5-font-size, 0.75);
 	}
 }
 
@@ -93,10 +94,16 @@ table.info {
 		font-family:$alt-font-family;
 		@include adjust-leading-to(0.75);
 		font-weight: bold;
-		padding: rhythm(0.25);
+		padding: rhythm(0.25) rhythm(0.25) rhythm(0.25) 0;
 	}
 }
 
+td.nodata {
+	font-family:$alt-font-family;
+	@include adjust-font-size-to($h5-font-size);
+	text-transform:uppercase;
+	font-style:normal !important;
+}
 
 
 //
@@ -145,7 +152,7 @@ table.listing td.endseparator {
 }
 
 table.listing td {
-	padding: rhythm(0.25)
+	padding: rhythm(0.25) rhythm(0.25) rhythm(0.25) 0;
 }
 
 ///////
