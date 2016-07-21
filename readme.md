@@ -3,7 +3,7 @@ __IN DEVELOPMENT - NOT READY FOR PRODUCTION__
 ## Development is sponsored by [http://openjournalsystems.cl/][ojscl]
 *v0.0.5*
 
-!(http://i66.tinypic.com/2eeviw4.jpg)
+![preview](http://i66.tinypic.com/2eeviw4.jpg)
 
 ### What is this
 
