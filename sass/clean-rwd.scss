@@ -28,10 +28,13 @@
 @import "modules/announcements";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
-@import "pages/userhome";
-@import "pages/siteadmin";
-@import "pages/sitesettings";
+@import "pages/userHome";
+@import "pages/siteAdmin";
+@import "pages/siteSettings";
 @import "pages/languages";
+@import "pages/helpPopup";
+@import "pages/authSources";
+@import "pages/adminCategories";
 
 // Layout
 @import "layout/layout";

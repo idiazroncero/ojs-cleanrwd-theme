@@ -20,25 +20,6 @@
 	// We have to explicitly override again the font-size property
 	@include adjust-font-size-to($h5-font-size);
 }
-/**
- * styles/sidebar.css
- *
- * Copyright (c) 2013-2015 Simon Fraser University Library
- * Copyright (c) 2003-2015 John Willinsky
- * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
- *
- * Site-wide shared elements for pages including sidebar(s).
- *
- */
-
-/**
- * Sidebar
- */
-
-#developedBy {
-	text-transform: uppercase;
-	font-size: 0.95em;
-}
 
 #sidebar div.block {
 	// INherit font sizes and set correct margin (not padding!!)
@@ -65,8 +46,6 @@
 	font-weight:bold;
 	font-family:$headlines;
 }
-
-
 
 #sidebar {
 	// Custom bullet (em dash)
@@ -99,16 +78,19 @@
 // 2 - INDIVIDUAL BLOCKS
 //
 
+#developedBy {
+	text-transform: uppercase;
+	font-size: 0.95em;
+}
+
 #sidebarLanguageToggle {
 	// Separate list and button
 	select {
-		width:50%;
-		@include box-sizing(border-box);
+		width:60%;
 	}
 	.button {
-		width:39%;
-		margin-left:10%;
-		@include box-sizing(border-box);
+		width:40%;
+		margin-left:-1px;
 	}
 }
 
@@ -118,9 +100,8 @@
 		width:100%;
 	}
 	// All inputs get fullwidth
-	input {
+	input, select {
 		width:100%;
-		@include box-sizing(border-box);
 	}
 	// Separate using some margin
 	.button {

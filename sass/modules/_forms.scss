@@ -8,6 +8,7 @@
 
 input.textField, 
 select.selectMenu, 
+select[name="plugin"], // They forgot the class here
 textarea.textArea, 
 input.uploadField { // We try to normalize all heights and font sízes.
 	@include adjust-font-size-to($h5-font-size);
@@ -23,6 +24,7 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	color: $font-color;
 	// NEVER grow bigger than the container
 	max-width:100%;
+	vertical-align:middle;
 }
 
 select option {
@@ -69,6 +71,7 @@ button.ui-button.ui-button-text-only .ui-button-text {
 	padding:rhythm(0.25) rhythm(0.5);
 	height:rhythm(1.5);
 	display:inline-block;
+	vertical-align:middle;
 	// Inherit font but make it smaller
 	@include adjust-font-size-to($base-font-size);
 	// @include adjust-leading-to(1);

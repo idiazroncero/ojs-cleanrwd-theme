@@ -1,0 +1,21 @@
+#pkp-admin-categories {
+	#content {
+		// What a CRIMINAL use of <br> nstead of margins and paddings.
+		> br:first-of-type {
+			display:none;
+		}
+		form input:first-of-type {
+			margin-top:rhythm(1);
+		}
+		input.button {
+			margin:rhythm(1) 0;
+		}
+	}
+	#categories {
+		> a {
+			@extend .button;
+			// Let me breathe! WHITESPACE!
+			margin-top:rhythm(1);
+		}
+	}
+}
