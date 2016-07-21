@@ -1193,8 +1193,8 @@ button.ui-button.ui-button-text-only .ui-button-text {
 
 /* line 19, ../sass/modules/_sidebar.scss */
 #sidebar input.textField, #sidebar select.selectMenu {
-  font-size: 14px;
-  font-size: 0.85rem;
+  font-size: 16px;
+  font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
@@ -1261,26 +1261,25 @@ button.ui-button.ui-button-text-only .ui-button-text {
 #simpleSearchForm table {
   width: 100%; }
 /* line 103, ../sass/modules/_sidebar.scss */
-#simpleSearchForm input {
-  width: 100%;
-  box-sizing: border-box; }
-/* line 108, ../sass/modules/_sidebar.scss */
+#simpleSearchForm input, #simpleSearchForm select {
+  width: 100%; }
+/* line 107, ../sass/modules/_sidebar.scss */
 #simpleSearchForm .button {
   margin-top: 0.75rem; }
 
-/* line 115, ../sass/modules/_sidebar.scss */
+/* line 114, ../sass/modules/_sidebar.scss */
 #sidebarFontSize #sizer a {
   margin: 0 0.75rem 0 0; }
 
-/* line 123, ../sass/modules/_sidebar.scss */
+/* line 122, ../sass/modules/_sidebar.scss */
 #sidebarUser td label {
   line-height: 18px;
   line-height: 1.125rem; }
-/* line 126, ../sass/modules/_sidebar.scss */
+/* line 125, ../sass/modules/_sidebar.scss */
 #sidebarUser td input[type="submit"] {
   margin-top: 0.75rem;
   width: 100%; }
-/* line 133, ../sass/modules/_sidebar.scss */
+/* line 132, ../sass/modules/_sidebar.scss */
 #sidebarUser > br {
   display: none; }
 

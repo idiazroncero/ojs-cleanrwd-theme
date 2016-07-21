@@ -18,7 +18,7 @@
 
 #sidebar input.textField, #sidebar select.selectMenu {
 	// We have to explicitly override again the font-size property
-	@include adjust-font-size-to($h5-font-size);
+	@include adjust-font-size-to($base-font-size);
 }
 
 #sidebar div.block {
@@ -100,9 +100,8 @@
 		width:100%;
 	}
 	// All inputs get fullwidth
-	input {
+	input, select {
 		width:100%;
-		@include box-sizing(border-box);
 	}
 	// Separate using some margin
 	.button {
