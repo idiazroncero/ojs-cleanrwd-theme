@@ -25,6 +25,11 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	max-width:100%;
 }
 
+select option {
+	// Source of many layout problems: option shouldn't grow bigger than its parent
+	max-width:100%;
+}
+
 input.uploadField {
 	// Border is ugly...
 	border:none;
@@ -50,7 +55,6 @@ input[type="submit"] {
 	@include adjust-font-size-to($h5-font-size, 0.5);
 	padding: 0 5px;
 }
-
 
 //
 // BUTTONS
