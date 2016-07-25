@@ -659,36 +659,17 @@ ul.menu a {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
 /* line 140, ../sass/pkp/_pkp_common.scss */
-ul.steplist {
-  margin: 1.5rem 0; }
-
-/* line 146, ../sass/pkp/_pkp_common.scss */
-ul.steplist li {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  margin-right: 0.75rem;
-  padding-right: 0.75rem;
-  border-right: 1px solid #ccc; }
-
-/* line 155, ../sass/pkp/_pkp_common.scss */
-ul.steplist li.current a {
-  border-bottom: 0.1875rem solid #ccc;
-  margin-bottom: -0.1875rem; }
-
-/* line 161, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em; }
 
-/* line 166, ../sass/pkp/_pkp_common.scss */
+/* line 145, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none; }
 
-/* line 172, ../sass/pkp/_pkp_common.scss */
+/* line 151, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline; }
@@ -1783,6 +1764,28 @@ table.announcementsMore {
 table.announcementsMore td {
   padding-top: 1.5em;
   text-align: right; }
+
+/* line 5, ../sass/modules/_steplist.scss */
+ul.steplist {
+  margin: 1.5rem 0; }
+
+/* line 10, ../sass/modules/_steplist.scss */
+ul.steplist li {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  margin-right: 0.75rem;
+  padding-right: 0.75rem;
+  border-right: 1px solid #cecece; }
+  /* line 17, ../sass/modules/_steplist.scss */
+  ul.steplist li:last-child {
+    border-right: none; }
+
+/* line 22, ../sass/modules/_steplist.scss */
+ul.steplist li.current a {
+  border-bottom: 0.1875rem solid #adadad;
+  margin-bottom: -0.1875rem; }
 
 /* line 3, ../sass/pages/_userHome.scss */
 #pkp-user-userHome #content > a:first-child {

@@ -136,27 +136,6 @@ ul.menu a {
 	font-family: $headlines;
 }
 
-// Steplist is used in config sections
-ul.steplist {
-	// Respect vrhythm
-	margin: rhythm(1) 0;
-	// list-style-type: decimal; // WHY in hell use an <ul> instead of <ol> and then give it a decimal style type???
-}
-
-ul.steplist li {
-	// Use our font sizing
-	@include adjust-font-size-to($base-font-size);
-	// Separate using a border
-	margin-right: rhythm(0.5);
-	padding-right:rhythm(0.5);
-	border-right: 1px solid #ccc;
-}
-
-ul.steplist li.current a {
-	// add a border
-	border-bottom:rhythm(0.125) solid #ccc;
-	margin-bottom:rhythm(-0.125);
-}
 
 ul.plain {
 	list-style-type: none;
