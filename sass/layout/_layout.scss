@@ -10,6 +10,7 @@
 	// To completely redo the main layout, we start by making #container the main wrapper.
 	max-width: $max-width;
 	padding:0 rhythm(1);
+	margin:rhythm(1) auto;
 	@include breakpoint($max-width) {
 		padding:0;
 	}
@@ -20,7 +21,7 @@
 	text-align: center;
 	// Separate header from top and main elements... let it breathe
 	// We break the only-margin-bottom rule because this is the first element in page.
-	margin:rhythm(1) 0;
+	margin:0 0 rhythm(1) 0;
 }
 
 #main {
@@ -30,7 +31,7 @@
 	padding: 0;
 	// We don't use 10% margin to separate content from the left since we're using #container
 	// as a main wrapper.
-	margin:0 0 rhythm(1) 0;
+	margin:0;
 	// We don't want it to behave inline
 	display:block;
 	// And we don't want a float
