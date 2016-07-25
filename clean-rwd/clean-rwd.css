@@ -1859,6 +1859,13 @@ ul.steplist li.current a {
 #pkp-admin-categories #categories > a {
   margin-top: 1.5rem; }
 
+/* line 3, ../sass/pages/_journalPolicies.scss */
+#pkp-manager-setup-journalPolicies #reviewProcess .separator {
+  display: none; }
+/* line 8, ../sass/pages/_journalPolicies.scss */
+#pkp-manager-setup-journalPolicies .instruct {
+  display: block; }
+
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets
  */
