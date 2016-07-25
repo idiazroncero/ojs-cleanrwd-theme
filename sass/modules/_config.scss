@@ -21,13 +21,6 @@
 	}
 }
 
-// Corrects some missing spacing on the submission checklist
-#submissionPreparationChecklist {
-	input[type="submit"] {
-		margin-left:rhythm(1);
-	}
-}
-
 // Sudden use of <h4> inside tables breaks design...
 #forAuthorsToIndexTheirWork {
 	h4 {
@@ -46,13 +39,5 @@
 		td.separator {
 			padding:0;
 		}
-	}
-}
-
-// We need to be over-specific to override this h3
-#parserFilterGridContainer, #lookupFilterGridContainer {
-	h3 {
-		@include adjust-font-size-to($h5-font-size);
-		font-weight:bold;
 	}
 }

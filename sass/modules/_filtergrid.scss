@@ -1,0 +1,34 @@
+ div.pkp_controllers_grid {
+ 	// use vertical rhythm
+ 	margin-bottom:rhythm(1);
+ 	padding:rhythm(0.5);
+ 	// Use a box to indicate this is a plugin
+ 	border:1px solid $line-color-light;
+ }
+
+ div.pkp_controllers_grid .wrapper {
+ 	// use vertical rhythm
+ 	margin-bottom:rhythm(1);
+ }
+
+ div.pkp_controllers_grid .grid_header_bar {
+ 	// No color, no padding! It is a regular secion
+ 	background-color: transparent;
+ 	padding:0;
+ 	margin-bottom:rhythm(0.5);
+ }
+
+ div.pkp_controllers_grid .options {
+ 	float:none;
+ 	a {
+ 		// Place "add element" next to the title and smaller
+ 		float:none;
+ 		@include adjust-font-size-to($h5-font-size);
+ 		margin-left:rhythm(1);
+ 	}
+ }
+
+ // Unnecesary padding
+ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty td {
+ 	padding-left:0;
+ }

@@ -1,39 +1,4 @@
-/**
- * Overrides OJS's base stylesheet /styles/compiled.css.
- *
- */
 
- div.pkp_controllers_grid {
- 	// use vertical rhythm
- 	margin-top:rhythm(1);
- }
-
- div.pkp_controllers_grid .wrapper {
- 	// use vertical rhythm
- 	margin-bottom:rhythm(1);
- }
-
- div.pkp_controllers_grid .grid_header_bar {
- 	// use our gray
- 	background-color: #eee;
- 	padding:rhythm(0.25) rhythm(0.5);
- }
-
- div.pkp_controllers_grid .options {
- 	float:none;
- 	a {
- 		// Place "add element" next to the title and smaller
- 		float:none;
- 		@include adjust-font-size-to($h5-font-size);
- 		font-family:$helvetica;
- 		margin-left:rhythm(1);
- 	}
- }
-
- // Unnecesary padding
- div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty td {
- 	padding-left:0;
- }
 
  // Dialog modals
 

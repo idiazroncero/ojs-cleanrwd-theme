@@ -87,7 +87,9 @@ td.label {
 }
 
 table.listing,
-table.info {
+table.info,
+.pkp_controllers_grid table {
+	th,
 	tr.heading td,
 	td.heading, 
 	td.heading { // Table headings in all flavours

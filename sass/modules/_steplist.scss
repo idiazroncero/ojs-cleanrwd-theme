@@ -10,12 +10,18 @@ ul.steplist {
 ul.steplist li {
 	// Use our font sizing
 	@include adjust-font-size-to($base-font-size);
-	// Separate using a border
-	margin-right: rhythm(0.5);
-	padding-right:rhythm(0.5);
-	border-right: 1px solid $line-color-light;
-	&:last-child {
-		border-right:none;
+	display:block;
+	text-align:center;
+	@include breakpoint($small) {
+		display:inline;
+		text-align:left;
+		// Separate using a border
+		margin-right: rhythm(0.5);
+		padding-right:rhythm(0.5);
+		border-right: 1px solid $line-color-light;
+		&:last-child {
+			border-right:none;
+		}
 	}
 }
 

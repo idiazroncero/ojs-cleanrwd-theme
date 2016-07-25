@@ -1,0 +1,16 @@
+#pkp-manager-setup-guidingSubmissions {
+	#submissionPreparationChecklist {
+		input[type="submit"] {
+			margin-left:0;
+			@include breakpoint($medium) {
+				margin-left:rhythm(1);
+			}
+		}	
+	}
+	 // We need to be over-specific to override this h3
+	#parserFilterGridContainer, #lookupFilterGridContainer {
+		h3 {
+			@include adjust-font-size-to($h4-font-size);
+		}
+	}
+}

@@ -4,6 +4,10 @@
 			// The separator is useless here...
 			display:none;
 		}
+		td.label {
+			// Overrides align:right as an HTML property
+			text-align:left;
+		}
 	}
 	.instruct {
 		display:block;

@@ -8,7 +8,7 @@
 
 input.textField, 
 select.selectMenu, 
-select[name="plugin"], // They forgot the class here
+select,
 textarea.textArea, 
 input.uploadField { // We try to normalize all heights and font sízes.
 	@include adjust-font-size-to($h5-font-size);
