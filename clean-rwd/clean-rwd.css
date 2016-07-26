@@ -511,21 +511,25 @@ a:hover {
 /* line 118, ../sass/init/_ojs-normalize.scss */
 body {
   color: #333;
-  font-family: Merriweather, Georgia, Times, serif; }
+  font-family: Merriweather, Georgia, Times, serif;
+  background-color: #f5f5f5; }
 
-/* line 123, ../sass/init/_ojs-normalize.scss */
-body,
+/* line 124, ../sass/init/_ojs-normalize.scss */
 #header,
 #footer {
+  background-color: transparent; }
+
+/* line 131, ../sass/init/_ojs-normalize.scss */
+#container {
   background-color: #fff; }
 
-/* line 135, ../sass/init/_ojs-normalize.scss */
+/* line 139, ../sass/init/_ojs-normalize.scss */
 div.separator {
   margin: 1.5rem 0;
   border-bottom: 2px solid #CCC;
   position: relative; }
 
-/* line 142, ../sass/init/_ojs-normalize.scss */
+/* line 146, ../sass/init/_ojs-normalize.scss */
 a.action, a.file {
   font-size: 16px;
   font-size: 1rem;
@@ -1911,21 +1915,27 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 /* line 5, ../sass/layout/_layout.scss */
 #container {
   min-width: 0 !important;
-  max-width: 960px;
-  padding: 0 1.5rem;
-  margin: 1.5rem auto; }
-  @media (min-width: 960px) {
-    /* line 5, ../sass/layout/_layout.scss */
-    #container {
-      padding: 0; } }
+  max-width: 960px; }
 
-/* line 19, ../sass/layout/_layout.scss */
+/* line 15, ../sass/layout/_layout.scss */
+#header {
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+  background-color: #eee; }
+
+/* line 20, ../sass/layout/_layout.scss */
+#body {
+  padding: 0.75rem 1.5rem; }
+
+/* line 24, ../sass/layout/_layout.scss */
+#footer {
+  padding: 0.75rem 1.5rem 1.5rem 1.5rem; }
+
+/* line 28, ../sass/layout/_layout.scss */
 #header {
   width: 100%;
-  text-align: center;
-  margin: 0 0 1.5rem 0; }
+  text-align: center; }
 
-/* line 27, ../sass/layout/_layout.scss */
+/* line 33, ../sass/layout/_layout.scss */
 #main {
   width: auto;
   padding: 0;
@@ -1933,7 +1943,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   display: block;
   float: none; }
 
-/* line 42, ../sass/layout/_layout.scss */
+/* line 48, ../sass/layout/_layout.scss */
 #leftSidebar {
   float: none;
   width: 100%;
@@ -1942,7 +1952,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   margin-left: 0;
   margin-right: 0; }
   @media (min-width: 600px) {
-    /* line 42, ../sass/layout/_layout.scss */
+    /* line 48, ../sass/layout/_layout.scss */
     #leftSidebar {
       float: left;
       width: 25%;
@@ -1950,7 +1960,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
       padding-right: 1.5rem;
       border-right: 1px solid #adadad; } }
 
-/* line 65, ../sass/layout/_layout.scss */
+/* line 71, ../sass/layout/_layout.scss */
 #rightSidebar {
   float: none;
   width: 100%;
@@ -1959,7 +1969,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   margin-left: 0;
   margin-right: 0; }
   @media (min-width: 600px) {
-    /* line 65, ../sass/layout/_layout.scss */
+    /* line 71, ../sass/layout/_layout.scss */
     #rightSidebar {
       float: right;
       width: 25%;
@@ -1967,12 +1977,12 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
       padding-left: 1.5rem;
       border-left: 1px solid #adadad; } }
 
-/* line 89, ../sass/layout/_layout.scss */
+/* line 95, ../sass/layout/_layout.scss */
 #body {
   overflow: hidden;
   *zoom: 1; }
   @media (max-width: 600px) {
-    /* line 89, ../sass/layout/_layout.scss */
+    /* line 95, ../sass/layout/_layout.scss */
     #body {
       display: -webkit-box;
       display: -webkit-flex;
@@ -1984,21 +1994,21 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
           -ms-flex-direction: column;
               flex-direction: column; } }
 
-/* line 99, ../sass/layout/_layout.scss */
+/* line 105, ../sass/layout/_layout.scss */
 #sidebar {
   -webkit-box-ordinal-group: 3;
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2; }
 
-/* line 103, ../sass/layout/_layout.scss */
+/* line 109, ../sass/layout/_layout.scss */
 #main {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;
       -ms-flex-order: 1;
           order: 1; }
 
-/* line 125, ../sass/layout/_layout.scss */
+/* line 131, ../sass/layout/_layout.scss */
 #header h1 {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   padding: 0;
