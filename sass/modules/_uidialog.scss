@@ -1,0 +1,59 @@
+// Dialog modals
+
+.ui-dialog {
+	// White bg
+	background:$white;
+	// padding in vrhythm
+	padding:rhythm(0.5);
+	// No border
+	@include border-radius(0);
+	border:none;
+	// Forces to take 99% width to avoid overflow (present in original CSS; but overriden)
+	.pkp_form select {
+	width:99%;
+	}
+	// Corrects ugly error which greatly resizes checkbox inputs
+	.pkp_form input {
+		width:auto;
+	}
+}
+
+.ui-dialog .ui-dialog-content {
+	// Padding was already set
+	padding:0;
+	// Color is defined in general
+	background:transparent !important;
+	h3 {
+		// Explicit override because theme.css messes it all!
+		font-family: $headlines;
+		// No margin inside modal
+		margin-top:0;
+	}
+}
+
+.ui-dialog .ui-dialog-buttonpane,
+.ui-dialog .ui-dialog-content{
+	border:none;
+	background:transparent;
+	color:$font-color;
+	padding:0;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+	margin-top:rhythm(1);
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: 0 0 0 rhythm(1);
+}
+
+.ui-widget {
+	// Reset to original font
+	font-family: $base-font-family;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+	border:none;
+	background:none;
+	color:inherit;
+}

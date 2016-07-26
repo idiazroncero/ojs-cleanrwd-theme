@@ -10,7 +10,6 @@
 // OJS overrides (deprecated)
 @import "pkp/pkp_common";
 @import "pkp/common";
-@import "pkp/compiled";
 
 // Modular styles (when possible)
 @import "modules/forms";
@@ -28,6 +27,7 @@
 @import "modules/announcements";
 @import "modules/steplist";
 @import "modules/filtergrid";
+@import "modules/uidialog";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
 @import "pages/userHome";
@@ -39,6 +39,7 @@
 @import "pages/adminCategories";
 @import "pages/journalPolicies";
 @import "pages/guidingSubmissions";
+@import "pages/filesBrowser";
 
 // Layout
 @import "layout/layout";
