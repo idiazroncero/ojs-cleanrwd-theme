@@ -1,0 +1,23 @@
+#pkp-manager-reviewForms {
+	#reviewForms {
+		> .action {
+			@extend .button;
+			margin-top:rhythm(1);
+		}
+	}
+}
+
+#pkp-manager-reviewFormElements {
+	#reviewFormElements {
+		> .action {
+			@extend .button;
+			margin-top:rhythm(1);
+		}
+		br {
+			display:none;
+		}
+		form > p {
+			margin-top:rhythm(1);
+		}	
+	}
+}

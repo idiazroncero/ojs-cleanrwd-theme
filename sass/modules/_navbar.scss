@@ -8,8 +8,6 @@
 	@include breakpoint($small) {
 		margin-bottom:0;
 	}
-	// We need a clearfix here
-	@include pie-clearfix();
 	a {
 		// This conflicts with pkp/common.css ul.menu a.
 		// We need to repeat the properties. Ugly, but needed.
@@ -46,6 +44,10 @@
 	}
 }
 
+ul.menu {
+	// We need a clearfix here
+	@include pie-clearfix();
+}
 
 ul.menu li {
 	// Use vertical rhythm units also for horizontal spacing.
@@ -62,8 +64,6 @@ ul.menu li.current {
 }
 
 ul.menu a {
-	// Let the link expand to fill all available space
-	display:block;
 	// Use our font sizes
 	@include adjust-font-size-to($base-font-size);
 	// Use our headings font
