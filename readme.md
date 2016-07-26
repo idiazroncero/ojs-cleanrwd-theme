@@ -1,7 +1,7 @@
 # Clean and Responsive Theme for Open Journal Systems
 __IN DEVELOPMENT - NOT READY FOR PRODUCTION__
 ## Development is sponsored by [http://openjournalsystems.cl/][ojscl]
-*v0.0.5*
+*v0.0.6*
 
 ![preview](http://i66.tinypic.com/2eeviw4.jpg)
 
