@@ -962,9 +962,10 @@ input[type="submit"] {
   padding: 0 5px; }
 
 /* line 66, ../sass/modules/_forms.scss */
-.button, #pkp-admin-categories #categories > a,
+.button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action,
 input.button,
 #pkp-user-userHome #content > a:first-child,
+#pkp-section-sections #sections > input.action,
 input.defaultButton,
 button.ui-button.ui-button-text-only .ui-button-text {
   padding: 0.375rem 0.75rem;
@@ -984,16 +985,18 @@ button.ui-button.ui-button-text-only .ui-button-text {
   border: 1px solid #3C7861;
   color: #333; }
   /* line 86, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover,
+  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
+  #pkp-section-sections #sections > input.action:hover,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     text-decoration: none; }
   /* line 105, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover,
+  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
+  #pkp-section-sections #sections > input.action:hover,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     background: #3C7861;
@@ -1103,7 +1106,7 @@ ul.menu a {
     padding: 0.75rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     /* line 13, ../sass/modules/_config.scss */
-    #assignBlocksToSidebars tr td input.button, #assignBlocksToSidebars tr td #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #assignBlocksToSidebars tr td #content > a:first-child {
+    #assignBlocksToSidebars tr td input.button, #assignBlocksToSidebars tr td #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #assignBlocksToSidebars tr td #content > a:first-child, #assignBlocksToSidebars tr td #pkp-section-sections #sections > input.action, #pkp-section-sections #assignBlocksToSidebars tr td #sections > input.action {
       border: none;
       border-radius: 0;
       background-color: #ccc;
@@ -1187,7 +1190,7 @@ ul.menu a {
 #sidebarLanguageToggle select {
   width: 60%; }
 /* line 91, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle .button, #sidebarLanguageToggle #pkp-admin-categories #categories > a, #pkp-admin-categories #sidebarLanguageToggle #categories > a {
+#sidebarLanguageToggle .button, #sidebarLanguageToggle #pkp-admin-categories #categories > a, #pkp-admin-categories #sidebarLanguageToggle #categories > a, #sidebarLanguageToggle #pkp-section-sections #sections > .action, #pkp-section-sections #sidebarLanguageToggle #sections > .action {
   width: 40%;
   margin-left: -1px; }
 
@@ -1198,7 +1201,7 @@ ul.menu a {
 #simpleSearchForm input, #simpleSearchForm select {
   width: 100%; }
 /* line 107, ../sass/modules/_sidebar.scss */
-#simpleSearchForm .button, #simpleSearchForm #pkp-admin-categories #categories > a, #pkp-admin-categories #simpleSearchForm #categories > a {
+#simpleSearchForm .button, #simpleSearchForm #pkp-admin-categories #categories > a, #pkp-admin-categories #simpleSearchForm #categories > a, #simpleSearchForm #pkp-section-sections #sections > .action, #pkp-section-sections #simpleSearchForm #sections > .action {
   margin-top: 0.75rem; }
 
 /* line 114, ../sass/modules/_sidebar.scss */
@@ -1872,7 +1875,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   line-height: 1.5rem; }
 
 /* line 21, ../sass/pages/_languages.scss */
-#installNewLocales .button, #installNewLocales #pkp-admin-categories #categories > a, #pkp-admin-categories #installNewLocales #categories > a {
+#installNewLocales .button, #installNewLocales #pkp-admin-categories #categories > a, #pkp-admin-categories #installNewLocales #categories > a, #installNewLocales #pkp-section-sections #sections > .action, #pkp-section-sections #installNewLocales #sections > .action {
   margin-top: 1.5rem; }
 
 /* line 2, ../sass/pages/_helpPopup.scss */
@@ -1902,7 +1905,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-admin-categories #content form input:first-of-type {
   margin-top: 1.5rem; }
 /* line 10, ../sass/pages/_adminCategories.scss */
-#pkp-admin-categories #content input.button, #pkp-admin-categories #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #pkp-admin-categories #content > a:first-child {
+#pkp-admin-categories #content input.button, #pkp-admin-categories #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #pkp-admin-categories #content > a:first-child, #pkp-admin-categories #content #pkp-section-sections #sections > input.action, #pkp-section-sections #pkp-admin-categories #content #sections > input.action {
   margin: 1.5rem 0; }
 /* line 15, ../sass/pages/_adminCategories.scss */
 #pkp-admin-categories #categories > a {
@@ -1936,6 +1939,10 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-manager-filesBrowser .listing,
 #pkp-manager-filesBrowser #content form {
   margin-bottom: 1.5rem; }
+
+/* line 3, ../sass/pages/_sections.scss */
+#pkp-section-sections #sections > .action {
+  margin-top: 1.5rem; }
 
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets

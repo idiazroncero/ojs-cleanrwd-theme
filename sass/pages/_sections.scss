@@ -1,0 +1,8 @@
+#pkp-section-sections {
+	#sections {
+		> .action {
+			@extend .button;
+			margin-top:rhythm(1);
+		}
+	}
+}
