@@ -6,11 +6,12 @@
  */
 
 
-input.textField, 
+input.textField, // We need explicit overrides
+input, 
 select.selectMenu, 
 select,
 textarea.textArea, 
-input.uploadField { // We try to normalize all heights and font sízes.
+input.uploadField {
 	@include adjust-font-size-to($h5-font-size);
 	@include adjust-leading-to(1);
 	height:rhythm(1.5);

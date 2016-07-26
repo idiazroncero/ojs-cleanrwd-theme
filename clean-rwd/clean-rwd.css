@@ -956,6 +956,7 @@ td.notificationFunction {
  */
 /* line 9, ../sass/modules/_forms.scss */
 input.textField,
+input,
 select.selectMenu,
 select,
 textarea.textArea,
@@ -974,28 +975,28 @@ input.uploadField {
   max-width: 100%;
   vertical-align: middle; }
 
-/* line 30, ../sass/modules/_forms.scss */
+/* line 31, ../sass/modules/_forms.scss */
 select option {
   max-width: 100%; }
 
-/* line 35, ../sass/modules/_forms.scss */
+/* line 36, ../sass/modules/_forms.scss */
 input.uploadField {
   border: none; }
 
-/* line 40, ../sass/modules/_forms.scss */
+/* line 41, ../sass/modules/_forms.scss */
 textarea.textArea {
   height: auto; }
 
-/* line 45, ../sass/modules/_forms.scss */
+/* line 46, ../sass/modules/_forms.scss */
 select.selectMenu {
   padding: 0.1875rem 0;
   height: 2.25rem; }
 
-/* line 51, ../sass/modules/_forms.scss */
+/* line 52, ../sass/modules/_forms.scss */
 input[type="text"], input[type="password"] {
   padding: 0 0.375rem; }
 
-/* line 56, ../sass/modules/_forms.scss */
+/* line 57, ../sass/modules/_forms.scss */
 input[type="submit"] {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1003,7 +1004,7 @@ input[type="submit"] {
   line-height: 0.75rem;
   padding: 0 5px; }
 
-/* line 65, ../sass/modules/_forms.scss */
+/* line 66, ../sass/modules/_forms.scss */
 .button, #pkp-admin-categories #categories > a,
 input.button,
 #pkp-user-userHome #content > a:first-child,
@@ -1025,14 +1026,14 @@ button.ui-button.ui-button-text-only .ui-button-text {
   background-color: transparent;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 85, ../sass/modules/_forms.scss */
+  /* line 86, ../sass/modules/_forms.scss */
   .button:hover, #pkp-admin-categories #categories > a:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     text-decoration: none; }
-  /* line 104, ../sass/modules/_forms.scss */
+  /* line 105, ../sass/modules/_forms.scss */
   .button:hover, #pkp-admin-categories #categories > a:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
@@ -1044,7 +1045,8 @@ button.ui-button.ui-button-text-only .ui-button-text {
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
   padding: 0;
-  margin-bottom: 24px; }
+  margin-bottom: 24px;
+  text-align: center; }
   /* line 7, ../sass/modules/_breadcrumbs.scss */
   #breadcrumb a {
     font-size: 11px;
@@ -1054,40 +1056,57 @@ button.ui-button.ui-button-text-only .ui-button-text {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: -0.02rem;
     text-transform: uppercase; }
+  @media (min-width: 480px) {
+    /* line 1, ../sass/modules/_breadcrumbs.scss */
+    #breadcrumb {
+      text-align: left; } }
 
 /* line 1, ../sass/modules/_navbar.scss */
 #navbar {
   margin-right: 0;
   padding-bottom: 0;
   border-bottom: 1px solid #adadad;
+  margin-bottom: 1.5rem;
   *zoom: 1; }
+  @media (min-width: 480px) {
+    /* line 1, ../sass/modules/_navbar.scss */
+    #navbar {
+      margin-bottom: 0; } }
   /* line 38, ../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/utilities/general/_clearfix.scss */
   #navbar:after {
     content: "";
     display: table;
     clear: both; }
-  /* line 8, ../sass/modules/_navbar.scss */
+  /* line 13, ../sass/modules/_navbar.scss */
   #navbar a {
     font-size: 16px;
     font-size: 1rem;
     line-height: 24px;
     line-height: 1.5rem;
     letter-spacing: 0.1rem; }
-  /* line 15, ../sass/modules/_navbar.scss */
+  /* line 20, ../sass/modules/_navbar.scss */
   #navbar a, #navbar a:hover {
     text-decoration: none;
     border: none; }
-  /* line 19, ../sass/modules/_navbar.scss */
+  /* line 24, ../sass/modules/_navbar.scss */
   #navbar a, #navbar a:link, #navbar a:visited, #navbar a:hover, #navbar a:active {
     color: #333; }
-  /* line 22, ../sass/modules/_navbar.scss */
+  /* line 27, ../sass/modules/_navbar.scss */
   #navbar li {
     border-top: 0.1875rem solid transparent;
     border-bottom: 1px solid transparent;
     margin-bottom: -1px;
     -webkit-transition: all 0.25s ease-in-out;
-    transition: all 0.25s ease-in-out; }
-    /* line 30, ../sass/modules/_navbar.scss */
+    transition: all 0.25s ease-in-out;
+    width: 100%;
+    text-align: center;
+    padding: 0.375rem; }
+    @media (min-width: 480px) {
+      /* line 27, ../sass/modules/_navbar.scss */
+      #navbar li {
+        padding: 0;
+        width: auto; } }
+    /* line 43, ../sass/modules/_navbar.scss */
     #navbar li:hover {
       border-color: #000; }
 
@@ -1469,8 +1488,12 @@ span.nested {
 
 /* line 1, ../sass/modules/_header.scss */
 #headerTitle {
-  text-align: left !important; }
-  /* line 3, ../sass/modules/_header.scss */
+  text-align: center !important; }
+  @media (min-width: 480px) {
+    /* line 1, ../sass/modules/_header.scss */
+    #headerTitle {
+      text-align: left !important; } }
+  /* line 6, ../sass/modules/_header.scss */
   #headerTitle h1 img {
     max-width: 100%;
     height: auto; }
