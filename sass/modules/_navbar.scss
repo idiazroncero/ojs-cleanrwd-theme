@@ -3,8 +3,11 @@
 	margin-right: 0;
 	padding-bottom: 0;
 	border-bottom: 1px solid $line-color;
-	// We need a clearfix here
-	@include pie-clearfix();
+	// Mobile-first
+	margin-bottom:rhythm(1);
+	@include breakpoint($small) {
+		margin-bottom:0;
+	}
 	a {
 		// This conflicts with pkp/common.css ul.menu a.
 		// We need to repeat the properties. Ugly, but needed.
@@ -27,8 +30,42 @@
 		margin-bottom:-1px;
 		// Animate a little
 		@include transition(all 0.25s ease-in-out);
+		// Mobile-first
+		width:100%;
+		text-align:center;
+		padding:rhythm(0.25);
+		@include breakpoint($small) {
+			padding:0;
+			width:auto;
+		}
 		&:hover {
 			border-color:#000;
 		}
 	}
+}
+
+ul.menu {
+	// We need a clearfix here
+	@include pie-clearfix();
+}
+
+ul.menu li {
+	// Use vertical rhythm units also for horizontal spacing.
+	margin-right: rhythm(1);
+	padding:0;
+	// We want to give menu items more space for touch-enabled devices...
+	float:left;
+	display:block;
+}
+
+// Should we use a different, more original, way to mark "active" items??
+ul.menu li.current {
+	font-weight: bold;
+}
+
+ul.menu a {
+	// Use our font sizes
+	@include adjust-font-size-to($base-font-size);
+	// Use our headings font
+	font-family: $headlines;
 }

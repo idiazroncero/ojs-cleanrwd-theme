@@ -89,6 +89,15 @@ module.exports = function(grunt) {
 				files: ['**/*.scss'],
 				tasks: ['prod']
 			}
+		},
+
+		copy: {
+		  main: {
+		    files: [
+		      // includes files within path
+		      {expand: true, src: ['clean-rwd/**'], dest: '/home/nacho/Sites/ojs/plugins/themes/'}
+		    ],
+		  },
 		}
 	}); // Init Config
 	
@@ -97,11 +106,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-csslint');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-postcss');
 
 	// Load tasks
 	grunt.registerTask('default', ['compass:prod', 'postcss:process']);
-	grunt.registerTask('dev', ['compass:dev', 'postcss:process']);
+	grunt.registerTask('dev', ['compass:dev', 'postcss:process', 'copy:main']);
 	grunt.registerTask('prod', ['compass:prod', 'postcss:process']);
 	// And we also have watch:dev and watch:prod to automate both of them
 	// and csslint to check the health of our CSS

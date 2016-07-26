@@ -1,0 +1,33 @@
+// 
+// Steplist is used in config sections like yourdomain.com/yourjournal/manager/setup/1
+// 
+
+ul.steplist {
+	// Respect vrhythm
+	margin: 0 0 rhythm(1) 0;
+}
+
+ul.steplist li {
+	// Use our font sizing
+	@include adjust-font-size-to($base-font-size);
+	font-family:$headlines;
+	display:block;
+	text-align:center;
+	@include breakpoint($small) {
+		display:inline;
+		text-align:left;
+		// Separate using a border
+		margin-right: rhythm(0.5);
+		padding-right:rhythm(0.5);
+		border-right: 1px solid $line-color-light;
+		&:last-child {
+			border-right:none;
+		}
+	}
+}
+
+ul.steplist li.current a {
+	// add a border to mark currently selected item
+	border-bottom:rhythm(0.125) solid $line-color;
+	margin-bottom:rhythm(-0.125);
+}

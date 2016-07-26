@@ -9,18 +9,25 @@
 	// We prefer centered content. It's just an opinionated design choice - and it's easier for RWD
 	// To completely redo the main layout, we start by making #container the main wrapper.
 	max-width: $max-width;
-	padding:0 rhythm(1);
-	@include breakpoint($max-width) {
-		padding:0;
-	}
+}
+
+// In order to apply full-width background-colors we need to set padding separately, not in #container
+#header {
+	padding:rhythm(1);
+	background-color:$header-background-color;
+}
+
+#body {
+	padding:rhythm(0.5) rhythm(1);
+}
+
+#footer {
+	padding:rhythm(0.5) rhythm(1) rhythm(1) rhythm(1);
 }
 
 #header {
 	width: 100%;
 	text-align: center;
-	// Separate header from top and main elements... let it breathe
-	// We break the only-margin-bottom rule because this is the first element in page.
-	margin:rhythm(1) 0;
 }
 
 #main {
@@ -30,7 +37,7 @@
 	padding: 0;
 	// We don't use 10% margin to separate content from the left since we're using #container
 	// as a main wrapper.
-	margin:0 0 rhythm(1) 0;
+	margin:0;
 	// We don't want it to behave inline
 	display:block;
 	// And we don't want a float

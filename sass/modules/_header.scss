@@ -1,5 +1,8 @@
 #headerTitle {
-	text-align:$header-alignment !important;
+	text-align:center !important;
+	@include breakpoint($small) {
+		text-align:$header-alignment !important;
+	}
 	h1 img {
 		// Responsive image
 		max-width:100%;

@@ -118,14 +118,18 @@ a:hover {
 body {
 	color: $font-color;
 	font-family: $base-font-family;
+	background-color: $background-color;
 }
 
-body,
 #header,
 #footer {
 	// We have to explicitly override the background color (even if we choose transparent)
 	// TODO: ¿should we separate header, footer and body colors?
-	background-color: $background-color;
+	background-color: transparent;
+}
+
+#container {
+	background-color: $container-background-color;
 }
 
 

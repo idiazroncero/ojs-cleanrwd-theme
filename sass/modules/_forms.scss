@@ -6,11 +6,11 @@
  */
 
 
-input.textField, 
+input.textField, // We need explicit overrides
 select.selectMenu, 
-select[name="plugin"], // They forgot the class here
+select,
 textarea.textArea, 
-input.uploadField { // We try to normalize all heights and font sízes.
+input.uploadField {
 	@include adjust-font-size-to($h5-font-size);
 	@include adjust-leading-to(1);
 	height:rhythm(1.5);
@@ -20,8 +20,9 @@ input.uploadField { // We try to normalize all heights and font sízes.
 	border-radius: $border-radius;
 	// We want a clean, plain border.
 	border: 1px solid $light-color;
-	// Explicityly override color
+	// Explicityly override color and font
 	color: $font-color;
+	font-family:$sans-serif;
 	// NEVER grow bigger than the container
 	max-width:100%;
 	vertical-align:middle;

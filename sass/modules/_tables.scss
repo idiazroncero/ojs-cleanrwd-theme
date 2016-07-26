@@ -16,7 +16,8 @@
 //
 
 table.data,
-table.form {
+table.form,
+table.listing {
 	max-width:100%;
 	width:100%;
 	font-size:inherit;
@@ -31,6 +32,7 @@ table.form {
 	tr {
 		// For small screens
 		padding-bottom: rhythm(1);
+		vertical-align:middle;
 	}
 
 	td {
@@ -87,7 +89,9 @@ td.label {
 }
 
 table.listing,
-table.info {
+table.info,
+.pkp_controllers_grid table {
+	th,
 	tr.heading td,
 	td.heading, 
 	td.heading { // Table headings in all flavours
