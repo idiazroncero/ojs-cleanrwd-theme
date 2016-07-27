@@ -1,5 +1,21 @@
 #pkp-common-languages {
-
+	td {
+		text-align:left;
+		@include breakpoint($medium) {
+			text-align:inherit;
+		}
+	}
+	table table.data {
+		margin-top:rhythm(1);
+		@extend table.listing;
+		tr:first-child { // Mirror the .heading class
+			float:left;
+			width:20% !important;
+			td:first-child { // Emtpty useless!
+				display:none;
+			}
+		}
+	}
 }
 
 #installLanguages {

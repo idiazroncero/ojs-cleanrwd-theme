@@ -1321,7 +1321,8 @@ ul.menu a {
 /* line 18, ../sass/modules/_tables.scss */
 table.data,
 table.form,
-table.listing {
+table.listing,
+#pkp-common-languages table table.data {
   max-width: 100%;
   width: 100%;
   font-size: inherit; }
@@ -1334,56 +1335,63 @@ table.listing {
     table.form > tbody > tr,
     table.form > tbody > tr > td,
     table.listing > tbody,
+    #pkp-common-languages table table.data > tbody,
     table.listing > tbody > tr,
-    table.listing > tbody > tr > td {
+    #pkp-common-languages table table.data > tbody > tr,
+    table.listing > tbody > tr > td,
+    #pkp-common-languages table table.data > tbody > tr > td {
       display: block;
       width: 100%; } }
   /* line 32, ../sass/modules/_tables.scss */
   table.data tr,
   table.form tr,
-  table.listing tr {
+  table.listing tr,
+  #pkp-common-languages table table.data tr {
     vertical-align: top; }
     @media (max-width: 480px) {
       /* line 32, ../sass/modules/_tables.scss */
       table.data tr,
       table.form tr,
-      table.listing tr {
+      table.listing tr,
+      #pkp-common-languages table table.data tr {
         padding-bottom: 1.5rem; } }
   /* line 39, ../sass/modules/_tables.scss */
   table.data td,
   table.form td,
-  table.listing td {
+  table.listing td,
+  #pkp-common-languages table table.data td {
     padding: 0; }
     @media (min-width: 768px) {
       /* line 39, ../sass/modules/_tables.scss */
       table.data td,
       table.form td,
-      table.listing td {
+      table.listing td,
+      #pkp-common-languages table table.data td {
         padding-bottom: 1.5rem; } }
 
 @media (max-width: 768px) {
   /* line 50, ../sass/modules/_tables.scss */
-  table.listing tbody {
+  table.listing tbody, #pkp-common-languages table table.data tbody {
     @inclukde clearfix(); }
   /* line 53, ../sass/modules/_tables.scss */
-  table.listing tr {
+  table.listing tr, #pkp-common-languages table table.data tr {
     padding: 0 !important; }
   /* line 56, ../sass/modules/_tables.scss */
-  table.listing td {
+  table.listing td, #pkp-common-languages table table.data td {
     text-align: left !important; }
   /* line 59, ../sass/modules/_tables.scss */
-  table.listing tr.heading {
+  table.listing tr.heading, #pkp-common-languages table table.data tr.heading {
     float: left;
     width: 20% !important; }
   /* line 63, ../sass/modules/_tables.scss */
-  table.listing tr {
+  table.listing tr, #pkp-common-languages table table.data tr {
     float: right;
     width: 75% !important; }
   /* line 67, ../sass/modules/_tables.scss */
-  table.listing td.headseparator {
+  table.listing td.headseparator, #pkp-common-languages table table.data td.headseparator {
     display: none; }
   /* line 70, ../sass/modules/_tables.scss */
-  table.listing .action {
+  table.listing .action, #pkp-common-languages table table.data .action {
     font-size: 11px;
     font-size: 0.707rem;
     line-height: 24px;
@@ -1442,10 +1450,13 @@ td.label, #installLanguages tr td:first-child, #installNewLocales label, #instal
   font-weight: bold; }
 
 /* line 132, ../sass/modules/_tables.scss */
-table.listing th,
+table.listing th, #pkp-common-languages table table.data th,
 table.listing tr.heading td,
+#pkp-common-languages table table.data tr.heading td,
 table.listing td.heading,
+#pkp-common-languages table table.data td.heading,
 table.listing td.heading,
+#pkp-common-languages table table.data td.heading,
 table.info th,
 table.info tr.heading td,
 table.info td.heading,
@@ -1484,31 +1495,31 @@ table.data td.heading {
   padding-right: 0; }
 
 /* line 174, ../sass/modules/_tables.scss */
-table.listing td.headseparator {
+table.listing td.headseparator, #pkp-common-languages table table.data td.headseparator {
   border-top: 1px solid #adadad;
   padding: 0; }
 
 /* line 181, ../sass/modules/_tables.scss */
-table.listing tr.data td {
+table.listing tr.data td, #pkp-common-languages table table.data tr.data td {
   border-top: none;
   border-bottom: 1px solid #cecece; }
 
 /* line 186, ../sass/modules/_tables.scss */
-table.listing tr.data td.drag {
+table.listing tr.data td.drag, #pkp-common-languages table table.data tr.data td.drag {
   cursor: move; }
 
 /* line 190, ../sass/modules/_tables.scss */
-table.listing td.separator, table.info td.separator {
+table.listing td.separator, #pkp-common-languages table table.data td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
 /* line 195, ../sass/modules/_tables.scss */
-table.listing td.endseparator {
+table.listing td.endseparator, #pkp-common-languages table table.data td.endseparator {
   display: none; }
 
 /* line 200, ../sass/modules/_tables.scss */
-table.listing td {
+table.listing td, #pkp-common-languages table table.data td {
   padding: 0.375rem 0.375rem 0.375rem 0; }
 
 /* line 207, ../sass/modules/_tables.scss */
@@ -1518,7 +1529,7 @@ table.info td {
   padding-right: 0.5em; }
 
 /* line 214, ../sass/modules/_tables.scss */
-table.listing td.nodata, table.info td.nodata {
+table.listing td.nodata, #pkp-common-languages table table.data td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic; }
 
@@ -1938,14 +1949,32 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-admin-siteSettings #oneStepReset {
   margin-top: 0.495rem; }
 
-/* line 11, ../sass/pages/_languages.scss */
+/* line 2, ../sass/pages/_languages.scss */
+#pkp-common-languages td {
+  text-align: left; }
+  @media (min-width: 768px) {
+    /* line 2, ../sass/pages/_languages.scss */
+    #pkp-common-languages td {
+      text-align: inherit; } }
+/* line 8, ../sass/pages/_languages.scss */
+#pkp-common-languages table table.data {
+  margin-top: 1.5rem; }
+  /* line 11, ../sass/pages/_languages.scss */
+  #pkp-common-languages table table.data tr:first-child {
+    float: left;
+    width: 20% !important; }
+    /* line 14, ../sass/pages/_languages.scss */
+    #pkp-common-languages table table.data tr:first-child td:first-child {
+      display: none; }
+
+/* line 27, ../sass/pages/_languages.scss */
 #installLanguages tr td:last-child a {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 21, ../sass/pages/_languages.scss */
+/* line 37, ../sass/pages/_languages.scss */
 #installNewLocales .button, #installNewLocales #pkp-admin-categories #categories > a, #pkp-admin-categories #installNewLocales #categories > a, #installNewLocales #pkp-section-sections #sections > .action, #pkp-section-sections #installNewLocales #sections > .action, #installNewLocales #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #installNewLocales #reviewForms > .action, #installNewLocales #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #installNewLocales #reviewFormElements > .action, #installNewLocales #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #installNewLocales .action {
   margin-top: 1.5rem; }
 
