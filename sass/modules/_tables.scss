@@ -44,6 +44,36 @@ table.listing {
 	}
 }
 
+table.listing {
+	// Hackish use of floats to ensure legibility and usability
+	@include breakpoint(max-width $medium) {
+		tbody {
+			@inclukde clearfix();
+		}
+		tr {
+			padding:0 !important;
+		}
+		td {
+			text-align:left !important;
+		}
+		tr.heading {
+			float:left;
+			width:20% !important;
+		}
+		tr {
+			float:right;
+			width:75% !important;
+		}
+		td.headseparator {
+			display:none;
+		}
+		.action {
+			@include adjust-font-size-to($h6-font-size);
+		}
+	}	
+
+}
+
 table table { // Tables nested inside tables have almost no padding and always align to middle
 	td {
 		padding:0 0 rhythm(0.25) 0 !important;
@@ -115,6 +145,10 @@ td.nodata {
 	@include adjust-font-size-to($h5-font-size);
 	text-transform:uppercase;
 	font-style:normal !important;
+}
+
+td .action {
+	font-family:$alt-font-family;	
 }
 
 
