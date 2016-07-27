@@ -59,6 +59,12 @@ input[type="submit"] {
 	padding: 0 5px;
 }
 
+input[type="file"] + input[type="submit"] { // Adapts height of button next to file uploads
+	padding: rhythm(0.125) rhythm(0.5);
+	height:rhythm(1.25);
+	vertical-align:baseline;
+}
+
 //
 // BUTTONS
 //

@@ -42,6 +42,16 @@ In the future we may fork this project in order to add support for template over
 - Place the clean-rwd folder inside your OJS installation. The path is /plugins/themes
 - Go to /index/admin/settings and enable the theme
 
+#### Enabling responsive
+
+Unfortunately, OJS 2.x doesn't include the viewport `meta` tag which is mandatory for enabling the responsive design.
+
+This means you will need to do it manually:
+
+- Open your OJS installation files and go to `lib/pkp/templates/common/header.tpl`
+- Add the following line just before the `<head>` opening tag:
+  `<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">`
+
 ### Config and develop
 
 The `SASS` folder includes all the files that compile to `/clean-rwd/clean-rwd.css`.

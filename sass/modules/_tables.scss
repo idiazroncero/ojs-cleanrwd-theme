@@ -31,14 +31,42 @@ table.listing {
 	}
 	tr {
 		// For small screens
-		padding-bottom: rhythm(1);
-		vertical-align:middle;
+		@include breakpoint(max-width $small) {
+			padding-bottom: rhythm(1);
+		}
+		vertical-align:top;
 	}
-
 	td {
+		padding:0;
 		@include breakpoint($medium) {
 			padding-bottom: rhythm(1);
 		}
+	}
+}
+
+table table { // Tables nested inside tables have almost no padding and always align to middle
+	td {
+		padding:0 0 rhythm(0.25) 0 !important;
+		vertical-align:middle;
+	}
+}
+
+td {
+	// Make all form elements inside tables align correctly
+	select,
+	input {
+		vertical-align:middle;
+		display:inline-block;
+	}
+	select + input[type="submit"],
+	input + input[type="submit"]  {
+		// If there is a select and a input, we make the borders collapse.
+		// Hackish, but beautiful and degrades gracefully.
+		margin-left:-1px;
+	}
+	input[type="file"] + input[type="submit"]  {
+		// Exception: file upload fields
+		margin-left:5px;
 	}
 }
 
@@ -60,26 +88,6 @@ td label  {
 	@include adjust-leading-to(0.75);
 	@include breakpoint($small) {
 		@include adjust-font-size-to($h5-font-size, 0.75);
-	}
-}
-
-
-td {
-	// Make all form elements inside tables align correctly
-	select,
-	input {
-		vertical-align:middle;
-		display:inline-block;
-	}
-	select + input[type="submit"],
-	input + input[type="submit"]  {
-		// If there is a select and a input, we make the borders collapse.
-		// Hackish, but beautiful and degrades gracefully.
-		margin-left:-1px;
-	}
-	input[type="file"] + input[type="submit"]  {
-		// Exception: file upload fields
-		margin-left:5px;
 	}
 }
 

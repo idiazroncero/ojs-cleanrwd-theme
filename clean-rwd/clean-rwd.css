@@ -961,13 +961,20 @@ input[type="submit"] {
   line-height: 0.75rem;
   padding: 0 5px; }
 
-/* line 66, ../sass/modules/_forms.scss */
-.button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action,
+/* line 62, ../sass/modules/_forms.scss */
+input[type="file"] + input[type="submit"] {
+  padding: 0.1875rem 0.75rem;
+  height: 1.875rem;
+  vertical-align: baseline; }
+
+/* line 72, ../sass/modules/_forms.scss */
+.button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-journal-journals #content p .action,
 input.button,
 #pkp-user-userHome #content > a:first-child,
 #pkp-section-sections #sections > input.action,
 #pkp-manager-reviewForms #reviewForms > input.action,
 #pkp-manager-reviewFormElements #reviewFormElements > input.action,
+#pkp-journal-journals #content p input.action,
 input.defaultButton,
 button.ui-button.ui-button-text-only .ui-button-text {
   padding: 0.375rem 0.75rem;
@@ -986,23 +993,25 @@ button.ui-button.ui-button-text-only .ui-button-text {
   background-color: transparent;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 86, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover,
+  /* line 92, ../sass/modules/_forms.scss */
+  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
   #pkp-section-sections #sections > input.action:hover,
   #pkp-manager-reviewForms #reviewForms > input.action:hover,
   #pkp-manager-reviewFormElements #reviewFormElements > input.action:hover,
+  #pkp-journal-journals #content p input.action:hover,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     text-decoration: none; }
-  /* line 105, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover,
+  /* line 111, ../sass/modules/_forms.scss */
+  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover,
   input.button:hover,
   #pkp-user-userHome #content > a:hover:first-child,
   #pkp-section-sections #sections > input.action:hover,
   #pkp-manager-reviewForms #reviewForms > input.action:hover,
   #pkp-manager-reviewFormElements #reviewFormElements > input.action:hover,
+  #pkp-journal-journals #content p input.action:hover,
   input.defaultButton:hover,
   button.ui-button.ui-button-text-only .ui-button-text:hover {
     background: #3C7861;
@@ -1115,7 +1124,7 @@ ul.menu a {
     padding: 0.75rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     /* line 13, ../sass/modules/_config.scss */
-    #assignBlocksToSidebars tr td input.button, #assignBlocksToSidebars tr td #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #assignBlocksToSidebars tr td #content > a:first-child, #assignBlocksToSidebars tr td #pkp-section-sections #sections > input.action, #pkp-section-sections #assignBlocksToSidebars tr td #sections > input.action, #assignBlocksToSidebars tr td #pkp-manager-reviewForms #reviewForms > input.action, #pkp-manager-reviewForms #assignBlocksToSidebars tr td #reviewForms > input.action, #assignBlocksToSidebars tr td #pkp-manager-reviewFormElements #reviewFormElements > input.action, #pkp-manager-reviewFormElements #assignBlocksToSidebars tr td #reviewFormElements > input.action {
+    #assignBlocksToSidebars tr td input.button, #assignBlocksToSidebars tr td #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #assignBlocksToSidebars tr td #content > a:first-child, #assignBlocksToSidebars tr td #pkp-section-sections #sections > input.action, #pkp-section-sections #assignBlocksToSidebars tr td #sections > input.action, #assignBlocksToSidebars tr td #pkp-manager-reviewForms #reviewForms > input.action, #pkp-manager-reviewForms #assignBlocksToSidebars tr td #reviewForms > input.action, #assignBlocksToSidebars tr td #pkp-manager-reviewFormElements #reviewFormElements > input.action, #pkp-manager-reviewFormElements #assignBlocksToSidebars tr td #reviewFormElements > input.action, #assignBlocksToSidebars tr td #pkp-journal-journals #content p input.action, #pkp-journal-journals #content p #assignBlocksToSidebars tr td input.action {
       border: none;
       border-radius: 0;
       background-color: #ccc;
@@ -1199,7 +1208,7 @@ ul.menu a {
 #sidebarLanguageToggle select {
   width: 60%; }
 /* line 91, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle .button, #sidebarLanguageToggle #pkp-admin-categories #categories > a, #pkp-admin-categories #sidebarLanguageToggle #categories > a, #sidebarLanguageToggle #pkp-section-sections #sections > .action, #pkp-section-sections #sidebarLanguageToggle #sections > .action, #sidebarLanguageToggle #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #sidebarLanguageToggle #reviewForms > .action, #sidebarLanguageToggle #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #sidebarLanguageToggle #reviewFormElements > .action {
+#sidebarLanguageToggle .button, #sidebarLanguageToggle #pkp-admin-categories #categories > a, #pkp-admin-categories #sidebarLanguageToggle #categories > a, #sidebarLanguageToggle #pkp-section-sections #sections > .action, #pkp-section-sections #sidebarLanguageToggle #sections > .action, #sidebarLanguageToggle #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #sidebarLanguageToggle #reviewForms > .action, #sidebarLanguageToggle #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #sidebarLanguageToggle #reviewFormElements > .action, #sidebarLanguageToggle #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #sidebarLanguageToggle .action {
   width: 40%;
   margin-left: -1px; }
 
@@ -1210,7 +1219,7 @@ ul.menu a {
 #simpleSearchForm input, #simpleSearchForm select {
   width: 100%; }
 /* line 107, ../sass/modules/_sidebar.scss */
-#simpleSearchForm .button, #simpleSearchForm #pkp-admin-categories #categories > a, #pkp-admin-categories #simpleSearchForm #categories > a, #simpleSearchForm #pkp-section-sections #sections > .action, #pkp-section-sections #simpleSearchForm #sections > .action, #simpleSearchForm #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #simpleSearchForm #reviewForms > .action, #simpleSearchForm #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #simpleSearchForm #reviewFormElements > .action {
+#simpleSearchForm .button, #simpleSearchForm #pkp-admin-categories #categories > a, #pkp-admin-categories #simpleSearchForm #categories > a, #simpleSearchForm #pkp-section-sections #sections > .action, #pkp-section-sections #simpleSearchForm #sections > .action, #simpleSearchForm #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #simpleSearchForm #reviewForms > .action, #simpleSearchForm #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #simpleSearchForm #reviewFormElements > .action, #simpleSearchForm #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #simpleSearchForm .action {
   margin-top: 0.75rem; }
 
 /* line 114, ../sass/modules/_sidebar.scss */
@@ -1333,16 +1342,44 @@ table.listing {
   table.data tr,
   table.form tr,
   table.listing tr {
-    padding-bottom: 1.5rem;
-    vertical-align: middle; }
-  @media (min-width: 768px) {
-    /* line 38, ../sass/modules/_tables.scss */
-    table.data td,
-    table.form td,
-    table.listing td {
-      padding-bottom: 1.5rem; } }
+    vertical-align: top; }
+    @media (max-width: 480px) {
+      /* line 32, ../sass/modules/_tables.scss */
+      table.data tr,
+      table.form tr,
+      table.listing tr {
+        padding-bottom: 1.5rem; } }
+  /* line 39, ../sass/modules/_tables.scss */
+  table.data td,
+  table.form td,
+  table.listing td {
+    padding: 0; }
+    @media (min-width: 768px) {
+      /* line 39, ../sass/modules/_tables.scss */
+      table.data td,
+      table.form td,
+      table.listing td {
+        padding-bottom: 1.5rem; } }
 
-/* line 53, ../sass/modules/_tables.scss */
+/* line 48, ../sass/modules/_tables.scss */
+table table td {
+  padding: 0 0 0.375rem 0 !important;
+  vertical-align: middle; }
+
+/* line 56, ../sass/modules/_tables.scss */
+td select,
+td input {
+  vertical-align: middle;
+  display: inline-block; }
+/* line 61, ../sass/modules/_tables.scss */
+td select + input[type="submit"],
+td input + input[type="submit"] {
+  margin-left: -1px; }
+/* line 67, ../sass/modules/_tables.scss */
+td input[type="file"] + input[type="submit"] {
+  margin-left: 5px; }
+
+/* line 81, ../sass/modules/_tables.scss */
 .instruct,
 span.formRequired,
 td.label,
@@ -1356,7 +1393,7 @@ td label {
   line-height: 18px;
   line-height: 1.125rem; }
   @media (min-width: 480px) {
-    /* line 53, ../sass/modules/_tables.scss */
+    /* line 81, ../sass/modules/_tables.scss */
     .instruct,
     span.formRequired,
     td.label,
@@ -1371,25 +1408,12 @@ td label {
       line-height: 18px;
       line-height: 1.125rem; } }
 
-/* line 69, ../sass/modules/_tables.scss */
-td select,
-td input {
-  vertical-align: middle;
-  display: inline-block; }
-/* line 74, ../sass/modules/_tables.scss */
-td select + input[type="submit"],
-td input + input[type="submit"] {
-  margin-left: -1px; }
-/* line 80, ../sass/modules/_tables.scss */
-td input[type="file"] + input[type="submit"] {
-  margin-left: 5px; }
-
-/* line 86, ../sass/modules/_tables.scss */
+/* line 94, ../sass/modules/_tables.scss */
 td.label, #installLanguages tr td:first-child, #installNewLocales label, #installNewLocales .formError {
   padding-right: 1.5rem;
   font-weight: bold; }
 
-/* line 94, ../sass/modules/_tables.scss */
+/* line 102, ../sass/modules/_tables.scss */
 table.listing th,
 table.listing tr.heading td,
 table.listing td.heading,
@@ -1408,7 +1432,7 @@ table.info td.heading,
   font-weight: bold;
   padding: 0.375rem 0.375rem 0.375rem 0; }
 
-/* line 105, ../sass/modules/_tables.scss */
+/* line 113, ../sass/modules/_tables.scss */
 td.nodata {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1418,66 +1442,66 @@ td.nodata {
   text-transform: uppercase;
   font-style: normal !important; }
 
-/* line 117, ../sass/modules/_tables.scss */
+/* line 125, ../sass/modules/_tables.scss */
 table.data td.separator {
   padding: 1.5rem; }
 
-/* line 122, ../sass/modules/_tables.scss */
+/* line 130, ../sass/modules/_tables.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 132, ../sass/modules/_tables.scss */
+/* line 140, ../sass/modules/_tables.scss */
 table.listing td.headseparator {
   border-top: 1px solid #adadad;
   padding: 0; }
 
-/* line 139, ../sass/modules/_tables.scss */
+/* line 147, ../sass/modules/_tables.scss */
 table.listing tr.data td {
   border-top: none;
   border-bottom: 1px solid #cecece; }
 
-/* line 144, ../sass/modules/_tables.scss */
+/* line 152, ../sass/modules/_tables.scss */
 table.listing tr.data td.drag {
   cursor: move; }
 
-/* line 148, ../sass/modules/_tables.scss */
+/* line 156, ../sass/modules/_tables.scss */
 table.listing td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 153, ../sass/modules/_tables.scss */
+/* line 161, ../sass/modules/_tables.scss */
 table.listing td.endseparator {
   display: none; }
 
-/* line 158, ../sass/modules/_tables.scss */
+/* line 166, ../sass/modules/_tables.scss */
 table.listing td {
   padding: 0.375rem 0.375rem 0.375rem 0; }
 
-/* line 165, ../sass/modules/_tables.scss */
+/* line 173, ../sass/modules/_tables.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em; }
 
-/* line 172, ../sass/modules/_tables.scss */
+/* line 180, ../sass/modules/_tables.scss */
 table.listing td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 177, ../sass/modules/_tables.scss */
+/* line 185, ../sass/modules/_tables.scss */
 table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 185, ../sass/modules/_tables.scss */
+/* line 193, ../sass/modules/_tables.scss */
 table.nested tr {
   padding: 0;
   margin: 0; }
 
-/* line 190, ../sass/modules/_tables.scss */
+/* line 198, ../sass/modules/_tables.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em; }
@@ -1890,7 +1914,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   line-height: 1.5rem; }
 
 /* line 21, ../sass/pages/_languages.scss */
-#installNewLocales .button, #installNewLocales #pkp-admin-categories #categories > a, #pkp-admin-categories #installNewLocales #categories > a, #installNewLocales #pkp-section-sections #sections > .action, #pkp-section-sections #installNewLocales #sections > .action, #installNewLocales #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #installNewLocales #reviewForms > .action, #installNewLocales #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #installNewLocales #reviewFormElements > .action {
+#installNewLocales .button, #installNewLocales #pkp-admin-categories #categories > a, #pkp-admin-categories #installNewLocales #categories > a, #installNewLocales #pkp-section-sections #sections > .action, #pkp-section-sections #installNewLocales #sections > .action, #installNewLocales #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #installNewLocales #reviewForms > .action, #installNewLocales #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #installNewLocales #reviewFormElements > .action, #installNewLocales #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #installNewLocales .action {
   margin-top: 1.5rem; }
 
 /* line 2, ../sass/pages/_helpPopup.scss */
@@ -1920,7 +1944,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-admin-categories #content form input:first-of-type {
   margin-top: 1.5rem; }
 /* line 10, ../sass/pages/_adminCategories.scss */
-#pkp-admin-categories #content input.button, #pkp-admin-categories #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #pkp-admin-categories #content > a:first-child, #pkp-admin-categories #content #pkp-section-sections #sections > input.action, #pkp-section-sections #pkp-admin-categories #content #sections > input.action, #pkp-admin-categories #content #pkp-manager-reviewForms #reviewForms > input.action, #pkp-manager-reviewForms #pkp-admin-categories #content #reviewForms > input.action, #pkp-admin-categories #content #pkp-manager-reviewFormElements #reviewFormElements > input.action, #pkp-manager-reviewFormElements #pkp-admin-categories #content #reviewFormElements > input.action {
+#pkp-admin-categories #content input.button, #pkp-admin-categories #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #pkp-admin-categories #content > a:first-child, #pkp-admin-categories #content #pkp-section-sections #sections > input.action, #pkp-section-sections #pkp-admin-categories #content #sections > input.action, #pkp-admin-categories #content #pkp-manager-reviewForms #reviewForms > input.action, #pkp-manager-reviewForms #pkp-admin-categories #content #reviewForms > input.action, #pkp-admin-categories #content #pkp-manager-reviewFormElements #reviewFormElements > input.action, #pkp-manager-reviewFormElements #pkp-admin-categories #content #reviewFormElements > input.action, #pkp-admin-categories #pkp-journal-journals #content p input.action, #pkp-journal-journals #pkp-admin-categories #content p input.action {
   margin: 1.5rem 0; }
 /* line 15, ../sass/pages/_adminCategories.scss */
 #pkp-admin-categories #categories > a {
@@ -1973,13 +1997,17 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-manager-reviewFormElements #reviewFormElements form > p {
   margin-top: 1.5rem; }
 
+/* line 3, ../sass/pages/_journals.scss */
+#pkp-journal-journals #content p .action {
+  margin-top: 1.5rem; }
+
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets
  */
 /* line 5, ../sass/layout/_layout.scss */
 #container {
   min-width: 0 !important;
-  max-width: 960px; }
+  max-width: 1200px; }
 
 /* line 15, ../sass/layout/_layout.scss */
 #header {
@@ -2019,7 +2047,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     /* line 48, ../sass/layout/_layout.scss */
     #leftSidebar {
       float: left;
-      width: 25%;
+      width: 23%;
       margin-right: 1.5rem;
       padding-right: 1.5rem;
       border-right: 1px solid #adadad; } }
@@ -2036,7 +2064,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     /* line 71, ../sass/layout/_layout.scss */
     #rightSidebar {
       float: right;
-      width: 25%;
+      width: 23%;
       margin-left: 1.5rem;
       padding-left: 1.5rem;
       border-left: 1px solid #adadad; } }
