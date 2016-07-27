@@ -1,0 +1,8 @@
+#pkp-journal-journals {
+	#content {
+		p .action {
+			@extend .button;
+			margin-top:rhythm(1);
+		}
+	}
+}
