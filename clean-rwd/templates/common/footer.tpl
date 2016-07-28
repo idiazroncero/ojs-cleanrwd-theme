@@ -20,5 +20,28 @@
 		{assign var=pageFooter value="$issnText: $issn"}
 	{/if}
 {/if}
-{include file="core:common/footer.tpl"}
 {/strip}
+
+
+{if $displayCreativeCommons}
+	{translate key="common.ccLicense"}
+{/if}
+{call_hook name="Templates::Common::Footer::PageFooter"}
+
+				{if $pageFooter}
+					<footer id="main-footer">{$pageFooter}</footer>
+				{/if}
+			</section><!-- #content section -->
+		</main><!-- main -->
+		{if $rightSidebarCode}
+			<aside id="rightSidebar">
+				{$rightSidebarCode}
+			</aside>
+		{/if}
+	</div><!-- #main-wrapper -->
+
+{get_debug_info}
+{if $enableDebugStats}{include file=$pqpTemplate}{/if}
+
+</body>
+</html>
