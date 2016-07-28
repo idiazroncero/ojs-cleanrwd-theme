@@ -3,6 +3,8 @@ __IN DEVELOPMENT - NOT READY FOR PRODUCTION__
 ## Development is sponsored by [http://openjournalsystems.cl/][ojscl]
 *v0.0.6*
 
+__This branch forks and expands OJS Clean RWD theme in order to alter the template structure and modifiy the HTML layer__
+
 ![preview](http://i66.tinypic.com/2eeviw4.jpg)
 
 ### What is this
@@ -22,35 +24,28 @@ This theme aims to give OJS a clean, minimalistic, responsive and modern-looking
 
 You can use this theme as it is, but you might find it dull. This is because it is intended to serve __both__ as a minimalistic theme AND a starter kit to be extended and customised.
 
-### Why so hackish? (a note for developers)
 
-By design, OJS 2.x theme plugins are expected to affect __only the CSS layer__. This means *we can't (or are not supposed to) change HTML structure*. 
+### Caveats
 
-__Note:__ We actually *can*, and it has been done before in such themes as [Mason Theme][mason] or [Modern Theme][modern]. They work by replicating the whole template structure __inside__ the theme plugin folder and then forcing the system to load files from that path instead of the original. However, there are some problems with this strategy. Unlike systems like Drupal or Wordpress, OJS is __not__ expecting core template files to be overridden or inherited from templates inside the theme plugin (and viceversa). So, this tecnhique opens the door to potential fatal errors: any alteration of core template files (i.e in future OJS releases) has to be mirrored inside the theme plugin or there is a potential for PHP fatal errors and WSOD.
+By design, OJS 2.x theme plugins are expected to affect __only the CSS layer__. This means *we are not supposed to change HTML structure*.
 
-This is why this theme won't tamper with the template structure. This is a major drawback and means that most outdated techniques (like the use of `table` for layout or tags like `font`) and some painfully evident HTML errors won't be changed, only overriden via CSS.
+In order to fully modernize OJS 2.x, however, we are required to touch the underlying structure for some of the following reasons:
 
-And this is why developers may be surprised by the abuse of !important declarations and CSS hacks (display:none and so on) to be found inside the CSS files. Please consider them not as bad practices but necessary hacks in order to completely "reset" OJS's default layout and set a consistent and flexible base to work upon.
+- Include the viewport `<meta>` tag.
+- Modify inline CSS and hard-coded, unresponsive tables.
 
-The right thing should be to completely revamp OJS's markup. Again: this is not the scope of this project, as it aims to create a simple, plug-and-play theme plugin that just works out of the box.
+This fork follows the same idea as [Mason Theme][mason] or [Modern Theme][modern]. They work by replicating the whole template structure __inside__ the theme plugin folder and then forcing the system to load files from that path instead of the original. 
 
-In the future we may fork this project in order to add support for template override.
+There are some problems with this strategy. Unlike systems like Drupal or Wordpress, OJS is __not__ expecting core template files to be overridden or inherited from templates inside the theme plugin (and viceversa). So, this tecnhique opens the door to potential fatal errors: any alteration of core template files (i.e in future OJS releases) has to be mirrored inside the theme plugin or there is a potential for PHP fatal errors and WSOD.
+
+This means that __upgrading OJS 2.x may cause your install to crash__. Please *always* try before pushing to production and please post any issue you might encounter.
+
 
 ### Install
 
 - Download or clone the last release
 - Place the clean-rwd folder inside your OJS installation. The path is /plugins/themes
 - Go to /index/admin/settings and enable the theme
-
-#### Enabling responsive
-
-Unfortunately, OJS 2.x doesn't include the viewport `meta` tag which is mandatory for enabling the responsive design.
-
-This means you will need to do it manually:
-
-- Open your OJS installation files and go to `lib/pkp/templates/common/header.tpl`
-- Add the following line just before the `<head>` opening tag:
-  `<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">`
 
 ### Config and develop
 
