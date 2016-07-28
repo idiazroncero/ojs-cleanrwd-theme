@@ -32,6 +32,20 @@ class CleanRWDThemePlugin extends ThemePlugin {
 	function getLocaleFilename($locale) {
 		return null; // No locale data
 	}
+
+	function activate(&$templateMgr) {
+		$templateMgr->template_dir[0] = Core::getBaseDir() 
+										. DIRECTORY_SEPARATOR 
+										. 'plugins' 
+										. DIRECTORY_SEPARATOR 
+										. 'themes' 
+										. DIRECTORY_SEPARATOR 
+										. 'clean-rwd' 
+										. DIRECTORY_SEPARATOR 
+										. 'templates';   
+											      
+		$templateMgr->compile_id = 'mpgTheme';
+	}
 }
 
 ?>
