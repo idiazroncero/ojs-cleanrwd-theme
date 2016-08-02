@@ -121,14 +121,7 @@ body {
 	background-color: $background-color;
 }
 
-#header,
-#footer {
-	// We have to explicitly override the background color (even if we choose transparent)
-	// TODO: ¿should we separate header, footer and body colors?
-	background-color: transparent;
-}
-
-#container {
+#main-wrapper {
 	background-color: $container-background-color;
 }
 

@@ -9,6 +9,7 @@
 
 
 
+
 //
 // 1 - GENERAL SETTINGS
 //
@@ -17,7 +18,11 @@
 $strict-normalize: false !default;
 
 // Alignment of title (text or image)
-$header-alignment: left; 
+$header-alignment: left;
+
+// Should we use animated fade-ins for interactions?
+$transitions: true;
+$transitions-speed: 0.25s; 
 
 
 
@@ -132,6 +137,10 @@ $link-style: dotted-after; 		// dotted-before = border-bottom is dotted before :
 // Max-width of the main container
 $max-width:1200px;
 
+// Gutters (between columns). Recomendation: set it equal to 1 vertical rhythm unit 
+// ($base-line-height because Compass still hasn't been called and we can't access the rhythm() function)
+$gutter: $base-line-height;
+
 // Sidebar size (recommended as % of width)
 $left-sidebar-width: 23%;
 $right-sidebar-width: 23%;
@@ -160,7 +169,8 @@ $button-color: $main-color ; // Background or border color
 $button-border-width: 1px; // Want plain buttons? Set this value to 0
 $button-border-radius: $border-radius; // Want square buttons? Se tthis value to 0
 
-// After the default variables are set, import the required Compass partials.
+
+// We import the partials before because we are using some variables.
 @import "compass/support";
 @import "compass/typography/vertical_rhythm";
 @import "compass/utilities/general/clearfix";

@@ -1,48 +1,48 @@
 // Variables
 @import "init/init";
 // Font loading first to improve performance
-// @import "init/fonts";
-// // Normalize.css
-// @import "init/normalize";
-// // Our own normalization: tipography and form fields
-// @import "init/ojs-normalize";
+@import "init/fonts";
+// Normalize.css
+@import "init/normalize";
+// Our own normalization: tipography and form fields
+@import "init/ojs-normalize";
 
-// // OJS overrides (deprecated)
-// @import "pkp/pkp_common";
-// @import "pkp/common";
+// OJS overrides (deprecated)
+@import "pkp/pkp_common";
+@import "pkp/common";
 
-// // Modular styles (when possible)
-// @import "modules/forms";
-// @import "modules/breadcrumbs";
-// @import "modules/navbar";
-// @import "modules/registerform";
-// @import "modules/config";
-// @import "modules/sidebar";
-// @import "modules/footer";
-// @import "modules/main";
-// @import "modules/ui-pnotify";
-// @import "modules/tables";
-// @import "modules/header";
-// @import "modules/tinymce";
-// @import "modules/announcements";
-// @import "modules/steplist";
-// @import "modules/filtergrid";
-// @import "modules/uidialog";
+// Modular styles (when possible)
+@import "modules/forms";
+@import "modules/breadcrumbs";
+@import "modules/navbar";
+@import "modules/registerform";
+@import "modules/config";
+@import "modules/sidebar";
+@import "modules/footer";
+@import "modules/main";
+@import "modules/ui-pnotify";
+@import "modules/tables";
+@import "modules/header";
+@import "modules/tinymce";
+@import "modules/announcements";
+@import "modules/steplist";
+@import "modules/filtergrid";
+@import "modules/uidialog";
 
-// // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
-// @import "pages/userHome";
-// @import "pages/siteAdmin";
-// @import "pages/siteSettings";
-// @import "pages/languages";
-// @import "pages/helpPopup";
-// @import "pages/authSources";
-// @import "pages/adminCategories";
-// @import "pages/journalPolicies";
-// @import "pages/guidingSubmissions";
-// @import "pages/filesBrowser";
-// @import "pages/sections";
-// @import "pages/reviewForms";
-// @import "pages/journals";
+// Page-specific hacks (oftentimes, this is the only way to override the original CSS)
+@import "pages/userHome";
+@import "pages/siteAdmin";
+@import "pages/siteSettings";
+@import "pages/languages";
+@import "pages/helpPopup";
+@import "pages/authSources";
+@import "pages/adminCategories";
+@import "pages/journalPolicies";
+@import "pages/guidingSubmissions";
+@import "pages/filesBrowser";
+@import "pages/sections";
+@import "pages/reviewForms";
+@import "pages/journals";
 
 // Layout
 @import "layout/layout";

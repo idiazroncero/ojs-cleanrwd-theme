@@ -1,7 +1,9 @@
-#headerTitle {
-	text-align:center !important;
+#header-title {
 	@include breakpoint($small) {
-		text-align:$header-alignment !important;
+		text-align:$header-alignment;
+	}
+	h1 {
+		margin:0;
 	}
 	h1 img {
 		// Responsive image

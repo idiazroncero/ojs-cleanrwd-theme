@@ -33,8 +33,9 @@
 				{/if}
 			</section><!-- #content section -->
 		</main><!-- main -->
+		{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
 		{if $rightSidebarCode}
-			<aside id="rightSidebar">
+			<aside id="right-sidebar">
 				{$rightSidebarCode}
 			</aside>
 		{/if}

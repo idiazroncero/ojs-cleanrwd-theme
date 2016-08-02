@@ -8,7 +8,6 @@
  * Navigation Bar
  *
  *}
-<div id="navbar">
 	<ul class="menu">
 		<li id="home"><a href="{url page="index"}">{translate key="navigation.home"}</a></li>
 		<li id="about"><a href="{url page="about"}">{translate key="navigation.about"}</a></li>
@@ -47,4 +46,3 @@
 			{/if}
 		{/foreach}
 	</ul>
-</div>

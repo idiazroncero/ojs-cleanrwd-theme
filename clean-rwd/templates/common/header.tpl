@@ -40,6 +40,9 @@
 			<script type="text/javascript" src="{$baseUrl}/lib/pkp/js/lib/jquery/plugins/jqueryUi.min.js"></script>
 		{/if}
 
+		{call_hook|assign:"leftSidebarCode" name="Templates::Common::LeftSidebar"}
+		{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
+
 		{foreach from=$stylesheets item=cssUrl}
 			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
 		{/foreach}
@@ -103,7 +106,8 @@
 
 		{$additionalHeadData}
 	</head>
-	<body id="page-{$pageTitle|replace:'.':'-'}">
+	<body id="page-{$pageTitle|replace:'.':'-'}" class="{if $leftSidebarCode}leftsidebar{/if}{if $rightSidebarCode}rightsidebar{/if}
+	">
 		<div id="main-wrapper">
 			<header id="header">
 				<div id="header-title">
@@ -125,7 +129,7 @@
 					</h1>
 				</div><!-- header-title -->
 			</header>
-			<div class="nav">
+			<div id="nav">
 				<nav class="main-menu">
 					{include file="common/navbar.tpl"}
 				</nav>
@@ -134,7 +138,7 @@
 				</nav>
 			</div>
 			{if $leftSidebarCode}
-				<aside id="leftSidebar">
+				<aside id="left-sidebar">
 					{$leftSidebarCode}
 				</aside>
 			{/if}

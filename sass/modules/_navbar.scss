@@ -1,7 +1,7 @@
-#navbar {
-	// Reset to 0 and use user-defined colors;
-	margin-right: 0;
-	padding-bottom: 0;
+.menu {
+	padding:0; // Padding is already included in #nav
+	// We need a clearfix here
+	@include clearfix();
 	border-bottom: 1px solid $line-color;
 	// Mobile-first
 	margin-bottom:rhythm(1);
@@ -9,10 +9,11 @@
 		margin-bottom:0;
 	}
 	a {
-		// This conflicts with pkp/common.css ul.menu a.
-		// We need to repeat the properties. Ugly, but needed.
+		text-transform:uppercase;
+		// Use our font sizes
 		@include adjust-font-size-to($base-font-size);
-		letter-spacing: 0.1rem;
+		// Use our headings font
+		font-family: $headlines;
 	}
 	// Reset all link underlines, highlights and/or borders. We want navegation always the same.
 	a, a:hover {
@@ -25,11 +26,21 @@
 	li {
 		// We use a border effect
 		// TODO: This is highly opinionated
+		// Use vertical rhythm units also for horizontal spacing.
+		margin-right: rhythm(1);
+		padding:0;
+
+		// We want to give menu items more space for touch-enabled devices...
+		float:left;
+		display:block;
 		border-top: rhythm(0.125) solid transparent;
 		border-bottom:1px solid transparent;
 		margin-bottom:-1px;
-		// Animate a little
-		@include transition(all 0.25s ease-in-out);
+		@if $transitions == true {
+			// Animate a little
+			@include transition(all $transitions-speed ease-in-out);
+		}
+
 		// Mobile-first
 		width:100%;
 		text-align:center;
@@ -41,31 +52,8 @@
 		&:hover {
 			border-color:#000;
 		}
+		.current {
+			font-weight: bold;
+		}
 	}
-}
-
-ul.menu {
-	// We need a clearfix here
-	@include pie-clearfix();
-}
-
-ul.menu li {
-	// Use vertical rhythm units also for horizontal spacing.
-	margin-right: rhythm(1);
-	padding:0;
-	// We want to give menu items more space for touch-enabled devices...
-	float:left;
-	display:block;
-}
-
-// Should we use a different, more original, way to mark "active" items??
-ul.menu li.current {
-	font-weight: bold;
-}
-
-ul.menu a {
-	// Use our font sizes
-	@include adjust-font-size-to($base-font-size);
-	// Use our headings font
-	font-family: $headlines;
 }

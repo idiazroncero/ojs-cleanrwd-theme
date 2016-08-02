@@ -2,90 +2,85 @@
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets
  */
 
-#container {
-	// Existent min-width disables responsive web design.
-	// We have to explicitly override it and keep the !important tag.
-	min-width: 0 !important;
-	// We prefer centered content. It's just an opinionated design choice - and it's easier for RWD
-	// To completely redo the main layout, we start by making #container the main wrapper.
-	max-width: $max-width;
+#main-wrapper {
+	margin:0 auto; // Center
+	max-width: $max-width; // RWD
+	@include clearfix();
 }
 
 // In order to apply full-width background-colors we need to set padding separately, not in #container
 #header {
-	padding:rhythm(1);
 	background-color:$header-background-color;
+	padding:rhythm(1) $gutter; // We use rhythm for vertical spacing and user-defined gutter for horizontal
+	width: 100%;
+	text-align: center;
+	margin-bottom:rhythm(0.5);
 }
 
-#body {
-	padding:rhythm(0.5) rhythm(1);
+#nav {
+	padding:0 $gutter;
+	margin-bottom:rhythm(0.5);
+}
+
+#main {
+	padding:0 $gutter;
+	margin-bottom:rhythm(1);
+	width:100%;
 }
 
 #footer {
 	padding:rhythm(0.5) rhythm(1) rhythm(1) rhythm(1);
 }
 
-#header {
-	width: 100%;
-	text-align: center;
+.rightsidebar {
+	@include breakpoint($sidebar-breakpoint) {
+		#main {
+			float:left;
+			width: 100% - $right-sidebar-width;
+		}
+	}
 }
 
-#main {
-	// We want #main to occupy all space left by sidebars
-	width:auto;
-	// Reset padding to 0
-	padding: 0;
-	// We don't use 10% margin to separate content from the left since we're using #container
-	// as a main wrapper.
-	margin:0;
-	// We don't want it to behave inline
-	display:block;
-	// And we don't want a float
-	float:none;
+.leftsidebar {
+	@include breakpoint($sidebar-breakpoint) {
+		#main {
+			float:right;
+			width: 100% - $right-sidebar-width;
+		}
+	}
 }
 
-// Modificaremos el layout en proximas ediciones
-#leftSidebar {
+.leftsidebar.rightsidebar {
+	@include breakpoint($sidebar-breakpoint) {
+		#main {
+			float:left;
+			width: 100% - $right-sidebar-width - $left-sidebar-width;
+		}
+	}
+}
+
+
+#left-sidebar {
 	// We need to specifically override these also
-	float:none;
 	width:100%;
-	// No padding
-	padding: 0;
-	// Inherits from $base-font-size
-	font-size: inherit;
-	// We don't use 10% margin to separate content from the left since we're using #container
-	// as a main wrapper.
-	margin-left: 0;
-	margin-right:0;
+	padding:0 $gutter;
 	@include breakpoint($sidebar-breakpoint) {
 		float: left;
 		width: $left-sidebar-width;
 		// Separator
-		margin-right: rhythm(1);
-		padding-right:rhythm(1);
 		border-right:1px solid $line-color;
 	}
 }
 
 // Modificaremos el layout en proximas ediciones
-#rightSidebar {
+#right-sidebar {
 	// We need to specifically override these also
-	float:none;
 	width:100%;
-	// No padding
-	padding: 0;
-	// Inherits from $base-font-size
-	font-size: inherit;
-	// We don't use 10% margin to separate content from the left since we're using #container
-	// as a main wrapper.
-	margin-left:0;
-	margin-right: 0;
+	padding:0 $gutter;
 	@include breakpoint($sidebar-breakpoint) {
 		float: right;
 		width: $left-sidebar-width;
 		// Separator
-		margin-left: rhythm(1);
-		padding-left:rhythm(1);
 		border-left:1px solid $line-color;
 	}
 }
@@ -108,30 +103,4 @@
 
 #main {
 	order:1;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ESTO SE TIENE QUE IR
-
-#header h1 {
-	// We need to explicitply override AGAIN the font-family
-	font-family:$headlines;
-	// Use vertical rhythm & stop using 10% to separate it from the left side since we use the #container wrapper.
-	padding:0;
-	font-weight: bold;
 }
