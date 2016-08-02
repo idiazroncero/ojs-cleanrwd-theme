@@ -13,54 +13,41 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<form id="settings" method="post" action="{url op="saveSettings"}" enctype="multipart/form-data">
+<form id="settings" class="settings-form" method="post" action="{url op="saveSettings"}" enctype="multipart/form-data">
 {include file="common/formErrors.tpl"}
-
-<table class="data" width="100%">
-{if count($formLocales) > 1}
-	<tr valign="top">
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td colspan="2" width="80%" class="value">
-			{url|assign:"settingsUrl" op="settings" escape=false}
-			{form_language_chooser form="settings" url=$settingsUrl}
-			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
-{/if}
-	<tr valign="top">
-		<td {if $pageHeaderTitleType[$formLocale] && $pageHeaderTitleImage[$formLocale]}rowspan="4"{else}rowspan="3"{/if} width="20%" class="label">{fieldLabel name="title" key="admin.settings.siteTitle" required="true"}</td>
-		<td width="15%" class="value">
+	
+	<div class="form-item">
+		{if count($formLocales) > 1}
+				{fieldLabel name="formLocale" key="form.formLanguage"}
+					{url|assign:"settingsUrl" op="settings" escape=false}
+					{form_language_chooser form="settings" url=$settingsUrl}
+					<span class="instruct">{translate key="form.formLanguage.description"}</span>
+		{/if}
+	</div>
+	<div class="form-item">
+		{fieldLabel name="title" key="admin.settings.siteTitle" required="true"}
+		<div class="form-subitem">
 			<input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-0" value="0"{if not $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-0" key="manager.setup.useTextTitle"}
-		</td>
-		<td width="65%" class="value">
 			<input type="text" id="title" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" size="40" maxlength="120" class="textField" />
-		</td>
-	</tr>
-	<tr valign="top">
-		<td class="label" width="20%"><input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-1" value="1"{if $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-1" key="manager.setup.useImageTitle"}</td>
-		<td colspan="2" width="80%" class="value"><input type="file" name="pageHeaderTitleImage" id="pageHeaderTitleImage" class="uploadField" /> <input type="submit" name="uploadPageHeaderTitleImage" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-	<tr valign="top">
-		<td colspan="2">
-			{if $pageHeaderTitleType[$formLocale] && $pageHeaderTitleImage[$formLocale]}
-				{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].originalFilename|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button" />
-				<br />
-				<img src="{$publicFilesDir}/{$pageHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderTitleImage[$formLocale].width|escape}" height="{$pageHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="admin.settings.homeHeaderImage.altText"}" />
-			{/if}
-		</td>
-	</tr>
-	{if $pageHeaderTitleType[$formLocale] && $pageHeaderTitleImage[$formLocale]}
-		<tr valign="top">
-			<td class="label">{fieldLabel name="pageHeaderTitleImageAltText" key="common.altText"}</td>
-			<td colspan="2" width="80%" class="value">
-				<input type="text" id="pageHeaderTitleImageAltText" name="pageHeaderTitleImageAltText[{$formLocale|escape}]" value="{$pageHeaderTitleImage[$formLocale].altText|escape}" size="40" maxlength="255" class="textField" />
-			</td>
-		</tr>
-		<tr valign="top">
-			<td>&nbsp;</td>
-			<td colspan="2" class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-		</tr>
-	{/if}
+		</div>
+		<div class="form-subitem">
+			<input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-1" value="1"{if $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-1" key="manager.setup.useImageTitle"}
+			<input type="file" name="pageHeaderTitleImage" id="pageHeaderTitleImage" class="uploadField" /> <input type="submit" name="uploadPageHeaderTitleImage" value="{translate key="common.upload"}" class="button" />
+			<div class="form-subitem">
+				{if $pageHeaderTitleType[$formLocale] && $pageHeaderTitleImage[$formLocale]}
+					<p class="instruct">{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].originalFilename|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</p>
+					<input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button" />
+					<img src="{$publicFilesDir}/{$pageHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderTitleImage[$formLocale].width|escape}" height="{$pageHeaderTitleImage[$formLocale].height|escape}" alt="{translate key="admin.settings.homeHeaderImage.altText"}" />
+				{/if}
+				{if $pageHeaderTitleType[$formLocale] && $pageHeaderTitleImage[$formLocale]}
+					{fieldLabel name="pageHeaderTitleImageAltText" key="common.altText"}
+					<input type="text" id="pageHeaderTitleImageAltText" name="pageHeaderTitleImageAltText[{$formLocale|escape}]" value="{$pageHeaderTitleImage[$formLocale].altText|escape}" size="40" maxlength="255" class="textField" />
+					<p class="instruct">{translate key="common.altTextInstructions"}</p>
+				{/if}
+			</div>
+		</div>
+	</div>
+
 	<tr valign="top">
 		<td class="label">{fieldLabel name="intro" key="admin.settings.introduction"}</td>
 		<td colspan="2" class="value"><textarea name="intro[{$formLocale|escape}]" id="intro" cols="40" rows="10" class="textArea">{$intro[$formLocale]|escape}</textarea></td>

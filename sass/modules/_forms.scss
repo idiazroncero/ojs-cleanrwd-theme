@@ -5,6 +5,7 @@
  * Please forgive all the nonsensical CSS here.
  */
 
+// INPUTS
 
 input,
 select {
@@ -101,5 +102,47 @@ input[type="file"] + input[type="submit"] { // Adapts height of button next to f
 		}
 	} @else {
 		@error "Invalid value for $button-style in _init.scss. It must be either outline or fill"
+	}
+}
+
+//
+// FORMS
+//
+
+.settings-form {
+
+}
+
+.form-item {
+	margin-bottom:rhythm(1);
+	label {
+		font-family:$alt-font-family;
+		font-weight:bold;
+		display:block;
+	}
+}
+
+.form-subitem {
+	display:block;
+	margin-left:$gutter;
+	padding-bottom:rhythm(0.5);
+	padding-left:$gutter;
+	border-left:1px solid $line-color;
+	&:last-of-type {
+		padding-bottom:0;
+	}
+	label {
+		font-weight:normal;
+		display:inline-block;
+		margin:0 $gutter/2;
+	}
+}
+
+.instruct {
+	font-family:$alt-font-family;
+	@include adjust-leading-to(0.75);
+	margin:0;
+	@include breakpoint($small) {
+		@include adjust-font-size-to($h5-font-size, 0.75);
 	}
 }
