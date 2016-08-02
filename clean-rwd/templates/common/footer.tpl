@@ -35,10 +35,13 @@
 		</main><!-- main -->
 		{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
 		{if $rightSidebarCode}
-			<aside id="right-sidebar">
+			<aside id="right-sidebar" class="sidebar">
 				{$rightSidebarCode}
 			</aside>
 		{/if}
+		<footer id="footer">
+			<p>(C) idiaz.roncero<p>
+		</footer>
 	</div><!-- #main-wrapper -->
 
 {get_debug_info}

@@ -86,6 +86,9 @@ a, a:link {
 	} @else {
 		@error "Invalid value for $link-style. Please use one of the following: dotted-before, dotted-after, solid-before, solid-after"
 	}
+	@if $transitions == true {
+		transition: all $transitions-speed ease-in-out;
+	}
 }
 
 a:active {

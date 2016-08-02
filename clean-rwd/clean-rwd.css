@@ -492,39 +492,41 @@ ul {
 /* line 77, ../sass/init/_ojs-normalize.scss */
 a, a:link {
   color: #666;
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out; }
 
-/* line 91, ../sass/init/_ojs-normalize.scss */
+/* line 94, ../sass/init/_ojs-normalize.scss */
 a:active {
   color: #666; }
 
-/* line 95, ../sass/init/_ojs-normalize.scss */
+/* line 98, ../sass/init/_ojs-normalize.scss */
 a:visited {
   color: #8c8c8c; }
 
-/* line 99, ../sass/init/_ojs-normalize.scss */
+/* line 102, ../sass/init/_ojs-normalize.scss */
 a:hover {
   color: #8c8c8c;
   background: transparent;
   border-bottom: 1px dotted #8c8c8c; }
 
-/* line 118, ../sass/init/_ojs-normalize.scss */
+/* line 121, ../sass/init/_ojs-normalize.scss */
 body {
   color: #333;
   font-family: Merriweather, Georgia, Times, serif;
-  background-color: #f5f5f5; }
+  background-color: #E9E9D6; }
 
-/* line 124, ../sass/init/_ojs-normalize.scss */
+/* line 127, ../sass/init/_ojs-normalize.scss */
 #main-wrapper {
   background-color: #fff; }
 
-/* line 132, ../sass/init/_ojs-normalize.scss */
+/* line 135, ../sass/init/_ojs-normalize.scss */
 div.separator {
   margin: 1.5rem 0;
   border-bottom: 2px solid #CCC;
   position: relative; }
 
-/* line 139, ../sass/init/_ojs-normalize.scss */
+/* line 142, ../sass/init/_ojs-normalize.scss */
 a.action, a.file {
   font-size: 16px;
   font-size: 1rem;
@@ -553,83 +555,62 @@ input.uploadField {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: none; }
 
-/* line 25, ../sass/pkp/_pkp_common.scss */
-#footer {
-  width: 100%;
-  min-height: 50px;
-  position: static;
-  clear: both;
-  text-align: center; }
-
-/* line 33, ../sass/pkp/_pkp_common.scss */
-#footerContent {
-  width: 100%;
-  margin: 0 auto;
-  padding-left: 10%; }
-
-/**
- * Footer elements
- */
-/* line 44, ../sass/pkp/_pkp_common.scss */
-#footer div.debugStats {
-  font-size: 0.6em; }
-
 /**
  * Additional text styles
  */
-/* line 54, ../sass/pkp/_pkp_common.scss */
+/* line 27, ../sass/pkp/_pkp_common.scss */
 span.disabled, label.disabled {
   color: #666; }
 
-/* line 58, ../sass/pkp/_pkp_common.scss */
+/* line 31, ../sass/pkp/_pkp_common.scss */
 a.icon {
   text-decoration: none; }
 
-/* line 62, ../sass/pkp/_pkp_common.scss */
+/* line 35, ../sass/pkp/_pkp_common.scss */
 a.icon img {
   border: 0; }
 
-/* line 66, ../sass/pkp/_pkp_common.scss */
+/* line 39, ../sass/pkp/_pkp_common.scss */
 a.icon:hover {
   background: none; }
 
-/* line 70, ../sass/pkp/_pkp_common.scss */
+/* line 43, ../sass/pkp/_pkp_common.scss */
 span.heading {
   font-size: 0.85em;
   text-transform: uppercase; }
 
-/* line 75, ../sass/pkp/_pkp_common.scss */
+/* line 48, ../sass/pkp/_pkp_common.scss */
 span.highlight {
   border-bottom: 1px dotted #000; }
 
-/* line 79, ../sass/pkp/_pkp_common.scss */
+/* line 52, ../sass/pkp/_pkp_common.scss */
 div.warningMessage {
   background: url(../templates/images/icons/icon_alert.gif) no-repeat 3px 40%;
   margin: 5px;
   padding: 5px 5px 5px 25px; }
 
-/* line 85, ../sass/pkp/_pkp_common.scss */
+/* line 58, ../sass/pkp/_pkp_common.scss */
 .nowrap {
   white-space: nowrap; }
 
 /**
  * Form-specific elements
  */
-/* line 95, ../sass/pkp/_pkp_common.scss */
+/* line 68, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_error {
   /* Named for compatibility with new lessphp structure */
   color: #900;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 101, ../sass/pkp/_pkp_common.scss */
+/* line 74, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_success {
   /* Named for compatibility with new lessphp structure */
   color: #090;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 107, ../sass/pkp/_pkp_common.scss */
+/* line 80, ../sass/pkp/_pkp_common.scss */
 ul.pkp_form_error_list {
   /* Named for compatibility with new lessphp structure */
   color: #900; }
@@ -637,18 +618,18 @@ ul.pkp_form_error_list {
 /**
  * Other organizational elements
  */
-/* line 118, ../sass/pkp/_pkp_common.scss */
+/* line 91, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em; }
 
-/* line 123, ../sass/pkp/_pkp_common.scss */
+/* line 96, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none; }
 
-/* line 129, ../sass/pkp/_pkp_common.scss */
+/* line 102, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline; }
@@ -907,11 +888,8 @@ td.notificationFunction {
  * Please forgive all the nonsensical CSS here.
  */
 /* line 9, ../sass/modules/_forms.scss */
-input.textField,
-select.selectMenu,
-select,
-textarea.textArea,
-input.uploadField {
+input,
+select {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
@@ -927,28 +905,19 @@ input.uploadField {
   max-width: 100%;
   vertical-align: middle; }
 
-/* line 31, ../sass/modules/_forms.scss */
-select option {
-  max-width: 100%; }
-
-/* line 36, ../sass/modules/_forms.scss */
-input.uploadField {
-  border: none; }
-
-/* line 41, ../sass/modules/_forms.scss */
-textarea.textArea {
-  height: auto; }
-
-/* line 46, ../sass/modules/_forms.scss */
-select.selectMenu {
+/* line 28, ../sass/modules/_forms.scss */
+select {
   padding: 0.1875rem 0;
   height: 2.25rem; }
+  /* line 32, ../sass/modules/_forms.scss */
+  select option {
+    max-width: 100%; }
 
-/* line 52, ../sass/modules/_forms.scss */
+/* line 38, ../sass/modules/_forms.scss */
 input[type="text"], input[type="password"] {
   padding: 0 0.375rem; }
 
-/* line 57, ../sass/modules/_forms.scss */
+/* line 43, ../sass/modules/_forms.scss */
 input[type="submit"] {
   font-size: 14px;
   font-size: 0.85rem;
@@ -956,22 +925,14 @@ input[type="submit"] {
   line-height: 0.75rem;
   padding: 0 5px; }
 
-/* line 62, ../sass/modules/_forms.scss */
+/* line 48, ../sass/modules/_forms.scss */
 input[type="file"] + input[type="submit"] {
   padding: 0.1875rem 0.75rem;
   height: 1.875rem;
   vertical-align: baseline; }
 
-/* line 72, ../sass/modules/_forms.scss */
-.button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-journal-journals #content p .action,
-input.button,
-#pkp-user-userHome #content > a:first-child,
-#pkp-section-sections #sections > input.action,
-#pkp-manager-reviewForms #reviewForms > input.action,
-#pkp-manager-reviewFormElements #reviewFormElements > input.action,
-#pkp-journal-journals #content p input.action,
-input.defaultButton,
-button.ui-button.ui-button-text-only .ui-button-text {
+/* line 58, ../sass/modules/_forms.scss */
+.button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-journal-journals #content p .action {
   padding: 0.375rem 0.75rem;
   height: 2.25rem;
   display: inline-block;
@@ -988,41 +949,24 @@ button.ui-button.ui-button-text-only .ui-button-text {
   background-color: transparent;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 92, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover,
-  input.button:hover,
-  #pkp-user-userHome #content > a:hover:first-child,
-  #pkp-section-sections #sections > input.action:hover,
-  #pkp-manager-reviewForms #reviewForms > input.action:hover,
-  #pkp-manager-reviewFormElements #reviewFormElements > input.action:hover,
-  #pkp-journal-journals #content p input.action:hover,
-  input.defaultButton:hover,
-  button.ui-button.ui-button-text-only .ui-button-text:hover {
+  /* line 75, ../sass/modules/_forms.scss */
+  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
     text-decoration: none; }
-  /* line 111, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover,
-  input.button:hover,
-  #pkp-user-userHome #content > a:hover:first-child,
-  #pkp-section-sections #sections > input.action:hover,
-  #pkp-manager-reviewForms #reviewForms > input.action:hover,
-  #pkp-manager-reviewFormElements #reviewFormElements > input.action:hover,
-  #pkp-journal-journals #content p input.action:hover,
-  input.defaultButton:hover,
-  button.ui-button.ui-button-text-only .ui-button-text:hover {
+  /* line 94, ../sass/modules/_forms.scss */
+  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
     background: #3C7861;
     color: #fff; }
 
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
   padding: 0;
-  margin-bottom: 1.5rem;
   font-size: 11px;
   font-size: 0.707rem;
   line-height: 18px;
   line-height: 1.125rem;
-  margin-top: 0.375rem;
-  text-align: center; }
-  /* line 9, ../sass/modules/_breadcrumbs.scss */
+  text-align: center;
+  color: #fff; }
+  /* line 7, ../sass/modules/_breadcrumbs.scss */
   #breadcrumb a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: -0.02rem;
@@ -1031,6 +975,12 @@ button.ui-button.ui-button-text-only .ui-button-text {
     /* line 1, ../sass/modules/_breadcrumbs.scss */
     #breadcrumb {
       text-align: left; } }
+  /* line 6, ../sass/init/_mixins.scss */
+  #breadcrumb p, #breadcrumb span, #breadcrumb label {
+    color: #fff; }
+  /* line 9, ../sass/init/_mixins.scss */
+  #breadcrumb a, #breadcrumb a:link, #breadcrumb a:visited, #breadcrumb a:focus, #breadcrumb a:hover, #breadcrumb a:active {
+    color: #fff; }
 
 /* line 1, ../sass/modules/_navbar.scss */
 .menu {
@@ -1038,7 +988,8 @@ button.ui-button.ui-button-text-only .ui-button-text {
   overflow: hidden;
   *zoom: 1;
   border-bottom: 1px solid #adadad;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  color: #fff; }
   @media (min-width: 480px) {
     /* line 1, ../sass/modules/_navbar.scss */
     .menu {
@@ -1079,10 +1030,17 @@ button.ui-button.ui-button-text-only .ui-button-text {
         width: auto; } }
     /* line 52, ../sass/modules/_navbar.scss */
     .menu li:hover {
-      border-color: #000; }
-    /* line 55, ../sass/modules/_navbar.scss */
+      border-color: #1b1b1b;
+      border-color: #fff; }
+    /* line 58, ../sass/modules/_navbar.scss */
     .menu li .current {
       font-weight: bold; }
+  /* line 6, ../sass/init/_mixins.scss */
+  .menu p, .menu span, .menu label {
+    color: #fff; }
+  /* line 9, ../sass/init/_mixins.scss */
+  .menu a, .menu a:link, .menu a:visited, .menu a:focus, .menu a:hover, .menu a:active {
+    color: #fff; }
 
 /* line 8, ../sass/modules/_registerform.scss */
 #registerForm tr .label {
@@ -1122,103 +1080,111 @@ button.ui-button.ui-button-text-only .ui-button-text {
 #forAuthorsToIndexTheirWork tr:nth-child(15) td.separator {
   padding: 0; }
 
-/* line 19, ../sass/modules/_sidebar.scss */
-#sidebar input.textField, #sidebar select.selectMenu {
+/* line 20, ../sass/modules/_sidebar.scss */
+.sidebar .block {
+  margin-bottom: 1.5rem;
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
-  line-height: 1.5rem; }
-
-/* line 24, ../sass/modules/_sidebar.scss */
-#sidebar div.block {
-  font-size: inherit;
-  padding: 0;
-  margin-bottom: 1.5rem !important; }
-
-/* line 31, ../sass/modules/_sidebar.scss */
-#sidebar div.block span.blockTitle {
+  line-height: 1.5rem;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+  @media (min-width: 600px) {
+    /* line 20, ../sass/modules/_sidebar.scss */
+    .sidebar .block {
+      opacity: 0.5;
+      -webkit-transition: opacity 0.25s ease-in-out;
+      transition: opacity 0.25s ease-in-out; }
+      /* line 26, ../sass/modules/_sidebar.scss */
+      .sidebar .block:hover {
+        opacity: 1; } }
+/* line 35, ../sass/modules/_sidebar.scss */
+.sidebar .blockTitle {
   padding: 0.375rem 0 0.75rem 0;
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem;
-  letter-spacing: normal;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  border-top: 0.375rem solid #e0e0e0; }
-
-/* line 44, ../sass/modules/_sidebar.scss */
-#sidebar div.block span.blockSubtitle {
+  border-top: 0.375rem solid #cecece;
+  display: block;
+  text-transform: uppercase; }
+/* line 48, ../sass/modules/_sidebar.scss */
+.sidebar a.blockTitle, .sidebar a.blockTitle:link, .sidebar a.blockTitle:visited, .sidebar a.blockTitle:focus a.blockTitle:hover, .sidebar a.blockTitle:active {
+  text-decoration: none;
+  border-bottom: none;
+  color: #333; }
+/* line 53, ../sass/modules/_sidebar.scss */
+.sidebar .blockSubtitle {
   font-weight: bold;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-
-/* line 52, ../sass/modules/_sidebar.scss */
-#sidebar ul {
+/* line 59, ../sass/modules/_sidebar.scss */
+.sidebar ul {
   margin: 0;
   padding: 0; }
-  /* line 55, ../sass/modules/_sidebar.scss */
-  #sidebar ul li {
+  /* line 62, ../sass/modules/_sidebar.scss */
+  .sidebar ul li {
     padding-left: 1.5rem;
     list-style-type: none; }
-    /* line 58, ../sass/modules/_sidebar.scss */
-    #sidebar ul li:before {
+    /* line 65, ../sass/modules/_sidebar.scss */
+    .sidebar ul li:before {
       content: "—";
       display: inline;
       float: left;
       margin-left: -1.5rem;
       color: #adadad; }
-/* line 68, ../sass/modules/_sidebar.scss */
-#sidebar p, #sidebar a, #sidebar label, #sidebar div, #sidebar strong {
-  font-size: 14px;
-  font-size: 0.85rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  text-transform: uppercase; }
 
-/* line 81, ../sass/modules/_sidebar.scss */
-#developedBy {
-  text-transform: uppercase;
-  font-size: 0.95em; }
-
-/* line 88, ../sass/modules/_sidebar.scss */
+/* line 84, ../sass/modules/_sidebar.scss */
 #sidebarLanguageToggle select {
   width: 60%; }
-/* line 91, ../sass/modules/_sidebar.scss */
+/* line 87, ../sass/modules/_sidebar.scss */
 #sidebarLanguageToggle .button, #sidebarLanguageToggle #pkp-admin-categories #categories > a, #pkp-admin-categories #sidebarLanguageToggle #categories > a, #sidebarLanguageToggle #pkp-section-sections #sections > .action, #pkp-section-sections #sidebarLanguageToggle #sections > .action, #sidebarLanguageToggle #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #sidebarLanguageToggle #reviewForms > .action, #sidebarLanguageToggle #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #sidebarLanguageToggle #reviewFormElements > .action, #sidebarLanguageToggle #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #sidebarLanguageToggle .action {
   width: 40%;
   margin-left: -1px; }
 
-/* line 99, ../sass/modules/_sidebar.scss */
+/* line 95, ../sass/modules/_sidebar.scss */
 #simpleSearchForm table {
   width: 100%; }
-/* line 103, ../sass/modules/_sidebar.scss */
+/* line 99, ../sass/modules/_sidebar.scss */
 #simpleSearchForm input, #simpleSearchForm select {
   width: 100%; }
-/* line 107, ../sass/modules/_sidebar.scss */
+/* line 103, ../sass/modules/_sidebar.scss */
 #simpleSearchForm .button, #simpleSearchForm #pkp-admin-categories #categories > a, #pkp-admin-categories #simpleSearchForm #categories > a, #simpleSearchForm #pkp-section-sections #sections > .action, #pkp-section-sections #simpleSearchForm #sections > .action, #simpleSearchForm #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #simpleSearchForm #reviewForms > .action, #simpleSearchForm #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #simpleSearchForm #reviewFormElements > .action, #simpleSearchForm #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #simpleSearchForm .action {
   margin-top: 0.75rem; }
 
-/* line 114, ../sass/modules/_sidebar.scss */
+/* line 110, ../sass/modules/_sidebar.scss */
 #sidebarFontSize #sizer a {
   margin: 0 0.75rem 0 0; }
 
-/* line 122, ../sass/modules/_sidebar.scss */
+/* line 118, ../sass/modules/_sidebar.scss */
 #sidebarUser td label {
   line-height: 18px;
   line-height: 1.125rem; }
-/* line 125, ../sass/modules/_sidebar.scss */
+/* line 121, ../sass/modules/_sidebar.scss */
 #sidebarUser td input[type="submit"] {
   margin-top: 0.75rem;
   width: 100%; }
-/* line 132, ../sass/modules/_sidebar.scss */
+/* line 128, ../sass/modules/_sidebar.scss */
 #sidebarUser > br {
   display: none; }
 
 /* line 1, ../sass/modules/_footer.scss */
-#pageFooter {
+#main-footer {
   border-top: 1px solid #000;
   margin-top: 0.75rem;
   padding-top: 0.75rem; }
+
+/* line 7, ../sass/modules/_footer.scss */
+#footer {
+  background: #1b1b1b;
+  clear: both; }
+  /* line 10, ../sass/modules/_footer.scss */
+  #footer p {
+    color: #fff;
+    font-size: 11px;
+    font-size: 0.707rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    margin: 0; }
 
 /* line 1, ../sass/modules/_main.scss */
 #main h2 {
@@ -1268,6 +1234,11 @@ button.ui-button.ui-button-text-only .ui-button-text {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+
+/* line 50, ../sass/modules/_main.scss */
+.section {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px dotted #cecece; }
 
 /* line 1, ../sass/modules/_ui-pnotify.scss */
 .ui-pnotify-history-container {
@@ -2043,23 +2014,23 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
  */
 /* line 5, ../sass/layout/_layout.scss */
 #main-wrapper {
-  margin: 0 auto;
+  margin: 0 auto 24px auto;
   max-width: 1200px;
   overflow: hidden;
   *zoom: 1; }
 
 /* line 12, ../sass/layout/_layout.scss */
 #header {
-  background-color: #eee;
+  background-color: #98A2A8;
   padding: 1.5rem 24px;
   width: 100%;
-  text-align: center;
-  margin-bottom: 0.75rem; }
+  text-align: center; }
 
-/* line 20, ../sass/layout/_layout.scss */
+/* line 19, ../sass/layout/_layout.scss */
 #nav {
-  padding: 0 24px;
-  margin-bottom: 0.75rem; }
+  background-color: #333;
+  padding: 0.75rem 24px;
+  margin-bottom: 1.5rem; }
 
 /* line 25, ../sass/layout/_layout.scss */
 #main {
@@ -2069,54 +2040,58 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 
 /* line 31, ../sass/layout/_layout.scss */
 #footer {
-  padding: 0.75rem 1.5rem 1.5rem 1.5rem; }
+  padding: 0.75rem 1.5rem; }
+
+/* line 35, ../sass/layout/_layout.scss */
+.sidebar {
+  margin-bottom: 1.5rem; }
 
 @media (min-width: 600px) {
-  /* line 37, ../sass/layout/_layout.scss */
+  /* line 41, ../sass/layout/_layout.scss */
   .rightsidebar #main {
     float: left;
     width: 77%; } }
 
 @media (min-width: 600px) {
-  /* line 46, ../sass/layout/_layout.scss */
+  /* line 50, ../sass/layout/_layout.scss */
   .leftsidebar #main {
     float: right;
     width: 77%; } }
 
 @media (min-width: 600px) {
-  /* line 55, ../sass/layout/_layout.scss */
+  /* line 59, ../sass/layout/_layout.scss */
   .leftsidebar.rightsidebar #main {
     float: left;
     width: 54%; } }
 
-/* line 63, ../sass/layout/_layout.scss */
+/* line 67, ../sass/layout/_layout.scss */
 #left-sidebar {
   width: 100%;
   padding: 0 24px; }
   @media (min-width: 600px) {
-    /* line 63, ../sass/layout/_layout.scss */
+    /* line 67, ../sass/layout/_layout.scss */
     #left-sidebar {
       float: left;
       width: 23%;
       border-right: 1px solid #adadad; } }
 
-/* line 76, ../sass/layout/_layout.scss */
+/* line 80, ../sass/layout/_layout.scss */
 #right-sidebar {
   width: 100%;
   padding: 0 24px; }
   @media (min-width: 600px) {
-    /* line 76, ../sass/layout/_layout.scss */
+    /* line 80, ../sass/layout/_layout.scss */
     #right-sidebar {
       float: right;
       width: 23%;
       border-left: 1px solid #adadad; } }
 
-/* line 90, ../sass/layout/_layout.scss */
+/* line 94, ../sass/layout/_layout.scss */
 #body {
   overflow: hidden;
   *zoom: 1; }
   @media (max-width: 600px) {
-    /* line 90, ../sass/layout/_layout.scss */
+    /* line 94, ../sass/layout/_layout.scss */
     #body {
       display: -webkit-box;
       display: -webkit-flex;
@@ -2128,14 +2103,14 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
           -ms-flex-direction: column;
               flex-direction: column; } }
 
-/* line 100, ../sass/layout/_layout.scss */
+/* line 104, ../sass/layout/_layout.scss */
 #sidebar {
   -webkit-box-ordinal-group: 3;
   -webkit-order: 2;
       -ms-flex-order: 2;
           order: 2; }
 
-/* line 104, ../sass/layout/_layout.scss */
+/* line 108, ../sass/layout/_layout.scss */
 #main {
   -webkit-box-ordinal-group: 2;
   -webkit-order: 1;

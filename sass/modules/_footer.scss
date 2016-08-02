@@ -1,5 +1,15 @@
-#pageFooter {
+#main-footer {
 	border-top:1px solid #000;
 	margin-top:rhythm(0.5);
 	padding-top:rhythm(0.5);
+}
+
+#footer {
+	background:$black;
+	clear:both; // Prevents overlapping floats
+	p {
+		color:$white;
+		@include adjust-font-size-to($h6-font-size);
+		margin:0;
+	}
 }

@@ -106,11 +106,13 @@ $line-color: $light-color;
 $line-color-light: tint($line-color, 40%);
 
 // Background-color for the whole webpage
-$background-color: #f5f5f5;
+$background-color: #E9E9D6;
 // Background-color for the #container wrapper
 $container-background-color: #fff;
 // Background-color for the #header wrapper
-$header-background-color: #eee;
+$header-background-color: #98A2A8;
+// Background-color for the #header wrapper
+$nav-background-color: #333; //#CCDAE3;
 
 
 //
@@ -137,6 +139,10 @@ $link-style: dotted-after; 		// dotted-before = border-bottom is dotted before :
 // Max-width of the main container
 $max-width:1200px;
 
+// ¿Is the main container separated from the edges?
+$main-container-top-margin: 0;
+$main-container-bottom-margin: $base-line-height;
+
 // Gutters (between columns). Recomendation: set it equal to 1 vertical rhythm unit 
 // ($base-line-height because Compass still hasn't been called and we can't access the rhythm() function)
 $gutter: $base-line-height;
@@ -149,10 +155,12 @@ $right-sidebar-width: 23%;
 $small: 480px;
 $medium: 768px;
 $screen: 960px;
-
 // Define the specific breakpoint on which the sidebar and content move to a column
 // You can use one of the breakpoints above or define your own.
 $sidebar-breakpoint: 600px;
+
+// Sidebar opacity (when not focused)
+$sidebar-opacity: 0.5;
 
 
 //
@@ -176,3 +184,4 @@ $button-border-radius: $border-radius; // Want square buttons? Se tthis value to
 @import "compass/utilities/general/clearfix";
 @import "compass/css3";
 @import "breakpoint";
+@import "init/mixins";

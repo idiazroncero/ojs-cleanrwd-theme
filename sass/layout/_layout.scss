@@ -3,7 +3,7 @@
  */
 
 #main-wrapper {
-	margin:0 auto; // Center
+	margin:$main-container-top-margin auto $main-container-bottom-margin auto; // Center
 	max-width: $max-width; // RWD
 	@include clearfix();
 }
@@ -14,12 +14,12 @@
 	padding:rhythm(1) $gutter; // We use rhythm for vertical spacing and user-defined gutter for horizontal
 	width: 100%;
 	text-align: center;
-	margin-bottom:rhythm(0.5);
 }
 
 #nav {
-	padding:0 $gutter;
-	margin-bottom:rhythm(0.5);
+	background-color:$nav-background-color;
+	padding:rhythm(0.5) $gutter;
+	margin-bottom:rhythm(1);
 }
 
 #main {
@@ -29,7 +29,11 @@
 }
 
 #footer {
-	padding:rhythm(0.5) rhythm(1) rhythm(1) rhythm(1);
+	padding:rhythm(0.5) rhythm(1);
+}
+
+.sidebar {
+	margin-bottom:rhythm(1);
 }
 
 .rightsidebar {

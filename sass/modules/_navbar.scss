@@ -50,10 +50,14 @@
 			width:auto;
 		}
 		&:hover {
-			border-color:#000;
+			border-color:$black;
+			@include do-if-dark($nav-background-color) {
+				border-color: $white;
+			}
 		}
 		.current {
 			font-weight: bold;
 		}
-	}
+	};
+	@include invert-if-dark($nav-background-color);
 }

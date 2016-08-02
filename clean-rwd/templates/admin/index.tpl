@@ -17,7 +17,7 @@
 <div class="warningMessage">{translate key="site.upgradeAvailable.admin" currentVersion=$currentVersion latestVersion=$latestVersion}</div>
 {/if}
 
-<div id="siteManagement">
+<section class="section" id="siteManagement">
 <h3>{translate key="admin.siteManagement"}</h3>
 
 <ul>
@@ -28,8 +28,8 @@
 	<li><a href="{url op="categories"}">{translate key="admin.categories"}</a></li>
 	{call_hook name="Templates::Admin::Index::SiteManagement"}
 </ul>
-</div>
-<div id="adminFunctions">
+</section class="section">
+<section class="section" id="adminFunctions">
 <h3>{translate key="admin.adminFunctions"}</h3>
 
 <ul>
@@ -41,6 +41,6 @@
 	<li><a href="{url op="mergeUsers"}">{translate key="admin.mergeUsers"}</a></li>
 	{call_hook name="Templates::Admin::Index::AdminFunctions"}
 </ul>
-</div>
+</section class="section">
 {include file="common/footer.tpl"}
 

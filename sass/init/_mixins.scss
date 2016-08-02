@@ -1,0 +1,19 @@
+// Checks a color and inverts all black text to white if it is too dark.
+
+@mixin invert-if-dark($color) { 
+	@if lightness($color) <= 50 {
+		color: $white;
+		p, span, label {
+			color:$white;
+		}
+		a, a:link, a:visited, a:focus, a:hover, a:active {
+			color:$white;
+		}
+	}
+}
+
+@mixin do-if-dark($color) {
+	@if lightness($color) <= 50 {
+		@content;
+	}
+}

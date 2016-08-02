@@ -138,7 +138,7 @@
 				</nav>
 			</div>
 			{if $leftSidebarCode}
-				<aside id="left-sidebar">
+				<aside id="left-sidebar" class="sidebar">
 					{$leftSidebarCode}
 				</aside>
 			{/if}

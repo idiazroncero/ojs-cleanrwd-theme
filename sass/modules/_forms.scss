@@ -6,11 +6,8 @@
  */
 
 
-input.textField, // We need explicit overrides
-select.selectMenu, 
-select,
-textarea.textArea, 
-input.uploadField {
+input,
+select {
 	@include adjust-font-size-to($h5-font-size);
 	@include adjust-leading-to(1);
 	height:rhythm(1.5);
@@ -28,25 +25,14 @@ input.uploadField {
 	vertical-align:middle;
 }
 
-select option {
-	// Source of many layout problems: option shouldn't grow bigger than its parent
-	max-width:100%;
-}
-
-input.uploadField {
-	// Border is ugly...
-	border:none;
-}
-
-textarea.textArea {
-	// Height is defined by the [rows] value
-	height:auto;
-}
-
-select.selectMenu {
+select {
 	// Select needs a little help to conform to line-height standards
 	padding:rhythm(0.125) 0;
 	height:rhythm(1.5);
+	option {
+		// Source of many layout problems: option shouldn't grow bigger than its parent
+		max-width:100%;
+	}
 }
 
 input[type="text"], input[type="password"] {
@@ -69,10 +55,7 @@ input[type="file"] + input[type="submit"] { // Adapts height of button next to f
 // BUTTONS
 //
 
-.button,
-input.button,
-input.defaultButton,
-button.ui-button.ui-button-text-only .ui-button-text {
+.button {
 	// Padding as vertical rhythm.
 	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
 	padding:rhythm(0.25) rhythm(0.5);

@@ -19,33 +19,6 @@ input.uploadField {
 	background:none;
 }
 
-
-// Why? OJS seems to have only "journal footers", not "general" ones.
-// These IDs seem to be useless... (let's see)
-#footer {
-	width: 100%;
-	min-height: 50px;
-	position: static;
-	clear: both;
-	text-align: center;
-}
-
-#footerContent {
-	width: 100%;
-	margin: 0 auto;
-	padding-left: 10%;
-}
-
-
-/**
- * Footer elements
- */
-
-#footer div.debugStats {
-	font-size: 0.6em;
-}
-
-
 /**
  * Additional text styles
  */
