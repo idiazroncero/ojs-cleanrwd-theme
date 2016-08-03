@@ -1,11 +1,9 @@
 # Clean and Responsive Theme for Open Journal Systems
 __IN DEVELOPMENT - NOT READY FOR PRODUCTION__
 ## Development is sponsored by [http://openjournalsystems.cl/][ojscl]
-*v0.0.6*
+*v0.1.0*
 
-__This branch forks and expands OJS Clean RWD theme in order to alter the template structure and modifiy the HTML layer__
-
-![preview](http://i66.tinypic.com/2eeviw4.jpg)
+![preview](https://s31.postimg.org/pvy9hmwff/ojs0_1_0.png)
 
 ### What is this
 
@@ -29,16 +27,18 @@ You can use this theme as it is, but you might find it dull. This is because it 
 
 By design, OJS 2.x theme plugins are expected to affect __only the CSS layer__. This means *we are not supposed to change HTML structure*.
 
-In order to fully modernize OJS 2.x, however, we are required to touch the underlying structure for some of the following reasons:
+In order to fully modernize OJS 2.x, however, we are required to touch the underlying HTML structure for at least some of the following reasons:
 
 - Include the viewport `<meta>` tag.
 - Modify inline CSS and hard-coded, unresponsive tables.
 
-This fork follows the same idea as [Mason Theme][mason] or [Modern Theme][modern]. They work by replicating the whole template structure __inside__ the theme plugin folder and then forcing the system to load files from that path instead of the original. 
+As [Mason Theme][mason] or [Modern Theme][modern] did before, this means replicating the whole template structure __inside__ the theme plugin folder and then forcing the system to load files from that path instead of the original. 
 
-There are some problems with this strategy. Unlike systems like Drupal or Wordpress, OJS is __not__ expecting core template files to be overridden or inherited from templates inside the theme plugin (and viceversa). So, this tecnhique opens the door to potential fatal errors: any alteration of core template files (i.e in future OJS releases) has to be mirrored inside the theme plugin or there is a potential for PHP fatal errors and WSOD.
+__Please note this strategy comes with some potencial troubles__. Unlike systems like Drupal or Wordpress, OJS is __not__ expecting core `tpl.php` files to be overridden from inside the theme plugin folder. 
 
-This means that __upgrading OJS 2.x may cause your install to crash__. Please *always* try before pushing to production and please post any issue you might encounter.
+This means this tecnhique __opens the door to potential crashes and/or the dreaded [WSOD][wsod] (White Screen Of Death)__ if the data and logic included on the theme's templates do not mirror the core files.
+
+In order to avoid this __please always double-check the current compatibility of the theme__ and do not update your OJS install to a newer version until a matching release of OJS Clean RWD Theme has been installed.
 
 
 ### Install
@@ -101,3 +101,4 @@ Type `gem install breakpoint` and `gem install compass` in your terminal to get 
 [ojscl]: http://openjournalsystems.cl/
 [mason]: https://github.com/masonpublishing/OJS-Theme
 [modern]: https://github.com/cu-library/OJS-Modern-Theme
+[wsod]: http://www.webopedia.com/TERM/W/white_screen_of_death.html
