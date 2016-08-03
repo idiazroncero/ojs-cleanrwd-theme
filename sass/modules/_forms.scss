@@ -9,11 +9,9 @@
 
 input,
 select {
-	@include adjust-font-size-to($h5-font-size);
-	@include adjust-leading-to(1);
-	height:rhythm(1.5);
+	@include adjust-font-size-to($h5-font-size, 1.25);
 	// No background for inputs, just a clean box
-	background-color: #fff !important;
+	background-color: transparent;
 	// Custom border-radius
 	border-radius: $border-radius;
 	// We want a clean, plain border.
@@ -27,9 +25,7 @@ select {
 }
 
 select {
-	// Select needs a little help to conform to line-height standards
-	padding:rhythm(0.125) 0;
-	height:rhythm(1.5);
+	padding:rhythm(0.27) 0;
 	option {
 		// Source of many layout problems: option shouldn't grow bigger than its parent
 		max-width:100%;
@@ -41,16 +37,6 @@ input[type="text"], input[type="password"] {
 	padding:0 rhythm(0.25);
 }
 
-input[type="submit"] {
-	@include adjust-font-size-to($h5-font-size, 0.5);
-	padding: 0 5px;
-}
-
-input[type="file"] + input[type="submit"] { // Adapts height of button next to file uploads
-	padding: rhythm(0.125) rhythm(0.5);
-	height:rhythm(1.25);
-	vertical-align:baseline;
-}
 
 //
 // BUTTONS
@@ -59,13 +45,12 @@ input[type="file"] + input[type="submit"] { // Adapts height of button next to f
 .button {
 	// Padding as vertical rhythm.
 	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
-	padding:rhythm(0.25) rhythm(0.5);
-	height:rhythm(1.5);
+	padding:0 rhythm(0.5);
 	display:inline-block;
 	vertical-align:middle;
 	// Inherit font but make it smaller
 	@include adjust-font-size-to($base-font-size);
-	// @include adjust-leading-to(1);
+	@include adjust-leading-to(1.25);
 	font-family:$font-button;
 	// Uppercase works better than lowercase.
 	text-transform:uppercase;
@@ -105,37 +90,89 @@ input[type="file"] + input[type="submit"] { // Adapts height of button next to f
 	}
 }
 
+.button--cancel {
+	@if $button-style == fill  {
+		background-color: $button-cancel-color;
+		// We check the user input value and decide the color of our font:
+		@if lightness($button-cancel-color) >= 50 {
+			color: $font-color;
+		} @else {
+			color: $white;
+		}
+		&:hover {
+			background:shade($button-cancel-color, 33%);
+		}
+	} @else if $button-style == outline {
+		border:$button-border-width solid $button-cancel-color;
+		&:hover {
+			background:$button-cancel-color;
+			@if lightness($button-cancel-color) >= 50 {
+				color: $font-color;
+			} @else {
+				color: $white;
+			}
+		}
+	} @else {
+		@error "Invalid value for $button-style in _init.scss. It must be either outline or fill"
+	}
+}
+
+.button--small {
+	padding:0 rhythm(0.25);
+	@include adjust-font-size-to($h5-font-size);
+}
+
 //
 // FORMS
 //
 
 .settings-form {
-
-}
-
-.form-item {
-	margin-bottom:rhythm(1);
-	label {
-		font-family:$alt-font-family;
-		font-weight:bold;
-		display:block;
+	select + input[type="submit"],
+	input + input[type="submit"]  {
+		// If there is a select and a input, we make the borders collapse.
+		// Hackish, but beautiful and degrades gracefully.
+		margin-left:-1px;
+	}
+	input[type="file"] + input[type="submit"], 
+	.instruct + input[type="submit"] { // Adapts height of button next to file uploads
+		vertical-align:baseline;
+		margin-left:$gutter / 2;
 	}
 }
 
-.form-subitem {
-	display:block;
-	margin-left:$gutter;
-	padding-bottom:rhythm(0.5);
-	padding-left:$gutter;
-	border-left:1px solid $line-color;
+.form-row {
+	margin-bottom:rhythm(1);
+	padding-bottom:rhythm(1);
+	border-bottom:1px dotted $line-color-light;
+	label {
+		font-weight:bold;
+		margin-bottom:rhythm(1);
+		display:block;
+	}
+	.label--inline {
+		display:inline-block;
+		margin-right: $gutter/2;
+		margin-bottom:0;
+	}
+}
+
+.form-subrow {
+	padding-left:1.25 *$gutter;
+	margin-left:0.25 * $gutter;
+	border-left:1px solid $line-color-light;
 	&:last-of-type {
 		padding-bottom:0;
 	}
 	label {
 		font-weight:normal;
-		display:inline-block;
-		margin:0 $gutter/2;
+		display:inline;
+		font-family:$alt-font-family;
+		margin:0 $gutter 0 0;
 	}
+}
+
+.form-group {
+	margin-bottom:rhythm(0.5);
 }
 
 .instruct {
@@ -145,4 +182,16 @@ input[type="file"] + input[type="submit"] { // Adapts height of button next to f
 	@include breakpoint($small) {
 		@include adjust-font-size-to($h5-font-size, 0.75);
 	}
+}
+
+.buttons {
+	padding: $gutter/2 0;
+	border-top:1px solid $line-color;
+	border-bottom:1px solid $line-color;
+}
+
+.form-required {
+	@include adjust-font-size-to($h5-font-size);
+	font-family:$alt-font-family;
+	color:$light-color;
 }

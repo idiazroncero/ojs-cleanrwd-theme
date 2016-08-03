@@ -892,55 +892,38 @@ input,
 select {
   font-size: 14px;
   font-size: 0.85rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  height: 2.25rem;
-  background-color: #fff !important;
+  line-height: 30px;
+  line-height: 1.875rem;
+  background-color: transparent;
   border-radius: 0px;
-  border: 1px solid #adadad;
+  border: 1px solid #858585;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 100%;
   vertical-align: middle; }
 
-/* line 29, ../sass/modules/_forms.scss */
+/* line 27, ../sass/modules/_forms.scss */
 select {
-  padding: 0.1875rem 0;
-  height: 2.25rem; }
-  /* line 33, ../sass/modules/_forms.scss */
+  padding: 0.405rem 0; }
+  /* line 29, ../sass/modules/_forms.scss */
   select option {
     max-width: 100%; }
 
-/* line 39, ../sass/modules/_forms.scss */
+/* line 35, ../sass/modules/_forms.scss */
 input[type="text"], input[type="password"] {
   padding: 0 0.375rem; }
 
-/* line 44, ../sass/modules/_forms.scss */
-input[type="submit"] {
-  font-size: 14px;
-  font-size: 0.85rem;
-  line-height: 12px;
-  line-height: 0.75rem;
-  padding: 0 5px; }
-
-/* line 49, ../sass/modules/_forms.scss */
-input[type="file"] + input[type="submit"] {
-  padding: 0.1875rem 0.75rem;
-  height: 1.875rem;
-  vertical-align: baseline; }
-
-/* line 59, ../sass/modules/_forms.scss */
+/* line 45, ../sass/modules/_forms.scss */
 .button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-journal-journals #content p .action {
-  padding: 0.375rem 0.75rem;
-  height: 2.25rem;
+  padding: 0 0.75rem;
   display: inline-block;
   vertical-align: middle;
   font-size: 16px;
   font-size: 1rem;
   line-height: 24px;
   line-height: 1.5rem;
+  line-height: 30px;
+  line-height: 1.875rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   border-radius: 0px;
@@ -949,52 +932,103 @@ input[type="file"] + input[type="submit"] {
   background-color: transparent;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 76, ../sass/modules/_forms.scss */
+  /* line 61, ../sass/modules/_forms.scss */
   .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
     text-decoration: none; }
-  /* line 95, ../sass/modules/_forms.scss */
+  /* line 80, ../sass/modules/_forms.scss */
   .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
     background: #3C7861;
     color: #fff; }
 
-/* line 116, ../sass/modules/_forms.scss */
-.form-item {
-  margin-bottom: 1.5rem; }
-  /* line 118, ../sass/modules/_forms.scss */
-  .form-item label {
-    font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+/* line 93, ../sass/modules/_forms.scss */
+.button--cancel {
+  border: 1px solid #A34531; }
+  /* line 107, ../sass/modules/_forms.scss */
+  .button--cancel:hover {
+    background: #A34531;
+    color: #fff; }
+
+/* line 120, ../sass/modules/_forms.scss */
+.button--small {
+  padding: 0 0.375rem;
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+
+/* line 130, ../sass/modules/_forms.scss */
+.settings-form select + input[type="submit"],
+.settings-form input + input[type="submit"] {
+  margin-left: -1px; }
+/* line 136, ../sass/modules/_forms.scss */
+.settings-form input[type="file"] + input[type="submit"],
+.settings-form .instruct + input[type="submit"] {
+  vertical-align: baseline;
+  margin-left: 12px; }
+
+/* line 143, ../sass/modules/_forms.scss */
+.form-row {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dotted #b6b6b6; }
+  /* line 147, ../sass/modules/_forms.scss */
+  .form-row label {
     font-weight: bold;
+    margin-bottom: 1.5rem;
     display: block; }
-
-/* line 125, ../sass/modules/_forms.scss */
-.form-subitem {
-  display: block;
-  margin-left: 24px;
-  padding-bottom: 0.75rem;
-  padding-left: 24px;
-  border-left: 1px solid #adadad; }
-  /* line 131, ../sass/modules/_forms.scss */
-  .form-subitem:last-of-type {
-    padding-bottom: 0; }
-  /* line 134, ../sass/modules/_forms.scss */
-  .form-subitem label {
-    font-weight: normal;
+  /* line 152, ../sass/modules/_forms.scss */
+  .form-row .label--inline {
     display: inline-block;
-    margin: 0 12px; }
+    margin-right: 12px;
+    margin-bottom: 0; }
 
-/* line 141, ../sass/modules/_forms.scss */
+/* line 159, ../sass/modules/_forms.scss */
+.form-subrow {
+  padding-left: 30px;
+  margin-left: 6px;
+  border-left: 1px solid #b6b6b6; }
+  /* line 163, ../sass/modules/_forms.scss */
+  .form-subrow:last-of-type {
+    padding-bottom: 0; }
+  /* line 166, ../sass/modules/_forms.scss */
+  .form-subrow label {
+    font-weight: normal;
+    display: inline;
+    font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+    margin: 0 24px 0 0; }
+
+/* line 174, ../sass/modules/_forms.scss */
+.form-group {
+  margin-bottom: 0.75rem; }
+
+/* line 178, ../sass/modules/_forms.scss */
 .instruct {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   line-height: 18px;
   line-height: 1.125rem;
   margin: 0; }
   @media (min-width: 480px) {
-    /* line 141, ../sass/modules/_forms.scss */
+    /* line 178, ../sass/modules/_forms.scss */
     .instruct {
       font-size: 14px;
       font-size: 0.85rem;
       line-height: 18px;
       line-height: 1.125rem; } }
+
+/* line 187, ../sass/modules/_forms.scss */
+.buttons {
+  padding: 12px 0;
+  border-top: 1px solid #858585;
+  border-bottom: 1px solid #858585; }
+
+/* line 193, ../sass/modules/_forms.scss */
+.form-required {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  color: #858585; }
 
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
@@ -1026,7 +1060,7 @@ input[type="file"] + input[type="submit"] {
   padding: 0;
   overflow: hidden;
   *zoom: 1;
-  border-bottom: 1px solid #adadad;
+  border-bottom: 1px solid #858585;
   margin-bottom: 1.5rem;
   color: #fff; }
   @media (min-width: 480px) {
@@ -1144,7 +1178,7 @@ input[type="file"] + input[type="submit"] {
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  border-top: 0.375rem solid #cecece;
+  border-top: 0.375rem solid #b6b6b6;
   display: block;
   text-transform: uppercase; }
 /* line 48, ../sass/modules/_sidebar.scss */
@@ -1170,7 +1204,7 @@ input[type="file"] + input[type="submit"] {
       display: inline;
       float: left;
       margin-left: -1.5rem;
-      color: #adadad; }
+      color: #858585; }
 
 /* line 84, ../sass/modules/_sidebar.scss */
 #sidebarLanguageToggle select {
@@ -1231,7 +1265,7 @@ input[type="file"] + input[type="submit"] {
   padding: 0;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   font-weight: normal;
-  border-bottom: 1px solid #adadad; }
+  border-bottom: 1px solid #858585; }
 
 /* line 10, ../sass/modules/_main.scss */
 #main h3 {
@@ -1277,7 +1311,7 @@ input[type="file"] + input[type="submit"] {
 /* line 50, ../sass/modules/_main.scss */
 .section {
   margin-bottom: 1.5rem;
-  border-bottom: 1px dotted #cecece; }
+  border-bottom: 1px dotted #b6b6b6; }
 
 /* line 1, ../sass/modules/_ui-pnotify.scss */
 .ui-pnotify-history-container {
@@ -1393,15 +1427,11 @@ td select,
 td input {
   vertical-align: middle;
   display: inline-block; }
-/* line 91, ../sass/modules/_tables.scss */
-td select + input[type="submit"],
-td input + input[type="submit"] {
-  margin-left: -1px; }
-/* line 97, ../sass/modules/_tables.scss */
+/* line 92, ../sass/modules/_tables.scss */
 td input[type="file"] + input[type="submit"] {
   margin-left: 5px; }
 
-/* line 111, ../sass/modules/_tables.scss */
+/* line 106, ../sass/modules/_tables.scss */
 .instruct,
 span.formRequired,
 td.label,
@@ -1415,7 +1445,7 @@ td label {
   line-height: 18px;
   line-height: 1.125rem; }
   @media (min-width: 480px) {
-    /* line 111, ../sass/modules/_tables.scss */
+    /* line 106, ../sass/modules/_tables.scss */
     .instruct,
     span.formRequired,
     td.label,
@@ -1430,12 +1460,12 @@ td label {
       line-height: 18px;
       line-height: 1.125rem; } }
 
-/* line 124, ../sass/modules/_tables.scss */
+/* line 119, ../sass/modules/_tables.scss */
 td.label, #installLanguages tr td:first-child, #installNewLocales label, #installNewLocales .formError {
   padding-right: 1.5rem;
   font-weight: bold; }
 
-/* line 132, ../sass/modules/_tables.scss */
+/* line 127, ../sass/modules/_tables.scss */
 table.listing th, #pkp-common-languages table table.data th,
 table.listing tr.heading td,
 #pkp-common-languages table table.data tr.heading td,
@@ -1457,7 +1487,7 @@ table.info td.heading,
   font-weight: bold;
   padding: 0.375rem 0.375rem 0.375rem 0; }
 
-/* line 143, ../sass/modules/_tables.scss */
+/* line 138, ../sass/modules/_tables.scss */
 td.nodata {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -1467,70 +1497,70 @@ td.nodata {
   text-transform: uppercase;
   font-style: normal !important; }
 
-/* line 150, ../sass/modules/_tables.scss */
+/* line 145, ../sass/modules/_tables.scss */
 td .action {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
-/* line 159, ../sass/modules/_tables.scss */
+/* line 154, ../sass/modules/_tables.scss */
 table.data td.separator {
   padding: 1.5rem; }
 
-/* line 164, ../sass/modules/_tables.scss */
+/* line 159, ../sass/modules/_tables.scss */
 table.data td.heading {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 174, ../sass/modules/_tables.scss */
+/* line 169, ../sass/modules/_tables.scss */
 table.listing td.headseparator, #pkp-common-languages table table.data td.headseparator {
-  border-top: 1px solid #adadad;
+  border-top: 1px solid #858585;
   padding: 0; }
 
-/* line 181, ../sass/modules/_tables.scss */
+/* line 176, ../sass/modules/_tables.scss */
 table.listing tr.data td, #pkp-common-languages table table.data tr.data td {
   border-top: none;
-  border-bottom: 1px solid #cecece; }
+  border-bottom: 1px solid #b6b6b6; }
 
-/* line 186, ../sass/modules/_tables.scss */
+/* line 181, ../sass/modules/_tables.scss */
 table.listing tr.data td.drag, #pkp-common-languages table table.data tr.data td.drag {
   cursor: move; }
 
-/* line 190, ../sass/modules/_tables.scss */
+/* line 185, ../sass/modules/_tables.scss */
 table.listing td.separator, #pkp-common-languages table table.data td.separator, table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 195, ../sass/modules/_tables.scss */
+/* line 190, ../sass/modules/_tables.scss */
 table.listing td.endseparator, #pkp-common-languages table table.data td.endseparator {
   display: none; }
 
-/* line 200, ../sass/modules/_tables.scss */
+/* line 195, ../sass/modules/_tables.scss */
 table.listing td, #pkp-common-languages table table.data td {
   padding: 0.375rem 0.375rem 0.375rem 0; }
 
-/* line 207, ../sass/modules/_tables.scss */
+/* line 202, ../sass/modules/_tables.scss */
 table.info td {
   padding: 0;
   padding-bottom: 0.5em;
   padding-right: 0.5em; }
 
-/* line 214, ../sass/modules/_tables.scss */
+/* line 209, ../sass/modules/_tables.scss */
 table.listing td.nodata, #pkp-common-languages table table.data td.nodata, table.info td.nodata {
   text-align: center;
   font-style: italic; }
 
-/* line 219, ../sass/modules/_tables.scss */
+/* line 214, ../sass/modules/_tables.scss */
 table.info td.separator {
   border-top: 1px dotted #DDDDD0;
   font-size: 0.1em;
   line-height: 1%; }
 
-/* line 227, ../sass/modules/_tables.scss */
+/* line 222, ../sass/modules/_tables.scss */
 table.nested tr {
   padding: 0;
   margin: 0; }
 
-/* line 232, ../sass/modules/_tables.scss */
+/* line 227, ../sass/modules/_tables.scss */
 span.nested {
   padding: 0 4px 0 0;
   font-size: 1.2em; }
@@ -1817,21 +1847,21 @@ ul.steplist li {
       text-align: left;
       margin-right: 0.75rem;
       padding-right: 0.75rem;
-      border-right: 1px solid #cecece; }
+      border-right: 1px solid #b6b6b6; }
       /* line 23, ../sass/modules/_steplist.scss */
       ul.steplist li:last-child {
         border-right: none; } }
 
 /* line 29, ../sass/modules/_steplist.scss */
 ul.steplist li.current a {
-  border-bottom: 0.1875rem solid #adadad;
+  border-bottom: 0.1875rem solid #858585;
   margin-bottom: -0.1875rem; }
 
 /* line 1, ../sass/modules/_filtergrid.scss */
 div.pkp_controllers_grid {
   margin-bottom: 1.5rem;
   padding: 0.75rem;
-  border: 1px solid #cecece; }
+  border: 1px solid #b6b6b6; }
 
 /* line 9, ../sass/modules/_filtergrid.scss */
 div.pkp_controllers_grid .wrapper {
@@ -1916,7 +1946,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   margin-bottom: 0; }
 /* line 15, ../sass/pages/_userHome.scss */
 #pkp-user-userHome #myJournals > div {
-  border-bottom: 1px solid #cecece;
+  border-bottom: 1px solid #b6b6b6;
   margin-bottom: 0.75rem; }
   /* line 18, ../sass/pages/_userHome.scss */
   #pkp-user-userHome #myJournals > div:last-child {
@@ -1975,7 +2005,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   margin-bottom: 0; }
 /* line 11, ../sass/pages/_helpPopup.scss */
 #pkp-common-openJournalSystems div.thickSeparator {
-  border-bottom: 1px solid #adadad; }
+  border-bottom: 1px solid #858585; }
 /* line 14, ../sass/pages/_helpPopup.scss */
 #pkp-common-openJournalSystems #sidebar {
   padding-top: 1.5rem; }
@@ -2112,7 +2142,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     #left-sidebar {
       float: left;
       width: 23%;
-      border-right: 1px solid #adadad; } }
+      border-right: 1px solid #858585; } }
 
 /* line 80, ../sass/layout/_layout.scss */
 #right-sidebar {
@@ -2123,7 +2153,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     #right-sidebar {
       float: right;
       width: 23%;
-      border-left: 1px solid #adadad; } }
+      border-left: 1px solid #858585; } }
 
 /* line 94, ../sass/layout/_layout.scss */
 #body {

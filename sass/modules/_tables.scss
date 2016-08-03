@@ -88,12 +88,7 @@ td {
 		vertical-align:middle;
 		display:inline-block;
 	}
-	select + input[type="submit"],
-	input + input[type="submit"]  {
-		// If there is a select and a input, we make the borders collapse.
-		// Hackish, but beautiful and degrades gracefully.
-		margin-left:-1px;
-	}
+
 	input[type="file"] + input[type="submit"]  {
 		// Exception: file upload fields
 		margin-left:5px;

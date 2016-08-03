@@ -94,12 +94,13 @@ $white: #fff;
 // A light and a dark colors (usually grays, as your font-color will be a shade of black).
 // It is a good idea to define them as variations of $font-color in order to achieve a simple scale of grays
 // You can modify the percents in order to achieve lighter/darker versions.
-$light-color: tint($font-color, 60%);
-$dark-color: shade($font-color, 60%);
+$light-color: tint($font-color, 40%);
+$dark-color: shade($font-color, 40%);
 
 // Optionally, define a main-color and a secondary-color to reuse on single components.
 $main-color: #3C7861;
 $secondary-color: #008080;
+$main-color-red: #A34531; // For cancel / error buttons and messages
 
 // Default color for lines, separators, etc.
 $line-color: $light-color;
@@ -174,6 +175,7 @@ $button-style: outline;		// Possible values:
 							// outline: only border, gets background-color on :hover
 							// fill: background-color, gets darker on :hover, no border
 $button-color: $main-color ; // Background or border color
+$button-cancel-color: $main-color-red;
 $button-border-width: 1px; // Want plain buttons? Set this value to 0
 $button-border-radius: $border-radius; // Want square buttons? Se tthis value to 0
 
