@@ -7,7 +7,7 @@
 	}
 	table table.data {
 		margin-top:rhythm(1);
-		@extend table.listing;
+		// @extend table.listing;
 		tr:first-child { // Mirror the .heading class
 			float:left;
 			width:20% !important;

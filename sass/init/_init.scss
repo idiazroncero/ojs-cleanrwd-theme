@@ -103,7 +103,7 @@ $secondary-color: #008080;
 $main-color-red: #A34531; // For cancel / error buttons and messages
 
 // Default color for lines, separators, etc.
-$line-color: $light-color;
+$line-color: #CCC;
 $line-color-light: tint($line-color, 40%);
 
 // Background-color for the whole webpage

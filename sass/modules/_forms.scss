@@ -67,8 +67,14 @@ input[type="text"], input[type="password"] {
 		// We check the user input value and decide the color of our font:
 		@if lightness($button-color) >= 50 {
 			color: $font-color;
+			&:link, &:visited, &:focus, &:active {
+				color: $font-color;
+			}
 		} @else {
 			color: $white;
+			&:link, &:visited, &:focus, &:active {
+				color: $white;
+			}
 		}
 		&:hover {
 			background:shade($button-color, 33%);
@@ -77,6 +83,9 @@ input[type="text"], input[type="password"] {
 		background-color: transparent;
 		border:$button-border-width solid $button-color;
 		color: $font-color;
+		&:link, &:visited, &:focus, &:active {
+			color: $font-color;
+		}
 		&:hover {
 			background:$button-color;
 			@if lightness($button-color) >= 50 {
@@ -96,8 +105,14 @@ input[type="text"], input[type="password"] {
 		// We check the user input value and decide the color of our font:
 		@if lightness($button-cancel-color) >= 50 {
 			color: $font-color;
+			&:link, &:visited, &:focus, &:active {
+				color: $font-color;
+			}
 		} @else {
 			color: $white;
+			&:link, &:visited, &:focus, &:active {
+				color: $white;
+			}
 		}
 		&:hover {
 			background:shade($button-cancel-color, 33%);
@@ -144,10 +159,14 @@ input[type="text"], input[type="password"] {
 	margin-bottom:rhythm(1);
 	padding-bottom:rhythm(1);
 	border-bottom:1px dotted $line-color-light;
-	label {
+	label, .label {
 		font-weight:bold;
 		margin-bottom:rhythm(1);
 		display:block;
+		.instruct {
+			font-weight:normal;
+			display:block;
+		}
 	}
 	.label--inline {
 		display:inline-block;
