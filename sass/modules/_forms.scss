@@ -80,7 +80,7 @@ input[type="text"], input[type="password"] {
 			background:shade($button-color, 33%);
 		}
 	} @else if $button-style == outline {
-		background-color: transparent;
+		background-color: #fff;
 		border:$button-border-width solid $button-color;
 		color: $font-color;
 		&:link, &:visited, &:focus, &:active {
@@ -203,14 +203,32 @@ input[type="text"], input[type="password"] {
 	}
 }
 
+.instruct--spaced {
+	margin-bottom:rhythm(1);
+}
+
 .buttons {
-	padding: $gutter/2 0;
-	border-top:1px solid $line-color;
+	padding: $gutter/2;
+	background: $smoke;
+	margin-bottom:rhythm(1);
 	border-bottom:1px solid $line-color;
+}
+
+.options {
+	@include adjust-font-size-to($h5-font-size);
+	font-family:$alt-font-family;
+	a {
+		@include adjust-font-size-to($h5-font-size);
+	}
 }
 
 .form-required {
 	@include adjust-font-size-to($h5-font-size);
 	font-family:$alt-font-family;
 	color:$light-color;
+}
+
+.form-error {
+	color:$main-color-red;
+	@include adjust-font-size-to($h5-font-size);
 }

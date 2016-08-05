@@ -257,7 +257,8 @@ hr {
   height: 0;
   /* 1 */
   overflow: visible;
-  /* 2 */ }
+  /* 2 */
+  margin: 1.5rem 0; }
 
 /* Forms
    ========================================================================== */
@@ -265,7 +266,7 @@ hr {
  * 1. Change font properties to `inherit` in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
-/* line 276, ../sass/init/_normalize.scss */
+/* line 277, ../sass/init/_normalize.scss */
 button,
 input,
 select,
@@ -278,7 +279,7 @@ textarea {
 /**
  * Restore the font weight unset by the previous rule.
  */
-/* line 288, ../sass/init/_normalize.scss */
+/* line 289, ../sass/init/_normalize.scss */
 optgroup {
   font-weight: bold; }
 
@@ -286,7 +287,7 @@ optgroup {
  * Show the overflow in IE.
  * 1. Show the overflow in Edge.
  */
-/* line 297, ../sass/init/_normalize.scss */
+/* line 298, ../sass/init/_normalize.scss */
 button,
 input {
   /* 1 */
@@ -296,7 +297,7 @@ input {
  * Remove the inheritance of text transform in Edge, Firefox, and IE.
  * 1. Remove the inheritance of text transform in Firefox.
  */
-/* line 307, ../sass/init/_normalize.scss */
+/* line 308, ../sass/init/_normalize.scss */
 button,
 select {
   /* 1 */
@@ -307,7 +308,7 @@ select {
  *    controls in Android 4.
  * 2. Correct the inability to style clickable types in iOS and Safari.
  */
-/* line 318, ../sass/init/_normalize.scss */
+/* line 319, ../sass/init/_normalize.scss */
 button,
 html [type="button"],
 [type="reset"],
@@ -318,7 +319,7 @@ html [type="button"],
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 329, ../sass/init/_normalize.scss */
+/* line 330, ../sass/init/_normalize.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -329,7 +330,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 341, ../sass/init/_normalize.scss */
+/* line 342, ../sass/init/_normalize.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -339,7 +340,7 @@ button:-moz-focusring,
 /**
  * Change the border, margin, and padding in all browsers (opinionated).
  */
-/* line 352, ../sass/init/_normalize.scss */
+/* line 353, ../sass/init/_normalize.scss */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
@@ -351,7 +352,7 @@ fieldset {
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
-/* line 365, ../sass/init/_normalize.scss */
+/* line 366, ../sass/init/_normalize.scss */
 legend {
   box-sizing: border-box;
   /* 1 */
@@ -369,7 +370,7 @@ legend {
 /**
  * Remove the default vertical scrollbar in IE.
  */
-/* line 378, ../sass/init/_normalize.scss */
+/* line 379, ../sass/init/_normalize.scss */
 textarea {
   overflow: auto; }
 
@@ -377,7 +378,7 @@ textarea {
  * 1. Add the correct box sizing in IE 10-.
  * 2. Remove the padding in IE 10-.
  */
-/* line 387, ../sass/init/_normalize.scss */
+/* line 388, ../sass/init/_normalize.scss */
 [type="checkbox"],
 [type="radio"] {
   box-sizing: border-box;
@@ -388,7 +389,7 @@ textarea {
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
  */
-/* line 397, ../sass/init/_normalize.scss */
+/* line 398, ../sass/init/_normalize.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto; }
@@ -397,7 +398,7 @@ textarea {
  * 1. Correct the odd appearance in Chrome and Safari.
  * 2. Correct the outline style in Safari.
  */
-/* line 407, ../sass/init/_normalize.scss */
+/* line 408, ../sass/init/_normalize.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -407,7 +408,7 @@ textarea {
 /**
  * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
  */
-/* line 416, ../sass/init/_normalize.scss */
+/* line 417, ../sass/init/_normalize.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -415,7 +416,7 @@ textarea {
 /**
  * Correct the text style of placeholders in Chrome, Edge, and Safari.
  */
-/* line 425, ../sass/init/_normalize.scss */
+/* line 426, ../sass/init/_normalize.scss */
 ::-webkit-input-placeholder {
   color: inherit;
   opacity: 0.54; }
@@ -424,7 +425,7 @@ textarea {
  * 1. Correct the inability to style clickable types in iOS and Safari.
  * 2. Change font properties to `inherit` in Safari.
  */
-/* line 435, ../sass/init/_normalize.scss */
+/* line 436, ../sass/init/_normalize.scss */
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
   /* 1 */
@@ -890,7 +891,7 @@ select {
   line-height: 1.875rem;
   background-color: transparent;
   border-radius: 0px;
-  border: 1px solid #858585;
+  border: 1px solid #cccccc;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   max-width: 100%;
@@ -923,7 +924,7 @@ input[type="text"], input[type="password"] {
   border-radius: 0px;
   cursor: pointer;
   text-decoration: none;
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #3C7861;
   color: #333; }
   /* line 61, ../sass/modules/_forms.scss */
@@ -1017,19 +1018,46 @@ input[type="text"], input[type="password"] {
       line-height: 1.125rem; } }
 
 /* line 206, ../sass/modules/_forms.scss */
+.instruct--spaced {
+  margin-bottom: 1.5rem; }
+
+/* line 210, ../sass/modules/_forms.scss */
 .buttons {
-  padding: 12px 0;
-  border-top: 1px solid #CCC;
+  padding: 12px;
+  background: #f5f5f5;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid #CCC; }
 
-/* line 212, ../sass/modules/_forms.scss */
+/* line 217, ../sass/modules/_forms.scss */
+.options {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+  /* line 220, ../sass/modules/_forms.scss */
+  .options a {
+    font-size: 14px;
+    font-size: 0.85rem;
+    line-height: 24px;
+    line-height: 1.5rem; }
+
+/* line 225, ../sass/modules/_forms.scss */
 .form-required {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  color: #858585; }
+  color: #cccccc; }
+
+/* line 231, ../sass/modules/_forms.scss */
+.form-error {
+  color: #A34531;
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
 
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
@@ -1205,7 +1233,7 @@ input[type="text"], input[type="password"] {
       display: inline;
       float: left;
       margin-left: -1.5rem;
-      color: #858585; }
+      color: #cccccc; }
 
 /* line 84, ../sass/modules/_sidebar.scss */
 #sidebarLanguageToggle select {
@@ -1837,35 +1865,6 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-admin-siteSettings #oneStepReset {
   margin-top: 0.495rem; }
 
-/* line 2, ../sass/pages/_languages.scss */
-#pkp-common-languages td {
-  text-align: left; }
-  @media (min-width: 768px) {
-    /* line 2, ../sass/pages/_languages.scss */
-    #pkp-common-languages td {
-      text-align: inherit; } }
-/* line 8, ../sass/pages/_languages.scss */
-#pkp-common-languages table table.data {
-  margin-top: 1.5rem; }
-  /* line 11, ../sass/pages/_languages.scss */
-  #pkp-common-languages table table.data tr:first-child {
-    float: left;
-    width: 20% !important; }
-    /* line 14, ../sass/pages/_languages.scss */
-    #pkp-common-languages table table.data tr:first-child td:first-child {
-      display: none; }
-
-/* line 27, ../sass/pages/_languages.scss */
-#installLanguages tr td:last-child a {
-  font-size: 14px;
-  font-size: 0.85rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
-
-/* line 37, ../sass/pages/_languages.scss */
-#installNewLocales .button, #installNewLocales #pkp-admin-categories #categories > a, #pkp-admin-categories #installNewLocales #categories > a, #installNewLocales #pkp-section-sections #sections > .action, #pkp-section-sections #installNewLocales #sections > .action, #installNewLocales #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #installNewLocales #reviewForms > .action, #installNewLocales #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #installNewLocales #reviewFormElements > .action, #installNewLocales #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #installNewLocales .action {
-  margin-top: 1.5rem; }
-
 /* line 2, ../sass/pages/_helpPopup.scss */
 #pkp-common-openJournalSystems #main h4 {
   font-size: 51px;
@@ -1903,7 +1902,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #pkp-manager-setup-journalPolicies #reviewProcess .separator {
   display: none; }
 /* line 7, ../sass/pages/_journalPolicies.scss */
-#pkp-manager-setup-journalPolicies #reviewProcess td.label, #pkp-manager-setup-journalPolicies #reviewProcess #installLanguages tr td:first-child, #installLanguages tr #pkp-manager-setup-journalPolicies #reviewProcess td:first-child, #pkp-manager-setup-journalPolicies #reviewProcess #installNewLocales label, #installNewLocales #pkp-manager-setup-journalPolicies #reviewProcess label, #pkp-manager-setup-journalPolicies #reviewProcess #installNewLocales .formError, #installNewLocales #pkp-manager-setup-journalPolicies #reviewProcess .formError {
+#pkp-manager-setup-journalPolicies #reviewProcess td.label {
   text-align: left; }
 /* line 12, ../sass/pages/_journalPolicies.scss */
 #pkp-manager-setup-journalPolicies .instruct {

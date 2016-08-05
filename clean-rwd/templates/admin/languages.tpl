@@ -15,93 +15,98 @@
 
 <form method="post" action="{url op="saveLanguageSettings"}">
 <div id="languageSettings">
-<h3>{translate key="admin.languages.languageSettings"}</h3>
+	<h3>{translate key="admin.languages.languageSettings"}</h3>
 
-<table class="form">
-<tr valign="top">
-	<td width="20%" class="label">{translate key="locale.primary"}</td>
-	<td width="80%" class="value">
+	<div class="form-row">
+		<p class="label">{translate key="locale.primary"}<span class="instruct">{translate key="admin.languages.primaryLocaleInstructions"}</></p>
 		<select name="primaryLocale" id="primaryLocale" size="1" class="selectMenu">
-		{foreach from=$installedLocales item=localeKey}
-			<option value="{$localeKey|escape}"{if $localeKey == $primaryLocale} selected="selected"{/if}>{$localeNames.$localeKey|escape}</option>
-		{/foreach}
+			{foreach from=$installedLocales item=localeKey}
+				<option value="{$localeKey|escape}"{if $localeKey == $primaryLocale} selected="selected"{/if}>{$localeNames.$localeKey|escape}</option>
+			{/foreach}
 		</select>
-		<br />
-		<span class="instruct">{translate key="admin.languages.primaryLocaleInstructions"}</span>
-	</td>
-</tr>
-<tr valign="top">
-	<td class="label">{translate key="locale.supported"}</td>
-	<td>
-		<table width="100%">
-		{foreach from=$installedLocales item=localeKey}
-		<tr valign="top">
-			<td width="5%"><input type="checkbox" name="supportedLocales[]" id="supportedLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if in_array($localeKey, $supportedLocales)} checked="checked"{/if} /></td>
-			<td width="95%">
-				<label for="supportedLocales-{$localeKey|escape}">{$localeNames.$localeKey|escape}</label>
-				{if !$localesComplete[$localeKey]}
-					<span class="formError">*</span>
-					{assign var=incompleteLocaleFound value=1}
-				{/if}
-			</td>
-		</tr>
-		{/foreach}
-		</table>
-		<span class="instruct">{translate key="admin.languages.supportedLocalesInstructions"}</span>
-		{if $incompleteLocaleFound}
-			<br/>
-			<span class="formError">*</span>&nbsp;{translate key="admin.locale.maybeIncomplete"}
-		{/if}{* $incompleteLocaleFound *}
-	</td>
-</tr>
-</table>
-</div>
-<p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="admin" escape=false}'" /></p>
+	</div>
+	<div class="form-row">
+		<p class="label">{translate key="locale.supported"}</p>
+			<div class="form-subrow">
+				<ul>
+				{foreach from=$installedLocales item=localeKey}
+					<li>
+						<input type="checkbox" name="supportedLocales[]" id="supportedLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if in_array($localeKey, $supportedLocales)} checked="checked"{/if} />
+						<label for="supportedLocales-{$localeKey|escape}">{$localeNames.$localeKey|escape}</label>
+						{if !$localesComplete[$localeKey]}
+							<span class="formError">*</span>
+							{assign var=incompleteLocaleFound value=1}
+						{/if}
+					</li>
+				{/foreach}
+				</ul>
+			</div>
+			<p class="instruct">{translate key="admin.languages.supportedLocalesInstructions"}</p>
+			{if $incompleteLocaleFound}
+				<span class="formError">*</span>&nbsp;{translate key="admin.locale.maybeIncomplete"}
+			{/if}{* $incompleteLocaleFound *}
+		</td>
+	</div>
 
+	<div class="buttons">
+		<input type="submit" value="{translate key="common.save"}" class="button" />
+		<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url page="admin" escape=false}'" />
+	</div>
+	</div>
 </form>
-
-<div class="separator"></div>
 
 <form method="post" action="{url op="installLocale"}">
-<div id="installLanguages">
-<h3>{translate key="admin.languages.installLanguages"}</h3>
-<h4>{translate key="admin.languages.installedLocales"}</h4>
-<table class="data" width="100%">
-{foreach from=$installedLocales item=localeKey}
-<tr valign="top">
-	<td width="30%">&bull;&nbsp;{$localeNames.$localeKey|escape} ({$localeKey|escape})</td>
-	<td width="70%"><a href="{url op="reloadLocale" locale=$localeKey}" onclick="return confirm('{translate|escape:"jsparam" key="admin.languages.confirmReload"}')" class="action">{translate key="admin.languages.reload"}</a>&nbsp;|&nbsp;<a href="{url op="reloadDefaultEmailTemplates" locale=$localeKey}" class="action">{translate key="admin.languages.reloadDefaultEmailTemplates"}</a>{if $localeKey != $primaryLocale}&nbsp;|&nbsp;<a href="{url op="uninstallLocale" locale=$localeKey}" onclick="return confirm('{translate|escape:"jsparam" key="admin.languages.confirmUninstall"}')" class="action">{translate key="admin.languages.uninstall"}</a>{/if}</td>
-</tr>
-{/foreach}
-</table>
-</div>
+	<div id="installLanguages">
+		<h3>{translate key="admin.languages.installLanguages"}</h3>
+		<h4>{translate key="admin.languages.installedLocales"}</h4>
+		{foreach from=$installedLocales item=localeKey}
+		<div class="form-row">
+			<p class="label">{$localeNames.$localeKey|escape} ({$localeKey|escape})</p>
+			<div class="options">
+				<a href="{url op="reloadLocale" locale=$localeKey}" onclick="return confirm('{translate|escape:"jsparam" key="admin.languages.confirmReload"}')" class="action">{translate key="admin.languages.reload"}</a>
+				&nbsp;|&nbsp;<a href="{url op="reloadDefaultEmailTemplates" locale=$localeKey}" class="action">{translate key="admin.languages.reloadDefaultEmailTemplates"}</a>
+				{if $localeKey != $primaryLocale}
+					&nbsp;|&nbsp;<a href="{url op="uninstallLocale" locale=$localeKey}" onclick="return confirm('{translate|escape:"jsparam" key="admin.languages.confirmUninstall"}')" class="action">{translate key="admin.languages.uninstall"}</a>
+				{/if}
+			</div>
+		</div>
+		{/foreach}
+	</div>
 <div id="installNewLocales">
-<h4>{translate key="admin.languages.installNewLocales"}</h4>
-<p>{translate key="admin.languages.installNewLocalesInstructions"}</p>
-{assign var=incompleteLocaleFound value=0}
-{foreach from=$uninstalledLocales item=localeKey}
-<input type="checkbox" name="installLocale[]" id="installLocale-{$localeKey|escape}" value="{$localeKey|escape}" /> <label for="installLocale-{$localeKey|escape}">{$localeNames.$localeKey|escape} ({$localeKey|escape})</label>
-{if !$localesComplete[$localeKey]}
-	<span class="formError">*</span>
-	{assign var=incompleteLocaleFound value=1}
-{/if}
-<br />
-{foreachelse}
-{assign var="noLocalesToInstall" value="1"}
-<span class="nodata">{translate key="admin.languages.noLocalesAvailable"}</span>
-{/foreach}
-{if $incompleteLocaleFound}
-	<br />
-	<span class="formError">*</span>&nbsp;{translate key="admin.locale.maybeIncomplete"}
-{/if}{* $incompleteLocaleFound *}
+	<h4>{translate key="admin.languages.installNewLocales"}</h4>
+	<p>
+		{translate key="admin.languages.installNewLocalesInstructions"}
+	</p>
+	{assign var=incompleteLocaleFound value=0}
+	<ul class="form-subrow">
+	{foreach from=$uninstalledLocales item=localeKey}
+		<li>
+			<input type="checkbox" name="installLocale[]" id="installLocale-{$localeKey|escape}" value="{$localeKey|escape}" />&nbsp;<label for="installLocale-{$localeKey|escape}">{$localeNames.$localeKey|escape} ({$localeKey|escape})</label>
+			{if !$localesComplete[$localeKey]}
+				<span class="form-error">*</span>
+				{assign var=incompleteLocaleFound value=1}
+			{/if}
+		</li>
+	{foreachelse}
+		<li>
+		{assign var="noLocalesToInstall" value="1"}
+		<span class="nodata">{translate key="admin.languages.noLocalesAvailable"}</span>
+		</li>
+	{/foreach}
+	</ul>
+	{if $incompleteLocaleFound}
+		<p class="instruct instruct--spaced">* {translate key="admin.locale.maybeIncomplete"}</p>
+	{/if}{* $incompleteLocaleFound *}
 
-{if not $noLocalesToInstall}
-<p><input type="submit" value="{translate key="admin.languages.installLocales"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="admin" escape=false}'" /></p>
-{/if}
+	{if not $noLocalesToInstall}
+	<p class="buttons">
+		<input type="submit" value="{translate key="admin.languages.installLocales"}" class="button" />
+		<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url page="admin" escape=false}'" />
+	</p>
+	{/if}
 </div>
 </form>
 
-<div class="separator"></div>
 <div id="downloadLocales">
 <h3>{translate key="admin.languages.downloadLocales"}</h3>
 
