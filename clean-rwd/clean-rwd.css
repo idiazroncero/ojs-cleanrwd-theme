@@ -980,7 +980,7 @@ input[type="text"], input[type="password"] {
       display: block; }
   /* line 171, ../sass/modules/_forms.scss */
   .form-row .label--inline {
-    display: inline-block;
+    display: inline;
     margin-right: 12px;
     margin-bottom: 0; }
 
