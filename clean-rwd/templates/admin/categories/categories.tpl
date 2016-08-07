@@ -45,7 +45,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveCategory"); });
 		<td colspan="2" class="headseparator">&nbsp;</td>
 	</tr>
 {iterate from=categories item=category key=categoryId}
-	<tr valign="top" id="category-{$categoryId|escape}" class="data">
+	<tr <div class="form-item"> id="category-{$categoryId|escape}" class="data">
 		<td class="drag">
 			{$category|escape}
 		</td>

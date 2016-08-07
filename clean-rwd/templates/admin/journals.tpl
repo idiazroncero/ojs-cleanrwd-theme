@@ -18,8 +18,6 @@ $(document).ready(function() { setupTableDND("#adminJournals", "moveJournal"); }
 {/literal}
 </script>
 
-<br />
-
 <div id="journals">
 	<table class="listing" id="adminJournals">
 		<thead>

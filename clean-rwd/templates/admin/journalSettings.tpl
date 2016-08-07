@@ -44,7 +44,7 @@ function doSubmit() {
 
 <table class="data" width="100%">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"settingsUrl" op="editJournal" path=$journalId escape=false}
@@ -53,15 +53,15 @@ function doSubmit() {
 		</td>
 	</tr>
 {/if}
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td width="20%" class="label">{fieldLabel name="title" key="manager.setup.journalTitle" required="true"}</td>
 		<td width="80%" class="value"><input type="text" id="title" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" size="40" maxlength="120" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td class="label">{fieldLabel name="description" key="admin.journals.journalDescription"}</td>
 		<td class="value"><textarea name="description[{$formLocale|escape}]" id="description" cols="40" rows="10" class="textArea">{$description[$formLocale]|escape}</textarea></td>
 	</tr>
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td class="label">{fieldLabel name="journalPath" key="journal.path" required="true"}</td>
 		<td class="value">
 			<input type="text" id="journalPath" name="journalPath" value="{$journalPath|escape}" size="16" maxlength="32" class="textField" />
@@ -70,7 +70,7 @@ function doSubmit() {
 			<span class="instruct">{translate key="admin.journals.urlWillBe" sampleUrl=$sampleUrl}</span>
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td colspan="2" class="label">
 			<input type="checkbox" name="enabled" id="enabled" value="1"{if $enabled} checked="checked"{/if} /> <label for="enabled">{translate key="admin.journals.enableJournalInstructions"}</label>
 		</td>

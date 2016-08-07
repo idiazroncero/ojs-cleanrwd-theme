@@ -89,7 +89,7 @@
 	</tr>
 	{iterate from=users item=user}
 	{assign var=userExists value=1}
-	<tr valign="top">
+	<tr <div class="form-item">>
 		{if empty($oldUserIds)}
 			<td><input type="checkbox" name="oldUserIds[]" value="{$user->getId()|escape}" {if $thisUser->getId() == $user->getId()}disabled="disabled" {/if}/></td>
 		{/if}

@@ -114,14 +114,14 @@
 
 <table class="data" width="100%">
 	{foreach from=$downloadableLocales item=downloadableLocale}
-		<tr valign="top">
+		<tr <div class="form-item">>
 			<td width="30%">&bull;&nbsp;{$downloadableLocale.name|escape} ({$downloadableLocale.key})</td>
 			<td width="70%">
 				<a href="{url op="downloadLocale" locale=$downloadableLocale.key}" class="action">{translate key="admin.languages.download"}</a>
 			</td>
 		</tr>
 	{foreachelse}
-		<tr valign="top">
+		<tr <div class="form-item">>
 			<td colspan="4" class="nodata">{translate key="common.none"}</td>
 		</tr>
 	{/foreach}
