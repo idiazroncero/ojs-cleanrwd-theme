@@ -882,7 +882,11 @@ td.notificationFunction {
  * But forms are a disaster
  * Please forgive all the nonsensical CSS here.
  */
-/* line 10, ../sass/modules/_forms.scss */
+/* line 8, ../sass/modules/_forms.scss */
+form {
+  margin-bottom: 1.5rem; }
+
+/* line 14, ../sass/modules/_forms.scss */
 input,
 select {
   font-size: 14px;
@@ -897,18 +901,18 @@ select {
   max-width: 100%;
   vertical-align: middle; }
 
-/* line 27, ../sass/modules/_forms.scss */
+/* line 31, ../sass/modules/_forms.scss */
 select {
   padding: 0.405rem 0; }
-  /* line 29, ../sass/modules/_forms.scss */
+  /* line 33, ../sass/modules/_forms.scss */
   select option {
     max-width: 100%; }
 
-/* line 35, ../sass/modules/_forms.scss */
+/* line 39, ../sass/modules/_forms.scss */
 input[type="text"], input[type="password"] {
   padding: 0 0.375rem; }
 
-/* line 45, ../sass/modules/_forms.scss */
+/* line 49, ../sass/modules/_forms.scss */
 .button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-journal-journals #content p .action {
   padding: 0 0.75rem;
   display: inline-block;
@@ -927,26 +931,26 @@ input[type="text"], input[type="password"] {
   background-color: #fff;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 61, ../sass/modules/_forms.scss */
+  /* line 65, ../sass/modules/_forms.scss */
   .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
     text-decoration: none; }
-  /* line 86, ../sass/modules/_forms.scss */
+  /* line 90, ../sass/modules/_forms.scss */
   .button:link, #pkp-admin-categories #categories > a:link, #pkp-section-sections #sections > .action:link, #pkp-manager-reviewForms #reviewForms > .action:link, #pkp-manager-reviewFormElements #reviewFormElements > .action:link, #pkp-journal-journals #content p .action:link, .button:visited, #pkp-admin-categories #categories > a:visited, #pkp-section-sections #sections > .action:visited, #pkp-manager-reviewForms #reviewForms > .action:visited, #pkp-manager-reviewFormElements #reviewFormElements > .action:visited, #pkp-journal-journals #content p .action:visited, .button:focus, #pkp-admin-categories #categories > a:focus, #pkp-section-sections #sections > .action:focus, #pkp-manager-reviewForms #reviewForms > .action:focus, #pkp-manager-reviewFormElements #reviewFormElements > .action:focus, #pkp-journal-journals #content p .action:focus, .button:active, #pkp-admin-categories #categories > a:active, #pkp-section-sections #sections > .action:active, #pkp-manager-reviewForms #reviewForms > .action:active, #pkp-manager-reviewFormElements #reviewFormElements > .action:active, #pkp-journal-journals #content p .action:active {
     color: #333; }
-  /* line 89, ../sass/modules/_forms.scss */
+  /* line 93, ../sass/modules/_forms.scss */
   .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
     background: #3C7861;
     color: #fff; }
 
-/* line 102, ../sass/modules/_forms.scss */
+/* line 106, ../sass/modules/_forms.scss */
 .button--cancel {
   border: 1px solid #A34531; }
-  /* line 122, ../sass/modules/_forms.scss */
+  /* line 126, ../sass/modules/_forms.scss */
   .button--cancel:hover {
     background: #A34531;
     color: #fff; }
 
-/* line 135, ../sass/modules/_forms.scss */
+/* line 139, ../sass/modules/_forms.scss */
 .button--small {
   padding: 0 0.375rem;
   font-size: 14px;
@@ -954,95 +958,95 @@ input[type="text"], input[type="password"] {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 145, ../sass/modules/_forms.scss */
+/* line 149, ../sass/modules/_forms.scss */
 .settings-form select + input[type="submit"],
 .settings-form input + input[type="submit"] {
   margin-left: -1px; }
-/* line 151, ../sass/modules/_forms.scss */
+/* line 155, ../sass/modules/_forms.scss */
 .settings-form input[type="file"] + input[type="submit"],
 .settings-form .instruct + input[type="submit"] {
   vertical-align: baseline;
   margin-left: 12px; }
 
-/* line 158, ../sass/modules/_forms.scss */
+/* line 162, ../sass/modules/_forms.scss */
 .form-row {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px dotted #e0e0e0; }
-  /* line 162, ../sass/modules/_forms.scss */
+  /* line 166, ../sass/modules/_forms.scss */
   .form-row label, .form-row .label {
     font-weight: bold;
     margin-bottom: 1.5rem;
     display: block; }
-    /* line 166, ../sass/modules/_forms.scss */
+    /* line 170, ../sass/modules/_forms.scss */
     .form-row label .instruct, .form-row .label .instruct {
       font-weight: normal;
       display: block; }
-  /* line 171, ../sass/modules/_forms.scss */
+  /* line 175, ../sass/modules/_forms.scss */
   .form-row .label--inline {
     display: inline;
     margin-right: 12px;
     margin-bottom: 0; }
 
-/* line 178, ../sass/modules/_forms.scss */
+/* line 182, ../sass/modules/_forms.scss */
 .form-subrow {
   padding-left: 30px;
   margin-left: 6px;
   border-left: 1px solid #e0e0e0; }
-  /* line 182, ../sass/modules/_forms.scss */
+  /* line 186, ../sass/modules/_forms.scss */
   .form-subrow:last-of-type {
     padding-bottom: 0; }
-  /* line 185, ../sass/modules/_forms.scss */
+  /* line 189, ../sass/modules/_forms.scss */
   .form-subrow label {
     font-weight: normal;
     display: inline;
     font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
     margin: 0 24px 0 0; }
 
-/* line 193, ../sass/modules/_forms.scss */
+/* line 197, ../sass/modules/_forms.scss */
 .form-group {
   margin-bottom: 0.75rem; }
 
-/* line 197, ../sass/modules/_forms.scss */
+/* line 201, ../sass/modules/_forms.scss */
 .instruct {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   line-height: 18px;
   line-height: 1.125rem;
   margin: 0; }
   @media (min-width: 480px) {
-    /* line 197, ../sass/modules/_forms.scss */
+    /* line 201, ../sass/modules/_forms.scss */
     .instruct {
       font-size: 14px;
       font-size: 0.85rem;
       line-height: 18px;
       line-height: 1.125rem; } }
 
-/* line 206, ../sass/modules/_forms.scss */
+/* line 210, ../sass/modules/_forms.scss */
 .instruct--spaced {
   margin-bottom: 1.5rem; }
 
-/* line 210, ../sass/modules/_forms.scss */
+/* line 214, ../sass/modules/_forms.scss */
 .buttons {
   padding: 12px;
   background: #f5f5f5;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #CCC; }
 
-/* line 217, ../sass/modules/_forms.scss */
+/* line 221, ../sass/modules/_forms.scss */
 .options {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 220, ../sass/modules/_forms.scss */
+  /* line 224, ../sass/modules/_forms.scss */
   .options a {
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
 
-/* line 225, ../sass/modules/_forms.scss */
+/* line 229, ../sass/modules/_forms.scss */
 .form-required {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1051,7 +1055,7 @@ input[type="text"], input[type="password"] {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   color: #cccccc; }
 
-/* line 231, ../sass/modules/_forms.scss */
+/* line 235, ../sass/modules/_forms.scss */
 .form-error {
   color: #A34531;
   font-size: 14px;

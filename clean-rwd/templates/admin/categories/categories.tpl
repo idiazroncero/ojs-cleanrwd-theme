@@ -20,56 +20,58 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveCategory"); });
 {/literal}
 </script>
 
-<br/>
-
 <form action="{url op="setCategoriesEnabled"}" method="post">
-	{translate key="admin.categories.enable.description"}<br/>
-	<input type="radio" id="categoriesEnabledOff" {if !$categoriesEnabled}checked="checked" {/if}name="categoriesEnabled" value="0"/>&nbsp;<label for="categoriesEnabledOff">{translate key="admin.categories.disableCategories"}</label><br/>
-	<input type="radio" id="categoriesEnabledOn" {if $categoriesEnabled}checked="checked" {/if}name="categoriesEnabled" value="1"/>&nbsp;<label for="categoriesEnabledOn">{translate key="admin.categories.enableCategories"}</label><br/>
-	<input type="submit" value="{translate key="common.record"}" class="button defaultButton"/>
+	<p>{translate key="admin.categories.enable.description"}</p>
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="radio" id="categoriesEnabledOff" {if !$categoriesEnabled}checked="checked" {/if}name="categoriesEnabled" value="0"/>&nbsp;<label for="categoriesEnabledOff">{translate key="admin.categories.disableCategories"}</label>
+		</div>
+		<div class="form-group">
+			<input type="radio" id="categoriesEnabledOn" {if $categoriesEnabled}checked="checked" {/if}name="categoriesEnabled" value="1"/>&nbsp;<label for="categoriesEnabledOn">{translate key="admin.categories.enableCategories"}</label>
+		</div>
+	</div>
+	<input type="submit" value="{translate key="common.record"}" class="button"/>
 </form>
-
-<br />
 
 <div id="categories">
 
-<table width="100%" class="listing" id="dragTable">
-	<tr>
-		<td colspan="2" class="headseparator">&nbsp;</td>
-	</tr>
-	<tr class="heading" valign="bottom">
-		<td width="75%">{translate key="admin.categories.name"}</td>
-		<td width="25%">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="headseparator">&nbsp;</td>
-	</tr>
-{iterate from=categories item=category key=categoryId}
-	<tr <div class="form-item"> id="category-{$categoryId|escape}" class="data">
-		<td class="drag">
-			{$category|escape}
-		</td>
-		<td>
-			<a href="{url op="editCategory" path=$categoryId}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteCategory" path=$categoryId}" onclick="return confirm('{translate|escape:"jsparam" key="admin.categories.confirmDelete"}')" class="action">{translate key="common.delete"}</a>&nbsp;|&nbsp;<a href="{url op="moveCategory" d=u id=$categoryId}">&uarr;</a>&nbsp;<a href="{url op="moveCategory" d=d id=$categoryId}">&darr;</a>
-		</td>
-	</tr>
-{/iterate}
+<table class="listing" id="dragTable">
+	<thead>
+		<tr>
+			<th>{translate key="admin.categories.name"}</th>
+			<th>{translate key="common.action"}</th>
+		</tr>
+	<thead>
+	<tbody>
+		{iterate from=categories item=category key=categoryId}
+			<tr id="category-{$categoryId|escape}">
+				<td class="drag">
+					{$category|escape}
+				</td>
+				<td>
+					<a href="{url op="editCategory" path=$categoryId}" class="button button--small">{translate key="common.edit"}</a>&nbsp;
+					<a href="{url op="deleteCategory" path=$categoryId}" onclick="return confirm('{translate|escape:"jsparam" key="admin.categories.confirmDelete"}')" class="button button--small button--cancel">{translate key="common.delete"}</a>&nbsp;
+					<a href="{url op="moveCategory" d=u id=$categoryId}">&uarr;</a>&nbsp;<a href="{url op="moveCategory" d=d id=$categoryId}">&darr;</a>
+				</td>
+			</tr>
+		{/iterate}
+	</tbody>
+
 {if $categories->wasEmpty()}
 	<tr>
-		<td colspan="2" class="nodata">{translate key="admin.categories.noneCreated"}</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="endseparator">&nbsp;</td>
+		<td>{translate key="admin.categories.noneCreated"}</td>
 	</tr>
 {else}
-	<tr>
-		<td align="left">{page_info iterator=$categories}</td>
-		<td align="right">{page_links anchor="categories" name="categories" iterator=$categories}</td>
+	<tr class="listing-pager">
+		<td>{page_info iterator=$categories}</td>
+		<td>{page_links anchor="categories" name="categories" iterator=$categories}</td>
 	</tr>
 {/if}
 </table>
 
-<a href="{url op="createCategory"}" class="action">{translate key="admin.categories.create"}</a>
+<div class="buttons">
+	<a href="{url op="createCategory"}" class="button">{translate key="admin.categories.create"}</a>
+</div>
 </div>
 
 {include file="common/footer.tpl"}
