@@ -27,26 +27,26 @@
 <h3>{translate key="about.contact.principalContact"}</h3>
 <p>
 	{if !empty($journalSettings.contactName)}
-		<strong>{$journalSettings.contactName|escape}</strong><br />
+		<strong>{$journalSettings.contactName|escape}</strong>
 	{/if}
 
 	{assign var=s value=$currentJournal->getLocalizedSetting('contactTitle')}
-	{if $s}{$s|escape}<br />{/if}
+	{if $s}{$s|escape}{/if}
 
 	{assign var=s value=$currentJournal->getLocalizedSetting('contactAffiliation')}
-	{if $s}{$s|escape}<br />{/if}
+	{if $s}{$s|escape}{/if}
 
 	{assign var=s value=$currentJournal->getLocalizedSetting('contactMailingAddress')}
-	{if $s}{$s|nl2br}<br />{/if}
+	{if $s}{$s|nl2br}{/if}
 
 	{if !empty($journalSettings.contactPhone)}
-		{translate key="about.contact.phone"}: {$journalSettings.contactPhone|escape}<br />
+		{translate key="about.contact.phone"}: {$journalSettings.contactPhone|escape}
 	{/if}
 	{if !empty($journalSettings.contactFax)}
-		{translate key="about.contact.fax"}: {$journalSettings.contactFax|escape}<br />
+		{translate key="about.contact.fax"}: {$journalSettings.contactFax|escape}
 	{/if}
 	{if !empty($journalSettings.contactEmail)}
-		{translate key="about.contact.email"}: {mailto address=$journalSettings.contactEmail|escape encode="hex"}<br />
+		{translate key="about.contact.email"}: {mailto address=$journalSettings.contactEmail|escape encode="hex"}
 	{/if}
 </p>
 </div>
@@ -57,13 +57,13 @@
 <h3>{translate key="about.contact.supportContact"}</h3>
 <p>
 	{if !empty($journalSettings.supportName)}
-		<strong>{$journalSettings.supportName|escape}</strong><br />
+		<strong>{$journalSettings.supportName|escape}</strong>
 	{/if}
 	{if !empty($journalSettings.supportPhone)}
-		{translate key="about.contact.phone"}: {$journalSettings.supportPhone|escape}<br />
+		{translate key="about.contact.phone"}: {$journalSettings.supportPhone|escape}
 	{/if}
 	{if !empty($journalSettings.supportEmail)}
-		{translate key="about.contact.email"}: {mailto address=$journalSettings.supportEmail|escape encode="hex"}<br />
+		{translate key="about.contact.email"}: {mailto address=$journalSettings.supportEmail|escape encode="hex"}
 	{/if}
 </p>
 </div>

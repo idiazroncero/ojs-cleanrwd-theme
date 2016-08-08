@@ -35,7 +35,7 @@
 </ul>
 
 {if $showInfo}
-<br />
+
 
 <div class="separator"></div>
 
@@ -49,7 +49,7 @@
 	<li><a href="{url page="about" op="contact"}">Contact Information</a></li>
 </ul>
 
-<br />
+
 
 <div class="separator"></div>
 
@@ -86,7 +86,7 @@
 {/if}
 <tr valign="top">
 	<td class="label">Language(s)</td>
-	<td class="value">{foreach from=$locales key=localeKey item=localeName}{$localeName|escape} ({$localeKey|escape})<br />{/foreach}</td>
+	<td class="value">{foreach from=$locales key=localeKey item=localeName}{$localeName|escape} ({$localeKey|escape}){/foreach}</td>
 </tr>
 <tr valign="top">
 	<td class="label">Publisher Email</td>
@@ -103,17 +103,17 @@
 
 {/if}
 
-<br /><br />
+
 
 <div style="text-align: center; width: 250px; margin: 0 auto">
 	<a href="http://www.lockss.org/"><img src="{$baseUrl}/templates/images/lockss.gif" style="border: 0;" alt="LOCKSS" /></a>
-	<br />
+	
 	LOCKSS system has permission to collect, preserve, and serve this Archival Unit.
 		
-	<br /><br />
+	
 	
 	<a href="http://pkp.sfu.ca/"><img src="{$baseUrl}/lib/pkp/templates/images/pkp.gif" style="border: 0;" alt="The Public Knowledge Project" /></a>
-	<br />
+	
 	Open Journal Systems was developed by the Public Knowledge Project.
 </div>
 

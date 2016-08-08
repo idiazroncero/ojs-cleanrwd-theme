@@ -46,7 +46,7 @@
 <p>{translate key="article.nonpdf.note" url=$url}</p>
 
 {if $pageFooter}
-<br /><br />
+
 {$pageFooter}
 {/if}
 {call_hook name="Templates::Issue::Interstitial::PageFooter"}

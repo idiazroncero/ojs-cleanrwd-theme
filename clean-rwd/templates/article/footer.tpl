@@ -16,8 +16,8 @@
 				var addthis_pub = '{$sharingUserName}';
 			</script>
 		{/if}
-		<br />
-		<br />
+		
+		
 		<div class="addthis_container">
 			<a href="http://www.addthis.com/bookmark.php"
 				onmouseover="return addthis_open(this, '', '{$sharingArticleURL|escape:"javascript"}', '{$sharingArticleTitle|escape:"javascript"}')"
@@ -44,7 +44,7 @@
 		{translate key="submission.copyrightStatement" copyrightYear=$article->getCopyrightYear()|escape copyrightHolder=$article->getLocalizedCopyrightHolder()|escape}
 	{/if}
 	{if $currentJournal->getSetting('includeLicense')}
-		<br /><br />
+		
 		{if $ccLicenseBadge}
 			{$ccLicenseBadge}
 		{elseif $article->getLicenseURL()}
@@ -55,7 +55,7 @@
 
 {call_hook name="Templates::Article::Footer::PageFooter"}
 {if $pageFooter}
-<br /><br />
+
 {$pageFooter}
 {/if}
 </div><!-- content -->

@@ -203,15 +203,15 @@
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.disciplineDescription"}</span><br/>
 			<span class="instruct">{translate key="manager.setup.disciplineProvideExamples"}:</span>
-			<br />
+			
 			<input type="text" name="metaDisciplineExamples[{$formLocale|escape}]" id="metaDisciplineExamples" value="{$metaDisciplineExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
+			
 			<span class="instruct">{fieldLabel name="metaDisciplineExamples" key="manager.setup.disciplineExamples"}</span>
 		</td>
 	</tr>
 
 	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
+		<td class="separator" colspan="2">&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
@@ -238,7 +238,7 @@
 	</tr>
 
 	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
+		<td class="separator" colspan="2">&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
@@ -251,15 +251,15 @@
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.subjectProvideExamples"}:</span>
-			<br />
+			
 			<input type="text" name="metaSubjectExamples[{$formLocale|escape}]" id="metaSubjectExamples" value="{$metaSubjectExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
+			
 			<span class="instruct">{fieldLabel name="metaSubjectExamples" key="manager.setup.subjectExamples"}</span>
 		</td>
 	</tr>
 
 	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
+		<td class="separator" colspan="2">&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
@@ -276,9 +276,9 @@
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.coverageDescription"}</span><br/>
 			<span class="instruct">{translate key="manager.setup.coverageGeoProvideExamples"}:</span>
-			<br />
+			
 			<input type="text" name="metaCoverageGeoExamples[{$formLocale|escape}]" id="metaCoverageGeoExamples" value="{$metaCoverageGeoExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
+			
 			<span class="instruct">{fieldLabel name="metaCoverageGeoExamples" key="manager.setup.coverageGeoExamples"}</span>
 		</td>
 	</tr>
@@ -289,9 +289,9 @@
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.coverageChronProvideExamples"}:</span>
-			<br />
+			
 			<input type="text" name="metaCoverageChronExamples[{$formLocale|escape}]" id="metaCoverageChronExamples" value="{$metaCoverageChronExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
+			
 			<span class="instruct">{fieldLabel name="metaCoverageChronExamples" key="manager.setup.coverageChronExamples"}</span>
 		</td>
 	</tr>
@@ -302,15 +302,15 @@
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.coverageResearchSampleProvideExamples"}:</span>
-			<br />
+			
 			<input type="text" name="metaCoverageResearchSampleExamples[{$formLocale|escape}]" id="metaCoverageResearchSampleExamples" value="{$metaCoverageResearchSampleExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
+			
 			<span class="instruct">{fieldLabel name="metaCoverageResearchSampleExamples" key="manager.setup.coverageResearchSampleExamples"}</span>
 		</td>
 	</tr>
 
 	<tr>
-		<td class="separator" colspan="2"><br />&nbsp;</td>
+		<td class="separator" colspan="2">&nbsp;</td>
 	</tr>
 
 	<tr valign="top">
@@ -323,9 +323,9 @@
 		<td>&nbsp;</td>
 		<td class="value">
 			<span class="instruct">{translate key="manager.setup.typeProvideExamples"}:</span>
-			<br />
+			
 			<input type="text" name="metaTypeExamples[{$formLocale|escape}]" id="metaTypeExamples" value="{$metaTypeExamples[$formLocale]|escape}" size="60" class="textField" />
-			<br />
+			
 			<span class="instruct">{fieldLabel name="metaTypeExamples" key="manager.setup.typeExamples"}</span>
 		</td>
 	</tr>

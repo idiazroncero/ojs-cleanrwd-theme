@@ -15,7 +15,7 @@
 
 <h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 
-<br />
+
 
 <table class="listing" width="100%">
 	<tr><td colspan="4" class="headseparator">&nbsp;</td></tr>
@@ -169,7 +169,7 @@
 				<tr valign="top">
 					<td>10.</td>
 					<td>{translate key="rt.metadata.dublinCore.identifier"}</td>
-					<td>{$pubIdPlugin->getPubIdFullName()|escape} ({$pubIdPlugin->getPubIdDisplayType()|escape})<br />({$galley->getGalleyLabel()|escape})</td>
+					<td>{$pubIdPlugin->getPubIdFullName()|escape} ({$pubIdPlugin->getPubIdDisplayType()|escape})({$galley->getGalleyLabel()|escape})</td>
 					<td>{if $galleyPubIdResolvingURL}<a target="_new" id="pub-id::{$pubIdPlugin->getPubIdType()|escape}-g{$galley->getId()}" href="{$galleyPubIdResolvingURL|escape}">{$galleyPubIdResolvingURL|escape}</a>{else}{$galleyPubId|escape}{/if}</td>
 				</tr>
 				<tr><td colspan="4" class="separator">&nbsp;</td></tr>
@@ -198,7 +198,7 @@
 	<td>{translate key="rt.metadata.pkp.suppFiles"}</td>
 	<td>
 		{foreach from=$article->getSuppFiles() item=suppFile}
-			<a href="{url page="article" op="downloadSuppFile" path=$articleId|to_array:$suppFile->getBestSuppFileId($currentJournal)}">{$suppFile->getSuppFileTitle()|escape}</a> ({$suppFile->getNiceFileSize()})<br />
+			<a href="{url page="article" op="downloadSuppFile" path=$articleId|to_array:$suppFile->getBestSuppFileId($currentJournal)}">{$suppFile->getSuppFileTitle()|escape}</a> ({$suppFile->getNiceFileSize()})
 		{/foreach}
 	</td>
 </tr>

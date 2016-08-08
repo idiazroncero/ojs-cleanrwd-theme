@@ -15,7 +15,7 @@
 <div id="membershipFee">
 <h3>{$membershipFeeName|escape}</h3>
 
-<p>{$membershipFeeDescription|nl2br}<br />
+<p>{$membershipFeeDescription|nl2br}
 {translate key="manager.subscriptionTypes.cost"} {$membershipFee|string_format:"%.2f"} ({$currency|escape})</p> 
 </div>
 {include file="common/footer.tpl"}

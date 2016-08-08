@@ -78,7 +78,7 @@
 </tr>
 <tr valign="top">
 	<td class="label">{fieldLabel name="orcid" key="user.orcid"}</td>
-	<td class="value"><input type="text" name="orcid" id="orcid" value="{$orcid|escape}" size="40" maxlength="255" class="textField" /><br />{translate key="user.orcid.description"}</td>
+	<td class="value"><input type="text" name="orcid" id="orcid" value="{$orcid|escape}" size="40" maxlength="255" class="textField" />{translate key="user.orcid.description"}</td>
 </tr>
 <tr valign="top">
 	<td class="label">{fieldLabel name="userUrl" key="user.url"}</td>
@@ -131,7 +131,7 @@
 </tr>
 {/if}
 <tr valign="top">
-	<td class="label">{fieldLabel name="biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+	<td class="label">{fieldLabel name="biography" key="user.biography"}{translate key="user.biography.description"}</td>
 	<td class="value"><textarea name="biography[{$formLocale|escape}]" id="biography" rows="5" cols="40" class="textArea">{$biography[$formLocale]|escape}</textarea></td>
 </tr>
 <tr valign="top">
@@ -142,7 +142,7 @@
 		<input type="file" id="profileImage" name="profileImage" class="uploadField" /> <input type="submit" name="uploadProfileImage" value="{translate key="common.upload"}" class="button" />
 		{if $profileImage}
 			{translate key="common.fileName"}: {$profileImage.name|escape} {$profileImage.dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteProfileImage" value="{translate key="common.delete"}" class="button" />
-			<br />
+			
 			<img src="{$sitePublicFilesDir}/{$profileImage.uploadName|escape:"url"}" width="{$profileImage.width|escape}" height="{$profileImage.height|escape}" style="border: 0;" alt="{translate key="user.profile.form.profileImage"}" />
 		{/if}
 	</td>
@@ -151,7 +151,7 @@
 <tr valign="top">
 	<td class="label">{translate key="user.workingLanguages"}</td>
 	<td>{foreach from=$availableLocales key=localeKey item=localeName}
-		<input type="checkbox" name="userLocales[]" id="userLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if in_array($localeKey, $userLocales)} checked="checked"{/if} /> <label for="userLocales-{$localeKey|escape}">{$localeName|escape}</label><br />
+		<input type="checkbox" name="userLocales[]" id="userLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if in_array($localeKey, $userLocales)} checked="checked"{/if} /> <label for="userLocales-{$localeKey|escape}">{$localeName|escape}</label>
 	{/foreach}</td>
 </tr>
 {/if}

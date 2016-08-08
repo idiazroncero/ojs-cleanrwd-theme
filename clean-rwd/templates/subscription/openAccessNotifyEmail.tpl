@@ -47,7 +47,7 @@ Content-Transfer-Encoding: quoted-printable
 
 	<p>{$body|escape|nl2br}</p>
 
-		<h3>{$issue->getIssueIdentification()}<br />{translate key="issue.toc"}</h3>
+		<h3>{$issue->getIssueIdentification()}{translate key="issue.toc"}</h3>
 		{foreach name=sections from=$publishedArticles item=section key=sectionId}
 			{if $section.title}<h4>{$section.title|escape}</h4>{/if}
 

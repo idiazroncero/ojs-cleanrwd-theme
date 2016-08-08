@@ -29,7 +29,7 @@
 	<ul class="menu">
 		<li><a href="{$currentUrl}">{translate key="issue.toc"}</a></li>
 	</ul>
-	<br />
+	
 	{if $coverPagePath}<div id="issueCoverImage"><a href="{$currentUrl}"><img src="{$coverPagePath|escape}{$issue->getFileName($locale)|escape}"{if $coverPageAltText != ''} alt="{$coverPageAltText|escape}"{else} alt="{translate key="issue.coverPage.altText"}"{/if}{if $width} width="{$width|escape}"{/if}{if $height} height="{$height|escape}"{/if}/></a></div>{/if}
 	<div id="issueCoverDescription">{$issue->getLocalizedCoverPageDescription()|strip_unsafe_html|nl2br}</div>
 {elseif $issue}
@@ -71,7 +71,7 @@
 			</td>
 		</tr>
 		</table>
-		<br />
+		
 	{/if}
 	<h3>{translate key="issue.toc"}</h3>
 	{include file="issue/issue.tpl"}

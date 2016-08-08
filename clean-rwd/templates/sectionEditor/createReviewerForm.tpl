@@ -85,7 +85,7 @@
 		<td class="label">{fieldLabel name="username" required="true" key="user.username"}</td>
 		<td class="value">
 			<input type="text" name="username" id="username" value="{$username|escape}" size="20" maxlength="32" class="textField" />&nbsp;&nbsp;<input type="button" class="button" value="{translate key="common.suggest"}" onclick="generateUsername()" />
-			<br />
+			
 			<span class="instruct">{translate key="user.register.usernameRestriction"}</span>
 		</td>
 	</tr>
@@ -144,14 +144,14 @@
 	</td>
 </tr>
 	<tr valign="top">
-		<td class="label">{fieldLabel name="biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+		<td class="label">{fieldLabel name="biography" key="user.biography"}{translate key="user.biography.description"}</td>
 		<td class="value"><textarea name="biography[{$formLocale|escape}]" id="biography" rows="5" cols="40" class="textArea">{$biography[$formLocale]|escape}</textarea></td>
 	</tr>
 	{if count($availableLocales) > 1}
 	<tr valign="top">
 		<td class="label">{translate key="user.workingLanguages"}</td>
 		<td>{foreach from=$availableLocales key=localeKey item=localeName}
-			<input type="checkbox" name="userLocales[]" id="userLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if $userLocales && in_array($localeKey, $userLocales)} checked="checked"{/if} /> <label for="userLocales-{$localeKey|escape}">{$localeName|escape}</label><br />
+			<input type="checkbox" name="userLocales[]" id="userLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if $userLocales && in_array($localeKey, $userLocales)} checked="checked"{/if} /> <label for="userLocales-{$localeKey|escape}">{$localeName|escape}</label>
 		{/foreach}</td>
 	</tr>
 	{/if}

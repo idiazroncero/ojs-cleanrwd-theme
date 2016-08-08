@@ -15,7 +15,7 @@
 <div id="reviewerRecommendation">
 <h3>{translate key="editor.article.enterReviewerRecommendation"}</h3>
 
-<br />
+
 
 <form method="post" action="{url op="enterReviewerRecommendation"}">
 <input type="hidden" name="articleId" value="{$articleId|escape}" />

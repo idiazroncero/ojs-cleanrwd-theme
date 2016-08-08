@@ -97,7 +97,7 @@ function confirmAndPrompt(userId) {
 	<li><a href="{url path="subscriptionManagers"}">{translate key="user.role.subscriptionManagers"}</a></li>
 </ul>
 
-<br />
+
 {else}
 <p><a href="{url path="all"}" class="action">{translate key="manager.people.allUsers"}</a></p>
 {/if}

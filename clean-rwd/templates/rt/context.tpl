@@ -106,7 +106,7 @@
 				{foreach from=$keywords item=keyword name=keywords key=key}
 					<input name="searchTerm{$key+1}" value="{$keyword|trim|escape}" length="40" class="textField" />
 					{if !$smarty.foreach.keywords.last}{translate key="rt.context.and"}{/if}
-					<br />
+					
 				{/foreach}
 			</td>
 		</tr>

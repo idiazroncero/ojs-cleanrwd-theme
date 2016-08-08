@@ -117,7 +117,7 @@ function checkEditorAssignments() {
 <tr valign="top">
 	<td class="value">
 		{fieldLabel name="identifyType" key="manager.sections.identifyType"} <input type="text" name="identifyType[{$formLocale|escape}]" id="identifyType" value="{$identifyType[$formLocale]|escape}" size="20" maxlength="60" class="textField" />
-		<br />
+		
 		<span class="instruct">{translate key="manager.sections.identifyTypeExamples"}</span>
 	</td>
 </tr>

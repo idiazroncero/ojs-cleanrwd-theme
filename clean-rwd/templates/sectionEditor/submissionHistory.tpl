@@ -84,7 +84,7 @@
 		</td>
 		<td>
 			{translate key=$logEntry->getEventTitle()}
-			<br />
+			
 			{$logEntry->getTranslatedMessage()|strip_tags|truncate:60:"..."}
 		</td>
 		<td align="right"><a href="{url op="submissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action">{translate key="common.view"}</a>{if $isEditor}&nbsp;|&nbsp;<a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')">{translate key="common.delete"}</a>{/if}</td>
@@ -106,7 +106,7 @@
 <a href="{url op="submissionEventLog" path=$submission->getId()}" class="action">{translate key="submission.history.viewLog"}</a>{if $isEditor} |
 <a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmClearLog"}')">{translate key="submission.history.clearLog"}</a>{/if}
 </div>
-<br /><br />
+
 
 <div class="separator"></div>
 <div id="submissionEmailLog">
@@ -147,7 +147,7 @@
 <a class="action" href="{url op="submissionEmailLog" path=$submission->getId()}">{translate key="submission.history.viewLog"}</a>{if $isEditor} |
 <a class="action" href="{url page="editor" op="clearsubmissionEmailLog" path=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.email.confirmClearLog"}')">{translate key="submission.history.clearLog"}</a>{/if}
 </div>
-<br /><br />
+
 
 <div class="separator"></div>
 <div id="submissionNotes">

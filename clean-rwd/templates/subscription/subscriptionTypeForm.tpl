@@ -22,7 +22,7 @@
 
 {if $subscriptionTypeCreated}
 <br/>
-{translate key="manager.subscriptionTypes.subscriptionTypeCreatedSuccessfully"}<br />
+{translate key="manager.subscriptionTypes.subscriptionTypeCreatedSuccessfully"}
 {/if}
 
 <br/>
@@ -58,7 +58,7 @@
 	<td class="label">{fieldLabel name="cost" required="true" key="manager.subscriptionTypes.form.cost"}</td>
 	<td class="value">
 		<input type="text" name="cost" value="{$cost|escape}" size="5" maxlength="10" id="cost" class="textField" />
-		<br />
+		
 		<span class="instruct">{translate key="manager.subscriptionTypes.form.costInstructions"}</span>
 	</td>
 </tr>
@@ -88,7 +88,7 @@
 	<td class="label">{fieldLabel name="duration" required="true" key="manager.subscriptionTypes.form.duration"}</td>
 	<td class="value">
 		<input type="text" name="duration" value="{$duration|escape}" size="5" maxlength="10" id="duration" class="textField" />
-		<br />
+		
 		<span class="instruct">{translate key="manager.subscriptionTypes.form.durationInstructions"}</span>
 	</td>
 </tr>

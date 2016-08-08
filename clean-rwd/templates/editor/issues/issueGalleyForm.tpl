@@ -14,7 +14,7 @@
 <div id="galleyForm">
 <h3>{if $galleyId}{translate key="submission.layout.editGalley"}{else}{translate key="submission.layout.addGalley"}{/if}</h3>
 
-<br />
+
 
 <form method="post" action="{url op="saveIssueGalley" path=$issueId|to_array:$galleyId}" enctype="multipart/form-data">
 {include file="common/formErrors.tpl"}
@@ -77,7 +77,7 @@
 </table>
 </div>
 
-<br />
+
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="issueGalleys" path=$issueId escape=false}'" /></p>
 

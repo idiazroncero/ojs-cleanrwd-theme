@@ -57,9 +57,9 @@
 {/if}
 </table>
 
-<br />
+
 <div class="separator"></div>
-<br />
+
 
 <table class="data" width="100%">
 <tr valign="top">
@@ -74,9 +74,9 @@
 {include file="subscription/subscriptionFormUser.tpl"}
 </table>
 
-<br />
+
 <div class="separator"></div>
-<br />
+
 
 <table class="data" width="100%">
 <tr valign="top">

@@ -18,7 +18,7 @@
 	<li><a href="{url op="viewPayments"}">{translate key="manager.payment.records"}</a></li>
 </ul>
 
-<br />
+
 
 <form name="paymentSettingsForm" method="post" action="{url op="savePaymentSettings"}">
 {if count($formLocales) > 1}

@@ -36,7 +36,7 @@ window.opener.location.reload();
 			{/if}
 		</div>
 		<div class="commentDate">{$comment->getDatePosted()|date_format:$datetimeFormatShort}</div>
-		<br />
+		
 		<div class="commentNote">
 			{if $comment->getViewable()}
 				{translate key="submission.comments.canShareWithAuthor"}
@@ -64,8 +64,8 @@ window.opener.location.reload();
 {/foreach}
 </table>
 </div>
-<br />
-<br />
+
+
 
 {if not $isLocked}
 <form method="post" action="{url op=$commentAction}">

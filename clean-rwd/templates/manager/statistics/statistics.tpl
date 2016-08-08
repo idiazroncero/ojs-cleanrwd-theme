@@ -33,7 +33,7 @@
 				</tr>
 			</table>
 		</div>
-		<br />
+		
 	{/if}
 	<select name="sectionIds[]" class="selectMenu" multiple="multiple" size="5">
 		{foreach from=$sections item=section}

@@ -96,7 +96,7 @@ function moveAuthor(dir, authorIndex) {
 </tr>
 <tr valign="top">
 	<td width="20%" class="label">{fieldLabel name="authors-$authorIndex-orcid" key="user.orcid"}</td>
-	<td width="80%" class="value"><input type="text" class="textField" name="authors[{$authorIndex|escape}][orcid]" id="authors-{$authorIndex|escape}-orcid" value="{$author.orcid|escape}" size="30" maxlength="90" /><br />{translate key="user.orcid.description"}</td>
+	<td width="80%" class="value"><input type="text" class="textField" name="authors[{$authorIndex|escape}][orcid]" id="authors-{$authorIndex|escape}-orcid" value="{$author.orcid|escape}" size="30" maxlength="90" />{translate key="user.orcid.description"}</td>
 </tr>
 <tr valign="top">
 	<td class="label">{fieldLabel name="authors-$authorIndex-url" key="user.url"}</td>
@@ -125,7 +125,7 @@ function moveAuthor(dir, authorIndex) {
 	</tr>
 {/if}{* requireAuthorCompetingInterests *}
 <tr valign="top">
-	<td width="20%" class="label">{fieldLabel name="authors-$authorIndex-biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+	<td width="20%" class="label">{fieldLabel name="authors-$authorIndex-biography" key="user.biography"}{translate key="user.biography.description"}</td>
 	<td width="80%" class="value"><textarea name="authors[{$authorIndex|escape}][biography][{$formLocale|escape}]" class="textArea" id="authors-{$authorIndex|escape}-biography" rows="5" cols="40">{$author.biography[$formLocale]|escape}</textarea></td>
 </tr>
 
@@ -169,7 +169,7 @@ function moveAuthor(dir, authorIndex) {
 </tr>
 <tr valign="top">
 	<td width="20%" class="label">{fieldLabel name="authors-0-orcid" key="user.orcid"}</td>
-	<td width="80%" class="value"><input type="text" class="textField" name="authors[0][orcid]" id="authors-0-orcid" size="30" maxlength="90" /><br />{translate key="user.orcid.description"}</td>
+	<td width="80%" class="value"><input type="text" class="textField" name="authors[0][orcid]" id="authors-0-orcid" size="30" maxlength="90" />{translate key="user.orcid.description"}</td>
 </tr>
 <tr valign="top">
 	<td width="20%" class="label">{fieldLabel name="authors-0-url" key="user.url"}</td>
@@ -198,7 +198,7 @@ function moveAuthor(dir, authorIndex) {
 </tr>
 {/if}
 <tr valign="top">
-	<td width="20%" class="label">{fieldLabel name="authors-0-biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+	<td width="20%" class="label">{fieldLabel name="authors-0-biography" key="user.biography"}{translate key="user.biography.description"}</td>
 	<td width="80%" class="value"><textarea name="authors[0][biography][{$formLocale|escape}]" class="textArea" id="authors-0-biography" rows="5" cols="40"></textarea></td>
 </tr>
 </table>

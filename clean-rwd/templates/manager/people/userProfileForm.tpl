@@ -127,7 +127,7 @@
 			<select name="enrollAs[]" id="enrollAs" multiple="multiple" size="11" class="selectMenu">
 			{html_options_translate options=$roleOptions selected=$enrollAs}
 			</select>
-			<br />
+			
 			<span class="instruct">{translate key="manager.people.enrollUserAsDescription"}</span>
 		</td>
 	</tr>
@@ -135,7 +135,7 @@
 		<td class="label">{fieldLabel name="username" required="true" key="user.username"}</td>
 		<td class="value">
 			<input type="text" name="username" id="username" value="{$username|escape}" size="20" maxlength="32" class="textField" />&nbsp;&nbsp;<input type="button" class="button" value="{translate key="common.suggest"}" onclick="generateUsername()" />
-			<br />
+			
 			<span class="instruct">{translate key="user.register.usernameRestriction"}</span>
 		</td>
 	</tr>
@@ -160,7 +160,7 @@
 			<td class="label">{fieldLabel name="password" required=$passwordRequired key="user.password"}</td>
 			<td class="value">
 				<input type="password" name="password" id="password" value="{$password|escape}" size="20" class="textField" />
-				<br />
+				
 				<span class="instruct">{translate key="user.register.passwordLengthRestriction" length=$minPasswordLength}</span>
 			</td>
 		</tr>
@@ -171,7 +171,7 @@
 		{if $userId}
 		<tr valign="top">
 			<td>&nbsp;</td>
-			<td class="value">{translate key="user.register.passwordLengthRestriction" length=$minPasswordLength}<br />{translate key="user.profile.leavePasswordBlank"}</td>
+			<td class="value">{translate key="user.register.passwordLengthRestriction" length=$minPasswordLength}{translate key="user.profile.leavePasswordBlank"}</td>
 		</tr>
 		{else}
 		<tr valign="top">
@@ -244,14 +244,14 @@
 		</td>
 	</tr>
 	<tr valign="top">
-		<td class="label">{fieldLabel name="biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+		<td class="label">{fieldLabel name="biography" key="user.biography"}{translate key="user.biography.description"}</td>
 		<td class="value"><textarea name="biography[{$formLocale|escape}]" id="biography" rows="5" cols="40" class="textArea">{$biography[$formLocale]|escape}</textarea></td>
 	</tr>
 	{if count($availableLocales) > 1}
 	<tr valign="top">
 		<td class="label">{translate key="user.workingLanguages"}</td>
 		<td>{foreach from=$availableLocales key=localeKey item=localeName}
-			<input type="checkbox" name="userLocales[]" id="userLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if $userLocales && in_array($localeKey, $userLocales)} checked="checked"{/if} /> <label for="userLocales-{$localeKey|escape}">{$localeName|escape}</label><br />
+			<input type="checkbox" name="userLocales[]" id="userLocales-{$localeKey|escape}" value="{$localeKey|escape}"{if $userLocales && in_array($localeKey, $userLocales)} checked="checked"{/if} /> <label for="userLocales-{$localeKey|escape}">{$localeName|escape}</label>
 		{/foreach}</td>
 	</tr>
 	{/if}

@@ -69,7 +69,7 @@
 					{assign var=thisReviewer value=$start+$roundIndex|chr}
 					{foreach from=$viewableFilesForReviewer item=viewableFile}
 						{translate key="user.role.reviewer"} {$thisReviewer|escape}
-						<a href="{url op="downloadFile" path=$submission->getId()|to_array:$viewableFile->getFileId():$viewableFile->getRevision()}" class="file">{$viewableFile->getFileName()|escape}</a>&nbsp;&nbsp;{$viewableFile->getDateModified()|date_format:$dateFormatShort}<br />
+						<a href="{url op="downloadFile" path=$submission->getId()|to_array:$viewableFile->getFileId():$viewableFile->getRevision()}" class="file">{$viewableFile->getFileName()|escape}</a>&nbsp;&nbsp;{$viewableFile->getDateModified()|date_format:$dateFormatShort}
 					{/foreach}
 				{/foreach}
 			{foreachelse}
@@ -84,7 +84,7 @@
 			</td>
 			<td class="value" width="80%">
 				{foreach from=$editorFiles item=editorFile key=key}
-					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$editorFile->getFileId():$editorFile->getRevision()}" class="file">{$editorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$editorFile->getDateModified()|date_format:$dateFormatShort}<br />
+					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$editorFile->getFileId():$editorFile->getRevision()}" class="file">{$editorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$editorFile->getDateModified()|date_format:$dateFormatShort}
 				{foreachelse}
 					{translate key="common.none"}
 				{/foreach}
@@ -96,7 +96,7 @@
 			</td>
 			<td class="value" width="80%">
 				{foreach from=$authorFiles item=authorFile key=key}
-					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$authorFile->getDateModified()|date_format:$dateFormatShort}<br />
+					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$authorFile->getDateModified()|date_format:$dateFormatShort}
 				{foreachelse}
 					{translate key="common.none"}
 				{/foreach}

@@ -25,7 +25,7 @@
 
 {if $subscriptionPoliciesSaved}
 <br/>
-{translate key="manager.subscriptionPolicies.subscriptionPoliciesSaved"}<br />
+{translate key="manager.subscriptionPolicies.subscriptionPoliciesSaved"}
 {/if}
 
 <form id="subscriptionPolicies" method="post" action="{url op="saveSubscriptionPolicies"}">
@@ -91,7 +91,7 @@
 <p>{translate key="manager.subscriptionPolicies.subscriptionAdditionalInformationDescription"}</p>
 <p>
 	<textarea name="subscriptionAdditionalInformation[{$formLocale|escape}]" id="subscriptionAdditionalInformation" rows="12" cols="60" class="textArea">{$subscriptionAdditionalInformation[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 </p>
 </div>
@@ -111,7 +111,7 @@
 		</td>
 		<td width="95%" class="value">
 			<strong>{fieldLabel name="subscriptionExpiryPartial-0" key="manager.subscriptionPolicies.expiryFull"}</strong>
-			<br />
+			
 			<span class="instruct">{translate key="manager.subscriptionPolicies.expiryFullDescription"}</span>
 		</td>
 	</tr>
@@ -124,7 +124,7 @@
 		</td>
 		<td width="95%" class="value">
 			<strong>{fieldLabel name="subscriptionExpiryPartial-1" key="manager.subscriptionPolicies.expiryPartial"}</strong>
-			<br />
+			
 			<span class="instruct">{translate key="manager.subscriptionPolicies.expiryPartialDescription"}</span>
 		</td>
 	</tr>
@@ -180,9 +180,9 @@
 	{fieldLabel name="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationRenewInstitutional"}
 </p>
 {translate key="manager.subscriptionPolicies.onlinePaymentPurchaseInstitutionalDescription"}
-<br />
+
 {if !$paymentsEnabled}
-	<br />
+	
 	{translate key="manager.subscriptionPolicies.onlinePaymentDisabled"}
 {/if}
 </div>
@@ -212,7 +212,7 @@
 	<p>{translate key="manager.subscriptionPolicies.delayedOpenAccessPolicyDescription"}</p>
 	<p>
 	<textarea name="delayedOpenAccessPolicy[{$formLocale|escape}]" id="delayedOpenAccessPolicy" rows="12" cols="60" class="textArea">{$delayedOpenAccessPolicy[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 	</p>
 
@@ -223,7 +223,7 @@
 </p>
 <p>
 	<textarea name="authorSelfArchivePolicy[{$formLocale|escape}]" id="authorSelfArchivePolicy" rows="12" cols="60" class="textArea">{$authorSelfArchivePolicy[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 </p>
 </div>

@@ -19,7 +19,7 @@
 	<li class="current"><a href="{url op="viewPayments"}">{translate key="manager.payment.records"}</a></li>
 </ul>
 
-<br />
+
 
 {if $payment}
 	<table width="100%" class="listing">

@@ -31,7 +31,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveGroup"); });
 	<input type="submit" value="{translate key="common.record"}" class="button defaultButton"/>
 </form>
 
-<br />
+
 
 <div id="groups">
 

@@ -94,7 +94,7 @@ function toggleChecked() {
 {/if}
 </form>
 
-<br />
+
 
 <a class="action" href="{url op="createReviewFormElement" path=$reviewFormId}">{translate key="manager.reviewFormElements.create"}</a>
 </div>

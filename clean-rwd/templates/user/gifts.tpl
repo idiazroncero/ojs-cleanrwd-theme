@@ -17,7 +17,7 @@
 <p>{translate key="gifts.subscriptionsDescription"}</p>
 <p><a class="action" href="{url page="gifts" op="purchaseGiftSubscription"}">{translate key="gifts.purchaseGiftSubscription"}</a></p>
 
-<br />
+
 
 <table width="100%" class="info">
 	{iterate from=giftSubscriptions item=gift}

@@ -30,7 +30,7 @@
 	<tr valign="top">
 		<td class="label"><input type="checkbox" name="captureCite" id="captureCite" {if $captureCite}checked="checked" {/if}/></td>
 		<td class="value">
-			<label for="captureCite">{translate key="rt.admin.settings.captureCite"}</label><br />
+			<label for="captureCite">{translate key="rt.admin.settings.captureCite"}</label>
 		</td>
 	</tr>
 	<tr valign="top">
@@ -72,9 +72,9 @@
 	<tr valign="top">
 		<td class="label">&nbsp;</td>
 		<td>
-			<input type="radio" name="enableCommentsMode" id="enableCommentsMode-authenticated" value="{$commentsOptions.COMMENTS_AUTHENTICATED|escape}"{if $enableComments==$commentsOptions.COMMENTS_AUTHENTICATED} checked="checked"{/if} />&nbsp;&nbsp;<label for="enableCommentsMode-authenticated">{translate key="rt.admin.settings.addComment.authenticated"}</label><br />
-			<input type="radio" name="enableCommentsMode" id="enableCommentsMode-anonymous" value="{$commentsOptions.COMMENTS_ANONYMOUS|escape}"{if $enableComments==$commentsOptions.COMMENTS_ANONYMOUS} checked="checked"{/if} />&nbsp;&nbsp;<label for="enableCommentsMode-anonymous">{translate key="rt.admin.settings.addComment.anonymous"}</label><br />
-			<input type="radio" name="enableCommentsMode" id="enableCommentsMode-unauthenticated" value="{$commentsOptions.COMMENTS_UNAUTHENTICATED|escape}"{if $enableComments==$commentsOptions.COMMENTS_UNAUTHENTICATED} checked="checked"{/if} />&nbsp;&nbsp;<label for="enableCommentsMode-unauthenticated">{translate key="rt.admin.settings.addComment.unauthenticated"}</label><br />
+			<input type="radio" name="enableCommentsMode" id="enableCommentsMode-authenticated" value="{$commentsOptions.COMMENTS_AUTHENTICATED|escape}"{if $enableComments==$commentsOptions.COMMENTS_AUTHENTICATED} checked="checked"{/if} />&nbsp;&nbsp;<label for="enableCommentsMode-authenticated">{translate key="rt.admin.settings.addComment.authenticated"}</label>
+			<input type="radio" name="enableCommentsMode" id="enableCommentsMode-anonymous" value="{$commentsOptions.COMMENTS_ANONYMOUS|escape}"{if $enableComments==$commentsOptions.COMMENTS_ANONYMOUS} checked="checked"{/if} />&nbsp;&nbsp;<label for="enableCommentsMode-anonymous">{translate key="rt.admin.settings.addComment.anonymous"}</label>
+			<input type="radio" name="enableCommentsMode" id="enableCommentsMode-unauthenticated" value="{$commentsOptions.COMMENTS_UNAUTHENTICATED|escape}"{if $enableComments==$commentsOptions.COMMENTS_UNAUTHENTICATED} checked="checked"{/if} />&nbsp;&nbsp;<label for="enableCommentsMode-unauthenticated">{translate key="rt.admin.settings.addComment.unauthenticated"}</label>
 		</td>
 	</tr>
 </table>

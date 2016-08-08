@@ -48,8 +48,8 @@ window.opener.location.reload();
 {/foreach}
 </table>
 </div>
-<br />
-<br />
+
+
 
 {if not $isLocked}
 <div id="postComment">

@@ -16,22 +16,22 @@
 <h3>{translate key="about.subscriptionsContact"}</h3>
 <p>
 	{if !empty($subscriptionName)}
-		<strong>{$subscriptionName|escape}</strong><br />
+		<strong>{$subscriptionName|escape}</strong>
 	{/if}
 	{if !empty($subscriptionMailingAddress)}
-		{$subscriptionMailingAddress|nl2br}<br />
+		{$subscriptionMailingAddress|nl2br}
 	{/if}
 	{if !empty($subscriptionPhone)}
-		{translate key="user.phone"}: {$subscriptionPhone|escape}<br />
+		{translate key="user.phone"}: {$subscriptionPhone|escape}
 	{/if}
 	{if !empty($subscriptionFax)}
-		{translate key="user.fax"}: {$subscriptionFax|escape}<br />
+		{translate key="user.fax"}: {$subscriptionFax|escape}
 	{/if}
 	{if !empty($subscriptionEmail)}
-		{translate key="user.email"}: {mailto address=$subscriptionEmail|escape encode="hex"}<br />
+		{translate key="user.email"}: {mailto address=$subscriptionEmail|escape encode="hex"}
 	{/if}
 	{if !empty($subscriptionAdditionalInformation)}
-		<br />{$subscriptionAdditionalInformation|nl2br}<br />
+		{$subscriptionAdditionalInformation|nl2br}
 	{/if}
 </p>
 

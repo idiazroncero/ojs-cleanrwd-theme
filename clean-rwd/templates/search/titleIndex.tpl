@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br />
+
 
 {if $currentJournal}
 	{assign var=numCols value=3}

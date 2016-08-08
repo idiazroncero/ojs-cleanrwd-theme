@@ -54,9 +54,9 @@
 	<h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 	<div><em>{$article->getAuthorString()|escape}</em></div>
 	{if $article->getLocalizedAbstract()}
-		<br />
+		
 		<h4>{translate key="article.abstract"}</h4>
-		<br />
+		
 		<div>{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}</div>
 	{/if}
 {/if}

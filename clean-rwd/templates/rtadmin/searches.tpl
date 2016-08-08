@@ -27,7 +27,7 @@ $(document).ready(function() { setupTableDND("#dragTable",
 	<li class="current"><a href="{url op="searches" path=$version->getVersionId()|to_array:$context->getContextId()}" class="action">{translate key="rt.searches"}</a></li>
 </ul>
 
-<br />
+
 
 <div id="searches">
 

@@ -96,7 +96,7 @@
 		{/if}
 	</form>
 </div>
-<br />
+
 
 {call_hook name="Templates::Search::SearchResults::PreResults"}
 

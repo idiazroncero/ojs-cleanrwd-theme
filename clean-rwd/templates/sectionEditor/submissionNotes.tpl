@@ -90,10 +90,10 @@
 	</tr>
 	<tr valign="top">
 		<td class="label" width="20%">{translate key="common.uploadedFile"}</td>
-		<td class="value" width="80%">{if $articleNote->getFileId()}<a href="{url op="downloadFile" path=$articleId|to_array:$articleNote->getFileId()}">{$articleNote->getOriginalFileName()|escape}</a><br /><input type="checkbox" name="removeUploadedFile" value="1" />&nbsp;{translate key="submission.notes.removeUploadedFile"}{else}&mdash;{/if}</td>
+		<td class="value" width="80%">{if $articleNote->getFileId()}<a href="{url op="downloadFile" path=$articleId|to_array:$articleNote->getFileId()}">{$articleNote->getOriginalFileName()|escape}</a><input type="checkbox" name="removeUploadedFile" value="1" />&nbsp;{translate key="submission.notes.removeUploadedFile"}{else}&mdash;{/if}</td>
 	</tr>
 </table>
-<br />
+
 <input type="button" class="button" value="{translate key="submission.notes.deleteNote"}" onclick="confirmAction('{url op="removeSubmissionNote" articleId=$articleNote->getArticleId() noteId=$articleNote->getId() fileId=$articleNote->getFileId()}', '{translate|escape:"jsparam" key="submission.notes.confirmDelete"}')" />&nbsp;<input type="submit" class="button defaultButton" value="{translate key="submission.notes.updateNote"}" />
 </form>
 

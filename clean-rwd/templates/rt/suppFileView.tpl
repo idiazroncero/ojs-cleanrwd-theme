@@ -16,7 +16,7 @@
 <div id="suppFileView">
 <h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
 
-<br />
+
 
 <div id="supplementarFileData">
 <h3>{translate key="author.submit.supplementaryFileData"}</h3>

@@ -13,7 +13,7 @@
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" valign="bottom">
 		<td width="5%">{sort_heading key="common.id" sort="id" sortOrder="ASC"}</td>
-		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_heading key="submissions.submit" sort="submitDate"}</td>
+		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_heading key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_heading key="submissions.sec" sort="section"}</td>
 		<td width="25%">{sort_heading key="article.authors" sort="authors"}</td>
 		<td width="35%">{sort_heading key="article.title" sort="title"}</td>
@@ -56,10 +56,10 @@
 				{** Payment related actions *}
 				{if $status==STATUS_QUEUED_UNASSIGNED || $status==STATUS_QUEUED_REVIEW}
 					{if $submissionEnabled && !$completedPaymentDAO->hasPaidSubmission($submission->getJournalId(), $submission->getId())}
-						<br />
+						
 						<a href="{url op="paySubmissionFee" path="$articleId"}" class="action">{translate key="payment.submission.paySubmission"}</a>					
 					{elseif $fastTrackEnabled}
-						<br />
+						
 						{if $submission->getFastTracked()}
 							{translate key="payment.fastTrack.inFastTrack"}
 						{else}
@@ -68,7 +68,7 @@
 					{/if}
 				{elseif $status==STATUS_QUEUED_EDITING}
 					{if $publicationEnabled}
-						<br />
+						
 						{if $completedPaymentDAO->hasPaidPublication($submission->getJournalId(), $submission->getId())}
 							{translate key="payment.publication.publicationPaid}
 						{else}
@@ -79,7 +79,7 @@
 			</td>
 		{else}
 			<td><a href="{url op="submit" path=$progress articleId=$articleId}" class="action">{if $submission->getLocalizedTitle()}{$submission->getLocalizedTitle()|strip_tags|truncate:60:"..."}{else}{translate key="common.untitled"}{/if}</a></td>
-			<td align="right">{translate key="submissions.incomplete"}<br /><a href="{url op="deleteSubmission" path=$articleId}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="author.submissions.confirmDelete"}')">{translate key="common.delete"}</a></td>
+			<td align="right">{translate key="submissions.incomplete"}<a href="{url op="deleteSubmission" path=$articleId}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="author.submissions.confirmDelete"}')">{translate key="common.delete"}</a></td>
 		{/if}
 
 	</tr>

@@ -14,7 +14,7 @@
 <div id="galleyForm">
 <h3>{if $galleyId}{translate key="submission.layout.editGalley"}{else}{translate key="submission.layout.addGalley"}{/if}</h3>
 
-<br />
+
 
 <form method="post" action="{url op="saveGalley" path=$articleId|to_array:$galleyId}" enctype="multipart/form-data">
 {include file="common/formErrors.tpl"}
@@ -136,7 +136,7 @@
 </tr>
 </table>
 </div>
-<br />
+
 <div id="galleyImages">
 <h4>{translate key="submission.layout.galleyImages"}</h4>
 
@@ -175,7 +175,7 @@
 <input type="submit" name="uploadImage" class="button" value="{translate key="common.upload"}" />
 </div>
 {/if}
-<br />
+
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="submissionEditing" path=$articleId escape=false}'" /></p>
 

@@ -38,18 +38,18 @@
 				<td>{translate key=$emailTemplate->getToRoleName()}</td>
 				<td>{$emailTemplate->getSubject()|escape|truncate:50:"..."}</td>
 				<td align="right" class="nowrap">
-					<a href="{url op="editEmail" path=$emailTemplate->getEmailKey()}" class="action">{translate key="common.edit"}</a><br />
+					<a href="{url op="editEmail" path=$emailTemplate->getEmailKey()}" class="action">{translate key="common.edit"}</a>
 					{if $emailTemplate->getCanDisable() && !$emailTemplate->isCustomTemplate()}
 						{if $emailTemplate->getEnabled() == 1}
-							&nbsp;<a href="{url op="disableEmail" path=$emailTemplate->getEmailKey()}" class="action">{translate key="manager.emails.disable"}</a><br />
+							&nbsp;<a href="{url op="disableEmail" path=$emailTemplate->getEmailKey()}" class="action">{translate key="manager.emails.disable"}</a>
 						{else}
-							&nbsp;<a href="{url op="enableEmail" path=$emailTemplate->getEmailKey()}" class="action">{translate key="manager.emails.enable"}</a><br />
+							&nbsp;<a href="{url op="enableEmail" path=$emailTemplate->getEmailKey()}" class="action">{translate key="manager.emails.enable"}</a>
 						{/if}
 					{/if}
 					{if $emailTemplate->isCustomTemplate()}
-						&nbsp;<a href="{url op="deleteCustomEmail" path=$emailTemplate->getEmailKey()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.emails.confirmDelete"}')" class="action">{translate key="common.delete"}</a><br />
+						&nbsp;<a href="{url op="deleteCustomEmail" path=$emailTemplate->getEmailKey()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.emails.confirmDelete"}')" class="action">{translate key="common.delete"}</a>
 					{else}
-						&nbsp;<a href="{url op="resetEmail" path=$emailTemplate->getEmailKey()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.emails.confirmReset"}')" class="action">{translate key="manager.emails.reset"}</a><br />
+						&nbsp;<a href="{url op="resetEmail" path=$emailTemplate->getEmailKey()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.emails.confirmReset"}')" class="action">{translate key="manager.emails.reset"}</a>
 					{/if}
 				</td>
 				<td><input type="checkbox" name="tplId[]" value="{$emailTemplate->getEmailKey()}" /></td>
@@ -72,7 +72,7 @@
 			</tr>
 		{/if}
 		</table>
-		<br />
+		
 		<p>
 			<input type='submit' value="{translate key="manager.emails.exportXML"}"" class='button' />
 		</p>
@@ -86,7 +86,7 @@
 		</p>
 	</form>
 
-	<a href="{url op="createEmail"}" class="action">{translate key="manager.emails.createEmail"}</a><br />
+	<a href="{url op="createEmail"}" class="action">{translate key="manager.emails.createEmail"}</a>
 	<a href="{url op="resetAllEmails"}" onclick="return confirm('{translate|escape:"jsparam" key="manager.emails.confirmResetAll"}')" class="action">{translate key="manager.emails.resetAll"}</a>
 
 </div>

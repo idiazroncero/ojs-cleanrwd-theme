@@ -62,7 +62,7 @@
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 
-<br />
+
 
 <div id="subscriptions">
 <table width="100%" class="listing">

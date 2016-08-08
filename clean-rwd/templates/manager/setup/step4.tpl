@@ -264,7 +264,7 @@ function setRegAllowOpts(form) {
 	</tr>
 </table>
 </div><!-- uniqueIdentifier -->
-<br />
+
 <div id="pageNumberIdentifier">
 <h4>{translate key="manager.setup.pageNumberIdentifier"}</h4>
 

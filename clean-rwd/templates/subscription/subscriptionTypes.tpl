@@ -28,7 +28,7 @@ $(document).ready(function() { setupTableDND("#subscriptionTypesTable", "moveSub
 	<li><a href="{url op="payments"}">{translate key="manager.payments"}</a></li>
 </ul>
 
-<br />
+
 
 <div id="subscriptionTypes">
 <table width="100%" class="listing" id="subscriptionTypesTable">

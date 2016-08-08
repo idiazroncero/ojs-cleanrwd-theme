@@ -20,7 +20,7 @@
 	</ul>
 {/if}
 
-<br />
+
 
 <form action="{if $versionId}{url op="saveVersion" path=$versionId}{else}{url op="createVersion" path="save"}{/if}" method="post">
 <table class="data" width="100%">

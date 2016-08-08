@@ -52,7 +52,7 @@
 		<td width="20%" class="label">{fieldLabel name="onlineIssn" key="manager.setup.onlineIssn"}</td>
 		<td width="80%" class="value">
 			<input type="text" name="onlineIssn" id="onlineIssn" value="{$onlineIssn|escape}" size="8" maxlength="16" class="textField" />
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.issnDescription"}</span>
 		</td>
 	</tr>
@@ -60,7 +60,7 @@
 		<td width="20%" class="label">{fieldLabel name="mailingAddress" key="common.mailingAddress"}</td>
 		<td width="80%" class="value">
 			<textarea name="mailingAddress" id="mailingAddress" rows="3" cols="40" class="textArea">{$mailingAddress|escape}</textarea>
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.mailingAddressDescription"}</span>
 		</td>
 	</tr>
@@ -144,14 +144,14 @@
 <div id="setupEmails">
 <h3>1.4 {translate key="manager.setup.emails"}</h3>
 <table width="100%" class="data">
-	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailHeaderDescription"}<br />&nbsp;</td></tr>
+	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailHeaderDescription"}&nbsp;</td></tr>
 	<tr valign="top">
 		<td class="label">{fieldLabel name="emailHeader" key="manager.setup.emailHeader"}</td>
 		<td class="value">
 			<textarea name="emailHeader" id="emailHeader" rows="3" cols="60" class="textArea">{$emailHeader|escape}</textarea>
 		</td>
 	</tr>
-	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailSignatureDescription"}<br />&nbsp;</td></tr>
+	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailSignatureDescription"}&nbsp;</td></tr>
 	<tr valign="top">
 		<td class="label">{fieldLabel name="emailSignature" key="manager.setup.emailSignature"}</td>
 		<td class="value">
@@ -159,13 +159,13 @@
 		</td>
 	</tr>
 	<tr valign="top"><td colspan="2">&nbsp;</td></tr>
-	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailBounceAddressDescription"}<br />&nbsp;</td></tr>
+	<tr valign="top"><td colspan="2">{translate key="manager.setup.emailBounceAddressDescription"}&nbsp;</td></tr>
 	<tr valign="top">
 		<td width="20%" class="label">{fieldLabel name="envelopeSender" key="manager.setup.emailBounceAddress"}</td>
 		<td width="80%" class="value">
 			<input type="text" name="envelopeSender" id="envelopeSender" size="40" maxlength="255" class="textField" {if !$envelopeSenderEnabled}disabled="disabled" value=""{else}value="{$envelopeSender|escape}"{/if} />
 			{if !$envelopeSenderEnabled}
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.emailBounceAddressDisabled"}</span>
 			{/if}
 		</td>
@@ -307,7 +307,7 @@
 		<td width="20%" class="label">{fieldLabel name="customHeaders" key="manager.setup.customTags"}</td>
 		<td width="80%" class="value">
 			<textarea name="customHeaders[{$formLocale|escape}]" id="customHeaders" rows="3" cols="40" class="textArea">{$customHeaders[$formLocale]|escape}</textarea>
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.customTagsDescription"}</span>
 		</td>
 	</tr>

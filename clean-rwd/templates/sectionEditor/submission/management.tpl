@@ -59,7 +59,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="{url op="addSuppFile" from="submission" path=$submission->getId()}" class="action">{translate key="submission.addSuppFile"}</a>
 				{/if}
-				<br />
+				
 				{assign var=notFirst value=1}
 			{foreachelse}
 				{translate key="common.none"}&nbsp;&nbsp;&nbsp;&nbsp;<a href="{url op="addSuppFile" from="submission" path=$submission->getId()}" class="action">{translate key="submission.addSuppFile"}</a>

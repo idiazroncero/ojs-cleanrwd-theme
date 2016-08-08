@@ -74,7 +74,7 @@
 			<tr>
 				<td />
 				<td>
-					<label for="commentsToEditor">{translate key="author.submit.addReasonsForWaiver"}</label><br />
+					<label for="commentsToEditor">{translate key="author.submit.addReasonsForWaiver"}</label>
 					<textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea">{$commentsToEditor|escape}</textarea>
 				</td>
 			</tr>

@@ -59,7 +59,7 @@
 		</p>
 	{/foreach}
 
-	<br />
+	
 
 	{if $editorPreview}
 		<p><input type="button" value="{translate key="common.close"}" class="button defaultButton" onclick="window.close()" /></p>

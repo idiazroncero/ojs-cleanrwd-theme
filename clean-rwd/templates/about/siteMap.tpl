@@ -53,7 +53,7 @@
 					{/if}
 				</li>
 				{if $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}
-					<li><a href="{url journal=$currentJournal->getPath() page="search"}">{translate key="navigation.search"}</a><br />
+					<li><a href="{url journal=$currentJournal->getPath() page="search"}">{translate key="navigation.search"}</a>
 						<ul class="plain">
 							<li><a href="{url journal=$currentJournal->getPath() page="search" op="authors"}">{translate key="navigation.browseByAuthor"}</a></li>
 							<li><a href="{url journal=$currentJournal->getPath() page="search" op="titles"}">{translate key="navigation.browseByTitle"}</a></li>

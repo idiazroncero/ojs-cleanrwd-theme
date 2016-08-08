@@ -78,13 +78,13 @@ function sortSearch(heading, direction) {
 {include file="sectionEditor/$pageToDisplay.tpl"}
 
 {if ($pageToDisplay == "submissionsInReview")}
-<br />
+
 <div id="notes">
 <h4>{translate key="common.notes"}</h4>
 {translate key="editor.submissionReview.notes"}
 </div>
 {elseif ($pageToDisplay == "submissionsInEditing")}
-<br />
+
 <div id="notes">
 <h4>{translate key="common.notes"}</h4>
 {translate key="editor.submissionEditing.notes"}

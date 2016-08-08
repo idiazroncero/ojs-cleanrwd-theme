@@ -68,7 +68,7 @@
 		</td>
 		<td width="95%" class="value">
 			<label for="mailSubmissionsToReviewers-0"><strong>{translate key="manager.setup.reviewProcessStandard"}</strong></label>
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.reviewProcessStandardDescription"}</span>
 		</td>
 	</tr>
@@ -81,7 +81,7 @@
 		</td>
 		<td width="95%" class="value">
 			<label for="mailSubmissionsToReviewers-1"><strong>{translate key="manager.setup.reviewProcessEmail"}</strong></label>
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.reviewProcessEmailDescription"}</span>
 		</td>
 	</tr>
@@ -223,7 +223,7 @@
 
 <p>
 	<textarea name="lockssLicense[{$formLocale|escape}]" id="lockssLicense" rows="6" cols="60" class="textArea">{$lockssLicense[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{fieldLabel name="lockssLicense" key="manager.setup.lockssLicenses"}</span>
 </p>
 </div>

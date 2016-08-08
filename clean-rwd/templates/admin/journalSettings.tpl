@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br />
+
 
 <script type="text/javascript">
 {literal}
@@ -65,7 +65,7 @@ function doSubmit() {
 		<td class="label">{fieldLabel name="journalPath" key="journal.path" required="true"}</td>
 		<td class="value">
 			<input type="text" id="journalPath" name="journalPath" value="{$journalPath|escape}" size="16" maxlength="32" class="textField" />
-			<br />
+			
 			{url|assign:"sampleUrl" journal="path"}
 			<span class="instruct">{translate key="admin.journals.urlWillBe" sampleUrl=$sampleUrl}</span>
 		</td>

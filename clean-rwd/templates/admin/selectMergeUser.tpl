@@ -57,7 +57,7 @@
 	<li><a href="{url path="subscriptionManagers" oldUserIds=$oldUserIds}">{translate key="user.role.subscriptionManagers"}</a></li>
 </ul>
 
-<br />
+
 {else}
 <p><a href="{url path="all" oldUserIds=$oldUserIds}" class="action">{translate key="admin.mergeUsers.allUsers"}</a></p>
 {/if}

@@ -185,7 +185,7 @@ function confirmSubmissionCheck() {
 					{foreach from=$suppFiles item=suppFile}
 						{if $suppFile->getShowReviewers() }
 							{assign var=sawSuppFile value=1}
-							<a href="{url op="downloadFile" path=$reviewId|to_array:$articleId:$suppFile->getFileId()}" class="file">{$suppFile->getFileName()|escape}</a><br />
+							<a href="{url op="downloadFile" path=$reviewId|to_array:$articleId:$suppFile->getFileId()}" class="file">{$suppFile->getFileName()|escape}</a>
 						{/if}
 					{/foreach}
 
@@ -213,7 +213,7 @@ function confirmSubmissionCheck() {
 				{$reviewAssignment->getCompetingInterests()|strip_unsafe_html|nl2br}
 			{else}
 				<form action="{url op="saveCompetingInterests" reviewId=$reviewId}" method="post">
-					<textarea {if $cannotChangeCI}disabled="disabled" {/if}name="competingInterests" class="textArea" id="competingInterests" rows="5" cols="40">{$reviewAssignment->getCompetingInterests()|escape}</textarea><br />
+					<textarea {if $cannotChangeCI}disabled="disabled" {/if}name="competingInterests" class="textArea" id="competingInterests" rows="5" cols="40">{$reviewAssignment->getCompetingInterests()|escape}</textarea>
 					<input {if $cannotChangeCI}disabled="disabled" {/if}class="button defaultButton" type="submit" value="{translate key="common.save"}" />
 				</form>
 			{/if}

@@ -20,7 +20,7 @@
 	</ul>
 {/if}
 
-<br />
+
 
 <form action="{if $contextId}{url op="saveContext" path=$versionId|to_array:$contextId}{else}{url op="createContext" path=$versionId|to_array:"save"}{/if}" method="post">
 <table class="data" width="100%">

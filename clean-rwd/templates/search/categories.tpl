@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br />
+
 
 <a name="categories"></a>
 

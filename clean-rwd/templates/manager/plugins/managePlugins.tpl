@@ -44,7 +44,7 @@
 				</ul>
 			{/if}
 
-			<br />
+			
 			<table class="data" width="100%">
 			<tr>
 				<td width="25%" class="label">
@@ -88,7 +88,7 @@
 				</ul>
 			{/if}
 
-			<br />
+			
 			<table class="data" width="100%">
 			<tr>
 				<td width="25%" class="label">
@@ -116,7 +116,7 @@
 				</ul>
 			{/if}
 
-			<br />
+			
 			<form method="post" action="{url path="deletePlugin"|to_array:$category:$plugin}" enctype="multipart/form-data">
 				{if $error}
 					<span class="formError">{translate key="form.errorsOccurred"}:</span>

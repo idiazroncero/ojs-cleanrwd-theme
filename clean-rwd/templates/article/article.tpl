@@ -45,22 +45,22 @@
 	{call_hook name="Templates::Article::Article::ArticleCoverImage"}
 	<div id="articleTitle"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3></div>
 	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
-	<br />
+	
 	{if $article->getLocalizedAbstract()}
 		<div id="articleAbstract">
 		<h4>{translate key="article.abstract"}</h4>
-		<br />
+		
 		<div>{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}</div>
-		<br />
+		
 		</div>
 	{/if}
 
 	{if $article->getLocalizedSubject()}
 		<div id="articleSubject">
 		<h4>{translate key="article.subject"}</h4>
-		<br />
+		
 		<div>{$article->getLocalizedSubject()|escape}</div>
-		<br />
+		
 		</div>
 	{/if}
 
@@ -100,13 +100,13 @@
 	{if $citationFactory->getCount()}
 		<div id="articleCitations">
 		<h4>{translate key="submission.citations"}</h4>
-		<br />
+		
 		<div>
 			{iterate from=citationFactory item=citation}
 				<p>{$citation->getRawCitation()|strip_unsafe_html}</p>
 			{/iterate}
 		</div>
-		<br />
+		
 		</div>
 	{/if}
 {/if}
@@ -118,8 +118,8 @@
 		{assign var=pubId value=$pubIdPlugin->getPubId($pubObject, true)}{* Preview rather than assign a pubId *}
 	{/if}
 	{if $pubId}
-		<br />
-		<br />
+		
+		
 		{$pubIdPlugin->getPubIdDisplayType()|escape}: {if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}">{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $pubId)|escape}</a>{else}{$pubId|escape}{/if}
 	{/if}
 {/foreach}
@@ -132,8 +132,8 @@
 				{assign var=galleyPubId value=$pubIdPlugin->getPubId($galley, true)}{* Preview rather than assign a pubId *}
 			{/if}
 			{if $galleyPubId}
-				<br />
-				<br />
+				
+				
 				{$pubIdPlugin->getPubIdDisplayType()|escape} ({$galley->getGalleyLabel()|escape}): {if $pubIdPlugin->getResolvingURL($currentJournal->getId(), $galleyPubId)|escape}<a id="pub-id::{$pubIdPlugin->getPubIdType()|escape}-g{$galley->getId()}" href="{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $galleyPubId)|escape}">{$pubIdPlugin->getResolvingURL($currentJournal->getId(), $galleyPubId)|escape}</a>{else}{$galleyPubId|escape}{/if}
 			{/if}
 		{/foreach}

@@ -155,7 +155,7 @@ function checkSubmissionChecklist() {
 
 <div id="privacyStatement">
 <h3>{translate key="author.submit.privacyStatement"}</h3>
-<br />
+
 {$currentJournal->getLocalizedSetting('privacyStatement')|nl2br}
 </div>
 
