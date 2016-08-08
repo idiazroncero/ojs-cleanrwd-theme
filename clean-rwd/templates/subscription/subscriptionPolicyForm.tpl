@@ -24,7 +24,7 @@
 </ul>
 
 {if $subscriptionPoliciesSaved}
-<br/>
+
 {translate key="manager.subscriptionPolicies.subscriptionPoliciesSaved"}
 {/if}
 
@@ -150,7 +150,7 @@
 </p>
 
 {if !$scheduledTasksEnabled}
-	<br/>
+	
 	{translate key="manager.subscriptionPolicies.expiryRemindersDisabled"}
 {/if}
 </div>
@@ -204,7 +204,7 @@
 	<input type="checkbox" name="enableOpenAccessNotification" id="enableOpenAccessNotification" value="1"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableOpenAccessNotification} checked="checked"{/if} />&nbsp;
 	{fieldLabel name="enableOpenAccessNotification" key="manager.subscriptionPolicies.openAccessNotificationDescription"}
 	{if !$scheduledTasksEnabled}
-		<br/>
+		
 		{translate key="manager.subscriptionPolicies.openAccessNotificationDisabled"}
 	{/if}
 	</p>
@@ -233,7 +233,7 @@
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="subscriptionPolicies" escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

@@ -13,7 +13,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br/>
+
 
 <div id="emails">
 	<form action="{url op="exportEmails"}" method="post" id="emailsForm">

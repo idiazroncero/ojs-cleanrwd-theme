@@ -21,11 +21,11 @@
 {/strip}
 
 {if $subscriptionTypeCreated}
-<br/>
+
 {translate key="manager.subscriptionTypes.subscriptionTypeCreatedSuccessfully"}
 {/if}
 
-<br/>
+
 
 <form id="subscriptionType" method="post" action="{url op="updateSubscriptionType"}">
 {if $typeId}
@@ -124,7 +124,7 @@
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> {if not $typeId}<input type="submit" name="createAnother" value="{translate key="manager.subscriptionTypes.form.saveAndCreateAnotherType"}" class="button" /> {/if}<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="subscriptionTypes" escape=false}'" /></p>
 </form>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 {include file="common/footer.tpl"}
 

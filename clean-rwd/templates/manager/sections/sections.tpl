@@ -19,48 +19,39 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveSection"); });
 {/literal}
 </script>
 
-<br/>
-
 <div id="sections">
 <table width="100%" class="listing" id="dragTable">
-	<tr>
-		<td class="headseparator" colspan="3">&nbsp;</td>
-	</tr>
-	<tr class="heading" >
-		<td width="60%">{translate key="section.title"}</td>
-		<td width="25%">{translate key="section.abbreviation"}</td>
-		<td width="15%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td class="headseparator" colspan="3">&nbsp;</td>
-	</tr>
-{iterate from=sections item=section name=sections}
-	<tr  id="section-{$section->getId()}" class="data">
-		<td class="drag">{$section->getLocalizedTitle()|escape}</td>
-		<td class="drag">{$section->getLocalizedAbbrev()|escape}</td>
-		<td align="right" class="nowrap">
-			<a href="{url op="editSection" path=$section->getId()}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteSection" path=$section->getId()}" onclick="{if !in_array($section->getId(), $emptySectionIds)}alert('{translate|escape:"jsparam" key="manager.sections.alertDelete"}'); return false{else}return confirm('{translate|escape:"jsparam" key="manager.sections.confirmDelete"}'){/if}" class="action">{translate key="common.delete"}</a>&nbsp;|&nbsp;<a href="{url op="moveSection" d=u id=$section->getId()}">&uarr;</a>&nbsp;<a href="{url op="moveSection" d=d id=$section->getId()}">&darr;</a>
-		</td>
-	</tr>
-{/iterate}
-	<tr>
-		<td colspan="3" class="endseparator">&nbsp;</td>
-	</tr>
-{if $sections->wasEmpty()}
-	<tr>
-		<td colspan="3" class="nodata">{translate key="manager.sections.noneCreated"}</td>
-	</tr>
-	<tr>
-		<td colspan="3" class="endseparator">&nbsp;</td>
-	</tr>
-{else}
-	<tr>
-		<td align="left">{page_info iterator=$sections}</td>
-		<td colspan="2" align="right">{page_links anchor="sections" name="sections" iterator=$sections}</td>
-	</tr>
-{/if}
+	<thead>
+		<th>{translate key="section.title"}</th>
+		<th>{translate key="section.abbreviation"}</th>
+		<th>{translate key="common.action"}</th>
+	</thead>
+	<tbody>
+	{iterate from=sections item=section name=sections}
+		<tr id="section-{$section->getId()}">
+			<td class="drag">{$section->getLocalizedTitle()|escape}</td>
+			<td class="drag">{$section->getLocalizedAbbrev()|escape}</td>
+			<td>
+				<a href="{url op="editSection" path=$section->getId()}" class="button button--small">{translate key="common.edit"}</a>&nbsp;<a href="{url op="deleteSection" path=$section->getId()}" onclick="{if !in_array($section->getId(), $emptySectionIds)}alert('{translate|escape:"jsparam" key="manager.sections.alertDelete"}'); return false{else}return confirm('{translate|escape:"jsparam" key="manager.sections.confirmDelete"}'){/if}" class="button button--small button--cancel">{translate key="common.delete"}</a>&nbsp;<a href="{url op="moveSection" d=u id=$section->getId()}">&uarr;</a>&nbsp;<a href="{url op="moveSection" d=d id=$section->getId()}">&darr;</a>
+			</td>
+		</tr>
+	{/iterate}
+	{if $sections->wasEmpty()}
+		<tr>
+			<td>{translate key="manager.sections.noneCreated"}</td>
+		</tr>
+	{else}
+		<tr class="listing-pager">
+			<td>{page_info iterator=$sections}</td>
+			<td>{page_links anchor="sections" name="sections" iterator=$sections}</td>
+		</tr>
+	{/if}
+	</tbody>
 </table>
-<a class="action" href="{url op="createSection"}">{translate key="manager.sections.create"}</a>
+
+<div class="buttons">
+	<a class="button" href="{url op="createSection"}">{translate key="manager.sections.create"}</a>
+</div>
 </div>
 
 {include file="common/footer.tpl"}

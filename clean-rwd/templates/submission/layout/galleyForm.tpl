@@ -82,7 +82,7 @@
 {/if}
 </table>
 </div>
-<br/>
+
 
 {foreach from=$pubIdPlugins item=pubIdPlugin}
 	{assign var=pubIdMetadataFile value=$pubIdPlugin->getPubIdMetadataFile()}
@@ -179,7 +179,7 @@
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="submissionEditing" path=$articleId escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 </div>

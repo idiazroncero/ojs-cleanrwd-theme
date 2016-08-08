@@ -136,9 +136,9 @@
 				{/foreach}
 				<option {if !$foundCc}selected="selected" {/if}value="">Other</option>
 			</select>
-			<br/>
+			
 			<input type="text" name="licenseURL" id="licenseURL" value="{$licenseURL|escape}" {if $foundCc}readonly="readonly" {/if}size="40" maxlength="255" class="textField" />
-			<br/>
+			
 			{fieldLabel name="licenseURL" key="manager.setup.licenseURLDescription"}
 		</td>
 	</tr>
@@ -201,7 +201,7 @@
 	<tr >
 		<td>&nbsp;</td>
 		<td class="value">
-			<span class="instruct">{translate key="manager.setup.disciplineDescription"}</span><br/>
+			<span class="instruct">{translate key="manager.setup.disciplineDescription"}</span>
 			<span class="instruct">{translate key="manager.setup.disciplineProvideExamples"}:</span>
 			
 			<input type="text" name="metaDisciplineExamples[{$formLocale|escape}]" id="metaDisciplineExamples" value="{$metaDisciplineExamples[$formLocale]|escape}" size="60" class="textField" />
@@ -274,7 +274,7 @@
 	<tr >
 		<td>&nbsp;</td>
 		<td class="value">
-			<span class="instruct">{translate key="manager.setup.coverageDescription"}</span><br/>
+			<span class="instruct">{translate key="manager.setup.coverageDescription"}</span>
 			<span class="instruct">{translate key="manager.setup.coverageGeoProvideExamples"}:</span>
 			
 			<input type="text" name="metaCoverageGeoExamples[{$formLocale|escape}]" id="metaCoverageGeoExamples" value="{$metaCoverageGeoExamples[$formLocale]|escape}" size="60" class="textField" />
@@ -356,7 +356,7 @@
 	<tr >
 		<td class="label"><input {if !$submissionAckEnabled}disabled="disabled" {/if}type="checkbox" name="copySubmissionAckSpecified" id="copySubmissionAckSpecified" value="true" {if $copySubmissionAckSpecified}checked="checked"{/if}/></td>
 		<td class="value">
-			{fieldLabel name="copySubmissionAckSpecified" key="manager.setup.notifications.copySpecifiedAddress"}<br/>
+			{fieldLabel name="copySubmissionAckSpecified" key="manager.setup.notifications.copySpecifiedAddress"}
 			{fieldLabel name="copySubmissionAckAddress" key="user.email"}&nbsp;&nbsp;<input {if !$submissionAckEnabled}disabled="disabled" {/if}type="text" class="textField" id="copySubmissionAckAddress" name="copySubmissionAckAddress" value="{$copySubmissionAckAddress|escape}"/></td>
 	</tr>
 	{if !$submissionAckEnabled}
@@ -477,7 +477,7 @@
 
 <p><input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

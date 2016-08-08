@@ -192,6 +192,11 @@ input[type="text"], input[type="password"] {
 		font-family:$alt-font-family;
 		margin:0 $gutter 0 0;
 	}
+	.label--heading {
+		font-weight:bold;
+		display:block;
+		margin:0 $gutter rhythm(0.5) 0;
+	}
 }
 
 .form-group {

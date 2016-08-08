@@ -71,7 +71,7 @@
 				<select id="categories" name="categories[]" class="selectMenu" multiple="multiple">
 					{html_options options=$allCategories selected=$categories}
 				</select>
-				<br/>
+				
 				{translate key="manager.setup.categories.description"}
 			</td>
 		</tr>
@@ -184,7 +184,7 @@
 		<td width="20%" class="label">{fieldLabel name="publisherNote" key="manager.setup.note"}</td>
 		<td width="80%" class="value">
 			<textarea name="publisherNote[{$formLocale|escape}]" id="publisherNote" rows="5" cols="40" class="textArea">{$publisherNote[$formLocale]|escape}</textarea>
-			<br/>
+			
 			<span class="instruct">{translate key="manager.setup.publisherNoteDescription"}</span>
 			</td>
 	</tr>
@@ -209,7 +209,7 @@
 		<td width="20%" class="label">{fieldLabel name="sponsorNote" key="manager.setup.note"}</td>
 		<td width="80%" class="value">
 			<textarea name="sponsorNote[{$formLocale|escape}]" id="sponsorNote" rows="5" cols="40" class="textArea">{$sponsorNote[$formLocale]|escape}</textarea>
-			<br/>
+			
 			<span class="instruct">{translate key="manager.setup.sponsorNoteDescription"}</span>
 		</td>
 	</tr>
@@ -254,7 +254,7 @@
 		<td width="20%" class="label">{fieldLabel name="contributorNote" key="manager.setup.note"}</td>
 		<td width="80%" class="value">
 			<textarea name="contributorNote[{$formLocale|escape}]" id="contributorNote" rows="5" cols="40" class="textArea">{$contributorNote[$formLocale]|escape}</textarea>
-			<br/>
+			
 			<span class="instruct">{translate key="manager.setup.contributorNoteDescription"}</span>
 		</td>
 	</tr>
@@ -336,7 +336,7 @@
 
 <p><input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

@@ -28,7 +28,7 @@
 	<p>{$description|escape}</p>
 {/if}
 
-<br/>
+
 
 {include file="common/formErrors.tpl"}
 
@@ -37,7 +37,7 @@
 {if $isNewTemplate}
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="emailKey" key="manager.emails.emailKey"}</td>
-		<td width="80%" class="value"><input type="text" name="emailKey" value="{$emailKey|escape}" id="emailKey" size="20" maxlength="120" class="textField" /><br/>&nbsp;</td>
+		<td width="80%" class="value"><input type="text" name="emailKey" value="{$emailKey|escape}" id="emailKey" size="20" maxlength="120" class="textField" />&nbsp;</td>
 	</tr>
 {/if}
 

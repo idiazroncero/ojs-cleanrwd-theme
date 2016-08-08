@@ -107,7 +107,7 @@ function moveAuthor(dir, authorIndex) {
 	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-affiliation" key="user.affiliation"}</td>
 		<td class="value">
-			<textarea name="authors[{$authorIndex|escape}][affiliation][{$formLocale|escape}]" class="textArea" id="authors-{$authorIndex|escape}-affiliation" rows="5" cols="40">{$author.affiliation[$formLocale]|escape}</textarea><br/>
+			<textarea name="authors[{$authorIndex|escape}][affiliation][{$formLocale|escape}]" class="textArea" id="authors-{$authorIndex|escape}-affiliation" rows="5" cols="40">{$author.affiliation[$formLocale]|escape}</textarea>
 			<span class="instruct">{translate key="user.affiliation.description"}</span>
 		</td>
 	</tr>
@@ -181,7 +181,7 @@ function moveAuthor(dir, authorIndex) {
 	<tr >
 		<td class="label">{fieldLabel name="authors-0-affiliation" key="user.affiliation"}</td>
 		<td class="value">
-			<textarea name="authors[0][affiliation][{$formLocale|escape}]" class="textArea" id="authors-0-affiliation" rows="5" cols="40"></textarea><br/>
+			<textarea name="authors[0][affiliation][{$formLocale|escape}]" class="textArea" id="authors-0-affiliation" rows="5" cols="40"></textarea>
 			<span class="instruct">{translate key="user.affiliation.description"}</span>
 		</td>
 	</tr>
@@ -483,7 +483,7 @@ function moveAuthor(dir, authorIndex) {
 
 <p><input type="submit" value="{translate key="submission.saveMetadata"}" class="button defaultButton"/> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

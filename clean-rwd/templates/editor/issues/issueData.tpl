@@ -103,14 +103,14 @@
 					{math|assign:"maxYear" equation="x+2" x=$currentYear}
 				{/if}
 				{html_select_date prefix="datePublished" time=$datePublished|default:"---" all_extra="class=\"selectMenu\"" start_year=$minYear end_year=$maxYear year_empty="-" month_empty="-" day_empty="-"}
-				<br/>
-				<input type="checkbox" id="resetArticlePublicationDates" name="resetArticlePublicationDates" />&nbsp;{fieldLabel name="resetArticlePublicationDates" key="editor.issues.resetArticlePublicationDates"}<br/>
+				
+				<input type="checkbox" id="resetArticlePublicationDates" name="resetArticlePublicationDates" />&nbsp;{fieldLabel name="resetArticlePublicationDates" key="editor.issues.resetArticlePublicationDates"}
 			{else}
 				{translate key="editor.issues.unpublished"}
 			{/if}
 
 			{if $issue->getDateNotified()}
-				<br/>
+				
 				{translate key="editor.usersNotified"}&nbsp;&nbsp;
 				{$issue->getDateNotified()|date_format:$dateFormatShort}
 			{/if}
@@ -131,7 +131,7 @@
 	<tr >
 		<td class="label">{fieldLabel name="openAccessDate" key="editor.issues.accessDate"}</td>
 		<td class="value">
-			<input type="checkbox" id="enableOpenAccessDate" name="enableOpenAccessDate" {if $openAccessDate}checked="checked" {/if}onchange="document.getElementById('issue').openAccessDateMonth.disabled=this.checked?false:true;document.getElementById('issue').openAccessDateDay.disabled=this.checked?false:true;document.getElementById('issue').openAccessDateYear.disabled=this.checked?false:true;" />&nbsp;{fieldLabel name="enableOpenAccessDate" key="editor.issues.enableOpenAccessDate"}<br/>
+			<input type="checkbox" id="enableOpenAccessDate" name="enableOpenAccessDate" {if $openAccessDate}checked="checked" {/if}onchange="document.getElementById('issue').openAccessDateMonth.disabled=this.checked?false:true;document.getElementById('issue').openAccessDateDay.disabled=this.checked?false:true;document.getElementById('issue').openAccessDateYear.disabled=this.checked?false:true;" />&nbsp;{fieldLabel name="enableOpenAccessDate" key="editor.issues.enableOpenAccessDate"}
 			{if $openAccessDate}
 				{html_select_date prefix=openAccessDate time=$openAccessDate end_year="+20" all_extra="class=\"selectMenu\""}
 			{else}
@@ -190,7 +190,7 @@
 </div>
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" onclick="document.location.href='{url op="issueData" path=$issueId escape=false}'" class="button" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

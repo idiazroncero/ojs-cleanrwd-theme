@@ -463,23 +463,23 @@ function prepBlockFields() {
 <table id="assignBlocksToSidebars" border="0" align="center" style="width: 100%;">
 	<tr align="center">
 		<td rowspan="2" id="assignBlocksToSidebarLeft" style="with: 30%;" >
-			{fieldLabel name="blockSelectLeftWidget" key="manager.setup.layout.leftSidebar"}<br/>
-			<input class="button defaultButton" style="width: 100%;" type="button" value="&uarr;" onclick="moveUp(this.form.elements['blockSelectLeftWidget']);" /><br/>
+			{fieldLabel name="blockSelectLeftWidget" key="manager.setup.layout.leftSidebar"}
+			<input class="button defaultButton" style="width: 100%;" type="button" value="&uarr;" onclick="moveUp(this.form.elements['blockSelectLeftWidget']);" />
 			<select name="blockSelectLeftWidget" id="blockSelectLeftWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:200px">
 				{foreach from=$leftBlockPlugins item=block}
 					<option value="{$block->getName()|escape}">{$block->getDisplayName()|escape}</option>
 				{foreachelse}
 					<option value=""></option>
 				{/foreach}
-			</select><br/>
+			</select>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&darr;" onclick="moveDown(this.form.elements['blockSelectLeftWidget']);" />
 		</td>
 		<td>
-			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockUnselectedWidget'],this.form.elements['blockSelectLeftWidget']);" /><br/>
+			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockUnselectedWidget'],this.form.elements['blockSelectLeftWidget']);" />
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&rarr;" onclick="jumpList(this.form.elements['blockSelectLeftWidget'],this.form.elements['blockUnselectedWidget']);" />
 		</td>
 		<td  id="assignBlocksToSidebarUnselected" style="width: 30%;" >
-			{fieldLabel name="blockUnselectedWidget" key="manager.setup.layout.unselected"}<br/>
+			{fieldLabel name="blockUnselectedWidget" key="manager.setup.layout.unselected"}
 			<select name="blockUnselectedWidget" id="blockUnselectedWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:180px;" >
 				{foreach from=$disabledBlockPlugins item=block}
 					<option value="{$block->getName()|escape}">{$block->getDisplayName()|escape}</option>
@@ -489,25 +489,25 @@ function prepBlockFields() {
 			</select>
 		</td>
 		<td>
-			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockSelectRightWidget'],this.form.elements['blockUnselectedWidget']);" /><br/>
+			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockSelectRightWidget'],this.form.elements['blockUnselectedWidget']);" />
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&rarr;" onclick="jumpList(this.form.elements['blockUnselectedWidget'],this.form.elements['blockSelectRightWidget']);" />
 		</td>
 		<td rowspan="2" id="assignBlocksToSidebarRight" style="width: 30%;">
-			{fieldLabel name="blockSelectRightWidget" key="manager.setup.layout.rightSidebar"}<br/>
-			<input class="button defaultButton" style="width: 100%;" type="button" value="&uarr;" onclick="moveUp(this.form.elements['blockSelectRightWidget']);" /><br/>
+			{fieldLabel name="blockSelectRightWidget" key="manager.setup.layout.rightSidebar"}
+			<input class="button defaultButton" style="width: 100%;" type="button" value="&uarr;" onclick="moveUp(this.form.elements['blockSelectRightWidget']);" />
 			<select name="blockSelectRightWidget" id="blockSelectRightWidget" multiple="multiple" size="10" class="selectMenu" style="width: 100%; height:200px" >
 				{foreach from=$rightBlockPlugins item=block}
 					<option value="{$block->getName()|escape}">{$block->getDisplayName()|escape}</option>
 				{foreachelse}
 					<option value=""></option>
 				{/foreach}
-			</select><br/>
+			</select>
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&darr;" onclick="moveDown(this.form.elements['blockSelectRightWidget']);" />
 		</td>
 	</tr>
 	<tr align="center">
 		<td colspan="3"  height="60px">
-			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockSelectRightWidget'],this.form.elements['blockSelectLeftWidget']);" /><br/>
+			<input class="button defaultButton" style="width: 100%;" type="button" value="&larr;" onclick="jumpList(this.form.elements['blockSelectRightWidget'],this.form.elements['blockSelectLeftWidget']);" />
 			<input class="button defaultButton" style="width: 100%;" type="button" value="&rarr;" onclick="jumpList(this.form.elements['blockSelectLeftWidget'],this.form.elements['blockSelectRightWidget']);" />
 		</td>
 	</tr>
@@ -556,7 +556,7 @@ function prepBlockFields() {
 
 <p><input type="submit" onclick="prepBlockFields()" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

@@ -21,7 +21,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br/>
+
 
 <form method="post" id="subscriptionForm" action="{url op="updateSubscription" path="institutional"}">
 {if $subscriptionId}
@@ -147,7 +147,7 @@
 
 </form>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 {include file="common/footer.tpl"}
 

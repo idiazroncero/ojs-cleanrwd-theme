@@ -143,7 +143,7 @@
 		<tr >
 			<td class="label">{fieldLabel name="affiliation" key="user.affiliation"}</td>
 			<td class="value">
-				<textarea id="affiliation" name="affiliation[{$formLocale|escape}]" rows="5" cols="40" class="textArea">{$affiliation[$formLocale]|escape}</textarea><br/>
+				<textarea id="affiliation" name="affiliation[{$formLocale|escape}]" rows="5" cols="40" class="textArea">{$affiliation[$formLocale]|escape}</textarea>
 				<span class="instruct">{translate key="user.affiliation.description"}</span>
 			</td>
 		</tr>
@@ -247,7 +247,7 @@
 
 
 {if !$implicitAuth || $implicitAuth === $smarty.const.IMPLICIT_AUTH_OPTIONAL}
-	<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+	<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 {/if}{* !$implicitAuth || $implicitAuth === $smarty.const.IMPLICIT_AUTH_OPTIONAL *}
 

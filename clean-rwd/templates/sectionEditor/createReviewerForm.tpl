@@ -96,7 +96,7 @@
 	<tr >
 		<td class="label">{fieldLabel name="affiliation" key="user.affiliation"}</td>
 		<td class="value">
-			<textarea name="affiliation[{$formLocale|escape}]" id="affiliation" rows="5" cols="40" class="textArea">{$affiliation[$formLocale]|escape}</textarea><br/>
+			<textarea name="affiliation[{$formLocale|escape}]" id="affiliation" rows="5" cols="40" class="textArea">{$affiliation[$formLocale]|escape}</textarea>
 			<span class="instruct">{translate key="user.affiliation.description"}</span>
 		</td>
 	</tr>
@@ -159,7 +159,7 @@
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="selectReviewer" path=$articleId escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 </div>
 </form>
 

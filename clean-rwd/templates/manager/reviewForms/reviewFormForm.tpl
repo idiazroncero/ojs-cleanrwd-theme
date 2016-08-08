@@ -20,7 +20,7 @@
 	</ul>
 {/if}
 
-<br/>
+
 
 <form id="reviewFormForm" method="post" action="{url op="updateReviewForm"}">
 {if $reviewFormId}
@@ -55,7 +55,7 @@
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="reviewForms" escape=false}'" /></p>
 </form>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 {include file="common/footer.tpl"}
 
