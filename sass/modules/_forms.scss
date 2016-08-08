@@ -236,3 +236,9 @@ input[type="text"], input[type="password"] {
 	color:$main-color-red;
 	@include adjust-font-size-to($h5-font-size);
 }
+
+.form-error--box {
+	background:$main-color-red;
+	padding:rhythm(0.25) rhythm(0.5);
+	color:$white;
+}

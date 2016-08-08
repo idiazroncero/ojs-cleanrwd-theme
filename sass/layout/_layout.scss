@@ -11,7 +11,10 @@
 // In order to apply full-width background-colors we need to set padding separately, not in #container
 #header {
 	background-color:$header-background-color;
-	padding:rhythm(1) $gutter; // We use rhythm for vertical spacing and user-defined gutter for horizontal
+	padding:rhythm(1) 0;
+	@if ($header-background-color != $background-color) {
+		padding:rhythm(1) $gutter;
+	}
 	width: 100%;
 	text-align: center;
 }
@@ -29,7 +32,11 @@
 }
 
 #footer {
-	padding:rhythm(0.5) rhythm(1);
+	background-color:$footer-background-color;
+	padding:rhythm(0.5) 0;
+	@if ($footer-background-color != $background-color) {
+		padding:rhythm(0.5) $gutter;
+	}
 }
 
 .sidebar {

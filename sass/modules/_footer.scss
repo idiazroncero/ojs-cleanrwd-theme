@@ -5,10 +5,9 @@
 }
 
 #footer {
-	background:$black;
 	clear:both; // Prevents overlapping floats
+	@include invert-if-dark($footer-background-color);
 	p {
-		color:$white;
 		@include adjust-font-size-to($h6-font-size);
 		margin:0;
 	}
