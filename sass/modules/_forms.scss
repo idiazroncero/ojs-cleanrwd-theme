@@ -41,6 +41,10 @@ input[type="text"], input[type="password"] {
 	padding:0 rhythm(0.25);
 }
 
+input:disabled {
+	opacity:0.5;
+}
+
 
 //
 // BUTTONS

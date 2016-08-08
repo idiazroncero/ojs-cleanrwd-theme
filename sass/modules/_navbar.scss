@@ -1,4 +1,4 @@
-.menu {
+.main-menu {
 	padding:0; // Padding is already included in #nav
 	// We need a clearfix here
 	@include clearfix();
@@ -22,6 +22,10 @@
 	}
 	a, a:link, a:visited, a:hover, a:active {
 		color:$font-color;
+	}
+	ul {
+		padding:0;
+		margin:0;
 	}
 	li {
 		// We use a border effect

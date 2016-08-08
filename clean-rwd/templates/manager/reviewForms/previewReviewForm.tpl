@@ -35,43 +35,55 @@
 <p>{$reviewForm->getLocalizedDescription()}</p>
 
 {foreach from=$reviewFormElements name=reviewFormElements item=reviewFormElement}
-	<p>{$reviewFormElement->getLocalizedQuestion()}{if $reviewFormElement->getRequired()}*{/if}</p>
-	<p>
+<div class="form-row">
+	<p class="label">{$reviewFormElement->getLocalizedQuestion()}{if $reviewFormElement->getRequired()}*{/if}</p>
+	<div class="form-subrow">
 		{if $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_SMALL_TEXT_FIELD}
-			<input type="text" size="10" maxlength="40" class="textField" />
+			<div class="form-group">
+				<input type="text" size="10" maxlength="40" class="textField" />
+			</div>
 		{elseif $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_TEXT_FIELD}
-			<input type="text" size="40" maxlength="120" class="textField" />
+			<div class="form-group">
+				<input type="text" size="40" maxlength="120" class="textField" />
+			</div>
 		{elseif $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_TEXTAREA}
-			<textarea rows="4" cols="40" class="textArea"></textarea>
+			<div class="form-group">
+				<textarea rows="4" cols="40" class="textArea"></textarea>
+			</div>
 		{elseif $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_CHECKBOXES}
 			{assign var=possibleResponses value=$reviewFormElement->getLocalizedPossibleResponses()}
 			{foreach name=responses from=$possibleResponses key=responseId item=responseItem}
+			<div class="form-group">
 				<input id="check-{$responseId|escape}" type="checkbox"/>
 				<label for="check-{$responseId|escape}">{$responseItem.content}</label>
-				
+			</div>
 			{/foreach}
 		{elseif $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_RADIO_BUTTONS}
 			{assign var=possibleResponses value=$reviewFormElement->getLocalizedPossibleResponses()}
 			{foreach name=responses from=$possibleResponses key=responseId item=responseItem}
+			<div class="form-group">
 				<input id="radio-{$responseId|escape}" name="{$reviewFormElement->getId()}" type="radio"/>
 				<label for="radio-{$responseId|escape}">{$responseItem.content}</label>
-				
+			</div>
 			{/foreach}
 		{elseif $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_DROP_DOWN_BOX}
+			<div class="form-group">
 			<select size="1" class="selectMenu">
 				{assign var=possibleResponses value=$reviewFormElement->getLocalizedPossibleResponses()}
 				{foreach name=responses from=$possibleResponses key=responseId item=responseItem}
 					<option>{$responseItem.content}</option>
 				{/foreach}
 			</select>
+			</div>
 		{/if}
-	</p>
+	</div>
+</div>
 {/foreach}
 
 
 
 <form id="previewReviewForm" method="post" action="{if !$canEdit}{url op="reviewForms"}{else}{url op="editReviewForm" path=$reviewFormId}{/if}">
-	<p><input type="submit" value="{translate key="common.close"}" class="button defaultButton" /></p>
+	<div class="buttons"><input type="submit" value="{translate key="common.close"}" class="button defaultButton" /></div>
 </form>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>

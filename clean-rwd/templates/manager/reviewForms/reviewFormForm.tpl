@@ -29,30 +29,32 @@
 
 {include file="common/formErrors.tpl"}
 
-<table class="data" width="100%">
-{if count($formLocales) > 1}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td width="80%" class="value">
-			{if $reviewFormId}{url|assign:"reviewFormFormUrl" op="editReviewForm" path=$reviewFormId escape=false}
-			{else}{url|assign:"reviewFormFormUrl" op="createReviewForm" escape=false}
-			{/if}
-			{form_language_chooser form="reviewFormForm" url=$reviewFormFormUrl}
-			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
-{/if}
-<tr >
-	<td width="20%" class="label">{fieldLabel name="title" required="true" key="manager.reviewForms.title"}</td>
-	<td width="80%" class="value"><input type="text" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" id="title" size="40" maxlength="120" class="textField" /></td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="description" key="manager.reviewForms.description"}</td>
-	<td class="value"><textarea name="description[{$formLocale|escape}]" rows="4" cols="40" id="description" class="textArea">{$description[$formLocale]|escape}</textarea></td>
-</tr>
-</table>
 
-<p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="reviewForms" escape=false}'" /></p>
+{if count($formLocales) > 1}
+<div class="form-row">
+	{fieldLabel name="formLocale" key="form.formLanguage"}
+	{if $reviewFormId}{url|assign:"reviewFormFormUrl" op="editReviewForm" path=$reviewFormId escape=false}
+	{else}{url|assign:"reviewFormFormUrl" op="createReviewForm" escape=false}
+	{/if}
+	{form_language_chooser form="reviewFormForm" url=$reviewFormFormUrl}
+	<p class="instruct">{translate key="form.formLanguage.description"}</p>
+</div>
+{/if}
+
+<div class="form-row">
+	{fieldLabel name="title" required="true" key="manager.reviewForms.title"}
+	<input type="text" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" id="title" size="40" maxlength="120" class="textField" />
+</div>
+<div class="form-row">
+	{fieldLabel name="description" key="manager.reviewForms.description"}
+	<textarea name="description[{$formLocale|escape}]" rows="4" cols="40" id="description" class="textArea">{$description[$formLocale]|escape}</textarea>
+</div>
+
+
+<div class="buttons">
+	<input type="submit" value="{translate key="common.save"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url op="reviewForms" escape=false}'" />
+</div>
 </form>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
