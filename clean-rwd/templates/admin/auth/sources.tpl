@@ -13,53 +13,57 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br />
-
 <form method="post" action="{url op="updateAuthSources"}">
 
 <div id="sources">
-<table width="100%" class="listing">
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
-	</tr>
-	<tr valign="top" class="heading">
-		<td width="10%">{translate key="common.default"}</td>
-		<td width="30%">{translate key="common.title"}</td>
-		<td width="30%">{translate key="common.plugin"}</td>
-		<td width="30%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
-	</tr>
-	{iterate from=sources item=auth}
-	<tr valign="top">
-		<td><input type="radio" id="defaultAuthId_{$auth->getAuthId()}" name="defaultAuthId" value="{$auth->getAuthId()}"{if $auth->getDefault()} checked="checked"{assign var="defaultAuthId" value=$auth->getAuthId()}{/if} /></td>
-		<td><label for="defaultAuthId_{$auth->getAuthId()}">{$auth->getTitle()|escape}</label></td>
-		<td>{$auth->getPlugin()}</td>
-		<td align="right"><a href="{url op="editAuthSource" path=$auth->getAuthId()}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a class="action" href="{url op="deleteAuthSource" path=$auth->getAuthId()}" onclick="return confirm('{translate|escape:"jsparam" key="admin.auth.confirmDelete"}')">{translate key="common.delete"}</a></td>
-	</tr>
-	<tr>
-		<td colspan="4" class="{if $smarty.foreach.sources.last}end{/if}separator">&nbsp;</td>
-	</tr>
+<table class="listing">
+	<thead>
+		<tr>
+			<th>{translate key="common.default"}</th>
+			<th>{translate key="common.title"}</th>
+			<th>{translate key="common.plugin"}</th>
+			<th>{translate key="common.action"}</th>
+		</tr>
+
+	</thead>
+	<tbody>
+		{iterate from=sources item=auth}
+		<tr>
+			<td>
+				<input type="radio" id="defaultAuthId_{$auth->getAuthId()}" name="defaultAuthId" value="{$auth->getAuthId()}"{if $auth->getDefault()} checked="checked"{assign var="defaultAuthId" value=$auth->getAuthId()}{/if} />
+			</td>
+			<td>
+				<label for="defaultAuthId_{$auth->getAuthId()}">
+					{$auth->getTitle()|escape}</label>
+			</td>
+			<td>{$auth->getPlugin()}</td>
+			<td>
+				<a href="{url op="editAuthSource" path=$auth->getAuthId()}" class="button button--small">{translate key="common.edit"}</a>&nbsp;<a class="button button--small button--cancel" href="{url op="deleteAuthSource" path=$auth->getAuthId()}" onclick="return confirm('{translate|escape:"jsparam" key="admin.auth.confirmDelete"}')">{translate key="common.delete"}</a>
+			</td>
+		</tr>
 	{/iterate}
 	{if $sources->wasEmpty()}
-	<tr>
-		<td colspan="4" class="nodata">{translate key="admin.auth.noneCreated"}</td>
-	</tr>
-	<tr>
-		<td colspan="4" class="endseparator">&nbsp;</td>
-	</tr>
-	{else}
 		<tr>
-			<td colspan="2" align="left">{page_info iterator=$sources}</td>
-			<td colspan="2" align="right">{page_links anchor="sources" name="sources" iterator=$sources}</td>
+			<td class="nodata">{translate key="admin.auth.noneCreated"}</td>
+		</tr>
+	{else}
+		<tr class="listing-pager">
+			<td>{page_info iterator=$sources}</td>
+			<td>{page_links anchor="sources" name="sources" iterator=$sources}</td>
 		</tr>
 	{/if}
-	<tr valign="top">
-		<td><input type="radio" id="defaultAuthId_0" name="defaultAuthId" value="0"{if !$defaultAuthId} checked="checked"{/if} /></td>
-		<td colspan="1"><label for="defaultAuthId_0">{translate key="admin.auth.ojs"}</label></td>
-		<td colspan="2" align="right">
-			<input type="submit" value="{translate key="common.save"}" class="button" />
+	<tr >
+		<td>
+			<input type="radio" id="defaultAuthId_0" name="defaultAuthId" value="0"{if !$defaultAuthId} checked="checked"{/if} />
+		</td>
+		<td>
+			<label for="defaultAuthId_0">{translate key="admin.auth.ojs"}</label>
+		</td>
+		<td>
+			<input type="submit" value="{translate key="common.save"}" class="button button--small" />
+		</td>
+		<td>
+			<!-- Dummy table cell to avoid :last-child issues -->
 		</td>
 	</tr>
 </table>
@@ -67,11 +71,12 @@
 </form>
 
 {translate key="admin.auth.defaultSourceDescription"}
-<div id="createAuth">
+
+<div id="createAuth" class="form-row">
 <h4>{translate key="admin.auth.create"}</h4>
 
 <form method="post" action="{url op="createAuthSource"}">
-	{translate key="common.plugin"}: <select name="plugin" size="1"><option value=""></option>{html_options options=$pluginOptions}</select> <input type="submit" value="{translate key="common.create"}" class="button" />
+	<label for="plugin">{translate key="common.plugin"}:</label> <select name="plugin" size="1"><option value=""></option>{html_options options=$pluginOptions}</select><input type="submit" value="{translate key="common.create"}" class="button" />
 </form>
 </div>
 </div>

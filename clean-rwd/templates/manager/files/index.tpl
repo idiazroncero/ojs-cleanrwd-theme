@@ -17,24 +17,19 @@
 <h3>{translate key="manager.files.indexOfDir" dir=$displayDir|escape}</h3>
 
 {if $currentDir}
-<p><a href="{url op="files" path=$parentDir|explode:"/"}" class="action">&lt; {translate key="manager.files.parentDir"}</a></p>
+<p><a href="{url op="files" path=$parentDir|explode:"/"}" class="button">&lt; {translate key="manager.files.parentDir"}</a></p>
 {/if}
 
 <table width="100%" class="listing">
-	<tr>
-		<td class="headseparator" colspan="6">&nbsp;</td>
-	</tr>
-	<tr class="heading" valign="bottom">
-		<td></td>
-		<td width="25%">{translate key="common.fileName"}</td>
-		<td width="25%">{translate key="common.type"}</td>
-		<td width="25%">{translate key="common.dateModified"}</td>
-		<td width="5%">{translate key="common.size"}</td>
-		<td width="20%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td class="headseparator" colspan="6">&nbsp;</td>
-	</tr>
+	<thead>
+		<th></th>
+		<th>{translate key="common.fileName"}</th>
+		<th>{translate key="common.type"}</th>
+		<th>{translate key="common.dateModified"}</th>
+		<th>{translate key="common.size"}</th>
+		<th>{translate key="common.action"}</th>
+	</thead>
+
 	{foreach from=$files item=file name=files}
 	{if $currentDir}
 		{assign var=filePath value=$currentDir|concat:"/":$file.name}
@@ -42,43 +37,43 @@
 		{assign var=filePath value=$file.name}
 	{/if}
 	{assign var=filePath value=$filePath|escape}
-	<tr valign="top">
-		<td>{if $file.isDir}{icon name="folder"}{else}{icon name="letter"}{/if}</td>
-		<td><a href="{url op="files" path=$filePath|explode:"/"}">{$file.name}</a></td>
-		<td>{$file.mimetype|escape|default:"&mdash;"}</td>
-		<td>{$file.mtime|escape|date_format:$datetimeFormatShort}</td>
-		<td>{$file.size|escape|default:"&mdash;"}</td>
-		<td align="right" class="nowrap">
-			{if !$file.isDir}
-				<a href="{url op="files" path=$filePath|explode:"/" download=1}" class="action">{translate key="common.download"}</a>&nbsp;|
-			{/if}
-			<a href="{url op="fileDelete" path=$filePath|explode:"/"}" onclick="return confirm('{translate|escape:"jsparam" key="manager.files.confirmDelete"}')" class="action">{translate key="common.delete"}</a>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="6" class="{if $smarty.foreach.files.last}end{/if}separator">&nbsp;</td>
-	</tr>
-{foreachelse}
-	<tr>
-		<td colspan="6" class="nodata">{translate key="manager.files.emptyDir"}</td>
-	</tr>
-	<tr>
-		<td colspan="6" class="endseparator">&nbsp;</td>
-	</tr>
+	<tbody>
+		<tr>
+			<td>{if $file.isDir}{icon name="folder"}{else}{icon name="letter"}{/if}</td>
+			<td><a href="{url op="files" path=$filePath|explode:"/"}">{$file.name}</a></td>
+			<td>{$file.mimetype|escape|default:"&mdash;"}</td>
+			<td>{$file.mtime|escape|date_format:$datetimeFormatShort}</td>
+			<td>{$file.size|escape|default:"&mdash;"}</td>
+			<td>
+				{if !$file.isDir}
+					<a href="{url op="files" path=$filePath|explode:"/" download=1}" class="button button--small">{translate key="common.download"}</a>&nbsp;|
+				{/if}
+				<a href="{url op="fileDelete" path=$filePath|explode:"/"}" onclick="return confirm('{translate|escape:"jsparam" key="manager.files.confirmDelete"}')" class="button button--small button--cancel">{translate key="common.delete"}</a>
+			</td>
+		</tr>
+	{foreachelse}
+		<tr>
+			<td colspan="6">{translate key="manager.files.emptyDir"}</td>
+		</tr>
+	</tbody>
 {/foreach}
 </table>
 
-<form method="post" action="{url op="fileUpload" path=$currentDir|explode:"/"}" enctype="multipart/form-data">
-	<input type="file" size="20" name="file" class="uploadField" />
-	<input type="submit" value="{translate key="manager.files.uploadFile"}" class="button" />
-</form>
+<div class="section">
+	<form method="post" action="{url op="fileUpload" path=$currentDir|explode:"/"}" enctype="multipart/form-data">
+		<input type="file" size="20" name="file" class="uploadField" />
+		<input type="submit" value="{translate key="manager.files.uploadFile"}" class="button" />
+	</form>
+</div>
 
-<form method="post" action="{url op="fileMakeDir" path=$currentDir|explode:"/"}" enctype="multipart/form-data">
-	<input type="text" size="20" maxlength="255" name="dirName" class="textField" />
-	<input type="submit" value="{translate key="manager.files.createDir"}" class="button" />
-</form>
+<div class="section">
+	<form method="post" action="{url op="fileMakeDir" path=$currentDir|explode:"/"}" enctype="multipart/form-data">
+		<input type="text" size="20" maxlength="255" name="dirName" class="textField" />
+		<input type="submit" value="{translate key="manager.files.createDir"}" class="button" />
+	</form>
+</div>
 
-<p>{translate key="manager.files.note"}</p>
+<p class="instruct">{translate key="manager.files.note"}</p>
 
 {include file="common/footer.tpl"}
 

@@ -69,7 +69,7 @@
 	<li><a href="{url path="subscriptionManagers" oldUserIds=$oldUserIds}">{translate key="user.role.subscriptionManagers"}</a></li>
 </ul>
 
-<br />
+
 {else}
 <p><a href="{url path="all" oldUserIds=$oldUserIds}" class="action">{translate key="manager.people.allUsers"}</a></p>
 {/if}
@@ -87,7 +87,7 @@
 	<tr>
 		<td colspan="{$numCols}" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		{if empty($oldUserIds)}
 			<td width="5%">&nbsp;</td>
 		{/if}
@@ -101,7 +101,7 @@
 	</tr>
 	{iterate from=users item=user}
 	{assign var=userExists value=1}
-	<tr valign="top">
+	<tr >
 		{if empty($oldUserIds)}
 			<td><input type="checkbox" name="oldUserIds[]" value="{$user->getId()|escape}" {if $thisUser->getId() == $user->getId()}disabled="disabled" {/if}/></td>
 		{/if}

@@ -17,7 +17,7 @@
 {if count($formLocales) > 1}
 <div id="locales">
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"setupFormUrl" op="setup" path="2" escape=false}
@@ -62,26 +62,26 @@
 <p>{translate key="manager.setup.reviewProcessDescription"}</p>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="mailSubmissionsToReviewers" id="mailSubmissionsToReviewers-0" value="0"{if not $mailSubmissionsToReviewers} checked="checked"{/if} />
 		</td>
 		<td width="95%" class="value">
 			<label for="mailSubmissionsToReviewers-0"><strong>{translate key="manager.setup.reviewProcessStandard"}</strong></label>
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.reviewProcessStandardDescription"}</span>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="mailSubmissionsToReviewers" id="mailSubmissionsToReviewers-1" value="1"{if $mailSubmissionsToReviewers} checked="checked"{/if} />
 		</td>
 		<td width="95%" class="value">
 			<label for="mailSubmissionsToReviewers-1"><strong>{translate key="manager.setup.reviewProcessEmail"}</strong></label>
-			<br />
+			
 			<span class="instruct">{translate key="manager.setup.reviewProcessEmailDescription"}</span>
 		</td>
 	</tr>
@@ -104,14 +104,14 @@
 	</script>
 
 <p>
-	<strong>{translate key="manager.setup.reviewOptions.reviewTime"}</strong><br/>
-	{fieldLabel name="numWeeksPerReview" key="manager.setup.reviewOptions.numWeeksPerReview"}: <input type="text" name="numWeeksPerReview" id="numWeeksPerReview" value="{$numWeeksPerReview|escape}" size="2" maxlength="8" class="textField" /> {translate key="common.weeks"}<br/>
+	<strong>{translate key="manager.setup.reviewOptions.reviewTime"}</strong>
+	{fieldLabel name="numWeeksPerReview" key="manager.setup.reviewOptions.numWeeksPerReview"}: <input type="text" name="numWeeksPerReview" id="numWeeksPerReview" value="{$numWeeksPerReview|escape}" size="2" maxlength="8" class="textField" /> {translate key="common.weeks"}
 	{translate key="common.note"}: {translate key="manager.setup.reviewOptions.noteOnModification"}
 </p>
 
 	<p>
-		<strong>{translate key="manager.setup.reviewOptions.reviewerReminders"}</strong><br/>
-		{translate key="manager.setup.reviewOptions.automatedReminders"}:<br/>
+		<strong>{translate key="manager.setup.reviewOptions.reviewerReminders"}</strong>
+		{translate key="manager.setup.reviewOptions.automatedReminders"}:
 		<input type="checkbox" name="remindForInvite" id="remindForInvite" value="1" onclick="toggleAllowSetInviteReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $remindForInvite} checked="checked"{/if} />&nbsp;
 		{fieldLabel name="remindForInvite" key="manager.setup.reviewOptions.remindForInvite1"}
 		<select name="numDaysBeforeInviteReminder" id="numDaysBeforeInviteReminder" size="1" class="selectMenu"{if not $remindForInvite || !$scheduledTasksEnabled} disabled="disabled"{/if}>
@@ -120,7 +120,7 @@
 			{/section}
 		</select>
 		{fieldLabel name="numDaysBeforeInviteReminder" key="manager.setup.reviewOptions.remindForInvite2"}
-		<br/>
+		
 
 		<input type="checkbox" name="remindForSubmit" id="remindForSubmit" value="1" onclick="toggleAllowSetSubmitReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled"{elseif $remindForSubmit} checked="checked"{/if} />&nbsp;
 		{fieldLabel name="remindForSubmit" key="manager.setup.reviewOptions.remindForSubmit1"}
@@ -131,31 +131,31 @@
 		</select>
 		{fieldLabel name="numDaysBeforeSubmitReminder" key="manager.setup.reviewOptions.remindForSubmit2"}
 		{if !$scheduledTasksEnabled}
-		<br/>
+		
 		{translate key="manager.setup.reviewOptions.automatedRemindersDisabled"}
 		{/if}
 	</p>
 
 <p>
-	<strong>{translate key="manager.setup.reviewOptions.reviewerRatings"}</strong><br/>
+	<strong>{translate key="manager.setup.reviewOptions.reviewerRatings"}</strong>
 	<input type="checkbox" name="rateReviewerOnQuality" id="rateReviewerOnQuality" value="1"{if $rateReviewerOnQuality} checked="checked"{/if} />&nbsp;
 	<label for="rateReviewerOnQuality">{translate key="manager.setup.reviewOptions.onQuality"}</label>
 </p>
 
 <p>
-	<strong>{translate key="manager.setup.reviewOptions.reviewerAccess"}</strong><br/>
+	<strong>{translate key="manager.setup.reviewOptions.reviewerAccess"}</strong>
 	<input type="checkbox" name="reviewerAccessKeysEnabled" id="reviewerAccessKeysEnabled" value="1"{if $reviewerAccessKeysEnabled} checked="checked"{/if} />&nbsp;
-	<label for="reviewerAccessKeysEnabled">{translate key="manager.setup.reviewOptions.reviewerAccessKeysEnabled"}</label><br/>
-	<span class="instruct">{translate key="manager.setup.reviewOptions.reviewerAccessKeysEnabled.description"}</span><br/>
+	<label for="reviewerAccessKeysEnabled">{translate key="manager.setup.reviewOptions.reviewerAccessKeysEnabled"}</label>
+	<span class="instruct">{translate key="manager.setup.reviewOptions.reviewerAccessKeysEnabled.description"}</span>
 	<input type="checkbox" name="restrictReviewerFileAccess" id="restrictReviewerFileAccess" value="1"{if $restrictReviewerFileAccess} checked="checked"{/if} />&nbsp;
 	<label for="restrictReviewerFileAccess">{translate key="manager.setup.reviewOptions.restrictReviewerFileAccess"}</label>
 </p>
 
 <p>
-	<strong>{translate key="manager.setup.reviewOptions.blindReview"}</strong><br/>
+	<strong>{translate key="manager.setup.reviewOptions.blindReview"}</strong>
 	<input type="checkbox" name="showEnsuringLink" id="showEnsuringLink" value="1"{if $showEnsuringLink} checked="checked"{/if} />&nbsp;
 	{get_help_id|assign:"blindReviewHelpId" key="editorial.sectionEditorsRole.review.blindPeerReview" url="true"}
-	<label for="showEnsuringLink">{translate key="manager.setup.reviewOptions.showEnsuringLink" blindReviewHelpId=$blindReviewHelpId}</label><br/>
+	<label for="showEnsuringLink">{translate key="manager.setup.reviewOptions.showEnsuringLink" blindReviewHelpId=$blindReviewHelpId}</label>
 </p>
 </div>
 </div>
@@ -180,25 +180,25 @@
 
 <table width="100%" class="data">
 {foreach name=customAboutItems from=$customAboutItems[$formLocale] key=aboutId item=aboutItem}
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label">{fieldLabel name="customAboutItems-$aboutId-title" key="common.title"}</td>
 		<td width="95%" class="value"><input type="text" name="customAboutItems[{$formLocale|escape}][{$aboutId|escape}][title]" id="customAboutItems-{$aboutId|escape}-title" value="{$aboutItem.title|escape}" size="40" maxlength="255" class="textField" />{if $smarty.foreach.customAboutItems.total > 1} <input type="submit" name="delCustomAboutItem[{$aboutId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="customAboutItems-$aboutId-content" key="manager.setup.aboutItemContent"}</td>
 		<td width="80%" class="value"><textarea name="customAboutItems[{$formLocale|escape}][{$aboutId|escape}][content]" id="customAboutItems-{$aboutId|escape}-content" rows="12" cols="40" class="textArea">{$aboutItem.content|escape}</textarea></td>
 	</tr>
 	{if !$smarty.foreach.customAboutItems.last}
-	<tr valign="top">
+	<tr >
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
 	{/if}
 {foreachelse}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="customAboutItems-0-title" key="common.title"}</td>
 		<td width="80%" class="value"><input type="text" name="customAboutItems[{$formLocale|escape}][0][title]" id="customAboutItems-0-title" value="" size="40" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="customAboutItems-0-content" key="manager.setup.aboutItemContent"}</td>
 		<td width="80%" class="value"><textarea name="customAboutItems[{$formLocale|escape}][0][content]" id="customAboutItems-0-content" rows="12" cols="40" class="textArea"></textarea></td>
 	</tr>
@@ -223,7 +223,7 @@
 
 <p>
 	<textarea name="lockssLicense[{$formLocale|escape}]" id="lockssLicense" rows="6" cols="60" class="textArea">{$lockssLicense[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{fieldLabel name="lockssLicense" key="manager.setup.lockssLicenses"}</span>
 </p>
 </div>
@@ -237,25 +237,25 @@
 
 <table width="100%" class="data">
 {foreach name=reviewerDatabaseLinks from=$reviewerDatabaseLinks key=reviewerDatabaseLinkId item=reviewerDatabaseLink}
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label">{fieldLabel name="reviewerDatabaseLinks-$reviewerDatabaseLinkId-title" key="common.title"}</td>
 		<td width="95%" class="value"><input type="text" name="reviewerDatabaseLinks[{$reviewerDatabaseLinkId|escape}][title]" id="reviewerDatabaseLinks-{$reviewerDatabaseLinkId|escape}-title" value="{$reviewerDatabaseLink.title|escape}" size="40" maxlength="255" class="textField" />{if $smarty.foreach.reviewerDatabaseLinks.total > 1} <input type="submit" name="delReviewerDatabaseLink[{$reviewerDatabaseLinkId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="reviewerDatabaseLinks-$reviewerDatabaseLinkId-url" key="common.url"}</td>
 		<td width="80%" class="value"><input type="text" name="reviewerDatabaseLinks[{$reviewerDatabaseLinkId|escape}][url]" id="reviewerDatabaseLinks-{$reviewerDatabaseLinkId|escape}-url" value="{$reviewerDatabaseLink.url|escape}" size="40" maxlength="255" class="textField" /></td>
 	</tr>
 	{if !$smarty.foreach.reviewerDatabaseLinks.last}
-	<tr valign="top">
+	<tr >
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
 	{/if}
 {foreachelse}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="reviewerDatabaseLinks-0-title" key="common.title"}</td>
 		<td width="80%" class="value"><input type="text" name="reviewerDatabaseLinks[0][title]" id="reviewerDatabaseLinks-0-title" value="" size="40" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="reviewerDatabaseLinks-0-url" key="common.url"}</td>
 		<td width="80%" class="value"><input type="text" name="reviewerDatabaseLinks[0][url]" id="reviewerDatabaseLinks-0-url" value="" size="40" maxlength="255" class="textField" /></td>
 	</tr>
@@ -268,7 +268,7 @@
 
 <p><input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

@@ -20,18 +20,18 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveGroup"); });
 {/literal}
 </script>
 
-<br/>
+
 
 <form action="{url op="setBoardEnabled"}" method="post">
 	{url|assign:"aboutEditorialTeamUrl" page="about" op="editorialTeam"}
 	{url|assign:"peopleManagementUrl" page="manager" op="people" path="all"}
-	{translate key="manager.groups.enableBoard.description" aboutEditorialTeamUrl=$aboutEditorialTeamUrl}<br/>
-	<input type="radio" id="boardEnabledOff" {if !$boardEnabled}checked="checked" {/if}name="boardEnabled" value="0"/>&nbsp;<label for="boardEnabledOff">{translate key="manager.groups.disableBoard"}</label><br/>
-	<input type="radio" id="boardEnabledOn" {if $boardEnabled}checked="checked" {/if}name="boardEnabled" value="1"/>&nbsp;<label for="boardEnabledOn">{translate key="manager.groups.enableBoard"}</label><br/>
+	{translate key="manager.groups.enableBoard.description" aboutEditorialTeamUrl=$aboutEditorialTeamUrl}
+	<input type="radio" id="boardEnabledOff" {if !$boardEnabled}checked="checked" {/if}name="boardEnabled" value="0"/>&nbsp;<label for="boardEnabledOff">{translate key="manager.groups.disableBoard"}</label>
+	<input type="radio" id="boardEnabledOn" {if $boardEnabled}checked="checked" {/if}name="boardEnabled" value="1"/>&nbsp;<label for="boardEnabledOn">{translate key="manager.groups.enableBoard"}</label>
 	<input type="submit" value="{translate key="common.record"}" class="button defaultButton"/>
 </form>
 
-<br />
+
 
 <div id="groups">
 
@@ -39,7 +39,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveGroup"); });
 	<tr>
 		<td colspan="3" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td colspan="2" width="75%">{translate key="manager.groups.title"}</td>
 		<td width="25%">{translate key="common.action"}</td>
 	</tr>
@@ -51,21 +51,21 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveGroup"); });
 	{if $group->getContext() == GROUP_CONTEXT_EDITORIAL_TEAM}
 		{if $isFirstEditorialTeamEntry}
 			{assign var="isFirstEditorialTeamEntry" value=0}
-				<tr valign="top">
+				<tr >
 					<td colspan="3">{translate key="manager.groups.context.editorialTeam.short"}</td>
 				</tr>
 				<tr>
 					<td colspan="3" class="separator">&nbsp;</td>
 				</tr>
 			{/if}
-		<tr valign="top" id=editorialteam-{$group->getId()} class="data">
+		<tr  id=editorialteam-{$group->getId()} class="data">
 			<td class="drag" width="5%">&nbsp;</td>
 			<td class="drag">
 				{url|assign:"url" page="manager" op="email" toGroup=$group->getId()}
 				{$group->getLocalizedTitle()|escape}&nbsp;{icon name="mail" url=$url}
 			</td>
 		{else}
-		<tr valign="top" id="other-{$group->getId()}" class="data">
+		<tr  id="other-{$group->getId()}" class="data">
 			<td class="drag" colspan="2">
 				{url|assign:"url" page="manager" op="email" toGroup=$group->getId()}
 				{$group->getLocalizedTitle()|escape}&nbsp;{icon name="mail" url=$url}

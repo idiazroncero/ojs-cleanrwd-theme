@@ -18,13 +18,13 @@
 	<li><a href="{url op="viewPayments"}">{translate key="manager.payment.records"}</a></li>
 </ul>
 
-<br />
+
 
 <form name="paymentSettingsForm" method="post" action="{url op="savePaymentSettings"}">
 {if count($formLocales) > 1}
 <div id="locales">
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"paymentSettingsFormUrl" op="payments" escape=false}

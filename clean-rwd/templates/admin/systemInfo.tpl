@@ -35,7 +35,7 @@
 	<tr>
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr valign="top" class="heading">
+	<tr <div class="form-item"> class="heading">
 		<td width="30%">{translate key="admin.version"}</td>
 		<td width="10%">{translate key="admin.versionMajor"}</td>
 		<td width="10%">{translate key="admin.versionMinor"}</td>
@@ -47,7 +47,7 @@
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
 	{foreach name="versions" from=$versionHistory item=version}
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td>{$version->getVersionString()|escape}</td>
 		<td>{$version->getMajor()|escape}</td>
 		<td>{$version->getMinor()|escape}</td>
@@ -73,7 +73,7 @@
 {if !empty($sectionData)}{* Empty tables cause validation problems *}
 <table class="data" width="100%">
 {foreach from=$sectionData key=settingName item=settingValue}
-<tr valign="top">
+<tr <div class="form-item">>
 	<td width="30%" class="label">{$settingName|escape}</td>
 	<td width="70%">{if $settingValue === true}{translate key="common.on"}{elseif $settingValue === false}{translate key="common.off"}{else}{$settingValue|escape}{/if}</td>
 </tr>
@@ -90,7 +90,7 @@
 
 <table class="data" width="100%">
 {foreach from=$serverInfo key=settingName item=settingValue}
-<tr valign="top">
+<tr <div class="form-item">>
 	<td width="30%" class="label">{translate key=$settingName|escape}</td>
 	<td width="70%" class="value">{$settingValue|escape}</td>
 </tr>

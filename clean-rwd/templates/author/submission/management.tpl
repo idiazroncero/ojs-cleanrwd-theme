@@ -11,15 +11,15 @@
 <div id="submission">
 <h3>{translate key="article.submission"}</h3>
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{translate key="article.authors"}</td>
 		<td width="80%" colspan="2" class="data">{$submission->getAuthorString(false)|escape}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{translate key="article.title"}</td>
 		<td width="80%" colspan="2" class="data">{$submission->getLocalizedTitle()|strip_unsafe_html}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{translate key="submission.originalFile"}</td>
 		<td width="80%" colspan="2" class="data">
 			{if $submissionFile}
@@ -29,11 +29,11 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="article.suppFilesAbbrev"}</td>
 		<td width="30%" class="value">
 			{foreach name="suppFiles" from=$suppFiles item=suppFile}
-				<a href="{if $submission->getStatus() != STATUS_PUBLISHED && $submission->getStatus() != STATUS_ARCHIVED}{url op="editSuppFile" path=$submission->getId()|to_array:$suppFile->getId()}{else}{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId()}{/if}" class="file">{$suppFile->getFileName()|escape}</a>&nbsp;&nbsp;{$suppFile->getDateModified()|date_format:$dateFormatShort}<br />
+				<a href="{if $submission->getStatus() != STATUS_PUBLISHED && $submission->getStatus() != STATUS_ARCHIVED}{url op="editSuppFile" path=$submission->getId()|to_array:$suppFile->getId()}{else}{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId()}{/if}" class="file">{$suppFile->getFileName()|escape}</a>&nbsp;&nbsp;{$suppFile->getDateModified()|date_format:$dateFormatShort}
 			{foreachelse}
 				{translate key="common.none"}
 			{/foreach}
@@ -59,11 +59,11 @@
 		<td class="label">{translate key="common.dateSubmitted"}</td>
 		<td>{$submission->getDateSubmitted()|date_format:$datetimeFormatLong}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{translate key="section.section"}</td>
 		<td width="80%" colspan="2" class="data">{$submission->getSectionTitle()|escape}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{translate key="user.role.editor"}</td>
 		{assign var="editAssignments" value=$submission->getEditAssignments()}
 		<td width="80%" colspan="2" class="data">
@@ -78,14 +78,14 @@
 						({translate key="submission.review"})
 					{/if}
 				{/if}
-				<br/>
+				
                         {foreachelse}
                                 {translate key="common.noneAssigned"}
                         {/foreach}
 		</td>
 	</tr>
 	{if $submission->getCommentsToEditor()}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{translate key="article.commentsToEditor"}</td>
 		<td width="80%" colspan="2" class="data">{$submission->getCommentsToEditor()|strip_unsafe_html|nl2br}</td>
 	</tr>

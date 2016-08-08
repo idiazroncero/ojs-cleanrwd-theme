@@ -15,11 +15,13 @@
 
 {if $isSiteAdmin}
 	{assign var="hasRole" value=1}
-	<a class="button" href="{url journal="index" page=$isSiteAdmin->getRolePath()}">{translate key=$isSiteAdmin->getRoleName()}</a>
+	<div class="form-row">
+		<a class="button" href="{url journal="index" page=$isSiteAdmin->getRolePath()}">{translate key=$isSiteAdmin->getRoleName()}</a>
+	</div>
 	{call_hook name="Templates::User::Index::Site"}
 {/if}
 
-<div id="myJournals">
+<section id="myJournals">
 {if !$currentJournal}<h3>{translate key="user.myJournals"}</h3>{/if}
 
 {foreach from=$userJournals item=journal}
@@ -154,19 +156,11 @@
 				<td align="right"></td>
 			</tr>
 		{/if}
-		{* Add a row to the bottom of each table to ensure all have same width*}
-		<tr>
-			<td width="25%"></td>
-			<td width="12%"></td>
-			<td width="12%"></td>
-			<td width="12%"></td>
-			<td width="39%"></td>
-		</tr>
 	</table>
 	{call_hook name="Templates::User::Index::Journal" journal=$journal}
 	</div>
 {/foreach}
-</div>
+</section>
 
 {if !$hasRole}
 	{if $currentJournal}

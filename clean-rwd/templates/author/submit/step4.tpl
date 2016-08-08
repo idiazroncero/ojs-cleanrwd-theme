@@ -35,7 +35,7 @@ function confirmForgottenUpload() {
 <tr>
 	<td colspan="5" class="headseparator">&nbsp;</td>
 </tr>
-<tr class="heading" valign="bottom">
+<tr class="heading" >
 	<td width="5%">{translate key="common.id"}</td>
 	<td width="40%">{translate key="common.title"}</td>
 	<td width="25%">{translate key="common.originalFileName"}</td>
@@ -46,7 +46,7 @@ function confirmForgottenUpload() {
 	<td colspan="6" class="headseparator">&nbsp;</td>
 </tr>
 {foreach from=$suppFiles item=file}
-<tr valign="top">
+<tr >
 	<td>{$file->getSuppFileId()}</td>
 	<td>{$file->getSuppFileTitle()|escape}</td>
 	<td>{$file->getOriginalFileName()|escape}</td>
@@ -54,7 +54,7 @@ function confirmForgottenUpload() {
 	<td align="right"><a href="{url op="submitSuppFile" path=$file->getSuppFileId() articleId=$articleId}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteSubmitSuppFile" path=$file->getSuppFileId() articleId=$articleId}" onclick="return confirm('{translate|escape:"jsparam" key="author.submit.confirmDeleteSuppFile"}')" class="action">{translate key="common.delete"}</a></td>
 </tr>
 {foreachelse}
-<tr valign="top">
+<tr >
 	<td colspan="6" class="nodata">{translate key="author.submit.noSupplementaryFiles"}</td>
 </tr>
 {/foreach}

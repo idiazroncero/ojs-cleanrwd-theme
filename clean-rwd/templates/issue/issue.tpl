@@ -34,7 +34,7 @@
 	{/if}
 
 <table class="tocArticle">
-<tr valign="top">
+<tr >
 	<td class="tocArticleCoverImage{if $showCoverPage} showCoverImage{/if}">
 		{if $showCoverPage}
 			<div class="tocCoverImage">

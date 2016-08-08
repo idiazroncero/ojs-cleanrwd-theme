@@ -42,16 +42,16 @@ function handleAnonymousCheckbox(theBox) {
 <div id="commentForm">
 <form id="submit" action="{if $commentId}{url op="edit" path=$articleId|to_array:$galleyId:$commentId}{else}{url op="add" path=$articleId|to_array:$galleyId:$parentId:"save"}{/if}" method="post">
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%"><label for="posterName">{translate key="comments.name"}</label></td>
 		<td class="value" width="80%"><input type="text" class="textField" name="posterName" id="posterName" value="{$posterName|escape}" size="40" maxlength="90" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label"><label for="posterEmail">{translate key="comments.email"}</label></td>
 		<td class="value"><input type="text" class="textField" name="posterEmail" id="posterEmail" value="{$posterEmail|escape}" size="40" maxlength="90" /></td>
 	</tr>
 	{if $isUserLoggedIn && ($enableComments == COMMENTS_ANONYMOUS || $enableComments == COMMENTS_UNAUTHENTICATED)}
-	<tr valign="top">
+	<tr >
 		<td class="label">&nbsp;</td>
 		<td class="value">
 			<input type="checkbox" name="anonymous" id="anonymous" onclick="handleAnonymousCheckbox(this)">
@@ -59,11 +59,11 @@ function handleAnonymousCheckbox(theBox) {
 		</td>
 	</tr>
 	{/if}
-	<tr valign="top">
+	<tr >
 		<td class="label"><label for="title">{translate key="comments.title"}</label></td>
 		<td class="value"><input type="text" class="textField" name="title" id="title" value="{$title|escape}" size="60" maxlength="255" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label"><label for="commentBody">{translate key="comments.body"}</label></td>
 		<td width="80%" class="value">
 			<textarea class="textArea" name="body" id="commentBody" rows="5" cols="60">{$commentBody|escape}</textarea>
@@ -71,17 +71,17 @@ function handleAnonymousCheckbox(theBox) {
 	</tr>
 
 {if $captchaEnabled}
-	<tr valign="top">
+	<tr >
 		{if $reCaptchaEnabled}
-		<td class="label" valign="top">{fieldLabel name="recaptcha_challenge_field" required="true" key="common.captchaField"}</td>
+		<td class="label" >{fieldLabel name="recaptcha_challenge_field" required="true" key="common.captchaField"}</td>
 		<td class="value">
 			{$reCaptchaHtml}
 		</td>
 		{else}
-		<td class="label" valign="top">{fieldLabel name="captcha" required="true" key="common.captchaField"}</td>
+		<td class="label" >{fieldLabel name="captcha" required="true" key="common.captchaField"}</td>
 		<td class="value">
-			<img src="{url page="user" op="viewCaptcha" path=$captchaId}" alt="{translate key="common.captchaField.altText"}" /><br />
-			<span class="instruct">{translate key="common.captchaField.description"}</span><br />
+			<img src="{url page="user" op="viewCaptcha" path=$captchaId}" alt="{translate key="common.captchaField.altText"}" />
+			<span class="instruct">{translate key="common.captchaField.description"}</span>
 			<input name="captcha" id="captcha" value="" size="20" maxlength="32" class="textField" />
 			<input type="hidden" name="captchaId" value="{$captchaId|escape:"quoted"}" />
 		</td>

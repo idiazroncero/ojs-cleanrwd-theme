@@ -44,7 +44,7 @@
 	{if $parent}
 		{assign var=parentId value=$parent->getCommentId()}
 		{url|assign:"url" page="comment" op="view" path=$articleId|to_array:$parentId}
-		<em>{translate key="comments.inResponseTo" url=$url title=$parent->getTitle()|escape|default:"&nbsp;"}</em><br />
+		<em>{translate key="comments.inResponseTo" url=$url title=$parent->getTitle()|escape|default:"&nbsp;"}</em>
 	{/if}
 
 	{assign var="hasPriorAction" value=0}{* Track whether to add "|" between actions *}
@@ -67,12 +67,12 @@
 		{assign var="hasPriorAction" value=1}
 	{/if}
 
-	<br />
+	
 	</p>
 
 	{$comment->getBody()|strip_unsafe_html|nl2br}
 
-<br /><br />
+
 
 <div class="separator"></div>
 
@@ -114,7 +114,7 @@
 	<a href="{url op="delete" path=$articleId|to_array:$galleyId:$child->getCommentId()}" {if $child->getChildCommentCount()!=0}onclick="return confirm('{translate|escape:"jsparam" key="comments.confirmDeleteChildren"}')" {/if}class="action">{translate key="comments.delete"}</a>
 	{assign var="hasPriorAction" value=1}
 {/if}
-<br />
+
 
 {translate|assign:"readMore" key="comments.readMore"}
 {url|assign:"moreUrl" op="view" path=$articleId|to_array:$galleyId:$childId}
@@ -127,7 +127,7 @@
 {assign var=user value=$grandChild->getUser()}
 	<li>
 		<a href="{url op="view" path=$articleId|to_array:$galleyId:$grandChild->getCommentId()}" target="_parent">{$grandChild->getTitle()|escape|default:"&nbsp;"}</a>
-		{if $grandChild->getChildCommentCount()==1}{translate key="comments.oneReply"}{elseif $grandChild->getChildCommentCount()>0}{translate key="comments.nReplies" num=$grandChild->getChildCommentCount()}{/if}<br/>
+		{if $grandChild->getChildCommentCount()==1}{translate key="comments.oneReply"}{elseif $grandChild->getChildCommentCount()>0}{translate key="comments.nReplies" num=$grandChild->getChildCommentCount()}{/if}
 		{if $user}
 			{translate key="comments.authenticated" userName=$user->getFullName()|escape}
 		{elseif $grandChild->getPosterName()}

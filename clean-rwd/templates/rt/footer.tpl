@@ -8,7 +8,7 @@
  * Common footer for RT pages.
  *
  *}
-<br />
+
 
 {if !$omitCloseButton}
 <input type="button" onclick="window.close()" value="{translate key="common.close"}" class="button defaultButton" />

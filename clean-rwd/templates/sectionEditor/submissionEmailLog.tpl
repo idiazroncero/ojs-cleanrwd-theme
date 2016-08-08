@@ -36,7 +36,7 @@
 
 <table width="100%" class="listing">
 	<tr><td class="headseparator" colspan="5">&nbsp;</td></tr>
-	<tr valign="top" class="heading">
+	<tr  class="heading">
 		<td width="7%">{translate key="common.date"}</td>
 		<td width="25%">{translate key="email.sender"}</td>
 		<td width="20%">{translate key="email.recipients"}</td>
@@ -45,22 +45,22 @@
 	</tr>
 	<tr><td class="headseparator" colspan="5">&nbsp;</td></tr>
 {iterate from=emailLogEntries item=logEntry}
-	<tr valign="top">
+	<tr >
 		<td>{$logEntry->getDateSent()|date_format:$dateFormatShort}</td>
 		<td>{$logEntry->getFrom()|truncate:40:"..."|escape}</td>
 		<td>{$logEntry->getRecipients()|truncate:40:"..."|escape}</td>
 		<td>{$logEntry->getSubject()|truncate:60:"..."|escape}</td>
 		<td align="right"><a href="{url op="submissionEmailLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action">{translate key="common.view"}</a>{if $isEditor}&nbsp;|&nbsp;<a href="{url page="editor" op="clearSubmissionEmailLog" path=$submission->getId()|to_array:$logEntry->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.email.confirmDeleteLogEntry"}')" class="action">{translate key="common.delete"}</a>{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="5" class="{if $emailLogEntries->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 {if $emailLogEntries->wasEmpty()}
-	<tr valign="top">
+	<tr >
 		<td colspan="5" class="nodata">{translate key="submission.history.noLogEntries"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="5" class="endseparator">&nbsp;</td>
 	</tr>
 {else}

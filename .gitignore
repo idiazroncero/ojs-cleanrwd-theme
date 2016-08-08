@@ -6,3 +6,5 @@
 
 # Don't commit npm modules, let every user do the install
 node_modules
+
+todo.txt

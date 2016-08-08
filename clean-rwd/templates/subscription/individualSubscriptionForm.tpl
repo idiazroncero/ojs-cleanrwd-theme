@@ -21,7 +21,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br/>
+
 
 <form method="post" id="subscriptionForm" action="{url op="updateSubscription" path="individual"}">
 {if $subscriptionId}
@@ -32,7 +32,7 @@
 
 <table class="data" width="100%">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{if $subscriptionId}
@@ -57,12 +57,12 @@
 {/if}
 </table>
 
-<br />
+
 <div class="separator"></div>
-<br />
+
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="userId" required="true" key="manager.subscriptions.form.userId"}</td>
 	<td width="80%" class="value">
 		{assign var=emailString value="$userFullName <$userEmail>"}
@@ -74,12 +74,12 @@
 {include file="subscription/subscriptionFormUser.tpl"}
 </table>
 
-<br />
+
 <div class="separator"></div>
-<br />
+
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="notes" key="manager.subscriptions.form.notes"}</td>
 	<td width="80%" class="value"><textarea name="notes" id="notes" cols="40" rows="6" class="textArea">{$notes|escape}</textarea></td>
 </tr>
@@ -89,7 +89,7 @@
 
 </form>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 {include file="common/footer.tpl"}
 

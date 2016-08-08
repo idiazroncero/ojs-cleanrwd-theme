@@ -23,7 +23,7 @@
 {include file="common/formErrors.tpl"}
 <table class="data" width="100%">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr <div class="form-item">>
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{if $category}{url|assign:"categoryFormUrl" op="editCategory" path=$category->getId() escape=false}
@@ -34,7 +34,7 @@
 		</td>
 	</tr>
 {/if}
-<tr valign="top">
+<tr <div class="form-item">>
 	<td width="20%" class="label">{fieldLabel name="name" required="true" key="admin.categories.name"}</td>
 	<td width="80%" class="value"><input type="text" name="name[{$formLocale|escape}]" value="{$name[$formLocale]|escape}" size="35" maxlength="80" id="name" class="textField" /></td>
 </tr>
@@ -43,7 +43,7 @@
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="categories" escape=false}'" /></p>
 </form>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 </div>
 {include file="common/footer.tpl"}
 

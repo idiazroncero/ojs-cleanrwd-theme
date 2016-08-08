@@ -27,7 +27,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveIssue"); });
         <li class="current"><a href="{url op="backIssues"}">{translate key="editor.navigation.issueArchive"}</a></li>
 </ul>
 
-<br/>
+
 
 {if $usesCustomOrdering}
 	{url|assign:"resetUrl" op="resetIssueOrder"}
@@ -39,7 +39,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveIssue"); });
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="60%">{translate key="issue.issue"}</td>
 		<td width="15%">{translate key="editor.issues.published"}</td>
 		<td width="15%">{translate key="editor.issues.numArticles"}</td>
@@ -51,7 +51,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveIssue"); });
 	</tr>
 
 	{iterate from=issues item=issue}
-	<tr valign="top" class="data" id="issue-{$issue->getId()}">
+	<tr  class="data" id="issue-{$issue->getId()}">
 		<td class="drag"><a href="{url op="issueToc" path=$issue->getId()}" class="action">{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></td>
 		<td class="drag">{$issue->getDatePublished()|date_format:"$dateFormatShort"|default:"&mdash;"}</td>
 		<td class="drag">{$issue->getNumArticles()|escape}</td>

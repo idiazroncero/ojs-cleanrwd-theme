@@ -32,7 +32,7 @@
 
 <table class="listing" width="100%">
 	{if $user->getLocalizedAffiliation()}
-		<tr valign="top">
+		<tr >
 			<td class="label" width="20%">
 				{translate key="user.affiliation"}
 			</td>
@@ -43,7 +43,7 @@
 	{/if}{* $user->getLocalizedAffiliation() *}
 
 	{if $user->getLocalizedBiography()}
-		<tr valign="top">
+		<tr >
 			<td class="label">
 				{translate key="user.biography"}
 			</td>

@@ -12,7 +12,7 @@
 <h3>{translate key="submission.editorDecision"}</h3>
 
 <table id="table1" width="100%" class="data">
-<tr valign="top">
+<tr >
 	<td class="label" width="20%">{translate key="editor.article.selectDecision"}</td>
 	<td width="80%" class="value">
 		<form method="post" action="{url op="recordDecision"}">
@@ -25,7 +25,7 @@
 		</form>
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{translate key="editor.article.decision"}</td>
 	<td class="value">
 		{foreach from=$submission->getDecisions($round) item=editorDecision key=decisionKey}
@@ -37,7 +37,7 @@
 		{/foreach}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{translate key="submission.notifyAuthor"}</td>
 	<td class="value">
 		{url|assign:"notifyAuthorUrl" op="emailEditorDecisionComment" articleId=$submission->getId()}
@@ -90,13 +90,13 @@
 			</td>
 		</tr>
 	{elseif $lastDecision == SUBMISSION_EDITOR_DECISION_ACCEPT}
-		<tr valign="top">
+		<tr >
 			<td width="20%">&nbsp;</td>
 			<td width="80%">
 				{if !($editorRevisionExists or $authorRevisionExists or $reviewVersionExists) or !$submission->getMostRecentEditorDecisionComment()}{assign var=copyeditingUnavailable value=1}{else}{assign var=copyeditingUnavailable value=0}{/if}
 				<input type="submit" {if $copyeditingUnavailable}disabled="disabled" {/if}name="setCopyeditFile" value="{translate key="editor.submissionReview.sendToCopyediting"}" class="button" />
 				{if $copyeditingUnavailable}
-					<br/>
+					
 					<span class="instruct">{translate key="editor.submissionReview.cannotSendToCopyediting"}</span>
 				{/if}
 			</td>
@@ -104,7 +104,7 @@
 	{/if}
 
 	{if $reviewFile}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{translate key="submission.reviewVersion"}</td>
 			<td width="50%" class="value">
 				{if $lastDecision == SUBMISSION_EDITOR_DECISION_ACCEPT || $lastDecision == SUBMISSION_EDITOR_DECISION_RESUBMIT}
@@ -120,7 +120,7 @@
 	{/if}
 	{assign var="firstItem" value=true}
 	{foreach from=$authorFiles item=authorFile key=key}
-		<tr valign="top">
+		<tr >
 			{if $firstItem}
 				{assign var="firstItem" value=false}
 				<td width="20%" rowspan="{$authorFiles|@count}" class="label">{translate key="submission.authorVersion"}</td>
@@ -134,14 +134,14 @@
 			</td>
 		</tr>
 	{foreachelse}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{translate key="submission.authorVersion"}</td>
 			<td width="80%" class="nodata">{translate key="common.none"}</td>
 		</tr>
 	{/foreach}
 	{assign var="firstItem" value=true}
 	{foreach from=$editorFiles item=editorFile key=key}
-		<tr valign="top">
+		<tr >
 			{if $firstItem}
 				{assign var="firstItem" value=false}
 				<td width="20%" rowspan="{$editorFiles|@count}" class="label">{translate key="submission.editorVersion"}</td>
@@ -156,12 +156,12 @@
 			</td>
 		</tr>
 	{foreachelse}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{translate key="submission.editorVersion"}</td>
 			<td width="80%" class="nodata">{translate key="common.none"}</td>
 		</tr>
 	{/foreach}
-	<tr valign="top">
+	<tr >
 		<td class="label">&nbsp;</td>
 		<td class="value">
 			<input type="file" name="upload" class="uploadField" />

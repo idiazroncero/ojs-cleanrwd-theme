@@ -20,7 +20,7 @@
 			{assign var=notFirstYear value=1}
 		{else}
 			</div>
-			<br />
+			
 			<div class="separator" style="clear:left;"></div>
 		{/if}
 		<div style="float: left; width: 100%;">
@@ -46,7 +46,7 @@
 	</div>
 
 {/iterate}
-{if $notFirstYear}<br /></div>{/if}
+{if $notFirstYear}</div>{/if}
 
 {if !$issues->wasEmpty()}
 	{page_info iterator=$issues}&nbsp;&nbsp;&nbsp;&nbsp;

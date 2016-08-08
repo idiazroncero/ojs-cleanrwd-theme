@@ -20,7 +20,7 @@
 		<li{if !$unpublished} class="current"{/if}><a href="{url op="backIssues"}">{translate key="editor.navigation.issueArchive"}</a></li>
 	</ul>
 {/if}
-<br />
+
 
 <form action="#">
 {translate key="issue.issue"}: <select name="issue" class="selectMenu" onchange="if(this.options[this.selectedIndex].value > 0) location.href='{url|escape:"javascript" op="issueToc" path="ISSUE_ID" escape=false}'.replace('ISSUE_ID', this.options[this.selectedIndex].value)" size="1">{html_options options=$issueOptions selected=$issueId}</select>
@@ -42,7 +42,7 @@
 <p>{translate key="editor.issues.issueGalleysDescription"}</p>
 <table width="100%" class="data">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"issueUrl" op="issueGalleys" path=$issueId escape=false}
@@ -83,7 +83,7 @@
 		<td colspan="6" class="separator">&nbsp;</td>
 	</tr>
 </table>
-	<br />
+	
 	<input type="file" name="galleyFile" id="galleyFile" size="10" class="uploadField" />
 	<input type="submit" value="{translate key="common.upload"}" class="button" />
 </div>

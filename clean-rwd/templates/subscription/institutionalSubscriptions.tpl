@@ -47,7 +47,7 @@
 		<option value="startsWith"{if $searchMatch == 'startsWith'} selected="selected"{/if}>{translate key="form.startsWith"}</option>
 	</select>
 	<input type="text" size="15" name="search" class="textField" value="{$search|escape}" />
-	<br/>
+	
 	<select name="dateSearchField" size="1" class="selectMenu">
 		{html_options_translate options=$dateFieldOptions selected=$dateSearchField}
 	</select>
@@ -58,18 +58,18 @@
 	<input type="hidden" name="dateToHour" value="23" />
 	<input type="hidden" name="dateToMinute" value="59" />
 	<input type="hidden" name="dateToSecond" value="59" />
-	<br/>
+	
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 
-<br />
+
 
 <div id="subscriptions">
 <table width="100%" class="listing">
 	<tr>
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="30%">{translate key="manager.subscriptions.institutionName"}</td>
 		<td width="25%">{translate key="manager.subscriptions.subscriptionType"}</td>
 		<td width="10%">{translate key="subscriptions.status"}</td>
@@ -82,7 +82,7 @@
 	</tr>
 {iterate from=subscriptions item=subscription}
 	{assign var=isNonExpiring value=$subscription->isNonExpiring()}
-	<tr valign="top">
+	<tr >
 		<td>
 			{assign var=emailString value=$subscription->getUserFullName()|concat:" <":$subscription->getUserEmail():">"}
 			{url|assign:"redirectUrl" op="subscriptions" path="institutional" escape=false}

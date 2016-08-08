@@ -66,6 +66,7 @@ $font-button: $headlines;
 
 // The font sizes for h1-h6.
 // Using "perfect fourth" aspect ratio borrowed from http://type-scale.com/
+$big: 4.5    * $base-font-size !default;
 $h1-font-size: 3.157    * $base-font-size !default;
 $h2-font-size: 2.369  * $base-font-size !default;
 $h3-font-size: 1.777 * $base-font-size !default;
@@ -87,15 +88,17 @@ $indent-amount: 40px !default;
 
 $font-color: #333;
 
-// Define our "black" and "white" (for  improved legibility we sometimes use slightly lighter versions of black)
+// Define our "black", "white" and "smoke" (lighter gray). 
+// For improved legibility non-pure $black values (#000) are recommended.
 $black: #1b1b1b;
 $white: #fff;
+$smoke: #f5f5f5;
 
 // A light and a dark colors (usually grays, as your font-color will be a shade of black).
 // It is a good idea to define them as variations of $font-color in order to achieve a simple scale of grays
 // You can modify the percents in order to achieve lighter/darker versions.
-$light-color: tint($font-color, 40%);
-$dark-color: shade($font-color, 40%);
+$light-color: tint($font-color, 75%);
+$dark-color: shade($font-color, 25%);
 
 // Optionally, define a main-color and a secondary-color to reuse on single components.
 $main-color: #3C7861;
@@ -103,7 +106,7 @@ $secondary-color: #008080;
 $main-color-red: #A34531; // For cancel / error buttons and messages
 
 // Default color for lines, separators, etc.
-$line-color: $light-color;
+$line-color: #CCC;
 $line-color-light: tint($line-color, 40%);
 
 // Background-color for the whole webpage
@@ -111,9 +114,11 @@ $background-color: #E9E9D6;
 // Background-color for the #container wrapper
 $container-background-color: #fff;
 // Background-color for the #header wrapper
-$header-background-color: #98A2A8;
+$header-background-color: #E9E9D6;
 // Background-color for the #header wrapper
 $nav-background-color: #333; //#CCDAE3;
+// Background-color for the #header wrapper
+$footer-background-color: #E9E9D6; //#CCDAE3;
 
 
 //
@@ -138,7 +143,7 @@ $link-style: dotted-after; 		// dotted-before = border-bottom is dotted before :
 //
 
 // Max-width of the main container
-$max-width:1200px;
+$max-width:1100px;
 
 // ¿Is the main container separated from the edges?
 $main-container-top-margin: 0;

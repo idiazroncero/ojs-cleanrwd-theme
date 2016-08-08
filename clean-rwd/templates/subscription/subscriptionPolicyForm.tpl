@@ -24,8 +24,8 @@
 </ul>
 
 {if $subscriptionPoliciesSaved}
-<br/>
-{translate key="manager.subscriptionPolicies.subscriptionPoliciesSaved"}<br />
+
+{translate key="manager.subscriptionPolicies.subscriptionPoliciesSaved"}
 {/if}
 
 <form id="subscriptionPolicies" method="post" action="{url op="saveSubscriptionPolicies"}">
@@ -52,7 +52,7 @@
 <p>{translate key="manager.subscriptionPolicies.subscriptionContactDescription"}</p>
 <table width="100%" class="data">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"subscriptionPoliciesUrl" op="subscriptionPolicies" escape=false}
@@ -61,23 +61,23 @@
 		</td>
 	</tr>
 {/if}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionName" key="user.name"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionName" id="subscriptionName" value="{$subscriptionName|escape}" size="30" maxlength="60" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionEmail" key="user.email"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionEmail" id="subscriptionEmail" value="{$subscriptionEmail|escape}" size="30" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionPhone" key="user.phone"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionPhone" id="subscriptionPhone" value="{$subscriptionPhone|escape}" size="15" maxlength="24" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionFax" key="user.fax"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionFax" id="subscriptionFax" value="{$subscriptionFax|escape}" size="15" maxlength="24" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionMailingAddress" key="common.mailingAddress"}</td>
 		<td width="80%" class="value"><textarea name="subscriptionMailingAddress" id="subscriptionMailingAddress" rows="6" cols="40" class="textArea">{$subscriptionMailingAddress|escape}</textarea></td>
 	</tr>
@@ -91,7 +91,7 @@
 <p>{translate key="manager.subscriptionPolicies.subscriptionAdditionalInformationDescription"}</p>
 <p>
 	<textarea name="subscriptionAdditionalInformation[{$formLocale|escape}]" id="subscriptionAdditionalInformation" rows="12" cols="60" class="textArea">{$subscriptionAdditionalInformation[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 </p>
 </div>
@@ -105,26 +105,26 @@
 <p>{translate key="manager.subscriptionPolicies.expirySelectOne"}</p>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-0" value="0"{if not $subscriptionExpiryPartial} checked="checked"{/if} />
 		</td>
 		<td width="95%" class="value">
 			<strong>{fieldLabel name="subscriptionExpiryPartial-0" key="manager.subscriptionPolicies.expiryFull"}</strong>
-			<br />
+			
 			<span class="instruct">{translate key="manager.subscriptionPolicies.expiryFullDescription"}</span>
 		</td>
 	</tr>
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-1" value="1"{if $subscriptionExpiryPartial} checked="checked"{/if} />
 		</td>
 		<td width="95%" class="value">
 			<strong>{fieldLabel name="subscriptionExpiryPartial-1" key="manager.subscriptionPolicies.expiryPartial"}</strong>
-			<br />
+			
 			<span class="instruct">{translate key="manager.subscriptionPolicies.expiryPartialDescription"}</span>
 		</td>
 	</tr>
@@ -150,7 +150,7 @@
 </p>
 
 {if !$scheduledTasksEnabled}
-	<br/>
+	
 	{translate key="manager.subscriptionPolicies.expiryRemindersDisabled"}
 {/if}
 </div>
@@ -180,9 +180,9 @@
 	{fieldLabel name="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationRenewInstitutional"}
 </p>
 {translate key="manager.subscriptionPolicies.onlinePaymentPurchaseInstitutionalDescription"}
-<br />
+
 {if !$paymentsEnabled}
-	<br />
+	
 	{translate key="manager.subscriptionPolicies.onlinePaymentDisabled"}
 {/if}
 </div>
@@ -204,7 +204,7 @@
 	<input type="checkbox" name="enableOpenAccessNotification" id="enableOpenAccessNotification" value="1"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableOpenAccessNotification} checked="checked"{/if} />&nbsp;
 	{fieldLabel name="enableOpenAccessNotification" key="manager.subscriptionPolicies.openAccessNotificationDescription"}
 	{if !$scheduledTasksEnabled}
-		<br/>
+		
 		{translate key="manager.subscriptionPolicies.openAccessNotificationDisabled"}
 	{/if}
 	</p>
@@ -212,7 +212,7 @@
 	<p>{translate key="manager.subscriptionPolicies.delayedOpenAccessPolicyDescription"}</p>
 	<p>
 	<textarea name="delayedOpenAccessPolicy[{$formLocale|escape}]" id="delayedOpenAccessPolicy" rows="12" cols="60" class="textArea">{$delayedOpenAccessPolicy[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 	</p>
 
@@ -223,7 +223,7 @@
 </p>
 <p>
 	<textarea name="authorSelfArchivePolicy[{$formLocale|escape}]" id="authorSelfArchivePolicy" rows="12" cols="60" class="textArea">{$authorSelfArchivePolicy[$formLocale]|escape}</textarea>
-	<br />
+	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 </p>
 </div>
@@ -233,7 +233,7 @@
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="subscriptionPolicies" escape=false}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

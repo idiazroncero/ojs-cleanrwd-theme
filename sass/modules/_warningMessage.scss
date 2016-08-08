@@ -1,0 +1,6 @@
+.warning-message {
+	border:1px solid $main-color-red;
+	padding:rhythm(1);
+	margin-bottom:rhythm(1);
+	@include adjust-font-size-to($h5-font-size);
+}

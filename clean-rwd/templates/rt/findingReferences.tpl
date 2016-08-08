@@ -55,11 +55,11 @@ function invokeWLA() {
 
 <!-- Display the form fields -->
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%"><label for="author">{translate key="user.role.author"}</label></td>
 		<td class="value" width="80%"><input name="author" id="author" type="text" size="20" maxlength="40" class="textField" value="{$article->getAuthorString()|escape}" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label"><label for="title">{translate key="article.title"}</label></td>
 		<td class="value"><input type="text" id="title" name="title" size="40" maxlength="40" class="textField" value="{$article->getLocalizedTitle()|escape}" /></td>
 	</tr>
@@ -67,12 +67,12 @@ function invokeWLA() {
 
 <!-- Display the search engine options -->
 <table class="listing" width="100%">
-	<tr valign="top">
+	<tr >
 		<td width="10%"><input value="{translate key="common.search"}" type="button" onclick="invokeGoogleScholar()" class="button" /></td>
 		<td width="2%">1.</td>
 		<td width="88%">{translate key="rt.findingReferences.googleScholar"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td><input value="{translate key="common.search"}" type="button" onclick="invokeWLA()" class="button" /></td>
 		<td>2.</td>
 		<td>{translate key="rt.findingReferences.windowsLiveAcademic"}</td>

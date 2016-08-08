@@ -28,12 +28,13 @@
 @import "modules/steplist";
 @import "modules/filtergrid";
 @import "modules/uidialog";
+@import "modules/warningMessage";
+@import "modules/menu";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
 @import "pages/userHome";
 @import "pages/siteAdmin";
 @import "pages/siteSettings";
-@import "pages/languages";
 @import "pages/helpPopup";
 @import "pages/authSources";
 @import "pages/adminCategories";

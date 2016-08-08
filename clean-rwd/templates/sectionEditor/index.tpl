@@ -59,7 +59,7 @@ function sortSearch(heading, direction) {
 		<option value="startsWith"{if $searchMatch == 'startsWith'} selected="selected"{/if}>{translate key="form.startsWith"}</option>
 	</select>
 	<input type="text" size="15" name="search" class="textField" value="{$search|escape}" />
-	<br/>
+	
 	<select name="dateSearchField" size="1" class="selectMenu">
 		{html_options_translate options=$dateFieldOptions selected=$dateSearchField}
 	</select>
@@ -70,7 +70,7 @@ function sortSearch(heading, direction) {
 	<input type="hidden" name="dateToHour" value="23" />
 	<input type="hidden" name="dateToMinute" value="59" />
 	<input type="hidden" name="dateToSecond" value="59" />
-	<br/>
+	
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 &nbsp;
@@ -78,13 +78,13 @@ function sortSearch(heading, direction) {
 {include file="sectionEditor/$pageToDisplay.tpl"}
 
 {if ($pageToDisplay == "submissionsInReview")}
-<br />
+
 <div id="notes">
 <h4>{translate key="common.notes"}</h4>
 {translate key="editor.submissionReview.notes"}
 </div>
 {elseif ($pageToDisplay == "submissionsInEditing")}
-<br />
+
 <div id="notes">
 <h4>{translate key="common.notes"}</h4>
 {translate key="editor.submissionEditing.notes"}

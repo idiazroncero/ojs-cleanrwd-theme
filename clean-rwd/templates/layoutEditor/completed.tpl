@@ -42,7 +42,7 @@ function sortSearch(heading, direction) {
 		<option value="startsWith"{if $searchMatch == 'startsWith'} selected="selected"{/if}>{translate key="form.startsWith"}</option>
 	</select>
 	<input type="text" size="15" name="search" class="textField" value="{$search|escape}" />
-	<br/>
+	
 	<select name="dateSearchField" size="1" class="selectMenu">
 		{html_options_translate options=$dateFieldOptions selected=$dateSearchField}
 	</select>
@@ -53,7 +53,7 @@ function sortSearch(heading, direction) {
 	<input type="hidden" name="dateToHour" value="23" />
 	<input type="hidden" name="dateToMinute" value="59" />
 	<input type="hidden" name="dateToSecond" value="59" />
-	<br/>
+	
 	<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 &nbsp;
@@ -62,9 +62,9 @@ function sortSearch(heading, direction) {
 <div id="submissions">
 <table width="100%" class="listing">
 	<tr><td colspan="7" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
-		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_search key="common.assign" sort="assignDate"}</td>
+		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_search key="common.assign" sort="assignDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
 		<td width="25%">{sort_search key="article.authors" sort="authors"}</td>
 		<td width="30%">{sort_search key="article.title" sort="title"}</td>
@@ -76,7 +76,7 @@ function sortSearch(heading, direction) {
 	{assign var="articleId" value=$submission->getId()}
 	{assign var="layoutSignoff" value=$submission->getSignoff('SIGNOFF_LAYOUT')}
 
-	<tr valign="top">
+	<tr >
 		<td>{$articleId|escape}</td>
 		<td>{$layoutSignoff->getDateNotified()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

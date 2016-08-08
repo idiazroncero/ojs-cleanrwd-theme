@@ -106,7 +106,7 @@
 		{/if}
 	</div>
 	<div class="form-row">
-		<label>{translate key="admin.settings.options"}</label>
+		<p class="label">{translate key="admin.settings.options"}</p>
 		<div class="form-subrow">
 			<div class="form-group">
 				<input type="checkbox" id="useAlphalist" name="useAlphalist" {if $useAlphalist}checked="checked" {/if}/>
@@ -119,9 +119,8 @@
 		</div>
 	</div>
 	<div class="form-row">
-		<label>{translate key="admin.settings.journalsList"}</label>
+		<p class="label">{translate key="admin.settings.journalsList"} <span class="instruct">{translate key="admin.settings.journalsList.description"}</span></p>
 		<div class="form-subrow">
-			<p class="instruct">{translate key="admin.settings.journalsList.description"}</p>
 			<div class="form-group">
 				<input type="checkbox" name="showThumbnail" id="showThumbnail" value="1"{if $showThumbnail} checked="checked"{/if} />
 				{fieldLabel name="showThumbnail" key="admin.settings.journalsList.showThumbnail"}
@@ -137,7 +136,7 @@
 		</div>
 	</div>
 	<div class="form-row">
-		<label>{translate key="admin.settings.security"}</label>
+		<p class="label">{translate key="admin.settings.security"}</p>
 		<div class="form-subrow">
 			<input type="checkbox" name="preventManagerPluginManagement" id="preventManagerPluginManagement" value="1"{if $preventManagerPluginManagement} checked="checked"{/if} />
 			{fieldLabel name="preventManagerPluginManagement" key="admin.settings.security.plugins" }

@@ -106,7 +106,7 @@ function toggleChecked() {
 <div id="users">
 <table width="100%" class="listing">
 <tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" valign="bottom">
+<tr class="heading" >
 	<td width="5%">&nbsp;</td>
 	<td width="25%">{sort_heading key="user.username" sort="username"}</td>
 	<td width="30%">{sort_heading key="user.name" sort="name"}</td>
@@ -117,7 +117,7 @@ function toggleChecked() {
 {iterate from=users item=user}
 {assign var="userid" value=$user->getId()}
 {assign var="stats" value=$statistics[$userid]}
-<tr valign="top">
+<tr >
 	<td><input type="checkbox" name="users[]" value="{$user->getId()}" /></td>
 	<td><a class="action" href="{url op="userProfile" path=$userid}">{$user->getUsername()|escape}</a></td>
 	<td>{$user->getFullName(true)|escape}</td>

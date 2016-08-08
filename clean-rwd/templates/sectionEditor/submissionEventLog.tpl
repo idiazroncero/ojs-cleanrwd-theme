@@ -36,7 +36,7 @@
 <h3>{translate key="submission.history.submissionEventLog"}</h3>
 <table width="100%" class="listing">
 	<tr><td class="headseparator" colspan="4">&nbsp;</td></tr>
-	<tr valign="top" class="heading">
+	<tr  class="heading">
 		<td width="7%">{translate key="common.date"}</td>
 		<td width="25%">{translate key="common.user"}</td>
 		<td>{translate key="common.event"}</td>
@@ -44,7 +44,7 @@
 	</tr>
 	<tr><td class="headseparator" colspan="4">&nbsp;</td></tr>
 {iterate from=eventLogEntries item=logEntry}
-	<tr valign="top">
+	<tr >
 		<td>{$logEntry->getDateLogged()|date_format:$dateFormatShort}</td>
 		<td>
 			{assign var=emailString value=$logEntry->getUserFullName()|concat:" <":$logEntry->getUserEmail():">"}
@@ -53,20 +53,20 @@
 		</td>
 		<td>
 			{translate key=$logEntry->getEventTitle()}
-			<br />
+			
 			{$logEntry->getTranslatedMessage()|strip_tags|truncate:60:"..."|escape}
 		</td>
 		<td align="right"><a href="{url op="submissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action">{translate key="common.view"}</a>{if $isEditor}&nbsp;|&nbsp;<a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')" class="icon">{translate key="common.delete"}</a>{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="{if $eventLogEntries->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 {if $eventLogEntries->wasEmpty()}
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="nodata">{translate key="submission.history.noLogEntries"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="endseparator">&nbsp;</td>
 	</tr>
 {else}

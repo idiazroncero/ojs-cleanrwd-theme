@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 
 		watch : {
 			dev: {
-				files: ['**/*.scss'],
+				files: ['**/*.scss', '**/*.tpl'],
 				tasks: ['dev']
 			},
 			prod: {

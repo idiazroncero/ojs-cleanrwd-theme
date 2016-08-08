@@ -19,7 +19,7 @@
 		{$currentJournal->getSetting('submissionFee')|string_format:"%.2f"} ({$currentJournal->getSetting('currency')}) 
 		{if $showPayLinks}<a class="action" href="{url op="paySubmissionFee" path=$articleId}">{translate key="payment.payNow"}</a>{/if}
 	{/if}
-	<br />{$currentJournal->getLocalizedSetting('submissionFeeDescription')|nl2br}</p>
+	{$currentJournal->getLocalizedSetting('submissionFeeDescription')|nl2br}</p>
 {/if}
 {if $currentJournal->getSetting('fastTrackFeeEnabled')}
 	<p>{$currentJournal->getLocalizedSetting('fastTrackFeeName')|escape}: 
@@ -29,11 +29,11 @@
 		{$currentJournal->getSetting('fastTrackFee')|string_format:"%.2f"} ({$currentJournal->getSetting('currency')})
 		{if $showPayLinks}<a class="action" href="{url op="payFastTrackFee" path=$articleId}">{translate key="payment.payNow"}</a>{/if}
 	{/if}
-	<br />{$currentJournal->getLocalizedSetting('fastTrackFeeDescription')|nl2br}</p>	
+	{$currentJournal->getLocalizedSetting('fastTrackFeeDescription')|nl2br}</p>	
 {/if}
 {if $currentJournal->getSetting('publicationFeeEnabled')}
 	<p>{$currentJournal->getLocalizedSetting('publicationFeeName')|escape}: {$currentJournal->getSetting('publicationFee')|string_format:"%.2f"} ({$currentJournal->getSetting('currency')})
-	<br />{$currentJournal->getLocalizedSetting('publicationFeeDescription')|nl2br}</p>	
+	{$currentJournal->getLocalizedSetting('publicationFeeDescription')|nl2br}</p>	
 {/if}
 {if $currentJournal->getLocalizedSetting('waiverPolicy') != ''}
 	<p>{$currentJournal->getLocalizedSetting('waiverPolicy')|nl2br}</p>

@@ -18,7 +18,7 @@
 	<li{if ($pageToDisplay == "completed")} class="current"{/if}><a href="{url op="submissions" path="completed"}">{translate key="common.queue.short.completed"}</a></li>
 </ul>
 
-<br />
+
 
 {include file="layoutEditor/$pageToDisplay.tpl"}
 

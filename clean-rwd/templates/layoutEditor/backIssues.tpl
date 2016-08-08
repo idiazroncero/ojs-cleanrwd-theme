@@ -16,7 +16,7 @@
         <li class="current"><a href="{url op="backIssues"}">{translate key="editor.navigation.issueArchive"}</a></li>
 </ul>
 
-<br/>
+
 
 <a name="issues"></a>
 
@@ -24,7 +24,7 @@
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="70%">{translate key="issue.issue"}</td>
 		<td width="15%">{translate key="editor.issues.published"}</td>
 		<td width="15%">{translate key="editor.issues.numArticles"}</td>
@@ -35,7 +35,7 @@
 
 	{assign var=pos value=1}
 	{iterate from=issues item=issue}
-	<tr valign="top">
+	<tr >
 		<td><a href="{url op="issueToc" path=$issue->getId()}" class="action">{$issue->getIssueIdentification()|escape}</a></td>
 		<td>{$issue->getDatePublished()|date_format:"$dateFormatShort"|default:"&mdash;"}</td>
 		<td>{$issue->getNumArticles()|escape}</td>

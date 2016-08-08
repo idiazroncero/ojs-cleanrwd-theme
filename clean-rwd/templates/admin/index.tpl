@@ -14,7 +14,7 @@
 {/strip}
 
 {if $newVersionAvailable}
-<div class="warningMessage">{translate key="site.upgradeAvailable.admin" currentVersion=$currentVersion latestVersion=$latestVersion}</div>
+<div class="warning-message">{translate key="site.upgradeAvailable.admin" currentVersion=$currentVersion latestVersion=$latestVersion}</div>
 {/if}
 
 <section class="section" id="siteManagement">

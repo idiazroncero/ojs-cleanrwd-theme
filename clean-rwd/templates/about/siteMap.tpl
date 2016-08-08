@@ -17,8 +17,8 @@
 <div id="siteMap">
 <ul class="plain">
 <li>
-	<a href="{url journal="index" page="index" op="index"}">{translate key="navigation.home"}</a><br/>
-	{if $isUserLoggedIn}<a href="{url journal="index" page="user"}">{translate key="navigation.userHome"}</a><br/>{/if}
+	<a href="{url journal="index" page="index" op="index"}">{translate key="navigation.home"}</a>
+	{if $isUserLoggedIn}<a href="{url journal="index" page="user"}">{translate key="navigation.userHome"}</a>{/if}
 	<ul class="plain">
 	{if $journals|@count>1 && !$currentJournal}
 		{foreach from=$journals item=journal}
@@ -28,12 +28,12 @@
 		{if $journals|@count==1}
 			{assign var=currentJournal value=$journals[0]}
 		{else}
-			<li><a href="{url journal="index" page="about" op="siteMap"}">{translate key="journal.journals"}</a><br/>
+			<li><a href="{url journal="index" page="about" op="siteMap"}">{translate key="journal.journals"}</a>
 			<ul class="plain">
 			{assign var=onlyOneJournal value=1}
 		{/if}
 
-		<li><a href="{url journal=$currentJournal->getPath()}">{$currentJournal->getLocalizedTitle()|escape}</a><br/>
+		<li><a href="{url journal=$currentJournal->getPath()}">{$currentJournal->getLocalizedTitle()|escape}</a>
 			<ul class="plain">
 				<li><a href="{url journal=$currentJournal->getPath() page="about"}">{translate key="navigation.about"}</a></li>
 				<li>
@@ -53,13 +53,13 @@
 					{/if}
 				</li>
 				{if $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}
-					<li><a href="{url journal=$currentJournal->getPath() page="search"}">{translate key="navigation.search"}</a><br />
+					<li><a href="{url journal=$currentJournal->getPath() page="search"}">{translate key="navigation.search"}</a>
 						<ul class="plain">
 							<li><a href="{url journal=$currentJournal->getPath() page="search" op="authors"}">{translate key="navigation.browseByAuthor"}</a></li>
 							<li><a href="{url journal=$currentJournal->getPath() page="search" op="titles"}">{translate key="navigation.browseByTitle"}</a></li>
 						</ul>
 					</li>
-					<li>{translate key="issue.issues"}<br/>
+					<li>{translate key="issue.issues"}
 						<ul class="plain">
 							<li><a href="{url journal=$currentJournal->getPath() page="issue" op="current"}">{translate key="journal.currentIssue"}</a></li>
 							<li><a href="{url journal=$currentJournal->getPath() page="issue" op="archive"}">{translate key="navigation.archives"}</a></li>

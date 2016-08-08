@@ -55,14 +55,14 @@ function deleteAttachment(fileId) {
 {/foreach}
 {if $notFirstMessage}</ul>{/if}
 
-<br/>
+
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td class="label" width="20%">{fieldLabel name="to" key="email.to"}</td>
 	<td width="80%" class="value">
 		{foreach from=$to item=toAddress}
-			<input type="text" name="to[]" id="to" value="{if $toAddress.name != ''}{$toAddress.name|escape} &lt;{$toAddress.email|escape}&gt;{else}{$toAddress.email|escape}{/if}" {if !$addressFieldsEnabled}disabled="disabled" {/if}size="40" maxlength="120" class="textField" /><br/>
+			<input type="text" name="to[]" id="to" value="{if $toAddress.name != ''}{$toAddress.name|escape} &lt;{$toAddress.email|escape}&gt;{else}{$toAddress.email|escape}{/if}" {if !$addressFieldsEnabled}disabled="disabled" {/if}size="40" maxlength="120" class="textField" />
 		{foreachelse}
 			<input type="text" name="to[]" id="to" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/>
 		{/foreach}
@@ -72,11 +72,11 @@ function deleteAttachment(fileId) {
 		{/if}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="cc" key="email.cc"}</td>
 	<td class="value">
 		{foreach from=$cc item=ccAddress}
-			<input type="text" name="cc[]" id="cc" value="{if $ccAddress.name != ''}{$ccAddress.name|escape} &lt;{$ccAddress.email|escape}&gt;{else}{$ccAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/><br/>
+			<input type="text" name="cc[]" id="cc" value="{if $ccAddress.name != ''}{$ccAddress.name|escape} &lt;{$ccAddress.email|escape}&gt;{else}{$ccAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/>
 		{foreachelse}
 			<input type="text" name="cc[]" id="cc" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/>
 		{/foreach}
@@ -86,11 +86,11 @@ function deleteAttachment(fileId) {
 		{/if}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="bcc" key="email.bcc"}</td>
 	<td class="value">
 		{foreach from=$bcc item=bccAddress}
-			<input type="text" name="bcc[]" id="bcc" value="{if $bccAddress.name != ''}{$bccAddress.name|escape} &lt;{$bccAddress.email|escape}&gt;{else}{$bccAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/><br/>
+			<input type="text" name="bcc[]" id="bcc" value="{if $bccAddress.name != ''}{$bccAddress.name|escape} &lt;{$bccAddress.email|escape}&gt;{else}{$bccAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/>
 		{foreachelse}
 			<input type="text" name="bcc[]" id="bcc" size="40" maxlength="120" class="textField" {if !$addressFieldsEnabled}disabled="disabled" {/if}/>
 		{/foreach}
@@ -101,7 +101,7 @@ function deleteAttachment(fileId) {
 	</td>
 </tr>
 {if $addressFieldsEnabled}
-<tr valign="top">
+<tr >
 	<td>&nbsp;</td>
 	<td class="value">
 		<input type="submit" name="blankTo" class="button" value="{translate key="email.addToRecipient"}"/>
@@ -112,10 +112,10 @@ function deleteAttachment(fileId) {
 {/if}{* $addressFieldsEnabled *}
 
 {if $attachmentsEnabled}
-<tr valign="top">
+<tr >
 	<td colspan="2">&nbsp;</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{translate key="email.attachments"}</td>
 	<td class="value">
 		{assign var=attachmentNum value=1}
@@ -123,24 +123,24 @@ function deleteAttachment(fileId) {
 			{$attachmentNum|escape}.&nbsp;{$temporaryFile->getOriginalFileName()|escape}&nbsp;
 			({$temporaryFile->getNiceFileSize()})&nbsp;
 			<a href="javascript:deleteAttachment({$temporaryFile->getId()})" class="action">{translate key="common.delete"}</a>
-			<br/>
+			
 			{assign var=attachmentNum value=$attachmentNum+1}
 		{/foreach}
 
-		{if $attachmentNum != 1}<br/>{/if}
+		{if $attachmentNum != 1}{/if}
 
 		<input type="file" name="newAttachment" class="uploadField" /> <input name="addAttachment" type="submit" class="button" value="{translate key="common.upload"}" />
 	</td>
 </tr>
 {/if}
-<tr valign="top">
+<tr >
 	<td colspan="2">&nbsp;</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="subject" key="email.subject"}</td>
 	<td width="80%" class="value"><input type="text" id="subject" name="subject" value="{$subject|escape}" size="60" maxlength="120" class="textField" /></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="body" key="email.body"}</td>
 	<td class="value"><textarea name="body" cols="60" rows="15" class="textArea">{$body|escape}</textarea></td>
 </tr>

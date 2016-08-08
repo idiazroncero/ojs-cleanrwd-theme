@@ -11,9 +11,9 @@
 <div id="submissions">
 <table class="listing" width="100%">
 	<tr><td class="headseparator" colspan="6">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{sort_heading key="common.id" sort="id"}</td>
-		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span><br />{sort_heading key="common.assigned" sort="assignDate"}</td>
+		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_heading key="common.assigned" sort="assignDate"}</td>
 		<td width="5%">{sort_heading key="submissions.sec" sort="section"}</td>
 		<td width="30%">{sort_heading key="article.authors" sort="authors"}</td>
 		<td width="35%">{sort_heading key="article.title" sort="title"}</td>
@@ -25,7 +25,7 @@
 	{assign var="copyeditingInitialSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_INITIAL')}
 	{assign var="finalCopyeditSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_FINAL')}
 	{assign var="articleId" value=$submission->getId()}
-	<tr valign="top">
+	<tr >
 		<td>{$articleId|escape}</td>
 		<td>{$copyeditingInitialSignoff->getDateNotified()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

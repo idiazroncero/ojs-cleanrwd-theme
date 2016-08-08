@@ -53,7 +53,7 @@ function sortSearch(heading, direction) {
 	{assign var=numCols value=$numCols+1}
 {/if}
 <tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" valign="bottom">
+<tr class="heading" >
 	<td width="20%">{sort_search key="user.name" sort="reviewerName"}</td>
 	<td>{translate key="user.interests"}</td>
 	{if $rateReviewerOnQuality}
@@ -71,7 +71,7 @@ function sortSearch(heading, direction) {
 {assign var="qualityCount" value=$averageQualityRatings[$userId].count}
 {assign var="reviewerStats" value=$reviewerStatistics[$userId]}
 
-<tr valign="top">
+<tr >
 	<td><a class="action" href="{url op="userProfile" path=$userId}">{$reviewer->getFullName()|escape}</a></td>
 	<td>{$reviewer->getInterestString()|escape}</td>
 	{if $rateReviewerOnQuality}<td>

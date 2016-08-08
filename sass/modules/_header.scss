@@ -4,6 +4,7 @@
 	}
 	h1 {
 		margin:0;
+		@include adjust-font-size-to($big);
 	}
 	h1 img {
 		// Responsive image

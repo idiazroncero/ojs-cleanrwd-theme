@@ -21,7 +21,7 @@
 <form method="post" action="{url op="saveLanguageSettings"}">
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td width="20%" rowspan="2" class="label">{fieldLabel name="primaryLocale" required="true" key="locale.primary"}</td>
 	<td width="80%" colspan="3" class="value">
 		<select id="primaryLocale" name="primaryLocale" size="1" class="selectMenu">
@@ -29,14 +29,14 @@
 		</select>
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td colspan="3" class="value"><span class="instruct">{translate key="manager.languages.primaryLocaleInstructions"}</span></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label" rowspan="2">{fieldLabel suppressId="true" name="supportedLocales" key="locale.supported"}</td>
 	<td colspan="3" class="value">
 		<table class="data" width="100%">
-		<tr valign="top">
+		<tr >
 			<td width="20%">&nbsp;</td>
 			<td align="center" width="10%">{translate key="manager.language.ui"}</td>
 			<td align="center" width="20%">{translate key="manager.language.submissions"}</td>
@@ -55,14 +55,14 @@
 		</table>
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td colspan="3" class="value"><span class="instruct">{translate key="manager.languages.supportedLocalesInstructions"}</span></td>
 </tr>
 </table>
 
 <p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="manager"}'" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

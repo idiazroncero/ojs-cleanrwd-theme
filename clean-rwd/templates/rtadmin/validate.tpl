@@ -26,7 +26,7 @@
 			{assign var=errors value=$search|validate_url:$errors}.
 		{/foreach}
 		{foreach from=$errors item=error}
-			<br />
+			
 			{translate key="rt.admin.validateUrls.urlIsInvalid" url=$error.url|truncate:50|escape}&nbsp;&nbsp;<a href="{url op="editSearch" path=$version->getVersionId()|to_array:$context->getContextId():$error.id}" class="action">{translate key="common.edit"}</a>
 		{foreachelse}
 			{translate key="rt.admin.validateUrls.ok"}

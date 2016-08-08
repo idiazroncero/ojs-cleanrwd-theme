@@ -37,7 +37,7 @@ function moveAuthor(dir, authorIndex) {
 {if count($formLocales) > 1}
 <div id="locales">
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"formUrl" path=$articleId escape=false}
@@ -73,7 +73,7 @@ function moveAuthor(dir, authorIndex) {
 
 <table width="100%" class="data">
 	{foreach name=authors from=$authors key=authorIndex item=author}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">
 			<input type="hidden" name="authors[{$authorIndex|escape}][authorId]" value="{$author.authorId|escape}" />
 			<input type="hidden" name="authors[{$authorIndex|escape}][seq]" value="{$authorIndex+1}" />
@@ -84,34 +84,34 @@ function moveAuthor(dir, authorIndex) {
 		</td>
 		<td width="80%" class="value"><input type="text" name="authors[{$authorIndex|escape}][firstName]" id="authors-{$authorIndex|escape}-firstName" value="{$author.firstName|escape}" size="20" maxlength="40" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-middleName" key="user.middleName"}</td>
 		<td class="value"><input type="text" name="authors[{$authorIndex|escape}][middleName]" id="authors-{$authorIndex|escape}-middleName" value="{$author.middleName|escape}" size="20" maxlength="40" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-lastName" required="true" key="user.lastName"}</td>
 		<td class="value"><input type="text" name="authors[{$authorIndex|escape}][lastName]" id="authors-{$authorIndex|escape}-lastName" value="{$author.lastName|escape}" size="20" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-email" required="true" key="user.email"}</td>
 		<td class="value"><input type="text" name="authors[{$authorIndex|escape}][email]" id="authors-{$authorIndex|escape}-email" value="{$author.email|escape}" size="30" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-orcid" key="user.orcid"}</td>
-		<td class="value"><input type="text" name="authors[{$authorIndex|escape}][orcid]" id="authors-{$authorIndex|escape}-orcid" value="{$author.orcid|escape}" size="30" maxlength="90" class="textField" /><br />{translate key="user.orcid.description"}</td>
+		<td class="value"><input type="text" name="authors[{$authorIndex|escape}][orcid]" id="authors-{$authorIndex|escape}-orcid" value="{$author.orcid|escape}" size="30" maxlength="90" class="textField" />{translate key="user.orcid.description"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-url" key="user.url"}</td>
 		<td class="value"><input type="text" name="authors[{$authorIndex|escape}][url]" id="authors-{$authorIndex|escape}-url" value="{$author.url|escape}" size="30" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-affiliation" key="user.affiliation"}</td>
 		<td class="value">
-			<textarea name="authors[{$authorIndex|escape}][affiliation][{$formLocale|escape}]" class="textArea" id="authors-{$authorIndex|escape}-affiliation" rows="5" cols="40">{$author.affiliation[$formLocale]|escape}</textarea><br/>
+			<textarea name="authors[{$authorIndex|escape}][affiliation][{$formLocale|escape}]" class="textArea" id="authors-{$authorIndex|escape}-affiliation" rows="5" cols="40">{$author.affiliation[$formLocale]|escape}</textarea>
 			<span class="instruct">{translate key="user.affiliation.description"}</span>
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-country" key="common.country"}</td>
 		<td class="value">
 			<select name="authors[{$authorIndex|escape}][country]" id="authors-{$authorIndex|escape}-country" class="selectMenu">
@@ -121,29 +121,29 @@ function moveAuthor(dir, authorIndex) {
 		</td>
 	</tr>
 	{if $currentJournal->getSetting('requireAuthorCompetingInterests')}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{fieldLabel name="authors-$authorIndex-competingInterests" key="author.competingInterests" competingInterestGuidelinesUrl=$competingInterestGuidelinesUrl}</td>
 			<td width="80%" class="value"><textarea name="authors[{$authorIndex|escape}][competingInterests][{$formLocale|escape}]" class="textArea" id="authors-{$authorIndex|escape}-competingInterests" rows="5" cols="40">{$author.competingInterests[$formLocale]|escape}</textarea></td>
 		</tr>
 	{/if}{* requireAuthorCompetingInterests *}
-	<tr valign="top">
-		<td class="label">{fieldLabel name="authors-$authorIndex-biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+	<tr >
+		<td class="label">{fieldLabel name="authors-$authorIndex-biography" key="user.biography"}{translate key="user.biography.description"}</td>
 		<td class="value"><textarea name="authors[{$authorIndex|escape}][biography][{$formLocale|escape}]" id="authors-{$authorIndex|escape}-biography" rows="5" cols="40" class="textArea">{$author.biography[$formLocale]|escape}</textarea></td>
 	</tr>
 
 {call_hook name="Templates::Submission::MetadataEdit::Authors"}
 
 	{if $smarty.foreach.authors.total > 1}
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="author.submit.reorder"}</td>
 		<td class="value"><a href="javascript:moveAuthor('u', '{$authorIndex|escape}')" class="action plain">&uarr;</a> <a href="javascript:moveAuthor('d', '{$authorIndex|escape}')" class="action plain">&darr;</a></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>&nbsp;</td>
 		<td class="label"><input type="radio" name="primaryContact" id="primaryContact-{$authorIndex|escape}" value="{$authorIndex|escape}"{if $primaryContact == $authorIndex} checked="checked"{/if} /> <label for="primaryContact-{$authorIndex|escape}">{translate key="author.submit.selectPrincipalContact"}</label></td>
 		<td class="labelRightPlain">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>&nbsp;</td>
 		<td class="value"><input type="submit" name="delAuthor[{$authorIndex|escape}]" value="{translate key="author.submit.deleteAuthor"}" class="button" /></td>
 	</tr>
@@ -158,34 +158,34 @@ function moveAuthor(dir, authorIndex) {
 	<input type="hidden" name="authors[0][authorId]" value="0" />
 	<input type="hidden" name="primaryContact" value="0" />
 	<input type="hidden" name="authors[0][seq]" value="1" />
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="authors-0-firstName" required="true" key="user.firstName"}</td>
 		<td width="80%" class="value"><input type="text" name="authors[0][firstName]" id="authors-0-firstName" size="20" maxlength="40" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-0-middleName" key="user.middleName"}</td>
 		<td class="value"><input type="text" name="authors[0][middleName]" id="authors-0-middleName" size="20" maxlength="40" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-0-lastName" required="true" key="user.lastName"}</td>
 		<td class="value"><input type="text" name="authors[0][lastName]" id="authors-0-lastName" size="20" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-0-email" required="true" key="user.email"}</td>
 		<td class="value"><input type="text" name="authors[0][email]" id="authors-0-email" size="30" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-0-url" key="user.url"}</td>
 		<td class="value"><input type="text" name="authors[0][url]" id="authors-0-url" size="30" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-0-affiliation" key="user.affiliation"}</td>
 		<td class="value">
-			<textarea name="authors[0][affiliation][{$formLocale|escape}]" class="textArea" id="authors-0-affiliation" rows="5" cols="40"></textarea><br/>
+			<textarea name="authors[0][affiliation][{$formLocale|escape}]" class="textArea" id="authors-0-affiliation" rows="5" cols="40"></textarea>
 			<span class="instruct">{translate key="user.affiliation.description"}</span>
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="authors-$authorIndex-country" key="common.country"}</td>
 		<td class="value">
 			<select name="authors[0][country]" id="authors-0-country" class="selectMenu">
@@ -195,13 +195,13 @@ function moveAuthor(dir, authorIndex) {
 		</td>
 	</tr>
 	{if $currentJournal->getSetting('requireAuthorCompetingInterests')}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{fieldLabel name="authors-0-competingInterests" key="author.competingInterests" competingInterestGuidelinesUrl=$competingInterestGuidelinesUrl}</td>
 			<td width="80%" class="value"><textarea name="authors[0][competingInterests][{$formLocale|escape}]" class="textArea" id="authors-0-competingInterests" rows="5" cols="40"></textarea></td>
 		</tr>
 	{/if}
-	<tr valign="top">
-		<td class="label">{fieldLabel name="authors-0-biography" key="user.biography"}<br />{translate key="user.biography.description"}</td>
+	<tr >
+		<td class="label">{fieldLabel name="authors-0-biography" key="user.biography"}{translate key="user.biography.description"}</td>
 		<td class="value"><textarea name="authors[0][biography][{$formLocale|escape}]" id="authors-0-biography" rows="5" cols="40" class="textArea"></textarea></td>
 	</tr>
 	{/foreach}
@@ -225,7 +225,7 @@ function moveAuthor(dir, authorIndex) {
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{if $section && $section->getAbstractsNotRequired()==0}{fieldLabel name="abstract" required="true" key="article.abstract"}{else}{fieldLabel name="abstract" key="article.abstract"}{/if}</td>
 		<td class="value"><textarea name="abstract[{$formLocale|escape}]" id="abstract" rows="15" cols="60" class="textArea">{$abstract[$formLocale]|escape}</textarea></td>
 	</tr>
@@ -241,26 +241,26 @@ function moveAuthor(dir, authorIndex) {
 <input type="hidden" name="originalFileName[{$formLocale|escape}]" value="{$originalFileName[$formLocale]|escape}" />
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label" colspan="2"><input type="checkbox" name="showCoverPage[{$formLocale|escape}]" id="showCoverPage" value="1" {if $showCoverPage[$formLocale]} checked="checked"{/if} /> <label for="showCoverPage">{translate key="editor.article.showCoverPage"}</label></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="coverPage" key="editor.article.coverPage"}</td>
-		<td width="80%" class="value"><input type="file" name="coverPage" id="coverPage" class="uploadField" />&nbsp;&nbsp;{translate key="form.saveToUpload"}<br />{translate key="editor.article.coverPageInstructions"}<br />{translate key="editor.article.uploaded"}:&nbsp;{if $fileName[$formLocale]}<a href="javascript:openWindow('{$publicFilesDir}/{$fileName[$formLocale]|escape:"url"}');" class="file">{$originalFileName[$formLocale]}</a>&nbsp;<a href="{url op="removeArticleCoverPage" path=$articleId|to_array:$formLocale}" onclick="return confirm('{translate|escape:"jsparam" key="editor.article.removeCoverPage"}')">{translate key="editor.article.remove"}</a>{else}&mdash;{/if}</td>
+		<td width="80%" class="value"><input type="file" name="coverPage" id="coverPage" class="uploadField" />&nbsp;&nbsp;{translate key="form.saveToUpload"}{translate key="editor.article.coverPageInstructions"}{translate key="editor.article.uploaded"}:&nbsp;{if $fileName[$formLocale]}<a href="javascript:openWindow('{$publicFilesDir}/{$fileName[$formLocale]|escape:"url"}');" class="file">{$originalFileName[$formLocale]}</a>&nbsp;<a href="{url op="removeArticleCoverPage" path=$articleId|to_array:$formLocale}" onclick="return confirm('{translate|escape:"jsparam" key="editor.article.removeCoverPage"}')">{translate key="editor.article.remove"}</a>{else}&mdash;{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="coverPageAltText" key="common.altText"}</td>
 		<td width="80%" class="value"><input type="text" name="coverPageAltText[{$formLocale|escape}]" value="{$coverPageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>&nbsp;</td>
 		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="hideCoverPageToc" key="editor.article.coverPageDisplay"}</td>
 		<td width="80%" class="value"><input type="checkbox" name="hideCoverPageToc[{$formLocale|escape}]" id="hideCoverPageToc" value="1" {if $hideCoverPageToc[$formLocale]} checked="checked"{/if} /> <label for="hideCoverPageToc">{translate key="editor.article.hideCoverPageToc"}</label></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">&nbsp;</td>
 		<td class="value"><input type="checkbox" name="hideCoverPageAbstract[{$formLocale|escape}]" id="hideCoverPageAbstract" value="1" {if $hideCoverPageAbstract[$formLocale]} checked="checked"{/if} /> <label for="hideCoverPageAbstract">{translate key="editor.article.hideCoverPageAbstract"}</label></td>
 	</tr>
@@ -276,12 +276,12 @@ function moveAuthor(dir, authorIndex) {
 
 <table width="100%" class="data">
 	{if $journalSettings.metaDiscipline}
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="discipline" key="article.discipline"}</td>
 		<td class="value">
 			<input type="text" name="discipline[{$formLocale|escape}]" id="discipline" value="{$discipline[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
 			{if $currentJournal->getLocalizedSetting('metaDisciplineExamples') != ''}
-			<br />
+			
 			<span class="instruct">{$currentJournal->getLocalizedSetting('metaDisciplineExamples')|escape}</span>
 			{/if}
 		</td>
@@ -291,14 +291,14 @@ function moveAuthor(dir, authorIndex) {
 	</tr>
 	{/if}
 	{if $journalSettings.metaSubjectClass}
-	<tr valign="top">
+	<tr >
 		<td colspan="2" class="label"><a href="{$currentJournal->getLocalizedSetting('metaSubjectClassUrl')|escape}" target="_blank">{$currentJournal->getLocalizedSetting('metaSubjectClassTitle')|escape}</a></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="subjectClass" key="article.subjectClassification"}</td>
 		<td class="value">
 			<input type="text" name="subjectClass[{$formLocale|escape}]" id="subjectClass" value="{$subjectClass[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
-			<br />
+			
 			<span class="instruct">{translate key="author.submit.subjectClassInstructions"}</span>
 		</td>
 	</tr>
@@ -307,12 +307,12 @@ function moveAuthor(dir, authorIndex) {
 	</tr>
 	{/if}
 	{if $journalSettings.metaSubject}
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="subject" key="article.subject"}</td>
 		<td class="value">
 			<input type="text" name="subject[{$formLocale|escape}]" id="subject" value="{$subject[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
 			{if $currentJournal->getLocalizedSetting('metaSubjectExamples') != ''}
-			<br />
+			
 			<span class="instruct">{$currentJournal->getLocalizedSetting('metaSubjectExamples')|escape}</span>
 			{/if}
 		</td>
@@ -322,12 +322,12 @@ function moveAuthor(dir, authorIndex) {
 	</tr>
 	{/if}
 	{if $journalSettings.metaCoverage}
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="coverageGeo" key="article.coverageGeo"}</td>
 		<td class="value">
 			<input type="text" name="coverageGeo[{$formLocale|escape}]" id="coverageGeo" value="{$coverageGeo[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
 			{if $currentJournal->getLocalizedSetting('metaCoverageGeoExamples') != ''}
-			<br />
+			
 			<span class="instruct">{$currentJournal->getLocalizedSetting('metaCoverageGeoExamples')|escape}</span>
 			{/if}
 		</td>
@@ -335,12 +335,12 @@ function moveAuthor(dir, authorIndex) {
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="coverageChron" key="article.coverageChron"}</td>
 		<td class="value">
 			<input type="text" name="coverageChron[{$formLocale|escape}]" id="coverageChron" value="{$coverageChron[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
 			{if $currentJournal->getLocalizedSetting('metaCoverageChronExamples') != ''}
-			<br />
+			
 			<span class="instruct">{$currentJournal->getLocalizedSetting('metaCoverageChronExamples')|escape}</span>
 			{/if}
 		</td>
@@ -348,12 +348,12 @@ function moveAuthor(dir, authorIndex) {
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="coverageSample" key="article.coverageSample"}</td>
 		<td class="value">
 			<input type="text" name="coverageSample[{$formLocale|escape}]" id="coverageSample" value="{$coverageSample[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
 			{if $currentJournal->getLocalizedSetting('metaCoverageResearchSampleExamples') != ''}
-			<br />
+			
 			<span class="instruct">{$currentJournal->getLocalizedSetting('metaCoverageResearchSampleExamples')|escape}</span>
 			{/if}
 		</td>
@@ -363,7 +363,7 @@ function moveAuthor(dir, authorIndex) {
 	</tr>
 	{/if}
 	{if $journalSettings.metaType}
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="type" key="article.type"}</td>
 		<td class="value">
 			<input type="text" name="type[{$formLocale|escape}]" id="type" value="{$type[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
@@ -373,11 +373,11 @@ function moveAuthor(dir, authorIndex) {
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
 	{/if}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="language" key="article.language"}</td>
 		<td width="80%" class="value">
 			<input type="text" name="language" id="language" value="{$language|escape}" size="5" maxlength="10" class="textField" />
-			<br />
+			
 			<span class="instruct">{translate key="author.submit.languageInstructions"}</span>
 		</td>
 	</tr>
@@ -392,7 +392,7 @@ function moveAuthor(dir, authorIndex) {
 <p>{translate key="author.submit.submissionSupportingAgenciesDescription"}</p>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="sponsor" key="submission.agencies"}</td>
 		<td width="80%" class="value">
 			<input type="text" name="sponsor[{$formLocale|escape}]" id="sponsor" value="{$sponsor[$formLocale]|escape}" size="60" maxlength="255" class="textField" />
@@ -417,7 +417,7 @@ function moveAuthor(dir, authorIndex) {
 <p>{translate key="author.submit.submissionCitations"}</p>
 
 <table width="100%" class="data">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="citations" key="submission.citations"}</td>
 	<td width="80%" class="value"><textarea name="citations" id="citations" class="textArea" rows="15" cols="60">{$citations|escape}</textarea></td>
 </tr>
@@ -447,7 +447,7 @@ function moveAuthor(dir, authorIndex) {
 <h3>{translate key="editor.article.display"}</h3>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="hideAuthor" key="issue.toc"}</td>
 		<td width="80%" class="value">{translate key="editor.article.hideTocAuthorDescription"}:
 			<select name="hideAuthor" id="hideAuthor" class="selectMenu">
@@ -461,15 +461,15 @@ function moveAuthor(dir, authorIndex) {
 <div id="permissions">
 <h3>{translate key="submission.permissions"}</h3>
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="copyrightHolder" key="submission.copyrightHolder"}</td>
 		<td width="80%" class="value"><input type="text" name="copyrightHolder[{$formLocale|escape}]" id="copyrightHolder" value="{$copyrightHolder[$formLocale]|escape}" size="60" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="copyrightYear" key="submission.copyrightYear"}</td>
 		<td class="value"><input type="text" name="copyrightYear" id="copyrightYear" value="{$copyrightYear|escape}" size="10" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{fieldLabel name="licenseURL" key="submission.licenseURL"}</td>
 		<td class="value"><input type="text" name="licenseURL" id="licenseURL" value="{$licenseURL|escape}" size="60" maxlength="255" class="textField" /></td>
 	</tr>
@@ -483,7 +483,7 @@ function moveAuthor(dir, authorIndex) {
 
 <p><input type="submit" value="{translate key="submission.saveMetadata"}" class="button defaultButton"/> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

@@ -79,7 +79,7 @@
 			{else}
 				{translate key="common.none"}
 			{/if}
-			<br />
+			
 			<form method="post" action="{url op="uploadCopyeditVersion"}"  enctype="multipart/form-data">
 				<input type="hidden" name="articleId" value="{$submission->getId()}" />
 				<input type="hidden" name="copyeditStage" value="author" />

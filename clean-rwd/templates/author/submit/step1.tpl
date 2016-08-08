@@ -46,7 +46,7 @@
 <input type="hidden" name="submissionChecklist" value="1" />
 
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="sectionId" required="true" key="section.section"}</td>
 		<td width="80%" class="value"><select name="sectionId" id="sectionId" size="1" class="selectMenu">{html_options options=$sectionOptions selected=$sectionId}</select></td>
 	</tr>
@@ -71,7 +71,7 @@
 	<p>{translate key="author.submit.submissionLocaleDescription"}</p>
 
 	<table class="data" width="100%">
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{fieldLabel name="locale" required="true" key="article.language"}</td>
 			<td width="80%" class="value"><select name="locale" id="locale" size="1" class="selectMenu">{html_options options=$supportedSubmissionLocaleNames selected=$locale}</select></td>
 		</tr>
@@ -119,7 +119,7 @@ function checkSubmissionChecklist() {
 			<p>{translate key="author.submit.submissionChecklistDescription"}</p>
 			<table width="100%" class="data">
 		{/if}
-		<tr valign="top">
+		<tr >
 			<td width="5%"><input type="checkbox" id="checklist-{$smarty.foreach.checklist.iteration}" name="checklist[]" value="{$checklistId|escape}"{if $articleId || $submissionChecklist} checked="checked"{/if} /></td>
 			<td width="95%"><label for="checklist-{$smarty.foreach.checklist.iteration}">{$checklistItem.content|nl2br}</label></td>
 		</tr>
@@ -141,7 +141,7 @@ function checkSubmissionChecklist() {
 
 {if $journalSettings.copyrightNoticeAgree}
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="5%"><input type="checkbox" name="copyrightNoticeAgree" id="copyrightNoticeAgree" value="1"{if $articleId || $copyrightNoticeAgree} checked="checked"{/if} /></td>
 		<td width="95%"><label for="copyrightNoticeAgree">{translate key="author.submit.copyrightNoticeAgree"}</label></td>
 	</tr>
@@ -155,7 +155,7 @@ function checkSubmissionChecklist() {
 
 <div id="privacyStatement">
 <h3>{translate key="author.submit.privacyStatement"}</h3>
-<br />
+
 {$currentJournal->getLocalizedSetting('privacyStatement')|nl2br}
 </div>
 
@@ -165,7 +165,7 @@ function checkSubmissionChecklist() {
 <h3>{translate key="author.submit.commentsForEditor"}</h3>
 
 <table width="100%" class="data">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="commentsToEditor" key="author.submit.comments"}</td>
 	<td width="80%" class="value"><textarea name="commentsToEditor" id="commentsToEditor" rows="3" cols="40" class="textArea">{$commentsToEditor|escape}</textarea></td>
 </tr>
@@ -176,7 +176,7 @@ function checkSubmissionChecklist() {
 
 <p><input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="{if $articleId}confirmAction('{url page="author"}', '{translate|escape:"jsparam" key="author.submit.cancelSubmission"}'){else}document.location.href='{url page="author" escape=false}'{/if}" /></p>
 
-<p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+<p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
 </form>
 

@@ -5,6 +5,10 @@
  * Please forgive all the nonsensical CSS here.
  */
 
+form {
+	margin-bottom:rhythm(1);
+}
+
 // INPUTS
 
 input,
@@ -37,6 +41,10 @@ input[type="text"], input[type="password"] {
 	padding:0 rhythm(0.25);
 }
 
+input:disabled {
+	opacity:0.5;
+}
+
 
 //
 // BUTTONS
@@ -67,16 +75,25 @@ input[type="text"], input[type="password"] {
 		// We check the user input value and decide the color of our font:
 		@if lightness($button-color) >= 50 {
 			color: $font-color;
+			&:link, &:visited, &:focus, &:active {
+				color: $font-color;
+			}
 		} @else {
 			color: $white;
+			&:link, &:visited, &:focus, &:active {
+				color: $white;
+			}
 		}
 		&:hover {
 			background:shade($button-color, 33%);
 		}
 	} @else if $button-style == outline {
-		background-color: transparent;
+		background-color: #fff;
 		border:$button-border-width solid $button-color;
 		color: $font-color;
+		&:link, &:visited, &:focus, &:active {
+			color: $font-color;
+		}
 		&:hover {
 			background:$button-color;
 			@if lightness($button-color) >= 50 {
@@ -96,8 +113,14 @@ input[type="text"], input[type="password"] {
 		// We check the user input value and decide the color of our font:
 		@if lightness($button-cancel-color) >= 50 {
 			color: $font-color;
+			&:link, &:visited, &:focus, &:active {
+				color: $font-color;
+			}
 		} @else {
 			color: $white;
+			&:link, &:visited, &:focus, &:active {
+				color: $white;
+			}
 		}
 		&:hover {
 			background:shade($button-cancel-color, 33%);
@@ -144,13 +167,17 @@ input[type="text"], input[type="password"] {
 	margin-bottom:rhythm(1);
 	padding-bottom:rhythm(1);
 	border-bottom:1px dotted $line-color-light;
-	label {
+	label, .label {
 		font-weight:bold;
 		margin-bottom:rhythm(1);
 		display:block;
+		.instruct {
+			font-weight:normal;
+			display:block;
+		}
 	}
 	.label--inline {
-		display:inline-block;
+		display:inline;
 		margin-right: $gutter/2;
 		margin-bottom:0;
 	}
@@ -169,6 +196,11 @@ input[type="text"], input[type="password"] {
 		font-family:$alt-font-family;
 		margin:0 $gutter 0 0;
 	}
+	.label--heading {
+		font-weight:bold;
+		display:block;
+		margin:0 $gutter rhythm(0.5) 0;
+	}
 }
 
 .form-group {
@@ -184,14 +216,38 @@ input[type="text"], input[type="password"] {
 	}
 }
 
+.instruct--spaced {
+	margin-bottom:rhythm(1);
+}
+
 .buttons {
-	padding: $gutter/2 0;
-	border-top:1px solid $line-color;
+	padding: $gutter/2;
+	background: $smoke;
+	margin-bottom:rhythm(1);
 	border-bottom:1px solid $line-color;
+}
+
+.options {
+	@include adjust-font-size-to($h5-font-size);
+	font-family:$alt-font-family;
+	a {
+		@include adjust-font-size-to($h5-font-size);
+	}
 }
 
 .form-required {
 	@include adjust-font-size-to($h5-font-size);
 	font-family:$alt-font-family;
 	color:$light-color;
+}
+
+.form-error {
+	color:$main-color-red;
+	@include adjust-font-size-to($h5-font-size);
+}
+
+.form-error--box {
+	background:$main-color-red;
+	padding:rhythm(0.25) rhythm(0.5);
+	color:$white;
 }

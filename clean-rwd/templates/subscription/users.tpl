@@ -15,7 +15,7 @@
 {/strip}
 
 {if $subscriptionCreated}
-<br/>{translate key="manager.subscriptions.subscriptionCreatedSuccessfully"}<br/>
+{translate key="manager.subscriptions.subscriptionCreatedSuccessfully"}
 {/if}
 
 <p>{translate key="manager.subscriptions.selectSubscriber.desc"}</p>
@@ -36,7 +36,7 @@
 	<div id="users">
 <table width="100%" class="listing">
 <tr><td colspan="4" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" valign="bottom">
+<tr class="heading" >
 	<td width="25%">{translate key="user.username"}</td>
 	<td width="35%">{translate key="user.name"}</td>
 	<td width="30%">{translate key="user.email"}</td>
@@ -45,7 +45,7 @@
 <tr><td colspan="4" class="headseparator">&nbsp;</td></tr>
 {iterate from=users item=user}
 {assign var="userid" value=$user->getId()}
-<tr valign="top">
+<tr >
 	<td>{if $isJournalManager}<a class="action" href="{url page="manager" op="userProfile" path=$userid}">{/if}{$user->getUsername()|escape}{if $isJournalManager}</a>{/if}</td>
 	<td>{$user->getFullName(true)|escape}</td>
 	<td class="nowrap">

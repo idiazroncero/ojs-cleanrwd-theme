@@ -67,7 +67,7 @@
 <h3>{translate key="submission.history.submissionEventLog"} - {translate key="submission.history.recentLogEntries"}</h3>
 <table width="100%" class="listing">
 	<tr><td class="headseparator" colspan="4">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="7%">{translate key="common.date"}</td>
 		<td width="25%">{translate key="common.user"}</td>
 		<td>{translate key="common.event"}</td>
@@ -75,7 +75,7 @@
 	</tr>
 	<tr><td class="headseparator" colspan="4">&nbsp;</td></tr>
 {iterate from=eventLogEntries item=logEntry}
-	<tr valign="top">
+	<tr >
 		<td>{$logEntry->getDateLogged()|date_format:$dateFormatShort}</td>
 		<td>
 			{assign var=emailString value=$logEntry->getUserFullName()|concat:" <":$logEntry->getUserEmail():">"}
@@ -84,20 +84,20 @@
 		</td>
 		<td>
 			{translate key=$logEntry->getEventTitle()}
-			<br />
+			
 			{$logEntry->getTranslatedMessage()|strip_tags|truncate:60:"..."}
 		</td>
 		<td align="right"><a href="{url op="submissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action">{translate key="common.view"}</a>{if $isEditor}&nbsp;|&nbsp;<a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')">{translate key="common.delete"}</a>{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="{if $eventLogEntries->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 {if $eventLogEntries->wasEmpty()}
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="nodata">{translate key="submission.history.noLogEntries"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="endseparator">&nbsp;</td>
 	</tr>
 {/if}
@@ -106,7 +106,7 @@
 <a href="{url op="submissionEventLog" path=$submission->getId()}" class="action">{translate key="submission.history.viewLog"}</a>{if $isEditor} |
 <a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()}" class="action" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmClearLog"}')">{translate key="submission.history.clearLog"}</a>{/if}
 </div>
-<br /><br />
+
 
 <div class="separator"></div>
 <div id="submissionEmailLog">
@@ -114,7 +114,7 @@
 
 <table width="100%" class="listing">
 	<tr><td class="headseparator" colspan="5">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="7%">{translate key="common.date"}</td>
 		<td width="25%">{translate key="email.sender"}</td>
 		<td width="20%">{translate key="email.recipients"}</td>
@@ -123,22 +123,22 @@
 	</tr>
 	<tr><td class="headseparator" colspan="6">&nbsp;</td></tr>
 {iterate from=emailLogEntries item=logEntry}
-	<tr valign="top">
+	<tr >
 		<td>{$logEntry->getDateSent()|date_format:$dateFormatShort}</td>
 		<td>{$logEntry->getFrom()|truncate:40:"..."|escape}</td>
 		<td>{$logEntry->getRecipients()|truncate:40:"..."|escape}</td>
 		<td>{$logEntry->getSubject()|truncate:60:"..."|escape}</td>
 		<td><a href="{url op="submissionEmailLog" path=$submission->getId()|to_array:$logEntry->getId()}" class="action">{translate key="common.view"}</a>{if $isEditor}&nbsp;|&nbsp;<a href="{url page="editor" op="clearSubmissionEmailLog" path=$submission->getId()|to_array:$logEntry->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.email.confirmDeleteLogEntry"}')" class="action">{translate key="common.delete"}</a>{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="5" class="{if $emailLogEntries->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 {if $emailLogEntries->wasEmpty()}
-	<tr valign="top">
+	<tr >
 		<td colspan="5" class="nodata">{translate key="submission.history.noLogEntries"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="5" class="endseparator">&nbsp;</td>
 	</tr>
 {/if}
@@ -147,7 +147,7 @@
 <a class="action" href="{url op="submissionEmailLog" path=$submission->getId()}">{translate key="submission.history.viewLog"}</a>{if $isEditor} |
 <a class="action" href="{url page="editor" op="clearsubmissionEmailLog" path=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.email.confirmClearLog"}')">{translate key="submission.history.clearLog"}</a>{/if}
 </div>
-<br /><br />
+
 
 <div class="separator"></div>
 <div id="submissionNotes">
@@ -155,7 +155,7 @@
 
 <table width="100%" class="listing">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="7%">{translate key="common.date"}</td>
 		<td width="60%">{translate key="common.title"}</td>
 		<td width="25%">{translate key="submission.notes.attachedFile"}</td>
@@ -168,21 +168,21 @@
 		noteArray.push({$note->getId()});
 		// -->
 	</script>
-	<tr valign="top">
+	<tr >
 		<td>{$note->getDateCreated()|date_format:$dateFormatShort}</td>
 		<td><a class="action" href="javascript:toggleNote({$note->getId()})">{$note->getTitle()|escape}</a><div style="display: none" id="{$note->getId()}" name="{$note->getId()}">{$note->getNote()|strip_unsafe_html|nl2br}</div></td>
 		<td>{if $note->getFileId()}<a class="action" href="{url op="downloadFile" path=$submission->getId()|to_array:$note->getFileId()}">{$note->getOriginalFileName()|escape}</a>{else}&mdash;{/if}</td>
 		<td align="right"><a href="{url op="submissionNotes" path=$submission->getId()|to_array:"edit":$note->getId()}" class="action">{translate key="common.view"}</a>&nbsp;|&nbsp;<a href="{url op="removeSubmissionNote" articleId=$submission->getId() noteId=$note->getId() fileId=$note->getFileId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="6" class="{if $submissionNotes->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 {if $submissionNotes->wasEmpty()}
-	<tr valign="top">
+	<tr >
 		<td colspan="6" class="nodata">{translate key="submission.notes.noSubmissionNotes"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="6" class="endseparator">&nbsp;</td>
 	</tr>
 {/if}

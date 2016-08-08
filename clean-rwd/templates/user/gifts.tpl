@@ -17,11 +17,11 @@
 <p>{translate key="gifts.subscriptionsDescription"}</p>
 <p><a class="action" href="{url page="gifts" op="purchaseGiftSubscription"}">{translate key="gifts.purchaseGiftSubscription"}</a></p>
 
-<br />
+
 
 <table width="100%" class="info">
 	{iterate from=giftSubscriptions item=gift}
-		<tr valign="top">
+		<tr >
 			<td width="65%">{$gift->getGiftName()|escape}</td>
 			<td width="15%">
 			{assign var="giftStatus" value=$gift->getStatus()}
@@ -41,18 +41,18 @@
 				{/if}
 			</td>
 		</tr>
-		<tr valign="top">
+		<tr >
 			<td colspan="3" class="separator">&nbsp;</td>
 		</tr>
 	{/iterate}
 	{if $giftSubscriptions->wasEmpty()}
-		<tr valign="top">
+		<tr >
 			<td colspan="3" class="separator">&nbsp;</td>
 		</tr>
-		<tr valign="top">
+		<tr >
 			<td colspan="3" class="nodata">{translate key="gifts.noSubscriptions"}</td>
 		</tr>
-		<tr valign="top">
+		<tr >
 			<td colspan="3" class="separator">&nbsp;</td>
 		</tr>
 	{/if}

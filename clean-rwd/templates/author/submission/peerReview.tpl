@@ -21,7 +21,7 @@
 <h4>{translate key="submission.round" round=$round}</h4>
 
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.reviewVersion"}
 		</td>
@@ -34,7 +34,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.initiated"}
 		</td>
@@ -46,7 +46,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.lastModified"}
 		</td>
@@ -58,7 +58,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="common.uploadedFile"}
 		</td>
@@ -69,7 +69,7 @@
 					{assign var=thisReviewer value=$start+$roundIndex|chr}
 					{foreach from=$viewableFilesForReviewer item=viewableFile}
 						{translate key="user.role.reviewer"} {$thisReviewer|escape}
-						<a href="{url op="downloadFile" path=$submission->getId()|to_array:$viewableFile->getFileId():$viewableFile->getRevision()}" class="file">{$viewableFile->getFileName()|escape}</a>&nbsp;&nbsp;{$viewableFile->getDateModified()|date_format:$dateFormatShort}<br />
+						<a href="{url op="downloadFile" path=$submission->getId()|to_array:$viewableFile->getFileId():$viewableFile->getRevision()}" class="file">{$viewableFile->getFileName()|escape}</a>&nbsp;&nbsp;{$viewableFile->getDateModified()|date_format:$dateFormatShort}
 					{/foreach}
 				{/foreach}
 			{foreachelse}
@@ -78,25 +78,25 @@
 		</td>
 	</tr>
 	{if !$smarty.section.round.last}
-		<tr valign="top">
+		<tr >
 			<td class="label" width="20%">
 				{translate key="submission.editorVersion"}
 			</td>
 			<td class="value" width="80%">
 				{foreach from=$editorFiles item=editorFile key=key}
-					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$editorFile->getFileId():$editorFile->getRevision()}" class="file">{$editorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$editorFile->getDateModified()|date_format:$dateFormatShort}<br />
+					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$editorFile->getFileId():$editorFile->getRevision()}" class="file">{$editorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$editorFile->getDateModified()|date_format:$dateFormatShort}
 				{foreachelse}
 					{translate key="common.none"}
 				{/foreach}
 			</td>
 		</tr>
-		<tr valign="top">
+		<tr >
 			<td class="label" width="20%">
 				{translate key="submission.authorVersion"}
 			</td>
 			<td class="value" width="80%">
 				{foreach from=$authorFiles item=authorFile key=key}
-					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$authorFile->getDateModified()|date_format:$dateFormatShort}<br />
+					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$authorFile->getDateModified()|date_format:$dateFormatShort}
 				{foreachelse}
 					{translate key="common.none"}
 				{/foreach}
