@@ -110,7 +110,7 @@ function confirmAndPrompt(userId) {
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">&nbsp;</td>
 		<td width="12%">{sort_heading key="user.username" sort="username"}</td>
 		<td width="20%">{sort_heading key="user.name" sort="name"}</td>
@@ -122,7 +122,7 @@ function confirmAndPrompt(userId) {
 	</tr>
 	{iterate from=users item=user}
 	{assign var=userExists value=1}
-	<tr valign="top">
+	<tr >
 		<td><input type="checkbox" name="bcc[]" value="{$user->getEmail()|escape}"/></td>
 		<td><a class="action" href="{url op="userProfile" path=$user->getId()}">{$user->getUsername()|escape|wordwrap:15:" ":true}</a></td>
 		<td>{$user->getFullName()|escape}</td>

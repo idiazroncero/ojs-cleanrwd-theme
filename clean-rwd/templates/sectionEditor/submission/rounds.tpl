@@ -14,7 +14,7 @@
 
 <table width="100%" class="listing">
 	<tr><td colspan="4" class="headseparator">&nbsp;</td></tr>
-	<tr valign="top">
+	<tr >
 		<td class="heading" width="30%">{translate key="user.name"}</td>
 		<td class="heading" width="25%">{translate key="submission.request"}</td>
 		<td class="heading" width="25%">{translate key="sectionEditor.regrets.result"}</td>
@@ -22,7 +22,7 @@
 	</tr>
 	<tr><td colspan="4" class="headseparator">&nbsp;</td></tr>
 {foreach from=$cancelsAndRegrets item=cancelOrRegret name=cancelsAndRegrets}
-	<tr valign="top">
+	<tr >
 		<td>{$cancelOrRegret->getReviewerFullName()|escape}</td>
 		<td>
 			{if $cancelOrRegret->getDateNotified()}
@@ -44,7 +44,7 @@
 		<td colspan="4" class="{if $smarty.foreach.cancelsAndRegrets.last}end{/if}separator">&nbsp;</td>
 	</tr>
 {foreachelse}
-	<tr valign="top">
+	<tr >
 		<td colspan="4" class="nodata">{translate key="common.none}</td>
 	</tr>
 	<tr>
@@ -62,7 +62,7 @@
 <h3>{translate key="sectionEditor.regrets.reviewRound" round=$roundPlusOne}</h3>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="submission.reviewVersion"}</td>
 		<td class="value" width="80%">
 			{assign var="reviewFile" value=$reviewFilesByRound[$roundPlusOne]}
@@ -87,14 +87,14 @@
 <h4>{translate key="user.role.reviewer"} {$reviewKey+$start|chr} {$reviewAssignment->getReviewerFullName()|escape}</h4>
 
 <table width="100%" class="listing">
-	<tr valign="top">
+	<tr >
 		<td width="20%">{translate key="reviewer.article.schedule"}</td>
 		<td width="20%" class="heading">{translate key="submission.request"}</td>
 		<td width="20%" class="heading">{translate key="submission.underway"}</td>
 		<td width="20%" class="heading">{translate key="submission.due"}</td>
 		<td width="20%" class="heading">{translate key="submission.acknowledge"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>&nbsp;</td>
 		<td>
 			{if $reviewAssignment->getDateNotified()}
@@ -125,7 +125,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>{translate key="submission.recommendation"}</td>
 		<td colspan="4">
 			{if $reviewAssignment->getRecommendation() !== null && $reviewAssignment->getRecommendation() !== ''}
@@ -137,14 +137,14 @@
 		</td>
 	</tr>
 	{if $reviewFormResponses[$reviewId]}
-		<tr valign="top">
+		<tr >
 			<td class="label">{translate key="submission.reviewFormResponse"}</td>
 			<td>
 				<a href="javascript:openComments('{url op="viewReviewFormResponse" path=$submission->getId()|to_array:$reviewAssignment->getId()}');" class="icon">{icon name="letter"}</a>
 			</td>
 		</tr>
 	{/if}
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="reviewer.article.reviewerComments"}</td>
 		<td colspan="4">
 			{if $reviewAssignment->getMostRecentPeerReviewComment()}
@@ -155,12 +155,12 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="reviewer.article.uploadedFile"}</td>
 		<td colspan="4">
 			<table width="100%" class="data">
 				{foreach from=$reviewAssignment->getReviewerFileRevisions() item=reviewerFile key=key}
-				<tr valign="top">
+				<tr >
 					<td valign="middle">
 						<form id="authorView{$reviewAssignment->getId()}" method="post" action="{url op="makeReviewerFileViewable"}">
 							<a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewerFile->getFileId():$reviewerFile->getRevision()}" class="file">{$reviewerFile->getFileName()|escape}</a>&nbsp;&nbsp;{$reviewerFile->getDateModified()|date_format:$dateFormatShort}
@@ -175,7 +175,7 @@ name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if
 					</td>
 				</tr>
 				{foreachelse}
-				<tr valign="top">
+				<tr >
 					<td>{translate key="common.none"}</td>
 				</tr>
 				{/foreach}
@@ -195,7 +195,7 @@ name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if
 {assign var=editorFiles value=$submission->getEditorFileRevisions($roundPlusOne)}
 
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="editor.article.decision"}</td>
 		<td class="value" width="80%">
 			{foreach from=$roundDecisions item=editorDecision key=decisionKey}
@@ -207,7 +207,7 @@ name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if
 			{/foreach}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="submission.notifyAuthor"}</td>
 		<td class="value" width="80%">
 			{translate key="submission.editorAuthorRecord"}
@@ -220,7 +220,7 @@ name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if
 		</td>
 	</tr>
 	{foreach from=$authorFiles item=authorFile key=key}
-		<tr valign="top">
+		<tr >
 			{if !$authorRevisionExists}
 				{assign var="authorRevisionExists" value=true}
 				<td width="20%" class="label" rowspan="{$authorFiles|@count}" class="label">{translate key="submission.authorVersion"}</td>
@@ -228,13 +228,13 @@ name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if
 			<td width="80%" class="value"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$authorFile->getDateModified()|date_format:$dateFormatShort}</td>
 		</tr>
 	{foreachelse}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{translate key="submission.authorVersion"}</td>
 			<td width="80%" colspan="4" class="nodata">{translate key="common.none"}</td>
 		</tr>
 	{/foreach}
 	{foreach from=$editorFiles item=editorFile key=key}
-		<tr valign="top">
+		<tr >
 			{if !$editorRevisionExists}
 				{assign var="editorRevisionExists" value=true}
 				<td width="20%" class="label" rowspan="{$editorFiles|@count}" class="label">{translate key="submission.editorVersion"}</td>
@@ -243,7 +243,7 @@ name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if
 			<td width="30%"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$editorFile->getFileId():$editorFile->getRevision()}" class="file">{$editorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$editorFile->getDateModified()|date_format:$dateFormatShort}</td>
 		</tr>
 	{foreachelse}
-		<tr valign="top">
+		<tr >
 			<td width="20%" class="label">{translate key="submission.editorVersion"}</td>
 			<td width="80%" colspan="4" class="nodata">{translate key="common.none"}</td>
 		</tr>

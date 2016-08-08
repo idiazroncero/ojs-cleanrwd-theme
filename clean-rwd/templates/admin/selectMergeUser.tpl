@@ -75,7 +75,7 @@
 	<tr>
 		<td colspan="{$numCols}" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		{if empty($oldUserIds)}
 			<td width="5%">&nbsp;</td>
 		{/if}

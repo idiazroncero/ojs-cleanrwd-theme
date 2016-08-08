@@ -62,7 +62,7 @@ function sortSearch(heading, direction) {
 <div id="submissions">
 <table width="100%" class="listing">
 	<tr><td colspan="7" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_search key="common.assign" sort="assignDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
@@ -76,7 +76,7 @@ function sortSearch(heading, direction) {
 	{assign var="articleId" value=$submission->getId()}
 	{assign var="proofreaderSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
 
-	<tr valign="top">
+	<tr >
 		<td>{$articleId|escape}</td>
 		<td>{$proofreaderSignoff->getDateNotified()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

@@ -85,7 +85,7 @@ function sortSearch(heading, direction) {
 	<tr>
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_search key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
@@ -100,7 +100,7 @@ function sortSearch(heading, direction) {
 	{iterate from=submissions item=submission}
 	{assign var="highlightClass" value=$submission->getHighlightClass()}
 	{assign var="fastTracked" value=$submission->getFastTracked()}
-	<tr valign="top"{if $highlightClass || $fastTracked} class="{$highlightClass|escape} {if $fastTracked}fastTracked{/if}"{/if}>
+	<tr {if $highlightClass || $fastTracked} class="{$highlightClass|escape} {if $fastTracked}fastTracked{/if}"{/if}>
 		<td>{$submission->getId()}</td>
 		<td>{$submission->getDateSubmitted()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

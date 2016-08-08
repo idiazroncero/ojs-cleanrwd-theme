@@ -15,7 +15,7 @@
 {assign var=editorFiles value=$submission->getEditorFileRevisions($submission->getCurrentRound())}
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="editor.article.decision"}</td>
 		<td>
 			{if $lastEditorDecision}
@@ -26,7 +26,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.notifyEditor"}
 		</td>
@@ -43,7 +43,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.editorVersion"}
 		</td>
@@ -55,7 +55,7 @@
 			{/foreach}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.authorVersion"}
 		</td>
@@ -68,7 +68,7 @@
 			{/foreach}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="author.article.uploadAuthorVersion"}
 		</td>

@@ -52,7 +52,7 @@
 <p>{translate key="manager.subscriptionPolicies.subscriptionContactDescription"}</p>
 <table width="100%" class="data">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"subscriptionPoliciesUrl" op="subscriptionPolicies" escape=false}
@@ -61,23 +61,23 @@
 		</td>
 	</tr>
 {/if}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionName" key="user.name"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionName" id="subscriptionName" value="{$subscriptionName|escape}" size="30" maxlength="60" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionEmail" key="user.email"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionEmail" id="subscriptionEmail" value="{$subscriptionEmail|escape}" size="30" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionPhone" key="user.phone"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionPhone" id="subscriptionPhone" value="{$subscriptionPhone|escape}" size="15" maxlength="24" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionFax" key="user.fax"}</td>
 		<td width="80%" class="value"><input type="text" name="subscriptionFax" id="subscriptionFax" value="{$subscriptionFax|escape}" size="15" maxlength="24" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="subscriptionMailingAddress" key="common.mailingAddress"}</td>
 		<td width="80%" class="value"><textarea name="subscriptionMailingAddress" id="subscriptionMailingAddress" rows="6" cols="40" class="textArea">{$subscriptionMailingAddress|escape}</textarea></td>
 	</tr>
@@ -105,7 +105,7 @@
 <p>{translate key="manager.subscriptionPolicies.expirySelectOne"}</p>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-0" value="0"{if not $subscriptionExpiryPartial} checked="checked"{/if} />
 		</td>
@@ -118,7 +118,7 @@
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-1" value="1"{if $subscriptionExpiryPartial} checked="checked"{/if} />
 		</td>

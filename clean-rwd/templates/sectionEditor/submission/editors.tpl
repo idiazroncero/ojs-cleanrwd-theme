@@ -13,7 +13,7 @@
 <form action="{url page="editor" op="setEditorFlags"}" method="post">
 <input type="hidden" name="articleId" value="{$submission->getId()}"/>
 <table width="100%" class="listing">
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="{if $isEditor}20%{else}25%{/if}">&nbsp;</td>
 		<td width="30%">&nbsp;</td>
 		<td width="10%">{translate key="submission.review"}</td>
@@ -26,7 +26,7 @@
 	{if $editAssignment->getEditorId() == $userId}
 		{assign var=selfAssigned value=1}
 	{/if}
-		<tr valign="top">
+		<tr >
 			<td>{if $editAssignment->getIsEditor()}{translate key="user.role.editor"}{else}{translate key="user.role.sectionEditor"}{/if}</td>
 			<td>
 				{assign var=emailString value=$editAssignment->getEditorFullName()|concat:" <":$editAssignment->getEditorEmail():">"}

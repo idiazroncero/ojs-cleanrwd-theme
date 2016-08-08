@@ -11,7 +11,7 @@
 <div id="submissions">
 <table class="listing" width="100%">
 	<tr><td class="headseparator" colspan="{if $statViews}7{else}6{/if}">&nbsp;</td></tr>
-	<tr valign="bottom" class="heading">
+	<tr  class="heading">
 		<td width="5%">{sort_heading key="common.id" sort="id"}</td>
 		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_heading key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_heading key="submissions.sec" sort="section"}</td>
@@ -23,7 +23,7 @@
 	<tr><td class="headseparator" colspan="{if $statViews}7{else}6{/if}">&nbsp;</td></tr>
 {iterate from=submissions item=submission}
 	{assign var="articleId" value=$submission->getId()}
-	<tr valign="top">
+	<tr >
 		<td>{$articleId|escape}</td>
 		<td>{$submission->getDateSubmitted()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

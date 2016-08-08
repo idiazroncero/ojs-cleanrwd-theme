@@ -32,7 +32,7 @@
 <div id="editors">
 <table width="100%" class="listing">
 <tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
-<tr valign="bottom">
+<tr >
 	<td class="heading" width="30%">{translate key="user.name"}</td>
 	<td class="heading" width="20%">{translate key="section.sections"}</td>
 	<td class="heading" width="20%">{translate key="submissions.completed"}</td>
@@ -42,7 +42,7 @@
 <tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
 {iterate from=editors item=editor}
 {assign var=editorId value=$editor->getId()}
-<tr valign="top">
+<tr >
 	<td><a class="action" href="{url op="userProfile" path=$editorId}">{$editor->getFullName()|escape}</a></td>
 	<td>
 		{assign var=thisEditorSections value=$editorSections[$editorId]}

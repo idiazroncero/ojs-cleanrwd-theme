@@ -85,7 +85,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="6">
 			{translate key="common.file"}:&nbsp;&nbsp;&nbsp;&nbsp;
 			{if $layoutFile}

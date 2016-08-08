@@ -72,23 +72,23 @@
 	<input type="hidden" name="fileId" value="{$articleNote->getFileId()}" />
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="common.dateModified"}</td>
 		<td class="value" width="80%">{$articleNote->getDateModified()|date_format:$datetimeFormatShort}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="common.title"}</td>
 		<td class="value" width="80%"><input type="text" name="title" id="title" value="{$articleNote->getTitle()|escape}" size="50" maxlength="120" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="common.note"}</td>
 		<td class="value" width="80%"><textarea name="note" id="note" rows="10" cols="50" class="textArea">{$articleNote->getNote()|strip_unsafe_html|escape}</textarea></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="common.file"}</td>
 		<td class="value" width="80%"><input type="file" id="upload" name="upload" class="uploadField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="common.uploadedFile"}</td>
 		<td class="value" width="80%">{if $articleNote->getFileId()}<a href="{url op="downloadFile" path=$articleId|to_array:$articleNote->getFileId()}">{$articleNote->getOriginalFileName()|escape}</a><input type="checkbox" name="removeUploadedFile" value="1" />&nbsp;{translate key="submission.notes.removeUploadedFile"}{else}&mdash;{/if}</td>
 	</tr>
@@ -102,15 +102,15 @@
 	<form name="addNote" method="post" action="{url op="addSubmissionNote"}" enctype="multipart/form-data">
 	<input type="hidden" name="articleId" value="{$articleId|escape}" />
 	<table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="common.title"}</td>
 		<td class="value" width="80%"><input type="text" id="title" name="title" size="50" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="common.note"}</td>
 		<td class="value"><textarea name="note" id="note" rows="10" cols="50" class="textArea"></textarea></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="common.file"}</td>
 		<td class="value"><input type="file" name="upload" class="uploadField" /></td>
 	</tr>
@@ -123,7 +123,7 @@
 
 <table width="100%" class="listing">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{translate key="common.date"}</td>
 		<td width="60%">{translate key="common.title"}</td>
 		<td width="25%">{translate key="submission.notes.attachedFile"}</td>
@@ -131,7 +131,7 @@
 	</tr>
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 {iterate from=submissionNotes item=note}
-	<tr valign="top">
+	<tr >
 		<td>
 			<script type="text/javascript">
 			<!--
@@ -144,15 +144,15 @@
 		<td>{if $note->getFileId()}<a class="action" href="{url op="downloadFile" path=$submission->getId()|to_array:$note->getFileId()}">{$note->getOriginalFileName()|escape}</a>{else}&mdash;{/if}</td>
 		<td align="right"><a href="{url op="submissionNotes" path=$submission->getId()|to_array:"edit":$note->getId()}" class="action">{translate key="common.view"}</a>&nbsp;|&nbsp;<a href="{url op="removeSubmissionNote" articleId=$submission->getId() noteId=$note->getId() fileId=$note->getFileId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="6" class="{if $submissionNotes->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 {if $submissionNotes->wasEmpty()}
-	<tr valign="top">
+	<tr >
 		<td colspan="6" class="nodata">{translate key="submission.notes.noSubmissionNotes"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td colspan="6" class="endseparator">&nbsp;</td>
 	</tr>
 {else}

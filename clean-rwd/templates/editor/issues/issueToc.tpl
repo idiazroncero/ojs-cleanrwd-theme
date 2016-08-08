@@ -70,7 +70,7 @@ $(document).ready(function() {
 	<tr>
 		<td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">&nbsp;</td>
 		<td width="15%">{translate key="article.authors"}</td>
 		<td>{translate key="article.title"}</td>

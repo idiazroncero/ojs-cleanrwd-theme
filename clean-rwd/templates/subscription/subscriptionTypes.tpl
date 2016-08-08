@@ -35,7 +35,7 @@ $(document).ready(function() { setupTableDND("#subscriptionTypesTable", "moveSub
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="40%">{translate key="manager.subscriptionTypes.name"}</td>
 		<td width="10%">{translate key="manager.subscriptionTypes.subscriptions"}</td>
 		<td width="20%">{translate key="manager.subscriptionTypes.duration"}</td>
@@ -46,7 +46,7 @@ $(document).ready(function() { setupTableDND("#subscriptionTypesTable", "moveSub
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
 {iterate from=subscriptionTypes item=subscriptionType}
-	<tr valign="top" id="subtype-{$subscriptionType->getTypeId()}" class="data">
+	<tr  id="subtype-{$subscriptionType->getTypeId()}" class="data">
 		<td class="drag">{$subscriptionType->getSubscriptionTypeName()|escape}</td>
 		<td class="drag">{if $subscriptionType->getInstitutional()}{translate key="manager.subscriptionTypes.institutional"}{else}{translate key="manager.subscriptionTypes.individual"}{/if}</td>
 		<td class="drag">{$subscriptionType->getDurationYearsMonths()|escape}</td>

@@ -42,7 +42,7 @@
 <p>{translate key="editor.issues.issueGalleysDescription"}</p>
 <table width="100%" class="data">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"issueUrl" op="issueGalleys" path=$issueId escape=false}

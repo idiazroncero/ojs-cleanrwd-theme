@@ -61,7 +61,7 @@ function checkEditorAssignments() {
 <div id="sectionForm">
 <table class="data" width="100%">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{if $sectionId}{url|assign:"sectionFormUrl" op="editSection" path=$sectionId escape=false}
@@ -72,19 +72,19 @@ function checkEditorAssignments() {
 		</td>
 	</tr>
 {/if}
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="title" required="true" key="section.title"}</td>
 	<td width="80%" class="value"><input type="text" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" id="title" size="40" maxlength="120" class="textField" /></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="abbrev" required="true" key="section.abbreviation"}</td>
 	<td class="value"><input type="text" name="abbrev[{$formLocale|escape}]" id="abbrev" value="{$abbrev[$formLocale]|escape}" size="20" maxlength="20" class="textField" />&nbsp;&nbsp;{translate key="section.abbreviation.example"}</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="policy" key="manager.sections.policy"}</td>
 	<td class="value"><textarea name="policy[{$formLocale|escape}]" rows="4" cols="40" id="policy" class="textArea">{$policy[$formLocale]|escape}</textarea></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="reviewFormId" key="submission.reviewForm"}</td>
 	<td class="value">
 		<select name="reviewFormId" size="1" id="reviewFormId" class="selectMenu">
@@ -94,7 +94,7 @@ function checkEditorAssignments() {
 	</td>
 </tr>
 {call_hook name="Templates::Manager::Sections::SectionForm::AdditionalMetadata" sectionId=$sectionId}
-<tr valign="top">
+<tr >
 	<td rowspan="4" class="label">{fieldLabel suppressId="true" key="submission.indexing"}</td>
 	<td class="value">
 		{translate key="manager.section.submissionsToThisSection"}<br/>
@@ -102,53 +102,53 @@ function checkEditorAssignments() {
 		{fieldLabel name="metaReviewed" key="manager.sections.submissionReview"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="value">
 		<input type="checkbox" name="abstractsNotRequired" id="abstractsNotRequired" value="1" {if $abstractsNotRequired}checked="checked"{/if} />
 		{fieldLabel name="abstractsNotRequired" key="manager.sections.abstractsNotRequired"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="value">
 		<input type="checkbox" name="metaIndexed" id="metaIndexed" value="1" {if $metaIndexed}checked="checked"{/if} />
 		{fieldLabel name="metaIndexed" key="manager.sections.submissionIndexing"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="value">
 		{fieldLabel name="identifyType" key="manager.sections.identifyType"} <input type="text" name="identifyType[{$formLocale|escape}]" id="identifyType" value="{$identifyType[$formLocale]|escape}" size="20" maxlength="60" class="textField" />
 		
 		<span class="instruct">{translate key="manager.sections.identifyTypeExamples"}</span>
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel suppressId="true" key="submission.restrictions"}</td>
 	<td class="value">
 		<input type="checkbox" name="editorRestriction" id="editorRestriction" value="1" {if $editorRestriction}checked="checked"{/if} />
 		{fieldLabel name="editorRestriction" key="manager.sections.editorRestriction"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel key="manager.sections.wordCount"}</td>
 	<td class="value">
 		{fieldLabel name="wordCount" key="manager.sections.wordCountInstructions"}&nbsp;&nbsp;<input type="text" name="wordCount" id="abbrev" value="{$wordCount}" size="10" maxlength="20" class="textField" />
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="hideTitle" key="issue.toc"}</td>
 	<td class="value">
 		<input type="checkbox" name="hideTitle" id="hideTitle" value="1" {if $hideTitle}checked="checked"{/if} />
 		{fieldLabel name="hideTitle" key="manager.sections.hideTocTitle"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">&nbsp;</td>
 	<td class="value">
 		<input type="checkbox" name="hideAuthor" id="hideAuthor" value="1" {if $hideAuthor}checked="checked"{/if} />
 		{fieldLabel name="hideAuthor" key="manager.sections.hideTocAuthor"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="hideAbout" key="navigation.about"}</td>
 	<td class="value">
 		<input type="checkbox" name="hideAbout" id="hideAbout" value="1" {if $hideAbout}checked="checked"{/if} />
@@ -156,7 +156,7 @@ function checkEditorAssignments() {
 	</td>
 </tr>
 {if $commentsEnabled}
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="disableComments" key="comments.readerComments"}</td>
 	<td class="value">
 		<input type="checkbox" name="disableComments" id="disableComments" value="1" {if $disableComments}checked="checked"{/if} />
@@ -177,7 +177,7 @@ function checkEditorAssignments() {
 	<tr>
 		<td colspan="3" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr valign="top" class="heading">
+	<tr  class="heading">
 		<td width="20%">{translate key="user.username"}</td>
 		<td width="60%">{translate key="user.name"}</td>
 		<td width="20%" align="right">{translate key="common.action"}</td>
@@ -186,7 +186,7 @@ function checkEditorAssignments() {
 		<td colspan="3" class="headseparator">&nbsp;</td>
 	</tr>
 	{foreach from=$unassignedEditors item=editor}
-		<tr valign="top">
+		<tr >
 			<td>{$editor->getUsername()|escape}</td>
 			<td>{$editor->getFullName()|escape}</td>
 			<td align="right">
@@ -210,7 +210,7 @@ function checkEditorAssignments() {
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr valign="top" class="heading">
+	<tr  class="heading">
 		<td width="20%">{translate key="user.username"}</td>
 		<td width="40%">{translate key="user.name"}</td>
 		<td width="10%" align="center">{translate key="submission.review"}</td>
@@ -223,7 +223,7 @@ function checkEditorAssignments() {
 	{foreach from=$assignedEditors item=editorEntry}
 		{assign var=editor value=$editorEntry.user}
 		<input type="hidden" name="assignedEditorIds[]" value="{$editor->getId()|escape}" />
-		<tr valign="top">
+		<tr >
 			<td>{$editor->getUsername()|escape}</td>
 			<td>{$editor->getFullName()|escape}</td>
 			<td align="center"><input type="checkbox" {if $editorEntry.canReview}checked="checked"{/if} name="canReview{$editor->getId()}" /></td>

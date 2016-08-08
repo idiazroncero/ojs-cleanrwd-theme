@@ -11,7 +11,7 @@
 <div id="submissions">
 <table width="100%" class="listing">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="15%"><span class="disabled"></span>{sort_search key="submissions.submitted" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
@@ -23,7 +23,7 @@
 
 {iterate from=submissions item=submission}
 	{assign var="articleId" value=$submission->getId()}
-	<tr valign="top">
+	<tr >
 		<td>{$submission->getId()}</td>
 		<td>{$submission->getDateSubmitted()|date_format:$dateFormatShort}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

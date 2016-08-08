@@ -21,7 +21,7 @@
 <h4>{translate key="submission.round" round=$round}</h4>
 
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.reviewVersion"}
 		</td>
@@ -34,7 +34,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.initiated"}
 		</td>
@@ -46,7 +46,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.lastModified"}
 		</td>
@@ -58,7 +58,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">
 			{translate key="common.uploadedFile"}
 		</td>
@@ -78,7 +78,7 @@
 		</td>
 	</tr>
 	{if !$smarty.section.round.last}
-		<tr valign="top">
+		<tr >
 			<td class="label" width="20%">
 				{translate key="submission.editorVersion"}
 			</td>
@@ -90,7 +90,7 @@
 				{/foreach}
 			</td>
 		</tr>
-		<tr valign="top">
+		<tr >
 			<td class="label" width="20%">
 				{translate key="submission.authorVersion"}
 			</td>

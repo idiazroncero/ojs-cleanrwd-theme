@@ -51,7 +51,7 @@ function toggleChecked() {
 	<tr>
 		<td class="headseparator" colspan="3">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="3%">&nbsp;</td>
 		<td width="77%">{translate key="manager.reviewFormElements.question"}</td>
 		<td width="20%">{translate key="common.action"}</td>
@@ -61,7 +61,7 @@ function toggleChecked() {
 	</tr>
 {iterate from=reviewFormElements item=reviewFormElement name=reviewFormElements}
 {assign var=reviewFormElementExists value=1}
-	<tr valign="top" id="formelt-{$reviewFormElement->getId()}" class="data">
+	<tr  id="formelt-{$reviewFormElement->getId()}" class="data">
 		<td><input type="checkbox" name="copy[]" value="{$reviewFormElement->getId()|escape}"/></td>
 		<td class="drag">{$reviewFormElement->getLocalizedQuestion()|truncate:200:"..."}</td>
 		<td class="nowrap">

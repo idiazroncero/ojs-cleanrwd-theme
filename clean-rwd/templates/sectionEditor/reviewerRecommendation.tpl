@@ -21,7 +21,7 @@
 <input type="hidden" name="articleId" value="{$articleId|escape}" />
 <input type="hidden" name="reviewId" value="{$reviewId|escape}" />
 <table width="100%" class="data">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{translate key="editor.article.recommendation"}</td>
 	<td width="80%" class="value">
 		<select name="recommendation" size="1" class="selectMenu">

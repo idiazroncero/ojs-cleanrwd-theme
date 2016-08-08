@@ -27,7 +27,7 @@
 			<td colspan="4" class="headseparator">&nbsp;</td>
 		</tr>
 		<div id="payment">
-		<tr valign="top">
+		<tr >
 		<tr>
 			<td width="25%">{translate key="manager.payment.paymentId"}</td>
 			<td>{$payment->getCompletedPaymentId()}</td>

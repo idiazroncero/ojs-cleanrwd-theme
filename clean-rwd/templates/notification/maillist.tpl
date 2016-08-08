@@ -33,24 +33,24 @@
 <form id="notificationSettings" method="post" action="{url op="saveSubscribeMailList"}">
 
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td class="label" width="5%">{fieldLabel name="email" key="user.email"}</td>
 		<td class="value" width="45%"><input type="text" id="email" name="email" size="30" maxlength="90" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="5%">{fieldLabel name="confirmEmail" key="user.confirmEmail"}</td>
 		<td class="value" width="45%"><input type="text" id="confirmEmail" name="confirmEmail" size="30" maxlength="90" class="textField" /></td>
 	</tr>
 	{if $captchaEnabled && $reCaptchaHtml}
 	<tr>
-		<td class="label" valign="top">{fieldLabel name="recaptcha_challenge_field" required="true" key="common.captchaField"}</td>
+		<td class="label" >{fieldLabel name="recaptcha_challenge_field" required="true" key="common.captchaField"}</td>
 		<td class="value">
 			{$reCaptchaHtml}
 		</td>
 	</tr>
 	{elseif $captchaEnabled}
 	<tr>
-		<td class="label" valign="top">{fieldLabel name="captcha" required="true" key="common.captchaField"}</td>
+		<td class="label" >{fieldLabel name="captcha" required="true" key="common.captchaField"}</td>
 		<td class="value">
 			<img src="{url page="user" op="viewCaptcha" path=$captchaId}" alt="{translate key="common.captchaField.altText"}" />
 			<span class="instruct">{translate key="common.captchaField.description"}</span>
@@ -59,7 +59,7 @@
 		</td>
 	</tr>
 	{/if}{* $captchaEnabled *}
-	<tr valign="top">
+	<tr >
 		<td width="5%">&nbsp;</td>
 		<td><p><input type="submit" value="{translate key="form.submit"}" class="button defaultButton" /></p></td>
 	</tr>

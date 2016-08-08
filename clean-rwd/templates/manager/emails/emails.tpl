@@ -19,7 +19,7 @@
 	<form action="{url op="exportEmails"}" method="post" id="emailsForm">
 		<table class="listing" width="100%">
 			<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
-			<tr class="heading" valign="bottom">
+			<tr class="heading" >
 				<td width="15%">{translate key="manager.emails.emailTemplates"}</td>
 				<td width="10%">{translate key="email.sender"}</td>
 				<td width="10%">{translate key="email.recipient"}</td>
@@ -29,7 +29,7 @@
 			</tr>
 			<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
 		{iterate from=emailTemplates item=emailTemplate}
-			<tr valign="top">
+			<tr >
 				<td>
 					{url|assign:"emailUrl" op="email" template=$emailTemplate->getEmailKey()}
 					{$emailTemplate->getEmailKey()|escape|replace:"_":" "}&nbsp;{icon name="mail" url=$emailUrl}

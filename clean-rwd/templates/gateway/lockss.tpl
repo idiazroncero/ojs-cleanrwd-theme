@@ -58,42 +58,42 @@
 <p>Metadata associated with this Archival Unit includes:</p>
 
 <table width="100%" class="data">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">Journal URL</td>
 	<td width="80%" class="value"><a href="{$journal->getUrl()|escape}">{$journal->getUrl()|escape}</a></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">Title</td>
 	<td class="value">{$journal->getLocalizedTitle()|escape}</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">Publisher</td>
 	<td class="value"><a href="{$journal->getSetting('publisherUrl')|escape}">{$journal->getSetting('publisherInstitution')|escape}</a></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">Description</td>
 	<td class="value">{$journal->getLocalizedSetting('searchDescription')|escape}</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">Keywords</td>
 	<td class="value">{$journal->getLocalizedSetting('searchKeywords')|escape}</td>
 </tr>
 {if $journal->getSetting('issn')}
-<tr valign="top">
+<tr >
 	<td class="label">ISSN</td>
 	<td class="value">{$journal->getSetting('issn')|escape}</td>
 </tr>
 {/if}
-<tr valign="top">
+<tr >
 	<td class="label">Language(s)</td>
 	<td class="value">{foreach from=$locales key=localeKey item=localeName}{$localeName|escape} ({$localeKey|escape}){/foreach}</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">Publisher Email</td>
 	<td class="value">{mailto address=$journal->getSetting('contactEmail')|escape encode="hex"}</td>
 </tr>
 {if $journal->getLocalizedSetting('copyrightNotice')}
-<tr valign="top">
+<tr >
 	<td class="label">Copyright</td>
 	<td class="value">{$journal->getLocalizedSetting('copyrightNotice')|nl2br}</td>
 </tr>

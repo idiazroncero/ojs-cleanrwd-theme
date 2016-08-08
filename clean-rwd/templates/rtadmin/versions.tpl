@@ -18,14 +18,14 @@
 <div id="versions">
 <table class="listing" width="100%">
 	<tr><td class="headseparator" colspan="3">&nbsp;</td></tr>
-	<tr valign="top">
+	<tr >
 		<td class="heading" width="40%">{translate key="rt.version.title"}</td>
 		<td class="heading" width="20%">{translate key="rt.version.locale"}</td>
 		<td class="heading" width="40%" align="right">&nbsp;</td>
 	</tr>
 	<tr><td class="headseparator" colspan="3">&nbsp;</td></tr>
 	{iterate from=versions item=version}
-		<tr valign="top">
+		<tr >
 			<td>{$version->getTitle()|escape}</td>
 			<td>{$version->getLocale()|escape}</td>
 			<td align="right"><a href="{url op="validateUrls" path=$version->getVersionId()}" class="action">{translate key="rt.admin.validateUrls.validate"}</a>&nbsp;|&nbsp;<a href="{url op="editVersion" path=$version->getVersionId()}" class="action">{translate key="rt.admin.versions.metadata"}</a>&nbsp;|&nbsp;<a href="{url op="contexts" path=$version->getVersionId()}" class="action">{translate key="rt.contexts"}</a>&nbsp;|&nbsp;<a href="{url op="exportVersion" path=$version->getVersionId()}" class="action">{translate key="rt.admin.versions.export"}</a>&nbsp;|&nbsp;<a href="{url op="deleteVersion" path=$version->getVersionId()}" onclick="return confirm('{translate|escape:"jsparam" key="rt.admin.versions.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
@@ -33,7 +33,7 @@
 		<tr><td class="{if $versions->eof()}end{/if}separator" colspan="3"></td></tr>
 	{/iterate}
 	{if $versions->wasEmpty()}
-		<tr valign="top">
+		<tr >
 			<td class="nodata" colspan="3">{translate key="common.none"}</td>
 		</tr>
 		<tr><td class="endseparator" colspan="3"></td></tr>

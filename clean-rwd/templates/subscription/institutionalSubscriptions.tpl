@@ -69,7 +69,7 @@
 	<tr>
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="30%">{translate key="manager.subscriptions.institutionName"}</td>
 		<td width="25%">{translate key="manager.subscriptions.subscriptionType"}</td>
 		<td width="10%">{translate key="subscriptions.status"}</td>
@@ -82,7 +82,7 @@
 	</tr>
 {iterate from=subscriptions item=subscription}
 	{assign var=isNonExpiring value=$subscription->isNonExpiring()}
-	<tr valign="top">
+	<tr >
 		<td>
 			{assign var=emailString value=$subscription->getUserFullName()|concat:" <":$subscription->getUserEmail():">"}
 			{url|assign:"redirectUrl" op="subscriptions" path="institutional" escape=false}

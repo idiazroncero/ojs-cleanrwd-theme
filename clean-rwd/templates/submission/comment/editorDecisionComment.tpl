@@ -25,7 +25,7 @@ window.opener.location.reload();
 <table class="data" width="100%">
 {foreach from=$articleComments item=comment}
 <div id="comment">
-<tr valign="top">
+<tr >
 	<td width="25%">
 		<div class="commentRole">{translate key=$comment->getRoleName()}</div>
 		<div class="commentDate">{$comment->getDatePosted()|date_format:$datetimeFormatShort}</div>
@@ -67,11 +67,11 @@ window.opener.location.reload();
 {include file="common/formErrors.tpl"}
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="commentTitle" key="submission.comments.subject"}</td>
 	<td class="value"><input type="text" name="commentTitle" id="commentTitle" value="{$commentTitle|escape}" size="50" maxlength="255" class="textField" /></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="comments" key="submission.comments.addComment"}</td>
 	<td class="value"><textarea id="comments" name="comments" rows="10" cols="50" class="textArea">{$comments|escape}</textarea></td>
 </tr>

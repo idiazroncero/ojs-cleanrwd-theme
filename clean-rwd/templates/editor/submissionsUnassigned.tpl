@@ -12,7 +12,7 @@
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="5%"><span class="disabled">{translate key="submission.date.mmdd"}</span>{sort_search key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
@@ -24,7 +24,7 @@
 	</tr>
 	
 	{iterate from=submissions item=submission}
-	<tr valign="top" {if $submission->getFastTracked()} class="fastTracked"{/if}>
+	<tr  {if $submission->getFastTracked()} class="fastTracked"{/if}>
 		<td>{$submission->getId()}</td>
 		<td>{$submission->getDateSubmitted()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

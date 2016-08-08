@@ -48,7 +48,7 @@
 			{/foreach}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">{translate key="submission.reviewVersion"}</td>
 		{if $reviewFile}
 			<td width="80%" class="value">
@@ -59,7 +59,7 @@
 			<td width="80%" class="nodata">{translate key="common.none"}</td>
 		{/if}
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>&nbsp;</td>
 		<td>
 			<form method="post" action="{url op="uploadReviewVersion"}" enctype="multipart/form-data">
@@ -71,7 +71,7 @@
 		</td>
 	</tr>
 	{foreach from=$suppFiles item=suppFile}
-		<tr valign="top">
+		<tr >
 			{if !$notFirstSuppFile}
 				<td class="label" rowspan="{$suppFiles|@count}">{translate key="article.suppFilesAbbrev"}</td>
 				{assign var=notFirstSuppFile value=1}
@@ -92,7 +92,7 @@
 			</td>
 		</tr>
 	{foreachelse}
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="article.suppFilesAbbrev"}</td>
 		<td class="nodata">{translate key="common.none"}</td>
 	</tr>
@@ -137,7 +137,7 @@
 	</table>
 
 	<table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="label">{translate key="submission.reviewForm"}</td>
 		<td>
 		{if $reviewAssignment->getReviewFormId()}
@@ -151,7 +151,7 @@
 		{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label" width="20%">&nbsp;</td>
 		<td width="80%">
 			<table width="100%" class="info">
@@ -161,7 +161,7 @@
 					<td class="heading" width="25%">{translate key="submission.due"}</td>
 					<td class="heading" width="25%">{translate key="submission.acknowledge"}</td>
 				</tr>
-				<tr valign="top">
+				<tr >
 					<td>
 						{url|assign:"reviewUrl" op="notifyReviewer" reviewId=$reviewAssignment->getId() articleId=$submission->getId()}
 						{if $reviewAssignment->getDateNotified()}
@@ -202,7 +202,7 @@
 	</tr>
 
 	{if $reviewAssignment->getDateConfirmed() && !$reviewAssignment->getDeclined()}
-		<tr valign="top">
+		<tr >
 			<td class="label">{translate key="reviewer.article.recommendation"}</td>
 			<td>
 				{if $reviewAssignment->getRecommendation() !== null && $reviewAssignment->getRecommendation() !== ''}
@@ -222,13 +222,13 @@
 			</td>
 		</tr>
 		{if $currentJournal->getSetting('requireReviewerCompetingInterests')}
-			<tr valign="top">
+			<tr >
 				<td class="label">{translate key="reviewer.competingInterests"}</td>
 				<td>{$reviewAssignment->getCompetingInterests()|strip_unsafe_html|nl2br|default:"&mdash;"}</td>
 			</tr>
 		{/if}{* requireReviewerCompetingInterests *}
 		{if $reviewFormResponses[$reviewId]}
-			<tr valign="top">
+			<tr >
 				<td class="label">{translate key="submission.reviewFormResponse"}</td>
 				<td>
 					<a href="javascript:openComments('{url op="viewReviewFormResponse" path=$submission->getId()|to_array:$reviewAssignment->getId()}');" class="icon">{icon name="comment"}</a>
@@ -236,7 +236,7 @@
 			</tr>
 		{/if}
 		{if !$reviewAssignment->getReviewFormId() || $reviewAssignment->getMostRecentPeerReviewComment()}{* Only display comments link if a comment is entered or this is a non-review form review *}
-			<tr valign="top">
+			<tr >
 				<td class="label">{translate key="submission.review"}</td>
 				<td>
 					{if $reviewAssignment->getMostRecentPeerReviewComment()}
@@ -248,12 +248,12 @@
 				</td>
 			</tr>
 		{/if}
-		<tr valign="top">
+		<tr >
 			<td class="label">{translate key="reviewer.article.uploadedFile"}</td>
 			<td>
 				<table width="100%" class="data">
 					{foreach from=$reviewAssignment->getReviewerFileRevisions() item=reviewerFile key=key}
-					<tr valign="top">
+					<tr >
 						<td valign="middle">
 							<form id="authorView{$reviewAssignment->getId()}" method="post" action="{url op="makeReviewerFileViewable"}">
 								<a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewerFile->getFileId():$reviewerFile->getRevision()}" class="file">{$reviewerFile->getFileName()|escape}</a>&nbsp;&nbsp;{$reviewerFile->getDateModified()|date_format:$dateFormatShort}
@@ -267,7 +267,7 @@
 						</td>
 					</tr>
 					{foreachelse}
-					<tr valign="top">
+					<tr >
 						<td>{translate key="common.none"}</td>
 					</tr>
 					{/foreach}
@@ -277,7 +277,7 @@
 	{/if}
 
 	{if (($reviewAssignment->getRecommendation() === null || $reviewAssignment->getRecommendation() === '') || !$reviewAssignment->getDateConfirmed()) && $reviewAssignment->getDateNotified() && !$reviewAssignment->getDeclined()}
-		<tr valign="top">
+		<tr >
 			<td class="label">{translate key="reviewer.article.editorToEnter"}</td>
 			<td>
 				{if !$reviewAssignment->getDateConfirmed()}
@@ -298,7 +298,7 @@
 	{/if}
 
 	{if $reviewAssignment->getDateNotified() && !$reviewAssignment->getDeclined() && $rateReviewerOnQuality}
-		<tr valign="top">
+		<tr >
 			<td class="label">{translate key="editor.article.rateReviewer"}</td>
 			<td>
 			<form method="post" action="{url op="rateReviewer"}">
@@ -316,7 +316,7 @@
 		</tr>
 	{/if}
 	{if $needsReviewFileNote}
-		<tr valign="top">
+		<tr >
 			<td>&nbsp;</td>
 			<td>
 				{translate key="submission.review.mustUploadFileForReview"}

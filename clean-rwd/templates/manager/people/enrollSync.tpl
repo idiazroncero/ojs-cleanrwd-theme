@@ -20,7 +20,7 @@
 <form method="post" action="{url op="enrollSync"}">
 
 <table class="data" width="100%">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label"><label for="rolePath">{translate key="manager.people.enrollSyncRole"}</label></td>
 		<td width="80%" class="value">
 			{if $rolePath}
@@ -44,7 +44,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td class="label"><label for="syncJournal">{translate key="manager.people.enrollSyncJournal"}</label></td>
 		<td class="value">
 			<select name="syncJournal" id="syncJournal" size="1" class="selectMenu">

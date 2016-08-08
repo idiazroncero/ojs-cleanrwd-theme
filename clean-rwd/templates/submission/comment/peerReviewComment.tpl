@@ -24,7 +24,7 @@ window.opener.location.reload();
 <div id="articleComments">
 <table class="data" width="100%">
 {foreach from=$articleComments item=comment}
-<tr valign="top">
+<tr >
 	<td width="25%">
 		<div class="commentRole">
 			{if $showReviewLetters and $comment->getRoleId() eq $reviewer}
@@ -80,15 +80,15 @@ window.opener.location.reload();
 {include file="common/formErrors.tpl"}
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="commentTitle" key="submission.comments.subject"}</td>
 	<td class="value"><input type="text" name="commentTitle" id="commentTitle" value="{$commentTitle|escape}" size="50" maxlength="255" class="textField" /></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="authorComments"}{translate key="submission.comments.forAuthorEditor"}</td>
 	<td class="value"><textarea id="authorComments" name="authorComments" rows="10" cols="50" class="textArea">{$authorComments|escape}</textarea></td>
 </tr>
-<tr valign="top">
+<tr >
 	<td class="label">{fieldLabel name="comments"}{translate key="submission.comments.forEditor"}</td>
 	<td class="value"><textarea id="comments" name="comments" rows="10" cols="50" class="textArea">{$comments|escape}</textarea></td>
 </tr>

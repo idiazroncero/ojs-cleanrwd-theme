@@ -42,26 +42,26 @@
 	<tr>
 		<td colspan="2" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="30%">{translate key="user.subscriptions.status"}</td>
 		<td width="70%">{translate key="user.subscriptions.statusDescription"}</td>
 	</tr>
 	<tr>
 		<td colspan="2" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>{translate key="subscriptions.status.needsInformation"}</td>
 		<td>{translate key="user.subscriptions.status.needsInformationDescription"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>{translate key="subscriptions.status.needsApproval"}</td>
 		<td>{translate key="user.subscriptions.status.needsApprovalDescription"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>{translate key="subscriptions.status.awaitingManualPayment"}</td>
 		<td>{translate key="user.subscriptions.status.awaitingManualPaymentDescription"}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td>{translate key="subscriptions.status.awaitingOnlinePayment"}</td>
 		<td>{translate key="user.subscriptions.status.awaitingOnlinePaymentDescription"}</td>
 	</tr>
@@ -76,7 +76,7 @@
 	<p>{translate key="subscriptions.individualDescription"}</p>
 	<table width="100%" class="info">
 	{if $userIndividualSubscription}
-		<tr valign="top">
+		<tr >
 			<td width="25%">{$userIndividualSubscription->getSubscriptionTypeName()|escape}</td>
 			<td width="30%">&nbsp;</td>
 			<td width="25%">
@@ -113,11 +113,11 @@
 			</td>
 		</tr>
 	{elseif $journalPaymentsEnabled && $acceptSubscriptionPayments}
-		<tr valign="top">
+		<tr >
 			<td colspan="3" align="left"><a class="action" href="{url op="purchaseSubscription" path="individual"}">{translate key="user.subscriptions.purchaseNewSubscription"}</a></td> 
 		</tr>
 	{else}
-		<tr valign="top">
+		<tr >
 			<td colspan="3" align="left"><a href="{url page="about" op="subscriptions" anchor="subscriptionTypes"}">{translate key="user.subscriptions.viewSubscriptionTypes"}</a></td> 
 		</tr>
 	{/if}
@@ -130,7 +130,7 @@
 	<table width="100%" class="info">
 	{if $userInstitutionalSubscriptions}
 		{iterate from=userInstitutionalSubscriptions item=userInstitutionalSubscription}
-		<tr valign="top">
+		<tr >
 			<td width="25%">{$userInstitutionalSubscription->getSubscriptionTypeName()|escape}</td>
 			<td width="30%">{$userInstitutionalSubscription->getInstitutionName()|escape}</td>
 			<td width="25%">
@@ -172,11 +172,11 @@
 		{/iterate}
 	{/if}
 	{if $journalPaymentsEnabled && $acceptSubscriptionPayments}
-		<tr valign="top">
+		<tr >
 			<td colspan="3" align="left"><a class="action" href="{url page="user" op="purchaseSubscription" path="institutional"}">{translate key="user.subscriptions.purchaseNewSubscription"}</a></td> 
 		</tr>
 	{else}
-		<tr valign="top">
+		<tr >
 			<td colspan="3" align="left"><a href="{url page="about" op="subscriptions" anchor="subscriptionTypes"}">{translate key="user.subscriptions.viewSubscriptionTypes"}</a></td> 
 		</tr>
 	{/if}

@@ -11,7 +11,7 @@
 <div id="submissions">
 <table width="100%" class="listing">
 	<tr><td colspan="8" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 	<td width="5%">{sort_search key="common.id" sort="id"}</td>
 		<td width="5%">{sort_search key="submissions.submit" sort="submitDate"}</td>
 		<td width="5%">{sort_search key="submissions.sec" sort="section"}</td>
@@ -30,7 +30,7 @@
 	{assign var="copyeditorFinalSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_FINAL')}
 	{assign var="articleId" value=$submission->getId()}
 	{assign var="highlightClass" value=$submission->getHighlightClass()}
-	<tr valign="top"{if $highlightClass} class="{$highlightClass|escape}"{/if}>
+	<tr {if $highlightClass} class="{$highlightClass|escape}"{/if}>
 		<td>{$submission->getId()}</td>
 		<td>{$submission->getDateSubmitted()|date_format:$dateFormatTrunc}</td>
 		<td>{$submission->getSectionAbbrev()|escape}</td>

@@ -50,7 +50,7 @@
 	<tr>
 		<td colspan="4" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="40%">{translate key="about.subscriptionTypes.name"}</td>
 		<td width="20%">{translate key="about.subscriptionTypes.format"}</td>
 		<td width="25%">{translate key="about.subscriptionTypes.duration"}</td>
@@ -60,7 +60,7 @@
 		<td colspan="4" class="headseparator">&nbsp;</td>
 	</tr>
 {iterate from=individualSubscriptionTypes item=subscriptionType}
-		<tr valign="top">
+		<tr >
 			<td>{$subscriptionType->getSubscriptionTypeName()|escape}{$subscriptionType->getSubscriptionTypeDescription()|nl2br}</td>
 			<td>{translate key=$subscriptionType->getFormatString()}</td>
 			<td>{$subscriptionType->getDurationYearsMonths()|escape}</td>
@@ -80,7 +80,7 @@
 	<tr>
 		<td colspan="4" class="headseparator">&nbsp;</td>
 	</tr>
-	<tr class="heading" valign="bottom">
+	<tr class="heading" >
 		<td width="40%">{translate key="about.subscriptionTypes.name"}</td>
 		<td width="20%">{translate key="about.subscriptionTypes.format"}</td>
 		<td width="25%">{translate key="about.subscriptionTypes.duration"}</td>
@@ -90,7 +90,7 @@
 		<td colspan="4" class="headseparator">&nbsp;</td>
 	</tr>
 {iterate from=institutionalSubscriptionTypes item=subscriptionType}
-		<tr valign="top">
+		<tr >
 			<td>{$subscriptionType->getSubscriptionTypeName()|escape}{$subscriptionType->getSubscriptionTypeDescription()|nl2br}</td>
 			<td>{translate key=$subscriptionType->getFormatString()}</td>
 			<td>{$subscriptionType->getDurationYearsMonths()|escape}</td>

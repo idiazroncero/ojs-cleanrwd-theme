@@ -30,7 +30,7 @@
 <div id="users">
 <table width="100%" class="listing">
 <tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" valign="bottom">
+<tr class="heading" >
 	<td width="30%">{translate key="user.name"}</td>
 	<td width="20%">{translate key="submissions.completed}</td>
 	<td width="20%">{translate key="submissions.active"}</td>
@@ -41,7 +41,7 @@
 {iterate from=users item=user}
 {assign var="userid" value=$user->getId()}
 {assign var="stats" value=$statistics[$userid]}
-<tr valign="top">
+<tr >
 	<td><a class="action" href="{url op="userProfile" path=$userid}">{$user->getFullName(true)|escape}</a></td>
 	<td>{if $stats.complete}{$stats.complete}{else}0{/if}</td>
 	<td>{if $stats.incomplete}{$stats.incomplete}{else}0{/if}</td>

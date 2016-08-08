@@ -40,7 +40,7 @@ function changePaymentMethod() {
 
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td class="data" colspan="2">
 			{assign var=pluginIndex value=1}
 			<h4>{translate key="manager.payment.paymentMethods"}</h4>

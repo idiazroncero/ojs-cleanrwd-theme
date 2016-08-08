@@ -17,7 +17,7 @@
 {if count($formLocales) > 1}
 <div id="locales">
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{url|assign:"setupFormUrl" op="setup" path="2" escape=false}
@@ -62,7 +62,7 @@
 <p>{translate key="manager.setup.reviewProcessDescription"}</p>
 
 <table width="100%" class="data">
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="mailSubmissionsToReviewers" id="mailSubmissionsToReviewers-0" value="0"{if not $mailSubmissionsToReviewers} checked="checked"{/if} />
 		</td>
@@ -75,7 +75,7 @@
 	<tr>
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="mailSubmissionsToReviewers" id="mailSubmissionsToReviewers-1" value="1"{if $mailSubmissionsToReviewers} checked="checked"{/if} />
 		</td>
@@ -180,25 +180,25 @@
 
 <table width="100%" class="data">
 {foreach name=customAboutItems from=$customAboutItems[$formLocale] key=aboutId item=aboutItem}
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label">{fieldLabel name="customAboutItems-$aboutId-title" key="common.title"}</td>
 		<td width="95%" class="value"><input type="text" name="customAboutItems[{$formLocale|escape}][{$aboutId|escape}][title]" id="customAboutItems-{$aboutId|escape}-title" value="{$aboutItem.title|escape}" size="40" maxlength="255" class="textField" />{if $smarty.foreach.customAboutItems.total > 1} <input type="submit" name="delCustomAboutItem[{$aboutId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="customAboutItems-$aboutId-content" key="manager.setup.aboutItemContent"}</td>
 		<td width="80%" class="value"><textarea name="customAboutItems[{$formLocale|escape}][{$aboutId|escape}][content]" id="customAboutItems-{$aboutId|escape}-content" rows="12" cols="40" class="textArea">{$aboutItem.content|escape}</textarea></td>
 	</tr>
 	{if !$smarty.foreach.customAboutItems.last}
-	<tr valign="top">
+	<tr >
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
 	{/if}
 {foreachelse}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="customAboutItems-0-title" key="common.title"}</td>
 		<td width="80%" class="value"><input type="text" name="customAboutItems[{$formLocale|escape}][0][title]" id="customAboutItems-0-title" value="" size="40" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="customAboutItems-0-content" key="manager.setup.aboutItemContent"}</td>
 		<td width="80%" class="value"><textarea name="customAboutItems[{$formLocale|escape}][0][content]" id="customAboutItems-0-content" rows="12" cols="40" class="textArea"></textarea></td>
 	</tr>
@@ -237,25 +237,25 @@
 
 <table width="100%" class="data">
 {foreach name=reviewerDatabaseLinks from=$reviewerDatabaseLinks key=reviewerDatabaseLinkId item=reviewerDatabaseLink}
-	<tr valign="top">
+	<tr >
 		<td width="5%" class="label">{fieldLabel name="reviewerDatabaseLinks-$reviewerDatabaseLinkId-title" key="common.title"}</td>
 		<td width="95%" class="value"><input type="text" name="reviewerDatabaseLinks[{$reviewerDatabaseLinkId|escape}][title]" id="reviewerDatabaseLinks-{$reviewerDatabaseLinkId|escape}-title" value="{$reviewerDatabaseLink.title|escape}" size="40" maxlength="255" class="textField" />{if $smarty.foreach.reviewerDatabaseLinks.total > 1} <input type="submit" name="delReviewerDatabaseLink[{$reviewerDatabaseLinkId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}</td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="reviewerDatabaseLinks-$reviewerDatabaseLinkId-url" key="common.url"}</td>
 		<td width="80%" class="value"><input type="text" name="reviewerDatabaseLinks[{$reviewerDatabaseLinkId|escape}][url]" id="reviewerDatabaseLinks-{$reviewerDatabaseLinkId|escape}-url" value="{$reviewerDatabaseLink.url|escape}" size="40" maxlength="255" class="textField" /></td>
 	</tr>
 	{if !$smarty.foreach.reviewerDatabaseLinks.last}
-	<tr valign="top">
+	<tr >
 		<td colspan="2" class="separator">&nbsp;</td>
 	</tr>
 	{/if}
 {foreachelse}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="reviewerDatabaseLinks-0-title" key="common.title"}</td>
 		<td width="80%" class="value"><input type="text" name="reviewerDatabaseLinks[0][title]" id="reviewerDatabaseLinks-0-title" value="" size="40" maxlength="255" class="textField" /></td>
 	</tr>
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="reviewerDatabaseLinks-0-url" key="common.url"}</td>
 		<td width="80%" class="value"><input type="text" name="reviewerDatabaseLinks[0][url]" id="reviewerDatabaseLinks-0-url" value="" size="40" maxlength="255" class="textField" /></td>
 	</tr>

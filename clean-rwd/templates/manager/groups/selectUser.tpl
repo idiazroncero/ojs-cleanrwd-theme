@@ -30,14 +30,14 @@
 <div id="users">
 <table width="100%" class="listing">
 <tr><td colspan="2" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" valign="bottom">
+<tr class="heading" >
 	<td width="80%">{translate key="user.name"}</td>
 	<td width="20%">{translate key="common.action"}</td>
 </tr>
 <tr><td colspan="2" class="headseparator">&nbsp;</td></tr>
 {iterate from=users item=user}
 {assign var="userid" value=$user->getId()}
-<tr valign="top">
+<tr >
 	<td><a class="action" href="{url op="userProfile" path=$userid}">{$user->getFullName(true)|escape}</a></td>
 	<td>
 		<a href="{url op="addMembership" path=$group->getId()|to_array:$user->getId()}" class="action">{translate key="manager.groups.membership.addMember"}</a>

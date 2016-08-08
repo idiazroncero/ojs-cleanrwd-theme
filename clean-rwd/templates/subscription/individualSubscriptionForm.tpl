@@ -32,7 +32,7 @@
 
 <table class="data" width="100%">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{if $subscriptionId}
@@ -62,7 +62,7 @@
 
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="userId" required="true" key="manager.subscriptions.form.userId"}</td>
 	<td width="80%" class="value">
 		{assign var=emailString value="$userFullName <$userEmail>"}
@@ -79,7 +79,7 @@
 
 
 <table class="data" width="100%">
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="notes" key="manager.subscriptions.form.notes"}</td>
 	<td width="80%" class="value"><textarea name="notes" id="notes" cols="40" rows="6" class="textArea">{$notes|escape}</textarea></td>
 </tr>

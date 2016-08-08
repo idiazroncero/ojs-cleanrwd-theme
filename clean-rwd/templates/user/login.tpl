@@ -54,9 +54,7 @@
 {/if}
 
 {if $error}
-	<p class="form-error">{translate key="$error" reason=$reason}</p>
-	
-	
+	<p class="form-error form-error--box">{translate key="$error" reason=$reason}</p>
 {/if}
 
 <input type="hidden" name="source" value="{$source|strip_unsafe_html|escape}" />

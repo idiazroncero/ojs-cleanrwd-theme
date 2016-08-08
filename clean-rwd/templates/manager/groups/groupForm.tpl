@@ -31,7 +31,7 @@
 {include file="common/formErrors.tpl"}
 <table class="data" width="100%">
 {if count($formLocales) > 1}
-	<tr valign="top">
+	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
 			{if $group}{url|assign:"groupFormUrl" op="editGroup" path=$group->getId() escape=false}
@@ -42,19 +42,19 @@
 		</td>
 	</tr>
 {/if}
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{fieldLabel name="title" required="true" key="manager.groups.title"}</td>
 	<td width="80%" class="value"><input type="text" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" size="35" maxlength="80" id="title" class="textField" /></td>
 </tr>
 
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">&nbsp;</td>
 	<td width="80%" class="value">
 		<input type="checkbox" name="publishEmail" value="1" {if $publishEmail}checked="checked" {/if} id="publishEmail" />&nbsp;
 		{fieldLabel name="publishEmail" key="manager.groups.publishEmails"}
 	</td>
 </tr>
-<tr valign="top">
+<tr >
 	<td width="20%" class="label">{translate key="common.type"}</td>
 	<td width="80%" class="value">
 		{foreach from=$groupContextOptions item=groupContextOptionKey key=groupContextOptionValue}
