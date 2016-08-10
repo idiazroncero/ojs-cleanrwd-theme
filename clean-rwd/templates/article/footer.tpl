@@ -58,9 +58,17 @@
 
 {$pageFooter}
 {/if}
-</div><!-- content -->
-</div><!-- main -->
-</div><!-- body -->
+</section><!-- content -->
+</main><!-- main -->
+{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
+{if $rightSidebarCode}
+	<aside id="right-sidebar" class="sidebar">
+		{$rightSidebarCode}
+	</aside>
+{/if}
+<footer id="footer">
+	<p>(C) idiaz.roncero<p>
+</footer>
 
 {if $defineTermsContextId}
 <script type="text/javascript">
