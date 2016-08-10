@@ -1213,7 +1213,7 @@ input:disabled, .disabled {
   @media (min-width: 600px) {
     /* line 20, ../sass/modules/_sidebar.scss */
     .sidebar .block {
-      opacity: 0.66;
+      opacity: 0.8;
       -webkit-transition: opacity 0.25s ease-in-out;
       transition: opacity 0.25s ease-in-out; }
       /* line 26, ../sass/modules/_sidebar.scss */
@@ -1256,36 +1256,35 @@ input:disabled, .disabled {
       color: #cccccc; }
 
 /* line 84, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle select {
-  width: 60%; }
+#sidebarLanguageToggle select, #sidebarLanguageToggle .button {
+  width: 100%; }
 /* line 87, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle .button {
-  width: 40%;
-  margin-left: -1px; }
+#sidebarLanguageToggle select {
+  margin-bottom: 0.75rem; }
 
-/* line 95, ../sass/modules/_sidebar.scss */
+/* line 94, ../sass/modules/_sidebar.scss */
 #simpleSearchForm table {
   width: 100%; }
-/* line 99, ../sass/modules/_sidebar.scss */
+/* line 98, ../sass/modules/_sidebar.scss */
 #simpleSearchForm input, #simpleSearchForm select {
   width: 100%; }
-/* line 103, ../sass/modules/_sidebar.scss */
+/* line 102, ../sass/modules/_sidebar.scss */
 #simpleSearchForm .button {
   margin-top: 0.75rem; }
 
-/* line 110, ../sass/modules/_sidebar.scss */
+/* line 109, ../sass/modules/_sidebar.scss */
 #sidebarFontSize #sizer a {
   margin: 0 0.75rem 0 0; }
 
-/* line 118, ../sass/modules/_sidebar.scss */
+/* line 117, ../sass/modules/_sidebar.scss */
 #sidebarUser td label {
   line-height: 18px;
   line-height: 1.125rem; }
-/* line 121, ../sass/modules/_sidebar.scss */
+/* line 120, ../sass/modules/_sidebar.scss */
 #sidebarUser td input[type="submit"] {
   margin-top: 0.75rem;
   width: 100%; }
-/* line 128, ../sass/modules/_sidebar.scss */
+/* line 127, ../sass/modules/_sidebar.scss */
 #sidebarUser > br {
   display: none; }
 
@@ -1493,7 +1492,7 @@ tbody td {
 @media (min-width: 480px) {
   /* line 1, ../sass/modules/_header.scss */
   #header-title {
-    text-align: left; } }
+    text-align: center; } }
 /* line 5, ../sass/modules/_header.scss */
 #header-title h1 {
   margin: 0;
@@ -2007,8 +2006,9 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 
 /* line 12, ../sass/layout/_layout.scss */
 #header {
-  background-color: #E9E9D6;
+  background-color: #ff9900;
   padding: 1.5rem 0;
+  padding: 1.5rem 24px;
   width: 100%;
   text-align: center; }
 

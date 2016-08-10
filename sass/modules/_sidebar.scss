@@ -81,12 +81,11 @@
 
 #sidebarLanguageToggle {
 	// Separate list and button
-	select {
-		width:60%;
+	select, .button {
+		width:100%;
 	}
-	.button {
-		width:40%;
-		margin-left:-1px;
+	select {
+		margin-bottom:rhythm(0.5);
 	}
 }
 
