@@ -13,16 +13,19 @@
 {include file="common/header.tpl"}
 {/strip}
 
+{if $homepageImage}
+
+<div id="homepage-image">
+	<img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" width="{$homepageImage.width|escape}" height="{$homepageImage.height|escape}" {if $homepageImageAltText != ''}alt="{$homepageImageAltText|escape}"{else}alt="{translate key="common.journalHomepageImage.altText"}"{/if} /></div>
+{/if}
+
+
 {if $journalDescription}
-	<div id="journalDescription">{$journalDescription}</div>
+	<div id="journal-description">{$journalDescription}</div>
 {/if}
 
 {call_hook name="Templates::Index::journal"}
 
-{if $homepageImage}
-
-<div id="homepageImage"><img src="{$publicFilesDir}/{$homepageImage.uploadName|escape:"url"}" width="{$homepageImage.width|escape}" height="{$homepageImage.height|escape}" {if $homepageImageAltText != ''}alt="{$homepageImageAltText|escape}"{else}alt="{translate key="common.journalHomepageImage.altText"}"{/if} /></div>
-{/if}
 
 {if $additionalHomeContent}
 
@@ -31,15 +34,13 @@
 
 {if $enableAnnouncementsHomepage}
 	{* Display announcements *}
-	<div id="announcementsHome">
+	<section id="announcements-home" class="section">
 		<h3>{translate key="announcement.announcementsHome"}</h3>
-		{include file="announcement/list.tpl"}	
-		<table class="announcementsMore">
-			<tr>
-				<td><a href="{url page="announcement"}">{translate key="announcement.moreAnnouncements"}</a></td>
-			</tr>
-		</table>
-	</div>
+		{include file="announcement/list.tpl"}
+		<div class="announcements__more">
+			<a class="button button--small"href="{url page="announcement"}">{translate key="announcement.moreAnnouncements"}</a>
+		</div>
+	</section>
 {/if}
 
 {if $issue && $currentJournal->getSetting('publishingMode') != $smarty.const.PUBLISHING_MODE_NONE}

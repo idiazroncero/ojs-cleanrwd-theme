@@ -28,9 +28,6 @@
 {/if}
 {call_hook name="Templates::Common::Footer::PageFooter"}
 
-				{if $pageFooter}
-					<footer id="main-footer">{$pageFooter}</footer>
-				{/if}
 			</section><!-- #content section -->
 		</main><!-- main -->
 		{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
@@ -39,9 +36,12 @@
 				{$rightSidebarCode}
 			</aside>
 		{/if}
-		<footer id="footer">
+		{if $pageFooter}
+			<footer id="footer">{$pageFooter}</footer>
+		{/if}
+<!-- 		<footer id="footer">
 			<p>(C) idiaz.roncero<p>
-		</footer>
+		</footer> -->
 	</div><!-- #main-wrapper -->
 
 {get_debug_info}
