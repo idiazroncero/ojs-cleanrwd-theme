@@ -8,6 +8,7 @@
  * View issue -- This displays the issue TOC or title page, as appropriate,
  * *without* header or footer HTML (see viewPage.tpl)
  *}
+
 {if $subscriptionRequired && $showGalleyLinks && $showToc}
 	<div id="accessKey">
 		<img src="{$baseUrl}/lib/pkp/templates/images/icons/fulltext_open_medium.gif" alt="{translate key="article.accessLogoOpen.altText"}" />
@@ -20,6 +21,7 @@
 		{/if}
 	</div>
 {/if}
+
 {if !$showToc && $issue}
 	{if $issueId}
 		{url|assign:"currentUrl" page="issue" op="view" path=$issueId|to_array:"showToc"}
@@ -33,7 +35,9 @@
 	{if $coverPagePath}<div id="issueCoverImage"><a href="{$currentUrl}"><img src="{$coverPagePath|escape}{$issue->getFileName($locale)|escape}"{if $coverPageAltText != ''} alt="{$coverPageAltText|escape}"{else} alt="{translate key="issue.coverPage.altText"}"{/if}{if $width} width="{$width|escape}"{/if}{if $height} height="{$height|escape}"{/if}/></a></div>{/if}
 	<div id="issueCoverDescription">{$issue->getLocalizedCoverPageDescription()|strip_unsafe_html|nl2br}</div>
 {elseif $issue}
-	<div id="issueDescription">{$issue->getLocalizedDescription()|strip_unsafe_html|nl2br}</div>
+	<div id="issue-description">
+		{$issue->getLocalizedDescription()|strip_unsafe_html|nl2br}
+	</div>
 	{if $issueGalleys}
 		<h3>{translate key="issue.fullIssue"}</h3>
 		{if (!$subscriptionRequired || $issue->getAccessStatus() == $smarty.const.ISSUE_ACCESS_OPEN || $subscribedUser || $subscribedDomain || ($subscriptionExpiryPartial && $issueExpiryPartial))}
@@ -73,8 +77,10 @@
 		</table>
 		
 	{/if}
-	<h3>{translate key="issue.toc"}</h3>
+
+<!-- 	<h3 class="issue-toc">{translate key="issue.toc"}</h3> -->
 	{include file="issue/issue.tpl"}
+
 {else}
 	{translate key="current.noCurrentIssueDesc"}
 {/if}

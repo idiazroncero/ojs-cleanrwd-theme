@@ -1851,6 +1851,46 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
           flex: 1 1 auto;
   padding: 0.75rem 0; }
 
+/* line 1, ../sass/modules/_issue.scss */
+.issue-section {
+  margin-bottom: 0; }
+
+/* line 5, ../sass/modules/_issue.scss */
+.issue-section__title {
+  border-bottom: 2px solid #e0e0e0; }
+
+/* line 9, ../sass/modules/_issue.scss */
+.issue-article {
+  margin-bottom: 1.5rem; }
+
+/* line 13, ../sass/modules/_issue.scss */
+.issue-toc {
+  font-size: 21px;
+  font-size: 1.333rem;
+  line-height: 36px;
+  line-height: 2.25rem; }
+
+/* line 21, ../sass/modules/_issue.scss */
+.issue-article__authors {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: bold;
+  font-style: italic; }
+
+/* line 27, ../sass/modules/_issue.scss */
+.issue-article__galleys {
+  padding: 0; }
+  /* line 29, ../sass/modules/_issue.scss */
+  .issue-article__galleys li {
+    list-style-type: none;
+    display: inline;
+    font-size: 11px;
+    font-size: 0.707rem;
+    line-height: 24px;
+    line-height: 1.5rem; }
+
 /* line 22, ../sass/init/_mixins.scss */
 #page-user-userHome #myJournals h4 a:link, #page-user-userHome #myJournals h4 a:visited, #page-user-userHome #myJournals h4 a:focus, #page-user-userHome #myJournals h4 a:hover, #page-user-userHome #myJournals h4 a:active {
   border-bottom: none;
