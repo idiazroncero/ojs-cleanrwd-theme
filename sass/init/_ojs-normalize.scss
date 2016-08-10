@@ -138,8 +138,3 @@ div.separator {
 	border-bottom: 2px solid #CCC;
 	position:relative;
 }
-
-a.action, a.file {
-	@include adjust-font-size-to($base-font-size);
-	text-transform: inherit;
-}

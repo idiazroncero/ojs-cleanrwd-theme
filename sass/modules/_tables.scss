@@ -103,3 +103,14 @@ tbody {
 		border:none;
 	}
 }
+
+.center {
+	text-align:center;
+}
+
+.action { 
+	@include adjust-font-size-to($h5-font-size,0.5);
+	display:inline-block;
+	font-family:$alt-font-family;
+	@include matar-link();
+}

@@ -10,5 +10,8 @@
 		// Responsive image
 		max-width:100%;
 		height:auto;
+		// Prevents spacing below image
+		display:inline-block;
+		vertical-align:bottom;
 	}
 }

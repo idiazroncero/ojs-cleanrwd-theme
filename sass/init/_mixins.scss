@@ -17,3 +17,13 @@
 		@content;
 	}
 }
+
+@mixin matar-link($color:"") {
+	&:link, &:visited, &:focus, &:hover, &:active {
+		border-bottom:none;
+		text-decoration:none;
+		@if ($color != "") {
+			color: $color;
+		}
+	}
+}
