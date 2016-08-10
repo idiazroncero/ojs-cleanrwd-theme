@@ -26,26 +26,6 @@
 	border: none;
 }
 
-#content h3 {
-	// Reset padding/margin and set correct font
-	margin: 0 0 rhythm(1) 0;
-	padding:0;
-	font-family: $headlines;
-	@include adjust-font-size-to($h3-font-size);
-}
-
-#content h4 {
-	margin: 0 0 rhythm(1) 0;
-	font-family: $headlines;
-	@include adjust-font-size-to($h4-font-size);
-}
-
-#content h5 {
-	margin: 0 0 rhythm(1) 0;
-	padding:0;
-	@include adjust-font-size-to($h5-font-size);
-}
-
 // Explicitly separated sections
 .section {
 	margin-bottom:rhythm(1);

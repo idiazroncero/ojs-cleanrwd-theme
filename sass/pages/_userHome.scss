@@ -8,28 +8,29 @@
 	}
 }
 
-.journals-list {
+.journal-admin {
 	padding:rhythm(0.5);
 	background:$smoke;
 	margin-bottom:rhythm(1);
-	.flex-table__cell {
-		flex:0 1 auto;
-		padding-left:rhythm(0.25);
-		padding-right:rhythm(0.25);
-	}
-	.journal-table__title {
-		@include breakpoint($medium) {
-			flex:0 0 25%;
-		}
-		font-weight:bold;
-		background:$white;
-		padding:rhythm(0.5);
-	}
+}
 
-	.journal-table__actions {
-		@include breakpoint($medium) {
-			flex:0 0 20%;
-		}
-		text-align:right;
-	}
+.journal-admin__title {
+	font-weight:bold;
+	background:$white;
+	padding:rhythm(0.25);
+	margin-bottom:rhythm(1);
+}
+
+.journal-admin__role {
+	margin-bottom:rhythm(1);
+}
+
+.journal-admin__count {
+	display:inline-block;
+	margin-right:$gutter / 2;
+}
+
+.journal-admin__actions {
+	margin-top:rhythm(1);
+	text-align:right;
 }

@@ -1,11 +1,6 @@
-#main-footer {
-	border-top:1px solid #000;
-	margin-top:rhythm(0.5);
-	padding-top:rhythm(0.5);
-}
-
 #footer {
-	clear:both; // Prevents overlapping floats
+	clear:both;
+	margin-top:rhythm(1);
 	@include invert-if-dark($footer-background-color);
 	p {
 		@include adjust-font-size-to($h6-font-size);

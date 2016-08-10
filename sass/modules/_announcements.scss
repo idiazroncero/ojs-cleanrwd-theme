@@ -2,99 +2,35 @@
  * Announcements
  */
 
-#announcementsHome {
-	width: 100%;
-	margin: 2em 0 2em 0;
+.announcement {
+	padding:rhythm(0.5);
+	margin-bottom:rhythm(1);
+	background:$smoke;
 }
 
-#announcementsHome h3 {
-	text-align: center;
+.announcement__title {
+	@include adjust-font-size-to($h4-font-size, 1);
 }
 
-#announcements {
-	// Corrects menu item taking 100% of width
-	width: auto;
+.announcement__description {
+	margin-bottom:rhythm(1);
+	@include adjust-font-size-to($h5-font-size);
+	p {
+		&:last-child {
+			margin-bottom:0;
+		}
+	}
 }
 
-#announcements h3 {
-	text-align: center;
+.announcement__details {
+	@include adjust-font-size-to($h6-font-size);
 }
 
-table.announcements {
-	width: 100%;
+.announcement__more {
+	float:right;
+	@include adjust-leading-to(1);
 }
 
-table.announcements td {
-	padding: 0.25em 0.5em 0.25em 0.5em;
-}
-
-table.announcements td.nodata {
-	text-align: center;
-	font-style: italic;
-}
-
-table.announcements td.headseparator {
-	border-top: 1px dotted #000;
-	font-size: 0.1em;
-	line-height: 1%;
-}
-
-table.announcements td.endseparator {
-	border-top: 1px dotted #000;
-	font-size: 0.25em;
-	line-height: 10%;
-}
-
-table.announcements td.separator {
-	border-top: 1px dotted #DDDDD0;
-	font-size: 0.1em;
-	line-height: 1%;
-}
-
-table.announcements tr.intro {
-}
-
-table.announcements td.intro {
-}
-
-table.announcements tr.title {
-	vertical-align: top;
-}
-
-table.announcements td.title {
-	width: 85%;
-}
-
-table.announcements td.title h4 {
-}
-
-table.announcements tr.description {
-	vertical-align: top;
-}
-
-table.announcements td.description {
-	width: 85%;
-}
-
-table.announcements tr.details {
-	vertical-align: bottom;
-}
-
-table.announcements td.posted {
-	padding-top: 1em;
-	font-style: italic;
-}
-
-table.announcements td.more {
-	width: 15%;
-	text-align: right;
-}
-
-table.announcementsMore {
-	width: 100%;
-}
-
-table.announcementsMore td {
-	padding-top: 1.5em;
-	text-align: right;
+.announcements__more {
+	margin-bottom:rhythm(1);
 }

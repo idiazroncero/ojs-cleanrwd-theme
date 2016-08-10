@@ -25,69 +25,68 @@
 {if !$currentJournal}<h3>{translate key="user.myJournals"}</h3>{/if}
 
 {foreach from=$userJournals item=journal}
-	<div id="journal-{$journal->getPath()|escape}" class="journals-list">
+	<section id="journal-{$journal->getPath()|escape}" class="journal-admin">
 	{assign var="hasRole" value=1}
 	{if !$currentJournal}<h4><a href="{url journal=$journal->getPath() page="user"}">{$journal->getLocalizedTitle()|escape}</a></h4>
 	{else}<h3>{$journal->getLocalizedTitle()|escape}</h3>{/if}
 	{assign var="journalId" value=$journal->getId()}
 	{assign var="journalPath" value=$journal->getPath()}
-	<div class="flex-table">
 		{if $isValid.JournalManager.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="manager"}">{translate key="user.role.manager"}</a>
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					{if $setupIncomplete.$journalId}<a href="{url journal=$journalPath page="manager" op="setup" path="1"}" class="button button--small">{translate key="manager.setup"}</a>{/if}
 				</div>
 			</div>
 		{/if}
 		{if $isValid.SubscriptionManager.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="subscriptionManager"}">{translate key="user.role.subscriptionManager"}</a>
 				</div>
 			</div>
 		{/if}
 		{if $isValid.Editor.$journalId}
-			<div class="flex-table__row">
+			<div class="journal-admin__role">
 				{assign var="editorSubmissionsCount" value=$submissionsCount.Editor.$journalId}
-				<div class="flex-table__cell journal-table__title">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="editor"}">{translate key="user.role.editor"}</a>
 				</div>
-				<div class="flex-table__cell">
+				<div class="journal-admin__count">
 					{if $editorSubmissionsCount[0]}
 						<a href="{url journal=$journalPath page="editor" op="submissions" path="submissionsUnassigned"}">{$editorSubmissionsCount[0]} {translate key="common.queue.short.submissionsUnassigned"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsUnassigned"}</span>{/if}
 				</div>
-				<div class="flex-table__cell">
+				<div class="journal-admin__count">
 					{if $editorSubmissionsCount[1]}
 						<a href="{url journal=$journalPath page="editor" op="submissions" path="submissionsInReview"}">{$editorSubmissionsCount[1]} {translate key="common.queue.short.submissionsInReview"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInReview"}</span>{/if}
 				</div>
-				<div class="flex-table__cell">
+				<div class="journal-admin__count">
 					{if $editorSubmissionsCount[2]}
 						<a href="{url journal=$journalPath page="editor" op="submissions" path="submissionsInEditing"}">{$editorSubmissionsCount[2]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					<a class="button button--small" href="{url journal=$journalPath page="editor" op="createIssue"}">{translate key="editor.issues.createIssue"}</a>
-					<a class="action" href="{url journal=$journalPath page="editor" op="notifyUsers"}">{translate key="editor.notifyUsers"}</a>
+					<a class="button button--small" href="{url journal=$journalPath page="editor" op="notifyUsers"}">{translate key="editor.notifyUsers"}</a>
 				</div>
 			</div>
 		{/if}
 		{if $isValid.SectionEditor.$journalId}
 			{assign var="sectionEditorSubmissionsCount" value=$submissionsCount.SectionEditor.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="sectionEditor"}">{translate key="user.role.sectionEditor"}</a>
 				</div>
-				<div class="flex-table__cell">
+				<div class="journal-admin__count">
 					{if $sectionEditorSubmissionsCount[0]}
 						<a href="{url journal=$journalPath page="sectionEditor" op="index" path="submissionsInReview"}">{$sectionEditorSubmissionsCount[0]} {translate key="common.queue.short.submissionsInReview"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInReview"}</span>{/if}
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					{if $sectionEditorSubmissionsCount[1]}
 						<a class="button button--small" href="{url journal=$journalPath page="sectionEditor" op="index" path="submissionsInEditing"}">{$sectionEditorSubmissionsCount[1]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
@@ -96,11 +95,11 @@
 		{/if}
 		{if $isValid.LayoutEditor.$journalId}
 			{assign var="layoutEditorSubmissionsCount" value=$submissionsCount.LayoutEditor.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="layoutEditor"}">{translate key="user.role.layoutEditor"}</a>
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					{if $layoutEditorSubmissionsCount[0]}
 						<a class="button button--small" href="{url journal=$journalPath page="layoutEditor" op="submissions"}">{$layoutEditorSubmissionsCount[0]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
@@ -109,11 +108,11 @@
 		{/if}
 		{if $isValid.Copyeditor.$journalId}
 			{assign var="copyeditorSubmissionsCount" value=$submissionsCount.Copyeditor.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="copyeditor"}">{translate key="user.role.copyeditor"}</a>
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					{if $copyeditorSubmissionsCount[0]}
 						<a class="button button--small" href="{url journal=$journalPath page="copyeditor"}">{$copyeditorSubmissionsCount[0]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
@@ -122,11 +121,11 @@
 		{/if}
 		{if $isValid.Proofreader.$journalId}
 			{assign var="proofreaderSubmissionsCount" value=$submissionsCount.Proofreader.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="proofreader"}">{translate key="user.role.proofreader"}</a>
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					{if $proofreaderSubmissionsCount[0]}
 						<a class="button button--small" href="{url journal=$journalPath page="proofreader"}">{$proofreaderSubmissionsCount[0]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
@@ -135,42 +134,41 @@
 		{/if}
 		{if $isValid.Author.$journalId}
 			{assign var="authorSubmissionsCount" value=$submissionsCount.Author.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="author"}">{translate key="user.role.author"}</a>
 				</div>
-				<div class="flex-table__cell">
+				<div class="journal-admin__count">
 					{if $authorSubmissionsCount[0]}
 						<a href="{url journal=$journalPath page="author"}">{$authorSubmissionsCount[0]} {translate key="common.queue.short.active"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.active"}</span>{/if}
 				</div>
 				{* This is for all non-pending items*}
-				<div class="flex-table__cell">
+				<div class="journal-admin__count">
 					{if $authorSubmissionsCount[1]}
 						<a href="{url journal=$journalPath path="completed" page="author"}">{$authorSubmissionsCount[1]} {translate key="common.queue.short.completed"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.completed"}</span>{/if}
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__actions">
 					<a class="button button--small" href="{url journal=$journalPath page="author" op="submit"}">{translate key="author.submit"}</a>
 				</div>
 			</div>
 		{/if}
 		{if $isValid.Reviewer.$journalId}
 			{assign var="reviewerSubmissionsCount" value=$submissionsCount.Reviewer.$journalId}
-			<div class="flex-table__row">
-				<div class="flex-table__cell journal-table__title">
+			<div class="journal-admin__role">
+				<div class="journal-admin__title">
 					<a href="{url journal=$journalPath page="reviewer"}">{translate key="user.role.reviewer"}</a>
 				</div>
-				<div class="flex-table__cell journal-table__actions">
+				<div class="journal-admin__count">
 					{if $reviewerSubmissionsCount[0]}
 						<a class="button button--small" href="{url journal=$journalPath page="reviewer"}">{$reviewerSubmissionsCount[0]} {translate key="common.queue.short.active"}</a>
-					{else}<span class="button button--small disabled">0 {translate key="common.queue.short.active"}</span>{/if}
+					{else}<span class=" disabled">0 {translate key="common.queue.short.active"}</span>{/if}
 				</div>
 			</div>
 		{/if}
-	</div>
 	{call_hook name="Templates::User::Index::Journal" journal=$journal}
-	</div>
+	</section>
 {/foreach}
 </section>
 

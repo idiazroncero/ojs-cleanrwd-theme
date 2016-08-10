@@ -18,7 +18,7 @@
 $strict-normalize: false !default;
 
 // Alignment of title (text or image)
-$header-alignment: left;
+$header-alignment: center;
 
 // Should we use animated fade-ins for interactions?
 $transitions: true;
@@ -114,7 +114,7 @@ $background-color: #E9E9D6;
 // Background-color for the #container wrapper
 $container-background-color: #fff;
 // Background-color for the #header wrapper
-$header-background-color: #E9E9D6;
+$header-background-color: #ff9900;
 // Background-color for the #header wrapper
 $nav-background-color: #333; //#CCDAE3;
 // Background-color for the #header wrapper
@@ -166,7 +166,7 @@ $screen: 960px;
 $sidebar-breakpoint: 600px;
 
 // Sidebar opacity (when not focused)
-$sidebar-opacity: 0.66;
+$sidebar-opacity: 0.8;
 
 
 //

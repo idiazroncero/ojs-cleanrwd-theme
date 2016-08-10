@@ -1,0 +1,34 @@
+.issue-section {
+	margin-bottom:0;
+}
+
+.issue-section__title  {
+	border-bottom:2px solid $line-color-light;
+}
+
+.issue-article {
+	margin-bottom: rhythm(1);
+}
+
+.issue-toc {
+	@include adjust-font-size-to($h4-font-size);
+}
+
+.issue-article__title {
+
+}
+
+.issue-article__authors {
+	@include adjust-font-size-to($h5-font-size);
+	font-weight:bold;
+	font-style:italic;
+}
+
+.issue-article__galleys {
+	padding:0;
+	li {
+		list-style-type:none;
+		display:inline;
+		@include adjust-font-size-to($h6-font-size);
+	}
+}

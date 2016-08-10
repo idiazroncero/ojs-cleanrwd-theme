@@ -94,6 +94,9 @@ Type `gem install breakpoint` and `gem install compass` in your terminal to get 
 
 - Include a .gemfile.
 - Separate OJS resets and opinionated styles (i.e. menu hover effects).
+- Support Issue Subscription
+- Support Issue Galleys
+
 
 
 
