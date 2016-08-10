@@ -30,9 +30,10 @@
 @import "modules/uidialog";
 @import "modules/warningMessage";
 @import "modules/menu";
+@import "modules/flex-table";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
-// @import "pages/userHome";
+@import "pages/userHome";
 // @import "pages/siteAdmin";
 // @import "pages/siteSettings";
 // @import "pages/helpPopup";

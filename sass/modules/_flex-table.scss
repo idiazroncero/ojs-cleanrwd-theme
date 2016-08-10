@@ -1,0 +1,19 @@
+.flex-table {
+	display:flex;
+	flex-direction:column;
+}
+
+.flex-table__row {
+	display:flex;
+	flex-direction:column;
+	@include breakpoint($medium) {
+		flex-direction:row;
+		justify-content:space-between;
+	}
+	border-bottom:1px dotted $line-color-light;
+}
+
+.flex-table__cell {
+	flex: 1 1 auto;
+	padding:rhythm(0.5) 0;
+}
