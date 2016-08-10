@@ -91,14 +91,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		copy: {
-		  main: {
-		    files: [
-		      // includes files within path
-		      {expand: true, src: ['clean-rwd/**'], dest: '/home/nacho/Sites/paideia/plugins/themes/'}
-		    ],
-		  },
-		}
 	}); // Init Config
 	
 	// Load plugins
@@ -111,7 +103,7 @@ module.exports = function(grunt) {
 
 	// Load tasks
 	grunt.registerTask('default', ['compass:prod', 'postcss:process']);
-	grunt.registerTask('dev', ['compass:dev', 'postcss:process', 'copy:main']);
+	grunt.registerTask('dev', ['compass:dev', 'postcss:process']);
 	grunt.registerTask('prod', ['compass:prod', 'postcss:process']);
 	// And we also have watch:dev and watch:prod to automate both of them
 	// and csslint to check the health of our CSS
