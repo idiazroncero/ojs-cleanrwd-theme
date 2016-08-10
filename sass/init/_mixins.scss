@@ -17,3 +17,10 @@
 		@content;
 	}
 }
+
+@mixin matar-link() {
+	&:link, &:visited, &:focus, &:hover, &:active {
+		border-bottom:none;
+		text-decoration:none;
+	}
+}

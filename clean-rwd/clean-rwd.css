@@ -527,14 +527,6 @@ div.separator {
   border-bottom: 2px solid #CCC;
   position: relative; }
 
-/* line 142, ../sass/init/_ojs-normalize.scss */
-a.action, a.file {
-  font-size: 16px;
-  font-size: 1rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  text-transform: inherit; }
-
 /**
  * Overrides OJS's base stylesheet /lib/pkp/styles/common.css.
  *
@@ -917,7 +909,7 @@ input:disabled {
   opacity: 0.5; }
 
 /* line 53, ../sass/modules/_forms.scss */
-.button, #pkp-admin-categories #categories > a, #pkp-section-sections #sections > .action, #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-journal-journals #content p .action {
+.button {
   padding: 0 0.75rem;
   display: inline-block;
   vertical-align: middle;
@@ -936,13 +928,13 @@ input:disabled {
   border: 1px solid #3C7861;
   color: #333; }
   /* line 69, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
+  .button:hover {
     text-decoration: none; }
   /* line 94, ../sass/modules/_forms.scss */
-  .button:link, #pkp-admin-categories #categories > a:link, #pkp-section-sections #sections > .action:link, #pkp-manager-reviewForms #reviewForms > .action:link, #pkp-manager-reviewFormElements #reviewFormElements > .action:link, #pkp-journal-journals #content p .action:link, .button:visited, #pkp-admin-categories #categories > a:visited, #pkp-section-sections #sections > .action:visited, #pkp-manager-reviewForms #reviewForms > .action:visited, #pkp-manager-reviewFormElements #reviewFormElements > .action:visited, #pkp-journal-journals #content p .action:visited, .button:focus, #pkp-admin-categories #categories > a:focus, #pkp-section-sections #sections > .action:focus, #pkp-manager-reviewForms #reviewForms > .action:focus, #pkp-manager-reviewFormElements #reviewFormElements > .action:focus, #pkp-journal-journals #content p .action:focus, .button:active, #pkp-admin-categories #categories > a:active, #pkp-section-sections #sections > .action:active, #pkp-manager-reviewForms #reviewForms > .action:active, #pkp-manager-reviewFormElements #reviewFormElements > .action:active, #pkp-journal-journals #content p .action:active {
+  .button:link, .button:visited, .button:focus, .button:active {
     color: #333; }
   /* line 97, ../sass/modules/_forms.scss */
-  .button:hover, #pkp-admin-categories #categories > a:hover, #pkp-section-sections #sections > .action:hover, #pkp-manager-reviewForms #reviewForms > .action:hover, #pkp-manager-reviewFormElements #reviewFormElements > .action:hover, #pkp-journal-journals #content p .action:hover {
+  .button:hover {
     background: #3C7861;
     color: #fff; }
 
@@ -1183,7 +1175,7 @@ input:disabled {
     padding: 0.75rem;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
     /* line 13, ../sass/modules/_config.scss */
-    #assignBlocksToSidebars tr td input.button, #assignBlocksToSidebars tr td #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #assignBlocksToSidebars tr td #content > a:first-child, #assignBlocksToSidebars tr td #pkp-section-sections #sections > input.action, #pkp-section-sections #assignBlocksToSidebars tr td #sections > input.action, #assignBlocksToSidebars tr td #pkp-manager-reviewForms #reviewForms > input.action, #pkp-manager-reviewForms #assignBlocksToSidebars tr td #reviewForms > input.action, #assignBlocksToSidebars tr td #pkp-manager-reviewFormElements #reviewFormElements > input.action, #pkp-manager-reviewFormElements #assignBlocksToSidebars tr td #reviewFormElements > input.action, #assignBlocksToSidebars tr td #pkp-journal-journals #content p input.action, #pkp-journal-journals #content p #assignBlocksToSidebars tr td input.action {
+    #assignBlocksToSidebars tr td input.button {
       border: none;
       border-radius: 0;
       background-color: #ccc;
@@ -1262,7 +1254,7 @@ input:disabled {
 #sidebarLanguageToggle select {
   width: 60%; }
 /* line 87, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle .button, #sidebarLanguageToggle #pkp-admin-categories #categories > a, #pkp-admin-categories #sidebarLanguageToggle #categories > a, #sidebarLanguageToggle #pkp-section-sections #sections > .action, #pkp-section-sections #sidebarLanguageToggle #sections > .action, #sidebarLanguageToggle #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #sidebarLanguageToggle #reviewForms > .action, #sidebarLanguageToggle #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #sidebarLanguageToggle #reviewFormElements > .action, #sidebarLanguageToggle #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #sidebarLanguageToggle .action {
+#sidebarLanguageToggle .button {
   width: 40%;
   margin-left: -1px; }
 
@@ -1273,7 +1265,7 @@ input:disabled {
 #simpleSearchForm input, #simpleSearchForm select {
   width: 100%; }
 /* line 103, ../sass/modules/_sidebar.scss */
-#simpleSearchForm .button, #simpleSearchForm #pkp-admin-categories #categories > a, #pkp-admin-categories #simpleSearchForm #categories > a, #simpleSearchForm #pkp-section-sections #sections > .action, #pkp-section-sections #simpleSearchForm #sections > .action, #simpleSearchForm #pkp-manager-reviewForms #reviewForms > .action, #pkp-manager-reviewForms #simpleSearchForm #reviewForms > .action, #simpleSearchForm #pkp-manager-reviewFormElements #reviewFormElements > .action, #pkp-manager-reviewFormElements #simpleSearchForm #reviewFormElements > .action, #simpleSearchForm #pkp-journal-journals #content p .action, #pkp-journal-journals #content p #simpleSearchForm .action {
+#simpleSearchForm .button {
   margin-top: 0.75rem; }
 
 /* line 110, ../sass/modules/_sidebar.scss */
@@ -1475,6 +1467,23 @@ tbody td {
   /* line 102, ../sass/modules/_tables.scss */
   .listing-pager td {
     border: none; }
+
+/* line 107, ../sass/modules/_tables.scss */
+.center {
+  text-align: center; }
+
+/* line 111, ../sass/modules/_tables.scss */
+.action {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 12px;
+  line-height: 0.75rem;
+  display: inline-block;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+  /* line 22, ../sass/init/_mixins.scss */
+  .action:link, .action:visited, .action:focus, .action:hover, .action:active {
+    border-bottom: none;
+    text-decoration: none; }
 
 @media (min-width: 480px) {
   /* line 1, ../sass/modules/_header.scss */
@@ -1888,117 +1897,9 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     .menu li.current a, .menu li a:focus, .menu li a:hover {
       color: #1b1b1b; }
 
-/* line 3, ../sass/pages/_userHome.scss */
-#pkp-user-userHome #content > a:first-child {
-  display: inline-block;
-  margin-bottom: 1.5rem; }
-/* line 9, ../sass/pages/_userHome.scss */
-#pkp-user-userHome #myJournals h4 {
-  margin-bottom: 0; }
-/* line 15, ../sass/pages/_userHome.scss */
-#pkp-user-userHome #myJournals > div {
-  border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 0.75rem; }
-  /* line 18, ../sass/pages/_userHome.scss */
-  #pkp-user-userHome #myJournals > div:last-child {
-    border-bottom: none; }
-
-/* line 5, ../sass/pages/_siteAdmin.scss */
-#siteManagement,
-#adminFunctions {
-  margin-bottom: 1.5rem; }
-
-/* line 2, ../sass/pages/_siteSettings.scss */
-#pkp-admin-siteSettings input[name="deletePageHeaderTitleImage"] {
-  margin: 0.75rem 0;
-  float: right; }
-/* line 6, ../sass/pages/_siteSettings.scss */
-#pkp-admin-siteSettings #oneStepReset {
-  margin-top: 0.495rem; }
-
-/* line 2, ../sass/pages/_helpPopup.scss */
-#pkp-common-openJournalSystems #main h4 {
-  font-size: 51px;
-  font-size: 3.157rem;
-  line-height: 60px;
-  line-height: 3.75rem;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  padding-top: 1.5rem;
-  margin-bottom: 0; }
-/* line 11, ../sass/pages/_helpPopup.scss */
-#pkp-common-openJournalSystems div.thickSeparator {
-  border-bottom: 1px solid #CCC; }
-/* line 14, ../sass/pages/_helpPopup.scss */
-#pkp-common-openJournalSystems #sidebar {
-  padding-top: 1.5rem; }
-
-/* line 2, ../sass/pages/_authSources.scss */
-#pkp-admin-authSources .listing {
-  margin-bottom: 1.5rem; }
-
-/* line 4, ../sass/pages/_adminCategories.scss */
-#pkp-admin-categories #content > br:first-of-type {
-  display: none; }
-/* line 7, ../sass/pages/_adminCategories.scss */
-#pkp-admin-categories #content form input:first-of-type {
-  margin-top: 1.5rem; }
-/* line 10, ../sass/pages/_adminCategories.scss */
-#pkp-admin-categories #content input.button, #pkp-admin-categories #pkp-user-userHome #content > a:first-child, #pkp-user-userHome #pkp-admin-categories #content > a:first-child, #pkp-admin-categories #content #pkp-section-sections #sections > input.action, #pkp-section-sections #pkp-admin-categories #content #sections > input.action, #pkp-admin-categories #content #pkp-manager-reviewForms #reviewForms > input.action, #pkp-manager-reviewForms #pkp-admin-categories #content #reviewForms > input.action, #pkp-admin-categories #content #pkp-manager-reviewFormElements #reviewFormElements > input.action, #pkp-manager-reviewFormElements #pkp-admin-categories #content #reviewFormElements > input.action, #pkp-admin-categories #pkp-journal-journals #content p input.action, #pkp-journal-journals #pkp-admin-categories #content p input.action {
-  margin: 1.5rem 0; }
-/* line 15, ../sass/pages/_adminCategories.scss */
-#pkp-admin-categories #categories > a {
-  margin-top: 1.5rem; }
-
-/* line 3, ../sass/pages/_journalPolicies.scss */
-#pkp-manager-setup-journalPolicies #reviewProcess .separator {
-  display: none; }
-/* line 7, ../sass/pages/_journalPolicies.scss */
-#pkp-manager-setup-journalPolicies #reviewProcess td.label {
-  text-align: left; }
-/* line 12, ../sass/pages/_journalPolicies.scss */
-#pkp-manager-setup-journalPolicies .instruct {
-  display: block; }
-
-/* line 3, ../sass/pages/_guidingSubmissions.scss */
-#pkp-manager-setup-guidingSubmissions #submissionPreparationChecklist input[type="submit"] {
-  margin-left: 0; }
-  @media (min-width: 768px) {
-    /* line 3, ../sass/pages/_guidingSubmissions.scss */
-    #pkp-manager-setup-guidingSubmissions #submissionPreparationChecklist input[type="submit"] {
-      margin-left: 1.5rem; } }
-/* line 12, ../sass/pages/_guidingSubmissions.scss */
-#pkp-manager-setup-guidingSubmissions #parserFilterGridContainer h3, #pkp-manager-setup-guidingSubmissions #lookupFilterGridContainer h3 {
-  font-size: 21px;
-  font-size: 1.333rem;
-  line-height: 36px;
-  line-height: 2.25rem; }
-
-/* line 2, ../sass/pages/_filesBrowser.scss */
-#pkp-manager-filesBrowser .listing,
-#pkp-manager-filesBrowser #content form {
-  margin-bottom: 1.5rem; }
-
-/* line 3, ../sass/pages/_sections.scss */
-#pkp-section-sections #sections > .action {
-  margin-top: 1.5rem; }
-
-/* line 3, ../sass/pages/_reviewForms.scss */
-#pkp-manager-reviewForms #reviewForms > .action {
-  margin-top: 1.5rem; }
-
-/* line 12, ../sass/pages/_reviewForms.scss */
-#pkp-manager-reviewFormElements #reviewFormElements > .action {
-  margin-top: 1.5rem; }
-/* line 16, ../sass/pages/_reviewForms.scss */
-#pkp-manager-reviewFormElements #reviewFormElements br {
-  display: none; }
-/* line 19, ../sass/pages/_reviewForms.scss */
-#pkp-manager-reviewFormElements #reviewFormElements form > p {
-  margin-top: 1.5rem; }
-
-/* line 3, ../sass/pages/_journals.scss */
-#pkp-journal-journals #content p .action {
-  margin-top: 1.5rem; }
+/* line 2, ../sass/pages/_commonLanguages.scss */
+#page-common-languages .listing {
+  table-layout: fixed; }
 
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets
@@ -2042,19 +1943,19 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   /* line 48, ../sass/layout/_layout.scss */
   .rightsidebar #main {
     float: left;
-    width: 77%; } }
+    width: 80%; } }
 
 @media (min-width: 600px) {
   /* line 57, ../sass/layout/_layout.scss */
   .leftsidebar #main {
     float: right;
-    width: 77%; } }
+    width: 80%; } }
 
 @media (min-width: 600px) {
   /* line 66, ../sass/layout/_layout.scss */
   .leftsidebar.rightsidebar #main {
     float: left;
-    width: 54%; } }
+    width: 60%; } }
 
 /* line 74, ../sass/layout/_layout.scss */
 #left-sidebar {
@@ -2064,7 +1965,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     /* line 74, ../sass/layout/_layout.scss */
     #left-sidebar {
       float: left;
-      width: 23%;
+      width: 20%;
       border-right: 1px solid #CCC; } }
 
 /* line 87, ../sass/layout/_layout.scss */
@@ -2075,7 +1976,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     /* line 87, ../sass/layout/_layout.scss */
     #right-sidebar {
       float: right;
-      width: 23%;
+      width: 20%;
       border-left: 1px solid #CCC; } }
 
 /* line 101, ../sass/layout/_layout.scss */

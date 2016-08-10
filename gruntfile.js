@@ -95,7 +95,7 @@ module.exports = function(grunt) {
 		  main: {
 		    files: [
 		      // includes files within path
-		      {expand: true, src: ['clean-rwd/**'], dest: '/home/nacho/Sites/ojs/plugins/themes/'}
+		      {expand: true, src: ['clean-rwd/**'], dest: '/home/nacho/Sites/paideia/plugins/themes/'}
 		    ],
 		  },
 		}

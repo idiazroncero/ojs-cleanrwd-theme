@@ -32,18 +32,19 @@
 @import "modules/menu";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
-@import "pages/userHome";
-@import "pages/siteAdmin";
-@import "pages/siteSettings";
-@import "pages/helpPopup";
-@import "pages/authSources";
-@import "pages/adminCategories";
-@import "pages/journalPolicies";
-@import "pages/guidingSubmissions";
-@import "pages/filesBrowser";
-@import "pages/sections";
-@import "pages/reviewForms";
-@import "pages/journals";
+// @import "pages/userHome";
+// @import "pages/siteAdmin";
+// @import "pages/siteSettings";
+// @import "pages/helpPopup";
+// @import "pages/authSources";
+// @import "pages/adminCategories";
+// @import "pages/journalPolicies";
+// @import "pages/guidingSubmissions";
+// @import "pages/filesBrowser";
+// @import "pages/sections";
+// @import "pages/reviewForms";
+// @import "pages/journals";
+@import "pages/commonLanguages";
 
 // Layout
 @import "layout/layout";

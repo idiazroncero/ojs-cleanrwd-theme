@@ -106,8 +106,7 @@
 
 		{$additionalHeadData}
 	</head>
-	<body id="page-{$pageTitle|replace:'.':'-'}" class="{if $leftSidebarCode}leftsidebar{/if}{if $rightSidebarCode}rightsidebar{/if}
-	">
+	<body id="page-{$pageTitle|replace:'.':'-'}" class="{if $leftSidebarCode}leftsidebar{/if}{if $rightSidebarCode} rightsidebar{/if}">
 		<div id="main-wrapper">
 			<header id="header">
 				<div id="header-title">
