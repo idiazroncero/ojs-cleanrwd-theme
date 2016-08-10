@@ -1895,6 +1895,26 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 #page-common-languages .listing {
   table-layout: fixed; }
 
+/* line 1, ../sass/pages/_journalSetup.scss */
+.journal-setup__steps {
+  margin: 0 0 1.5rem 0;
+  padding: 0 0 0 1.125rem; }
+  /* line 4, ../sass/pages/_journalSetup.scss */
+  .journal-setup__steps li {
+    margin-bottom: 1.5rem; }
+    /* line 5, ../sass/pages/_journalSetup.scss */
+    .journal-setup__steps li a {
+      font-size: 21px;
+      font-size: 1.333rem;
+      line-height: 36px;
+      line-height: 2.25rem;
+      display: block; }
+      /* line 22, ../sass/init/_mixins.scss */
+      .journal-setup__steps li a:link, .journal-setup__steps li a:visited, .journal-setup__steps li a:focus, .journal-setup__steps li a:hover, .journal-setup__steps li a:active {
+        border-bottom: none;
+        text-decoration: none;
+        color: #1b1b1b; }
+
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets
  */

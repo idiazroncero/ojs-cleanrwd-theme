@@ -1,0 +1,12 @@
+.journal-setup__steps {
+	margin: 0 0 rhythm(1) 0;
+	padding:0 0 0 rhythm(0.75);
+	li {
+		a {
+			@include adjust-font-size-to($h4-font-size);
+			display:block;
+			@include matar-link($black);
+		}
+		margin-bottom:rhythm(1);
+	}
+}
