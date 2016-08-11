@@ -160,7 +160,7 @@
 
 	<div class="form-row">
 		{fieldLabel name="publisherNote" key="manager.setup.note"}
-		<textarea name="publisherNote[{$formLocale|escape}]" id="publisherNote" rows="5" cols="40" class="textArea">{$publisherNote[$formLocale]|escape}</textarea>
+		<textarea name="publisherNote[{$formLocale|escape}]" id="publisherNote" class="textArea">{$publisherNote[$formLocale]|escape}</textarea>
 		<p class="instruct">{translate key="manager.setup.publisherNoteDescription"}</p>	
 	</div>
 	<div class="form-row">
@@ -181,137 +181,128 @@
 <p>{translate key="manager.setup.sponsorsDescription"}</p>
 
 
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="sponsorNote" key="manager.setup.note"}
+	<div class="form-row">
+		{fieldLabel name="sponsorNote" key="manager.setup.note"}
+		<textarea name="sponsorNote[{$formLocale|escape}]" id="sponsorNote" class="textArea">{$sponsorNote[$formLocale]|escape}</textarea>
+		<p class="instruct">{translate key="manager.setup.sponsorNoteDescription"}</p>
 		
-			<textarea name="sponsorNote[{$formLocale|escape}]" id="sponsorNote" rows="5" cols="40" class="textArea">{$sponsorNote[$formLocale]|escape}</textarea>
-			
-			<span class="instruct">{translate key="manager.setup.sponsorNoteDescription"}</span>
-		
-	</tr>
+	</div>
 {foreach name=sponsors from=$sponsors key=sponsorId item=sponsor}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="sponsors-$sponsorId-institution" key="manager.setup.institution"}
+	<div class="form-row">
+		{fieldLabel name="sponsors-$sponsorId-institution" key="manager.setup.institution"}
 		<input type="text" name="sponsors[{$sponsorId|escape}][institution]" id="sponsors-{$sponsorId|escape}-institution" value="{$sponsor.institution|escape}" size="40" maxlength="90" class="textField" />{if $smarty.foreach.sponsors.total > 1} <input type="submit" name="delSponsor[{$sponsorId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="sponsors-$sponsorId-url" key="common.url"}
+	</div>
+
+	<div class="form-row">
+		{fieldLabel name="sponsors-$sponsorId-url" key="common.url"}
 		<input type="text" name="sponsors[{$sponsorId|escape}][url]" id="sponsors-{$sponsorId|escape}-url" value="{$sponsor.url|escape}" size="40" maxlength="255" class="textField" />
-	</tr>
-	{if !$smarty.foreach.sponsors.last}
-	<tr >
-		<td colspan="2" class="separator">&nbsp;
-	</tr>
-	{/if}
+	</div>
+
 {foreachelse}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="sponsors-0-institution" key="manager.setup.institution"}
+	<div class="form-row">
+		{fieldLabel name="sponsors-0-institution" key="manager.setup.institution"}
 		<input type="text" name="sponsors[0][institution]" id="sponsors-0-institution" size="40" maxlength="90" class="textField" />
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="sponsors-0-url" key="common.url"}
+	</div>
+	<div class="form-row">
+		{fieldLabel name="sponsors-0-url" key="common.url"}
 		<input type="text" name="sponsors[0][url]" id="sponsors-0-url" size="40" maxlength="255" class="textField" />
-	</tr>
+	</div>
 {/foreach}
 
-<p><input type="submit" name="addSponsor" value="{translate key="manager.setup.addSponsor"}" class="button" /></p>
+<div class="buttons">
+	<input type="submit" name="addSponsor" value="{translate key="manager.setup.addSponsor"}" class="button" />
+</div>
 </section>
 
-<div class="separator"></div>
-
-<div id="contributors">
+<section id="contributors">
 <h3>1.7 {translate key="manager.setup.contributors"}</h3>
 
 <p>{translate key="manager.setup.contributorsDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="contributorNote" key="manager.setup.note"}
-		
-			<textarea name="contributorNote[{$formLocale|escape}]" id="contributorNote" rows="5" cols="40" class="textArea">{$contributorNote[$formLocale]|escape}</textarea>
-			
-			<span class="instruct">{translate key="manager.setup.contributorNoteDescription"}</span>
-		
-	</tr>
-{foreach name=contributors from=$contributors key=contributorId item=contributor}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="contributors-$contributorId-name" key="manager.setup.contributor"}
-		<input type="text" name="contributors[{$contributorId|escape}][name]" id="contributors-{$contributorId|escape}-name" value="{$contributor.name|escape}" size="40" maxlength="90" class="textField" />{if $smarty.foreach.contributors.total > 1} <input type="submit" name="delContributor[{$contributorId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="contributors-$contributorId-url" key="common.url"}
-		<input type="text" name="contributors[{$contributorId|escape}][url]" id="contributors-{$contributorId|escape}-url" value="{$contributor.url|escape}" size="40" maxlength="255" class="textField" />
-	</tr>
-	{if !$smarty.foreach.contributors.last}
-	<tr >
-		<td colspan="2" class="separator">&nbsp;
-	</tr>
-	{/if}
-{foreachelse}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="contributors-0-name" key="manager.setup.contributor"}
-		<input type="text" name="contributors[0][name]" id="contributors-0-name" size="40" maxlength="90" class="textField" />
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="contributors-0-url" key="common.url"}
-		<input type="text" name="contributors[0][url]" id="contributors-0-url" size="40" maxlength="255" class="textField" />
-	</tr>
-{/foreach}
-</table>
 
-<p><input type="submit" name="addContributor" value="{translate key="manager.setup.addContributor"}" class="button" /></p>
+	<div class="form-row">
+		{fieldLabel name="contributorNote" key="manager.setup.note"}
+		<textarea name="contributorNote[{$formLocale|escape}]" id="contributorNote" class="textArea">{$contributorNote[$formLocale]|escape}</textarea>
+		<p class="instruct">{translate key="manager.setup.contributorNoteDescription"}</p>
+	</div>
+
+{foreach name=contributors from=$contributors key=contributorId item=contributor}
+	<div class="form-row">
+		{fieldLabel name="contributors-$contributorId-name" key="manager.setup.contributor"}
+		<input type="text" name="contributors[{$contributorId|escape}][name]" id="contributors-{$contributorId|escape}-name" value="{$contributor.name|escape}" size="40" maxlength="90" class="textField" />{if $smarty.foreach.contributors.total > 1} <input type="submit" name="delContributor[{$contributorId|escape}]" value="{translate key="common.delete"}" class="button" />{/if}
+	</div>
+	<div class="form-row">
+		{fieldLabel name="contributors-$contributorId-url" key="common.url"}
+		<input type="text" name="contributors[{$contributorId|escape}][url]" id="contributors-{$contributorId|escape}-url" value="{$contributor.url|escape}" size="40" maxlength="255" class="textField" />
+	</div>
+
+{foreachelse}
+	<div class="form-row">
+		{fieldLabel name="contributors-0-name" key="manager.setup.contributor"}
+		<input type="text" name="contributors[0][name]" id="contributors-0-name" size="40" maxlength="90" class="textField" />
+	</div>
+	<div class="form-row">
+		{fieldLabel name="contributors-0-url" key="common.url"}
+		<input type="text" name="contributors[0][url]" id="contributors-0-url" size="40" maxlength="255" class="textField" />
+	</div>
+{/foreach}
+
+
+<div class="buttons">
+	<input type="submit" name="addContributor" value="{translate key="manager.setup.addContributor"}" class="button" />
 </div>
 
-<div class="separator"></div>
+</section>
 
-<div id="searchEngineIndexing">
+
+<section id="searchEngineIndexing">
 <h3>1.8 {translate key="manager.setup.searchEngineIndexing"}</h3>
 
 <p>{translate key="manager.setup.searchEngineIndexingDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="searchDescription" key="common.description"}
+
+	<div class="form-row">
+		{fieldLabel name="searchDescription" key="common.description"}
 		<input type="text" name="searchDescription[{$formLocale|escape}]" id="searchDescription" value="{$searchDescription[$formLocale]|escape}" size="40" class="textField" />
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="searchKeywords" key="common.keywords"}
+	</div>
+
+	<div class="form-row">
+		{fieldLabel name="searchKeywords" key="common.keywords"}
 		<input type="text" name="searchKeywords[{$formLocale|escape}]" id="searchKeywords" value="{$searchKeywords[$formLocale]|escape}" size="40" class="textField" />
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="customHeaders" key="manager.setup.customTags"}
+	</div>
+
+	<div class="form-row">
+		{fieldLabel name="customHeaders" key="manager.setup.customTags"}
+		<textarea name="customHeaders[{$formLocale|escape}]" id="customHeaders" class="textArea">{$customHeaders[$formLocale]|escape}</textarea>
+		<p class="instruct">{translate key="manager.setup.customTagsDescription"}</p>
 		
-			<textarea name="customHeaders[{$formLocale|escape}]" id="customHeaders" rows="3" cols="40" class="textArea">{$customHeaders[$formLocale]|escape}</textarea>
-			
-			<span class="instruct">{translate key="manager.setup.customTagsDescription"}</span>
-		
-	</tr>
-</table>
-</div>
-
-<div class="separator"></div>
+	</div>
 
 
+</section>
+
+
+<section>
 <h3>1.9 {translate key="manager.setup.history"}</h3>
 
 <p>{translate key="manager.setup.historyDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="history" key="manager.setup.history"}
+
+	<div class="form-row">
+		{fieldLabel name="history" key="manager.setup.history"}
+		<textarea name="history[{$formLocale|escape}]" id="history" rows="5" cols="40" class="textArea">{$history[$formLocale]|escape}</textarea>
 		
-			<textarea name="history[{$formLocale|escape}]" id="history" rows="5" cols="40" class="textArea">{$history[$formLocale]|escape}</textarea>
-		
-	</tr>
-</table>
+	</div>
+
+</section>
 
 
-<div class="separator"></div>
 
+<div class="buttons">
+	<input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" />&nbsp;<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" />
+</div>
 
-<p><input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
-
-<p><span class="form-required">{translate key="common.requiredField"}</span></p>
+<p class="form-required">{translate key="common.requiredField"}</p>
 
 </form>
 

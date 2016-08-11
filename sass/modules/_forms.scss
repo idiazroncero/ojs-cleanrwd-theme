@@ -41,6 +41,10 @@ input[type="text"], input[type="password"] {
 	padding:0 rhythm(0.25);
 }
 
+textarea {
+	width:100%;
+}
+
 
 //
 // BUTTONS
@@ -175,6 +179,9 @@ input[type="text"], input[type="password"] {
 		display:inline;
 		margin-right: $gutter/2;
 		margin-bottom:0;
+	}
+	.label--normal {
+		font-weight:normal;
 	}
 }
 

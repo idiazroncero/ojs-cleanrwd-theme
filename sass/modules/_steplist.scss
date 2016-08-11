@@ -5,7 +5,8 @@
 ul.steplist {
 	// Respect vrhythm
 	margin: 0 0 rhythm(1) 0;
-	padding:0;
+	padding:0 0 rhythm(0.25) 0;
+	border-bottom:1px solid $line-color-light;
 }
 
 ul.steplist li {
@@ -25,10 +26,10 @@ ul.steplist li {
 			border-right:none;
 		}
 	}
-}
-
-ul.steplist li.current a {
-	// add a border to mark currently selected item
-	border-bottom:rhythm(0.125) solid $line-color;
-	margin-bottom:rhythm(-0.125);
+	&.current {
+		font-weight:bold;
+	}
+	&.current a, a:focus, a:hover  {
+		color: $black;
+	}
 }

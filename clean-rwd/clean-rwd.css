@@ -885,7 +885,11 @@ select {
 input[type="text"], input[type="password"] {
   padding: 0 0.375rem; }
 
-/* line 49, ../sass/modules/_forms.scss */
+/* line 44, ../sass/modules/_forms.scss */
+textarea {
+  width: 100%; }
+
+/* line 53, ../sass/modules/_forms.scss */
 .button {
   padding: 0 0.75rem;
   display: inline-block;
@@ -904,26 +908,26 @@ input[type="text"], input[type="password"] {
   background-color: #fff;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 65, ../sass/modules/_forms.scss */
+  /* line 69, ../sass/modules/_forms.scss */
   .button:hover {
     text-decoration: none; }
-  /* line 90, ../sass/modules/_forms.scss */
+  /* line 94, ../sass/modules/_forms.scss */
   .button:link, .button:visited, .button:focus, .button:active {
     color: #333; }
-  /* line 93, ../sass/modules/_forms.scss */
+  /* line 97, ../sass/modules/_forms.scss */
   .button:hover {
     background: #3C7861;
     color: #fff; }
 
-/* line 106, ../sass/modules/_forms.scss */
+/* line 110, ../sass/modules/_forms.scss */
 .button--cancel {
   border: 1px solid #A34531; }
-  /* line 126, ../sass/modules/_forms.scss */
+  /* line 130, ../sass/modules/_forms.scss */
   .button--cancel:hover {
     background: #A34531;
     color: #fff; }
 
-/* line 139, ../sass/modules/_forms.scss */
+/* line 143, ../sass/modules/_forms.scss */
 .button--small {
   padding: 0 0.375rem;
   font-size: 14px;
@@ -931,100 +935,103 @@ input[type="text"], input[type="password"] {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 148, ../sass/modules/_forms.scss */
+/* line 152, ../sass/modules/_forms.scss */
 .settings-form select + input[type="submit"],
 .settings-form input + input[type="submit"] {
   margin-left: -1px; }
-/* line 154, ../sass/modules/_forms.scss */
+/* line 158, ../sass/modules/_forms.scss */
 .settings-form input[type="file"] + input[type="submit"],
 .settings-form .instruct + input[type="submit"] {
   vertical-align: baseline;
   margin-left: 12px; }
 
-/* line 161, ../sass/modules/_forms.scss */
+/* line 165, ../sass/modules/_forms.scss */
 .form-row {
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px dotted #e0e0e0; }
-  /* line 165, ../sass/modules/_forms.scss */
+  /* line 169, ../sass/modules/_forms.scss */
   .form-row label, .form-row .label {
     font-weight: bold;
     margin-bottom: 1.5rem;
     display: block; }
-    /* line 169, ../sass/modules/_forms.scss */
+    /* line 173, ../sass/modules/_forms.scss */
     .form-row label .instruct, .form-row .label .instruct {
       font-weight: normal;
       display: block; }
-  /* line 174, ../sass/modules/_forms.scss */
+  /* line 178, ../sass/modules/_forms.scss */
   .form-row .label--inline {
     display: inline;
     margin-right: 12px;
     margin-bottom: 0; }
+  /* line 183, ../sass/modules/_forms.scss */
+  .form-row .label--normal {
+    font-weight: normal; }
 
-/* line 181, ../sass/modules/_forms.scss */
+/* line 188, ../sass/modules/_forms.scss */
 .form-subrow {
   padding-left: 30px;
   margin-left: 6px;
   border-left: 1px solid #e0e0e0; }
-  /* line 185, ../sass/modules/_forms.scss */
+  /* line 192, ../sass/modules/_forms.scss */
   .form-subrow:last-of-type {
     padding-bottom: 0; }
-  /* line 188, ../sass/modules/_forms.scss */
+  /* line 195, ../sass/modules/_forms.scss */
   .form-subrow label {
     font-weight: normal;
     display: inline;
     font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
     margin: 0 24px 0 0; }
-  /* line 194, ../sass/modules/_forms.scss */
+  /* line 201, ../sass/modules/_forms.scss */
   .form-subrow .label--heading {
     font-weight: bold;
     display: block;
     margin: 0 24px 0.75rem 0; }
 
-/* line 201, ../sass/modules/_forms.scss */
+/* line 208, ../sass/modules/_forms.scss */
 .form-group {
   margin-bottom: 0.75rem; }
 
-/* line 205, ../sass/modules/_forms.scss */
+/* line 212, ../sass/modules/_forms.scss */
 .instruct {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   line-height: 18px;
   line-height: 1.125rem;
   margin: 0; }
   @media (min-width: 480px) {
-    /* line 205, ../sass/modules/_forms.scss */
+    /* line 212, ../sass/modules/_forms.scss */
     .instruct {
       font-size: 14px;
       font-size: 0.85rem;
       line-height: 18px;
       line-height: 1.125rem; } }
 
-/* line 214, ../sass/modules/_forms.scss */
+/* line 221, ../sass/modules/_forms.scss */
 .instruct--spaced {
   margin-bottom: 1.5rem; }
 
-/* line 218, ../sass/modules/_forms.scss */
+/* line 225, ../sass/modules/_forms.scss */
 .buttons {
   padding: 12px;
   background: #f5f5f5;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #CCC; }
 
-/* line 225, ../sass/modules/_forms.scss */
+/* line 232, ../sass/modules/_forms.scss */
 .options {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 228, ../sass/modules/_forms.scss */
+  /* line 235, ../sass/modules/_forms.scss */
   .options a {
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
 
-/* line 233, ../sass/modules/_forms.scss */
+/* line 240, ../sass/modules/_forms.scss */
 .form-required {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1033,7 +1040,7 @@ input[type="text"], input[type="password"] {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   color: #cccccc; }
 
-/* line 239, ../sass/modules/_forms.scss */
+/* line 246, ../sass/modules/_forms.scss */
 .form-error {
   color: #A34531;
   font-size: 14px;
@@ -1041,16 +1048,16 @@ input[type="text"], input[type="password"] {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 244, ../sass/modules/_forms.scss */
+/* line 251, ../sass/modules/_forms.scss */
 .form-error--box {
   background: #A34531;
   padding: 0.375rem 0.75rem;
   color: #fff; }
 
-/* line 250, ../sass/modules/_forms.scss */
+/* line 257, ../sass/modules/_forms.scss */
 input:disabled, .disabled {
   opacity: 0.5; }
-  /* line 252, ../sass/modules/_forms.scss */
+  /* line 259, ../sass/modules/_forms.scss */
   input:disabled:hover, input:disabled:focus, .disabled:hover, .disabled:focus {
     color: inherit;
     background: inherit;
@@ -1662,9 +1669,10 @@ tbody td {
 /* line 5, ../sass/modules/_steplist.scss */
 ul.steplist {
   margin: 0 0 1.5rem 0;
-  padding: 0; }
+  padding: 0 0 0.375rem 0;
+  border-bottom: 1px solid #e0e0e0; }
 
-/* line 11, ../sass/modules/_steplist.scss */
+/* line 12, ../sass/modules/_steplist.scss */
 ul.steplist li {
   font-size: 16px;
   font-size: 1rem;
@@ -1674,21 +1682,22 @@ ul.steplist li {
   display: block;
   text-align: center; }
   @media (min-width: 480px) {
-    /* line 11, ../sass/modules/_steplist.scss */
+    /* line 12, ../sass/modules/_steplist.scss */
     ul.steplist li {
       display: inline;
       text-align: left;
       margin-right: 0.75rem;
       padding-right: 0.75rem;
       border-right: 1px solid #e0e0e0; }
-      /* line 24, ../sass/modules/_steplist.scss */
+      /* line 25, ../sass/modules/_steplist.scss */
       ul.steplist li:last-child {
         border-right: none; } }
-
-/* line 30, ../sass/modules/_steplist.scss */
-ul.steplist li.current a {
-  border-bottom: 0.1875rem solid #CCC;
-  margin-bottom: -0.1875rem; }
+  /* line 29, ../sass/modules/_steplist.scss */
+  ul.steplist li.current {
+    font-weight: bold; }
+  /* line 32, ../sass/modules/_steplist.scss */
+  ul.steplist li.current a, ul.steplist li a:focus, ul.steplist li a:hover {
+    color: #1b1b1b; }
 
 /* line 1, ../sass/modules/_filtergrid.scss */
 div.pkp_controllers_grid {
@@ -1784,7 +1793,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 .menu {
   padding: 0;
   margin: 0 0 1.5rem 0;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.375rem;
   border-bottom: 1px solid #e0e0e0;
   overflow: hidden;
   *zoom: 1; }
@@ -1795,14 +1804,11 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
     margin-right: 12px; }
     /* line 11, ../sass/modules/_menu.scss */
     .menu li a {
-      display: block;
-      font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+      font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+    /* line 14, ../sass/modules/_menu.scss */
+    .menu li.current {
       font-weight: bold; }
-      /* line 15, ../sass/modules/_menu.scss */
-      .menu li a:link, .menu li a:visited, .menu li a:focus, .menu li a:hover, .menu li a:active {
-        text-decoration: none;
-        border-bottom: none; }
-    /* line 20, ../sass/modules/_menu.scss */
+    /* line 17, ../sass/modules/_menu.scss */
     .menu li.current a, .menu li a:focus, .menu li a:hover {
       color: #1b1b1b; }
 
@@ -1863,11 +1869,9 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   font-weight: bold;
   margin-bottom: 0.75rem;
   padding: 0.375rem 0;
-  border-top: 1px solid #CCC; }
-  /* line 22, ../sass/init/_mixins.scss */
+  border-bottom: 1px solid #CCC; }
+  /* line 32, ../sass/init/_mixins.scss */
   .journal-admin__title a:link, .journal-admin__title a:visited, .journal-admin__title a:focus, .journal-admin__title a:hover, .journal-admin__title a:active {
-    border-bottom: none;
-    text-decoration: none;
     color: #1b1b1b; }
 
 /* line 27, ../sass/pages/_userHome.scss */
@@ -1879,10 +1883,8 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   display: inline-block;
   margin-right: 12px;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 22, ../sass/init/_mixins.scss */
+  /* line 32, ../sass/init/_mixins.scss */
   .journal-admin__count a:link, .journal-admin__count a:visited, .journal-admin__count a:focus, .journal-admin__count a:hover, .journal-admin__count a:active {
-    border-bottom: none;
-    text-decoration: none;
     color: #1b1b1b; }
 
 /* line 40, ../sass/pages/_userHome.scss */

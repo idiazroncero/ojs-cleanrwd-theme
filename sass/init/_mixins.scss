@@ -27,3 +27,11 @@
 		}
 	}
 }
+
+@mixin pintar-link($color:"") {
+	&:link, &:visited, &:focus, &:hover, &:active {
+		@if ($color != "") {
+			color: $color;
+		}
+	}
+}

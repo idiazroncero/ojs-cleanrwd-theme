@@ -18,9 +18,9 @@
 	font-weight:bold;
 	margin-bottom:rhythm(0.5);
 	padding:rhythm(0.25) 0;
-	border-top:1px solid $line-color;
+	border-bottom:1px solid $line-color;
 	a {
-		@include matar-link($black);
+		@include pintar-link($black);
 	}
 }
 
@@ -33,7 +33,7 @@
 	margin-right:$gutter / 2;
 	font-family:$alt-font-family;
 	a {
-		@include matar-link($black);
+		@include pintar-link($black);
 	}
 }
 
