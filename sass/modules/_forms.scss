@@ -163,12 +163,12 @@ textarea {
 }
 
 .form-row {
-	margin-bottom:rhythm(1);
-	padding-bottom:rhythm(1);
+	margin-bottom:rhythm(0.75);
+	padding-bottom:rhythm(0.75);
 	border-bottom:1px dotted $line-color-light;
 	label, .label {
 		font-weight:bold;
-		margin-bottom:rhythm(1);
+		margin-bottom:rhythm(0.5);
 		display:block;
 		.instruct {
 			font-weight:normal;
