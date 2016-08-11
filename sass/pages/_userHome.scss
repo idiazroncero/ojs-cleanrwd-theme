@@ -16,9 +16,12 @@
 
 .journal-admin__title {
 	font-weight:bold;
-	background:$white;
-	padding:rhythm(0.25);
-	margin-bottom:rhythm(1);
+	margin-bottom:rhythm(0.5);
+	padding:rhythm(0.25) 0;
+	border-top:1px solid $line-color;
+	a {
+		@include matar-link($black);
+	}
 }
 
 .journal-admin__role {
@@ -28,9 +31,13 @@
 .journal-admin__count {
 	display:inline-block;
 	margin-right:$gutter / 2;
+	font-family:$alt-font-family;
+	a {
+		@include matar-link($black);
+	}
 }
 
 .journal-admin__actions {
-	margin-top:rhythm(1);
+	margin-top:rhythm(0.5);
 	text-align:right;
 }

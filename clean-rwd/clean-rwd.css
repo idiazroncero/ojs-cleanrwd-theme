@@ -1861,22 +1861,33 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 /* line 17, ../sass/pages/_userHome.scss */
 .journal-admin__title {
   font-weight: bold;
-  background: #fff;
-  padding: 0.375rem;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 0.75rem;
+  padding: 0.375rem 0;
+  border-top: 1px solid #CCC; }
+  /* line 22, ../sass/init/_mixins.scss */
+  .journal-admin__title a:link, .journal-admin__title a:visited, .journal-admin__title a:focus, .journal-admin__title a:hover, .journal-admin__title a:active {
+    border-bottom: none;
+    text-decoration: none;
+    color: #1b1b1b; }
 
-/* line 24, ../sass/pages/_userHome.scss */
+/* line 27, ../sass/pages/_userHome.scss */
 .journal-admin__role {
   margin-bottom: 1.5rem; }
 
-/* line 28, ../sass/pages/_userHome.scss */
+/* line 31, ../sass/pages/_userHome.scss */
 .journal-admin__count {
   display: inline-block;
-  margin-right: 12px; }
+  margin-right: 12px;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+  /* line 22, ../sass/init/_mixins.scss */
+  .journal-admin__count a:link, .journal-admin__count a:visited, .journal-admin__count a:focus, .journal-admin__count a:hover, .journal-admin__count a:active {
+    border-bottom: none;
+    text-decoration: none;
+    color: #1b1b1b; }
 
-/* line 33, ../sass/pages/_userHome.scss */
+/* line 40, ../sass/pages/_userHome.scss */
 .journal-admin__actions {
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   text-align: right; }
 
 /**
