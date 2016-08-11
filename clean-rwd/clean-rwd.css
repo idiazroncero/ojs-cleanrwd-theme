@@ -1264,16 +1264,18 @@ input:disabled, .disabled {
 #sidebarFontSize #sizer a {
   margin: 0 0.75rem 0 0; }
 
-/* line 117, ../sass/modules/_sidebar.scss */
-#sidebarUser td label {
-  line-height: 18px;
-  line-height: 1.125rem; }
-/* line 120, ../sass/modules/_sidebar.scss */
-#sidebarUser td input[type="submit"] {
-  margin-top: 0.75rem;
+/* line 116, ../sass/modules/_sidebar.scss */
+#sidebarUser table, #sidebarUser tbody, #sidebarUser tr, #sidebarUser td, #sidebarNavigation table, #sidebarNavigation tbody, #sidebarNavigation tr, #sidebarNavigation td {
+  display: block; }
+/* line 119, ../sass/modules/_sidebar.scss */
+#sidebarUser td, #sidebarNavigation td {
+  padding: 0;
+  text-align: left; }
+/* line 123, ../sass/modules/_sidebar.scss */
+#sidebarUser input[type="text"], #sidebarUser input[type="password"], #sidebarUser input[type="submit"], #sidebarNavigation input[type="text"], #sidebarNavigation input[type="password"], #sidebarNavigation input[type="submit"] {
   width: 100%; }
-/* line 127, ../sass/modules/_sidebar.scss */
-#sidebarUser > br {
+/* line 126, ../sass/modules/_sidebar.scss */
+#sidebarUser br, #sidebarNavigation br {
   display: none; }
 
 /* line 1, ../sass/modules/_footer.scss */

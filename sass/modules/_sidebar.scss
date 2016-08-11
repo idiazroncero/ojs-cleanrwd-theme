@@ -112,19 +112,18 @@
 	}
 }
 
-#sidebarUser {
-	td {
-		label {
-			@include adjust-leading-to(0.75);
-		}
-		input[type="submit"] {
-			margin-top:rhythm(0.5);
-			width:100%;
-		}
+#sidebarUser, #sidebarNavigation {
+	table, tbody, tr, td {
+		display:block; // Screw the table!
 	}
-	// A bit hacky... make the first <br> disappear in order to avoid a newline between
-	// "logged in as" and the current user name.
-	> br {
-		display:none;
+	td {
+		padding:0;
+		text-align:left;
+	}
+	input[type="text"], input[type="password"], input[type="submit"] {
+		width:100%;
+	}
+	br {
+		display:none; // I WILL KILL THE BACK-END DEVELOPER WHO DID THIS
 	}
 }
