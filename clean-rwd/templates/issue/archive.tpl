@@ -43,7 +43,6 @@
 			<a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$issue->getIssueIdentification()|escape}</a>
 		</h4>
 		<p class="issues-item__desc">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, beatae. Amet magni fugiat laboriosam velit ex, earum placeat quos enim rem vitae voluptatibus cumque, nihil, at rerum facere alias beatae.
 			{$issue->getLocalizedCoverPageDescription()|strip_unsafe_html|nl2br}
 		</p>
 		</div>
@@ -60,9 +59,9 @@
 
 {if !$issues->wasEmpty()}
 	<div class="listing-pager">
-	{page_info iterator=$issues}&nbsp;&nbsp;&nbsp;&nbsp;
+	{page_info iterator=$issues}
 	{page_links anchor="issues" name="issues" iterator=$issues}
-		
+
 	</div>
 {else}
 	{translate key="current.noCurrentIssueDesc"}

@@ -33,4 +33,5 @@
 
 .issues-item__desc {
 	margin-bottom:0;
+	@include adjust-font-size-to($h5-font-size);
 }
