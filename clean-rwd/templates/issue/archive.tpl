@@ -20,28 +20,38 @@
 			{assign var=notFirstYear value=1}
 		{else}
 			</div>
-			
-			<div class="separator" style="clear:left;"></div>
 		{/if}
-		<div style="float: left; width: 100%;">
+		<div class="issues-year">
 		<h3>{$issue->getYear()|escape}</h3>
 		{assign var=lastYear value=$issue->getYear()}
 	{/if}
 
-	<div id="issue-{$issue->getId()}" style="clear:left;">
+	<div class="issues-item" id="issue-{$issue->getId()}">
 	{if $issue->getFileName($locale)}
 		{assign var="coverLocale" value="$locale"}
 	{else}
 		{assign var="coverLocale" value="$primaryLocale"}
 	{/if}
 	{if $issue->getFileName($coverLocale) && $issue->getShowCoverPage($coverLocale) && !$issue->getHideCoverPageArchives($coverLocale)}
-		<div class="issueCoverImage"><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}"><img src="{$coverPagePath|escape}{$issue->getFileName($coverLocale)|escape}"{if $issue->getCoverPageAltText($coverLocale) != ''} alt="{$issue->getCoverPageAltText($coverLocale)|escape}"{else} alt="{translate key="issue.coverPage.altText"}"{/if}/></a>
+		<div class="issues-item__img">
+			<a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">
+				<img src="{$coverPagePath|escape}{$issue->getFileName($coverLocale)|escape}"{if $issue->getCoverPageAltText($coverLocale) != ''} alt="{$issue->getCoverPageAltText($coverLocale)|escape}"{else} alt="{translate key="issue.coverPage.altText"}"{/if}/>
+			</a>
 		</div>
-		<h4><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$issue->getIssueIdentification()|escape}</a></h4>
-		<div class="issueCoverDescription">{$issue->getLocalizedCoverPageDescription()|strip_unsafe_html|nl2br}</div>
+		<div class="issues-item__text">
+		<h4>
+			<a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$issue->getIssueIdentification()|escape}</a>
+		</h4>
+		<p class="issues-item__desc">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, beatae. Amet magni fugiat laboriosam velit ex, earum placeat quos enim rem vitae voluptatibus cumque, nihil, at rerum facere alias beatae.
+			{$issue->getLocalizedCoverPageDescription()|strip_unsafe_html|nl2br}
+		</p>
+		</div>
 	{else}
-		<h4><a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$issue->getIssueIdentification()|escape}</a></h4>
-		<div class="issueDescription">{$issue->getLocalizedDescription()|strip_unsafe_html|nl2br}</div>
+		<h4>
+			<a href="{url op="view" path=$issue->getBestIssueId($currentJournal)}">{$issue->getIssueIdentification()|escape}</a>
+		</h4>
+		<p class="issueDescription">{$issue->getLocalizedDescription()|strip_unsafe_html|nl2br}</p>
 	{/if}
 	</div>
 
@@ -49,8 +59,11 @@
 {if $notFirstYear}</div>{/if}
 
 {if !$issues->wasEmpty()}
+	<div class="listing-pager">
 	{page_info iterator=$issues}&nbsp;&nbsp;&nbsp;&nbsp;
 	{page_links anchor="issues" name="issues" iterator=$issues}
+		
+	</div>
 {else}
 	{translate key="current.noCurrentIssueDesc"}
 {/if}

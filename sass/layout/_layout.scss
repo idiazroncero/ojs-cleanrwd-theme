@@ -98,7 +98,7 @@
 
 
 // We insert a clearfix inside body because we don't want it to lose its height (all its child elements are floated)
-#body {
+#main-wrapper {
 	@include clearfix();
 	// The HTML markup places sidebar avobe main, but on mobile phones we'd rather see the main content first.
 	// We can leverage flexbox to achieve this.
@@ -108,10 +108,23 @@
 	}
 }
 
-#sidebar {
-	order:2
-}
-
-#main {
-	order:1;
+@include breakpoint(max-width $sidebar-breakpoint) {
+	#header {
+		order:1;
+	}
+	#nav {
+		order:2;
+	}
+	#main {
+		order:3;
+	}
+	#left-sidebar {
+		order:4;
+	}
+	#right-sidebar {
+		order:5;		
+	}
+	#footer {
+		order:6;
+	}
 }

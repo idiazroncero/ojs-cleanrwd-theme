@@ -1,0 +1,36 @@
+#issues {
+
+}
+
+.issues-year {
+	@include clearfix();
+	@extend .section;
+}
+
+.issues-item {
+	display:flex;
+	margin-bottom:rhythm(2);
+}
+
+.issues-item__img {
+	margin-right:$gutter * 2;
+	width:100px;
+	flex:0 0 100px;
+	float:left; // Fallback
+	a {
+		@include matar-link();
+	}
+	a, img {
+		display:block
+	}
+}
+
+.issues-item__text {
+	h4 {
+		@include adjust-leading-to(1);
+	}
+}
+
+.issues-item__desc {
+	margin-bottom:0;
+}
