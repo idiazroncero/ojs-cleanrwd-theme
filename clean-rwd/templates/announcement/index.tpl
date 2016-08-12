@@ -14,50 +14,37 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<div id="announcementList">
-<table class="announcements">
+<section id="announcement-list">
+
 {if $announcementsIntroduction != null}
-	<tr class="intro">
-		<td colspan="2" class="intro">{$announcementsIntroduction|nl2br}</td>
-	</tr>
+	{$announcementsIntroduction|nl2br}
 {/if}
 {iterate from=announcements item=announcement}
-	<tr class="title">
+	<article class="announcement">
 	{if $announcement->getTypeId()}
-		<td class="title"><h4>{$announcement->getAnnouncementTypeName()|escape}: {$announcement->getLocalizedTitle()|escape}</h4></td>
+		<h4 class="announcement__title">{$announcement->getAnnouncementTypeName()|escape}: {$announcement->getLocalizedTitle()|escape}</h4>
 	{else}
-		<td class="title"><h4>{$announcement->getLocalizedTitle()|escape}</h4></td>
+		<h4 class="announcement__title">{$announcement->getLocalizedTitle()|escape}</h4>
 	{/if}
-		<td class="more">&nbsp;</td>
-	</tr>
-	<tr class="description">
-		<td class="description">{$announcement->getLocalizedDescriptionShort()|nl2br}</td>
-		<td class="more">&nbsp;</td>
-	</tr>
-	<tr class="details">
-		<td class="posted">{translate key="announcement.posted"}: {$announcement->getDatePosted()}</td>
+
+		<div class="announcement__description">{$announcement->getLocalizedDescriptionShort()|nl2br}</div>
+
+		<div class="announcement__details">{translate key="announcement.posted"}: {$announcement->getDatePosted()}
 		{if $announcement->getLocalizedDescription() != null}
-			<td class="more"><a href="{url op="view" path=$announcement->getId()}">{translate key="announcement.viewLink"}</a></td>
+			<span class="announcement__more action"><a href="{url op="view" path=$announcement->getId()}">{translate key="announcement.viewLink"}</a></span>
 		{/if}
-	</tr>
-	<tr>
-		<td colspan="2" class="{if $announcements->eof()}end{/if}separator">&nbsp;</td>
-	</tr>
+		</div>
+	</article>
 {/iterate}
 {if $announcements->wasEmpty()}
-	<tr>
-		<td colspan="2" class="nodata">{translate key="announcement.noneExist"}</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="endseparator">&nbsp;</td>
-	</tr>
+	<p>{translate key="announcement.noneExist"}</p>
 {else}
-	<tr>
-		<td align="left">{page_info iterator=$announcements}</td>
-		<td align="right">{page_links anchor="announcements" name="announcements" iterator=$announcements}</td>
-	</tr>
+	<div class="listing-pager">
+		{page_info iterator=$announcements}
+		{page_links anchor="announcements" name="announcements" iterator=$announcements}
+	</div>
 {/if}
-</table>
-</div>
+
+</section>
 
 {include file="common/footer.tpl"}
