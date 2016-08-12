@@ -58,7 +58,7 @@
 					{assign var=$filterName value=""}
 				{/if}
 				{* Display a link to the same search query without this filter *}
-				<a href="{url query=$query searchJournal=$searchJournal abstract=$abstract authors=$authors title=$title
+				<a class="button" href="{url query=$query searchJournal=$searchJournal abstract=$abstract authors=$authors title=$title
 							galleyFullText=$galleyFullText suppFiles=$suppFiles discipline=$discipline subject=$subject
 							type=$type coverage=$coverage indexTerms=$indexTerms
 							dateFromMonth=$dateFromMonth dateFromDay=$dateFromDay dateFromYear=$dateFromYear

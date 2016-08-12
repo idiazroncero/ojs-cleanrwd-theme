@@ -39,10 +39,10 @@
 				</div>
 			{/if}
 			{if $hasActiveFilters}
-				<div class="form-row">
-					<h4>{translate key="search.activeFilters"}</h4>
-				</div>
-				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="authors" filterValue=$authors key="search.author"}
+			<div class="form-row">
+				<h4>{translate key="search.activeFilters"}</h4>
+				<div class="form-subrow">
+					{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="authors" filterValue=$authors key="search.author"}
 				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="title" filterValue=$title key="article.title"}
 				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="abstract" filterValue=$abstract key="search.abstract"}
 				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="galleyFullText" filterValue=$galleyFullText key="search.fullText"}
@@ -54,6 +54,8 @@
 				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="type" filterValue=$type key="search.typeMethodApproach"}
 				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="coverage" filterValue=$coverage key="search.coverage"}
 				{include file="search/searchFilter.tpl" displayIf="activeFilter" filterName="indexTerms" filterValue=$indexTerms key="search.indexTermsLong"}
+			</div>
+		</div>
 			{/if}
 		
 		{if $hasEmptyFilters}
