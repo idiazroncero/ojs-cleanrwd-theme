@@ -43,6 +43,12 @@
 	margin-bottom:rhythm(1);
 }
 
+.sidebars-wrapper {
+	@include breakpoint($sidebar-breakpoint) {
+		display:flex;
+	}
+}
+
 .rightsidebar {
 	@include breakpoint($sidebar-breakpoint) {
 		#main {

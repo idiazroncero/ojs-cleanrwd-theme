@@ -36,6 +36,7 @@
 				{$rightSidebarCode}
 			</aside>
 		{/if}
+		</div>
 		{if $pageFooter}
 			<footer id="footer">{$pageFooter}</footer>
 		{/if}

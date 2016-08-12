@@ -66,9 +66,10 @@
 		{$rightSidebarCode}
 	</aside>
 {/if}
-<footer id="footer">
-	<p>(C) idiaz.roncero<p>
-</footer>
+</div>
+		{if $pageFooter}
+			<footer id="footer">{$pageFooter}</footer>
+		{/if}
 
 {if $defineTermsContextId}
 <script type="text/javascript">

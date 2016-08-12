@@ -1,0 +1,43 @@
+#search {
+	.toggleExtras {
+		font-family: $alt-font-family;
+		font-weight:bold;
+		@include adjust-font-size-to($h5-font-size);
+		cursor:pointer;
+		text-transform:uppercase;
+		@extend .form-row;
+	}
+	.extrasContainer {
+		padding:rhythm(0.5);
+		background: $smoke;
+	}
+}
+
+.search__instructions {
+	h4 {
+		@include adjust-font-size-to($base-font-size);
+	}
+	li {
+		@include adjust-font-size-to($h6-font-size);
+	}
+}
+
+.search__result {
+	@extend .form-row;
+	h4 {
+		@include adjust-font-size-to($base-font-size);
+		margin-bottom:0;
+	}
+}
+
+.search__result__issue {
+	margin-bottom:rhythm(0.5);
+}
+
+.search__result__access {
+	@include adjust-font-size-to($h6-font-size);
+}
+
+.search__result__author {
+	@include adjust-font-size-to($h5-font-size);
+}

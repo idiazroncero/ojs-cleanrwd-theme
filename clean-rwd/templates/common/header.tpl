@@ -136,6 +136,7 @@
 					{include file="common/breadcrumbs.tpl"}
 				</nav>
 			</div>
+			<div class="sidebars-wrapper">
 			{if $leftSidebarCode}
 				<aside id="left-sidebar" class="sidebar">
 					{$leftSidebarCode}

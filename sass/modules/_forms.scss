@@ -14,8 +14,7 @@ form {
 input,
 select {
 	@include adjust-font-size-to($h5-font-size, 1.25);
-	// No background for inputs, just a clean box
-	background-color: transparent;
+	background-color: #fff;
 	// Custom border-radius
 	border-radius: $border-radius;
 	// We want a clean, plain border.
