@@ -121,16 +121,21 @@
 	#nav {
 		order:2;
 	}
-	#main {
-		order:3;
-	}
-	#left-sidebar {
+	.sidebars-wrapper {
+		display:flex;
+		flex-direction:column;
 		order:4;
 	}
+	#main {
+		order:1;
+	}
+	#left-sidebar {
+		order:2;
+	}
 	#right-sidebar {
-		order:5;		
+		order:3;		
 	}
 	#footer {
-		order:6;
+		order:5;
 	}
 }

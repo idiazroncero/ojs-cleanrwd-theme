@@ -2132,31 +2132,47 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
             order: 2; }
 
   /* line 124, ../sass/layout/_layout.scss */
-  #main {
-    -webkit-box-ordinal-group: 4;
-    -webkit-order: 3;
-        -ms-flex-order: 3;
-            order: 3; }
-
-  /* line 127, ../sass/layout/_layout.scss */
-  #left-sidebar {
+  .sidebars-wrapper {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
     -webkit-box-ordinal-group: 5;
     -webkit-order: 4;
         -ms-flex-order: 4;
             order: 4; }
 
-  /* line 130, ../sass/layout/_layout.scss */
+  /* line 129, ../sass/layout/_layout.scss */
+  #main {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1; }
+
+  /* line 132, ../sass/layout/_layout.scss */
+  #left-sidebar {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2; }
+
+  /* line 135, ../sass/layout/_layout.scss */
   #right-sidebar {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3; }
+
+  /* line 138, ../sass/layout/_layout.scss */
+  #footer {
     -webkit-box-ordinal-group: 6;
     -webkit-order: 5;
         -ms-flex-order: 5;
-            order: 5; }
-
-  /* line 133, ../sass/layout/_layout.scss */
-  #footer {
-    -webkit-box-ordinal-group: 7;
-    -webkit-order: 6;
-        -ms-flex-order: 6;
-            order: 6; } }
+            order: 5; } }
 
 /*# sourceMappingURL=maps/clean-rwd.css.map */
