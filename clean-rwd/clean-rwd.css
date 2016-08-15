@@ -515,7 +515,7 @@ a:hover {
 body {
   color: #333;
   font-family: Merriweather, Georgia, Times, serif;
-  background-color: #E9E9D6; }
+  background-color: #fff; }
 
 /* line 127, ../sass/init/_ojs-normalize.scss */
 #main-wrapper {
@@ -526,6 +526,11 @@ div.separator {
   margin: 1.5rem 0;
   border-bottom: 2px solid #CCC;
   position: relative; }
+
+/* line 143, ../sass/init/_ojs-normalize.scss */
+.delete-actions .action {
+  font-size: inherit;
+  font-family: inherit; }
 
 /**
  * Overrides OJS's base stylesheet /lib/pkp/styles/common.css.
@@ -1055,8 +1060,7 @@ input:disabled, .disabled {
   font-size: 0.707rem;
   line-height: 18px;
   line-height: 1.125rem;
-  text-align: center;
-  color: #fff; }
+  text-align: center; }
   /* line 7, ../sass/modules/_breadcrumbs.scss */
   #breadcrumb a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1066,12 +1070,6 @@ input:disabled, .disabled {
     /* line 1, ../sass/modules/_breadcrumbs.scss */
     #breadcrumb {
       text-align: left; } }
-  /* line 6, ../sass/init/_mixins.scss */
-  #breadcrumb p, #breadcrumb span, #breadcrumb label {
-    color: #fff; }
-  /* line 9, ../sass/init/_mixins.scss */
-  #breadcrumb a, #breadcrumb a:link, #breadcrumb a:visited, #breadcrumb a:focus, #breadcrumb a:hover, #breadcrumb a:active {
-    color: #fff; }
 
 /* line 1, ../sass/modules/_navbar.scss */
 .main-menu {
@@ -1079,8 +1077,7 @@ input:disabled, .disabled {
   overflow: hidden;
   *zoom: 1;
   border-bottom: 1px solid #CCC;
-  margin-bottom: 1.5rem;
-  color: #fff; }
+  margin-bottom: 1.5rem; }
   @media (min-width: 480px) {
     /* line 1, ../sass/modules/_navbar.scss */
     .main-menu {
@@ -1125,17 +1122,10 @@ input:disabled, .disabled {
         width: auto; } }
     /* line 56, ../sass/modules/_navbar.scss */
     .main-menu li:hover {
-      border-color: #1b1b1b;
-      border-color: #fff; }
+      border-color: #1b1b1b; }
     /* line 62, ../sass/modules/_navbar.scss */
     .main-menu li .current {
       font-weight: bold; }
-  /* line 6, ../sass/init/_mixins.scss */
-  .main-menu p, .main-menu span, .main-menu label {
-    color: #fff; }
-  /* line 9, ../sass/init/_mixins.scss */
-  .main-menu a, .main-menu a:link, .main-menu a:visited, .main-menu a:focus, .main-menu a:hover, .main-menu a:active {
-    color: #fff; }
 
 /* line 8, ../sass/modules/_registerform.scss */
 #registerForm tr .label {
@@ -1274,20 +1264,6 @@ input:disabled, .disabled {
     line-height: 24px;
     line-height: 1.5rem;
     margin: 0; }
-
-/* line 1, ../sass/modules/_main.scss */
-#main h2 {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-  font-weight: normal;
-  border-bottom: 1px solid #CCC; }
-
-/* line 10, ../sass/modules/_main.scss */
-#main h3 {
-  margin: 0 0 1.5rem 0;
-  padding-top: 0;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
 /* line 17, ../sass/modules/_main.scss */
 #content {
@@ -1687,36 +1663,21 @@ ul.steplist li {
     color: #1b1b1b; }
 
 /* line 1, ../sass/modules/_filtergrid.scss */
-div.pkp_controllers_grid {
+.pkp_controllers_grid {
   margin-bottom: 1.5rem;
   padding: 0.75rem;
-  border: 1px solid #e0e0e0; }
+  border: 1px solid #e0e0e0;
+  background: #fff; }
+  /* line 8, ../sass/modules/_filtergrid.scss */
+  .pkp_controllers_grid h3 {
+    margin: 0; }
+  /* line 12, ../sass/modules/_filtergrid.scss */
+  .pkp_controllers_grid table th, .pkp_controllers_grid table td {
+    text-align: left !important; }
 
-/* line 9, ../sass/modules/_filtergrid.scss */
-div.pkp_controllers_grid .wrapper {
+/* line 18, ../sass/modules/_filtergrid.scss */
+.pkp_controllers_grid .wrapper {
   margin-bottom: 1.5rem; }
-
-/* line 14, ../sass/modules/_filtergrid.scss */
-div.pkp_controllers_grid .grid_header_bar {
-  background-color: transparent;
-  padding: 0;
-  margin-bottom: 0.75rem; }
-
-/* line 21, ../sass/modules/_filtergrid.scss */
-div.pkp_controllers_grid .options {
-  float: none; }
-  /* line 23, ../sass/modules/_filtergrid.scss */
-  div.pkp_controllers_grid .options a {
-    float: none;
-    font-size: 14px;
-    font-size: 0.85rem;
-    line-height: 24px;
-    line-height: 1.5rem;
-    margin-left: 1.5rem; }
-
-/* line 32, ../sass/modules/_filtergrid.scss */
-div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty td {
-  padding-left: 0; }
 
 /* line 3, ../sass/modules/_uidialog.scss */
 .ui-dialog {
@@ -1951,6 +1912,15 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   display: block;
   margin: 0 auto; }
 
+/* line 1, ../sass/pages/_guidingSubmissions.scss */
+#citationFilterSetupToggle {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+
 /* line 2, ../sass/pages/_commonLanguages.scss */
 #page-common-languages .listing {
   table-layout: fixed; }
@@ -2041,15 +2011,14 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 
 /* line 12, ../sass/layout/_layout.scss */
 #header {
-  background-color: #ff9900;
+  background-color: #fff;
   padding: 1.5rem 0;
-  padding: 1.5rem 24px;
   width: 100%;
   text-align: center; }
 
 /* line 22, ../sass/layout/_layout.scss */
 #nav {
-  background-color: #333;
+  background-color: #fff;
   padding: 0.75rem 24px;
   margin-bottom: 1.5rem; }
 
@@ -2061,7 +2030,7 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 
 /* line 34, ../sass/layout/_layout.scss */
 #footer {
-  background-color: #E9E9D6;
+  background-color: #fff;
   padding: 0.75rem 0; }
 
 /* line 42, ../sass/layout/_layout.scss */

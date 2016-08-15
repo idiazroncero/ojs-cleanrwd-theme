@@ -138,3 +138,10 @@ div.separator {
 	border-bottom: 2px solid #CCC;
 	position:relative;
 }
+
+.delete-actions {
+	.action {
+		font-size:inherit;
+		font-family:inherit;
+	}
+}
