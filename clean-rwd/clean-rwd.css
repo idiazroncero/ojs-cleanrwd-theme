@@ -1810,15 +1810,27 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
 /* line 9, ../sass/modules/_issue.scss */
 .issue-article {
   margin-bottom: 1.5rem; }
+  @media (min-width: 768px) {
+    /* line 9, ../sass/modules/_issue.scss */
+    .issue-article {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
 
-/* line 13, ../sass/modules/_issue.scss */
+/* line 17, ../sass/modules/_issue.scss */
 .issue-toc {
   font-size: 21px;
   font-size: 1.333rem;
   line-height: 36px;
   line-height: 2.25rem; }
 
-/* line 21, ../sass/modules/_issue.scss */
+/* line 25, ../sass/modules/_issue.scss */
 .issue-article__authors {
   font-size: 14px;
   font-size: 0.85rem;
@@ -1827,10 +1839,15 @@ div.pkp_controllers_grid thead th:first-child, div.pkp_controllers_grid .empty t
   font-weight: bold;
   font-style: italic; }
 
-/* line 27, ../sass/modules/_issue.scss */
+/* line 31, ../sass/modules/_issue.scss */
 .issue-article__galleys {
-  padding: 0; }
-  /* line 29, ../sass/modules/_issue.scss */
+  padding: 0 0 0 24px;
+  text-align: right; }
+  @media (min-width: 768px) {
+    /* line 31, ../sass/modules/_issue.scss */
+    .issue-article__galleys {
+      margin-left: auto; } }
+  /* line 37, ../sass/modules/_issue.scss */
   .issue-article__galleys li {
     list-style-type: none;
     display: inline;

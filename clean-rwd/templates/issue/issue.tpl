@@ -48,6 +48,7 @@
 	{call_hook name="Templates::Issue::Issue::ArticleCoverImage"}
 
 	<article class="issue-article">
+		<div class="issue-article__info">
 		<div class="issue-article__title">
 			{if !$hasAccess || $hasAbstract}
 				<a href="{url page="article" op="view" path=$articlePath}">{$article->getLocalizedTitle()|strip_unsafe_html}</a>
@@ -64,12 +65,12 @@
 				&nbsp;
 			{/if}
 		</div>
-
+	</div>
 	<ul class="issue-article__galleys">
 			{if $hasAccess || ($subscriptionRequired && $showGalleyLinks)}
 				{foreach from=$article->getGalleys() item=galley name=galleyList}
 				<li>
-					<a href="{url page="article" op="view" path=$articlePath|to_array:$galley->getBestGalleyId($currentJournal)}" {if $galley->getRemoteURL()}target="_blank" {/if}class="file">{$galley->getGalleyLabel()|escape}</a>
+					<a href="{url page="article" op="view" path=$articlePath|to_array:$galley->getBestGalleyId($currentJournal)}" {if $galley->getRemoteURL()}target="_blank" {/if}class="button button--small">{$galley->getGalleyLabel()|escape}</a>
 					{if $subscriptionRequired && $showGalleyLinks && $restrictOnlyPdf}
 						{if $article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN || !$galley->isPdfGalley()}
 							<img class="accessLogo" src="{$baseUrl}/lib/pkp/templates/images/icons/fulltext_open_medium.gif" alt="{translate key="article.accessLogoOpen.altText"}" />

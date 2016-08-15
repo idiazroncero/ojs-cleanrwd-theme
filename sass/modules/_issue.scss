@@ -8,6 +8,10 @@
 
 .issue-article {
 	margin-bottom: rhythm(1);
+	@include breakpoint($medium){
+		display:flex;
+		flex-direction:row;
+	}
 }
 
 .issue-toc {
@@ -25,7 +29,11 @@
 }
 
 .issue-article__galleys {
-	padding:0;
+	padding:0 0 0 $gutter;
+	text-align:right;
+	@include breakpoint($medium){
+		margin-left:auto;
+	}
 	li {
 		list-style-type:none;
 		display:inline;
