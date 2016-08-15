@@ -96,6 +96,7 @@ Type `gem install breakpoint` and `gem install compass` in your terminal to get 
 - Separate OJS resets and opinionated styles (i.e. menu hover effects).
 - Support Issue Subscription
 - Support Issue Galleys
+- Modify controllers' HTML (instead of overriding it)
 
 
 

@@ -114,3 +114,14 @@ tbody {
 	font-family:$alt-font-family;
 	@include matar-link();
 }
+
+%table-pseudoresponsive { // Used whenever we can't rewrite the table html
+	@include breakpoint(max-width $medium) {
+		thead {
+			display:none;
+		}
+		tbody, td, tr {
+			display:block;
+		}
+	}
+}

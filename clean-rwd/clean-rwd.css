@@ -528,7 +528,7 @@ div.separator {
   position: relative; }
 
 /* line 143, ../sass/init/_ojs-normalize.scss */
-.delete-actions .action {
+.delete-actions .action, .delete-actions .pkp_controllers_grid .hidetext, .pkp_controllers_grid .delete-actions .hidetext {
   font-size: inherit;
   font-family: inherit; }
 
@@ -880,7 +880,7 @@ textarea {
   width: 100%; }
 
 /* line 52, ../sass/modules/_forms.scss */
-.button {
+.button, .pkp_controllers_grid .row_controls a {
   padding: 0 0.75rem;
   display: inline-block;
   vertical-align: middle;
@@ -899,26 +899,26 @@ textarea {
   border: 1px solid #3C7861;
   color: #333; }
   /* line 68, ../sass/modules/_forms.scss */
-  .button:hover {
+  .button:hover, .pkp_controllers_grid .row_controls a:hover {
     text-decoration: none; }
   /* line 93, ../sass/modules/_forms.scss */
-  .button:link, .button:visited, .button:focus, .button:active {
+  .button:link, .pkp_controllers_grid .row_controls a:link, .button:visited, .pkp_controllers_grid .row_controls a:visited, .button:focus, .pkp_controllers_grid .row_controls a:focus, .button:active, .pkp_controllers_grid .row_controls a:active {
     color: #333; }
   /* line 96, ../sass/modules/_forms.scss */
-  .button:hover {
+  .button:hover, .pkp_controllers_grid .row_controls a:hover {
     background: #3C7861;
     color: #fff; }
 
 /* line 109, ../sass/modules/_forms.scss */
-.button--cancel {
+.button--cancel, .pkp_controllers_grid .row_controls a.delete {
   border: 1px solid #A34531; }
   /* line 129, ../sass/modules/_forms.scss */
-  .button--cancel:hover {
+  .button--cancel:hover, .pkp_controllers_grid .row_controls a.delete:hover {
     background: #A34531;
     color: #fff; }
 
 /* line 142, ../sass/modules/_forms.scss */
-.button--small {
+.button--small, .pkp_controllers_grid .row_controls a {
   padding: 0 0.375rem;
   font-size: 14px;
   font-size: 0.85rem;
@@ -1219,7 +1219,7 @@ input:disabled, .disabled {
       color: #cccccc; }
 
 /* line 84, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle select, #sidebarLanguageToggle .button {
+#sidebarLanguageToggle select, #sidebarLanguageToggle .button, #sidebarLanguageToggle .pkp_controllers_grid .row_controls a, .pkp_controllers_grid .row_controls #sidebarLanguageToggle a {
   width: 100%; }
 /* line 87, ../sass/modules/_sidebar.scss */
 #sidebarLanguageToggle select {
@@ -1232,7 +1232,7 @@ input:disabled, .disabled {
 #simpleSearchForm input, #simpleSearchForm select {
   width: 100%; }
 /* line 102, ../sass/modules/_sidebar.scss */
-#simpleSearchForm .button {
+#simpleSearchForm .button, #simpleSearchForm .pkp_controllers_grid .row_controls a, .pkp_controllers_grid .row_controls #simpleSearchForm a {
   margin-top: 0.75rem; }
 
 /* line 109, ../sass/modules/_sidebar.scss */
@@ -1395,7 +1395,7 @@ tbody td {
   text-align: center; }
 
 /* line 111, ../sass/modules/_tables.scss */
-.action {
+.action, .pkp_controllers_grid .hidetext {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 12px;
@@ -1403,9 +1403,17 @@ tbody td {
   display: inline-block;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
   /* line 22, ../sass/init/_mixins.scss */
-  .action:link, .action:visited, .action:focus, .action:hover, .action:active {
+  .action:link, .pkp_controllers_grid .hidetext:link, .action:visited, .pkp_controllers_grid .hidetext:visited, .action:focus, .pkp_controllers_grid .hidetext:focus, .action:hover, .pkp_controllers_grid .hidetext:hover, .action:active, .pkp_controllers_grid .hidetext:active {
     border-bottom: none;
     text-decoration: none; }
+
+@media (max-width: 768px) {
+  /* line 120, ../sass/modules/_tables.scss */
+  .pkp_controllers_grid table thead {
+    display: none; }
+  /* line 123, ../sass/modules/_tables.scss */
+  .pkp_controllers_grid table tbody, .pkp_controllers_grid table td, .pkp_controllers_grid table tr {
+    display: block; } }
 
 @media (min-width: 480px) {
   /* line 1, ../sass/modules/_header.scss */
@@ -1662,20 +1670,24 @@ ul.steplist li {
   ul.steplist li.current a, ul.steplist li a:focus, ul.steplist li a:hover {
     color: #1b1b1b; }
 
-/* line 1, ../sass/modules/_filtergrid.scss */
+/* line 4, ../sass/modules/_filtergrid.scss */
 .pkp_controllers_grid {
   margin-bottom: 1.5rem;
   padding: 0.75rem;
   border: 1px solid #e0e0e0;
   background: #fff; }
-  /* line 8, ../sass/modules/_filtergrid.scss */
+  /* line 11, ../sass/modules/_filtergrid.scss */
   .pkp_controllers_grid h3 {
     margin: 0; }
-  /* line 12, ../sass/modules/_filtergrid.scss */
-  .pkp_controllers_grid table th, .pkp_controllers_grid table td {
+  /* line 15, ../sass/modules/_filtergrid.scss */
+  .pkp_controllers_grid table th {
     text-align: left !important; }
+  /* line 21, ../sass/modules/_filtergrid.scss */
+  .pkp_controllers_grid .row_controls td {
+    padding: 0;
+    text-align: right; }
 
-/* line 18, ../sass/modules/_filtergrid.scss */
+/* line 38, ../sass/modules/_filtergrid.scss */
 .pkp_controllers_grid .wrapper {
   margin-bottom: 1.5rem; }
 
@@ -1684,24 +1696,25 @@ ul.steplist li {
   background: #fff;
   padding: 0.75rem;
   border-radius: 0;
-  border: none; }
-  /* line 12, ../sass/modules/_uidialog.scss */
+  border: 0.375rem solid #1b1b1b;
+  box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.33); }
+  /* line 13, ../sass/modules/_uidialog.scss */
   .ui-dialog .pkp_form select {
     width: 99%; }
-  /* line 16, ../sass/modules/_uidialog.scss */
+  /* line 17, ../sass/modules/_uidialog.scss */
   .ui-dialog .pkp_form input {
     width: auto; }
 
-/* line 21, ../sass/modules/_uidialog.scss */
+/* line 26, ../sass/modules/_uidialog.scss */
 .ui-dialog .ui-dialog-content {
   padding: 0;
   background: transparent !important; }
-  /* line 26, ../sass/modules/_uidialog.scss */
+  /* line 31, ../sass/modules/_uidialog.scss */
   .ui-dialog .ui-dialog-content h3 {
     font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
     margin-top: 0; }
 
-/* line 34, ../sass/modules/_uidialog.scss */
+/* line 39, ../sass/modules/_uidialog.scss */
 .ui-dialog .ui-dialog-buttonpane,
 .ui-dialog .ui-dialog-content {
   border: none;
@@ -1709,19 +1722,19 @@ ul.steplist li {
   color: #333;
   padding: 0; }
 
-/* line 42, ../sass/modules/_uidialog.scss */
+/* line 47, ../sass/modules/_uidialog.scss */
 .ui-dialog .ui-dialog-buttonpane {
   margin-top: 1.5rem; }
 
-/* line 46, ../sass/modules/_uidialog.scss */
+/* line 51, ../sass/modules/_uidialog.scss */
 .ui-dialog .ui-dialog-buttonpane button {
   margin: 0 0 0 1.5rem; }
 
-/* line 50, ../sass/modules/_uidialog.scss */
+/* line 55, ../sass/modules/_uidialog.scss */
 .ui-widget {
   font-family: Merriweather, Georgia, Times, serif; }
 
-/* line 55, ../sass/modules/_uidialog.scss */
+/* line 60, ../sass/modules/_uidialog.scss */
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
   border: none;
   background: none;

@@ -43,9 +43,9 @@
 		{call_hook|assign:"leftSidebarCode" name="Templates::Common::LeftSidebar"}
 		{call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}
 
-		{foreach from=$stylesheets item=cssUrl}
+<!-- 		{foreach from=$stylesheets item=cssUrl}
 			<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-		{/foreach}
+		{/foreach} -->
 
 		<!-- Default global locale keys for JavaScript -->
 		{include file="common/jsLocaleKeys.tpl" }

@@ -1,3 +1,6 @@
+// We don't have time to modify the controller's HTML
+// so we override it.
+
  .pkp_controllers_grid {
  	// use vertical rhythm
  	margin-bottom:rhythm(1);
@@ -9,9 +12,26 @@
  		margin:0;
  	}
  	table {
- 		th, td {
+ 		th {
  			text-align:left !important;
  		}
+ 		@extend %table-pseudoresponsive;
+ 	}
+ 	.row_controls {
+ 		td {
+ 			padding:0;
+ 			text-align:right;
+ 		}
+ 		a {
+ 			@extend .button;
+ 			@extend .button--small;
+ 			&.delete {
+ 				@extend .button--cancel;
+ 			}
+ 		}
+ 	}
+ 	.hidetext {
+ 		@extend .action;
  	}
  }
 
