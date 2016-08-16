@@ -14,7 +14,7 @@
   font-weight: normal;
   font-style: normal; }
 /* line 4, ../sass/external/font-awesome/_core.scss */
-.fa, .ui-icon-closethick {
+.fa, .ui-icon-closethick, #pdfDownloadLinkContainer {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -85,10 +85,10 @@
   float: right; }
 
 /* line 14, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-left, .fa-pull-left.ui-icon-closethick {
+.fa.fa-pull-left, .fa-pull-left.ui-icon-closethick, .fa-pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 15, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-right, .fa-pull-right.ui-icon-closethick {
+.fa.fa-pull-right, .fa-pull-right.ui-icon-closethick, .fa-pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -101,10 +101,10 @@
   float: left; }
 
 /* line 23, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-left, .pull-left.ui-icon-closethick {
+.fa.pull-left, .pull-left.ui-icon-closethick, .pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 24, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-right, .pull-right.ui-icon-closethick {
+.fa.pull-right, .pull-right.ui-icon-closethick, .pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* line 4, ../sass/external/font-awesome/_animated.scss */
@@ -305,7 +305,7 @@
   content: ""; }
 
 /* line 31, ../sass/external/font-awesome/_icons.scss */
-.fa-download:before {
+.fa-download:before, #pdfDownloadLinkContainer:before {
   content: ""; }
 
 /* line 32, ../sass/external/font-awesome/_icons.scss */
@@ -4829,6 +4829,18 @@ ul.steplist li {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+
+/* line 24, ../sass/pages/_article.scss */
+#pdfDownloadLinkContainer {
+  display: block;
+  text-align: right;
+  margin-bottom: 1.5rem; }
+  /* line 30, ../sass/pages/_article.scss */
+  #pdfDownloadLinkContainer a {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 24px;
+    line-height: 1.5rem; }
 
 /* line 1, ../sass/pages/_guidingSubmissions.scss */
 #citationFilterSetupToggle {

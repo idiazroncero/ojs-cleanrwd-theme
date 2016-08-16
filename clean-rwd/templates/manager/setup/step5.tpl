@@ -604,7 +604,7 @@ function prepBlockFields() {
 
 <div class="buttons">
 	<input type="submit" onclick="prepBlockFields()" value="{translate key="common.saveAndContinue"}" class="button defaultButton" />
-	<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" />
+	<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" />ç
 </div>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
