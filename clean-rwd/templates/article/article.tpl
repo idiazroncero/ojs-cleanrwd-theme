@@ -43,25 +43,25 @@
 		</div>
 	{/if}
 	{call_hook name="Templates::Article::Article::ArticleCoverImage"}
-	<div id="articleTitle"><h3>{$article->getLocalizedTitle()|strip_unsafe_html}</h3></div>
-	<div id="authorString"><em>{$article->getAuthorString()|escape}</em></div>
+	<h3 id="article-title">{$article->getLocalizedTitle()|strip_unsafe_html}</h3>
+	<div id="article-author"><em>{$article->getAuthorString()|escape}</em></div>
 	
 	{if $article->getLocalizedAbstract()}
-		<div id="articleAbstract">
+		<section class="section" id="article-abstract">
 		<h4>{translate key="article.abstract"}</h4>
 		
 		<div>{$article->getLocalizedAbstract()|strip_unsafe_html|nl2br}</div>
 		
-		</div>
+		</section>
 	{/if}
 
 	{if $article->getLocalizedSubject()}
-		<div id="articleSubject">
-		<h4>{translate key="article.subject"}</h4>
+		<section class="section" id="article-subject">
+		<h4><i class="fa fa-tags"></i>&nbsp;{translate key="article.subject"}</h4>
 		
-		<div>{$article->getLocalizedSubject()|escape}</div>
+		<div class="article-tags">{$article->getLocalizedSubject()|escape}</div>
 		
-		</div>
+		</section>
 	{/if}
 
 	{if (!$subscriptionRequired || $article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN || $subscribedUser || $subscribedDomain)}
@@ -71,11 +71,11 @@
 	{/if}
 
 	{if $galleys}
-		<div id="articleFullText">
-		<h4>{translate key="reader.fullText"}</h4>
+		<section class="section" id="article-fulltext">
+		<h4><i class="fa fa-file-text-o"></i>&nbsp;{translate key="reader.fullText"}</h4>
 		{if $hasAccess || ($subscriptionRequired && $showGalleyLinks)}
 			{foreach from=$article->getGalleys() item=galley name=galleyList}
-				<a href="{url page="article" op="view" path=$article->getBestArticleId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal)}" class="file" {if $galley->getRemoteURL()}target="_blank"{else}target="_parent"{/if}>{$galley->getGalleyLabel()|escape}</a>
+				<a href="{url page="article" op="view" path=$article->getBestArticleId($currentJournal)|to_array:$galley->getBestGalleyId($currentJournal)}" class="file button button--small" {if $galley->getRemoteURL()}target="_blank"{else}target="_parent"{/if}>{$galley->getGalleyLabel()|escape}</a>
 				{if $subscriptionRequired && $showGalleyLinks && $restrictOnlyPdf}
 					{if $article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN || !$galley->isPdfGalley()}
 						<img class="accessLogo" src="{$baseUrl}/lib/pkp/templates/images/icons/fulltext_open_medium.gif" alt="{translate key="article.accessLogoOpen.altText"}" />
@@ -94,11 +94,11 @@
 		{else}
 			&nbsp;<a href="{url page="about" op="subscriptions"}" target="_parent">{translate key="reader.subscribersOnly"}</a>
 		{/if}
-		</div>
+		</section>
 	{/if}
 
 	{if $citationFactory->getCount()}
-		<div id="articleCitations">
+		<div id="article-citations">
 		<h4>{translate key="submission.citations"}</h4>
 		
 		<div>
@@ -139,7 +139,9 @@
 		{/foreach}
 	{/foreach}
 {/if}
+
 {call_hook name="Templates::Article::MoreInfo"}
+
 {include file="article/comments.tpl"}
 
 {include file="article/footer.tpl"}

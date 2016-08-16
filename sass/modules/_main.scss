@@ -29,5 +29,6 @@
 // Explicitly separated sections
 .section {
 	margin-bottom:rhythm(1);
+	padding-bottom:rhythm(1);
 	border-bottom:1px dotted $line-color-light;
 }

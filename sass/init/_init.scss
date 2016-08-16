@@ -22,7 +22,10 @@ $header-alignment: center;
 
 // Should we use animated fade-ins for interactions?
 $transitions: true;
-$transitions-speed: 0.25s; 
+$transitions-speed: 0.25s;
+
+// Show or hide breadcrumbs
+$show-breadcrumbs: false;
 
 
 
@@ -110,13 +113,13 @@ $line-color: #CCC;
 $line-color-light: tint($line-color, 40%);
 
 // Background-color for the whole webpage
-$background-color: #fff; // #E9E9D6;
+$background-color: #f5f5f5; // #E9E9D6;
 // Background-color for the #container wrapper
 $container-background-color: #fff;
 // Background-color for the #header wrapper
-$header-background-color: #fff; // #ff9900;
+$header-background-color: #ff9900; // #fff; // #ff9900;
 // Background-color for the #header wrapper
-$nav-background-color: #fff; //#CCDAE3;
+$nav-background-color: #333; //#CCDAE3;
 // Background-color for the #header wrapper
 $footer-background-color: #fff; //#CCDAE3;
 

@@ -54,10 +54,7 @@
 {/if}
 
 {call_hook name="Templates::Article::Footer::PageFooter"}
-{if $pageFooter}
 
-{$pageFooter}
-{/if}
 </section><!-- content -->
 </main><!-- main -->
 {call_hook|assign:"rightSidebarCode" name="Templates::Common::RightSidebar"}

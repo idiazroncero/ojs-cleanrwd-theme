@@ -3371,7 +3371,7 @@ a:hover {
 body {
   color: #333;
   font-family: Merriweather, Georgia, Times, serif;
-  background-color: #fff; }
+  background-color: #f5f5f5; }
 
 /* line 127, ../sass/init/_ojs-normalize.scss */
 #main-wrapper {
@@ -3379,11 +3379,9 @@ body {
 
 /* line 135, ../sass/init/_ojs-normalize.scss */
 div.separator {
-  margin: 1.5rem 0;
-  border-bottom: 2px solid #CCC;
-  position: relative; }
+  display: none; }
 
-/* line 143, ../sass/init/_ojs-normalize.scss */
+/* line 140, ../sass/init/_ojs-normalize.scss */
 .delete-actions .action, .delete-actions .pkp_controllers_grid .hidetext, .pkp_controllers_grid .delete-actions .hidetext {
   font-size: inherit;
   font-family: inherit; }
@@ -3918,13 +3916,15 @@ input:disabled, .disabled {
 
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
+  display: none;
   padding: 0;
   font-size: 11px;
   font-size: 0.707rem;
   line-height: 18px;
   line-height: 1.125rem;
-  text-align: center; }
-  /* line 7, ../sass/modules/_breadcrumbs.scss */
+  text-align: center;
+  color: #fff; }
+  /* line 10, ../sass/modules/_breadcrumbs.scss */
   #breadcrumb a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: -0.02rem;
@@ -3933,6 +3933,12 @@ input:disabled, .disabled {
     /* line 1, ../sass/modules/_breadcrumbs.scss */
     #breadcrumb {
       text-align: left; } }
+  /* line 6, ../sass/init/_mixins.scss */
+  #breadcrumb p, #breadcrumb span, #breadcrumb label {
+    color: #fff; }
+  /* line 9, ../sass/init/_mixins.scss */
+  #breadcrumb a, #breadcrumb a:link, #breadcrumb a:visited, #breadcrumb a:focus, #breadcrumb a:hover, #breadcrumb a:active {
+    color: #fff; }
 
 /* line 1, ../sass/modules/_navbar.scss */
 .main-menu {
@@ -3940,7 +3946,8 @@ input:disabled, .disabled {
   overflow: hidden;
   *zoom: 1;
   border-bottom: 1px solid #CCC;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem;
+  color: #fff; }
   @media (min-width: 480px) {
     /* line 1, ../sass/modules/_navbar.scss */
     .main-menu {
@@ -3985,10 +3992,17 @@ input:disabled, .disabled {
         width: auto; } }
     /* line 56, ../sass/modules/_navbar.scss */
     .main-menu li:hover {
-      border-color: #1b1b1b; }
+      border-color: #1b1b1b;
+      border-color: #fff; }
     /* line 62, ../sass/modules/_navbar.scss */
     .main-menu li .current {
       font-weight: bold; }
+  /* line 6, ../sass/init/_mixins.scss */
+  .main-menu p, .main-menu span, .main-menu label {
+    color: #fff; }
+  /* line 9, ../sass/init/_mixins.scss */
+  .main-menu a, .main-menu a:link, .main-menu a:visited, .main-menu a:focus, .main-menu a:hover, .main-menu a:active {
+    color: #fff; }
 
 /* line 8, ../sass/modules/_registerform.scss */
 #registerForm tr .label {
@@ -4138,6 +4152,7 @@ input:disabled, .disabled {
 /* line 30, ../sass/modules/_main.scss */
 .section, .issues-year {
   margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px dotted #e0e0e0; }
 
 /* line 1, ../sass/modules/_ui-pnotify.scss */
@@ -4801,6 +4816,33 @@ ul.steplist li {
   display: block;
   margin: 0 auto; }
 
+/* line 1, ../sass/pages/_article.scss */
+#article-title {
+  margin: 0; }
+
+/* line 5, ../sass/pages/_article.scss */
+#article-abstract {
+  margin-top: 3rem; }
+
+/* line 10, ../sass/pages/_article.scss */
+#article-subject h4, #article-fulltext h4 {
+  margin-bottom: 0.75rem;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  text-transform: uppercase; }
+  /* line 14, ../sass/pages/_article.scss */
+  #article-subject h4 i, #article-fulltext h4 i {
+    margin-right: 12px; }
+
+/* line 20, ../sass/pages/_article.scss */
+.article-tags {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+
 /* line 1, ../sass/pages/_guidingSubmissions.scss */
 #citationFilterSetupToggle {
   background: #f5f5f5;
@@ -4900,14 +4942,15 @@ ul.steplist li {
 
 /* line 12, ../sass/layout/_layout.scss */
 #header {
-  background-color: #fff;
+  background-color: #ff9900;
   padding: 1.5rem 0;
+  padding: 1.5rem 24px;
   width: 100%;
   text-align: center; }
 
 /* line 22, ../sass/layout/_layout.scss */
 #nav {
-  background-color: #fff;
+  background-color: #333;
   padding: 0.75rem 24px;
   margin-bottom: 1.5rem; }
 
@@ -4920,7 +4963,8 @@ ul.steplist li {
 /* line 34, ../sass/layout/_layout.scss */
 #footer {
   background-color: #fff;
-  padding: 0.75rem 0; }
+  padding: 0.75rem 0;
+  padding: 0.75rem 24px; }
 
 /* line 42, ../sass/layout/_layout.scss */
 .sidebar {

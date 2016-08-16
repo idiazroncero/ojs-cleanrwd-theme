@@ -1,4 +1,7 @@
 #breadcrumb {
+	@if ($show-breadcrumbs != true) {
+		display:none;
+	}
 	// Set padding to zero and margin bottom
 	padding: 0;
 	@include adjust-font-size-to($h6-font-size,0.75);

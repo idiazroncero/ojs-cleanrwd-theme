@@ -1,0 +1,22 @@
+#article-title {
+	margin:0;
+}
+
+#article-abstract {
+	margin-top:rhythm(2);
+}
+
+#article-subject, #article-fulltext {
+	h4 {
+		margin-bottom:rhythm(0.5);
+		@include adjust-font-size-to($base-font-size);
+		text-transform:uppercase;
+		i {
+			margin-right:$gutter/2;
+		}
+	}
+}
+
+.article-tags {
+	@include adjust-font-size-to($h5-font-size);
+}

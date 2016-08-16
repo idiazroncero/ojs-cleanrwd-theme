@@ -8,9 +8,11 @@
  * Article View -- Comments component.
  *
  *}
+
+
 {if $comments}
-<div class="separator"></div>
-<div id="commentsOnArticle">
+
+<section id="commentsOnArticle">
 <h4>{translate key="comments.commentsOnArticle"}</h4>
 
 <ul>
@@ -41,16 +43,13 @@
 
 <a href="{url page="comment" op="view" path=$article->getId()|to_array:$galleyId}" class="action" target="_parent">{translate key="comments.viewAllComments"}</a>
 
-{assign var=needsSeparator value=1}
-</div>
+
+</section>
 {/if}{* $comments *}
 
 {if $postingAllowed}
-	{if $needsSeparator}
-		&nbsp;|&nbsp;
-	{else}
-		
-	{/if}
-	<a class="action" href="{url page="comment" op="add" path=$article->getId()|to_array:$galleyId}" target="_parent">{translate key="rt.addComment"}</a>
+	<section class="section" id="commentsOnArticle">
+	<a class="button" href="{url page="comment" op="add" path=$article->getId()|to_array:$galleyId}" target="_parent">{translate key="rt.addComment"}</a>
+	</section>
 {/if}
 

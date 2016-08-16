@@ -133,10 +133,7 @@ body {
 // ========================================================
 
 div.separator {
-	// Set a bigger margin
-	margin:rhythm(1) 0;
-	border-bottom: 2px solid #CCC;
-	position:relative;
+	display:none;
 }
 
 .delete-actions {
