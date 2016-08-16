@@ -49,7 +49,8 @@ textarea {
 // BUTTONS
 //
 
-.button {
+.button,
+button {
 	// Padding as vertical rhythm.
 	// We need big, touch-screen ready buttons. That's why we set padding on four sides.
 	padding:0 rhythm(0.5);

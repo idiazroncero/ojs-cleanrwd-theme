@@ -1,64 +1,102 @@
 // Dialog modals
 
 .ui-dialog {
-	// White bg
 	background:$white;
-	// padding in vrhythm
 	padding:rhythm(0.5);
-	// No border
 	@include border-radius(0);
 	border:rhythm(0.25) solid $black;
 	box-shadow: 0px 0px 0px 9999px rgba(0,0,0,0.33);
-	// Forces to take 99% width to avoid overflow (present in original CSS; but overriden)
-	.pkp_form select {
-	width:99%;
-	}
-	// Corrects ugly error which greatly resizes checkbox inputs
-	.pkp_form input {
-		width:auto;
-	}
-	.ui-icon-closethick {
-		@extend .fa;
-		@extend .fa-times-circle;
-	}
+	max-width:100%;
 }
 
-.ui-dialog .ui-dialog-content {
-	// Padding was already set
-	padding:0;
-	// Color is defined in general
-	background:transparent !important;
-	h3 {
-		// Explicit override because theme.css messes it all!
-		font-family: $headlines;
-		// No margin inside modal
-		margin-top:0;
+// Header
+
+.ui-dialog-titlebar-close  {
+	@include matar-link($black);
+	float:right;
+}
+.ui-icon-closethick {
+	@extend .fa;
+	@extend .fa-times-circle;
+	font-size:1px;
+	color:transparent;
+	&:before {
+		@include adjust-font-size-to($h5-font-size);
+		color: $black;
 	}
 }
-
-.ui-dialog .ui-dialog-buttonpane,
-.ui-dialog .ui-dialog-content{
-	border:none;
-	background:transparent;
-	color:$font-color;
-	padding:0;
+.ui-dialog-titlebar {
+	margin-bottom:rhythm(0.25);
+	border-bottom: 1px solid $line-color;
+}
+.ui-dialog-title {
+	font-family:$alt-font-family;
+	@include adjust-font-size-to($h6-font-size);
+	font-weight:bold;
+	text-transform:uppercase;
 }
 
-.ui-dialog .ui-dialog-buttonpane {
-	margin-top:rhythm(1);
+// Content
+.ui-dialog-content  {
+	@include adjust-font-size-to($h5-font-size);
+	table {
+		@extend %table-pseudoresponsive;
+		td.label {
+			@extend .label;
+		}
+		li {
+			list-style-type:none;
+		}
+	}
+	.formRequired {
+		@extend .form-required;
+	}
 }
 
-.ui-dialog .ui-dialog-buttonpane button {
-	margin: 0 0 0 rhythm(1);
+.ui-dialog-buttonset {
+	@extend .buttons;
+	margin-bottom:0;
+	button {
+		margin-right:$gutter / 2;
+	}
 }
 
-.ui-widget {
-	// Reset to original font
-	font-family: $base-font-family;
-}
+// .ui-dialog .ui-dialog-content {
+// 	// Padding was already set
+// 	padding:0;
+// 	// Color is defined in general
+// 	background:transparent !important;
+// 	h3 {
+// 		// Explicit override because theme.css messes it all!
+// 		font-family: $headlines;
+// 		// No margin inside modal
+// 		margin-top:0;
+// 	}
+// }
 
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-	border:none;
-	background:none;
-	color:inherit;
-}
+// .ui-dialog .ui-dialog-buttonpane,
+// .ui-dialog .ui-dialog-content{
+// 	border:none;
+// 	background:transparent;
+// 	color:$font-color;
+// 	padding:0;
+// }
+
+// .ui-dialog .ui-dialog-buttonpane {
+// 	margin-top:rhythm(1);
+// }
+
+// .ui-dialog .ui-dialog-buttonpane button {
+// 	margin: 0 0 0 rhythm(1);
+// }
+
+// .ui-widget {
+// 	// Reset to original font
+// 	font-family: $base-font-family;
+// }
+
+// .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+// 	border:none;
+// 	background:none;
+// 	color:inherit;
+// }

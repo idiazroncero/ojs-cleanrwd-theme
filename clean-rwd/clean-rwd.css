@@ -14,7 +14,7 @@
   font-weight: normal;
   font-style: normal; }
 /* line 4, ../sass/external/font-awesome/_core.scss */
-.fa, .ui-dialog .ui-icon-closethick {
+.fa, .ui-icon-closethick {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -85,10 +85,10 @@
   float: right; }
 
 /* line 14, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-left, .ui-dialog .fa-pull-left.ui-icon-closethick {
+.fa.fa-pull-left, .fa-pull-left.ui-icon-closethick {
   margin-right: .3em; }
 /* line 15, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-right, .ui-dialog .fa-pull-right.ui-icon-closethick {
+.fa.fa-pull-right, .fa-pull-right.ui-icon-closethick {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -101,10 +101,10 @@
   float: left; }
 
 /* line 23, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-left, .ui-dialog .pull-left.ui-icon-closethick {
+.fa.pull-left, .pull-left.ui-icon-closethick {
   margin-right: .3em; }
 /* line 24, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-right, .ui-dialog .pull-right.ui-icon-closethick {
+.fa.pull-right, .pull-right.ui-icon-closethick {
   margin-left: .3em; }
 
 /* line 4, ../sass/external/font-awesome/_animated.scss */
@@ -542,7 +542,7 @@
   content: ""; }
 
 /* line 94, ../sass/external/font-awesome/_icons.scss */
-.fa-times-circle:before, .ui-dialog .ui-icon-closethick:before {
+.fa-times-circle:before, .ui-icon-closethick:before {
   content: ""; }
 
 /* line 95, ../sass/external/font-awesome/_icons.scss */
@@ -3736,7 +3736,8 @@ textarea {
   width: 100%; }
 
 /* line 52, ../sass/modules/_forms.scss */
-.button, .pkp_controllers_grid .row_controls a {
+.button, .pkp_controllers_grid .row_controls a,
+button {
   padding: 0 0.75rem;
   display: inline-block;
   vertical-align: middle;
@@ -3754,26 +3755,32 @@ textarea {
   background-color: #fff;
   border: 1px solid #3C7861;
   color: #333; }
-  /* line 68, ../sass/modules/_forms.scss */
-  .button:hover, .pkp_controllers_grid .row_controls a:hover {
+  /* line 69, ../sass/modules/_forms.scss */
+  .button:hover, .pkp_controllers_grid .row_controls a:hover,
+  button:hover {
     text-decoration: none; }
-  /* line 93, ../sass/modules/_forms.scss */
-  .button:link, .pkp_controllers_grid .row_controls a:link, .button:visited, .pkp_controllers_grid .row_controls a:visited, .button:focus, .pkp_controllers_grid .row_controls a:focus, .button:active, .pkp_controllers_grid .row_controls a:active {
+  /* line 94, ../sass/modules/_forms.scss */
+  .button:link, .pkp_controllers_grid .row_controls a:link, .button:visited, .pkp_controllers_grid .row_controls a:visited, .button:focus, .pkp_controllers_grid .row_controls a:focus, .button:active, .pkp_controllers_grid .row_controls a:active,
+  button:link,
+  button:visited,
+  button:focus,
+  button:active {
     color: #333; }
-  /* line 96, ../sass/modules/_forms.scss */
-  .button:hover, .pkp_controllers_grid .row_controls a:hover {
+  /* line 97, ../sass/modules/_forms.scss */
+  .button:hover, .pkp_controllers_grid .row_controls a:hover,
+  button:hover {
     background: #3C7861;
     color: #fff; }
 
-/* line 109, ../sass/modules/_forms.scss */
+/* line 110, ../sass/modules/_forms.scss */
 .button--cancel, .pkp_controllers_grid .row_controls a.delete {
   border: 1px solid #A34531; }
-  /* line 129, ../sass/modules/_forms.scss */
+  /* line 130, ../sass/modules/_forms.scss */
   .button--cancel:hover, .pkp_controllers_grid .row_controls a.delete:hover {
     background: #A34531;
     color: #fff; }
 
-/* line 142, ../sass/modules/_forms.scss */
+/* line 143, ../sass/modules/_forms.scss */
 .button--small, .pkp_controllers_grid .row_controls a {
   padding: 0 0.375rem;
   font-size: 14px;
@@ -3781,104 +3788,104 @@ textarea {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 151, ../sass/modules/_forms.scss */
+/* line 152, ../sass/modules/_forms.scss */
 .settings-form select + input[type="submit"],
 .settings-form input + input[type="submit"] {
   margin-left: -1px; }
-/* line 157, ../sass/modules/_forms.scss */
+/* line 158, ../sass/modules/_forms.scss */
 .settings-form input[type="file"] + input[type="submit"],
 .settings-form .instruct + input[type="submit"] {
   vertical-align: baseline;
   margin-left: 12px; }
 
-/* line 164, ../sass/modules/_forms.scss */
+/* line 165, ../sass/modules/_forms.scss */
 .form-row, #search .toggleExtras, .search__result {
   margin-bottom: 1.125rem;
   padding-bottom: 1.125rem;
   border-bottom: 1px dotted #e0e0e0; }
-  /* line 168, ../sass/modules/_forms.scss */
-  .form-row label, #search .toggleExtras label, .search__result label, .form-row .label, #search .toggleExtras .label, .search__result .label {
+  /* line 169, ../sass/modules/_forms.scss */
+  .form-row label, #search .toggleExtras label, .search__result label, .form-row .label, #search .toggleExtras .label, .search__result .label, .form-row .ui-dialog-content table td.label, .ui-dialog-content table .form-row td.label, .search__result .ui-dialog-content table td.label, .ui-dialog-content table .search__result td.label {
     font-weight: bold;
     margin-bottom: 0.75rem;
     display: block; }
-    /* line 172, ../sass/modules/_forms.scss */
+    /* line 173, ../sass/modules/_forms.scss */
     .form-row label .instruct, #search .toggleExtras label .instruct, .search__result label .instruct, .form-row .label .instruct, #search .toggleExtras .label .instruct, .search__result .label .instruct {
       font-weight: normal;
       display: block; }
-  /* line 177, ../sass/modules/_forms.scss */
+  /* line 178, ../sass/modules/_forms.scss */
   .form-row .label--inline, #search .toggleExtras .label--inline, .search__result .label--inline {
     display: inline;
     margin-right: 12px;
     margin-bottom: 0; }
-  /* line 182, ../sass/modules/_forms.scss */
+  /* line 183, ../sass/modules/_forms.scss */
   .form-row .label--normal, #search .toggleExtras .label--normal, .search__result .label--normal {
     font-weight: normal; }
 
-/* line 187, ../sass/modules/_forms.scss */
+/* line 188, ../sass/modules/_forms.scss */
 .form-subrow {
   padding-left: 30px;
   margin-left: 6px;
   border-left: 1px solid #e0e0e0; }
-  /* line 191, ../sass/modules/_forms.scss */
+  /* line 192, ../sass/modules/_forms.scss */
   .form-subrow:last-of-type {
     padding-bottom: 0; }
-  /* line 194, ../sass/modules/_forms.scss */
+  /* line 195, ../sass/modules/_forms.scss */
   .form-subrow label {
     font-weight: normal;
     display: inline;
     font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
     margin: 0 24px 0 0; }
-  /* line 200, ../sass/modules/_forms.scss */
+  /* line 201, ../sass/modules/_forms.scss */
   .form-subrow .label--heading {
     font-weight: bold;
     display: block;
     margin: 0 24px 0.75rem 0; }
 
-/* line 207, ../sass/modules/_forms.scss */
+/* line 208, ../sass/modules/_forms.scss */
 .form-group {
   margin-bottom: 0.75rem; }
 
-/* line 211, ../sass/modules/_forms.scss */
+/* line 212, ../sass/modules/_forms.scss */
 .instruct {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   line-height: 18px;
   line-height: 1.125rem;
   margin: 0; }
   @media (min-width: 480px) {
-    /* line 211, ../sass/modules/_forms.scss */
+    /* line 212, ../sass/modules/_forms.scss */
     .instruct {
       font-size: 14px;
       font-size: 0.85rem;
       line-height: 18px;
       line-height: 1.125rem; } }
 
-/* line 220, ../sass/modules/_forms.scss */
+/* line 221, ../sass/modules/_forms.scss */
 .instruct--spaced {
   margin-bottom: 1.5rem; }
 
-/* line 224, ../sass/modules/_forms.scss */
-.buttons {
+/* line 225, ../sass/modules/_forms.scss */
+.buttons, .ui-dialog-buttonset {
   padding: 12px;
   background: #f5f5f5;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #CCC; }
 
-/* line 231, ../sass/modules/_forms.scss */
+/* line 232, ../sass/modules/_forms.scss */
 .options {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 234, ../sass/modules/_forms.scss */
+  /* line 235, ../sass/modules/_forms.scss */
   .options a {
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
 
-/* line 239, ../sass/modules/_forms.scss */
-.form-required {
+/* line 240, ../sass/modules/_forms.scss */
+.form-required, .ui-dialog-content .formRequired {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
@@ -3886,7 +3893,7 @@ textarea {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   color: #cccccc; }
 
-/* line 245, ../sass/modules/_forms.scss */
+/* line 246, ../sass/modules/_forms.scss */
 .form-error {
   color: #A34531;
   font-size: 14px;
@@ -3894,16 +3901,16 @@ textarea {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 250, ../sass/modules/_forms.scss */
+/* line 251, ../sass/modules/_forms.scss */
 .form-error--box {
   background: #A34531;
   padding: 0.375rem 0.75rem;
   color: #fff; }
 
-/* line 256, ../sass/modules/_forms.scss */
+/* line 257, ../sass/modules/_forms.scss */
 input:disabled, .disabled {
   opacity: 0.5; }
-  /* line 258, ../sass/modules/_forms.scss */
+  /* line 259, ../sass/modules/_forms.scss */
   input:disabled:hover, input:disabled:focus, .disabled:hover, .disabled:focus {
     color: inherit;
     background: inherit;
@@ -4265,10 +4272,10 @@ tbody td {
 
 @media (max-width: 768px) {
   /* line 120, ../sass/modules/_tables.scss */
-  .pkp_controllers_grid table thead {
+  .pkp_controllers_grid table thead, .ui-dialog-content table thead {
     display: none; }
   /* line 123, ../sass/modules/_tables.scss */
-  .pkp_controllers_grid table tbody, .pkp_controllers_grid table td, .pkp_controllers_grid table tr {
+  .pkp_controllers_grid table tbody, .ui-dialog-content table tbody, .pkp_controllers_grid table td, .ui-dialog-content table td, .pkp_controllers_grid table tr, .ui-dialog-content table tr {
     display: block; } }
 
 @media (min-width: 480px) {
@@ -4553,48 +4560,61 @@ ul.steplist li {
   padding: 0.75rem;
   border-radius: 0;
   border: 0.375rem solid #1b1b1b;
-  box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.33); }
-  /* line 13, ../sass/modules/_uidialog.scss */
-  .ui-dialog .pkp_form select {
-    width: 99%; }
-  /* line 17, ../sass/modules/_uidialog.scss */
-  .ui-dialog .pkp_form input {
-    width: auto; }
+  box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.33);
+  max-width: 100%; }
 
-/* line 26, ../sass/modules/_uidialog.scss */
-.ui-dialog .ui-dialog-content {
-  padding: 0;
-  background: transparent !important; }
-  /* line 31, ../sass/modules/_uidialog.scss */
-  .ui-dialog .ui-dialog-content h3 {
-    font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
-    margin-top: 0; }
+/* line 14, ../sass/modules/_uidialog.scss */
+.ui-dialog-titlebar-close {
+  float: right; }
+  /* line 22, ../sass/init/_mixins.scss */
+  .ui-dialog-titlebar-close:link, .ui-dialog-titlebar-close:visited, .ui-dialog-titlebar-close:focus, .ui-dialog-titlebar-close:hover, .ui-dialog-titlebar-close:active {
+    border-bottom: none;
+    text-decoration: none;
+    color: #1b1b1b; }
 
-/* line 39, ../sass/modules/_uidialog.scss */
-.ui-dialog .ui-dialog-buttonpane,
-.ui-dialog .ui-dialog-content {
-  border: none;
-  background: transparent;
-  color: #333;
-  padding: 0; }
+/* line 18, ../sass/modules/_uidialog.scss */
+.ui-icon-closethick {
+  font-size: 1px;
+  color: transparent; }
+  /* line 23, ../sass/modules/_uidialog.scss */
+  .ui-icon-closethick:before {
+    font-size: 14px;
+    font-size: 0.85rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    color: #1b1b1b; }
 
-/* line 47, ../sass/modules/_uidialog.scss */
-.ui-dialog .ui-dialog-buttonpane {
-  margin-top: 1.5rem; }
+/* line 28, ../sass/modules/_uidialog.scss */
+.ui-dialog-titlebar {
+  margin-bottom: 0.375rem;
+  border-bottom: 1px solid #CCC; }
 
-/* line 51, ../sass/modules/_uidialog.scss */
-.ui-dialog .ui-dialog-buttonpane button {
-  margin: 0 0 0 1.5rem; }
+/* line 32, ../sass/modules/_uidialog.scss */
+.ui-dialog-title {
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-size: 0.707rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase; }
 
-/* line 55, ../sass/modules/_uidialog.scss */
-.ui-widget {
-  font-family: Merriweather, Georgia, Times, serif; }
+/* line 40, ../sass/modules/_uidialog.scss */
+.ui-dialog-content {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem; }
+  /* line 47, ../sass/modules/_uidialog.scss */
+  .ui-dialog-content table li {
+    list-style-type: none; }
 
-/* line 60, ../sass/modules/_uidialog.scss */
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
-  border: none;
-  background: none;
-  color: inherit; }
+/* line 56, ../sass/modules/_uidialog.scss */
+.ui-dialog-buttonset {
+  margin-bottom: 0; }
+  /* line 59, ../sass/modules/_uidialog.scss */
+  .ui-dialog-buttonset button {
+    margin-right: 12px; }
 
 /* line 1, ../sass/modules/_warningMessage.scss */
 .warning-message {
