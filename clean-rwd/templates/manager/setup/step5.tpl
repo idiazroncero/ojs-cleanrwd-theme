@@ -95,61 +95,73 @@ function prepBlockFields() {
 {include file="common/formErrors.tpl"}
 
 {if count($formLocales) > 1}
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td width="80%" class="value">
-			{url|assign:"setupFormUrl" op="setup" path="5" escape=false}
-			{form_language_chooser form="setupForm" url=$setupFormUrl}
-			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
-</table>
+
+	<div class="form-row">
+		{fieldLabel name="formLocale" key="form.formLanguage"}
+		{url|assign:"setupFormUrl" op="setup" path="5" escape=false}
+		{form_language_chooser form="setupForm" url=$setupFormUrl}
+		<p class="instruct">{translate key="form.formLanguage.description"}</p>
+	</div>
+
 {/if}
-<div id="journalHomepageHeader">
+
+<section id="journalHomepageHeader">
 <h3>5.1 {translate key="manager.setup.journalHomepageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageHeaderDescription"}</p>
-<div id="journalTitleAndLogo">
+
+<section class="section" id="journalTitleAndLogo">
 <h4>{translate key="manager.setup.journalTitle"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label"><input type="radio" name="homeHeaderTitleType[{$formLocale|escape}]" id="homeHeaderTitleType-0" value="0"{if not $homeHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="homeHeaderTitleType-0" key="manager.setup.useTextTitle"}</td>
-		<td width="80%" class="value"><input type="text" name="homeHeaderTitle[{$formLocale|escape}]" value="{$homeHeaderTitle[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label"><input type="radio" name="homeHeaderTitleType[{$formLocale|escape}]" id="homeHeaderTitleType-1" value="1"{if $homeHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="homeHeaderTitleType-1" key="manager.setup.useImageTitle"}</td>
-		<td width="80%" class="value"><input type="file" name="homeHeaderTitleImage" class="uploadField" /> <input type="submit" name="uploadHomeHeaderTitleImage" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
 
-{if $homeHeaderTitleImage[$formLocale]}
-{translate key="common.fileName"}: {$homeHeaderTitleImage[$formLocale].name|escape} {$homeHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteHomeHeaderTitleImage" value="{translate key="common.delete"}" class="button" />
-
-<img src="{$publicFilesDir}/{$homeHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$homeHeaderTitleImage[$formLocale].width|escape}" height="{$homeHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.homePageHeader.altText"}" />
-
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="homeHeaderTitleImageAltText" key="common.altText"}</td>
-		<td width="80%" class="value"><input type="text" name="homeHeaderTitleImageAltText[{$formLocale|escape}]" value="{$homeHeaderTitleImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td>&nbsp;</td>
-		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-	</tr>
-</table>
-{/if}
+<div class="form-subrow">
+	
+	<div class="form-group">
+		<input type="radio" name="homeHeaderTitleType[{$formLocale|escape}]" id="homeHeaderTitleType-0" value="0"{if not $homeHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="homeHeaderTitleType-0" key="manager.setup.useTextTitle"}
+		<input type="text" name="homeHeaderTitle[{$formLocale|escape}]" value="{$homeHeaderTitle[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+	</div>
+	
+	<div class="form-group">
+		<div class="form-group">
+			<input type="radio" name="homeHeaderTitleType[{$formLocale|escape}]" id="homeHeaderTitleType-1" value="1"{if $homeHeaderTitleType[$formLocale]} checked="checked"{/if} /> 
+			{fieldLabel name="homeHeaderTitleType-1" key="manager.setup.useImageTitle"}
+		</div>
+		<div class="form-group">
+			<input type="file" name="homeHeaderTitleImage" class="uploadField" />
+			<input type="submit" name="uploadHomeHeaderTitleImage" value="{translate key="common.upload"}" class="button button--small" />
+		</div>
+		<div class="form-subrow">
+			<img src="{$publicFilesDir}/{$homeHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$homeHeaderTitleImage[$formLocale].width|escape}" height="{$homeHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.homePageHeader.altText"}" />
+			<div class="form-group">
+				{fieldLabel name="homeHeaderTitleImageAltText" key="common.altText"}
+				<input type="text" name="homeHeaderTitleImageAltText[{$formLocale|escape}]" value="{$homeHeaderTitleImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+				<p class="instruct">{translate key="common.altTextInstructions"}</p>
+			</div>
+			<div class="form-group">
+				<span class="instruct">
+					{if $homeHeaderTitleImage[$formLocale]}
+				 	{translate key="common.fileName"}: {$homeHeaderTitleImage[$formLocale].name|escape}
+				 	{$homeHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}
+				 	{/if}
+				 </span> 
+				<input type="submit" name="deleteHomeHeaderTitleImage" value="{translate key="common.delete"}" class="button button--small" />
+			</div>		
+		</div>
+	</div>
 </div>
-<div id="journalLogoImage">
-<h4>{translate key="manager.setup.journalLogo"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="homeHeaderLogoImage" key="manager.setup.useImageLogo"}</td>
-		<td width="80%" class="value"><input type="file" name="homeHeaderLogoImage" id="homeHeaderLogoImage" class="uploadField" /> <input type="submit" name="uploadHomeHeaderLogoImage" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
+</section>
+
+<section id="journalLogoImage">
+<h4>{translate key="manager.setup.journalLogo"}</h4>
+	
+
+	<div class="form-row">
+		{fieldLabel name="homeHeaderLogoImage" key="manager.setup.useImageLogo"}
+		<input type="file" name="homeHeaderLogoImage" id="homeHeaderLogoImage" class="uploadField" />
+		<input type="submit" name="uploadHomeHeaderLogoImage" value="{translate key="common.upload"}" class="button" />
+	</div>
+
 
 {if $homeHeaderLogoImage[$formLocale]}
 {translate key="common.fileName"}: {$homeHeaderLogoImage[$formLocale].name|escape} {$homeHeaderLogoImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteHomeHeaderLogoImage" value="{translate key="common.delete"}" class="button" />
@@ -167,17 +179,18 @@ function prepBlockFields() {
 		</tr>
 </table>
 {/if}
-</div>
+</section>
 
-<div id="journalThumbnail">
+<section id="journalThumbnail">
 <h4>{translate key="manager.setup.journalThumbnail"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="journalThumbnail" key="manager.setup.useThumbnail"}</td>
-		<td width="80%" class="value"><input type="file" name="journalThumbnail" id="journalThumbnail" class="uploadField" /> <input type="submit" name="uploadJournalThumbnail" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
+
+	<div class="form-row">
+		{fieldLabel name="journalThumbnail" key="manager.setup.useThumbnail"}
+		<input type="file" name="journalThumbnail" id="journalThumbnail" class="uploadField" />
+		<input type="submit" name="uploadJournalThumbnail" value="{translate key="common.upload"}" class="button" />
+	</div>
+
 
 {if $journalThumbnail[$formLocale]}
 {translate key="common.fileName"}: {$journalThumbnail[$formLocale].name|escape} {$journalThumbnail[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteJournalThumbnail" value="{translate key="common.delete"}" class="button" />
@@ -195,211 +208,240 @@ function prepBlockFields() {
 		</tr>
 </table>
 {/if}
-</div>
-</div>
-<div class="separator"></div>
 
-<div id="journalHomepageContent">
+</section>
+
+
+
+<section id="journalHomepageContent">
 <h3>5.2 {translate key="manager.setup.journalHomepageContent"}</h3>
 
 <p>{translate key="manager.setup.journalHomepageContentDescription"}</p>
-</div>
+</section>
 
-<div id="journalDescription">
+<section class="section" id="journalDescription">
 <h4>{fieldLabel name="description" key="manager.setup.journalDescription"}</h4>
 
 <p>{translate key="manager.setup.journalDescriptionDescription"}</p>
 
 <p><textarea id="description" name="description[{$formLocale|escape}]" rows="3" cols="60" class="textArea">{$description[$formLocale]|escape}</textarea></p>
-</div>
-<div id="homepageImage">
+</section>
+
+<section id="homepageImage">
 <h4>{translate key="manager.setup.homepageImage"}</h4>
 
 <p>{translate key="manager.setup.homepageImageDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="homepageImage" key="manager.setup.homepageImage"}</td>
-		<td width="80%" class="value"><input type="file" name="homepageImage" id="homepageImage" class="uploadField" /> <input type="submit" name="uploadHomepageImage" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
 
-{if $homepageImage[$formLocale]}
-{translate key="common.fileName"}: {$homepageImage[$formLocale].name|escape} {$homepageImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteHomepageImage" value="{translate key="common.delete"}" class="button" />
+	<div class="form-row">
+		{fieldLabel name="homepageImage" key="manager.setup.homepageImage"}
+		<div class="form-subrow">
+			<div class="form-group">
+				<input type="file" name="homepageImage" id="homepageImage" class="uploadField" />
+				<input type="submit" name="uploadHomepageImage" value="{translate key="common.upload"}" class="button button--small" />
+			</div>
+			<div class="form-group">
+				<img src="{$publicFilesDir}/{$homepageImage[$formLocale].uploadName|escape:"url"}" width="{$homepageImage[$formLocale].width|escape}" height="{$homepageImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.journalHomepageImage.altText"}" />
+			</div>
+			{if $homepageImage[$formLocale]}
+			<div class="form-group">
+				{fieldLabel name="homepageImageAltText" key="common.altText"}
+				<input type="text" name="homepageImageAltText[{$formLocale|escape}]" value="{$homepageImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+				<div class="instruct">{translate key="common.altTextInstructions"}</div>
+			</div>
+			<div class="form-group">
+				<p class="instruct">{translate key="common.fileName"}: {$homepageImage[$formLocale].name|escape} {$homepageImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</p>
+				<input type="submit" name="deleteHomepageImage" value="{translate key="common.delete"}" class="button button--small" />
+			</div>
+			{/if}
 
-<img src="{$publicFilesDir}/{$homepageImage[$formLocale].uploadName|escape:"url"}" width="{$homepageImage[$formLocale].width|escape}" height="{$homepageImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.journalHomepageImage.altText"}" />
+			
+		</div>
+		
+	</div>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="homepageImageAltText" key="common.altText"}</td>
-		<td width="80%" class="value"><input type="text" name="homepageImageAltText[{$formLocale|escape}]" value="{$homepageImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td>&nbsp;</td>
-		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-		</tr>
-</table>
-{/if}
 
-<div id="currentIssue">
+
+<section class="section" id="currentIssue">
 <h4>{translate key="manager.setup.currentIssue"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="displayCurrentIssue" id="displayCurrentIssue" value="1" {if $displayCurrentIssue} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="displayCurrentIssue">{translate key="manager.setup.displayCurrentIssue"}</label></td>
-	</tr>
-</table>
-</div>
-<div id="additionalContent">
+
+	<div class="form-subrow">
+		<input type="checkbox" name="displayCurrentIssue" id="displayCurrentIssue" value="1" {if $displayCurrentIssue} checked="checked"{/if} />
+		<label for="displayCurrentIssue">{translate key="manager.setup.displayCurrentIssue"}</label>
+	</div>
+
+</section>
+
+
+<section class="section" id="additionalContent">
 
 <h4>{fieldLabel name="additionalHomeContent" key="manager.setup.additionalContent"}</h4>
 
 <p>{translate key="manager.setup.additionalContentDescription"}</p>
 
 <p><textarea name="additionalHomeContent[{$formLocale|escape}]" id="additionalHomeContent" rows="12" cols="60" class="textArea">{$additionalHomeContent[$formLocale]|escape}</textarea></p>
-</div>
-</div>
-<div class="separator"></div>
 
-<div id="journalPageHeaderInfo">
+</section>
+</section>
+
+
+
+<section id="journalPageHeaderInfo">
 <h3>5.3 {translate key="manager.setup.journalPageHeader"}</h3>
 
 <p>{translate key="manager.setup.journalPageHeaderDescription"}</p>
-<div id="pageHeaderTitle">
+
+<section class="section" id="pageHeaderTitle">
 <h4>{translate key="manager.setup.journalTitle"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label"><input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-0" value="0"{if not $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-0" key="manager.setup.useTextTitle"}</td>
-		<td width="80%" class="value"><input type="text" name="pageHeaderTitle[{$formLocale|escape}]" value="{$pageHeaderTitle[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label"><input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-1" value="1"{if $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-1" key="manager.setup.useImageTitle"}</td>
-		<td width="80%" class="value"><input type="file" name="pageHeaderTitleImage" class="uploadField" /> <input type="submit" name="uploadPageHeaderTitleImage" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
 
-{if $pageHeaderTitleImage[$formLocale]}
-{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].name|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button" />
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-0" value="0"{if not $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-0" key="manager.setup.useTextTitle"}
+			<input type="text" name="pageHeaderTitle[{$formLocale|escape}]" value="{$pageHeaderTitle[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+		</div>
+		<div class="form-group">
+			<input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-1" value="1"{if $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-1" key="manager.setup.useImageTitle"}
+			<div class="form-subrow">
+				<div class="form-group">
+					<input type="file" name="pageHeaderTitleImage" class="uploadField" />
+					<input type="submit" name="uploadPageHeaderTitleImage" value="{translate key="common.upload"}" class="button button--small" />
+				</div>
+				<div class="form-group">
+					<img src="{$publicFilesDir}/{$pageHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderTitleImage[$formLocale].width|escape}" height="{$pageHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeader.altText"}" />
+				</div>
+				{if $pageHeaderTitleImage[$formLocale]}
+				<div class="form-group">
+					{fieldLabel name="pageHeaderTitleImageAltText" key="common.altText"}
+					<input type="text" name="pageHeaderTitleImageAltText[{$formLocale|escape}]" value="{$pageHeaderTitleImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+					<p class="instruct">
+						{translate key="common.altTextInstructions"}
+					</p>
+				</div>
+				<div class="form-group">
+					<span class="instruct">{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].name|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</span>
+					<input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button button--small" />
+				</div>
+				{/if}
+			</div>	
+		</div>
+	</div>
 
-<img src="{$publicFilesDir}/{$pageHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderTitleImage[$formLocale].width|escape}" height="{$pageHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeader.altText"}" />
+</section>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="pageHeaderTitleImageAltText" key="common.altText"}</td>
-		<td width="80%" class="value"><input type="text" name="pageHeaderTitleImageAltText[{$formLocale|escape}]" value="{$pageHeaderTitleImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td>&nbsp;</td>
-		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-		</tr>
-</table>
-{/if}
-</div>
-<div id="journalLogo">
+<section id="journalLogo">
 <h4>{translate key="manager.setup.journalLogo"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="pageHeaderLogoImage" key="manager.setup.useImageLogo"}</td>
-		<td width="80%" class="value"><input type="file" name="pageHeaderLogoImage" id="pageHeaderLogoImage" class="uploadField" /> <input type="submit" name="uploadPageHeaderLogoImage" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
 
-{if $pageHeaderLogoImage[$formLocale]}
-{translate key="common.fileName"}: {$pageHeaderLogoImage[$formLocale].name|escape} {$pageHeaderLogoImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deletePageHeaderLogoImage" value="{translate key="common.delete"}" class="button" />
-
-<img src="{$publicFilesDir}/{$pageHeaderLogoImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderLogoImage[$formLocale].width|escape}" height="{$pageHeaderLogoImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeaderLogo.altText"}" />
-
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="pageHeaderLogoImageAltText" key="common.altText"}</td>
-		<td width="80%" class="value"><input type="text" name="pageHeaderLogoImageAltText[{$formLocale|escape}]" value="{$pageHeaderLogoImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td>&nbsp;</td>
-		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-		</tr>
-</table>
-{/if}
+<div class="form-row">
+	{fieldLabel name="pageHeaderLogoImage" key="manager.setup.useImageLogo"}
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="file" name="pageHeaderLogoImage" id="pageHeaderLogoImage" class="uploadField" />
+			<input type="submit" name="uploadPageHeaderLogoImage" value="{translate key="common.upload"}" class="button button--small" />
+		</div>
+		{if $pageHeaderLogoImage[$formLocale]}
+		<div class="form-group">
+			<img src="{$publicFilesDir}/{$pageHeaderLogoImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderLogoImage[$formLocale].width|escape}" height="{$pageHeaderLogoImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeaderLogo.altText"}" />
+		</div>
+		<div class="form-group">
+			{fieldLabel name="pageHeaderLogoImageAltText" key="common.altText"}
+			<input type="text" name="pageHeaderLogoImageAltText[{$formLocale|escape}]" value="{$pageHeaderLogoImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+			<div class="instruct">{translate key="common.altTextInstructions"}</div>
+		</div>
+		<div class="form-group">
+			<p class="instruct">{translate key="common.fileName"}: {$pageHeaderLogoImage[$formLocale].name|escape} {$pageHeaderLogoImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} </p>
+			<input type="submit" name="deletePageHeaderLogoImage" value="{translate key="common.delete"}" class="button button--small" />
+		</div>
+		{/if}
+	</div>
 </div>
+</section>
 
-<div id="journalFavicon">
+<section id="journalFavicon">
 <h4>{translate key="manager.setup.journalFavicon"}</h4>
 
 <p>{translate key="manager.setup.journalFaviconDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="journalFavicon" key="manager.setup.useImageLogo"}</td>
-		<td width="80%" class="value"><input type="file" name="journalFavicon" id="journalFavicon" class="uploadField" /> <input type="submit" name="uploadJournalFavicon" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
 
-{if $journalFavicon[$formLocale]}
-{translate key="common.fileName"}: {$journalFavicon[$formLocale].name|escape} {$journalFavicon[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteJournalFavicon" value="{translate key="common.delete"}" class="button" />
-
-<img src="{$publicFilesDir}/{$journalFavicon[$formLocale].uploadName|escape:"url"}" width="16px" height="16px" style="border: 0;" alt="favicon" />
-{/if}
+<div class="form-row">
+	{fieldLabel name="journalFavicon" key="manager.setup.useImageLogo"}
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="file" name="journalFavicon" id="journalFavicon" class="uploadField" />
+			<input type="submit" name="uploadJournalFavicon" value="{translate key="common.upload"}" class="button button--small" />
+		</div>
+		{if $journalFavicon[$formLocale]}
+		<div class="form-group">
+			<img src="{$publicFilesDir}/{$journalFavicon[$formLocale].uploadName|escape:"url"}" width="16px" height="16px" style="border: 0;" alt="favicon" />
+		</div>
+		<div class="form-group">
+			<p class="instruct">{translate key="common.fileName"}: {$journalFavicon[$formLocale].name|escape} {$journalFavicon[$formLocale].dateUploaded|date_format:$datetimeFormatShort} </p>
+			<input type="submit" name="deleteJournalFavicon" value="{translate key="common.delete"}" class="button button--small" />
+		</div>
+		{/if}
+	</div>
 </div>
 
-<div id="alternateHeader">
+</section>
+
+<section class="section" id="alternateHeader">
 <h4>{fieldLabel name="journalPageHeader" key="manager.setup.alternateHeader"}</h4>
 
 <p>{translate key="manager.setup.alternateHeaderDescription"}</p>
 
 <p><textarea name="journalPageHeader[{$formLocale|escape}]" id="journalPageHeader" rows="12" cols="60" class="textArea">{$journalPageHeader[$formLocale]|escape}</textarea></p>
-</div>
-</div>
-<div class="separator"></div>
+</section>
+</section>
 
-<div id="journalPageFooterInfo">
+
+<section class="section" id="journalPageFooterInfo">
 <h3>5.4 {fieldLabel name="journalPageFooter" key="manager.setup.journalPageFooter"}</h3>
 
 <p>{translate key="manager.setup.journalPageFooterDescription"}</p>
 
 <p><textarea name="journalPageFooter[{$formLocale|escape}]" id="journalPageFooter" rows="12" cols="60" class="textArea">{$journalPageFooter[$formLocale]|escape}</textarea></p>
-</div>
+</section>
 
-<div class="separator"></div>
 
-<div id="navigationBar">
+
+<section id="navigationBar">
 <h3>5.5 {translate key="manager.setup.navigationBar"}</h3>
 
 <p>{translate key="manager.setup.itemsDescription"}</p>
 
-<table width="100%" class="data">
+
 {foreach name=navItems from=$navItems[$formLocale] key=navItemId item=navItem}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="navItems-$navItemId-name" key="manager.setup.labelName"}</td>
-		<td width="80%" class="value">
-			<input type="text" name="navItems[{$formLocale|escape}][{$navItemId|escape}][name]" id="navItems-{$navItemId|escape}-name" value="{$navItem.name|escape}" size="30" maxlength="90" class="textField" /> <input type="submit" name="delNavItem[{$navItemId|escape}]" value="{translate key="common.delete"}" class="button" />
-			<table width="100%">
-				<tr >
-					<td width="5%"><input type="checkbox" name="navItems[{$formLocale|escape}][{$navItemId|escape}][isLiteral]" id="navItems-{$navItemId|escape}-isLiteral" value="1"{if $navItem.isLiteral} checked="checked"{/if} /></td>
-					<td width="95%"><label for="navItems-{$navItemId|escape}-isLiteral">{translate key="manager.setup.navItemIsLiteral"}</label></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="navItems-$navItemId-url" key="common.url"}</td>
-		<td width="80%" class="value">
-			<input type="text" name="navItems[{$formLocale|escape}][{$navItemId|escape}][url]" id="navItems-{$navItemId|escape}-url" value="{$navItem.url|escape}" size="60" maxlength="255" class="textField" />
-			<table width="100%">
-				<tr >
-					<td width="5%"><input type="checkbox" name="navItems[{$formLocale|escape}][{$navItemId|escape}][isAbsolute]" id="navItems-{$navItemId|escape}-isAbsolute" value="1"{if $navItem.isAbsolute} checked="checked"{/if} /></td>
-					<td width="95%"><label for="navItems-{$navItemId|escape}-isAbsolute">{translate key="manager.setup.navItemIsAbsolute"}</label></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	{if !$smarty.foreach.navItems.last}
-	<tr >
-		<td colspan="2" class="separator">&nbsp;</td>
-	</tr>
-	{/if}
+	<div class="form-row">
+		<div class="form-subrow">
+			<div class="form-group">
+				<div class="form-group">
+					{fieldLabel name="navItems-$navItemId-name" key="manager.setup.labelName"}
+					<input type="text" name="navItems[{$formLocale|escape}][{$navItemId|escape}][name]" id="navItems-{$navItemId|escape}-name" value="{$navItem.name|escape}" size="30" maxlength="90" class="textField" />
+				</div>
+				<div class="form-subrow">
+					<input type="checkbox" name="navItems[{$formLocale|escape}][{$navItemId|escape}][isLiteral]" id="navItems-{$navItemId|escape}-isLiteral" value="1"{if $navItem.isLiteral} checked="checked"{/if} />
+					<label for="navItems-{$navItemId|escape}-isLiteral">{translate key="manager.setup.navItemIsLiteral"}</label>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="form-group">
+					{fieldLabel name="navItems-$navItemId-url" key="common.url"}
+					<input type="text" name="navItems[{$formLocale|escape}][{$navItemId|escape}][url]" id="navItems-{$navItemId|escape}-url" value="{$navItem.url|escape}" size="60" maxlength="255" class="textField" />
+				</div>
+				<div class="form-subrow">
+					<input type="checkbox" name="navItems[{$formLocale|escape}][{$navItemId|escape}][isAbsolute]" id="navItems-{$navItemId|escape}-isAbsolute" value="1"{if $navItem.isAbsolute} checked="checked"{/if} />
+					<label for="navItems-{$navItemId|escape}-isAbsolute">{translate key="manager.setup.navItemIsAbsolute"}</label>
+				</div>
+			</div>
+
+		</div>
+		<div class="buttons">
+			<input type="submit" name="delNavItem[{$navItemId|escape}]" value="{translate key="common.delete"}" class="button" />
+		</div>	
+	</div>
+
 {foreachelse}
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="navItems-0-name" key="manager.setup.labelName"}</td>
@@ -426,35 +468,35 @@ function prepBlockFields() {
 		</td>
 	</tr>
 {/foreach}
-</table>
 
-<p><input type="submit" name="addNavItem" value="{translate key="manager.setup.addNavItem"}" class="button" /></p>
+
+<div class="buttons">
+	<input type="submit" name="addNavItem" value="{translate key="manager.setup.addNavItem"}" class="button" />
 </div>
 
-<div class="separator"></div>
+</section>
 
-<div id="journalLayout">
+<section class="section" id="journalLayout">
 <h3>5.6 {translate key="manager.setup.journalLayout"}</h3>
 
 <p>{translate key="manager.setup.journalLayoutDescription"}</p>
 
-<table width="100%" class="data">
-<tr>
-	<td width="20%" class="label"><label for="journalTheme">{translate key="manager.setup.journalTheme"}</label></td>
-	<td width="80%" class="value">
-		<select name="journalTheme" class="selectMenu" id="journalTheme"{if empty($journalThemes)} disabled="disabled"{/if}>
+<div class="form-row">
+	<label for="journalTheme">{translate key="manager.setup.journalTheme"}</label>
+	<select name="journalTheme" class="selectMenu" id="journalTheme"{if empty($journalThemes)} disabled="disabled"{/if}>
 			<option value="">{translate key="common.none"}</option>
 			{foreach from=$journalThemes key=path item=journalThemePlugin}
 				<option value="{$path|escape}"{if $path == $journalTheme} selected="selected"{/if}>{$journalThemePlugin->getDisplayName()|escape}</option>
 			{/foreach}
 		</select>
-	</td>
-</tr>
-<tr>
-	<td width="20%" class="label"><label for="journalStyleSheet">{translate key="manager.setup.useJournalStyleSheet"}</label></td>
-	<td width="80%" class="value"><input type="file" name="journalStyleSheet" id="journalStyleSheet" class="uploadField" /> <input type="submit" name="uploadJournalStyleSheet" value="{translate key="common.upload"}" class="button" /></td>
-</tr>
-</table>
+</div>
+
+<div class="form-row">
+	<label for="journalStyleSheet">{translate key="manager.setup.useJournalStyleSheet"}</label>
+	<input type="file" name="journalStyleSheet" id="journalStyleSheet" class="uploadField" />
+	<input type="submit" name="uploadJournalStyleSheet" value="{translate key="common.upload"}" class="button" />
+</div>
+
 
 {if $journalStyleSheet}
 {translate key="common.fileName"}: <a href="{$publicFilesDir}/{$journalStyleSheet.uploadName|escape:"url"}" class="file">{$journalStyleSheet.name|escape}</a> {$journalStyleSheet.dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteJournalStyleSheet" value="{translate key="common.delete"}" class="button" />
@@ -515,46 +557,55 @@ function prepBlockFields() {
 <input type="hidden" name="blockSelectLeft" value="" />
 <input type="hidden" name="blockSelectRight" value="" />
 <input type="hidden" name="blockUnselected" value="" />
-</div>
-<div class="separator"></div>
-<div id="setupInfo">
+</section>
+
+
+<section id="setupInfo">
 <h3>5.7 {translate key="manager.setup.information"}</h3>
 
 <p>{translate key="manager.setup.information.description"}</p>
 
-<div id="infoForReaders"><h4>{fieldLabel name="readerInformation" key="manager.setup.information.forReaders"}</h4>
+<section class="section" id="infoForReaders"><h4>{fieldLabel name="readerInformation" key="manager.setup.information.forReaders"}</h4>
 
-<p><textarea name="readerInformation[{$formLocale|escape}]" id="readerInformation" rows="12" cols="60" class="textArea">{$readerInformation[$formLocale]|escape}</textarea></p></div>
+<p><textarea name="readerInformation[{$formLocale|escape}]" id="readerInformation" rows="12" cols="60" class="textArea">{$readerInformation[$formLocale]|escape}</textarea></p>
+</section>
 
-<div id="infoForAuth"><h4>{fieldLabel name="authorInformation" key="manager.setup.information.forAuthors"}</h4>
+<section class="section" id="infoForAuth"><h4>{fieldLabel name="authorInformation" key="manager.setup.information.forAuthors"}</h4>
 
-<p><textarea name="authorInformation[{$formLocale|escape}]" id="authorInformation" rows="12" cols="60" class="textArea">{$authorInformation[$formLocale]|escape}</textarea></p></div>
+<p><textarea name="authorInformation[{$formLocale|escape}]" id="authorInformation" rows="12" cols="60" class="textArea">{$authorInformation[$formLocale]|escape}</textarea></p>
+</section>
 
-<div id="infoForLibs"><h4>{fieldLabel name="librarianInformation" key="manager.setup.information.forLibrarians"}</h4>
+<section class="section" id="infoForLibs"><h4>{fieldLabel name="librarianInformation" key="manager.setup.information.forLibrarians"}</h4>
 
-<p><textarea name="librarianInformation[{$formLocale|escape}]" id="librarianInformation" rows="12" cols="60" class="textArea">{$librarianInformation[$formLocale]|escape}</textarea></p></div>
-</div>
+<p><textarea name="librarianInformation[{$formLocale|escape}]" id="librarianInformation" rows="12" cols="60" class="textArea">{$librarianInformation[$formLocale]|escape}</textarea></p>
+</section>
+</section>
 
-<div class="separator"></div>
 
-<div id="lists">
+
+<section id="lists">
 <h3>5.8 {translate key="manager.setup.lists"}</h3>
 <p>{translate key="manager.setup.listsDescription"}</p>
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="itemsPerPage" key="manager.setup.itemsPerPage"}</td>
-		<td width="80%" class="value"><input type="text" size="3" name="itemsPerPage" id="itemsPerPage" class="textField" value="{$itemsPerPage|escape}" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="numPageLinks" key="manager.setup.numPageLinks"}</td>
-		<td width="80%" class="value"><input type="text" size="3" name="numPageLinks" id="numPageLinks" class="textField" value="{$numPageLinks|escape}" /></td>
-	</tr>
-</table>
+
+	<div class="form-row">
+		{fieldLabel name="itemsPerPage" key="manager.setup.itemsPerPage"}
+		<input type="text" size="3" name="itemsPerPage" id="itemsPerPage" class="textField" value="{$itemsPerPage|escape}" />
+	</div>
+
+	<div class="form-row">
+		{fieldLabel name="numPageLinks" key="manager.setup.numPageLinks"}
+		<td width="80%" class="value"><input type="text" size="3" name="numPageLinks" id="numPageLinks" class="textField" value="{$numPageLinks|escape}" />
+	</div>
+
+</section>
+
+
+
+
+<div class="buttons">
+	<input type="submit" onclick="prepBlockFields()" value="{translate key="common.saveAndContinue"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" />
 </div>
-
-<div class="separator"></div>
-
-<p><input type="submit" onclick="prepBlockFields()" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
