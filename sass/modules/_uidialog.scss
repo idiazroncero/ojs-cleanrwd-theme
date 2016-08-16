@@ -17,10 +17,10 @@
 	.pkp_form input {
 		width:auto;
 	}
-	// .ui-icon-closethick {
-	// 	@extend .fa;
-	// 	@extend .fa-times-circle;
-	// }
+	.ui-icon-closethick {
+		@extend .fa;
+		@extend .fa-times-circle;
+	}
 }
 
 .ui-dialog .ui-dialog-content {
