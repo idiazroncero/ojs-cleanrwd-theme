@@ -16,22 +16,20 @@
 
 {if count($formLocales) > 1}
 <div id="locales">
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td width="80%" class="value">
-			{url|assign:"setupFormUrl" op="setup" path="4" escape=false}
-			{form_language_chooser form="setupForm" url=$setupFormUrl}
-			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
-</table>
+
+	<div class="form-row">
+		{fieldLabel name="formLocale" key="form.formLanguage"}
+		{url|assign:"setupFormUrl" op="setup" path="4" escape=false}
+		{form_language_chooser form="setupForm" url=$setupFormUrl}
+		<p class="instruct">{translate key="form.formLanguage.description"}</p>
+	</div>
+
 </div><!-- locales -->
 {/if}
 
-<div id="securitySettings">
+<section id="securitySettings">
 <h3>4.1 {translate key="manager.setup.securitySettings"}</h3>
-<div id="onlineAccessManagement">
+<section id="onlineAccessManagement" class="section">
 <h4>{translate key="manager.setup.onlineAccessManagement"}</h4>
 <script type="text/javascript">
 	{literal}
@@ -55,51 +53,51 @@
 	{/literal}
 </script>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label" align="right">
+<div class="form-subrow">
+<div class="form-row">
+	<div class="form-group">
+		<div class="form-group">
 			<input type="radio" name="publishingMode" id="publishingMode-0" value="{$smarty.const.PUBLISHING_MODE_OPEN}" onclick="togglePublishingMode(this.form)"{if $publishingMode == $smarty.const.PUBLISHING_MODE_OPEN} checked="checked"{/if} />
-		</td>
-		<td width="95%" class="value">
 			<label for="publishingMode-0">{translate key="manager.setup.openAccess"}</label>
-			<h4>{fieldLabel name="openAccessPolicy" key="manager.setup.openAccessPolicy"}</h4>
+		</div>
+		<div class="form-subrow">
+			{fieldLabel name="openAccessPolicy" key="manager.setup.openAccessPolicy"}
 			<p><span class="instruct">{translate key="manager.setup.openAccessPolicyDescription"}</span></p>
 			<p><textarea name="openAccessPolicy[{$formLocale|escape}]" id="openAccessPolicy" rows="12" cols="60" class="textArea"{if $publishingMode != $smarty.const.PUBLISHING_MODE_OPEN} disabled="disabled"{/if}>{$openAccessPolicy[$formLocale]|escape}</textarea></p>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="separator">&nbsp;</td>
-	</tr>
-	<tr >
-		<td width="5%" class="label" align="right">
+		</div>
+	</div>
+</div>
+
+<div class="form-row">
+	<div class="form-group">
+		<div class="form-group">
 			<input type="radio" name="publishingMode" id="publishingMode-1" value="{$smarty.const.PUBLISHING_MODE_SUBSCRIPTION}" onclick="togglePublishingMode(this.form)"{if $publishingMode == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION} checked="checked"{/if} />
-		</td>
-		<td width="95%" class="value">
 			<label for="publishingMode-1">{translate key="manager.setup.subscription"}</label>
-			<p><span class="instruct">{translate key="manager.setup.subscriptionDescription"}</span></p>
-			<table width="100%">
-				<tr>
-					<td width="5%"><input type="checkbox" name="showGalleyLinks" id="showGalleyLinks" {if $showGalleyLinks} checked="checked"{/if} /></td>
-					<td width="95%"><label for="showGalleyLinks">{translate key="manager.setup.showGalleyLinksDescription"}</label></td>
-				</tr>
+		</div>
+		<div class="form-subrow">
+			<div class="form-group">
+				<p class="instruct">{translate key="manager.setup.subscriptionDescription"}</p>
+			</div>
+			<div class="form-group">
+				<input type="checkbox" name="showGalleyLinks" id="showGalleyLinks" {if $showGalleyLinks} checked="checked"{/if} />&nbsp;<label  class="label--inline" for="showGalleyLinks">{translate key="manager.setup.showGalleyLinksDescription"}</label>
+			</div>
 			</table>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="separator">&nbsp;</td>
-	</tr>
-	<tr >
-		<td width="5%" class="label" align="right">
+		</div>
+	</div>
+</div>
+
+<div class="form-row">
+	<div class="form-group">
+		<div class="form-group">
 			<input type="radio" name="publishingMode" id="publishingMode-2" value="{$smarty.const.PUBLISHING_MODE_NONE}" onclick="togglePublishingMode(this.form)"{if $publishingMode == $smarty.const.PUBLISHING_MODE_NONE} checked="checked"{/if} />
-		</td>
-		<td width="95%" class="value">
 			<label for="publishingMode-2">{translate key="manager.setup.noPublishing"}</label>
-		</td>
-	</tr>
-</table>
+		</div>
+	</div>
+</div>
+</div>
 
 <p>{translate key="manager.setup.securitySettingsDescription"}</p>
-</div><!-- onlineAccessManagement -->
+</section><!-- onlineAccessManagement -->
 
 <script type="text/javascript">
 {literal}
@@ -119,164 +117,163 @@ function setRegAllowOpts(form) {
 {/literal}
 </script>
 
-<div id="siteAccess">
+<section id="siteAccess" class="section">
 <h4>{translate key="manager.setup.siteAccess"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="restrictSiteAccess" id="restrictSiteAccess" value="1"{if $restrictSiteAccess} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="restrictSiteAccess">{translate key="manager.setup.restrictSiteAccess"}</label></td>
-	</tr>
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="restrictArticleAccess" id="restrictArticleAccess" value="1"{if $restrictArticleAccess} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="restrictArticleAccess">{translate key="manager.setup.restrictArticleAccess"}</label></td>
-	</tr>
-</table>
-</div><!-- siteAccess -->
 
-<div id="userRegistration">
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="checkbox" name="restrictSiteAccess" id="restrictSiteAccess" value="1"{if $restrictSiteAccess} checked="checked"{/if} />&nbsp;<label for="restrictSiteAccess">{translate key="manager.setup.restrictSiteAccess"}</label>
+		</div>
+		<div class="form-group">
+			<input type="checkbox" name="restrictArticleAccess" id="restrictArticleAccess" value="1"{if $restrictArticleAccess} checked="checked"{/if} />&nbsp;<label for="restrictArticleAccess">{translate key="manager.setup.restrictArticleAccess"}</label>
+		</div>
+	</div>
+
+</section><!-- siteAccess -->
+
+<section id="userRegistration" class="section">
 <h4>{translate key="manager.setup.userRegistration"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label"><input type="radio" name="disableUserReg" id="disableUserReg-0" value="0" onclick="setRegAllowOpts(this.form)"{if !$disableUserReg} checked="checked"{/if} /></td>
-		<td width="95%" class="value">
-			<label for="disableUserReg-0">{translate key="manager.setup.enableUserRegistration"}</label>
-			<table width="100%">
-				<tr>
-					<td width="5%"><input type="checkbox" name="allowRegReader" id="allowRegReader" value="1"{if $allowRegReader} checked="checked"{/if}{if $disableUserReg} disabled="disabled"{/if} /></td>
-					<td width="95%"><label for="allowRegReader">{translate key="manager.setup.enableUserRegistration.reader"}</label></td>
-				</tr>
-				<tr>
-					<td width="5%"><input type="checkbox" name="allowRegAuthor" id="allowRegAuthor" value="1"{if $allowRegAuthor} checked="checked"{/if}{if $disableUserReg} disabled="disabled"{/if} /></td>
-					<td width="95%"><label for="allowRegAuthor">{translate key="manager.setup.enableUserRegistration.author"}</label></td>
-				</tr>
-				<tr>
-					<td width="5%"><input type="checkbox" name="allowRegReviewer" id="allowRegReviewer" value="1"{if $allowRegReviewer} checked="checked"{/if}{if $disableUserReg} disabled="disabled"{/if} /></td>
-					<td width="95%"><label for="allowRegReviewer">{translate key="manager.setup.enableUserRegistration.reviewer"}</label></td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-	<tr >
-		<td width="5%" class="label"><input type="radio" name="disableUserReg" id="disableUserReg-1" value="1" onclick="setRegAllowOpts(this.form)"{if $disableUserReg} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="disableUserReg-1">{translate key="manager.setup.disableUserRegistration"}</label></td>
-	</tr>
-</table>
-</div><!-- userRegistration -->
+<div class="form-subrow">
+	<div class="form-row">
+		<div class="form-group">
+			<input type="radio" name="disableUserReg" id="disableUserReg-0" value="0" onclick="setRegAllowOpts(this.form)"{if !$disableUserReg} checked="checked"{/if} />&nbsp;<label for="disableUserReg-0">{translate key="manager.setup.enableUserRegistration"}</label>
+		</div>
+		<div class="form-subrow">
+			<div class="form-group">
+				<input type="checkbox" name="allowRegReader" id="allowRegReader" value="1"{if $allowRegReader} checked="checked"{/if}{if $disableUserReg} disabled="disabled"{/if} /><label for="allowRegReader">{translate key="manager.setup.enableUserRegistration.reader"}</label>
+			</div>
+			<div class="form-group">
+				<input type="checkbox" name="allowRegAuthor" id="allowRegAuthor" value="1"{if $allowRegAuthor} checked="checked"{/if}{if $disableUserReg} disabled="disabled"{/if} /><label for="allowRegAuthor">{translate key="manager.setup.enableUserRegistration.author"}</label>
+			</div>
+			<div class="form-group">
+				<input type="checkbox" name="allowRegReviewer" id="allowRegReviewer" value="1"{if $allowRegReviewer} checked="checked"{/if}{if $disableUserReg} disabled="disabled"{/if} /><label for="allowRegReviewer">{translate key="manager.setup.enableUserRegistration.reviewer"}</label>
+			</div>
+		</div>
 
-</div><!-- securitySettings -->
+	</div>
+	<div class="form-row">
+		<input type="radio" name="disableUserReg" id="disableUserReg-1" value="1" onclick="setRegAllowOpts(this.form)"{if $disableUserReg} checked="checked"{/if} />&nbsp;<label for="disableUserReg-1">{translate key="manager.setup.disableUserRegistration"}</label>
+	</div>
+</div>
 
-<div class="separator"></div>
+</section><!-- userRegistration -->
 
-<div id="publicationScheduling">
+</section><!-- securitySettings -->
+
+
+<section id="publicationScheduling">
 <h3>4.2 {translate key="manager.setup.publicationScheduling"}</h3>
-<div id="publicationSchedule">
+<section class="section" id="publicationSchedule">
 <h4>{fieldLabel name="pubFreqPolicy" key="manager.setup.publicationSchedule"}</h4>
 
 <p>{translate key="manager.setup.publicationScheduleDescription"}</p>
 
 <p><textarea name="pubFreqPolicy[{$formLocale|escape}]" id="pubFreqPolicy" rows="12" cols="60" class="textArea">{$pubFreqPolicy[$formLocale]|escape}</textarea></p>
-</div>
-<div id="publicationFormat">
+</section>
+
+<section class="section" id="publicationFormat">
 <h4>{translate key="manager.setup.publicationFormat"}</h4>
 
 <p>{translate key="manager.setup.publicationFormatDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="publicationFormatVolume" id="publicationFormatVolume" value="1"{if ($publicationFormatVolume)} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="publicationFormatVolume">{translate key="manager.setup.publicationFormatVolume"}</label></td>
-	</tr>
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="publicationFormatNumber" id="publicationFormatNumber" value="1"{if ($publicationFormatNumber)} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="publicationFormatNumber">{translate key="manager.setup.publicationFormatNumber"}</label></td>
-	</tr>
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="publicationFormatYear" id="publicationFormatYear" value="1"{if ($publicationFormatYear)} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="publicationFormatYear">{translate key="manager.setup.publicationFormatYear"}</label></td>
-	</tr>
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="publicationFormatTitle" id="publicationFormatTitle" value="1"{if ($publicationFormatTitle)} checked="checked"{/if} /></td>
-		<td width="95%" class="value">
-			<label for="publicationFormatTitle">{translate key="manager.setup.publicationFormatTitle"}</label>
-		</td>
-	</tr>
-</table>
+
+<div class="form-subrow">
+	<div class="form-group">
+		<input type="checkbox" name="publicationFormatVolume" id="publicationFormatVolume" value="1"{if ($publicationFormatVolume)} checked="checked"{/if} />
+		<label for="publicationFormatVolume">{translate key="manager.setup.publicationFormatVolume"}</label>
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="publicationFormatNumber" id="publicationFormatNumber" value="1"{if ($publicationFormatNumber)} checked="checked"{/if} />
+		<label for="publicationFormatNumber">{translate key="manager.setup.publicationFormatNumber"}</label>
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="publicationFormatYear" id="publicationFormatYear" value="1"{if ($publicationFormatYear)} checked="checked"{/if} />
+		<label for="publicationFormatYear">{translate key="manager.setup.publicationFormatYear"}</label>
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="publicationFormatTitle" id="publicationFormatTitle" value="1"{if ($publicationFormatTitle)} checked="checked"{/if} />
+		<label for="publicationFormatTitle">{translate key="manager.setup.publicationFormatTitle"}</label>
+	</div>
 </div>
-<div id="frequencyOfPublication">
+
+</section>
+
+<section class="section" id="frequencyOfPublication">
 <h4>{translate key="manager.setup.frequencyOfPublication"}</h4>
 
 <p>{translate key="manager.setup.frequencyOfPublicationDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="initialNumber" key="issue.number"}</td>
-		<td width="80%" class="data"><input type="text" name="initialNumber" id="initialNumber" value="{$initialNumber|escape}" size="5" maxlength="8" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="initialVolume" key="issue.volume"}</td>
-		<td width="80%" class="data"><input type="text" name="initialVolume" id="initialVolume" value="{$initialVolume|escape}" size="5" maxlength="8" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="initialYear" key="issue.year"}</td>
-		<td width="80%" class="data"><input type="text" name="initialYear" id="initialYear" value="{$initialYear|escape}" size="5" maxlength="8" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="issuePerVolume" key="manager.setup.issuePerVolume"}</td>
-		<td width="80%" class="data"><input type="text" name="issuePerVolume" id="issuePerVolume" value="{if $issuePerVolume}{$issuePerVolume|escape}{/if}" size="5" maxlength="8" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="volumePerYear" key="manager.setup.volumePerYear"}</td>
-		<td width="80%" class="data"><input type="text" name="volumePerYear" id="volumePerYear" value="{if $volumePerYear}{$volumePerYear|escape}{/if}" size="5" maxlength="8" class="textField" /></td>
-	</tr>
-</table>
 
-<p>{translate key="manager.setup.frequencyOfPublicationNote"}</p>
-</div>
+<div class="form-subrow">
+	<div class="form-group">
+		{fieldLabel name="initialNumber" key="issue.number"}
+		<input type="text" name="initialNumber" id="initialNumber" value="{$initialNumber|escape}" size="5" maxlength="8" class="textField" />
+	</div>
+	<div class="form-group">
+		{fieldLabel name="initialVolume" key="issue.volume"}
+		<input type="text" name="initialVolume" id="initialVolume" value="{$initialVolume|escape}" size="5" maxlength="8" class="textField" />
+	</div>
+	<div class="form-group">
+		{fieldLabel name="initialYear" key="issue.year"}
+		<input type="text" name="initialYear" id="initialYear" value="{$initialYear|escape}" size="5" maxlength="8" class="textField" />
+	</div>
+	<div class="form-group">
+		{fieldLabel name="issuePerVolume" key="manager.setup.issuePerVolume"}
+		<input type="text" name="issuePerVolume" id="issuePerVolume" value="{if $issuePerVolume}{$issuePerVolume|escape}{/if}" size="5" maxlength="8" class="textField" />
+	</div>
+	<div class="form-group">
+		{fieldLabel name="volumePerYear" key="manager.setup.volumePerYear"}
+		<input type="text" name="volumePerYear" id="volumePerYear" value="{if $volumePerYear}{$volumePerYear|escape}{/if}" size="5" maxlength="8" class="textField" />
+	</div>
 </div>
 
-<div class="separator"></div>
 
-<div id="publicIdentifier">
+<p class="instruct">{translate key="manager.setup.frequencyOfPublicationNote"}</p>
+</section>
+</section>
+
+<section id="publicIdentifier">
 <h3>4.3 {translate key="manager.setup.publicIdentifier"}</h3>
-<div id="uniqueIdentifier">
+<section class="section" id="uniqueIdentifier">
 <h4>{translate key="manager.setup.uniqueIdentifier"}</h4>
 
 <p>{translate key="manager.setup.uniqueIdentifierDescription"}</p>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="enablePublicIssueId" id="enablePublicIssueId" value="1"{if $enablePublicIssueId} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="enablePublicIssueId">{translate key="manager.setup.enablePublicIssueId"}</label></td>
-	</tr>
-	<tr >
-		<td class="label"><input type="checkbox" name="enablePublicArticleId" id="enablePublicArticleId" value="1"{if $enablePublicArticleId} checked="checked"{/if} /></td>
-		<td class="value"><label for="enablePublicArticleId">{translate key="manager.setup.enablePublicArticleId"}</label></td>
-	</tr>
-	<tr >
-		<td class="label"><input type="checkbox" name="enablePublicGalleyId" id="enablePublicGalleyId" value="1"{if $enablePublicGalleyId} checked="checked"{/if} /></td>
-		<td class="value"><label for="enablePublicGalleyId">{translate key="manager.setup.enablePublicGalleyId"}</label></td>
-	</tr>
-	<tr >
-		<td class="label"><input type="checkbox" name="enablePublicSuppFileId" id="enablePublicSuppFileId" value="1"{if $enablePublicSuppFileId} checked="checked"{/if} /></td>
-		<td class="value"><label for="enablePublicSuppFileId">{translate key="manager.setup.enablePublicSuppFileId"}</label></td>
-	</tr>
-</table>
-</div><!-- uniqueIdentifier -->
 
-<div id="pageNumberIdentifier">
+<div class="form-subrow">
+	<div class="form-group">
+		<input type="checkbox" name="enablePublicIssueId" id="enablePublicIssueId" value="1"{if $enablePublicIssueId} checked="checked"{/if} />
+		<label for="enablePublicIssueId">{translate key="manager.setup.enablePublicIssueId"}</label>
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="enablePublicArticleId" id="enablePublicArticleId" value="1"{if $enablePublicArticleId} checked="checked"{/if} />
+		<label for="enablePublicArticleId">{translate key="manager.setup.enablePublicArticleId"}</label>
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="enablePublicGalleyId" id="enablePublicGalleyId" value="1"{if $enablePublicGalleyId} checked="checked"{/if} />
+		<label for="enablePublicGalleyId">{translate key="manager.setup.enablePublicGalleyId"}</label>
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="enablePublicSuppFileId" id="enablePublicSuppFileId" value="1"{if $enablePublicSuppFileId} checked="checked"{/if} />
+		<label for="enablePublicSuppFileId">{translate key="manager.setup.enablePublicSuppFileId"}</label>
+	</div>
+</div>
+
+</section><!-- uniqueIdentifier -->
+
+<section class="section" id="pageNumberIdentifier">
 <h4>{translate key="manager.setup.pageNumberIdentifier"}</h4>
 
-<table width="100%" class="data">
-	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="enablePageNumber" id="enablePageNumber" value="1"{if $enablePageNumber} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="enablePageNumber">{translate key="manager.setup.enablePageNumber"}</label></td>
-	</tr>
-</table>
-</div><!-- pageNumberIdentifier -->
-</div><!-- publicIdentifier -->
-<div class="separator"></div>
+<div class="form-subrow">
+	<input type="checkbox" name="enablePageNumber" id="enablePageNumber" value="1"{if $enablePageNumber} checked="checked"{/if} />
+	<label for="enablePageNumber">{translate key="manager.setup.enablePageNumber"}</label>
+</div>
+
+</section><!-- pageNumberIdentifier -->
+</section><!-- publicIdentifier -->
+
 
 <div id="announcementsSection">
 <h3>4.4 {translate key="manager.setup.announcements"}</h3>
@@ -326,11 +323,11 @@ function setRegAllowOpts(form) {
 
 <table width="100%" class="data">
 	<tr >
-		<td width="5%" class="label"><input type="radio" name="useCopyeditors" id="useCopyeditors-1" value="1"{if $useCopyeditors} checked="checked"{/if} /></td>
+		<input type="radio" name="useCopyeditors" id="useCopyeditors-1" value="1"{if $useCopyeditors} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="useCopyeditors-1">{translate key="manager.setup.useCopyeditors"}</label></td>
 	</tr>
 	<tr >
-		<td width="5%" class="label"><input type="radio" name="useCopyeditors" id="useCopyeditors-0" value="0"{if !$useCopyeditors} checked="checked"{/if} /></td>
+		<input type="radio" name="useCopyeditors" id="useCopyeditors-0" value="0"{if !$useCopyeditors} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="useCopyeditors-0">{translate key="manager.setup.noUseCopyeditors"}</label></td>
 	</tr>
 </table>
@@ -355,11 +352,11 @@ function setRegAllowOpts(form) {
 
 <table width="100%" class="data">
 	<tr >
-		<td width="5%" class="label"><input type="radio" name="useLayoutEditors" id="useLayoutEditors-1" value="1"{if $useLayoutEditors} checked="checked"{/if} /></td>
+		<input type="radio" name="useLayoutEditors" id="useLayoutEditors-1" value="1"{if $useLayoutEditors} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="useLayoutEditors-1">{translate key="manager.setup.useLayoutEditors"}</label></td>
 	</tr>
 	<tr >
-		<td width="5%" class="label"><input type="radio" name="useLayoutEditors" id="useLayoutEditors-0" value="0"{if !$useLayoutEditors} checked="checked"{/if} /></td>
+		<input type="radio" name="useLayoutEditors" id="useLayoutEditors-0" value="0"{if !$useLayoutEditors} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="useLayoutEditors-0">{translate key="manager.setup.noUseLayoutEditors"}</label></td>
 	</tr>
 </table>
@@ -382,16 +379,16 @@ function setRegAllowOpts(form) {
 <table width="100%" class="data">
 {foreach name=templates from=$templates key=templateId item=template}
 	<tr >
-		<td width="20%" class="label"><a href="{url op="downloadLayoutTemplate" path=$templateId}" class="action">{$template.filename|escape}</a></td>
+		<a href="{url op="downloadLayoutTemplate" path=$templateId}" class="action">{$template.filename|escape}</a></td>
 		<td width="50%" class="value">{$template.title|escape}</td>
 		<td width="30%"><input type="submit" name="delTemplate[{$templateId|escape}]" value="{translate key="common.delete"}" class="button" /></td>
 {/foreach}
 	<tr >
-		<td width="20%" class="label">{fieldLabel name="template-title" key="manager.setup.layoutTemplates.title"}</td>
+		{fieldLabel name="template-title" key="manager.setup.layoutTemplates.title"}</td>
 		<td width="80%" colspan="2" class="value"><input type="text" name="template-title" id="template-title" size="40" maxlength="90" class="textField" /></td>
 	</tr>
 	<tr >
-		<td width="20%" class="label">{fieldLabel name="template-file" key="manager.setup.layoutTemplates.file"}</td>
+		{fieldLabel name="template-file" key="manager.setup.layoutTemplates.file"}</td>
 		<td width="80%" colspan="2" class="value"><input type="file" name="template-file" id="template-file" class="uploadField" /><input type="submit" name="addTemplate" value="{translate key="common.upload"}" class="button" /></td>
 	</tr>
 </table>
@@ -404,7 +401,7 @@ function setRegAllowOpts(form) {
 
 <table width="100%" class="data">
 	<tr >
-		<td width="5%" class="label"><input type="checkbox" name="provideRefLinkInstructions" id="provideRefLinkInstructions" value="1"{if $provideRefLinkInstructions} checked="checked"{/if} /></td>
+		<input type="checkbox" name="provideRefLinkInstructions" id="provideRefLinkInstructions" value="1"{if $provideRefLinkInstructions} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="provideRefLinkInstructions">{translate key="manager.setup.provideRefLinkInstructions"}</label></td>
 	</tr>
 </table>
@@ -424,11 +421,11 @@ function setRegAllowOpts(form) {
 
 <table width="100%" class="data">
 	<tr >
-		<td width="5%" class="label"><input type="radio" name="useProofreaders" id="useProofreaders-1" value="1"{if $useProofreaders} checked="checked"{/if} /></td>
+		<input type="radio" name="useProofreaders" id="useProofreaders-1" value="1"{if $useProofreaders} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="useProofreaders-1">{translate key="manager.setup.useProofreaders"}</label></td>
 	</tr>
 	<tr >
-		<td width="5%" class="label"><input type="radio" name="useProofreaders" id="useProofreaders-0" value="0"{if !$useProofreaders} checked="checked"{/if} /></td>
+		<input type="radio" name="useProofreaders" id="useProofreaders-0" value="0"{if !$useProofreaders} checked="checked"{/if} /></td>
 		<td width="95%" class="value"><label for="useProofreaders-0">{translate key="manager.setup.noUseProofreaders"}</label></td>
 	</tr>
 </table>

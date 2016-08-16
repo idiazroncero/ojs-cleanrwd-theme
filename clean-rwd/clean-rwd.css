@@ -3842,47 +3842,50 @@ button {
 /* line 208, ../sass/modules/_forms.scss */
 .form-group {
   margin-bottom: 0.75rem; }
+  /* line 210, ../sass/modules/_forms.scss */
+  .form-group input + label {
+    margin-left: 6px; }
 
-/* line 212, ../sass/modules/_forms.scss */
+/* line 215, ../sass/modules/_forms.scss */
 .instruct {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   line-height: 18px;
   line-height: 1.125rem;
   margin: 0; }
   @media (min-width: 480px) {
-    /* line 212, ../sass/modules/_forms.scss */
+    /* line 215, ../sass/modules/_forms.scss */
     .instruct {
       font-size: 14px;
       font-size: 0.85rem;
       line-height: 18px;
       line-height: 1.125rem; } }
 
-/* line 221, ../sass/modules/_forms.scss */
+/* line 224, ../sass/modules/_forms.scss */
 .instruct--spaced {
   margin-bottom: 1.5rem; }
 
-/* line 225, ../sass/modules/_forms.scss */
+/* line 228, ../sass/modules/_forms.scss */
 .buttons, .ui-dialog-buttonset {
   padding: 12px;
   background: #f5f5f5;
   margin-bottom: 1.5rem;
   border-bottom: 1px solid #CCC; }
 
-/* line 232, ../sass/modules/_forms.scss */
+/* line 235, ../sass/modules/_forms.scss */
 .options {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 235, ../sass/modules/_forms.scss */
+  /* line 238, ../sass/modules/_forms.scss */
   .options a {
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
 
-/* line 240, ../sass/modules/_forms.scss */
+/* line 243, ../sass/modules/_forms.scss */
 .form-required, .ui-dialog-content .formRequired {
   font-size: 14px;
   font-size: 0.85rem;
@@ -3891,7 +3894,7 @@ button {
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   color: #cccccc; }
 
-/* line 246, ../sass/modules/_forms.scss */
+/* line 249, ../sass/modules/_forms.scss */
 .form-error {
   color: #A34531;
   font-size: 14px;
@@ -3899,16 +3902,16 @@ button {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 251, ../sass/modules/_forms.scss */
+/* line 254, ../sass/modules/_forms.scss */
 .form-error--box {
   background: #A34531;
   padding: 0.375rem 0.75rem;
   color: #fff; }
 
-/* line 257, ../sass/modules/_forms.scss */
+/* line 260, ../sass/modules/_forms.scss */
 input:disabled, .disabled {
   opacity: 0.5; }
-  /* line 259, ../sass/modules/_forms.scss */
+  /* line 262, ../sass/modules/_forms.scss */
   input:disabled:hover, input:disabled:focus, .disabled:hover, .disabled:focus {
     color: inherit;
     background: inherit;

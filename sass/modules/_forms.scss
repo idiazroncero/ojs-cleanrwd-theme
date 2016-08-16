@@ -207,6 +207,9 @@ button {
 
 .form-group {
 	margin-bottom:rhythm(0.5);
+	input + label {
+		margin-left:$gutter/4;
+	}
 }
 
 .instruct {
