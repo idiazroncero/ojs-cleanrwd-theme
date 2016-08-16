@@ -275,7 +275,7 @@ function setRegAllowOpts(form) {
 </section><!-- publicIdentifier -->
 
 
-<div id="announcementsSection">
+<section class="section" id="announcementsSection">
 <h3>4.4 {translate key="manager.setup.announcements"}</h3>
 
 <p>{translate key="manager.setup.announcementsDescription"}</p>
@@ -290,50 +290,55 @@ function setRegAllowOpts(form) {
 		{/literal}
 	</script>
 
-<p>
-	<input type="checkbox" name="enableAnnouncements" id="enableAnnouncements" value="1" {if $enableAnnouncements} checked="checked"{/if} />&nbsp;
-	<label for="enableAnnouncements">{translate key="manager.setup.enableAnnouncements"}</label>
-</p>
+<div class="form-subrow">
+	<div class="form-group">
+		<input type="checkbox" name="enableAnnouncements" id="enableAnnouncements" value="1" {if $enableAnnouncements} checked="checked"{/if} />&nbsp;
+		<label for="enableAnnouncements">{translate key="manager.setup.enableAnnouncements"}</label>
+	</div>
+	
+	
+	<div class="form-group">
+		<input type="checkbox" name="enableAnnouncementsHomepage" id="enableAnnouncementsHomepage" value="1" onclick="toggleEnableAnnouncementsHomepage(this.form)"{if $enableAnnouncementsHomepage} checked="checked"{/if} />&nbsp;
+		<label for="enableAnnouncementsHomepage">{translate key="manager.setup.enableAnnouncementsHomepage1"}</label>
+		<select name="numAnnouncementsHomepage" id="numAnnouncementsHomepage" size="1" class="selectMenu" {if not $enableAnnouncementsHomepage}disabled="disabled"{/if}>
+			{section name="numAnnouncementsHomepageOptions" start=1 loop=11}
+			<option value="{$smarty.section.numAnnouncementsHomepageOptions.index}"{if $numAnnouncementsHomepage eq $smarty.section.numAnnouncementsHomepageOptions.index or ($smarty.section.numAnnouncementsHomepageOptions.index eq 1 and not $numAnnouncementsHomepage)} selected="selected"{/if}>{$smarty.section.numAnnouncementsHomepageOptions.index}</option>
+			{/section}
+		</select>
+		{fieldLabel name="numAnnouncementsHomepage" key="manager.setup.enableAnnouncementsHomepage2"}
+	</div>
+</div>
 
-<p>
-	<input type="checkbox" name="enableAnnouncementsHomepage" id="enableAnnouncementsHomepage" value="1" onclick="toggleEnableAnnouncementsHomepage(this.form)"{if $enableAnnouncementsHomepage} checked="checked"{/if} />&nbsp;
-	<label for="enableAnnouncementsHomepage">{translate key="manager.setup.enableAnnouncementsHomepage1"}</label>
-	<select name="numAnnouncementsHomepage" id="numAnnouncementsHomepage" size="1" class="selectMenu" {if not $enableAnnouncementsHomepage}disabled="disabled"{/if}>
-		{section name="numAnnouncementsHomepageOptions" start=1 loop=11}
-		<option value="{$smarty.section.numAnnouncementsHomepageOptions.index}"{if $numAnnouncementsHomepage eq $smarty.section.numAnnouncementsHomepageOptions.index or ($smarty.section.numAnnouncementsHomepageOptions.index eq 1 and not $numAnnouncementsHomepage)} selected="selected"{/if}>{$smarty.section.numAnnouncementsHomepageOptions.index}</option>
-		{/section}
-	</select>
-	{fieldLabel name="numAnnouncementsHomepage" key="manager.setup.enableAnnouncementsHomepage2"}
-</p>
-<div id="announcementsIntroductionSection">
+<section id="announcementsIntroductionSection">
 <h4>{fieldLabel name="announcementsIntroduction" key="manager.setup.announcementsIntroduction"}</h4>
 
 <p>{translate key="manager.setup.announcementsIntroductionDescription"}</p>
 
 <p><textarea name="announcementsIntroduction[{$formLocale|escape}]" id="announcementsIntroduction" rows="12" cols="60" class="textArea">{$announcementsIntroduction[$formLocale]|escape}</textarea></p>
-</div><!-- announcementsIntroductionSection -->
-</div><!-- announcementsSection -->
+</section><!-- announcementsIntroductionSection -->
+</section><!-- announcementsSection -->
 
-<div class="separator"></div>
 
-<div id="copyediting">
-<h3>4.5 {translate key="manager.setup.copyediting"}</h3>
 
-<p>{translate key="manager.setup.selectOne"}:</p>
+<section class="section" id="copyediting">
+	<h3>4.5 {translate key="manager.setup.copyediting"}</h3>	
 
-<table width="100%" class="data">
-	<tr >
-		<input type="radio" name="useCopyeditors" id="useCopyeditors-1" value="1"{if $useCopyeditors} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="useCopyeditors-1">{translate key="manager.setup.useCopyeditors"}</label></td>
-	</tr>
-	<tr >
-		<input type="radio" name="useCopyeditors" id="useCopyeditors-0" value="0"{if !$useCopyeditors} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="useCopyeditors-0">{translate key="manager.setup.noUseCopyeditors"}</label></td>
-	</tr>
-</table>
-</div><!-- copyediting -->
+	<p>{translate key="manager.setup.selectOne"}:</p>	
 
-<div id="copyeditInstructionsSection">
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="radio" name="useCopyeditors" id="useCopyeditors-1" value="1"{if $useCopyeditors} checked="checked"{/if} />
+			<label for="useCopyeditors-1">{translate key="manager.setup.useCopyeditors"}</label>
+		</div>
+		<div class="form-group">
+			<input type="radio" name="useCopyeditors" id="useCopyeditors-0" value="0"{if !$useCopyeditors} checked="checked"{/if} />
+			<label for="useCopyeditors-0">{translate key="manager.setup.noUseCopyeditors"}</label>
+		</div>
+	</div>
+
+</section><!-- copyediting -->
+
+<section class="section" id="copyeditInstructionsSection">
 <h4>{fieldLabel name="copyeditInstructions" key="manager.setup.copyeditInstructions"}</h4>
 
 <p>{translate key="manager.setup.copyeditInstructionsDescription"}</p>
@@ -341,27 +346,31 @@ function setRegAllowOpts(form) {
 <p>
 	<textarea name="copyeditInstructions[{$formLocale|escape}]" id="copyeditInstructions" rows="12" cols="60" class="textArea">{$copyeditInstructions[$formLocale]|escape}</textarea>
 </p>
-</div><!-- copyeditInstructionsSection -->
+</section><!-- copyeditInstructionsSection -->
 
-<div class="separator"></div>
 
-<div id="layoutAndGalleys">
+
+<section id="layoutAndGalleys">
 <h3>4.6 {translate key="manager.setup.layoutAndGalleys"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
 
-<table width="100%" class="data">
-	<tr >
-		<input type="radio" name="useLayoutEditors" id="useLayoutEditors-1" value="1"{if $useLayoutEditors} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="useLayoutEditors-1">{translate key="manager.setup.useLayoutEditors"}</label></td>
-	</tr>
-	<tr >
-		<input type="radio" name="useLayoutEditors" id="useLayoutEditors-0" value="0"{if !$useLayoutEditors} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="useLayoutEditors-0">{translate key="manager.setup.noUseLayoutEditors"}</label></td>
-	</tr>
-</table>
 
-<div id="layoutInstructionsSection">
+<div class="form-row">
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="radio" name="useLayoutEditors" id="useLayoutEditors-1" value="1"{if $useLayoutEditors} checked="checked"{/if} />
+			<label for="useLayoutEditors-1">{translate key="manager.setup.useLayoutEditors"}</label>
+		</div>
+		<div class="form-group">
+			<input type="radio" name="useLayoutEditors" id="useLayoutEditors-0" value="0"{if !$useLayoutEditors} checked="checked"{/if} />
+			<label for="useLayoutEditors-0">{translate key="manager.setup.noUseLayoutEditors"}</label>
+		</div>
+	</div>
+</div>
+
+
+<section class="section" id="layoutInstructionsSection">
 <h4>{fieldLabel name="layoutInstructions" key="manager.setup.layoutInstructions"}</h4>
 
 <p>{translate key="manager.setup.layoutInstructionsDescription"}</p>
@@ -369,81 +378,93 @@ function setRegAllowOpts(form) {
 <p>
 	<textarea name="layoutInstructions[{$formLocale|escape}]" id="layoutInstructions" rows="12" cols="60" class="textArea">{$layoutInstructions[$formLocale]|escape}</textarea>
 </p>
-</div><!-- layoutInstructionsSection -->
+</section><!-- layoutInstructionsSection -->
 
-<div id="layoutTemplates">
+<section class="section" id="layoutTemplates">
 <h4>{translate key="manager.setup.layoutTemplates"}</h4>
 
 <p>{translate key="manager.setup.layoutTemplatesDescription"}</p>
 
-<table width="100%" class="data">
-{foreach name=templates from=$templates key=templateId item=template}
-	<tr >
-		<a href="{url op="downloadLayoutTemplate" path=$templateId}" class="action">{$template.filename|escape}</a></td>
-		<td width="50%" class="value">{$template.title|escape}</td>
-		<td width="30%"><input type="submit" name="delTemplate[{$templateId|escape}]" value="{translate key="common.delete"}" class="button" /></td>
-{/foreach}
-	<tr >
-		{fieldLabel name="template-title" key="manager.setup.layoutTemplates.title"}</td>
-		<td width="80%" colspan="2" class="value"><input type="text" name="template-title" id="template-title" size="40" maxlength="90" class="textField" /></td>
-	</tr>
-	<tr >
-		{fieldLabel name="template-file" key="manager.setup.layoutTemplates.file"}</td>
-		<td width="80%" colspan="2" class="value"><input type="file" name="template-file" id="template-file" class="uploadField" /><input type="submit" name="addTemplate" value="{translate key="common.upload"}" class="button" /></td>
-	</tr>
-</table>
-</div><!-- layoutTemplates -->
+<div class="form-subrow">
+	
+	{foreach name=templates from=$templates key=templateId item=template}
+		<div class="form-group">
+			<a href="{url op="downloadLayoutTemplate" path=$templateId}" class="action">{$template.filename|escape}</a>
+			{$template.title|escape}
+			<input type="submit" name="delTemplate[{$templateId|escape}]" value="{translate key="common.delete"}" class="button" />
+		</div>
+	{/foreach}
+	
+		<div class="form-group">
+			{fieldLabel name="template-title" key="manager.setup.layoutTemplates.title"}
+			<input type="text" name="template-title" id="template-title" size="40" maxlength="90" class="textField" />
+		</div>
+		<div class="form-group">
+			{fieldLabel name="template-file" key="manager.setup.layoutTemplates.file"}
+			<input type="file" name="template-file" id="template-file" class="uploadField" />
+			<input type="submit" name="addTemplate" value="{translate key="common.upload"}" class="button" />
+		</div>
+</div>
 
-<div id="referenceLinking">
+
+</section><!-- layoutTemplates -->
+
+<section class="section" id="referenceLinking">
 <h4>{translate key="manager.setup.referenceLinking"}</h4>
 
 {translate key="manager.setup.referenceLinkingDescription"}
 
-<table width="100%" class="data">
-	<tr >
-		<input type="checkbox" name="provideRefLinkInstructions" id="provideRefLinkInstructions" value="1"{if $provideRefLinkInstructions} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="provideRefLinkInstructions">{translate key="manager.setup.provideRefLinkInstructions"}</label></td>
-	</tr>
-</table>
-</div><!-- referenceLinking -->
 
-<div id="refLinkInstructionsSection">
-<h4>{fieldLabel name="refLinkInstructions" key="manager.setup.refLinkInstructions.description"}</h4>
-<textarea name="refLinkInstructions[{$formLocale|escape}]" id="refLinkInstructions" rows="12" cols="60" class="textArea">{$refLinkInstructions[$formLocale]|escape}</textarea>
-</div><!-- refLinkInstructionsSection -->
-</div>
-<div class="separator"></div>
+	<div class="form-subrow">
+		<input type="checkbox" name="provideRefLinkInstructions" id="provideRefLinkInstructions" value="1"{if $provideRefLinkInstructions} checked="checked"{/if} />
+		<label for="provideRefLinkInstructions">{translate key="manager.setup.provideRefLinkInstructions"}</label>
+	</div>
 
-<div id="proofreading">
+</section><!-- referenceLinking -->
+
+<section class="section" id="refLinkInstructionsSection">
+	<h4>{fieldLabel name="refLinkInstructions" key="manager.setup.refLinkInstructions.description"}</h4>
+	<textarea name="refLinkInstructions[{$formLocale|escape}]" id="refLinkInstructions" rows="12" cols="60" class="textArea">{$refLinkInstructions[$formLocale]|escape}</textarea>
+</section><!-- refLinkInstructionsSection -->
+
+</section>
+
+
+<section id="proofreading">
 <h3>4.7 {translate key="manager.setup.proofreading"}</h3>
 
 <p>{translate key="manager.setup.selectOne"}:</p>
 
-<table width="100%" class="data">
-	<tr >
-		<input type="radio" name="useProofreaders" id="useProofreaders-1" value="1"{if $useProofreaders} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="useProofreaders-1">{translate key="manager.setup.useProofreaders"}</label></td>
-	</tr>
-	<tr >
-		<input type="radio" name="useProofreaders" id="useProofreaders-0" value="0"{if !$useProofreaders} checked="checked"{/if} /></td>
-		<td width="95%" class="value"><label for="useProofreaders-0">{translate key="manager.setup.noUseProofreaders"}</label></td>
-	</tr>
-</table>
-<div id="proofingInstructions">
-<h4>{fieldLabel name="proofInstructions" key="manager.setup.proofingInstructions"}</h4>
 
-<p>{translate key="manager.setup.proofingInstructionsDescription"}</p>
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="radio" name="useProofreaders" id="useProofreaders-1" value="1"{if $useProofreaders} checked="checked"{/if} />
+			<label for="useProofreaders-1">{translate key="manager.setup.useProofreaders"}</label>
+		</div>
+		<div class="form-group">
+			<input type="radio" name="useProofreaders" id="useProofreaders-0" value="0"{if !$useProofreaders} checked="checked"{/if} />
+			<label for="useProofreaders-0">{translate key="manager.setup.noUseProofreaders"}</label>
+		</div>
+	</div>
 
-<p>
-	<textarea name="proofInstructions[{$formLocale|escape}]" id="proofInstructions" rows="12" cols="60" class="textArea">{$proofInstructions[$formLocale]|escape}</textarea>
-</p>
+
+<section  class="section" id="proofingInstructions">
+	<h4>{fieldLabel name="proofInstructions" key="manager.setup.proofingInstructions"}</h4>	
+
+	<p>{translate key="manager.setup.proofingInstructionsDescription"}</p>	
+
+	<p>
+		<textarea name="proofInstructions[{$formLocale|escape}]" id="proofInstructions" rows="12" cols="60" class="textArea">{$proofInstructions[$formLocale]|escape}</textarea>
+	</p>
+</section>
+
+</section>
+
+
+
+<div class="buttons">
+	<input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /><input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" />
 </div>
-</div>
-
-<div class="separator"></div>
-
-
-<p><input type="submit" value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="setup" escape=false}'" /></p>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
 
