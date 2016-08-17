@@ -4270,21 +4270,35 @@ tbody td {
       content: attr(data-title); } }
 
 /* line 99, ../sass/modules/_tables.scss */
+.listing--wide {
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  letter-spacing: -0.01em; }
+  /* line 102, ../sass/modules/_tables.scss */
+  .listing--wide th, .listing--wide td {
+    padding-right: 12px; }
+    /* line 104, ../sass/modules/_tables.scss */
+    .listing--wide th:last-child, .listing--wide td:last-child {
+      padding-right: 0; }
+
+/* line 110, ../sass/modules/_tables.scss */
 .listing-pager {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 102, ../sass/modules/_tables.scss */
+  /* line 113, ../sass/modules/_tables.scss */
   .listing-pager td {
     border: none; }
 
-/* line 107, ../sass/modules/_tables.scss */
+/* line 118, ../sass/modules/_tables.scss */
 .center {
   text-align: center; }
 
-/* line 111, ../sass/modules/_tables.scss */
+/* line 122, ../sass/modules/_tables.scss */
 .action, .pkp_controllers_grid .hidetext {
   font-size: 14px;
   font-size: 0.85rem;
@@ -4297,11 +4311,15 @@ tbody td {
     border-bottom: none;
     text-decoration: none; }
 
+/* line 129, ../sass/modules/_tables.scss */
+.nowrap {
+  white-space: no-wrap; }
+
 @media (max-width: 768px) {
-  /* line 120, ../sass/modules/_tables.scss */
+  /* line 135, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table thead, .ui-dialog-content table thead {
     display: none; }
-  /* line 123, ../sass/modules/_tables.scss */
+  /* line 138, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table tbody, .ui-dialog-content table tbody, .pkp_controllers_grid table td, .ui-dialog-content table td, .pkp_controllers_grid table tr, .ui-dialog-content table tr {
     display: block; } }
 

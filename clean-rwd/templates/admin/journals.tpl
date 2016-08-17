@@ -32,7 +32,7 @@ $(document).ready(function() { setupTableDND("#adminJournals", "moveJournal"); }
 			{iterate from=journals item=journal}
 			<tr id="journal-{$journal->getId()}" class="data">
 				<td data-title="{translate key="manager.setup.journalTitle"}">
-					<a class="action" href="{url journal=$journal->getPath() page="manager"}">{$journal->getLocalizedTitle()|escape}</a>
+					<a href="{url journal=$journal->getPath() page="manager"}">{$journal->getLocalizedTitle()|escape}</a>
 				</td>
 				<td data-title="{translate key="journal.path"}" class="drag">
 					{$journal->getPath()|escape}
