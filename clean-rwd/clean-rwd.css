@@ -14,7 +14,7 @@
   font-weight: normal;
   font-style: normal; }
 /* line 4, ../sass/external/font-awesome/_core.scss */
-.fa, .pkp_controllers_fontController_smallFont, .pkp_controllers_fontController_defaultFont, .pkp_controllers_fontController_largeFont, .ui-icon-closethick, #pdfDownloadLinkContainer {
+.fa, .pkp_controllers_fontController_smallFont, .pkp_controllers_fontController_defaultFont, .pkp_controllers_fontController_largeFont, .announcement__more, .ui-icon-closethick, #pdfDownloadLinkContainer {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -85,10 +85,10 @@
   float: right; }
 
 /* line 14, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-left, .fa-pull-left.pkp_controllers_fontController_smallFont, .fa-pull-left.pkp_controllers_fontController_defaultFont, .fa-pull-left.pkp_controllers_fontController_largeFont, .fa-pull-left.ui-icon-closethick, .fa-pull-left#pdfDownloadLinkContainer {
+.fa.fa-pull-left, .fa-pull-left.pkp_controllers_fontController_smallFont, .fa-pull-left.pkp_controllers_fontController_defaultFont, .fa-pull-left.pkp_controllers_fontController_largeFont, .fa-pull-left.announcement__more, .fa-pull-left.ui-icon-closethick, .fa-pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 15, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-right, .fa-pull-right.pkp_controllers_fontController_smallFont, .fa-pull-right.pkp_controllers_fontController_defaultFont, .fa-pull-right.pkp_controllers_fontController_largeFont, .fa-pull-right.ui-icon-closethick, .fa-pull-right#pdfDownloadLinkContainer {
+.fa.fa-pull-right, .fa-pull-right.pkp_controllers_fontController_smallFont, .fa-pull-right.pkp_controllers_fontController_defaultFont, .fa-pull-right.pkp_controllers_fontController_largeFont, .fa-pull-right.announcement__more, .fa-pull-right.ui-icon-closethick, .fa-pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -101,10 +101,10 @@
   float: left; }
 
 /* line 23, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-left, .pull-left.pkp_controllers_fontController_smallFont, .pull-left.pkp_controllers_fontController_defaultFont, .pull-left.pkp_controllers_fontController_largeFont, .pull-left.ui-icon-closethick, .pull-left#pdfDownloadLinkContainer {
+.fa.pull-left, .pull-left.pkp_controllers_fontController_smallFont, .pull-left.pkp_controllers_fontController_defaultFont, .pull-left.pkp_controllers_fontController_largeFont, .pull-left.announcement__more, .pull-left.ui-icon-closethick, .pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 24, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-right, .pull-right.pkp_controllers_fontController_smallFont, .pull-right.pkp_controllers_fontController_defaultFont, .pull-right.pkp_controllers_fontController_largeFont, .pull-right.ui-icon-closethick, .pull-right#pdfDownloadLinkContainer {
+.fa.pull-right, .pull-right.pkp_controllers_fontController_smallFont, .pull-right.pkp_controllers_fontController_defaultFont, .pull-right.pkp_controllers_fontController_largeFont, .pull-right.announcement__more, .pull-right.ui-icon-closethick, .pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* line 4, ../sass/external/font-awesome/_animated.scss */
@@ -1357,7 +1357,7 @@
   content: ""; }
 
 /* line 318, ../sass/external/font-awesome/_icons.scss */
-.fa-chevron-circle-right:before {
+.fa-chevron-circle-right:before, .announcement__more:before {
   content: ""; }
 
 /* line 319, ../sass/external/font-awesome/_icons.scss */
@@ -4540,7 +4540,7 @@ tbody td {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 34, ../sass/modules/_announcements.scss */
+/* line 36, ../sass/modules/_announcements.scss */
 .announcements__more {
   margin-bottom: 1.5rem; }
 

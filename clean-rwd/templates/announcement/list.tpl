@@ -27,8 +27,8 @@
 		</div>
 		<div class="announcement__details">
 			{translate key="announcement.posted"}: {$announcement->getDatePosted()}
-			<span class="announcement__more action">
-				<a href="{url page="announcement" op="view" path=$announcement->getId()}">{translate key="announcement.viewLink"}</a>
+			<span class="announcement__more">
+				<a class="action" href="{url page="announcement" op="view" path=$announcement->getId()}">{translate key="announcement.viewLink"}</a>
 			</span>
 		</div>
 	{/if}

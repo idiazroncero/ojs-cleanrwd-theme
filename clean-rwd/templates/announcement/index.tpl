@@ -31,7 +31,8 @@
 
 		<div class="announcement__details">{translate key="announcement.posted"}: {$announcement->getDatePosted()}
 		{if $announcement->getLocalizedDescription() != null}
-			<span class="announcement__more action"><a href="{url op="view" path=$announcement->getId()}">{translate key="announcement.viewLink"}</a></span>
+			<span class="announcement__more">
+				<a class="action" href="{url op="view" path=$announcement->getId()}">{translate key="announcement.viewLink"}</a></span>
 		{/if}
 		</div>
 	</article>

@@ -29,6 +29,8 @@
 .announcement__more {
 	float:right;
 	@include adjust-leading-to(1);
+	@extend .fa;
+	@extend .fa-chevron-circle-right;
 }
 
 .announcements__more {
