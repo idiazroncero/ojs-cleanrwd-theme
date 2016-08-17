@@ -3908,7 +3908,6 @@ input:disabled, .disabled {
 
 /* line 1, ../sass/modules/_breadcrumbs.scss */
 #breadcrumb {
-  display: none;
   padding: 0;
   font-size: 11px;
   font-size: 0.707rem;
