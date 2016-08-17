@@ -127,3 +127,45 @@
 		display:none; // I WILL KILL THE BACK-END DEVELOPER WHO DID THIS
 	}
 }
+
+#sidebarFontSize {
+
+}
+
+
+#sizer {
+	text-align:center;
+	a {
+		display:inline;
+		font-size:0px;
+		color:transparent;
+		&:before {
+			color:$dark-color;
+		}	
+	}
+}
+
+.pkp_controllers_fontController_smallFont {
+	@extend .fa;
+	@extend .fa-minus-circle;
+	&:before {
+		@include adjust-font-size-to($h5-font-size);
+	}
+}
+
+.pkp_controllers_fontController_defaultFont {
+	@extend .fa;
+	@extend .fa-font;
+	display: inline;
+	&:before {
+		@include adjust-font-size-to($h4-font-size);
+	}
+}
+
+.pkp_controllers_fontController_largeFont {
+	@extend .fa;
+	@extend .fa-plus-circle;
+	&:before {
+		@include adjust-font-size-to($h5-font-size);
+	}
+}
