@@ -44,96 +44,97 @@
 
 <div id="recipients">
 <h3>{translate key="email.recipients"}</h3>
-<table id="recipients" class="data" width="100%">
-<tr >
-	<td><input type="radio" id="allUsers" name="whichUsers" value="allUsers"/></td>
-	<td class="label">
+
+<section class="section" class="form-subrow">
+	<div class="form-group">
+		<input type="radio" id="allUsers" name="whichUsers" value="allUsers"/>
 		<label for="allUsers">{translate key="editor.notifyUsers.allUsers" count=$allUsersCount|default:0}</label>
-	</td>
-</tr>
-<tr >
-	<td><input type="radio" id="allReaders" name="whichUsers" value="allReaders"/></td>
-	<td class="label">
+	</div>
+
+	<div class="form-group">
+		<input type="radio" id="allReaders" name="whichUsers" value="allReaders"/>
 		<label for="allReaders">{translate key="editor.notifyUsers.allReaders" count=$allReadersCount|default:0}</label>
-	</td>
-</tr>
-<tr >
-	<td><input type="radio" id="allAuthors" name="whichUsers" value="allAuthors"/></td>
-	<td class="label">
-		<label for="allAuthors">{translate key="editor.notifyUsers.allAuthors" count=$allAuthorsCount|default:0}</label>
-	</td>
-</tr>
-{if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION}
-<tr >
-	<td><input type="radio" id="allIndividualSubscribers" name="whichUsers" value="allIndividualSubscribers"/></td>
-	<td class="label">
-		<label for="allIndividualSubscribers">{translate key="editor.notifyUsers.allIndividualSubscribers" count=$allIndividualSubscribersCount|default:0}</label>
-	</td>
-</tr>
-<tr >
-	<td><input type="radio" id="allInstitutionalSubscribers" name="whichUsers" value="allInstitutionalSubscribers"/></td>
-	<td class="label">
-		<label for="allInstitutionalSubscribers">{translate key="editor.notifyUsers.allInstitutionalSubscribers" count=$allInstitutionalSubscribersCount|default:0}</label>
-	</td>
-</tr>
-{/if}{* publishingMode is PUBLISHING_MODE_SUBSCRIPTION *}
-<tr >
-	<td><input type="checkbox" name="sendToMailList" /></td>
-	<td class="label">
-		{translate key="editor.notifyUsers.allMailingList" count=$allMailListCount|default:0}
-	</td>
-</tr>
-{if $senderEmail}
-	<tr >
-		<td><input type="checkbox" name="ccSelf" /></td>
-		<td class="label">
-			{translate key="email.bccSender" address=$senderEmail|escape}
-		</td>
-	</tr>
-{/if}
-</table>
-</div>{* recipients *}
+	</div>
+
+		<div class="form-group">
+			<input type="radio" id="allAuthors" name="whichUsers" value="allAuthors"/>
+			<label for="allAuthors">{translate key="editor.notifyUsers.allAuthors" count=$allAuthorsCount|default:0}</label>
+		</div>
+
+	{if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION}
+		
+		<div class="form-group">
+			<input type="radio" id="allIndividualSubscribers" name="whichUsers" value="allIndividualSubscribers"/>
+			<label for="allIndividualSubscribers">{translate key="editor.notifyUsers.allIndividualSubscribers" count=$allIndividualSubscribersCount|default:0}</label>
+		</div>
+
+		<div class="form-group">
+			<input type="radio" id="allInstitutionalSubscribers" name="whichUsers" value="allInstitutionalSubscribers"/>
+			<label for="allInstitutionalSubscribers">{translate key="editor.notifyUsers.allInstitutionalSubscribers" count=$allInstitutionalSubscribersCount|default:0}</label>
+		</div>
+
+	{/if}{* publishingMode is PUBLISHING_MODE_SUBSCRIPTION *}
+
+	<div class="form-group">
+		<input type="checkbox" name="sendToMailList" />
+		<label for="sendToMailList">{translate key="editor.notifyUsers.allMailingList" count=$allMailListCount|default:0}</label>
+	</div>
+
+	{if $senderEmail}
+		<div class="form-group">
+			<input type="checkbox" name="ccSelf" />
+			<label for="ccSelf">{translate key="email.bccSender" address=$senderEmail|escape}</label>
+		</div>
+
+	{/if}
+
+</section>{* recipients *}
 
 
 
-<div id="issue">
+<section class="section" id="issue">
 <h3>{translate key="issue.issue"}</h3>
-<table class="data" width="100%">
-<tr >
-	<td width="5%">
-		<input type="checkbox" name="includeToc" id="includeToc" value="1"/>
-	</td>
-	<td width="75%" class="label">
-		<label for="includeToc">{translate key="editor.notifyUsers.includeToc"}</label>&nbsp;
-		<select name="issue" id="issue" class="selectMenu">
-			{iterate from=issues item=issue}
-				<option {if $issue->getCurrent()}checked {/if}value="{$issue->getId()}">{$issue->getIssueIdentification()|strip_tags|truncate:40:"..."|escape}</option>
-			{/iterate}
-		</select>
-	</td>
-</tr>
-</table>
+
+
+<div class="form-subrow">
+	<input type="checkbox" name="includeToc" id="includeToc" value="1"/>
+	
+	<label for="includeToc">{translate key="editor.notifyUsers.includeToc"}</label>&nbsp;
+	<select name="issue" id="issue" class="selectMenu">
+		{iterate from=issues item=issue}
+			<option {if $issue->getCurrent()}checked {/if}value="{$issue->getId()}">{$issue->getIssueIdentification()|strip_tags|truncate:40:"..."|escape}</option>
+		{/iterate}
+	</select>
 </div>
 
 
+</section>
 
 
-<table id="email" class="data" width="100%">
-<tr >
-	<td class="label">{translate key="email.from"}</td>
-	<td class="value">{$from|escape}</td>
-</tr>
-<tr >
-	<td width="20%" class="label">{fieldLabel name="subject" key="email.subject"}</td>
-	<td width="80%" class="value"><input type="text" id="subject" name="subject" value="{$subject|escape}" size="60" maxlength="120" class="textField" /></td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="body" key="email.body"}</td>
-	<td class="value"><textarea name="body" cols="60" rows="15" class="textArea">{$body|escape}</textarea></td>
-</tr>
-</table>
 
-<p><input name="send" type="submit" value="{translate key="email.send"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" /></p>
+
+<section id="email" class="section">
+<h3>Email</h3>
+<div class="form-subrow">
+	<div class="form-group">
+		{translate key="email.from"}
+		{$from|escape}</p>
+	</div>
+	<div class="form-group">
+		{fieldLabel name="subject" key="email.subject"}
+		<input type="text" id="subject" name="subject" value="{$subject|escape}" size="60" maxlength="120" class="textField" />
+	</div>
+	<div class="form-group">
+		{fieldLabel name="body" key="email.body"}
+		<textarea name="body" cols="60" rows="15" class="textArea">{$body|escape}</textarea>
+	</div>
+</div>
+
+</section>
+
+<div class="buttons">
+	<input name="send" type="submit" value="{translate key="email.send"}" class="button defaultButton" /><input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" />
+</div>
 </form>
 </div>
 {include file="common/footer.tpl"}

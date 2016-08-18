@@ -192,7 +192,7 @@ button {
 	&:last-of-type {
 		padding-bottom:0;
 	}
-	label {
+	label, .label {
 		font-weight:normal;
 		display:inline;
 		font-family:$alt-font-family;

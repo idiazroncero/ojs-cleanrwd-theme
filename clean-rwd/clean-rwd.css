@@ -3817,7 +3817,7 @@ button {
   .form-subrow:last-of-type {
     padding-bottom: 0; }
   /* line 195, ../sass/modules/_forms.scss */
-  .form-subrow label {
+  .form-subrow label, .form-subrow .label, .form-subrow .ui-dialog-content table td.label, .ui-dialog-content table .form-subrow td.label {
     font-weight: normal;
     display: inline;
     font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
