@@ -100,6 +100,7 @@ Type `gem install breakpoint` and `gem install compass` in your terminal to get 
 - Modify controllers' HTML (instead of overriding it)
 - Style comments on article
 - Style refback links
+- Support author fees
 
 
 
