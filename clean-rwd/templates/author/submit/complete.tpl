@@ -14,11 +14,12 @@
 {/strip}
 
 <div id="submissionComplete">
-<p>{translate key="author.submit.submissionComplete" journalTitle=$journal->getLocalizedTitle()}</p>
+<p class="delete-action">{translate key="author.submit.submissionComplete" journalTitle=$journal->getLocalizedTitle()}</p>
+
 
 {if $canExpedite}
 	{url|assign:"expediteUrl" op="expediteSubmission" articleId=$articleId}
-	{translate key="author.submit.expedite" expediteUrl=$expediteUrl}
+	<p class="delete-action">{translate key="author.submit.expedite" expediteUrl=$expediteUrl}</p>
 {/if}
 {if $paymentButtonsTemplate }
 	{include file=$paymentButtonsTemplate orientation="vertical"}
