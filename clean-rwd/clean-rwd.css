@@ -4269,17 +4269,17 @@ tbody td {
       content: attr(data-title); } }
 
 /* line 99, ../sass/modules/_tables.scss */
-.listing--wide {
+.listing--wide, #referrals .listing {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   letter-spacing: -0.01em; }
   /* line 102, ../sass/modules/_tables.scss */
-  .listing--wide th, .listing--wide td {
+  .listing--wide th, #referrals .listing th, .listing--wide td, #referrals .listing td {
     padding-right: 12px; }
     /* line 104, ../sass/modules/_tables.scss */
-    .listing--wide th:last-child, .listing--wide td:last-child {
+    .listing--wide th:last-child, #referrals .listing th:last-child, .listing--wide td:last-child, #referrals .listing td:last-child {
       padding-right: 0; }
 
 /* line 110, ../sass/modules/_tables.scss */
@@ -4321,6 +4321,50 @@ tbody td {
   /* line 138, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table tbody, .ui-dialog-content table tbody, .pkp_controllers_grid table td, .ui-dialog-content table td, .pkp_controllers_grid table tr, .ui-dialog-content table tr {
     display: block; } }
+
+/* line 144, ../sass/modules/_tables.scss */
+#referrals {
+  overflow-x: auto; }
+
+@media (max-width: 768px) {
+  /* line 148, ../sass/modules/_tables.scss */
+  #referrals .listing {
+    /* Force table to not be like tables anymore */ }
+    /* line 152, ../sass/modules/_tables.scss */
+    #referrals .listing table {
+      display: table; }
+    /* line 155, ../sass/modules/_tables.scss */
+    #referrals .listing thead,
+    #referrals .listing tbody {
+      display: table-row-group; }
+    /* line 159, ../sass/modules/_tables.scss */
+    #referrals .listing th,
+    #referrals .listing td {
+      display: table-cell; }
+    /* line 163, ../sass/modules/_tables.scss */
+    #referrals .listing tr {
+      display: table-row; }
+    /* line 166, ../sass/modules/_tables.scss */
+    #referrals .listing tbody td:last-child {
+      text-align: right; }
+    /* line 169, ../sass/modules/_tables.scss */
+    #referrals .listing thead tr {
+      position: static; }
+    /* line 173, ../sass/modules/_tables.scss */
+    #referrals .listing tr {
+      margin-bottom: 0; }
+    /* line 177, ../sass/modules/_tables.scss */
+    #referrals .listing td {
+      /* Behave  like a "row" */
+      border: none;
+      border-bottom: none;
+      position: relative;
+      padding-left: 0;
+      white-space: normal;
+      text-align: inherit; }
+    /* line 187, ../sass/modules/_tables.scss */
+    #referrals .listing td:before {
+      display: none; } }
 
 @media (min-width: 480px) {
   /* line 1, ../sass/modules/_header.scss */
@@ -4970,6 +5014,17 @@ ul.steplist li {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+
+/* line 10, ../sass/overrides/_referrals.scss */
+#referrals .headseparator {
+  display: none; }
+/* line 14, ../sass/overrides/_referrals.scss */
+#referrals .heading td {
+  border-bottom: 1px solid #CCC;
+  text-align: left; }
+  /* line 17, ../sass/overrides/_referrals.scss */
+  #referrals .heading td:last-child {
+    text-align: right; }
 
 /**
  * We re-group here all layout-related properties scattered along the original OJS' stylesheets

@@ -1,0 +1,22 @@
+// We can't replicate plugins' templates.
+// We try to override its behavior.
+
+#referrals {
+	@extend %table-overflows;
+	.listing {
+		@extend .listing--wide;
+		@extend %table-undo-rwd;
+	}
+	.headseparator {
+		display:none;
+	}
+	.heading {
+		td {
+			border-bottom:1px solid $line-color;
+			text-align:left;
+			&:last-child {
+				text-align:right;
+			}
+		}
+	}
+}
