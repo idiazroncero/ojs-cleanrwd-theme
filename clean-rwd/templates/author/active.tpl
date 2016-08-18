@@ -22,7 +22,7 @@
 {iterate from=submissions item=submission}
 	{assign var="articleId" value=$submission->getId()}
 	{assign var="progress" value=$submission->getSubmissionProgress()}
-
+	<tbody>
 	<tr >
 		<td data-title='{translate key="common.id"}'>{$articleId|escape}</td>
 		<td data-title='{translate key="submission.date.mmdd"}'>{if $submission->getDateSubmitted()}{$submission->getDateSubmitted()|date_format:$dateFormatTrunc}{else}&mdash;{/if}</td>
@@ -92,6 +92,7 @@
 		{page_links anchor="submissions" name="submissions" iterator=$submissions sort=$sort sortDirection=$sortDirection}
 	</tr>
 {/if}
+</tbody>
 </table>
 </section>
 
