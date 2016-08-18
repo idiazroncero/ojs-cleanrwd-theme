@@ -40,6 +40,8 @@ This means this tecnhique __opens the door to potential crashes and/or the dread
 
 In order to avoid this __please always double-check the current compatibility of the theme__ and do not update your OJS install to a newer version until a matching release of OJS Clean RWD Theme has been installed.
 
+__Please note also that plugins are not fully supported__. Most of them define their own templates inside their own folder, out of the reach of our `/templates` structure. Some overrides are active for the most popular (referrals, PDF), but they can't change the underlying HTML and sometimes this means the output isn't fully responsive and does not comply with the general style.
+
 
 ### Install
 
