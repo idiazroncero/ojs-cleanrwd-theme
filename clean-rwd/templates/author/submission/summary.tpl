@@ -8,10 +8,10 @@
  * Subtemplate defining the author's submission summary table.
  *
  *}
-<div id="submission">
+<section class="section" id="submission">
 <h3>{translate key="article.submission"}</h3>
 
-<table width="100%" class="data">
+<table class="listing listing--wide">
 	<tr>
 		<td width="20%" class="label">{translate key="article.authors"}</td>
 		<td width="80%">
@@ -49,5 +49,5 @@
 		</td>
 	</tr>
 </table>
-</div>
+</section>
 
