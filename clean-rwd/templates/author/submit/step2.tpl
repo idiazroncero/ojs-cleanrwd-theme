@@ -45,13 +45,12 @@
 			{$submissionFile->getNiceFileSize()}</p></div>
 		<div class="form-group ">
 			<p class="label">{translate key="common.dateUploaded"}
-			{$submissionFile->getDateUploaded()|date_format:$datetimeFormatShort}</p></div>
+			{$submissionFile->getDateUploaded()|date_format:$datetimeFormatShort}</div>
 	</div>
 </div>
 {else}
 <p>{translate key="author.submit.noSubmissionFile"}</p>
 {/if}
-</table>
 
 <div id="addSubmissionFile">
 
@@ -69,7 +68,7 @@
 		<a class="action" href="javascript:openHelp('{get_help_id key="editorial.sectionEditorsRole.review.blindPeerReview" url="true"}')">{translate key="reviewer.article.ensuringBlindReview"}</a>{/if}
 </div>
 
-</table>
+
 </div>
 </section>
 
