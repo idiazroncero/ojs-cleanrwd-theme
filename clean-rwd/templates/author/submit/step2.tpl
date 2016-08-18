@@ -23,61 +23,62 @@
 	{assign var="howToKeyName" value="author.submit.howToSubmitNoPhone"}
 {/if}
 
-<p>{translate key=$howToKeyName supportName=$journalSettings.supportName supportEmail=$journalSettings.supportEmail supportPhone=$journalSettings.supportPhone}</p>
+<p class="info-message">{translate key=$howToKeyName supportName=$journalSettings.supportName supportEmail=$journalSettings.supportEmail supportPhone=$journalSettings.supportPhone}</p>
 
-<div class="separator"></div>
-
-<div id="submissionFile">
+<section id="submissionFile">
 <h3>{translate key="author.submit.submissionFile"}</h3>
-<table class="data" width="100%">
+
 {if $submissionFile}
-<tr >
-	<td width="20%" class="label">{translate key="common.fileName"}</td>
-	<td width="80%" class="value"><a href="{url op="download" path=$articleId|to_array:$submissionFile->getFileId()}">{$submissionFile->getFileName()|escape}</a></td>
-</tr>
-<tr >
-	<td width="20%" class="label">{translate key="common.originalFileName"}</td>
-	<td width="80%" class="value">{$submissionFile->getOriginalFileName()|escape}</td>
-</tr>
-<tr >
-	<td width="20%" class="label">{translate key="common.fileSize"}</td>
-	<td width="80%" class="value">{$submissionFile->getNiceFileSize()}</td>
-</tr>
-<tr >
-	<td width="20%" class="label">{translate key="common.dateUploaded"}</td>
-	<td width="80%" class="value">{$submissionFile->getDateUploaded()|date_format:$datetimeFormatShort}</td>
-</tr>
+<div class="form-row">
+	<div class="form-subrow">
+		<div class="form-group ">
+			<p class="label">
+			{translate key="common.fileName"}
+			<a href="{url op="download" path=$articleId|to_array:$submissionFile->getFileId()}">{$submissionFile->getFileName()|escape}</a>
+		</p>
+		</div>
+		<div class="form-group ">
+			<p class="label">{translate key="common.originalFileName"}
+			{$submissionFile->getOriginalFileName()|escape}</p></div>
+		<div class="form-group ">
+			<p class="label">{translate key="common.fileSize"}
+			{$submissionFile->getNiceFileSize()}</p></div>
+		<div class="form-group ">
+			<p class="label">{translate key="common.dateUploaded"}
+			{$submissionFile->getDateUploaded()|date_format:$datetimeFormatShort}</p></div>
+	</div>
+</div>
 {else}
-<tr >
-	<td colspan="2" class="nodata">{translate key="author.submit.noSubmissionFile"}</td>
-</tr>
+<p>{translate key="author.submit.noSubmissionFile"}</p>
 {/if}
 </table>
-</div>
-
-<div class="separator"></div>
 
 <div id="addSubmissionFile">
-<table class="data" width="100%">
-<tr>
-	<td width="30%" class="label">
-		{if $submissionFile}
-			{fieldLabel name="submissionFile" key="author.submit.replaceSubmissionFile"}
-		{else}
-			{fieldLabel name="submissionFile" key="author.submit.uploadSubmissionFile"}
-		{/if}
-	</td>
-	<td width="70%" class="value">
-		<input type="file" class="uploadField" name="submissionFile" id="submissionFile" /> <input name="uploadSubmissionFile" type="submit" class="button" value="{translate key="common.upload"}" />
-		{if $currentJournal->getSetting('showEnsuringLink')}<a class="action" href="javascript:openHelp('{get_help_id key="editorial.sectionEditorsRole.review.blindPeerReview" url="true"}')">{translate key="reviewer.article.ensuringBlindReview"}</a>{/if}
-	</td>
-</tr>
-</table>
+
+<div class="form-row">
+		<div class="form-group">
+			{if $submissionFile}
+				{fieldLabel name="submissionFile" key="author.submit.replaceSubmissionFile"}
+			{else}
+				{fieldLabel name="submissionFile" key="author.submit.uploadSubmissionFile"}
+			{/if}
+			<input type="file" class="uploadField" name="submissionFile" id="submissionFile" />
+			<input name="uploadSubmissionFile" type="submit" class="button" value="{translate key="common.upload"}" />
+		</div>
+		{if $currentJournal->getSetting('showEnsuringLink')}
+		<a class="action" href="javascript:openHelp('{get_help_id key="editorial.sectionEditorsRole.review.blindPeerReview" url="true"}')">{translate key="reviewer.article.ensuringBlindReview"}</a>{/if}
 </div>
 
-<div class="separator"></div>
+</table>
+</div>
+</section>
 
-<p><input type="submit"{if !$submissionFile} onclick="return confirm('{translate|escape:"jsparam" key="author.submit.noSubmissionConfirm"}')"{/if} value="{translate key="common.saveAndContinue"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="confirmAction('{url page="author"}', '{translate|escape:"jsparam" key="author.submit.cancelSubmission"}')" /></p>
+
+
+<div class="buttons">
+	<input type="submit"{if !$submissionFile} onclick="return confirm('{translate|escape:"jsparam" key="author.submit.noSubmissionConfirm"}')"{/if} value="{translate key="common.saveAndContinue"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="confirmAction('{url page="author"}', '{translate|escape:"jsparam" key="author.submit.cancelSubmission"}')" />
+</div>
 
 </form>
 
