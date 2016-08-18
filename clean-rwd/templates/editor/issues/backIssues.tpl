@@ -49,7 +49,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveIssue"); });
 		<td  data-title="{translate key="editor.issues.published"}" class="drag">{$issue->getDatePublished()|date_format:"$dateFormatShort"|default:"&mdash;"}</td>
 		<td  data-title="{translate key="editor.issues.numArticles"}" class="drag">{$issue->getNumArticles()|escape}</td>
 		<td data-title="{translate key="common.order"}" ><a href="{url op="moveIssue" d=u id=$issue->getId() issuesPage=$page }">&uarr;</a>	<a href="{url op="moveIssue" d=d id=$issue->getId() issuesPage=$page }">&darr;</a></td>
-		<td data-title="{translate key="common.action"}"><a href="{url op="removeIssue" path=$issue->getId() issuesPage=$page }" onclick="return confirm('{translate|escape:"jsparam" key="editor.issues.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
+		<td data-title="{translate key="common.action"}"><a href="{url op="removeIssue" path=$issue->getId() issuesPage=$page }" onclick="return confirm('{translate|escape:"jsparam" key="editor.issues.confirmDelete"}')" class="button button--small button--cancel">{translate key="common.delete"}</a></td>
 	</tr>
 {/iterate}
 {if $issues->wasEmpty()}
