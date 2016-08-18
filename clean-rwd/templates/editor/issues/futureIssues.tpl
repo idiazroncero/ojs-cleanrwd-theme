@@ -23,39 +23,27 @@
 
 
 <div id="issues">
-<table width="100%" class="listing">
-	<tr>
-		<td colspan="3" class="headseparator">&nbsp;</td>
-	</tr>
-	<tr class="heading" >
-		<td width="80%">{translate key="issue.issue"}</td>
-		<td width="15%">{translate key="editor.issues.numArticles"}</td>
-		<td width="5%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="3" class="headseparator">&nbsp;</td>
-	</tr>
+<table class="listing">
+	<thead>
+		<th >{translate key="issue.issue"}</th>
+		<th >{translate key="editor.issues.numArticles"}</th>
+		<th >{translate key="common.action"}</th>
+	</thead>
 	{iterate from=issues item=issue}
-	<tr >
-		<td><a href="{url op="issueToc" path=$issue->getId()}" class="action">{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></td>
-		<td>{$issue->getNumArticles()|escape}</td>
-		<td align="right"><a href="{url op="removeIssue" path=$issue->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="editor.issues.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
-	</tr>
 	<tr>
-		<td colspan="3" class="{if $issues->eof()}end{/if}separator">&nbsp;</td>
+		<td data-title="{translate key="issue.issue"}"><a href="{url op="issueToc" path=$issue->getId()}" class="action">{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}</a></td>
+		<td data-title="{translate key="editor.issues.numArticles"}">{$issue->getNumArticles()|escape}</td>
+		<td data-title="{translate key="common.action"}" ><a href="{url op="removeIssue" path=$issue->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="editor.issues.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
 {/iterate}
 {if $issues->wasEmpty()}
 	<tr>
 		<td colspan="3" class="nodata">{translate key="issue.noIssues"}</td>
 	</tr>
-	<tr>
-		<td colspan="3" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr>
-		<td align="left">{page_info iterator=$issues}</td>
-		<td colspan="2" align="right">{page_links anchor="issues" name="issues" iterator=$issues}</td>
+	<tr class="listing-pager">
+		<td>{page_info iterator=$issues}</td>
+		<td colspan="2">{page_links anchor="issues" name="issues" iterator=$issues}</td>
 	</tr>
 {/if}
 </table>
