@@ -45,48 +45,48 @@
 <div id="recipients">
 <h3>{translate key="email.recipients"}</h3>
 
-<section class="section" class="form-subrow">
-	<div class="form-group">
+<section class="section">
+<div class="form-subrow"><div class="form-group">
 		<input type="radio" id="allUsers" name="whichUsers" value="allUsers"/>
 		<label for="allUsers">{translate key="editor.notifyUsers.allUsers" count=$allUsersCount|default:0}</label>
 	</div>
-
+	
 	<div class="form-group">
 		<input type="radio" id="allReaders" name="whichUsers" value="allReaders"/>
 		<label for="allReaders">{translate key="editor.notifyUsers.allReaders" count=$allReadersCount|default:0}</label>
 	</div>
-
+	
 		<div class="form-group">
 			<input type="radio" id="allAuthors" name="whichUsers" value="allAuthors"/>
 			<label for="allAuthors">{translate key="editor.notifyUsers.allAuthors" count=$allAuthorsCount|default:0}</label>
 		</div>
-
+	
 	{if $currentJournal->getSetting('publishingMode') == $smarty.const.PUBLISHING_MODE_SUBSCRIPTION}
 		
 		<div class="form-group">
 			<input type="radio" id="allIndividualSubscribers" name="whichUsers" value="allIndividualSubscribers"/>
 			<label for="allIndividualSubscribers">{translate key="editor.notifyUsers.allIndividualSubscribers" count=$allIndividualSubscribersCount|default:0}</label>
 		</div>
-
+	
 		<div class="form-group">
 			<input type="radio" id="allInstitutionalSubscribers" name="whichUsers" value="allInstitutionalSubscribers"/>
 			<label for="allInstitutionalSubscribers">{translate key="editor.notifyUsers.allInstitutionalSubscribers" count=$allInstitutionalSubscribersCount|default:0}</label>
 		</div>
-
+	
 	{/if}{* publishingMode is PUBLISHING_MODE_SUBSCRIPTION *}
-
+	
 	<div class="form-group">
 		<input type="checkbox" name="sendToMailList" />
 		<label for="sendToMailList">{translate key="editor.notifyUsers.allMailingList" count=$allMailListCount|default:0}</label>
 	</div>
-
+	
 	{if $senderEmail}
 		<div class="form-group">
 			<input type="checkbox" name="ccSelf" />
 			<label for="ccSelf">{translate key="email.bccSender" address=$senderEmail|escape}</label>
 		</div>
-
-	{/if}
+	
+	{/if}</div>
 
 </section>{* recipients *}
 
