@@ -3435,28 +3435,24 @@ span.heading {
 span.highlight {
   border-bottom: 1px dotted #000; }
 
-/* line 52, ../sass/pkp/_pkp_common.scss */
-.nowrap {
-  white-space: nowrap; }
-
 /**
  * Form-specific elements
  */
-/* line 62, ../sass/pkp/_pkp_common.scss */
+/* line 57, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_error {
   /* Named for compatibility with new lessphp structure */
   color: #900;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 68, ../sass/pkp/_pkp_common.scss */
+/* line 63, ../sass/pkp/_pkp_common.scss */
 span.pkp_form_success {
   /* Named for compatibility with new lessphp structure */
   color: #090;
   font-weight: bold;
   font-size: 1em; }
 
-/* line 74, ../sass/pkp/_pkp_common.scss */
+/* line 69, ../sass/pkp/_pkp_common.scss */
 ul.pkp_form_error_list {
   /* Named for compatibility with new lessphp structure */
   color: #900; }
@@ -3464,18 +3460,18 @@ ul.pkp_form_error_list {
 /**
  * Other organizational elements
  */
-/* line 85, ../sass/pkp/_pkp_common.scss */
+/* line 80, ../sass/pkp/_pkp_common.scss */
 ul.plain {
   list-style-type: none;
   padding-left: 1.5em; }
 
-/* line 90, ../sass/pkp/_pkp_common.scss */
+/* line 85, ../sass/pkp/_pkp_common.scss */
 ul.filter {
   margin: 0;
   padding: 1.5em 0 1.5em 0;
   list-style-type: none; }
 
-/* line 96, ../sass/pkp/_pkp_common.scss */
+/* line 91, ../sass/pkp/_pkp_common.scss */
 ul.filter li {
   padding-right: 1.5em;
   display: inline; }
@@ -3571,36 +3567,9 @@ pre {
   font-size: 1.25em; }
 
 /**
- * Table styles
- */
-/* line 99, ../sass/pkp/_common.scss */
-.highlightReviewerNotNotified, .highlightCopyediting {
-  background: #EDEBC4; }
-
-/* line 102, ../sass/pkp/_common.scss */
-.highlightNoDecision, .highlightLayoutEditing {
-  background: #D8E9BD; }
-
-/* line 105, ../sass/pkp/_common.scss */
-.highlightRevisedCopyUploaded, .higlightProofreading {
-  background: #C6EBE4; }
-
-/* line 108, ../sass/pkp/_common.scss */
-.highlightReviewerConfirmationOverdue {
-  background: #9DD1E6; }
-
-/* line 111, ../sass/pkp/_common.scss */
-.highlightReviewerCompletionOverdue {
-  background: #74C5D8; }
-
-/* line 115, ../sass/pkp/_common.scss */
-.fastTracked {
-  background-color: #ABA; }
-
-/**
  * Other organizational elements
  */
-/* line 124, ../sass/pkp/_common.scss */
+/* line 101, ../sass/pkp/_common.scss */
 div.progressbar {
   background-image: url(../templates/images/progbg.gif);
   background-repeat: no-repeat;
@@ -3608,18 +3577,18 @@ div.progressbar {
   width: 505px;
   z-index: 1; }
 
-/* line 132, ../sass/pkp/_common.scss */
+/* line 109, ../sass/pkp/_common.scss */
 td.notificationContent {
   padding-left: 5px;
   padding-right: 5px; }
 
-/* line 137, ../sass/pkp/_common.scss */
+/* line 114, ../sass/pkp/_common.scss */
 td.notificationFunction {
   padding-left: 5px;
   padding-right: 5px;
   text-align: right; }
 
-/* line 143, ../sass/pkp/_common.scss */
+/* line 120, ../sass/pkp/_common.scss */
 .throbber {
   display: none;
   background: url(../lib/pkp/templates/images/throbber.gif) no-repeat;
@@ -3629,16 +3598,16 @@ td.notificationFunction {
   margin-top: 5%; }
 
 /* Font Sizer */
-/* line 153, ../sass/pkp/_common.scss */
+/* line 130, ../sass/pkp/_common.scss */
 #journalListPageInfo {
   float: right; }
 
-/* line 157, ../sass/pkp/_common.scss */
+/* line 134, ../sass/pkp/_common.scss */
 #journalListPageLinks {
   float: left; }
 
 /* @group Tag-it */
-/* line 167, ../sass/pkp/_common.scss */
+/* line 144, ../sass/pkp/_common.scss */
 #interests ul.tagit {
   padding: 0 0.375rem;
   border: 1px solid #999;
@@ -3650,7 +3619,7 @@ td.notificationFunction {
   line-height: 24px;
   line-height: 1.5rem;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* line 181, ../sass/pkp/_common.scss */
+/* line 158, ../sass/pkp/_common.scss */
 #interests ul.tagit li {
   margin: 1px 5px 1px 0;
   border-color: #999;
@@ -3658,23 +3627,23 @@ td.notificationFunction {
   background: none;
   font-weight: normal;
   border-radius: 0; }
-/* line 193, ../sass/pkp/_common.scss */
+/* line 170, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-choice {
   padding: 0 18px 0 5px; }
-/* line 197, ../sass/pkp/_common.scss */
+/* line 174, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-new {
   padding: 1px 18px 1px 5px; }
-  /* line 200, ../sass/pkp/_common.scss */
+  /* line 177, ../sass/pkp/_common.scss */
   #interests ul.tagit li.tagit-new input {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-size: 0.85rem;
     line-height: 24px;
     line-height: 1.5rem; }
-/* line 207, ../sass/pkp/_common.scss */
+/* line 184, ../sass/pkp/_common.scss */
 #interests ul.tagit li.tagit-choice .tagit-close {
   color: #333; }
-/* line 212, ../sass/pkp/_common.scss */
+/* line 189, ../sass/pkp/_common.scss */
 #interests .ui-autocomplete .ui-menu-item a {
   font-size: 14px;
   font-size: 0.85rem;
@@ -4216,15 +4185,31 @@ tbody td {
   tbody td:last-child {
     text-align: right; }
 
-@media (max-width: 768px) {
+/* line 37, ../sass/modules/_tables.scss */
+.nested {
+  table-layout: fixed; }
   /* line 39, ../sass/modules/_tables.scss */
+  .nested td {
+    text-align: center;
+    padding: 0;
+    font-size: 14px;
+    font-size: 0.85rem;
+    line-height: 24px;
+    line-height: 1.5rem;
+    font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+    /* line 44, ../sass/modules/_tables.scss */
+    .nested td:last-child {
+      text-align: center; }
+
+@media (max-width: 768px) {
+  /* line 50, ../sass/modules/_tables.scss */
   .listing {
     /* Force table to not be like tables anymore */
     /* Hide table headers (but not display: none;, for accessibility) */
     /*
     Label the data
     */ }
-    /* line 45, ../sass/modules/_tables.scss */
+    /* line 56, ../sass/modules/_tables.scss */
     .listing table,
     .listing thead,
     .listing tbody,
@@ -4232,18 +4217,18 @@ tbody td {
     .listing td,
     .listing tr {
       display: block; }
-    /* line 54, ../sass/modules/_tables.scss */
+    /* line 65, ../sass/modules/_tables.scss */
     .listing tbody td:last-child {
       text-align: left; }
-    /* line 59, ../sass/modules/_tables.scss */
+    /* line 70, ../sass/modules/_tables.scss */
     .listing thead tr {
       position: absolute;
       top: -9999px;
       left: -9999px; }
-    /* line 65, ../sass/modules/_tables.scss */
+    /* line 76, ../sass/modules/_tables.scss */
     .listing tr {
       margin-bottom: 1.5rem; }
-    /* line 69, ../sass/modules/_tables.scss */
+    /* line 80, ../sass/modules/_tables.scss */
     .listing td {
       /* Behave  like a "row" */
       border: none;
@@ -4251,47 +4236,48 @@ tbody td {
       position: relative;
       white-space: normal;
       text-align: left; }
-    /* line 79, ../sass/modules/_tables.scss */
+    /* line 90, ../sass/modules/_tables.scss */
     .listing td:before {
       /* Now like a table header */
       /* Top/left values mimic padding */
       padding-right: 20px;
       text-align: left;
       font-weight: bold; }
-    /* line 95, ../sass/modules/_tables.scss */
+    /* line 106, ../sass/modules/_tables.scss */
     .listing td:before {
       content: attr(data-title); } }
 
-/* line 99, ../sass/modules/_tables.scss */
+/* line 110, ../sass/modules/_tables.scss */
 .listing--wide, #referrals .listing {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   letter-spacing: -0.01em; }
-  /* line 102, ../sass/modules/_tables.scss */
+  /* line 113, ../sass/modules/_tables.scss */
   .listing--wide th, #referrals .listing th, .listing--wide td, #referrals .listing td {
     padding-right: 12px; }
-    /* line 104, ../sass/modules/_tables.scss */
+    /* line 115, ../sass/modules/_tables.scss */
     .listing--wide th:last-child, #referrals .listing th:last-child, .listing--wide td:last-child, #referrals .listing td:last-child {
       padding-right: 0; }
 
-/* line 110, ../sass/modules/_tables.scss */
+/* line 121, ../sass/modules/_tables.scss */
 .listing-pager {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
-  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
-  /* line 113, ../sass/modules/_tables.scss */
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  border-top: 1px solid #CCC; }
+  /* line 125, ../sass/modules/_tables.scss */
   .listing-pager td {
     border: none; }
 
-/* line 118, ../sass/modules/_tables.scss */
+/* line 130, ../sass/modules/_tables.scss */
 .center {
   text-align: center; }
 
-/* line 122, ../sass/modules/_tables.scss */
+/* line 134, ../sass/modules/_tables.scss */
 .action, .pkp_controllers_grid .hidetext {
   font-size: 14px;
   font-size: 0.85rem;
@@ -4304,50 +4290,50 @@ tbody td {
     border-bottom: none;
     text-decoration: none; }
 
-/* line 129, ../sass/modules/_tables.scss */
+/* line 141, ../sass/modules/_tables.scss */
 .nowrap {
   white-space: no-wrap; }
 
 @media (max-width: 768px) {
-  /* line 135, ../sass/modules/_tables.scss */
+  /* line 147, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table thead, .ui-dialog-content table thead {
     display: none; }
-  /* line 138, ../sass/modules/_tables.scss */
+  /* line 150, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table tbody, .ui-dialog-content table tbody, .pkp_controllers_grid table td, .ui-dialog-content table td, .pkp_controllers_grid table tr, .ui-dialog-content table tr {
     display: block; } }
 
-/* line 144, ../sass/modules/_tables.scss */
+/* line 156, ../sass/modules/_tables.scss */
 #referrals {
   overflow-x: auto; }
 
 @media (max-width: 768px) {
-  /* line 148, ../sass/modules/_tables.scss */
+  /* line 160, ../sass/modules/_tables.scss */
   #referrals .listing {
     /* Force table to not be like tables anymore */ }
-    /* line 152, ../sass/modules/_tables.scss */
+    /* line 164, ../sass/modules/_tables.scss */
     #referrals .listing table {
       display: table; }
-    /* line 155, ../sass/modules/_tables.scss */
+    /* line 167, ../sass/modules/_tables.scss */
     #referrals .listing thead,
     #referrals .listing tbody {
       display: table-row-group; }
-    /* line 159, ../sass/modules/_tables.scss */
+    /* line 171, ../sass/modules/_tables.scss */
     #referrals .listing th,
     #referrals .listing td {
       display: table-cell; }
-    /* line 163, ../sass/modules/_tables.scss */
+    /* line 175, ../sass/modules/_tables.scss */
     #referrals .listing tr {
       display: table-row; }
-    /* line 166, ../sass/modules/_tables.scss */
+    /* line 178, ../sass/modules/_tables.scss */
     #referrals .listing tbody td:last-child {
       text-align: right; }
-    /* line 169, ../sass/modules/_tables.scss */
+    /* line 181, ../sass/modules/_tables.scss */
     #referrals .listing thead tr {
       position: static; }
-    /* line 173, ../sass/modules/_tables.scss */
+    /* line 185, ../sass/modules/_tables.scss */
     #referrals .listing tr {
       margin-bottom: 0; }
-    /* line 177, ../sass/modules/_tables.scss */
+    /* line 189, ../sass/modules/_tables.scss */
     #referrals .listing td {
       /* Behave  like a "row" */
       border: none;
@@ -4356,9 +4342,36 @@ tbody td {
       padding-left: 0;
       white-space: normal;
       text-align: inherit; }
-    /* line 187, ../sass/modules/_tables.scss */
+    /* line 199, ../sass/modules/_tables.scss */
     #referrals .listing td:before {
       display: none; } }
+
+/**
+ * Table styles
+ */
+/* line 211, ../sass/modules/_tables.scss */
+.highlightReviewerNotNotified, .highlightCopyediting {
+  background: #EDEBC4; }
+
+/* line 214, ../sass/modules/_tables.scss */
+.highlightNoDecision, .highlightLayoutEditing {
+  background: #D8E9BD; }
+
+/* line 217, ../sass/modules/_tables.scss */
+.highlightRevisedCopyUploaded, .higlightProofreading {
+  background: #C6EBE4; }
+
+/* line 220, ../sass/modules/_tables.scss */
+.highlightReviewerConfirmationOverdue {
+  background: #9DD1E6; }
+
+/* line 223, ../sass/modules/_tables.scss */
+.highlightReviewerCompletionOverdue {
+  background: #74C5D8; }
+
+/* line 227, ../sass/modules/_tables.scss */
+.fastTracked {
+  background-color: #ABA; }
 
 @media (min-width: 480px) {
   /* line 1, ../sass/modules/_header.scss */
@@ -5018,6 +5031,10 @@ ul.steplist li {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+
+/* line 2, ../sass/pages/_editor.scss */
+#submissions .nested td {
+  width: 33%; }
 
 /* line 10, ../sass/overrides/_referrals.scss */
 #referrals .headseparator {

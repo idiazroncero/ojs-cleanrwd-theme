@@ -34,7 +34,18 @@ tbody {
 	}
 }
 
-
+.nested {
+	table-layout:fixed;
+	td {
+		text-align:center;
+		padding:0;
+		@include adjust-font-size-to($h5-font-size);
+		font-family:$alt-font-family;
+		&:last-child {
+			text-align:center;
+		}
+	}
+}
 
 .listing {	
 
@@ -110,6 +121,7 @@ tbody {
 .listing-pager {
 	@include adjust-font-size-to($h5-font-size);
 	font-family:$alt-font-family;
+	border-top:1px solid $line-color;
 	td {
 		border:none;
 	}
@@ -190,3 +202,29 @@ tbody {
 	}
 
 }
+
+
+/**
+ * Table styles
+ */
+
+.highlightReviewerNotNotified, .highlightCopyediting {
+	background: #EDEBC4;
+}
+.highlightNoDecision, .highlightLayoutEditing {
+	background: #D8E9BD;
+}
+.highlightRevisedCopyUploaded, .higlightProofreading {
+	background: #C6EBE4;
+}
+.highlightReviewerConfirmationOverdue {
+	background: #9DD1E6;
+}
+.highlightReviewerCompletionOverdue {
+	background: #74C5D8;
+}
+
+.fastTracked {
+	background-color: #ABA;
+}
+
