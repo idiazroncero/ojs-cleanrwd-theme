@@ -4292,7 +4292,7 @@ tbody td {
 
 /* line 141, ../sass/modules/_tables.scss */
 .nowrap {
-  white-space: no-wrap; }
+  white-space: nowrap; }
 
 @media (max-width: 768px) {
   /* line 147, ../sass/modules/_tables.scss */

@@ -25,8 +25,8 @@
 				</tr>
 			</table>
 		</td>
-		<td width="5%">{translate key="submissions.ruling"}</td>
-		<td width="5%">{translate key="article.sectionEditor"}</td>
+		<th >{translate key="submissions.ruling"}</th>
+		<th >{translate key="article.sectionEditor"}</th>
 	</thead>
 	<tbody>
 	{iterate from=submissions item=submission}
