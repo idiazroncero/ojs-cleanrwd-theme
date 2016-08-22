@@ -20,46 +20,40 @@
 </ul>
 
 <section class="section" id="announcementList">
-<table class="listing">
+<table class="listing listing--wide">
+	<thead>
 	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
+		<th>{translate key="manager.announcements.dateExpire"}</th>
+		<th>{translate key="manager.announcements.type"}</th>
+		<th>{translate key="manager.announcements.title"}</th>
+		<th>{translate key="common.action"}</th>
 	</tr>
-	<tr class="heading" valign="bottom">
-		<td width="15%">{translate key="manager.announcements.dateExpire"}</td>
-		<td width="15%">{translate key="manager.announcements.type"}</td>
-		<td width="55%">{translate key="manager.announcements.title"}</td>
-		<td width="15%">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="4" class="headseparator">&nbsp;</td>
-	</tr>
+	</thead>
+	<tbody>
 {iterate from=announcements item=announcement}
-	<tr valign="top">
-		<td>{$announcement->getDateExpire()|date_format:$dateFormatShort}</td>
-		<td>{$announcement->getAnnouncementTypeName()}</td>
-		<td>{$announcement->getLocalizedTitle()|escape}</td>
-		<td><a href="{url op="editAnnouncement" path=$announcement->getId()}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteAnnouncement" path=$announcement->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.announcements.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
-	</tr>
 	<tr>
-		<td colspan="4" class="{if $announcements->eof()}end{/if}separator">&nbsp;</td>
+		<td data-title='{translate key="manager.announcements.dateExpire"}'>{$announcement->getDateExpire()|date_format:$dateFormatShort}</td>
+		<td data-title='{translate key="manager.announcements.type"}'>{$announcement->getAnnouncementTypeName()}</td>
+		<td data-title='{translate key="manager.announcements.title"}'>{$announcement->getLocalizedTitle()|escape}</td>
+		<td data-title='{translate key="common.action"}'><a href="{url op="editAnnouncement" path=$announcement->getId()}" class="action">{translate key="common.edit"}</a>&nbsp;<a href="{url op="deleteAnnouncement" path=$announcement->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.announcements.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
 {/iterate}
 {if $announcements->wasEmpty()}
 	<tr>
 		<td colspan="4" class="nodata">{translate key="manager.announcements.noneCreated"}</td>
 	</tr>
-	<tr>
-		<td colspan="4" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr>
+	<tr class="listing-pager">
 		<td colspan="2" align="left">{page_info iterator=$announcements}</td>
 		<td colspan="2" align="right">{page_links anchor="announcements" name="announcements" iterator=$announcements}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 
-<a href="{url op="createAnnouncement"}" class="action">{translate key="manager.announcements.create"}</a>
+<div class="buttons">
+	<a href="{url op="createAnnouncement"}" class="button">{translate key="manager.announcements.create"}</a>
 </div>
+</section>
 {include file="common/footer.tpl"}
 
