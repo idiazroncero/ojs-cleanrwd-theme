@@ -15,26 +15,20 @@
 
 <h3>{translate key="editor.article.selectReviewForm"}</h3>
 
-<div id="assignReviewForm">
-<table width="100%" class="listing">
-	<tr>
-		<td class="headseparator" colspan="2">&nbsp;</td>
-	</tr>
-	<tr class="heading" >
-		<td width="85%">{translate key="manager.reviewForms.title"}</td>
-		<td width="15%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td class="headseparator" colspan="2">&nbsp;</td>
-	</tr>
+<section class="section" id="assignReviewForm">
+<table class="listing">
+	<thead>
+		<tr>
+			<th>{translate key="manager.reviewForms.title"}</th>
+			<th>{translate key="common.action"}</th>
+		</tr>
+	</thead>
+	<tbody>
 {iterate from=reviewForms item=reviewForm name=reviewForms}
 	<tr >
-		<td>{$reviewForm->getLocalizedTitle()|escape}</td>
-		<td class="nowrap">
+		<td data-title='{translate key="manager.reviewForms.title"}'>{$reviewForm->getLocalizedTitle()|escape}</td>
+		<td data-title='{translate key="common.action"}' >
 			{if $assignedReviewFormId == $reviewForm->getId()}{translate key="common.alreadyAssigned"}{else}<a href="{url op="selectReviewForm" path=$articleId|to_array:$reviewId:$reviewForm->getId()}" class="action">{translate key="common.assign"}</a>{/if}&nbsp;|&nbsp;<a href="{url op="previewReviewForm" path=$reviewId|to_array:$reviewForm->getId()}" class="action">{translate key="common.preview"}</a>
-	</tr>
-	<tr>
-		<td colspan="2" class="{if $reviewForms->eof()}end{/if}separator">&nbsp;</td>
 	</tr>
 {/iterate}
 
@@ -42,15 +36,13 @@
 	<tr>
 		<td colspan="2" class="nodata">{translate key="manager.reviewForms.noneCreated"}</td>
 	</tr>
-	<tr>
-		<td colspan="2" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr>
-		<td align="left">{page_info iterator=$reviewForms}</td>
-		<td align="right">{page_links anchor="reviewForms" name="reviewForms" iterator=$reviewForms}</td>
+	<tr class="listing-pager">
+		<td>{page_info iterator=$reviewForms}</td>
+		<td>{page_links anchor="reviewForms" name="reviewForms" iterator=$reviewForms}</td>
 	</tr>
 {/if}
+	</tbody>
 </table>
 </div>
 
