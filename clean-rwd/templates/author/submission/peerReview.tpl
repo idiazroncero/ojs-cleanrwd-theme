@@ -39,23 +39,17 @@
 			{/if}
 	</dd>
 
-	<tr >
-		<td class="label" width="20%">
-			{translate key="submission.lastModified"}
-		</td>
-		<td class="value" width="80%">
+	<dt>{translate key="submission.lastModified"}</dt>
+	<dd>
 			{if $reviewModifiedByRound[$round]}
 				{$reviewModifiedByRound[$round]|date_format:$dateFormatShort}
 			{else}
 				&mdash;
 			{/if}
-		</td>
-	</tr>
-	<tr >
-		<td class="label" width="20%">
-			{translate key="common.uploadedFile"}
-		</td>
-		<td class="value" width="80%">
+		</dd>
+
+	<dt>{translate key="common.uploadedFile"}</dt>
+		<dd>
 			{foreach from=$viewableFiles item=reviewerFiles key=reviewer}
 				{foreach from=$reviewerFiles item=viewableFilesForReviewer key=reviewId}
 					{assign var="roundIndex" value=$reviewIndexesByRound[$round][$reviewId]}
@@ -68,33 +62,25 @@
 			{foreachelse}
 				{translate key="common.none"}
 			{/foreach}
-		</td>
-	</tr>
+		</dd>
+
 	{if !$smarty.section.round.last}
-		<tr >
-			<td class="label" width="20%">
-				{translate key="submission.editorVersion"}
-			</td>
-			<td class="value" width="80%">
+		<dt>{translate key="submission.editorVersion"}</dt>
+		<dd>
 				{foreach from=$editorFiles item=editorFile key=key}
 					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$editorFile->getFileId():$editorFile->getRevision()}" class="file">{$editorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$editorFile->getDateModified()|date_format:$dateFormatShort}
 				{foreachelse}
 					{translate key="common.none"}
 				{/foreach}
-			</td>
-		</tr>
-		<tr >
-			<td class="label" width="20%">
-				{translate key="submission.authorVersion"}
-			</td>
-			<td class="value" width="80%">
+			</dd>
+		<dt>{translate key="submission.authorVersion"}</dt>
+			<dd>
 				{foreach from=$authorFiles item=authorFile key=key}
 					<a href="{url op="downloadFile" path=$submission->getId()|to_array:$authorFile->getFileId():$authorFile->getRevision()}" class="file">{$authorFile->getFileName()|escape}</a>&nbsp;&nbsp;{$authorFile->getDateModified()|date_format:$dateFormatShort}
 				{foreachelse}
 					{translate key="common.none"}
 				{/foreach}
-			</td>
-		</tr>
+			</dd>
 	{/if}
 </dl>
 
