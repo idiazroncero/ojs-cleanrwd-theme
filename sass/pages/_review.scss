@@ -1,0 +1,13 @@
+.reviewer {
+	background:$smoke;
+	padding:rhythm(0.5);
+	margin-bottom: rhythm(1);
+}
+
+.reviewer__id {
+	font-family:$alt-font-family;
+	margin:0;
+	@include adjust-font-size-to($h5-font-size);
+	font-weight:bold;
+	text-transform:uppercase;
+}

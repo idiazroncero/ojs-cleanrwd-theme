@@ -257,6 +257,10 @@ button {
 	color:$white;
 }
 
+.marginless {
+	margin:0;
+}
+
 input:disabled, .disabled {
 	opacity:0.5;
 	&:hover, &:focus {

@@ -23,8 +23,6 @@
 
 {include file="sectionEditor/submission/peerReview.tpl"}
 
-<div class="separator"></div>
-
 {include file="sectionEditor/submission/editorDecision.tpl"}
 
 {include file="common/footer.tpl"}

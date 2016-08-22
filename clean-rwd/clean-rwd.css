@@ -3879,9 +3879,13 @@ button {
   color: #fff; }
 
 /* line 260, ../sass/modules/_forms.scss */
+.marginless {
+  margin: 0; }
+
+/* line 264, ../sass/modules/_forms.scss */
 input:disabled, .disabled {
   opacity: 0.5; }
-  /* line 262, ../sass/modules/_forms.scss */
+  /* line 266, ../sass/modules/_forms.scss */
   input:disabled:hover, input:disabled:focus, .disabled:hover, .disabled:focus {
     color: inherit;
     background: inherit;
@@ -5062,6 +5066,23 @@ ul.steplist li {
 /* line 42, ../sass/pages/_editor.scss */
 .fastTracked {
   background-color: #ABA; }
+
+/* line 1, ../sass/pages/_review.scss */
+.reviewer {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem; }
+
+/* line 7, ../sass/pages/_review.scss */
+.reviewer__id {
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-size: 14px;
+  font-size: 0.85rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase; }
 
 /* line 10, ../sass/overrides/_referrals.scss */
 #referrals .headseparator {
