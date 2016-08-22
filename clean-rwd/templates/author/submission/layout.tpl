@@ -12,7 +12,7 @@
 {assign var=layoutFile value=$submission->getFileBySignoffType('SIGNOFF_LAYOUT')}
 {assign var=layoutEditor value=$submission->getUserBySignoffType('SIGNOFF_LAYOUT')}
 
-<div id="layout">
+<section class="section" id="layout">
 <h3>{translate key="submission.layout"}</h3>
 
 {if $useLayoutEditors}
@@ -26,7 +26,7 @@
 </div>
 {/if}
 
-<table width="100%" class="info">
+<table width="100%" class="listing">
 	{if $useLayoutEditors}
 	<tr>
 		<td width="40%" colspan="2">{translate key="submission.layout.layoutVersion"}</td>
@@ -53,49 +53,55 @@
 			{$layoutSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="6" class="separator">&nbsp;</td>
-	</tr>
 	{/if}
-	<tr>
-		<td width="40%" colspan="2">{translate key="submission.layout.galleyFormat"}</td>
-		<td width="40%" colspan="2" class="heading">{translate key="common.file"}</td>
-		<td colspan="2">&nbsp;</td>
-	</tr>
+
+	<thead>
+		<th>{translate key="submission.layout.galleyFormat"}</th>
+		<th>{translate key="common.file"}</th>
+		<th colspan="2">&nbsp;</th>
+	</thead>
+	<tbody>
 	{foreach name=galleys from=$submission->getGalleys() item=galley}
 	<tr>
-		<td width="5%">{$smarty.foreach.galleys.iteration}.</td>
-		<td width="35%">{$galley->getGalleyLabel()|escape} &nbsp; <a href="{url op="proofGalley" path=$submission->getId()|to_array:$galley->getId()}" class="action">{translate key="submission.layout.viewProof"}</td>
-		<td colspan="3"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$galley->getFileId()}" class="file">{$galley->getFileName()|escape}</a>&nbsp;&nbsp;{$galley->getDateModified()|date_format:$dateFormatShort}</td>
+		<td>{$smarty.foreach.galleys.iteration}.</td>
+		<td>{$galley->getGalleyLabel()|escape} &nbsp; <a href="{url op="proofGalley" path=$submission->getId()|to_array:$galley->getId()}" class="action">{translate key="submission.layout.viewProof"}</td>
+		<td colspan="2"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$galley->getFileId()}" class="file">{$galley->getFileName()|escape}</a>&nbsp;&nbsp;{$galley->getDateModified()|date_format:$dateFormatShort}</td>
 		<td>{$galley->getViews()}</td>
 	</tr>
 	{foreachelse}
 	<tr>
-		<td colspan="6" class="nodata">{translate key="common.none"}</td>
+		<td colspan="4" class="nodata">{translate key="common.none"}</td>
 	</tr>
 	{/foreach}
-	<tr>
-		<td colspan="6" class="separator">&nbsp;</td>
-	</tr>
-	<tr>
-		<td colspan="2">{translate key="submission.supplementaryFiles"}</td>
-		<td colspan="4" class="heading">{translate key="common.file"}</td>
-	</tr>
+	</tbody>
+
+</table>
+
+<table class="listing">
+	<thead>
+		<tr>
+			<th></th>
+			<th>{translate key="submission.supplementaryFiles"}</th>
+			<th>{translate key="common.file"}</th>
+		</tr>
+	</thead>
+
+	<tbody>
 	{foreach name=suppFiles from=$submission->getSuppFiles() item=suppFile}
 	<tr>
-		<td width="5%">{$smarty.foreach.suppFiles.iteration}.</td>
-		<td width="35%">{$suppFile->getSuppFileTitle()|escape}</td>
-		<td colspan="4"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId()}" class="file">{$suppFile->getFileName()|escape}</a>&nbsp;&nbsp;{$suppFile->getDateModified()|date_format:$dateFormatShort}</td>
+		<td>{$smarty.foreach.suppFiles.iteration}.</td>
+		<td>{$suppFile->getSuppFileTitle()|escape}</td>
+		<td><a href="{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId()}" class="file">{$suppFile->getFileName()|escape}</a>&nbsp;&nbsp;{$suppFile->getDateModified()|date_format:$dateFormatShort}</td>
 	</tr>
 	{foreachelse}
 	<tr>
-		<td colspan="6" class="nodata">{translate key="common.none"}</td>
+		<td colspan="3" class="nodata">{translate key="common.none"}</td>
 	</tr>
 	{/foreach}
-	<tr>
-		<td colspan="6" class="separator">&nbsp;</td>
-	</tr>
+	</tbody>
 </table>
+
+
 
 <div id="layoutComments">
 {translate key="submission.layout.layoutComments"}
@@ -106,4 +112,5 @@
 	<a href="javascript:openComments('{url op="viewLayoutComments" path=$submission->getId()}');" class="icon">{icon name="comment"}</a>{translate key="common.noComments"}
 {/if}
 </div>
-</div>
+
+</section>

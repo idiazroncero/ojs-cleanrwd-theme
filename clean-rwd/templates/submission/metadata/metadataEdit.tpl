@@ -60,7 +60,7 @@ function moveAuthor(dir, authorIndex) {
 		</td>
 	</tr>
 </table>
-</locales>
+</div>
 {/if}
 
 <div id="authors">

@@ -11,7 +11,7 @@
 {assign var=proofSignoff value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
 {assign var=proofreader value=$submission->getUserBySignoffType('SIGNOFF_PROOFREADING_PROOFREADER')}
 
-<div id="proofread">
+<section id="proofread">
 <h3>{translate key="submission.proofreading"}</h3>
 
 {if $useProofreaders}
@@ -23,22 +23,29 @@
 </table>
 {/if}
 
-<a href="{url op="viewMetadata" path=$proofSignoff->getAssocId()}" class="action" target="_new">{translate key="submission.reviewMetadata"}</a>
+<p>
+	<i class="fa fa-info-circle"></i>
+	<a href="{url op="viewMetadata" path=$proofSignoff->getAssocId()}" class="action" target="_new">{translate key="submission.reviewMetadata"}</a>
+</p>
 
-<table width="100%" class="info">
+<table class="listing">
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>{translate key="submission.request"}</th>
+			<th>{translate key="submission.underway"}</th>
+			<th>{translate key="submission.complete"}</th>
+		</tr>
+	</thead>
+	<tbody>
 	<tr>
-		<td width="40%" colspan="2">&nbsp;</td>
-		<td width="20%" class="heading">{translate key="submission.request"}</td>
-		<td width="20%" class="heading">{translate key="submission.underway"}</td>
-		<td width="20%" class="heading">{translate key="submission.complete"}</td>
-	</tr>
-	<tr>
-		<td width="5%">1.</td>
-		<td width="35%">{translate key="user.role.author"}</td>
+		<td>1.</td>
+		<td>{translate key="user.role.author"}</td>
 		{assign var="authorProofreadSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_AUTHOR')}
-		<td>{$authorProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$authorProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-				<td>
+		<td  data-title='{translate key="submission.request"}'>{$authorProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.underway"}'>{$authorProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+				<td data-title='{translate key="submission.complete"}'>
 			{if not $authorProofreadSignoff->getDateNotified() or $authorProofreadSignoff->getDateCompleted()}
 				{icon name="mail" disabled="disabled"}
 			{else}
@@ -53,21 +60,20 @@
 		<td>2.</td>
 		<td>{translate key="user.role.proofreader"}</td>
 		{assign var="proofreaderProofreadSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
-		<td>{$proofreaderProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$proofreaderProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$proofreaderProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.request"}'>{$proofreaderProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.underway"}'>{$proofreaderProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.complete"}'>{$proofreaderProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
 	</tr>
 	<tr>
 		<td>3.</td>
 		<td>{translate key="user.role.layoutEditor"}</td>
 		{assign var="layoutEditorProofreadSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_LAYOUT')}
-		<td>{$layoutEditorProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$layoutEditorProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$layoutEditorProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.request"}'>{$layoutEditorProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.underway"}'>{$layoutEditorProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.complete"}'>{$layoutEditorProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
+
+	</tbody>
 </table>
 
 {translate key="submission.proofread.corrections"}
@@ -82,4 +88,4 @@
 &nbsp;&nbsp;
 <a href="javascript:openHelp('{url op="instructions" path="proof"}')" class="action">{translate key="submission.proofread.instructions"}</a>
 {/if}
-</div>
+</section>
