@@ -16,7 +16,7 @@
 {* WARNING: This page should be kept roughly synchronized with the
    implementation of the Journal Manager's statistics page.        *}
 <div id="statistics">
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="25%" class="label"><h4>{translate key="common.year"}</h4></td>
 		<td width="75%" colspan="2" class="value">

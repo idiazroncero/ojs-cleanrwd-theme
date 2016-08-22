@@ -54,7 +54,7 @@ function invokeWLA() {
 <form id="inputForm" target="#">
 
 <!-- Display the form fields -->
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" width="20%"><label for="author">{translate key="user.role.author"}</label></td>
 		<td class="value" width="80%"><input name="author" id="author" type="text" size="20" maxlength="40" class="textField" value="{$article->getAuthorString()|escape}" /></td>

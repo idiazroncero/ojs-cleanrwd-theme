@@ -33,7 +33,7 @@
 	{$additionalHeadData}
 </head>
 <body>
-	<table width="100%" height="100%">
+	<table height="100%">
 		<tr>
 			<td align="center">
 				<a href="{url op=$backHandler path=$articleId}" target="_top">{translate key="submission.backToSubmissionEditing"}</a>

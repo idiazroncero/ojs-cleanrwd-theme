@@ -16,7 +16,7 @@
 <div id="supplementaryFileData">
 <h3>{translate key="author.submit.supplementaryFileData"}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{translate key="common.title"}</td>
 		<td width="80%" class="value">{$suppFile->getSuppFileTitle()|escape|default:"&mdash;"}</td>
@@ -65,7 +65,7 @@
 <div id="supplementaryFileUpload">
 <h3>{translate key="author.submit.supplementaryFileUpload"}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 {if $suppFile}
 	<tr >
 		<td width="20%" class="label">{translate key="common.fileName"}</td>

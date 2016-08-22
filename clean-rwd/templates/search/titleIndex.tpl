@@ -22,7 +22,7 @@
 {/if}
 
 <div id="results">
-<table width="100%" class="listing">
+<table class="listing">
 <tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
 <tr class="heading" >
 	{if !$currentJournal}<td width="20%">{translate key="journal.journal"}</td>{/if}

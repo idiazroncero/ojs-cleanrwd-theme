@@ -28,7 +28,7 @@ $(document).ready(function() { setupTableDND("#dragTable", {/literal}"{url op=mo
 
 
 <div id="membership">
-<table width="100%" class="listing" id="dragTable">
+<table class="listing" id="dragTable">
 	<tr>
 		<td colspan="2" class="headseparator">&nbsp;</td>
 	</tr>

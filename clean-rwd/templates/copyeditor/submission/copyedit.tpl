@@ -15,14 +15,14 @@
 <p><a href="javascript:openHelp('{url op="instructions" path="copy"}')" class="action">{translate key="submission.copyedit.instructions"}</a></p>
 {/if}
 
-<table width="100%" class="data">
+<table class="data">
 	<tr>
 		<td class="label" width="20%">{translate key="user.role.copyeditor"}</td>
 		<td class="value" width="80%">{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}{$copyeditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
 	</tr>
 </table>
 
-<table width="100%" class="info">
+<table class="info">
 	<tr>
 		<td width="40%" colspan="2">
 			<a class="action" href="{url op="viewMetadata" path=$submission->getId()}">{translate key="submission.reviewMetadata"}</a>

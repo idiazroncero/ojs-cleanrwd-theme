@@ -23,7 +23,7 @@
 <form name="paymentSettingsForm" method="post" action="{url op="savePaymentSettings"}">
 {if count($formLocales) > 1}
 <div id="locales">
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
@@ -39,7 +39,7 @@
 {include file="common/formErrors.tpl"}
 <div id="generalOptions">
 <h3>{translate key="manager.payment.generalOptions"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr>
 		<td class="label" width="20%"><input type="checkbox" name="journalPaymentsEnabled" id="journalPaymentsEnabled" value="1"{if $journalPaymentsEnabled} checked="checked"{/if} /></td>
 		<td class="value" width="80%">{fieldLabel name="journalPaymentsEnabled" key="manager.payment.options.enablePayments"}</td>
@@ -57,7 +57,7 @@
 <div id="authorFees">
 <h3>{translate key="manager.payment.authorFees"}</h3>
 <p>{translate key="manager.payment.authorFeesDescription"}</p>
-<table width="100%" class="data">
+<table class="data">
 <tr>
 	<td width="20%"><input type="checkbox" name="submissionFeeEnabled" id="submissionFeeEnabled" value="1"{if $submissionFeeEnabled} checked="checked"{/if} /></td>
 	<td width="80%">{fieldLabel name="submissionFeeEnabled" key="manager.payment.options.submissionFee"}</td>
@@ -117,7 +117,7 @@
 
 <p>{translate key="manager.payment.readerFeesDescription"}</p>
 
-<table width="100%" class="data">
+<table class="data">
 <tr>
 	<td class="value" width="20%"><input type="checkbox" name="acceptSubscriptionPayments" id="acceptSubscriptionPayments" value="1"{if $acceptSubscriptionPayments} checked="checked"{/if} /></td>
 	<td class="label" width="80%">{fieldLabel name="acceptSubscriptionPayments" key="manager.payment.options.acceptSubscriptionPayments"}</td>
@@ -165,7 +165,7 @@
 
 <p>{translate key="manager.payment.generalFeesDescription"}</p>
 
-<table width="100%" class="data">
+<table class="data">
 <tr>
 	<td width="20%"><input type="checkbox" name="membershipFeeEnabled" id="membershipFeeEnabled" value="1"{if $membershipFeeEnabled} checked="checked"{/if} /></td>
 	<td width="80%">{fieldLabel name="membershipFeeEnabled" key="manager.payment.options.membershipFee"}</td>
@@ -201,7 +201,7 @@
 
 <p>{translate key="manager.payment.giftFeesDescription"}</p>
 
-<table width="100%" class="data">
+<table class="data">
 <tr>
 	<td class="value" width="20%"><input type="checkbox" name="acceptGiftSubscriptionPayments" id="acceptGiftSubscriptionPayments" value="1"{if $acceptGiftSubscriptionPayments} checked="checked"{/if} /></td>
 	<td class="label" width="80%">{fieldLabel name="acceptGiftSubscriptionPayments" key="manager.payment.options.acceptGiftSubscriptionPayments"}</td>

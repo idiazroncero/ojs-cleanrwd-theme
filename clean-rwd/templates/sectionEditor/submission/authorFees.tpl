@@ -10,7 +10,7 @@
  *}
 <div id="authorFees">
 <h3>{translate key="manager.payment.authorFees"}</h3>
-<table width="100%" class="data">
+<table class="data">
 {if $currentJournal->getSetting('submissionFeeEnabled')}
 	<tr>
 		<td width="20%">{$currentJournal->getLocalizedSetting('submissionFeeName')|escape}</td>

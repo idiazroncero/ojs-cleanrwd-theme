@@ -25,7 +25,7 @@
 
 {if count($formLocales) > 1}
 <div id="locale">
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
 		<td width="80%" class="value">
@@ -43,7 +43,7 @@
 <h3>{translate key="author.submit.supplementaryFileData"}</h3>
 <p>{translate key="author.submit.supplementaryFileDataDescription"}</p>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="title" required="true" key="common.title"}</td>
 		<td width="80%" class="value"><input type="text" id="title" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" size="60" maxlength="255" class="textField" /></td>
@@ -147,7 +147,7 @@
 		</tr>
 	</table>
 
-	<table width="100%"  class="data">
+	<table  class="data">
 		<tr >
 			<td width="5%" class="label"><input type="checkbox" name="showReviewers" id="showReviewers" value="1"{if $showReviewers==1} checked="checked"{/if} /></td>
 			<td width="95%" class="value"><label for="showReviewers">{translate key="author.submit.suppFile.availableToPeers"}</label></td>

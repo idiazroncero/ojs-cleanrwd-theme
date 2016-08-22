@@ -60,7 +60,7 @@ function sortSearch(heading, direction) {
 </div>
 
 <div id="submissions">
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td colspan="8" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>

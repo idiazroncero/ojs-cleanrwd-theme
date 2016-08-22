@@ -16,7 +16,7 @@
 {/if}
 
 {if $useCopyeditors}
-<table width="100%" class="data">
+<table class="data">
 	<tr>
 		<td width="20%" class="label">{translate key="user.role.copyeditor"}</td>
 		{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}<td width="20%" class="value">{$copyeditor->getFullName()|escape}</td>{/if}
@@ -25,7 +25,7 @@
 </table>
 {/if}
 
-<table width="100%" class="info">
+<table class="info">
 	<tr>
 		<td width="28%" colspan="2"><a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a></td>
 		<td width="18%" class="heading">{translate key="submission.request"}</td>

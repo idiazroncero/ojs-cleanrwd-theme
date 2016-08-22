@@ -22,7 +22,7 @@
 <div class="separator"></div>
 <div id="rtAdminOptions">
 <h3>{translate key="rt.admin.options"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" width="3%"><input type="checkbox" name="abstract" id="abstract" {if $abstract}checked="checked" {/if}/></td>
 		<td class="value" width="97%"><label for="abstract">{translate key="rt.admin.settings.abstract"}</label></td>

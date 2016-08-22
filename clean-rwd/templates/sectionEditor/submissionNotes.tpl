@@ -71,7 +71,7 @@
 	<input type="hidden" name="noteId" value="{$articleNote->getId()}" />
 	<input type="hidden" name="fileId" value="{$articleNote->getFileId()}" />
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" width="20%">{translate key="common.dateModified"}</td>
 		<td class="value" width="80%">{$articleNote->getDateModified()|date_format:$datetimeFormatShort}</td>
@@ -101,7 +101,7 @@
 	<h3>{translate key="submission.notes.addNewNote"}</h3>
 	<form name="addNote" method="post" action="{url op="addSubmissionNote"}" enctype="multipart/form-data">
 	<input type="hidden" name="articleId" value="{$articleId|escape}" />
-	<table width="100%" class="data">
+	<table class="data">
 	<tr >
 		<td class="label" width="20%">{translate key="common.title"}</td>
 		<td class="value" width="80%"><input type="text" id="title" name="title" size="50" maxlength="90" class="textField" /></td>
@@ -121,7 +121,7 @@
 {else}
 <h3>{translate key="submission.notes"}</h3>
 
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" >
 		<td width="5%">{translate key="common.date"}</td>

@@ -65,7 +65,7 @@
 
 
 <div id="subscriptions">
-<table width="100%" class="listing">
+<table class="listing">
 	<tr>
 		<td colspan="6" class="headseparator">&nbsp;</td>
 	</tr>

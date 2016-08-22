@@ -9,7 +9,7 @@
  *
  *}
 <div id="submissions">
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td colspan="7" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" >
 		<td width="5%">{sort_search key="common.id" sort="id"}</td>
@@ -19,7 +19,7 @@
 		<td width="30%">{sort_search key="article.title" sort="title"}</td>
 		<td width="30%">
 			{translate key="submission.peerReview"}
-			<table width="100%">
+			<table>
 				<tr >
 					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">{translate key="submission.ask"}</td>
 					<td width="33%" style="padding: 0 4px 0 0; font-size: 1.0em">{translate key="submission.due"}</td>
@@ -42,7 +42,7 @@
 		<td>{$submission->getAuthorString(true)|truncate:40:"..."|escape}</td>
 		<td><a href="{url op="submissionReview" path=$submission->getId()}" class="action">{$submission->getLocalizedTitle()|strip_tags|truncate:40:"..."}</a></td>
 		<td>
-		<table width="100%">
+		<table>
 			{foreach from=$submission->getReviewAssignments() item=reviewAssignments}
 				{foreach from=$reviewAssignments item=assignment name=assignmentList}
 					{if not $assignment->getCancelled() and not $assignment->getDeclined()}

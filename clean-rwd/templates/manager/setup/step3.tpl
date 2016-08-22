@@ -44,7 +44,7 @@
 {foreach name=checklist from=$submissionChecklist[$formLocale] key=checklistId item=checklistItem}
 <!-- 	{if !$notFirstChecklistItem}
 		{assign var=notFirstChecklistItem value=1}
-		<table width="100%" class="data">
+		<table class="data">
 			<tr >
 				<td width="5%">{translate key="common.order"}</td>
 				<td width="95%" colspan="2">&nbsp;</td>

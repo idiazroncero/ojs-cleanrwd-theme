@@ -158,7 +158,7 @@ function checkEditorAssignments() {
 <p class="instruct instruct--spaced">{translate key="manager.section.sectionEditorInstructions"}</p>
 <h4>{translate key="manager.sections.unassigned"}</h4>
 
-<table width="100%" class="listing" id="unassignedSectionEditors">
+<table class="listing" id="unassignedSectionEditors">
 	<thead>
 		<th>{translate key="user.username"}</th>
 		<th>{translate key="user.name"}</th>
@@ -185,7 +185,7 @@ function checkEditorAssignments() {
 <div id="sectionsAssigned">
 <h4>{translate key="manager.sections.assigned"}</h4>
 
-<table width="100%" class="listing" id="assignedSectionEditors">
+<table class="listing" id="assignedSectionEditors">
 	<thead>
 		<th>{translate key="user.username"}</th>
 		<th>{translate key="user.name"}</th>

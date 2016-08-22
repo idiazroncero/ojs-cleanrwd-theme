@@ -106,7 +106,7 @@ function confirmAndPrompt(userId) {
 <input type="hidden" name="redirectUrl" value="{url path=$roleSymbolic}"/>
 
 <div id="users">
-<table width="100%" class="listing">
+<table class="listing">
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>

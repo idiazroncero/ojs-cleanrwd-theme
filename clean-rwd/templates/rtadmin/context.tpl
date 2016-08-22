@@ -41,7 +41,7 @@
 	<tr >
 		<td class="label">{translate key="rt.admin.contexts.options"}</label></td>
 		<td class="value">
-			<table width="100%" class="data">
+			<table class="data">
 				<tr >
 					<td width="3%"><input type="checkbox" name="authorTerms" id="authorTerms" {if $authorTerms}checked="checked"{/if} /></td>
 					<td><label for="authorTerms">{translate key="rt.admin.contexts.options.authorTerms"}</label></td>

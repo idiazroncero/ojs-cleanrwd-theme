@@ -443,7 +443,7 @@ function prepBlockFields() {
 		<td width="20%" class="label">{fieldLabel name="navItems-0-name" key="manager.setup.labelName"}</td>
 		<td width="80%" class="value">
 			<input type="text" name="navItems[{$formLocale|escape}][0][name]" id="navItems-0-name" size="30" maxlength="90" class="textField" />
-			<table width="100%">
+			<table>
 				<tr >
 					<td width="5%"><input type="checkbox" name="navItems[{$formLocale|escape}][0][isLiteral]" id="navItems-0-isLiteral" value="1" /></td>
 					<td width="95%"><label for="navItems-0-isLiteral">{translate key="manager.setup.navItemIsLiteral"}</label></td>
@@ -455,7 +455,7 @@ function prepBlockFields() {
 		<td width="20%" class="label">{fieldLabel name="navItems-0-url" key="common.url"}</td>
 		<td width="80%" class="value">
 			<input type="text" name="navItems[{$formLocale|escape}][0][url]" id="navItems-0-url" size="60" maxlength="255" class="textField" />
-			<table width="100%">
+			<table>
 				<tr >
 					<td width="5%"><input type="checkbox" name="navItems[{$formLocale|escape}][0][isAbsolute]" id="navItems-0-isAbsolute" value="1" /></td>
 					<td width="95%"><label for="navItems-0-isAbsolute">{translate key="manager.setup.navItemIsAbsolute"}</label></td>

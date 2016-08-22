@@ -32,7 +32,7 @@
 <div class="separator"></div>
 <div id="submissionEventLog">
 <h3>{translate key="submission.history.submissionEventLog"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{translate key="common.id"}</td>
 		<td width="80%" class="value">{$logEntry->getId()}</td>

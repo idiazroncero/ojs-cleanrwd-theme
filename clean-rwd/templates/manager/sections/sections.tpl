@@ -20,7 +20,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveSection"); });
 </script>
 
 <div id="sections">
-<table width="100%" class="listing" id="dragTable">
+<table class="listing" id="dragTable">
 	<thead>
 		<th>{translate key="section.title"}</th>
 		<th>{translate key="section.abbreviation"}</th>

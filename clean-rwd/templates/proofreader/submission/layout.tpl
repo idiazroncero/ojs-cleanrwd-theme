@@ -25,7 +25,7 @@
 </div>
 {/if}
 
-<table width="100%" class="info">
+<table class="info">
 	<tr>
 		<td width="40%" colspan="2">{translate key="submission.layout.galleyFormat"}</td>
 		<td width="60%" class="heading">{translate key="common.file"}</td>

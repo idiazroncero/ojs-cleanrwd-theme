@@ -40,7 +40,7 @@
 <div id="issueId">
 <h3>{translate key="editor.issues.galleys"}</h3>
 <p>{translate key="editor.issues.issueGalleysDescription"}</p>
-<table width="100%" class="data">
+<table class="data">
 {if count($formLocales) > 1}
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -52,7 +52,7 @@
 	</tr>
 {/if}
 </table>
-<table width="100%" class="info">
+<table class="info">
 	<tr>
 		<td colspan="6" class="separator">&nbsp;</td>
 	</tr>

@@ -20,7 +20,7 @@
 <p><a href="{url op="files" path=$parentDir|explode:"/"}" class="button">&lt; {translate key="manager.files.parentDir"}</a></p>
 {/if}
 
-<table width="100%" class="listing">
+<table class="listing">
 	<thead>
 		<th></th>
 		<th>{translate key="common.fileName"}</th>

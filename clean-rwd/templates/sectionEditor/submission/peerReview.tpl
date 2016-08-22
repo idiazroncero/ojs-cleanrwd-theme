@@ -225,7 +225,7 @@
 		{/if}
 		<div class="form-row">
 			<p class="label">{translate key="reviewer.article.uploadedFile"}</p>
-				<table width="100%" class="data">
+				<table class="data">
 					{foreach from=$reviewAssignment->getReviewerFileRevisions() item=reviewerFile key=key}
 					<tr >
 						<td valign="middle">

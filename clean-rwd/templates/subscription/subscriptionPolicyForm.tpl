@@ -50,7 +50,7 @@
 <div id="subscriptionContact">
 <h3>{translate key="manager.subscriptionPolicies.subscriptionContact"}</h3>
 <p>{translate key="manager.subscriptionPolicies.subscriptionContactDescription"}</p>
-<table width="100%" class="data">
+<table class="data">
 {if count($formLocales) > 1}
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -104,7 +104,7 @@
 
 <p>{translate key="manager.subscriptionPolicies.expirySelectOne"}</p>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="5%" class="label" align="right">
 			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-0" value="0"{if not $subscriptionExpiryPartial} checked="checked"{/if} />

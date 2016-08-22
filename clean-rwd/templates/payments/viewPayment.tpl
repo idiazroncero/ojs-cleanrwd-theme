@@ -22,7 +22,7 @@
 
 
 {if $payment}
-	<table width="100%" class="listing">
+	<table class="listing">
 		<tr>
 			<td colspan="4" class="headseparator">&nbsp;</td>
 		</tr>

@@ -57,7 +57,7 @@
 
 <p>Metadata associated with this Archival Unit includes:</p>
 
-<table width="100%" class="data">
+<table class="data">
 <tr >
 	<td width="20%" class="label">Journal URL</td>
 	<td width="80%" class="value"><a href="{$journal->getUrl()|escape}">{$journal->getUrl()|escape}</a></td>

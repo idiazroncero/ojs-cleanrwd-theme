@@ -39,7 +39,7 @@ function changePaymentMethod() {
 <p>{translate key="manager.payment.paymentMethod.description"}</p>
 
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="data" colspan="2">
 			{assign var=pluginIndex value=1}

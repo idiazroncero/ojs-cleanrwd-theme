@@ -8,7 +8,7 @@
  * Show editor's submissions in review.
  *}
 <div id="submissions">
-<table width="100%" class="listing listing--wide">
+<table class="listing listing--wide">
 	<thead>
 		<th>{sort_search key="common.id" sort="id"}</th>
 		<th class="nowrap"><span class="disabled">{translate key="submission.date.mmdd"}</span><!-- {sort_search key="submissions.submitted" sort="submitDate"} --></th>

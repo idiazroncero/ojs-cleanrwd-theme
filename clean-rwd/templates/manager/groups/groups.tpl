@@ -35,7 +35,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveGroup"); });
 
 <div id="groups">
 
-<table width="100%" class="listing" id="dragTable">
+<table class="listing" id="dragTable">
 	<tr>
 		<td colspan="3" class="headseparator">&nbsp;</td>
 	</tr>

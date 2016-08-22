@@ -62,7 +62,7 @@
 <tr >
 	<td>&nbsp;</td>
 	<td class="value">
-		<table width="100%">
+		<table>
 			<tr >
 				<td width="5%"><input type="checkbox" name="notifyEmail" id="notifyEmail" value="1"{if $notifyEmail} checked="checked"{/if} /></td>
 				<td width="95%"><label for="notifyEmail">{translate key="manager.subscriptions.form.notifyEmail"}</label></td>

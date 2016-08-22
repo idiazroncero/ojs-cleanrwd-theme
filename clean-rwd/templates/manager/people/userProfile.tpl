@@ -19,7 +19,7 @@
 
 <p><a href="{url op="editUser" path=$user->getId()}" class="action">{translate key="manager.people.editProfile"}</a></p>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{translate key="user.username"}</td>
 		<td width="80%" class="data"><strong>{$user->getUsername()|escape}</strong></td>

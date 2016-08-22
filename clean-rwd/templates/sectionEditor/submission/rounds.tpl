@@ -12,7 +12,7 @@
 <div id="regretsAndCancels">
 <h3>{translate|escape key="sectionEditor.regrets.regretsAndCancels"}</h3>
 
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td colspan="4" class="headseparator">&nbsp;</td></tr>
 	<tr >
 		<td class="heading" width="30%">{translate key="user.name"}</td>
@@ -61,7 +61,7 @@
 <div id="reviewRound">
 <h3>{translate key="sectionEditor.regrets.reviewRound" round=$roundPlusOne}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" width="20%">{translate key="submission.reviewVersion"}</td>
 		<td class="value" width="80%">
@@ -86,7 +86,7 @@
 <div id="reviewer">
 <h4>{translate key="user.role.reviewer"} {$reviewKey+$start|chr} {$reviewAssignment->getReviewerFullName()|escape}</h4>
 
-<table width="100%" class="listing">
+<table class="listing">
 	<tr >
 		<td width="20%">{translate key="reviewer.article.schedule"}</td>
 		<td width="20%" class="heading">{translate key="submission.request"}</td>
@@ -158,7 +158,7 @@
 	<tr >
 		<td class="label">{translate key="reviewer.article.uploadedFile"}</td>
 		<td colspan="4">
-			<table width="100%" class="data">
+			<table class="data">
 				{foreach from=$reviewAssignment->getReviewerFileRevisions() item=reviewerFile key=key}
 				<tr >
 					<td valign="middle">

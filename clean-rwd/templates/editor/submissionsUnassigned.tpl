@@ -8,7 +8,7 @@
  * Show listing of unassigned submissions.
  *}
 <div id="submissions">
-<table width="100%" class="listing listing--wide">
+<table class="listing listing--wide">
 	<thead>
 		<th>{sort_search key="common.id" sort="id"}</th>
 		<th><span class="disabled">{translate key="submission.date.mmdd"}</span><!-- {sort_search key="submissions.submit" sort="submitDate"} --></th>

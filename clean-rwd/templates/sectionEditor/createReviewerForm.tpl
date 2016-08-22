@@ -42,7 +42,7 @@
 {/literal}
 </script>
 <div id="createReviewerForm">
-<table width="100%" class="data">
+<table class="data">
 {if count($formLocales) > 1}
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>

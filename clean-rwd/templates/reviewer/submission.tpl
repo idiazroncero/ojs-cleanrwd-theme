@@ -34,7 +34,7 @@ function confirmSubmissionCheck() {
 <div id="submissionToBeReviewed">
 <h3>{translate key="reviewer.article.submissionToBeReviewed"}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 <tr >
 	<td width="20%" class="label">{translate key="article.title"}</td>
 	<td width="80%" class="value">{$submission->getLocalizedTitle()|strip_unsafe_html}</td>
@@ -82,7 +82,7 @@ function confirmSubmissionCheck() {
 <div class="separator"></div>
 <div id="reviewSchedule">
 <h3>{translate key="reviewer.article.reviewSchedule"}</h3>
-<table width="100%" class="data">
+<table class="data">
 <tr >
 	<td class="label" width="20%">{translate key="reviewer.article.schedule.request"}</td>
 	<td class="value" width="80%">{if $submission->getDateNotified()}{$submission->getDateNotified()|date_format:$dateFormatShort}{else}&mdash;{/if}</td>
@@ -110,7 +110,7 @@ function confirmSubmissionCheck() {
 
 {assign var="currentStep" value=1}
 
-<table width="100%" class="data">
+<table class="data">
 <tr >
 	{assign var=editAssignments value=$submission->getEditAssignments}
 	{* FIXME: Should be able to assign primary editorial contact *}
@@ -159,7 +159,7 @@ function confirmSubmissionCheck() {
 <tr >
 	<td>&nbsp;</td>
 	<td>
-		<table width="100%" class="data">
+		<table class="data">
 			{if ($confirmedStatus and not $declined) or not $journal->getSetting('restrictReviewerFileAccess')}
 			<tr >
 				<td width="30%" class="label">

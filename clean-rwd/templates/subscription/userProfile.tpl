@@ -17,7 +17,7 @@
 <div id="profile">
 <h4>{translate key="user.profile"}</h4>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{translate key="user.username"}</td>
 		<td width="80%" class="data"><strong>{$user->getUsername()|escape}</strong></td>

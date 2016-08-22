@@ -31,7 +31,7 @@ $(document).ready(function() { setupTableDND("#subscriptionTypesTable", "moveSub
 
 
 <div id="subscriptionTypes">
-<table width="100%" class="listing" id="subscriptionTypesTable">
+<table class="listing" id="subscriptionTypesTable">
 	<tr>
 		<td colspan="5" class="headseparator">&nbsp;</td>
 	</tr>

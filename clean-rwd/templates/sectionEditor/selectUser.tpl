@@ -28,7 +28,7 @@
 <p>{foreach from=$alphaList item=letter}<a href="{url op=$actionHandler path=$articleId searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op=$actionHandler path=$articleId}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 
 <div id="users">
-<table width="100%" class="listing">
+<table class="listing">
 <tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
 <tr class="heading" >
 	<td width="30%">{translate key="user.name"}</td>

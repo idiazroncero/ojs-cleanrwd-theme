@@ -40,7 +40,7 @@
 	<frame src="{$galleyUrl}" frameborder="0" />
 <noframes>
 <body>
-	<table width="100%">
+	<table>
 		<tr>
 			<td align="center">
 				{translate key="common.error.framesRequired" url=$galleyUrl}

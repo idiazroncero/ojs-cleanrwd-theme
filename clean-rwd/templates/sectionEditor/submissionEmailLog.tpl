@@ -34,7 +34,7 @@
 <div id="emailLogEntries">
 <h3>{translate key="submission.history.submissionEmailLog"}</h3>
 
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td class="headseparator" colspan="5">&nbsp;</td></tr>
 	<tr  class="heading">
 		<td width="7%">{translate key="common.date"}</td>

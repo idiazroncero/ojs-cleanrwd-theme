@@ -89,7 +89,7 @@
 
 <div id="access">
 <h3>{translate key="editor.issues.access"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		{fieldLabel name="accessStatus" key="editor.issues.accessStatus"}
 		<select name="accessStatus" id="accessStatus" class="selectMenu">{html_options options=$accessOptions selected=$accessStatus}</select>

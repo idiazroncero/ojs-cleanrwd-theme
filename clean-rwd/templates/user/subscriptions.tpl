@@ -38,7 +38,7 @@
 {if $journalPaymentsEnabled && $acceptSubscriptionPayments}
 <h3>{translate key="user.subscriptions.subscriptionStatus"}</h3>
 <p>{translate key="user.subscriptions.statusInformation"}</p>
-<table width="100%" class="listing">
+<table class="listing">
 	<tr>
 		<td colspan="2" class="headseparator">&nbsp;</td>
 	</tr>
@@ -74,7 +74,7 @@
 {if $individualSubscriptionTypesExist}
 	<h3>{translate key="user.subscriptions.individualSubscriptions"}</h3>
 	<p>{translate key="subscriptions.individualDescription"}</p>
-	<table width="100%" class="info">
+	<table class="info">
 	{if $userIndividualSubscription}
 		<tr >
 			<td width="25%">{$userIndividualSubscription->getSubscriptionTypeName()|escape}</td>
@@ -127,7 +127,7 @@
 {if $institutionalSubscriptionTypesExist}
 	<h3>{translate key="user.subscriptions.institutionalSubscriptions"}</h3>
 	<p>{translate key="subscriptions.institutionalDescription"}{if $journalPaymentsEnabled && $acceptSubscriptionPayments} {translate key="subscriptions.institutionalOnlinePaymentDescription"}{/if}</p>
-	<table width="100%" class="info">
+	<table class="info">
 	{if $userInstitutionalSubscriptions}
 		{iterate from=userInstitutionalSubscriptions item=userInstitutionalSubscription}
 		<tr >

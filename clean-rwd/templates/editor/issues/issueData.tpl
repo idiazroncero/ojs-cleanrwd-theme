@@ -45,7 +45,7 @@
 {include file="common/formErrors.tpl"}
 <div id="issueId">
 <h3>{translate key="editor.issues.identification"}</h3>
-<table width="100%" class="data">
+<table class="data">
 {if count($formLocales) > 1}
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
@@ -123,7 +123,7 @@
 <div class="separator"></div>
 <div id="issueAccess">
 <h3>{translate key="editor.issues.access"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="accessStatus" key="editor.issues.accessStatus"}</td>
 		<td width="80%" class="value"><select name="accessStatus" id="accessStatus" class="selectMenu">{html_options options=$accessOptions selected=$accessStatus}</select></td>
@@ -154,7 +154,7 @@
 
 <div id="issueCover">
 <h3>{translate key="editor.issues.cover"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" colspan="2"><input type="checkbox" name="showCoverPage[{$formLocale|escape}]" id="showCoverPage" value="1" {if $showCoverPage[$formLocale]} checked="checked"{/if} /> <label for="showCoverPage">{translate key="editor.issues.showCoverPage"}</label></td>
 	</tr>

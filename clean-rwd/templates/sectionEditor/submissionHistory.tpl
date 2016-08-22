@@ -65,7 +65,7 @@
 <div class="separator"></div>
 <div id="submissionEventLog">
 <h3>{translate key="submission.history.submissionEventLog"} - {translate key="submission.history.recentLogEntries"}</h3>
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td class="headseparator" colspan="4">&nbsp;</td></tr>
 	<tr class="heading" >
 		<td width="7%">{translate key="common.date"}</td>
@@ -112,7 +112,7 @@
 <div id="submissionEmailLog">
 <h3>{translate key="submission.history.submissionEmailLog"} - {translate key="submission.history.recentLogEntries"}</h3>
 
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td class="headseparator" colspan="5">&nbsp;</td></tr>
 	<tr class="heading" >
 		<td width="7%">{translate key="common.date"}</td>
@@ -153,7 +153,7 @@
 <div id="submissionNotes">
 <h3>{translate key="submission.notes"}</h3>
 
-<table width="100%" class="listing">
+<table class="listing">
 	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 	<tr class="heading" >
 		<td width="7%">{translate key="common.date"}</td>

@@ -140,7 +140,7 @@
 <div id="galleyImages">
 <h4>{translate key="submission.layout.galleyImages"}</h4>
 
-<table width="100%" class="listing">
+<table class="listing">
 <tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
 <tr class="heading" >
 	<td width="25%">{translate key="common.fileName"}</td>

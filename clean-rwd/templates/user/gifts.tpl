@@ -19,7 +19,7 @@
 
 
 
-<table width="100%" class="info">
+<table class="info">
 	{iterate from=giftSubscriptions item=gift}
 		<tr >
 			<td width="65%">{$gift->getGiftName()|escape}</td>

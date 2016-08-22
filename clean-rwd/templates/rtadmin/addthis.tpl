@@ -20,7 +20,7 @@
 <div class="separator">&nbsp;</div>
 
 <h3>{translate key="rt.admin.sharing.basic"}</h3>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" width="20%"></td>
 		<td width="80%"><input type="checkbox" name="sharingEnabled" id="sharingEnabled" {if isset($sharingEnabled) && $sharingEnabled} checked="checked" {/if} /> <label for="sharingEnabled">{translate key="rt.admin.sharing.enabled"}</label></td>
@@ -43,7 +43,7 @@
 
 <h3>{translate key="rt.admin.sharing.advanced"}</h3>
 <p>{translate key="rt.admin.sharing.customizationLink"}</p>
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td class="label" width="20%"><label for="sharingBrand">{translate key="rt.admin.sharing.brandLabel"}</label></td>
 		<td width="80%"><input type="text" name="sharingBrand" id="sharingBrand" value="{$sharingBrand|escape}"/></td>

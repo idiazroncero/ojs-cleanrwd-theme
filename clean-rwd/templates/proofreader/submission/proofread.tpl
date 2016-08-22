@@ -14,7 +14,7 @@
 <div id="proofread">
 <h3>{translate key="submission.proofreading"}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr>
 		<td class="label" width="20%">{translate key="user.role.proofreader"}</td>
 		<td class="value" width="80%">{$proofreader->getFullName()|escape}</td>
@@ -23,7 +23,7 @@
 
 <a href="{url op="viewMetadata" path=$proofSignoff->getAssocId()}" class="action" target="_new">{translate key="submission.reviewMetadata"}</a>
 
-<table width="100%" class="info">
+<table class="info">
 	<tr>
 		<td width="40%" colspan="2">&nbsp;</td>
 		<td width="20%" class="heading">{translate key="submission.request"}</td>

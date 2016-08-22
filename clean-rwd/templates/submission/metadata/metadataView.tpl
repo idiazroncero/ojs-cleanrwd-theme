@@ -17,7 +17,7 @@
 <div id="authors">
 <h3>{translate key="article.authors"}</h3>
 	
-<table width="100%" class="data">
+<table class="data">
 	{foreach name=authors from=$authors key=authorIndex item=author}
 	<tr >
 		<td width="20%" class="label">{translate key="user.name"}</td>
@@ -67,7 +67,7 @@
 <div id="titleAndAbstract">
 <h3>{translate key="submission.titleAndAbstract"}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{translate key="article.title"}</td>
 		<td width="80%" class="value">{$title[$formLocale]|strip_unsafe_html|default:"&mdash;"}</td>
@@ -86,7 +86,7 @@
 <div id="cover">
 <h3>{translate key="editor.article.cover"}</h3>
 
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{fieldLabel name="coverPage" key="editor.article.coverPage"}</td>
 		<td width="80%" class="value">{if $fileName[$formLocale]}<a href="javascript:openWindow('{$publicFilesDir}/{$fileName[$formLocale]|escape:"url"}');" class="file">{$originalFileName[$formLocale]}</a>{else}&mdash;{/if}</td>
@@ -105,7 +105,7 @@
 <div id="indexing">
 <h3>{translate key="submission.indexing"}</h3>
 	
-<table width="100%" class="data">
+<table class="data">
 	{if $currentJournal->getSetting('metaDiscipline')}
 	<tr >
 		<td width="20%" class="label">{translate key="article.discipline"}</td>
@@ -180,7 +180,7 @@
 <div id="supportingAgencies">
 <h3>{translate key="submission.supportingAgencies"}</h3>
 	
-<table width="100%" class="data">
+<table class="data">
 	<tr >
 		<td width="20%" class="label">{translate key="submission.agencies"}</td>
 		<td width="80%" class="value">{$sponsor[$formLocale]|escape|default:"&mdash;"}</td>

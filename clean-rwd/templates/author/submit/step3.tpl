@@ -153,7 +153,7 @@ function moveAuthor(dir, authorIndex) {
 <input type="hidden" name="authors[0][authorId]" value="0" />
 <input type="hidden" name="primaryContact" value="0" />
 <input type="hidden" name="authors[0][seq]" value="1" />
-<table width="100%" class="data">
+<table class="data">
 <tr >
 	<td width="20%" class="label">{fieldLabel name="authors-0-firstName" required="true" key="user.firstName"}</td>
 	<td width="80%" class="value"><input type="text" class="textField" name="authors[0][firstName]" id="authors-0-firstName" size="20" maxlength="40" /></td>
