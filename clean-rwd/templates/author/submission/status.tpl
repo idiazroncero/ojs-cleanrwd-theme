@@ -8,14 +8,13 @@
  * Subtemplate defining the submission status table.
  *
  *}
-<div id="status">
+<section class="section" id="status">
 <h3>{translate key="common.status"}</h3>
 
-<table width="100%" class="data">
-	<tr>
-		{assign var="status" value=$submission->getSubmissionStatus()}
-		<td width="20%" class="label">{translate key="common.status"}</td>
-		<td width="80%" class="value">
+	<dl>
+		<dt>{assign var="status" value=$submission->getSubmissionStatus()}
+		{translate key="common.status"}</dt>
+		<dd>
 			{if $status == STATUS_ARCHIVED}{translate key="submissions.archived"}
 			{elseif $status==STATUS_QUEUED_UNASSIGNED}{translate key="submissions.queuedUnassigned"}
 			{elseif $status==STATUS_QUEUED_EDITING}{translate key="submissions.queuedEditing"}
@@ -23,16 +22,11 @@
 			{elseif $status==STATUS_PUBLISHED}{translate key="submissions.published"}&nbsp;&nbsp;&nbsp;&nbsp;{$issue->getIssueIdentification()|escape}
 			{elseif $status==STATUS_DECLINED}{translate key="submissions.declined"}
 			{/if}
-		</td>
-	</tr>
-	<tr>
-		<td class="label">{translate key="submission.initiated"}</td>
-		<td colspan="2" class="value">{$submission->getDateStatusModified()|date_format:$dateFormatShort}</td>
-	</tr>
-	<tr>
-		<td class="label">{translate key="submission.lastModified"}</td>
-		<td colspan="2" class="value">{$submission->getLastModified()|date_format:$dateFormatShort}</td>
-	</tr>
-</table>
-</div>
+		</dd>
+		<dt>{translate key="submission.initiated"}</dt>
+		<dd>{$submission->getDateStatusModified()|date_format:$dateFormatShort}</dd>
+		<dt>{translate key="submission.lastModified"}</dt>
+		<dd>{$submission->getLastModified()|date_format:$dateFormatShort}</dd>
+
+</section>
 

@@ -3377,11 +3377,23 @@ body {
 #main-wrapper {
   background-color: #fff; }
 
+/* line 131, ../sass/init/_ojs-normalize.scss */
+dl {
+  margin: 0 0 1.5rem 0; }
+
 /* line 135, ../sass/init/_ojs-normalize.scss */
+dt {
+  font-weight: bold; }
+
+/* line 139, ../sass/init/_ojs-normalize.scss */
+dd {
+  margin: 0 0 1.5rem 0; }
+
+/* line 147, ../sass/init/_ojs-normalize.scss */
 div.separator {
   display: none; }
 
-/* line 140, ../sass/init/_ojs-normalize.scss */
+/* line 152, ../sass/init/_ojs-normalize.scss */
 .delete-actions .action, .delete-actions .pkp_controllers_grid .hidetext, .pkp_controllers_grid .delete-actions .hidetext {
   font-size: inherit;
   font-family: inherit; }
