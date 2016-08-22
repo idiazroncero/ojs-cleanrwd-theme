@@ -58,6 +58,10 @@ input[type="text"], input[type="password"] {
 	padding:0 rhythm(0.25);
 }
 
+input[type="file"] {
+	border:none;
+}
+
 textarea {
 	width:100%;
 }
