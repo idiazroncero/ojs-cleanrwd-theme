@@ -4720,8 +4720,11 @@ ul.steplist li {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+  /* line 6, ../sass/modules/_messages.scss */
+  .warning-message p, .warning-message ul {
+    margin: 0; }
 
-/* line 8, ../sass/modules/_messages.scss */
+/* line 9, ../sass/modules/_messages.scss */
 .info-message {
   border: 1px solid #3C7861;
   padding: 1.5rem;
@@ -4730,6 +4733,9 @@ ul.steplist li {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+  /* line 14, ../sass/modules/_messages.scss */
+  .info-message p, .info-message ul {
+    margin: 0; }
 
 /* line 1, ../sass/modules/_menu.scss */
 .menu {
