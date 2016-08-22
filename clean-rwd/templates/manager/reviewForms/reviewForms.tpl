@@ -29,6 +29,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveReviewForm"); })
 		<th>{translate key="manager.reviewForms.completed"}</th>
 		<th>{translate key="common.action"}</th>
 	</thead>
+	<tbody>
 {iterate from=reviewForms item=reviewForm name=reviewForms}
 {assign var=reviewFormId value=$reviewForm->getId()}
 {if $completeCounts[$reviewFormId] == 0 && $incompleteCounts[$reviewFormId] == 0}
@@ -36,7 +37,7 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveReviewForm"); })
 {else}
 	{assign var=canEdit value=0}
 {/if}
-	<tbody>
+
 	<tr id="reviewform-{$reviewForm->getId()}">
 		<td class="drag">{$reviewForm->getLocalizedTitle()|escape}</td>
 		<td class="drag">{$incompleteCounts[$reviewFormId]}</td>
@@ -57,7 +58,6 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveReviewForm"); })
 			<a href="{url op="moveReviewForm" d=u id=$reviewForm->getId()}" class="action">&uarr;</a>&nbsp;<a href="{url op="moveReviewForm" d=d id=$reviewForm->getId()}" class="action">&darr;</a>
 		</td>
 	</tr>
-	<tbody>
 {/iterate}
 
 {if $reviewForms->wasEmpty()}
@@ -66,11 +66,11 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveReviewForm"); })
 	</tr>
 {else}
 	<tr class="listing-pager">
-		<td>{page_info iterator=$reviewForms}</td>
-		<td>{page_links anchor="reviewForms" name="reviewForms" iterator=$reviewForms}</td>
+		<td colspan="2">{page_info iterator=$reviewForms}</td>
+		<td colspan="2">{page_links anchor="reviewForms" name="reviewForms" iterator=$reviewForms}</td>
 	</tr>
 {/if}
-
+	<tbody>
 </table>
 
 <div class="buttons">
