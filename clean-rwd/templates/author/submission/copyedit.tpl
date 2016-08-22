@@ -8,11 +8,14 @@
  * Subtemplate defining the copyediting table.
  *
  *}
-<div id="copyedit">
+<section class="section" id="copyedit">
 <h3>{translate key="submission.copyediting"}</h3>
 
 {if $currentJournal->getLocalizedSetting('copyeditInstructions') != ''}
-<p><a href="javascript:openHelp('{url op="instructions" path="copy"}')" class="action">{translate key="submission.copyedit.instructions"}</a></p>
+<p>
+	<i class="fa fa-info-circle"></i>
+	<a href="javascript:openHelp('{url op="instructions" path="copy"}')" class="action">{translate key="submission.copyedit.instructions"}</a>
+</p>
 {/if}
 
 {if $useCopyeditors}
@@ -24,24 +27,29 @@
 </table>
 {/if}
 
-<table width="100%" class="info">
+<p>
+	<i class="fa fa-info-circle"></i>
+	<a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a>
+</p>
+
+<table class="listing">
+	<thead>
+		<th colspan="2"></th>
+		<th>{translate key="submission.request"}</th>
+		<th>{translate key="submission.underway"}</th>
+		<th>{translate key="submission.complete"}</th>
+	</thead>
+	<tbody>
 	<tr>
-		<td width="40%" colspan="2"><a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a></td>
-		<td width="20%" class="heading">{translate key="submission.request"}</td>
-		<td width="20%" class="heading">{translate key="submission.underway"}</td>
-		<td width="20%" class="heading">{translate key="submission.complete"}</td>
-	</tr>
-	<tr>
-		<td width="5%">1.</td>
+		<td>1.</td>
 		{assign var="copyeditInitialSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_INITIAL')}
-		<td width="35%">{translate key="submission.copyedit.initialCopyedit"}</td>
-		<td>{$copyeditInitialSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$copyeditInitialSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$copyeditInitialSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td>{translate key="submission.copyedit.initialCopyedit"}</td>
+		<td data-title='{translate key="submission.request"}'>{$copyeditInitialSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.underway"}'>{$copyeditInitialSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.complete"}'>{$copyeditInitialSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
 	</tr>
 	<tr>
-		<td>&nbsp;</td>
-		<td colspan="4">
+		<td colspan="5">
 			{translate key="common.file"}:
 			{if $copyeditInitialSignoff->getDateCompleted() && $initialCopyeditFile}
 				<a href="{url op="downloadFile" path=$submission->getId()|to_array:$copyeditInitialSignoff->getFileId():$copyeditInitialSignoff->getFileRevision()}" class="file">{$initialCopyeditFile->getFileName()|escape}</a>&nbsp;&nbsp;{$initialCopyeditFile->getDateModified()|date_format:$dateFormatShort}
@@ -51,15 +59,12 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
-	<tr>
 		<td>2.</td>
 		{assign var="copyeditAuthorSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_AUTHOR')}
 		<td>{translate key="submission.copyedit.editorAuthorReview"}</td>
-		<td>{$copyeditAuthorSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$copyeditAuthorSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>
+		<td data-title='{translate key="submission.request"}'>{$copyeditAuthorSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.underway"}'>{$copyeditAuthorSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.complete"}'>
 			{if not $copyeditAuthorSignoff->getDateNotified() or $copyeditAuthorSignoff->getDateCompleted()}
 				{icon name="mail" disabled="disabled"}
 			{else}
@@ -89,19 +94,16 @@
 		</td>
 	</tr>
 	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
-	<tr>
 		<td>3.</td>
 		{assign var="copyeditFinalSignoff" value=$submission->getSignoff('SIGNOFF_COPYEDITING_FINAL')}
 		<td>{translate key="submission.copyedit.finalCopyedit"}</td>
-		<td>{$copyeditFinalSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$copyeditFinalSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
-		<td>{$copyeditFinalSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.request"}'>{$copyeditFinalSignoff->getDateNotified()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.underway"}'>{$copyeditFinalSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}</td>
+		<td data-title='{translate key="submission.complete"}'>{$copyeditFinalSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}</td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>
-		<td colspan="4">
+		<td colspan="5">
 			{translate key="common.file"}:
 			{if $copyeditFinalSignoff->getDateCompleted() && $finalCopyeditFile}
 				<a href="{url op="downloadFile" path=$submission->getId()|to_array:$copyeditFinalSignoff->getFileId():$copyeditFinalSignoff->getFileRevision()}" class="file">{$finalCopyeditFile->getFileName()|escape}</a>&nbsp;&nbsp;{$finalCopyeditFile->getDateModified()|date_format:$dateFormatShort}
@@ -110,9 +112,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="separator">&nbsp;</td>
-	</tr>
+	</tbody>
 </table>
 
 {translate key="submission.copyedit.copyeditComments"}
@@ -122,4 +122,4 @@
 {else}
 	<a href="javascript:openComments('{url op="viewCopyeditComments" path=$submission->getId()}');" class="icon">{icon name="comment"}</a>{translate key="common.noComments"}
 {/if}
-</div>
+</section>
