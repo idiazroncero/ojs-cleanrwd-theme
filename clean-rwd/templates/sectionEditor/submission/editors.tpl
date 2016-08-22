@@ -8,19 +8,19 @@
  * Subtemplate defining the submission editors table.
  *
  *}
-<div id="editors">
+<section class="section" id="editors">
 <h3>{translate key="user.role.editors"}</h3>
 <form action="{url page="editor" op="setEditorFlags"}" method="post">
 <input type="hidden" name="articleId" value="{$submission->getId()}"/>
-<table width="100%" class="listing">
-	<tr class="heading" >
-		<td width="{if $isEditor}20%{else}25%{/if}">&nbsp;</td>
-		<td width="30%">&nbsp;</td>
-		<td width="10%">{translate key="submission.review"}</td>
-		<td width="10%">{translate key="submission.editing"}</td>
-		<td width="{if $isEditor}20%{else}25%{/if}">{translate key="submission.request"}</td>
-		{if $isEditor}<td width="10%">{translate key="common.action"}</td>{/if}
-	</tr>
+<table class="listing">
+	<thead>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+		<th>{translate key="submission.review"}</th>
+		<th>{translate key="submission.editing"}</th>
+		<th>{translate key="submission.request"}</th>
+		{if $isEditor}<th>{translate key="common.action"}</th>{/if}
+	</thead>
 	{assign var=editAssignments value=$submission->getEditAssignments()}
 	{foreach from=$editAssignments item=editAssignment name=editAssignments}
 	{if $editAssignment->getEditorId() == $userId}
@@ -33,7 +33,7 @@
 				{url|assign:"url" page="user" op="email" redirectUrl=$currentUrl to=$emailString|to_array subject=$submission->getLocalizedTitle|strip_tags articleId=$submission->getId()}
 				{$editAssignment->getEditorFullName()|escape} {icon name="mail" url=$url}
 			</td>
-			<td>
+			<td data-title='{translate key="submission.review"}'>
 				&nbsp;&nbsp;<input
 					type="checkbox"
 					name="canReview-{$editAssignment->getEditId()}"
@@ -46,7 +46,7 @@
 					{/if}
 				/>
 			</td>
-			<td>
+			<td data-title='{translate key="submission.editing"}'>
 				&nbsp;&nbsp;<input
 					type="checkbox"
 					name="canEdit-{$editAssignment->getEditId()}"
@@ -59,21 +59,24 @@
 					{/if}
 				/>
 			</td>
-			<td>{if $editAssignment->getDateNotified()}{$editAssignment->getDateNotified()|date_format:$dateFormatShort}{else}&mdash;{/if}</td>
+			<td data-title='{translate key="submission.request"}'>{if $editAssignment->getDateNotified()}{$editAssignment->getDateNotified()|date_format:$dateFormatShort}{else}&mdash;{/if}</td>
 			{if $isEditor}
-				<td><a href="{url page="editor" op="deleteEditAssignment" path=$editAssignment->getEditId()}" class="action">{translate key="common.delete"}</a></td>
+				<td><a href="{url page="editor" op="deleteEditAssignment" path=$editAssignment->getEditId()}" class="button button--small">{translate key="common.delete"}</a></td>
 			{/if}
 		</tr>
 	{foreachelse}
 		<tr><td colspan="{if $isEditor}6{else}5{/if}" class="nodata">{translate key="common.noneAssigned"}</td></tr>
 	{/foreach}
 </table>
+
 {if $isEditor}
-	<input type="submit" class="button defaultButton" value="{translate key="common.record"}"/>&nbsp;&nbsp;
-	<a href="{url page="editor" op="assignEditor" path="sectionEditor" articleId=$submission->getId()}" class="action">{translate key="editor.article.assignSectionEditor"}</a>
-	|&nbsp;<a href="{url page="editor" op="assignEditor" path="editor" articleId=$submission->getId()}" class="action">{translate key="editor.article.assignEditor"}</a>
-	{if !$selfAssigned}|&nbsp;<a href="{url page="editor" op="assignEditor" path="editor" editorId=$userId articleId=$submission->getId()}" class="action">{translate key="common.addSelf"}</a>{/if}
+<div class="buttons">
+	<input type="submit" class="button defaultButton" value="{translate key="common.record"}"/>
+	<a href="{url page="editor" op="assignEditor" path="sectionEditor" articleId=$submission->getId()}" class="button">{translate key="editor.article.assignSectionEditor"}</a>
+	<a href="{url page="editor" op="assignEditor" path="editor" articleId=$submission->getId()}" class="button">{translate key="editor.article.assignEditor"}</a>
+	{if !$selfAssigned}<a href="{url page="editor" op="assignEditor" path="editor" editorId=$userId articleId=$submission->getId()}" class="button">{translate key="common.addSelf"}</a>{/if}
+</div>
 {/if}
 </form>
-</div>
+</section>
 
