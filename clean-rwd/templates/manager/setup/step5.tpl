@@ -130,6 +130,7 @@ function prepBlockFields() {
 			<input type="file" name="homeHeaderTitleImage" class="uploadField" />
 			<input type="submit" name="uploadHomeHeaderTitleImage" value="{translate key="common.upload"}" class="button button--small" />
 		</div>
+		{if $homeHeaderTitleImage[$formLocale]}
 		<div class="form-subrow">
 			<img src="{$publicFilesDir}/{$homeHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$homeHeaderTitleImage[$formLocale].width|escape}" height="{$homeHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.homePageHeader.altText"}" />
 			<div class="form-group">
@@ -139,14 +140,13 @@ function prepBlockFields() {
 			</div>
 			<div class="form-group">
 				<span class="instruct">
-					{if $homeHeaderTitleImage[$formLocale]}
 				 	{translate key="common.fileName"}: {$homeHeaderTitleImage[$formLocale].name|escape}
 				 	{$homeHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}
-				 	{/if}
 				 </span> 
 				<input type="submit" name="deleteHomeHeaderTitleImage" value="{translate key="common.delete"}" class="button button--small" />
-			</div>		
+			</div>
 		</div>
+		{/if}
 	</div>
 </div>
 
@@ -157,28 +157,29 @@ function prepBlockFields() {
 	
 
 	<div class="form-row">
-		{fieldLabel name="homeHeaderLogoImage" key="manager.setup.useImageLogo"}
-		<input type="file" name="homeHeaderLogoImage" id="homeHeaderLogoImage" class="uploadField" />
-		<input type="submit" name="uploadHomeHeaderLogoImage" value="{translate key="common.upload"}" class="button" />
+		<div class="form-group">
+			{fieldLabel name="homeHeaderLogoImage" key="manager.setup.useImageLogo"}
+			<input type="file" name="homeHeaderLogoImage" id="homeHeaderLogoImage" class="uploadField" />
+			<input type="submit" name="uploadHomeHeaderLogoImage" value="{translate key="common.upload"}" class="button" />
+		</div>
+
+		{if $homeHeaderLogoImage[$formLocale]}
+			<div class="form-subrow">
+				<img src="{$publicFilesDir}/{$homeHeaderLogoImage[$formLocale].uploadName|escape:"url"}" width="{$homeHeaderLogoImage[$formLocale].width|escape}" height="{$homeHeaderLogoImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.homePageHeaderLogo.altText"}" />
+				<div class="form-group">
+					{fieldLabel name="homeHeaderLogoImageAltText" key="common.altText"}
+					<input type="text" name="homeHeaderLogoImageAltText[{$formLocale|escape}]" value="{$homeHeaderLogoImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+					<p class="instruct">{translate key="common.altTextInstructions"}</p>
+				</div>
+				<div class="form-group">
+					<span class="instruct">{translate key="common.fileName"}: {$homeHeaderLogoImage[$formLocale].name|escape} {$homeHeaderLogoImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</span><input type="submit" name="deleteHomeHeaderLogoImage" value="{translate key="common.delete"}" class="button button--small" />
+				</div>
+			</div>
+		{/if}
+
 	</div>
 
 
-{if $homeHeaderLogoImage[$formLocale]}
-{translate key="common.fileName"}: {$homeHeaderLogoImage[$formLocale].name|escape} {$homeHeaderLogoImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteHomeHeaderLogoImage" value="{translate key="common.delete"}" class="button" />
-
-<img src="{$publicFilesDir}/{$homeHeaderLogoImage[$formLocale].uploadName|escape:"url"}" width="{$homeHeaderLogoImage[$formLocale].width|escape}" height="{$homeHeaderLogoImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.homePageHeaderLogo.altText"}" />
-
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="homeHeaderLogoImageAltText" key="common.altText"}</td>
-		<td width="80%" class="value"><input type="text" name="homeHeaderLogoImageAltText[{$formLocale|escape}]" value="{$homeHeaderLogoImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td>&nbsp;</td>
-		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-		</tr>
-</table>
-{/if}
 </section>
 
 <section id="journalThumbnail">
@@ -186,31 +187,28 @@ function prepBlockFields() {
 
 
 	<div class="form-row">
-		{fieldLabel name="journalThumbnail" key="manager.setup.useThumbnail"}
-		<input type="file" name="journalThumbnail" id="journalThumbnail" class="uploadField" />
-		<input type="submit" name="uploadJournalThumbnail" value="{translate key="common.upload"}" class="button" />
+		<div class="form-group">
+			{fieldLabel name="journalThumbnail" key="manager.setup.useThumbnail"}
+			<input type="file" name="journalThumbnail" id="journalThumbnail" class="uploadField" />
+			<input type="submit" name="uploadJournalThumbnail" value="{translate key="common.upload"}" class="button" />
+		</div>
+
+		
+		{if $journalThumbnail[$formLocale]}
+			<div class="form-subrow">
+				<img src="{$publicFilesDir}/{$journalThumbnail[$formLocale].uploadName|escape:"url"}" width="{$journalThumbnail[$formLocale].width|escape}" height="{$journalThumbnail[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.journalThumbnail.altText"}" />
+				<div class="form-group">
+					{fieldLabel name="journalThumbnailAltText" key="common.altText"}
+					<input type="text" name="journalThumbnailAltText[{$formLocale|escape}]" value="{$journalThumbnailAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
+					<p class="instruct">{translate key="common.altTextInstructions"}</p>
+				</div>
+				<div class="form-group">
+					<span class="instruct">{translate key="common.fileName"}: {$journalThumbnail[$formLocale].name|escape} {$journalThumbnail[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</span> <input type="submit" name="deleteJournalThumbnail" value="{translate key="common.delete"}" class="button" />
+				</div>
+			</div>
+		{/if}
+
 	</div>
-
-
-{if $journalThumbnail[$formLocale]}
-{translate key="common.fileName"}: {$journalThumbnail[$formLocale].name|escape} {$journalThumbnail[$formLocale].dateUploaded|date_format:$datetimeFormatShort} <input type="submit" name="deleteJournalThumbnail" value="{translate key="common.delete"}" class="button" />
-
-<img src="{$publicFilesDir}/{$journalThumbnail[$formLocale].uploadName|escape:"url"}" width="{$journalThumbnail[$formLocale].width|escape}" height="{$journalThumbnail[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.journalThumbnail.altText"}" />
-
-<table width="100%" class="data">
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="journalThumbnailAltText" key="common.altText"}</td>
-		<td width="80%" class="value"><input type="text" name="journalThumbnailAltText[{$formLocale|escape}]" value="{$journalThumbnailAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" /></td>
-	</tr>
-	<tr >
-		<td>&nbsp;</td>
-		<td class="value"><span class="instruct">{translate key="common.altTextInstructions"}</span></td>
-		</tr>
-</table>
-{/if}
-
-</section>
-
 
 
 <section id="journalHomepageContent">
@@ -234,16 +232,17 @@ function prepBlockFields() {
 
 
 	<div class="form-row">
-		{fieldLabel name="homepageImage" key="manager.setup.homepageImage"}
+		<div class="form-group">
+			{fieldLabel name="homepageImage" key="manager.setup.homepageImage"}
+			<input type="file" name="homepageImage" id="homepageImage" class="uploadField" />
+			<input type="submit" name="uploadHomepageImage" value="{translate key="common.upload"}" class="button button--small" />
+		</div>
+		{if $homepageImage[$formLocale]}
 		<div class="form-subrow">
-			<div class="form-group">
-				<input type="file" name="homepageImage" id="homepageImage" class="uploadField" />
-				<input type="submit" name="uploadHomepageImage" value="{translate key="common.upload"}" class="button button--small" />
-			</div>
 			<div class="form-group">
 				<img src="{$publicFilesDir}/{$homepageImage[$formLocale].uploadName|escape:"url"}" width="{$homepageImage[$formLocale].width|escape}" height="{$homepageImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.journalHomepageImage.altText"}" />
 			</div>
-			{if $homepageImage[$formLocale]}
+
 			<div class="form-group">
 				{fieldLabel name="homepageImageAltText" key="common.altText"}
 				<input type="text" name="homepageImageAltText[{$formLocale|escape}]" value="{$homepageImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
@@ -253,10 +252,8 @@ function prepBlockFields() {
 				<p class="instruct">{translate key="common.fileName"}: {$homepageImage[$formLocale].name|escape} {$homepageImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</p>
 				<input type="submit" name="deleteHomepageImage" value="{translate key="common.delete"}" class="button button--small" />
 			</div>
-			{/if}
-
-			
 		</div>
+		{/if}
 		
 	</div>
 
@@ -303,15 +300,13 @@ function prepBlockFields() {
 		</div>
 		<div class="form-group">
 			<input type="radio" name="pageHeaderTitleType[{$formLocale|escape}]" id="pageHeaderTitleType-1" value="1"{if $pageHeaderTitleType[$formLocale]} checked="checked"{/if} /> {fieldLabel name="pageHeaderTitleType-1" key="manager.setup.useImageTitle"}
+			<input type="file" name="pageHeaderTitleImage" class="uploadField" />
+			<input type="submit" name="uploadPageHeaderTitleImage" value="{translate key="common.upload"}" class="button button--small" />
+			{if $pageHeaderTitleImage[$formLocale]}
 			<div class="form-subrow">
-				<div class="form-group">
-					<input type="file" name="pageHeaderTitleImage" class="uploadField" />
-					<input type="submit" name="uploadPageHeaderTitleImage" value="{translate key="common.upload"}" class="button button--small" />
-				</div>
 				<div class="form-group">
 					<img src="{$publicFilesDir}/{$pageHeaderTitleImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderTitleImage[$formLocale].width|escape}" height="{$pageHeaderTitleImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeader.altText"}" />
 				</div>
-				{if $pageHeaderTitleImage[$formLocale]}
 				<div class="form-group">
 					{fieldLabel name="pageHeaderTitleImageAltText" key="common.altText"}
 					<input type="text" name="pageHeaderTitleImageAltText[{$formLocale|escape}]" value="{$pageHeaderTitleImageAltText[$formLocale]|escape}" size="40" maxlength="255" class="textField" />
@@ -323,8 +318,8 @@ function prepBlockFields() {
 					<span class="instruct">{translate key="common.fileName"}: {$pageHeaderTitleImage[$formLocale].name|escape} {$pageHeaderTitleImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort}</span>
 					<input type="submit" name="deletePageHeaderTitleImage" value="{translate key="common.delete"}" class="button button--small" />
 				</div>
-				{/if}
 			</div>	
+			{/if}
 		</div>
 	</div>
 
@@ -335,13 +330,14 @@ function prepBlockFields() {
 
 
 <div class="form-row">
-	{fieldLabel name="pageHeaderLogoImage" key="manager.setup.useImageLogo"}
+	<div class="form-group">
+		{fieldLabel name="pageHeaderLogoImage" key="manager.setup.useImageLogo"}
+		<input type="file" name="pageHeaderLogoImage" id="pageHeaderLogoImage" class="uploadField" />
+		<input type="submit" name="uploadPageHeaderLogoImage" value="{translate key="common.upload"}" class="button button--small" />
+	</div>
+	{if $pageHeaderLogoImage[$formLocale]}
 	<div class="form-subrow">
-		<div class="form-group">
-			<input type="file" name="pageHeaderLogoImage" id="pageHeaderLogoImage" class="uploadField" />
-			<input type="submit" name="uploadPageHeaderLogoImage" value="{translate key="common.upload"}" class="button button--small" />
-		</div>
-		{if $pageHeaderLogoImage[$formLocale]}
+		
 		<div class="form-group">
 			<img src="{$publicFilesDir}/{$pageHeaderLogoImage[$formLocale].uploadName|escape:"url"}" width="{$pageHeaderLogoImage[$formLocale].width|escape}" height="{$pageHeaderLogoImage[$formLocale].height|escape}" style="border: 0;" alt="{translate key="common.pageHeaderLogo.altText"}" />
 		</div>
@@ -354,8 +350,8 @@ function prepBlockFields() {
 			<p class="instruct">{translate key="common.fileName"}: {$pageHeaderLogoImage[$formLocale].name|escape} {$pageHeaderLogoImage[$formLocale].dateUploaded|date_format:$datetimeFormatShort} </p>
 			<input type="submit" name="deletePageHeaderLogoImage" value="{translate key="common.delete"}" class="button button--small" />
 		</div>
-		{/if}
 	</div>
+	{/if}
 </div>
 </section>
 
@@ -366,13 +362,13 @@ function prepBlockFields() {
 
 
 <div class="form-row">
-	{fieldLabel name="journalFavicon" key="manager.setup.useImageLogo"}
+	<div class="form-group">
+		{fieldLabel name="journalFavicon" key="manager.setup.useImageLogo"}
+		<input type="file" name="journalFavicon" id="journalFavicon" class="uploadField" />
+		<input type="submit" name="uploadJournalFavicon" value="{translate key="common.upload"}" class="button button--small" />
+	</div>
+	{if $journalFavicon[$formLocale]}
 	<div class="form-subrow">
-		<div class="form-group">
-			<input type="file" name="journalFavicon" id="journalFavicon" class="uploadField" />
-			<input type="submit" name="uploadJournalFavicon" value="{translate key="common.upload"}" class="button button--small" />
-		</div>
-		{if $journalFavicon[$formLocale]}
 		<div class="form-group">
 			<img src="{$publicFilesDir}/{$journalFavicon[$formLocale].uploadName|escape:"url"}" width="16px" height="16px" style="border: 0;" alt="favicon" />
 		</div>
@@ -380,8 +376,8 @@ function prepBlockFields() {
 			<p class="instruct">{translate key="common.fileName"}: {$journalFavicon[$formLocale].name|escape} {$journalFavicon[$formLocale].dateUploaded|date_format:$datetimeFormatShort} </p>
 			<input type="submit" name="deleteJournalFavicon" value="{translate key="common.delete"}" class="button button--small" />
 		</div>
-		{/if}
 	</div>
+	{/if}
 </div>
 
 </section>
