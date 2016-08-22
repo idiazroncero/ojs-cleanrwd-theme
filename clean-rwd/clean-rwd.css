@@ -4346,33 +4346,6 @@ tbody td {
     #referrals .listing td:before {
       display: none; } }
 
-/**
- * Table styles
- */
-/* line 211, ../sass/modules/_tables.scss */
-.highlightReviewerNotNotified, .highlightCopyediting {
-  background: #EDEBC4; }
-
-/* line 214, ../sass/modules/_tables.scss */
-.highlightNoDecision, .highlightLayoutEditing {
-  background: #D8E9BD; }
-
-/* line 217, ../sass/modules/_tables.scss */
-.highlightRevisedCopyUploaded, .higlightProofreading {
-  background: #C6EBE4; }
-
-/* line 220, ../sass/modules/_tables.scss */
-.highlightReviewerConfirmationOverdue {
-  background: #9DD1E6; }
-
-/* line 223, ../sass/modules/_tables.scss */
-.highlightReviewerCompletionOverdue {
-  background: #74C5D8; }
-
-/* line 227, ../sass/modules/_tables.scss */
-.fastTracked {
-  background-color: #ABA; }
-
 @media (min-width: 480px) {
   /* line 1, ../sass/modules/_header.scss */
   #header-title {
@@ -5041,6 +5014,42 @@ ul.steplist li {
 /* line 2, ../sass/pages/_editor.scss */
 #submissions .nested td {
   width: 33%; }
+
+/* line 10, ../sass/pages/_editor.scss */
+.highlightReviewerNotNotified {
+  background: #EDEBC4; }
+
+/* line 14, ../sass/pages/_editor.scss */
+.highlightCopyediting {
+  background: #EDEBC4; }
+
+/* line 18, ../sass/pages/_editor.scss */
+.highlightNoDecision {
+  background: #D8E9BD; }
+
+/* line 22, ../sass/pages/_editor.scss */
+.highlightLayoutEditing {
+  background: #D8E9BD; }
+
+/* line 26, ../sass/pages/_editor.scss */
+.highlightRevisedCopyUploaded {
+  background: #C6EBE4; }
+
+/* line 30, ../sass/pages/_editor.scss */
+.higlightProofreading {
+  background: #C6EBE4; }
+
+/* line 34, ../sass/pages/_editor.scss */
+.highlightReviewerConfirmationOverdue {
+  background: #9DD1E6; }
+
+/* line 38, ../sass/pages/_editor.scss */
+.highlightReviewerCompletionOverdue {
+  background: #74C5D8; }
+
+/* line 42, ../sass/pages/_editor.scss */
+.fastTracked {
+  background-color: #ABA; }
 
 /* line 10, ../sass/overrides/_referrals.scss */
 #referrals .headseparator {

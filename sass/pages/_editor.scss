@@ -3,3 +3,42 @@
 		width:33%;
 	}
 }
+
+
+// Review status
+
+.highlightReviewerNotNotified {
+	background: $reviewer-not-notified;
+}
+
+.highlightCopyediting {
+	background: $copyediting;
+}
+
+.highlightNoDecision {
+	background: $no-decision
+}
+
+.highlightLayoutEditing {
+	background: $layout-editing;
+}
+
+.highlightRevisedCopyUploaded {
+	background: $revised-copy-uploaded;
+}
+
+.higlightProofreading {
+	background: $proofreading;
+}
+
+.highlightReviewerConfirmationOverdue {
+	background: $reviewer-confirmation-overdue;
+}
+
+.highlightReviewerCompletionOverdue {
+	background: $reviewer-completion-overdue;
+}
+
+.fastTracked {
+	background-color: $fast-tracked;
+}
