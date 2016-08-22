@@ -29,21 +29,18 @@ $(document).ready(function() { setupTableDND("#dragTable", {/literal}"{url op=mo
 
 <div id="membership">
 <table class="listing" id="dragTable">
-	<tr>
-		<td colspan="2" class="headseparator">&nbsp;</td>
-	</tr>
+	<thead>
 	<tr class="heading" >
-		<td width="85%">{translate key="user.name"}</td>
-		<td width="15%">{translate key="common.action"}</td>
+		<th>{translate key="user.name"}</th>
+		<th>{translate key="common.action"}</th>
 	</tr>
-	<tr>
-		<td colspan="2" class="headseparator">&nbsp;</td>
-	</tr>
+	</thead>
+	<tbody>
 {iterate from=memberships item=membership}
 	{assign var=user value=$membership->getUser()}
 	<tr  class="data" id=membership-{$membership->getUserId()}>
-		<td class="drag">{$user->getFullName()|escape}</td>
-		<td>
+		<td data-title='{translate key="user.name"}' class="drag">{$user->getFullName()|escape}</td>
+		<td data-title='{translate key="common.action"}' >
 			<a href="{url op="deleteMembership" path=$membership->getGroupId()|to_array:$membership->getUserId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.groups.membership.confirmDelete"}')" class="action">{translate key="common.delete"}</a>&nbsp;|&nbsp;<a href="{url op="moveMembership" d=u path=$group->getId() id=$user->getId()}">&uarr;</a>&nbsp;<a href="{url op="moveMembership" d=d path=$group->getId() id=$user->getId()}">&darr;</a>
 		</td>
 	</tr>
@@ -52,19 +49,18 @@ $(document).ready(function() { setupTableDND("#dragTable", {/literal}"{url op=mo
 	<tr>
 		<td colspan="2" class="nodata">{translate key="manager.groups.membership.noneCreated"}</td>
 	</tr>
-	<tr>
-		<td colspan="2" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr><td colspan="2" class="endseparator">&nbsp;</td></tr>
-	<tr>
-		<td align="left">{page_info iterator=$memberships}</td>
-		<td align="right">{page_links anchor="membership" name="memberships" iterator=$memberships}</td>
+	<tr class="listing-pager">
+		<td>{page_info iterator=$memberships}</td>
+		<td>{page_links anchor="membership" name="memberships" iterator=$memberships}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 
-<a href="{url op="addMembership" path=$group->getId()}" class="action">{translate key="manager.groups.membership.addMember"}</a>
+<div class="buttons">
+	<a href="{url op="addMembership" path=$group->getId()}" class="button">{translate key="manager.groups.membership.addMember"}</a>
+</div>
 </div>
 {include file="common/footer.tpl"}
 

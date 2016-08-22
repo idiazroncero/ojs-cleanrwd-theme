@@ -287,3 +287,13 @@ input:disabled, .disabled {
 		border-color:inherit;
 	}
 }
+
+.alphabet {
+	@include clearfix();
+	a {
+		@include matar-link();
+		float:left;
+		padding:0 4px;
+		border-right:1px solid $line-color-light;
+	}
+}
