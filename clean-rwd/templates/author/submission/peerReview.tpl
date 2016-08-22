@@ -8,7 +8,7 @@
  * Subtemplate defining the author's peer review table.
  *
  *}
-<div id="peerReview">
+<section class="section" id="peerReview">
 <h3>{translate key="submission.peerReview"}</h3>
 
 {assign var=start value="A"|ord}
@@ -20,32 +20,25 @@
 
 <h4>{translate key="submission.round" round=$round}</h4>
 
-<table class="data" width="100%">
-	<tr >
-		<td class="label" width="20%">
-			{translate key="submission.reviewVersion"}
-		</td>
-		<td class="value" width="80%">
+<dl>
+	<dt>{translate key="submission.reviewVersion"}</dt>
+		<dd>
 			{assign var="reviewFile" value=$reviewFilesByRound[$round]}
 			{if $reviewFile}
 				<a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewFile->getFileId():$reviewFile->getRevision()}" class="file">{$reviewFile->getFileName()|escape}</a>&nbsp;&nbsp;{$reviewFile->getDateModified()|date_format:$dateFormatShort}
 			{else}
 				{translate key="common.none"}
 			{/if}
-		</td>
-	</tr>
-	<tr >
-		<td class="label" width="20%">
-			{translate key="submission.initiated"}
-		</td>
-		<td class="value" width="80%">
+		</dd>
+	<dt>{translate key="submission.initiated"}</dt>
+	<dd>
 			{if $reviewEarliestNotificationByRound[$round]}
 				{$reviewEarliestNotificationByRound[$round]|date_format:$dateFormatShort}
 			{else}
 				&mdash;
 			{/if}
-		</td>
-	</tr>
+	</dd>
+
 	<tr >
 		<td class="label" width="20%">
 			{translate key="submission.lastModified"}
@@ -103,11 +96,7 @@
 			</td>
 		</tr>
 	{/if}
-</table>
-
-{if !$smarty.section.round.last}
-	<div class="separator"></div>
-{/if}
+</dl>
 
 {/section}
-</div>
+</section>
