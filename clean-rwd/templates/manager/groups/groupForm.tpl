@@ -29,46 +29,51 @@
 {/if}
 
 {include file="common/formErrors.tpl"}
-<table class="data" width="100%">
+
 {if count($formLocales) > 1}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td width="80%" class="value">
+	<div class="form-row">
+		<p class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</p>
 			{if $group}{url|assign:"groupFormUrl" op="editGroup" path=$group->getId() escape=false}
 			{else}{url|assign:"groupFormUrl" op="createGroup" escape=false}
 			{/if}
 			{form_language_chooser form="groupForm" url=$groupFormUrl}
-			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
+			<p class="instruct">{translate key="form.formLanguage.description"}</p>
+	</div>
 {/if}
-<tr >
-	<td width="20%" class="label">{fieldLabel name="title" required="true" key="manager.groups.title"}</td>
-	<td width="80%" class="value"><input type="text" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" size="35" maxlength="80" id="title" class="textField" /></td>
-</tr>
+<div class="form-row">
+	<p class="label">{fieldLabel name="title" required="true" key="manager.groups.title"}</p>
+	<input type="text" name="title[{$formLocale|escape}]" value="{$title[$formLocale]|escape}" size="35" maxlength="80" id="title" class="textField" />
+</div>
 
-<tr >
-	<td width="20%" class="label">&nbsp;</td>
-	<td width="80%" class="value">
-		<input type="checkbox" name="publishEmail" value="1" {if $publishEmail}checked="checked" {/if} id="publishEmail" />&nbsp;
+<div class="form-row">
+	<div class="form-subrow">
+		<div class="form-group">
+			<input type="checkbox" name="publishEmail" value="1" {if $publishEmail}checked="checked" {/if} id="publishEmail" />&nbsp;
 		{fieldLabel name="publishEmail" key="manager.groups.publishEmails"}
-	</td>
-</tr>
-<tr >
-	<td width="20%" class="label">{translate key="common.type"}</td>
-	<td width="80%" class="value">
-		{foreach from=$groupContextOptions item=groupContextOptionKey key=groupContextOptionValue}
-			<input type="radio" name="context" value="{$groupContextOptionValue|escape}" {if $context == $groupContextOptionValue}checked="checked" {/if} id="context-{$groupContextOptionValue|escape}" />&nbsp;
-			{fieldLabel name="context-"|concat:$groupContextOptionValue key=$groupContextOptionKey}
-		{/foreach}
-	</td>
-</tr>
+		</div>
+
+		<div class="form-group">
+			<p class="label">{translate key="common.type"}</p>
+			<div class="form-subrow">
+				{foreach from=$groupContextOptions item=groupContextOptionKey key=groupContextOptionValue}
+					<div class="form-group">
+					<input type="radio" name="context" value="{$groupContextOptionValue|escape}" {if $context == $groupContextOptionValue}checked="checked" {/if} id="context-{$groupContextOptionValue|escape}" />&nbsp;
+					{fieldLabel name="context-"|concat:$groupContextOptionValue key=$groupContextOptionKey}
+					</div>
+				{/foreach}
+			</div>
+		</div>
+	</div>
 </table>
 
-<p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="groups" escape=false}'" /></p>
+<div class="buttons">
+	<input type="submit" value="{translate key="common.save"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="groups" escape=false}'" />
+</div>
 </form>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
-</div>
+
+</section>
 {include file="common/footer.tpl"}
 
