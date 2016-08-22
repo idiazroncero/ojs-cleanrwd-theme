@@ -20,7 +20,7 @@
 <p><a href="{url op="files" path=$parentDir|explode:"/"}" class="button">&lt; {translate key="manager.files.parentDir"}</a></p>
 {/if}
 
-<table class="listing">
+<table class="listing listing--wide">
 	<thead>
 		<th></th>
 		<th>{translate key="common.fileName"}</th>
@@ -39,12 +39,16 @@
 	{assign var=filePath value=$filePath|escape}
 	<tbody>
 		<tr>
-			<td>{if $file.isDir}{icon name="folder"}{else}{icon name="letter"}{/if}</td>
-			<td><a href="{url op="files" path=$filePath|explode:"/"}">{$file.name}</a></td>
-			<td>{$file.mimetype|escape|default:"&mdash;"}</td>
-			<td>{$file.mtime|escape|date_format:$datetimeFormatShort}</td>
-			<td>{$file.size|escape|default:"&mdash;"}</td>
-			<td>
+			<td>{if $file.isDir}
+				<i class="fa fa-folder"></i> <!-- {icon name="folder"} -->
+				{else}
+				<i class="fa fa-file-o"></i> <!-- {icon name="letter"} -->
+				{/if}</td>
+			<td data-title='{translate key="common.fileName"}'><a href="{url op="files" path=$filePath|explode:"/"}">{$file.name}</a></td>
+			<td data-title='{translate key="common.type"}'>{$file.mimetype|escape|default:"&mdash;"}</td>
+			<td data-title='{translate key="common.dateModified"}'>{$file.mtime|escape|date_format:$datetimeFormatShort}</td>
+			<td data-title='{translate key="common.size"}'>{$file.size|escape|default:"&mdash;"}</td>
+			<td data-title='{translate key="common.action"}'>
 				{if !$file.isDir}
 					<a href="{url op="files" path=$filePath|explode:"/" download=1}" class="button button--small">{translate key="common.download"}</a>&nbsp;|
 				{/if}
