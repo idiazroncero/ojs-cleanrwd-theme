@@ -167,9 +167,9 @@ function checkEditorAssignments() {
 	<tbody>
 	{foreach from=$unassignedEditors item=editor}
 		<tr >
-			<td>{$editor->getUsername()|escape}</td>
-			<td>{$editor->getFullName()|escape}</td>
-			<td>
+			<td data-title='{translate key="user.username"}'>{$editor->getUsername()|escape}</td>
+			<td data-title='{translate key="user.name"}'>{$editor->getFullName()|escape}</td>
+			<td data-title='{translate key="common.action"}'>
 				<a class="button button--small" href="javascript:addSectionEditor({$editor->getId()})">{translate key="common.add"}</a>
 			</td>
 		</tr>
@@ -198,11 +198,11 @@ function checkEditorAssignments() {
 		{assign var=editor value=$editorEntry.user}
 		<input type="hidden" name="assignedEditorIds[]" value="{$editor->getId()|escape}" />
 		<tr>
-			<td>{$editor->getUsername()|escape}</td>
-			<td>{$editor->getFullName()|escape}</td>
-			<td><input type="checkbox" {if $editorEntry.canReview}checked="checked"{/if} name="canReview{$editor->getId()}" /></td>
-			<td><input type="checkbox" {if $editorEntry.canEdit}checked="checked"{/if} name="canEdit{$editor->getId()}" /></td>
-			<td>
+			<td data-title='{translate key="user.username"}'>{$editor->getUsername()|escape}</td>
+			<td data-title='{translate key="user.name"}'>{$editor->getFullName()|escape}</td>
+			<td data-title='{translate key="submission.review"}'><input type="checkbox" {if $editorEntry.canReview}checked="checked"{/if} name="canReview{$editor->getId()}" /></td>
+			<td data-title='{translate key="submission.editing"}'><input type="checkbox" {if $editorEntry.canEdit}checked="checked"{/if} name="canEdit{$editor->getId()}" /></td>
+			<td data-title='{translate key="common.action"}'>
 				<a class="button button--small button--cancel" href="javascript:removeSectionEditor({$editor->getId()})">{translate key="common.remove"}</a>
 			</td>
 		</tr>

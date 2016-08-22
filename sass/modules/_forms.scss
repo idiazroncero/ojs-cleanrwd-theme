@@ -14,7 +14,7 @@ form {
 input,
 select {
 	@include adjust-font-size-to($h5-font-size, 1.25);
-	background-color: #fff;
+	background-color: transparent;
 	// Custom border-radius
 	border-radius: $border-radius;
 	// We want a clean, plain border.
@@ -28,11 +28,29 @@ select {
 }
 
 select {
-	padding:rhythm(0.27) 0;
+	appearance:none;
+	padding:0 rhythm(1) 0 rhythm(0.25);
+	@include adjust-font-size-to($h5-font-size, 1);
+	height:rhythm(1.33);
 	option {
 		// Source of many layout problems: option shouldn't grow bigger than its parent
 		max-width:100%;
 	}
+}
+
+.select {
+	position:relative;
+	display:inline-block;
+	z-index:1;
+}
+
+.select-arrow {
+	position:absolute;
+	right:5px;
+	top:0;
+	line-height: rhythm(1.25);
+	z-index:0;
+	pointer-events:none;
 }
 
 input[type="text"], input[type="password"] {

@@ -7,7 +7,7 @@
 	@include adjust-font-size-to($h6-font-size,0.75);
 	// Whenewer we want a different font-size, we use one of our predefined font-sizes.
 	// This font-sizes were calculated using "perfect fourth" aspect ratio.
-	a {
+	a, span {
 		font-family:$helvetica;
 		letter-spacing:-0.02rem;
 		text-transform:uppercase;

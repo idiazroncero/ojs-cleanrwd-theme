@@ -47,6 +47,13 @@
 
 {get_debug_info}
 {if $enableDebugStats}{include file=$pqpTemplate}{/if}
-
+	
+	<script>
+		{literal}
+		$(document).ready(function(){
+			$('select').wrap('<span class="select"></span>').after('<i class="select-arrow fa fa-angle-down"></i>');
+		});
+		{/literal}
+	</script>
 </body>
 </html>

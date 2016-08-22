@@ -38,12 +38,12 @@ $(document).ready(function() { setupTableDND("#dragTable", "moveSection"); });
 	{/iterate}
 	{if $sections->wasEmpty()}
 		<tr>
-			<td>{translate key="manager.sections.noneCreated"}</td>
+			<td colspan="3">{translate key="manager.sections.noneCreated"}</td>
 		</tr>
 	{else}
 		<tr class="listing-pager">
 			<td>{page_info iterator=$sections}</td>
-			<td>{page_links anchor="sections" name="sections" iterator=$sections}</td>
+			<td colspan="2">{page_links anchor="sections" name="sections" iterator=$sections}</td>
 		</tr>
 	{/if}
 	</tbody>
