@@ -19,8 +19,7 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<br/>
-<div id="announcementType">
+<section class="section" id="announcementType">
 <form id="announcementTypeForm" method="post" action="{url op="updateAnnouncementType"}">
 {if $typeId}
 <input type="hidden" name="typeId" value="{$typeId|escape}" />
@@ -28,31 +27,35 @@
 
 {include file="common/formErrors.tpl"}
 
-<table class="data" width="100%">
+
 {if count($formLocales) > 1}
-	<tr valign="top">
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td width="80%" class="value">
+	<div class="form-row">
+		<p class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</p>
+
 			{if $typeId}{url|assign:"announcementTypeUrl" op="editAnnouncementType" path=$typeId escape=false}
 			{else}{url|assign:"announcementTypeUrl" op="createAnnouncementType" escape=false}
 			{/if}
 			{form_language_chooser form="announcementTypeForm" url=$announcementTypeUrl}
-			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
+			<p class="instruct">{translate key="form.formLanguage.description"}</p>
+	</div>
 {/if}
-<tr valign="top">
-	<td width="20%" class="label">{fieldLabel name="name" required="true" key="manager.announcementTypes.form.typeName"}</td>
-	<td width="80%" class="value"><input type="text" name="name[{$formLocale|escape}]" value="{$name[$formLocale]|escape}" size="40" id="name" maxlength="80" class="textField" /></td>
-</tr>
-</table>
-
-<p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> {if not $typeId}<input type="submit" name="createAnother" value="{translate key="manager.announcementTypes.form.saveAndCreateAnother"}" class="button" /> {/if}<input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="announcementTypes" escape=false}'" /></p>
-
-</form>
+<div class="form-row">
+	<p class="label">{fieldLabel name="name" required="true" key="manager.announcementTypes.form.typeName"}</p>
+	<input type="text" name="name[{$formLocale|escape}]" value="{$name[$formLocale]|escape}" size="40" id="name" maxlength="80" class="textField" />
 </div>
 
+
+<div class="buttons">
+	<input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> {if not $typeId}
+	<input type="submit" name="createAnother" value="{translate key="manager.announcementTypes.form.saveAndCreateAnother"}" class="button" /> {/if}
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url op="announcementTypes" escape=false}'" />
+</div>
+
+</form>
+
 <p><span class="formRequired">{translate key="common.requiredField"}</span></p>
+
+</section>
 
 {include file="common/footer.tpl"}
 
