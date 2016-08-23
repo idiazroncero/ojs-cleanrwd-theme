@@ -22,15 +22,16 @@
 {/if}
 
 <div id="results">
-<table class="listing">
-<tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
+<table class="listing listing--wide">
+<thead>
 <tr class="heading" >
-	{if !$currentJournal}<td width="20%">{translate key="journal.journal"}</td>{/if}
-	<td width="20%">{translate key="issue.issue"}</td>
-	<td width="{if !$currentJournal}60%{else}80%{/if}" colspan="2">{translate key="article.title"}</td>
+	{if !$currentJournal}<th>{translate key="journal.journal"}</th>{/if}
+	<th>{translate key="issue.issue"}</th>
+	<th>{translate key="article.title"}</td>
 </tr>
-<tr><td colspan="{$numCols|escape}" class="headseparator">&nbsp;</td></tr>
+</thead>
 
+<tbody>
 {iterate from=results item=result}
 {assign var=publishedArticle value=$result.publishedArticle}
 {assign var=article value=$result.article}
@@ -38,39 +39,35 @@
 {assign var=issueAvailable value=$result.issueAvailable}
 {assign var=journal value=$result.journal}
 <tr >
-	{if !$currentJournal}<td><a href="{url journal=$journal->getPath()}">{$journal->getLocalizedTitle()|escape}</a></td>{/if}
-	<td>{if $issueAvailable}<a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId($journal)}">{/if}{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}{if $issueAvailable}</a>{/if}</td>
-	<td width="35%">{$article->getLocalizedTitle()|strip_unsafe_html}</td>
-	<td width="25%" align="right">
-			<a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)}" class="file">{if $article->getLocalizedAbstract()}{translate key="article.abstract"}{else}{translate key="article.details"}{/if}</a>
+	{if !$currentJournal}<td data-title='{translate key="journal.journal"}'><a href="{url journal=$journal->getPath()}">{$journal->getLocalizedTitle()|escape}</a></td>{/if}
+	<td data-title='{translate key="issue.issue"}'>{if $issueAvailable}<a href="{url journal=$journal->getPath() page="issue" op="view" path=$issue->getBestIssueId($journal)}">{/if}{$issue->getIssueIdentification()|strip_unsafe_html|nl2br}{if $issueAvailable}</a>{/if}</td>
+	<td data-title='{translate key="article.title"}'>
+		{$article->getLocalizedTitle()|strip_unsafe_html}
+		<p class="marginless">{foreach from=$article->getAuthors() item=author name=authorList}
+			{$author->getFullName()|escape}{if !$smarty.foreach.authorList.last},{/if}
+		{/foreach}</p>
+		<p class="marginless"><a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)}">{if $article->getLocalizedAbstract()}{translate key="article.abstract"}{else}{translate key="article.details"}{/if}</a>
 		{if $issueAvailable}
-		{foreach from=$publishedArticle->getGalleys() item=galley name=galleyList}
-			&nbsp;
-			<a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)|to_array:$galley->getBestGalleyId($journal)}" class="file">{$galley->getGalleyLabel()|escape}</a>
+		{foreach from=$publishedArticle->getGalleys() item=galley name=galleyList}&nbsp;
+			<i class="fa fa-file-o"></i>
+			<a href="{url journal=$journal->getPath() page="article" op="view" path=$publishedArticle->getBestArticleId($journal)|to_array:$galley->getBestGalleyId($journal)}">{$galley->getGalleyLabel()|escape}</a>
 		{/foreach}
 		{/if}
+		</p>
 	</td>
 </tr>
-<tr>
-	<td colspan="{$numCols|escape}" style="padding-left: 30px;font-style: italic;">
-		{foreach from=$article->getAuthors() item=author name=authorList}
-			{$author->getFullName()|escape}{if !$smarty.foreach.authorList.last},{/if}
-		{/foreach}
-	</td>
-</tr>
-<tr><td colspan="{$numCols|escape}" class="{if $results->eof()}end{/if}separator">&nbsp;</td></tr>
 {/iterate}
 {if $results->wasEmpty()}
 <tr>
 <td colspan="{$numCols|escape}" class="nodata">{translate key="search.noResults"}</td>
 </tr>
-<tr><td colspan="{$numCols|escape}" class="endseparator">&nbsp;</td></tr>
 {else}
-	<tr>
-		<td {if !$currentJournal}colspan="2" {/if}align="left">{page_info iterator=$results}</td>
-		<td colspan="2" align="right">{page_links anchor="results" iterator=$results name="search"}</td>
+	<tr class="listing-pager">
+		<td {if !$currentJournal}colspan="2" {/if}>{page_info iterator=$results}</td>
+		<td>{page_links anchor="results" iterator=$results name="search"}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 </div>
 {include file="common/footer.tpl"}
