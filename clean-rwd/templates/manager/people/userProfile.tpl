@@ -119,9 +119,8 @@
 	{/if}
 	<li>
 		{translate key=$userRoles[role]->getRoleName()}
-		{if $userRoles[role]->getRoleId() != $smarty.const.ROLE_ID_SITE_ADMIN}
-		<br>
-		<a href="{url op="unEnroll" path=$userRoles[role]->getRoleId() userId=$user->getId() journalId=$userRoles[role]->getJournalId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.people.confirmUnenroll"}')" class="button button--small">{translate key="manager.people.unenroll"}</a>
+		{if $userRoles[role]->getRoleId() != $smarty.const.ROLE_ID_SITE_ADMIN}&nbsp;
+		<a href="{url op="unEnroll" path=$userRoles[role]->getRoleId() userId=$user->getId() journalId=$userRoles[role]->getJournalId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.people.confirmUnenroll"}')" class="action"><i class="fa fa-user-times"></i> {translate key="manager.people.unenroll"}</a>
 		{/if}
 	</li>
 {/section}
