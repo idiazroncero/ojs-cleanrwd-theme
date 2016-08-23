@@ -1,0 +1,28 @@
+#interests {
+	.tagit {
+		margin:0;
+		padding:0;
+	}
+
+	.tagit li {
+		list-style-type:none;
+	}
+
+	.tagit-close {
+		margin:0 5px;
+		@extend .fa;
+		@extend .fa-times;
+		cursor:pointer;
+		span {
+			display:none;
+		}
+	}
+
+	.tagit-new {
+		@extend .fa;
+		@extend .fa-tag;
+		&:before {
+			margin-right:5px;
+		}
+	}
+}

@@ -14,7 +14,7 @@
   font-weight: normal;
   font-style: normal; }
 /* line 4, ../sass/external/font-awesome/_core.scss */
-.fa, .pkp_controllers_fontController_smallFont, .pkp_controllers_fontController_defaultFont, .pkp_controllers_fontController_largeFont, .announcement__more, .ui-icon-closethick, #pdfDownloadLinkContainer {
+.fa, .pkp_controllers_fontController_smallFont, .pkp_controllers_fontController_defaultFont, .pkp_controllers_fontController_largeFont, .announcement__more, .ui-icon-closethick, #interests .tagit-close, #interests .tagit-new, #pdfDownloadLinkContainer {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -85,10 +85,10 @@
   float: right; }
 
 /* line 14, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-left, .fa-pull-left.pkp_controllers_fontController_smallFont, .fa-pull-left.pkp_controllers_fontController_defaultFont, .fa-pull-left.pkp_controllers_fontController_largeFont, .fa-pull-left.announcement__more, .fa-pull-left.ui-icon-closethick, .fa-pull-left#pdfDownloadLinkContainer {
+.fa.fa-pull-left, .fa-pull-left.pkp_controllers_fontController_smallFont, .fa-pull-left.pkp_controllers_fontController_defaultFont, .fa-pull-left.pkp_controllers_fontController_largeFont, .fa-pull-left.announcement__more, .fa-pull-left.ui-icon-closethick, #interests .fa-pull-left.tagit-close, #interests .fa-pull-left.tagit-new, .fa-pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 15, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-right, .fa-pull-right.pkp_controllers_fontController_smallFont, .fa-pull-right.pkp_controllers_fontController_defaultFont, .fa-pull-right.pkp_controllers_fontController_largeFont, .fa-pull-right.announcement__more, .fa-pull-right.ui-icon-closethick, .fa-pull-right#pdfDownloadLinkContainer {
+.fa.fa-pull-right, .fa-pull-right.pkp_controllers_fontController_smallFont, .fa-pull-right.pkp_controllers_fontController_defaultFont, .fa-pull-right.pkp_controllers_fontController_largeFont, .fa-pull-right.announcement__more, .fa-pull-right.ui-icon-closethick, #interests .fa-pull-right.tagit-close, #interests .fa-pull-right.tagit-new, .fa-pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -101,10 +101,10 @@
   float: left; }
 
 /* line 23, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-left, .pull-left.pkp_controllers_fontController_smallFont, .pull-left.pkp_controllers_fontController_defaultFont, .pull-left.pkp_controllers_fontController_largeFont, .pull-left.announcement__more, .pull-left.ui-icon-closethick, .pull-left#pdfDownloadLinkContainer {
+.fa.pull-left, .pull-left.pkp_controllers_fontController_smallFont, .pull-left.pkp_controllers_fontController_defaultFont, .pull-left.pkp_controllers_fontController_largeFont, .pull-left.announcement__more, .pull-left.ui-icon-closethick, #interests .pull-left.tagit-close, #interests .pull-left.tagit-new, .pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 24, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-right, .pull-right.pkp_controllers_fontController_smallFont, .pull-right.pkp_controllers_fontController_defaultFont, .pull-right.pkp_controllers_fontController_largeFont, .pull-right.announcement__more, .pull-right.ui-icon-closethick, .pull-right#pdfDownloadLinkContainer {
+.fa.pull-right, .pull-right.pkp_controllers_fontController_smallFont, .pull-right.pkp_controllers_fontController_defaultFont, .pull-right.pkp_controllers_fontController_largeFont, .pull-right.announcement__more, .pull-right.ui-icon-closethick, #interests .pull-right.tagit-close, #interests .pull-right.tagit-new, .pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* line 4, ../sass/external/font-awesome/_animated.scss */
@@ -260,7 +260,8 @@
 /* line 17, ../sass/external/font-awesome/_icons.scss */
 .fa-remove:before,
 .fa-close:before,
-.fa-times:before {
+.fa-times:before,
+#interests .tagit-close:before {
   content: ""; }
 
 /* line 20, ../sass/external/font-awesome/_icons.scss */
@@ -370,7 +371,7 @@
   content: ""; }
 
 /* line 48, ../sass/external/font-awesome/_icons.scss */
-.fa-tag:before {
+.fa-tag:before, #interests .tagit-new:before {
   content: ""; }
 
 /* line 49, ../sass/external/font-awesome/_icons.scss */
@@ -3618,51 +3619,6 @@ td.notificationFunction {
 #journalListPageLinks {
   float: left; }
 
-/* @group Tag-it */
-/* line 144, ../sass/pkp/_common.scss */
-#interests ul.tagit {
-  padding: 0 0.375rem;
-  border: 1px solid #999;
-  background: none;
-  color: #333;
-  border-radius: 2px;
-  font-size: 14px;
-  font-size: 0.85rem;
-  line-height: 24px;
-  line-height: 1.5rem;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* line 158, ../sass/pkp/_common.scss */
-#interests ul.tagit li {
-  margin: 1px 5px 1px 0;
-  border-color: #999;
-  color: #333;
-  background: none;
-  font-weight: normal;
-  border-radius: 0; }
-/* line 170, ../sass/pkp/_common.scss */
-#interests ul.tagit li.tagit-choice {
-  padding: 0 18px 0 5px; }
-/* line 174, ../sass/pkp/_common.scss */
-#interests ul.tagit li.tagit-new {
-  padding: 1px 18px 1px 5px; }
-  /* line 177, ../sass/pkp/_common.scss */
-  #interests ul.tagit li.tagit-new input {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    font-size: 0.85rem;
-    line-height: 24px;
-    line-height: 1.5rem; }
-/* line 184, ../sass/pkp/_common.scss */
-#interests ul.tagit li.tagit-choice .tagit-close {
-  color: #333; }
-/* line 189, ../sass/pkp/_common.scss */
-#interests .ui-autocomplete .ui-menu-item a {
-  font-size: 14px;
-  font-size: 0.85rem;
-  line-height: 24px;
-  line-height: 1.5rem; }
-
-/* @end */
 /*
  * Forms are messy.
  * Everything around OJS is messy.
@@ -4894,6 +4850,24 @@ ul.steplist li {
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem; }
+
+/* line 2, ../sass/modules/_tagit.scss */
+#interests .tagit {
+  margin: 0;
+  padding: 0; }
+/* line 7, ../sass/modules/_tagit.scss */
+#interests .tagit li {
+  list-style-type: none; }
+/* line 11, ../sass/modules/_tagit.scss */
+#interests .tagit-close {
+  margin: 0 5px;
+  cursor: pointer; }
+  /* line 16, ../sass/modules/_tagit.scss */
+  #interests .tagit-close span {
+    display: none; }
+/* line 24, ../sass/modules/_tagit.scss */
+#interests .tagit-new:before {
+  margin-right: 5px; }
 
 /* line 22, ../sass/init/_mixins.scss */
 #page-user-userHome #myJournals h4 a:link, #page-user-userHome #myJournals h4 a:visited, #page-user-userHome #myJournals h4 a:focus, #page-user-userHome #myJournals h4 a:hover, #page-user-userHome #myJournals h4 a:active {
