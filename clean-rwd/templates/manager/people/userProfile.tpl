@@ -17,110 +17,87 @@
 <div id="profile">
 <h4>{translate key="user.profile"}</h4>
 
-<p><a href="{url op="editUser" path=$user->getId()}" class="action">{translate key="manager.people.editProfile"}</a></p>
+<p><a href="{url op="editUser" path=$user->getId()}" class="button button--small">{translate key="manager.people.editProfile"}</a></p>
 
-<table class="data">
-	<tr >
-		<td width="20%" class="label">{translate key="user.username"}</td>
-		<td width="80%" class="data"><strong>{$user->getUsername()|escape}</strong></td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.salutation"}</td>
-		<td class="value">{$user->getSalutation()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.firstName"}</td>
-		<td class="value">{$user->getFirstName()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.middleName"}</td>
-		<td class="value">{$user->getMiddleName()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.lastName"}</td>
-		<td class="value">{$user->getLastName()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.affiliation"}</td>
-		<td class="value">{$user->getLocalizedAffiliation()|escape|nl2br|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.signature"}</td>
-		<td class="value">{$user->getLocalizedSignature()|escape|nl2br|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.initials"}</td>
-		<td class="value">{$user->getInitials()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.gender"}</td>
-		<td class="value">
+<dl>
+	<dt>{translate key="user.username"}</dt>
+	<dd>{$user->getUsername()|escape}</dd>
+
+	<dt>{translate key="user.salutation"}</dt>
+	<dd>{$user->getSalutation()|escape|default:"&mdash;"}</dd>
+
+	<dt>{translate key="user.firstName"}</dt>
+		<dd>{$user->getFirstName()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.middleName"}</dt>
+		<dd>{$user->getMiddleName()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.lastName"}</dt>
+		<dd>{$user->getLastName()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.affiliation"}</dt>
+		<dd>{$user->getLocalizedAffiliation()|escape|nl2br|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.signature"}</dt>
+		<dd>{$user->getLocalizedSignature()|escape|nl2br|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.initials"}</dt>
+		<dd>{$user->getInitials()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.gender"}</dt>
+		<dd>
 			{if $user->getGender() == "M"}{translate key="user.masculine"}
 			{elseif $user->getGender() == "F"}{translate key="user.feminine"}
 			{elseif $user->getGender() == "O"}{translate key="user.other"}
 			{else}&mdash;
 			{/if}
-		</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.email"}</td>
-		<td class="value">
+		</dd>
+
+		<dt>{translate key="user.email"}</dt>
+		<dd>
 			{$user->getEmail()|escape}
 			{assign var=emailString value=$user->getFullName()|concat:" <":$user->getEmail():">"}
 			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl}
 			{icon name="mail" url=$url}
-		</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.url"}</td>
-		<td class="value"><a href="{$user->getUrl()|escape:"quotes"}">{$user->getUrl()|escape}</a></td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.phone"}</td>
-		<td class="value">{$user->getPhone()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.fax"}</td>
-		<td class="value">{$user->getFax()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.interests"}</td>
-		<td class="value">{$userInterests|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.gossip"}</td>
-		<td class="value">{$user->getLocalizedGossip()|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="common.mailingAddress"}</td>
-		<td class="value">{$user->getMailingAddress()|strip_unsafe_html|nl2br|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="common.country"}</td>
-		<td class="value">{$country|escape|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.biography"}</td>
-		<td class="value">{$user->getLocalizedBiography()|strip_unsafe_html|nl2br|default:"&mdash;"}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.workingLanguages"}</td>
-		<td class="value">{foreach name=workingLanguages from=$user->getLocales() item=localeKey}{$localeNames.$localeKey|escape}{if !$smarty.foreach.workingLanguages.last}; {/if}{foreachelse}&mdash;{/foreach}</td>
-	</tr>
-	<tr >
-		<td colspan="2" class="separator">&nbsp;</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.dateRegistered"}</td>
-		<td class="value">{$user->getDateRegistered()|date_format:$datetimeFormatLong}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="user.dateLastLogin"}</td>
-		<td class="value">{$user->getDateLastLogin()|date_format:$datetimeFormatLong}</td>
-	</tr>
-</table>
+		</dd>
+
+		<dt>{translate key="user.url"}</dt>
+		<dd><a href="{$user->getUrl()|escape:"quotes"}">{$user->getUrl()|escape}</a></dd>
+
+		<dt>{translate key="user.phone"}</dt>
+		<dd>{$user->getPhone()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.fax"}</dt>
+		<dd>{$user->getFax()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.interests"}</dt>
+		<dd>{$userInterests|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.gossip"}</dt>
+		<dd>{$user->getLocalizedGossip()|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="common.mailingAddress"}</dt>
+		<dd><div class="delete-margins">{$user->getMailingAddress()|strip_unsafe_html|nl2br|default:"&mdash;"}</div></dd>
+
+		<dt>{translate key="common.country"}</dt>
+		<dd>{$country|escape|default:"&mdash;"}</dd>
+
+		<dt>{translate key="user.biography"}</dt>
+		<dd><div class="delete-margins">{$user->getLocalizedBiography()|strip_unsafe_html|nl2br|default:"&mdash;"}</div></dd>
+
+		<dt>{translate key="user.workingLanguages"}</dt>
+		<dd>{foreach name=workingLanguages from=$user->getLocales() item=localeKey}{$localeNames.$localeKey|escape}{if !$smarty.foreach.workingLanguages.last}; {/if}{foreachelse}&mdash;{/foreach}</dd>
+
+		<dt>{translate key="user.dateRegistered"}</dt>
+		<dd>{$user->getDateRegistered()|date_format:$datetimeFormatLong}</dd>
+
+		<dt>{translate key="user.dateLastLogin"}</dt>
+		<dd>{$user->getDateLastLogin()|date_format:$datetimeFormatLong}</dd>
+</dl>
 </div>
-<div class="separator"></div>
+
+
+
 <div id="enrollment>">
 <h4>{translate key="manager.people.enrollment"}</h4>
 
@@ -143,7 +120,8 @@
 	<li>
 		{translate key=$userRoles[role]->getRoleName()}
 		{if $userRoles[role]->getRoleId() != $smarty.const.ROLE_ID_SITE_ADMIN}
-			<a href="{url op="unEnroll" path=$userRoles[role]->getRoleId() userId=$user->getId() journalId=$userRoles[role]->getJournalId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.people.confirmUnenroll"}')" class="action">{translate key="manager.people.unenroll"}</a>
+		<br>
+		<a href="{url op="unEnroll" path=$userRoles[role]->getRoleId() userId=$user->getId() journalId=$userRoles[role]->getJournalId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.people.confirmUnenroll"}')" class="button button--small">{translate key="manager.people.unenroll"}</a>
 		{/if}
 	</li>
 {/section}

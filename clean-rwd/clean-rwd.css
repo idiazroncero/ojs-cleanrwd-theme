@@ -3399,6 +3399,10 @@ div.separator {
   font-size: inherit;
   font-family: inherit; }
 
+/* line 159, ../sass/init/_ojs-normalize.scss */
+.delete-margins p {
+  margin: 0; }
+
 /**
  * Overrides OJS's base stylesheet /lib/pkp/styles/common.css.
  *
