@@ -23,28 +23,32 @@
 
 
 <form action="{if $versionId}{url op="saveVersion" path=$versionId}{else}{url op="createVersion" path="save"}{/if}" method="post">
-<table class="data" width="100%">
-	<tr >
-		<td class="label" width="20%"><label for="title">{translate key="rt.version.title"}</label></td>
-		<td class="value" width="80%"><input type="text" class="textField" name="title" id="title" value="{$title|escape}" size="60" /></td>
-	</tr>
-	<tr >
-		<td class="label"><label for="key">{translate key="rt.version.key"}</label></td>
-		<td class="value"><input type="text" class="textField" name="key" id="key" value="{$key|escape}" size="60" /></td>
-	</tr>
-	<tr >
-		<td class="label"><label for="locale">{translate key="rt.version.locale"}</label></td>
-		<td class="value"><input type="text" class="textField" name="locale" id="locale" maxlength="5" size="5" value="{$locale|escape}" /></td>
-	</tr>
-	<tr >
-		<td class="label"><label for="description">{translate key="rt.version.description"}</label></td>
-		<td class="value">
-			<textarea class="textArea" name="description" id="description" rows="5" cols="60">{$description|escape}</textarea>
-		</td>
-	</tr>
-</table>
 
-<p><input type="submit" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url op="versions" escape=false}'" /></p>
+	<div class="form-row">
+		<label for="title">{translate key="rt.version.title"}</label>
+		<input type="text" class="textField" name="title" id="title" value="{$title|escape}" size="60" />
+	</div>
+	
+	<div class="form-row">
+		<label for="key">{translate key="rt.version.key"}</label>
+		<input type="text" class="textField" name="key" id="key" value="{$key|escape}" size="60" />
+	</div>
+	
+	<div class="form-row">
+		<label for="locale">{translate key="rt.version.locale"}</label>
+		<input type="text" class="textField" name="locale" id="locale" maxlength="5" size="5" value="{$locale|escape}" />
+	</div>
+	
+	<div class="form-row">
+		<label for="description">{translate key="rt.version.description"}</label>
+		<textarea class="textArea" name="description" id="description" rows="5" cols="60">{$description|escape}</textarea>
+	</div>
+
+
+<div class="buttons">
+	<input type="submit" value="{translate key="common.save"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url op="versions" escape=false}'" />
+</div>
 
 </form>
 
