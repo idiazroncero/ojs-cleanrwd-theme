@@ -101,7 +101,8 @@ Type `gem install breakpoint` and `gem install compass` in your terminal to get 
 - Style comments on article
 - Style refback links
 - Support author fees
-
+- Add support for JOURNAL_NAME/manager/reportGenerator
+- Add support for JOURNAL_NAME/manager/payments
 
 
 
