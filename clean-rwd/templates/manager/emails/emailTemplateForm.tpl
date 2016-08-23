@@ -71,7 +71,7 @@
 {if $canDisable}
 <div class="form-row">
 	<input type="checkbox" name="enabled" id="emailEnabled" value="1"{if $enabled} checked="checked"{/if} />
-	<label for="emailEnabled">{translate key="manager.emails.enabled"}</label>
+	<label class="label--inline" for="emailEnabled">{translate key="manager.emails.enabled"}</label>
 </div>
 {/if}
 
