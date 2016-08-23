@@ -38,6 +38,10 @@ select {
 	}
 }
 
+select[multiple] {
+	height:rhythm(3);
+}
+
 .select {
 	position:relative;
 	display:inline-block;
@@ -170,18 +174,18 @@ button {
 // FORMS
 //
 
-.settings-form {
-	select + input[type="submit"],
-	input + input[type="submit"]  {
-		// If there is a select and a input, we make the borders collapse.
-		// Hackish, but beautiful and degrades gracefully.
-		margin-left:-1px;
-	}
-	input[type="file"] + input[type="submit"], 
-	.instruct + input[type="submit"] { // Adapts height of button next to file uploads
-		vertical-align:baseline;
-		margin-left:$gutter / 2;
-	}
+
+select + input[type="submit"],
+input + input[type="submit"]  {
+	// If there is a select and a input, we make the borders collapse.
+	// Hackish, but beautiful and degrades gracefully.
+	margin-left:-1px;
+}
+
+input[type="file"] + input[type="submit"], 
+.instruct + input[type="submit"] { // Adapts height of button next to file uploads
+	vertical-align:baseline;
+	margin-left:$gutter / 2;
 }
 
 .form-row {

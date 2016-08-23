@@ -51,7 +51,7 @@
 	<script>
 		{literal}
 		$(document).ready(function(){
-			$('select').wrap('<span class="select"></span>').after('<i class="select-arrow fa fa-angle-down"></i>');
+			$('select').not([multiple]).wrap('<span class="select"></span>').after('<i class="select-arrow fa fa-angle-down"></i>');
 		});
 		{/literal}
 	</script>
