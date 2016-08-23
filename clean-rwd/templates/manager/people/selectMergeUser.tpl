@@ -47,7 +47,7 @@
 	<input type="text" size="10" name="search" class="textField" value="{$search|escape}" />&nbsp;<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 
-<p>{foreach from=$alphaList item=letter}<a href="{url path=$roleSymbolic oldUserIds=$oldUserIds searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url path=$roleSymbolic oldUserIds=$oldUserIds}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
+<p class="alphabet">{foreach from=$alphaList item=letter}<a href="{url path=$roleSymbolic oldUserIds=$oldUserIds searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url path=$roleSymbolic oldUserIds=$oldUserIds}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 
 {if not $roleId}
 <ul>
@@ -83,37 +83,35 @@
 	{assign var="numCols" value=5}
 	<form method="post" action="{url}">
 {/if}
-<table class="listing">
-	<tr>
-		<td colspan="{$numCols}" class="headseparator">&nbsp;</td>
-	</tr>
+<table class="listing listing--wide">
+	<thead>
 	<tr class="heading" >
 		{if empty($oldUserIds)}
-			<td width="5%">&nbsp;</td>
+			<th>&nbsp;</th>
 		{/if}
-		<td>{sort_heading key="user.username" sort="username"}</td>
-		<td width="29%">{sort_heading key="user.name" sort="name"}</td>
-		<td width="29%">{sort_heading key="user.email" sort="email"}</td>
-		<td width="15%" align="right">{translate key="common.action"}</td>
+		<th>{sort_heading key="user.username" sort="username"}</th>
+		<th>{sort_heading key="user.name" sort="name"}</th>
+		<th>{sort_heading key="user.email" sort="email"}</th>
+		<th>{translate key="common.action"}</th>
 	</tr>
-	<tr>
-		<td colspan="{$numCols}" class="headseparator">&nbsp;</td>
-	</tr>
+	</thead>
+
+	<tbody>
 	{iterate from=users item=user}
 	{assign var=userExists value=1}
 	<tr >
 		{if empty($oldUserIds)}
 			<td><input type="checkbox" name="oldUserIds[]" value="{$user->getId()|escape}" {if $thisUser->getId() == $user->getId()}disabled="disabled" {/if}/></td>
 		{/if}
-		<td><a class="action" href="{url op="userProfile" path=$user->getId()}">{$user->getUsername()|escape|wordwrap:15:" ":true}</a></td>
-		<td>{$user->getFullName()|escape}</td>
-		<td class="nowrap">
+		<td data-title='{translate key="user.username"}'><a href="{url op="userProfile" path=$user->getId()}">{$user->getUsername()|escape|wordwrap:15:" ":true}</a></td>
+		<td data-title='{translate key="user.name"}'>{$user->getFullName()|escape}</td>
+		<td data-title='{translate key="user.email"}' class="nowrap">
 			{assign var=emailString value=$user->getFullName()|concat:" <":$user->getEmail():">"}
 			{url|assign:"redirectUrl" path=$roleSymbolic}
 			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$redirectUrl}
 			{$user->getEmail()|truncate:15:"..."|escape}&nbsp;{icon name="mail" url=$url}
 		</td>
-		<td align="right">
+		<td data-title='{translate key="common.action"}' >
 			{if !empty($oldUserIds)}
 				{if !in_array($user->getId(), $oldUserIds)}
 					<a href="#" onclick="confirmAction('{url oldUserIds=$oldUserIds newUserId=$user->getId()}', '{translate|escape:"jsparam" key="manager.people.mergeUsers.confirm" oldAccountCount=$oldUserIds|@count newUsername=$user->getUsername()}')" class="action">{translate key="manager.people.mergeUser"}</a>
@@ -123,26 +121,24 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="{$numCols}" class="{if $users->eof()}end{/if}separator">&nbsp;</td>
-	</tr>
 {/iterate}
 {if $users->wasEmpty()}
 	<tr>
 		<td colspan="{$numCols}" class="nodata">{translate key="manager.people.noneEnrolled"}</td>
 	</tr>
-	<tr>
-		<td colspan="{$numCols}" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr>
+	<tr class="listing-pager">
 		<td colspan="{math equation="floor(numCols / 2)" numCols=$numCols}" align="left">{page_info iterator=$users}</td>
 		<td colspan="{math equation="ceil(numCols / 2)" numCols=$numCols}" align="right">{page_links anchor="users" name="users" iterator=$users searchInitial=$searchInitial searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth roleSymbolic=$roleSymbolic oldUserIds=$oldUserIds sort=$sort sortDirection=$sortDirection}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 {if empty($oldUserIds)}
+<div class="buttons">
 	<input type="submit" class="button defaultButton" value="{translate key="manager.people.mergeUsers"}" />
+</div>
+
 	</form>
 {/if}
 </div>
