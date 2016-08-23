@@ -58,7 +58,7 @@ function toggleChecked() {
 		<input type="text" size="15" name="search" class="textField" value="{$search|escape}" />&nbsp;<input type="submit" value="{translate key="common.search"}" class="button" />
 	</form>
 
-	<p>{foreach from=$alphaList item=letter}<a href="{url op="enrollSearch" searchInitial=$letter roleId=$roleId}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op="enrollSearch" roleId=$roleId}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
+	<p class="alphabet">{foreach from=$alphaList item=letter}<a href="{url op="enrollSearch" searchInitial=$letter roleId=$roleId}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op="enrollSearch" roleId=$roleId}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 {/if}
 
 <form id="enroll" onsubmit="return enrollUser(0)" action="{if $roleId}{url op="enroll" path=$roleId}{else}{url op="enroll"}{/if}" method="post">
@@ -104,29 +104,31 @@ function toggleChecked() {
 {/if}
 
 <div id="users">
-<table class="listing">
-<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
-<tr class="heading" >
-	<td width="5%">&nbsp;</td>
-	<td width="25%">{sort_heading key="user.username" sort="username"}</td>
-	<td width="30%">{sort_heading key="user.name" sort="name"}</td>
-	<td width="10%">{sort_heading key="user.email" sort="email"}</td>
-	<td width="10%" align="right">{translate key="common.action"}</td>
-</tr>
-<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
+<table class="listing listing--wide">
+<thead>
+	<tr>
+		<th>&nbsp;</th>
+		<th>{sort_heading key="user.username" sort="username"}</th>
+		<th>{sort_heading key="user.name" sort="name"}</th>
+		<th>{sort_heading key="user.email" sort="email"}</th>
+		<th>{translate key="common.action"}</th>
+	</tr>
+</thead>
+
+<tbody>
 {iterate from=users item=user}
 {assign var="userid" value=$user->getId()}
 {assign var="stats" value=$statistics[$userid]}
 <tr >
 	<td><input type="checkbox" name="users[]" value="{$user->getId()}" /></td>
-	<td><a class="action" href="{url op="userProfile" path=$userid}">{$user->getUsername()|escape}</a></td>
-	<td>{$user->getFullName(true)|escape}</td>
-	<td class="nowrap">
+	<td data-title='{translate key="user.username"}'><a class="action" href="{url op="userProfile" path=$userid}">{$user->getUsername()|escape}</a></td>
+	<td data-title='{translate key="user.name"}'>{$user->getFullName(true)|escape}</td>
+	<td data-title='{translate key="user.email"}' class="nowrap">
 		{assign var=emailString value=$user->getFullName()|concat:" <":$user->getEmail():">"}
 		{url|assign:"url" page="user" op="email" to=$emailString|to_array}
 		{$user->getEmail()|truncate:20:"..."|escape}&nbsp;{icon name="mail" url=$url}
 	</td>
-	<td align="right" class="nowrap">
+	<td data-title='{translate key="common.action"}' class="nowrap">
 		{if $roleId}
 		<a href="{url op="enroll" path=$roleId userId=$user->getId()}" class="action">{translate key="manager.people.enroll"}</a>
 		{else}
@@ -141,23 +143,26 @@ function toggleChecked() {
 		{/if}
 	</td>
 </tr>
-<tr><td colspan="5" class="{if $users->eof()}end{/if}separator">&nbsp;</td></tr>
 {/iterate}
 {if $users->wasEmpty()}
 	<tr>
 	<td colspan="5" class="nodata">{translate key="common.none"}</td>
 	</tr>
-	<tr><td colspan="5" class="endseparator">&nbsp;</td></tr>
 {else}
-	<tr>
+	<tr class="listing-pager">
 		<td colspan="3" align="left">{page_info iterator=$users}</td>
 		<td colspan="2" align="right">{page_links anchor="users" name="users" iterator=$users searchInitial=$searchInitial searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth roleId=$roleId sort=$sort sortDirection=$sortDirection}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 </div>
 
-<input type="submit" value="{translate key="manager.people.enrollSelected"}" class="button defaultButton" /> <input type="button" value="{translate key="common.selectAll"}" class="button" onclick="toggleChecked()" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="manager" escape=false}'" />
+<div class="buttons">
+	<input type="submit" value="{translate key="manager.people.enrollSelected"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.selectAll"}" class="button" onclick="toggleChecked()" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url page="manager" escape=false}'" />
+</div>
 
 </form>
 

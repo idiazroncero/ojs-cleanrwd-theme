@@ -15,14 +15,12 @@
 <div id="syncUsers">
 <h3>{translate key="manager.people.syncUsers"}</h3>
 
-<p><span class="instruct">{translate key="manager.people.syncUserDescription"}</span></p>
+<p>{translate key="manager.people.syncUserDescription"}</p>
 
 <form method="post" action="{url op="enrollSync"}">
 
-<table class="data" width="100%">
-	<tr >
-		<td width="20%" class="label"><label for="rolePath">{translate key="manager.people.enrollSyncRole"}</label></td>
-		<td width="80%" class="value">
+<div class="form-row">
+		<label for="rolePath">{translate key="manager.people.enrollSyncRole"}</label>
 			{if $rolePath}
 				<input type="hidden" name="rolePath" value="{$rolePath|escape}" />
 				{translate key=$roleName}
@@ -42,21 +40,20 @@
 					<option value="subscriptionManager">{translate key="user.role.subscriptionManager"}</option>
 				</select>
 			{/if}
-		</td>
-	</tr>
-	<tr >
-		<td class="label"><label for="syncJournal">{translate key="manager.people.enrollSyncJournal"}</label></td>
-		<td class="value">
+	</div>
+	<div class="form-row">
+		<label for="syncJournal">{translate key="manager.people.enrollSyncJournal"}</label>
 			<select name="syncJournal" id="syncJournal" size="1" class="selectMenu">
 				<option value=""></option>
 				<option value="all">{translate key="manager.people.allJournals"}</option>
 				{html_options options=$journalOptions}
 			</select>
-		</td>
-	</tr>
-</table>
+</div>
 
-<p><input type="submit" value="{translate key="manager.people.enrollSync"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" /></p>
+<div class="buttons">
+	<input type="submit" value="{translate key="manager.people.enrollSync"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" />
+</div>
 
 </form>
 </div>
