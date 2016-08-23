@@ -13,10 +13,11 @@
 {include file="common/header.tpl"}
 {/strip}
 
-<p>{foreach from=$alphaList item=letter}<a href="{url op="authors" searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op="authors"}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
+<p class="alphabet">{foreach from=$alphaList item=letter}<a href="{url op="authors" searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op="authors"}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 
 <div id="authors">
 {iterate from=authors item=author}
+
 	{assign var=lastFirstLetter value=$firstLetter}
 	{assign var=firstLetter value=$author->getLastName()|String_substr:0:1}
 
@@ -36,17 +37,20 @@
 	{assign var=authorLastName value=$author->getLastName()}
 	{assign var=authorName value="$authorLastName, $authorFirstName"}
 
+	<p>
 	{if $authorMiddleName != ''}{assign var=authorName value="$authorName $authorMiddleName"}{/if}
 	{strip}
 		<a href="{url op="authors" path="view" firstName=$authorFirstName middleName=$authorMiddleName lastName=$authorLastName affiliation=$authorAffiliation country=$authorCountry}">{$authorName|escape}</a>
 		{if $authorAffiliation}, {$authorAffiliation|escape}{/if}
 		{if $authorCountry} ({$author->getCountryLocalized()}){/if}
 	{/strip}
-	
+	</p>
+
 {/iterate}
+
 {if !$authors->wasEmpty()}
 	
-	{page_info iterator=$authors}&nbsp;&nbsp;&nbsp;&nbsp;{page_links anchor="authors" iterator=$authors name="authors" searchInitial=$searchInitial}
+	<div class="listing-pager">{page_info iterator=$authors}&nbsp;&nbsp;&nbsp;&nbsp;{page_links anchor="authors" iterator=$authors name="authors" searchInitial=$searchInitial}</div>
 {else}
 {/if}
 </div>
