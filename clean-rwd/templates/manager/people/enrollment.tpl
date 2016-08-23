@@ -44,6 +44,7 @@ function confirmAndPrompt(userId) {
 </script>
 
 <h3>{translate key=$roleName}</h3>
+
 <form method="post" action="{url path=$roleSymbolic}">
 	<select name="roleSymbolic" class="selectMenu">
 		<option {if $roleSymbolic=='all'}selected="selected" {/if}value="all">{translate key="manager.people.allUsers"}</option>
@@ -75,7 +76,7 @@ function confirmAndPrompt(userId) {
 	<input type="text" size="10" name="search" class="textField" value="{$search|escape}" />&nbsp;<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 
-<p>{foreach from=$alphaList item=letter}<a href="{url path=$roleSymbolic searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url path=$roleSymbolic}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
+<p class="alphabet">{foreach from=$alphaList item=letter}<a href="{url path=$roleSymbolic searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url path=$roleSymbolic}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 
 {if not $roleId}
 <ul>
@@ -106,33 +107,30 @@ function confirmAndPrompt(userId) {
 <input type="hidden" name="redirectUrl" value="{url path=$roleSymbolic}"/>
 
 <div id="users">
-<table class="listing">
-	<tr>
-		<td colspan="5" class="headseparator">&nbsp;</td>
-	</tr>
-	<tr class="heading" >
-		<td width="5%">&nbsp;</td>
-		<td width="12%">{sort_heading key="user.username" sort="username"}</td>
-		<td width="20%">{sort_heading key="user.name" sort="name"}</td>
-		<td width="23%">{sort_heading key="user.email" sort="email"}</td>
-		<td width="40%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="5" class="headseparator">&nbsp;</td>
-	</tr>
+<table class="listing listing--wide">
+	<thead>
+		<tr class="heading" >
+			<th></th>
+			<th>{sort_heading key="user.username" sort="username"}</th>
+			<th>{sort_heading key="user.name" sort="name"}</th>
+			<th>{sort_heading key="user.email" sort="email"}</th>
+			<th>{translate key="common.action"}</th>
+		</tr>
+	</thead>
+	<tbody>
 	{iterate from=users item=user}
 	{assign var=userExists value=1}
 	<tr >
 		<td><input type="checkbox" name="bcc[]" value="{$user->getEmail()|escape}"/></td>
-		<td><a class="action" href="{url op="userProfile" path=$user->getId()}">{$user->getUsername()|escape|wordwrap:15:" ":true}</a></td>
-		<td>{$user->getFullName()|escape}</td>
-		<td class="nowrap">
+		<td data-title='{translate key="user.username"}' ><a href="{url op="userProfile" path=$user->getId()}">{$user->getUsername()|escape|wordwrap:15:" ":true}</a></td>
+		<td data-title='{translate key="user.name"}' >{$user->getFullName()|escape}</td>
+		<td data-title='{translate key="user.email"}'  class="nowrap">
 			{assign var=emailString value=$user->getFullName()|concat:" <":$user->getEmail():">"}
 			{url|assign:"redirectUrl" path=$roleSymbolic escape=false}
 			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$redirectUrl}
 			{$user->getEmail()|truncate:15:"..."|escape}&nbsp;{icon name="mail" url=$url}
 		</td>
-		<td align="right">
+		<td data-title='{translate key="common.action"}' >
 			{if $roleId}
 			<a href="{url op="unEnroll" path=$roleId userId=$user->getId() journalId=$currentJournal->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.people.confirmUnenroll"}')" class="action">{translate key="manager.people.unenroll"}</a>&nbsp;|
 			{/if}
@@ -148,33 +146,37 @@ function confirmAndPrompt(userId) {
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="{if $users->eof()}end{/if}separator">&nbsp;</td>
-	</tr>
 {/iterate}
 {if $users->wasEmpty()}
 	<tr>
 		<td colspan="5" class="nodata">{translate key="manager.people.noneEnrolled"}</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr>
-		<td colspan="4" align="left">{page_info iterator=$users}</td>
-		<td align="right">{page_links anchor="users" name="users" iterator=$users searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth roleSymbolic=$roleSymbolic searchInitial=$searchInitial sort=$sort sortDirection=$sortDirection}</td>
+	<tr class="listing-pager">
+		<td colspan="3">{page_info iterator=$users}</td>
+		<td colspan="2">{page_links anchor="users" name="users" iterator=$users searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth roleSymbolic=$roleSymbolic searchInitial=$searchInitial sort=$sort sortDirection=$sortDirection}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 
-{if $userExists}
-	<p><input type="submit" value="{translate key="email.compose"}" class="button defaultButton"/>&nbsp;<input type="button" value="{translate key="common.selectAll"}" class="button" onclick="toggleChecked()" />  <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="manager" escape=false}'" /></p>
-{/if}
+
+<div class="buttons">
+	{if $userExists}
+	<input type="submit" value="{translate key="email.compose"}" class="button defaultButton"/>
+	<input type="button" value="{translate key="common.selectAll"}" class="button" onclick="toggleChecked()" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url page="manager" escape=false}'" />
+	{/if}
+</div>
+
 </div>
 </form>
 
-<a href="{url op="enrollSearch" path=$roleId}" class="action">{translate key="manager.people.enrollExistingUser"}</a> |
-{url|assign:"enrollmentUrl" path=$roleSymbolic searchInitial=$searchInitial searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth searchInitial=$searchInitial}
-<a href="{if $roleId}{url op="createUser" roleId=$roleId source=$enrollmentUrl}{else}{url op="createUser" source=$enrollmentUrl}{/if}" class="action">{translate key="manager.people.createUser"}</a> | <a href="{url op="enrollSyncSelect" path=$rolePath}" class="action">{translate key="manager.people.enrollSync"}</a>
+<div class="buttons">
+	<a href="{url op="enrollSearch" path=$roleId}" class="button">{translate key="manager.people.enrollExistingUser"}</a>
+	{url|assign:"enrollmentUrl" path=$roleSymbolic searchInitial=$searchInitial searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth searchInitial=$searchInitial}
+	<a href="{if $roleId}{url op="createUser" roleId=$roleId source=$enrollmentUrl}{else}{url op="createUser" source=$enrollmentUrl}{/if}" class="button">{translate key="manager.people.createUser"}</a>
+	<a href="{url op="enrollSyncSelect" path=$rolePath}" class="button">{translate key="manager.people.enrollSync"}</a>
+</div>
 {include file="common/footer.tpl"}
 
