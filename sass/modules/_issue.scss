@@ -1,5 +1,8 @@
 .issue-section {
-	margin-bottom:0;
+	margin-bottom:rhythm(1);
+	&:last-child {
+		marign-bottom:0;
+	}
 }
 
 .issue-section__title  {
@@ -7,7 +10,10 @@
 }
 
 .issue-article {
-	margin-bottom: rhythm(1);
+	margin-bottom:rhythm(1);
+	&:last-child {
+		margin-bottom:0;
+	}
 	@include breakpoint($medium){
 		display:flex;
 		flex-direction:row;
@@ -26,17 +32,26 @@
 	@include adjust-font-size-to($h5-font-size);
 	font-weight:bold;
 	font-style:italic;
+	i {
+		margin-right:3px;
+		color:$light-color;
+		vertical-align:baseline;
+	}
 }
 
 .issue-article__galleys {
 	padding:0 0 0 $gutter;
 	text-align:right;
+	min-width:25%;
 	@include breakpoint($medium){
 		margin-left:auto;
 	}
 	li {
 		list-style-type:none;
-		display:inline;
-		@include adjust-font-size-to($h6-font-size);
+		a {
+			@include matar-link();
+			@include adjust-font-size-to($h6-font-size,0.75);
+			display:block;
+		}
 	}
 }

@@ -9,7 +9,7 @@
  *
  *}
 {foreach name=sections from=$publishedArticles item=section key=sectionId}
-<section class="section issue-section">
+<section class="issue-section">
 {if $section.title}<h4 class="issue-section__title">{$section.title|escape}</h4>{/if}
 
 {foreach from=$section.articles item=article}
@@ -57,6 +57,7 @@
 			{/if}
 		</div>
 		<div class="issue-article__authors">
+			<i class="fa fa-user"></i>
 			{if (!$section.hideAuthor && $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_DEFAULT) || $article->getHideAuthor() == $smarty.const.AUTHOR_TOC_SHOW}
 				{foreach from=$article->getAuthors() item=author name=authorList}
 					{$author->getFullName()|escape}{if !$smarty.foreach.authorList.last},{/if}
@@ -70,7 +71,8 @@
 			{if $hasAccess || ($subscriptionRequired && $showGalleyLinks)}
 				{foreach from=$article->getGalleys() item=galley name=galleyList}
 				<li>
-					<a href="{url page="article" op="view" path=$articlePath|to_array:$galley->getBestGalleyId($currentJournal)}" {if $galley->getRemoteURL()}target="_blank" {/if}class="button button--small">{$galley->getGalleyLabel()|escape}</a>
+					<a href="{url page="article" op="view" path=$articlePath|to_array:$galley->getBestGalleyId($currentJournal)}" {if $galley->getRemoteURL()}target="_blank" {/if}> 
+						<i class="fa fa-file-o"></i> {$galley->getGalleyLabel()|escape}</a>
 					{if $subscriptionRequired && $showGalleyLinks && $restrictOnlyPdf}
 						{if $article->getAccessStatus() == $smarty.const.ARTICLE_ACCESS_OPEN || !$galley->isPdfGalley()}
 							<img class="accessLogo" src="{$baseUrl}/lib/pkp/templates/images/icons/fulltext_open_medium.gif" alt="{translate key="article.accessLogoOpen.altText"}" />
