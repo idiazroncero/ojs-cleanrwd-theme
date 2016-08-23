@@ -84,22 +84,20 @@ tbody {
 			position: relative;
 			// padding-left: 50%; 
 			white-space: normal;
-			text-align:left;
+			text-align:right;
 		}
-	 
 		td:before { 
 			/* Now like a table header */
 			// position: absolute;
 			/* Top/left values mimic padding */
 			// top: 6px;
 			// left: 6px;
-			// width: 45%; 
-			padding-right: 20px; 
+			// width: 45%;
+			margin-right: 20px;
 			// white-space: nowrap;
-			text-align:left;
+			float:left;
 			font-weight: bold;
 		}
-	 
 		/*
 		Label the data
 		*/

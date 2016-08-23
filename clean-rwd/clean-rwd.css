@@ -4292,33 +4292,33 @@ tbody td {
       border-bottom: 1px solid #e0e0e0;
       position: relative;
       white-space: normal;
-      text-align: left; }
-    /* line 90, ../sass/modules/_tables.scss */
+      text-align: right; }
+    /* line 89, ../sass/modules/_tables.scss */
     .listing td:before {
       /* Now like a table header */
       /* Top/left values mimic padding */
-      padding-right: 20px;
-      text-align: left;
+      margin-right: 20px;
+      float: left;
       font-weight: bold; }
-    /* line 106, ../sass/modules/_tables.scss */
+    /* line 104, ../sass/modules/_tables.scss */
     .listing td:before {
       content: attr(data-title); } }
 
-/* line 110, ../sass/modules/_tables.scss */
+/* line 108, ../sass/modules/_tables.scss */
 .listing--wide, #referrals .listing {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 24px;
   line-height: 1.5rem;
   letter-spacing: -0.01em; }
-  /* line 113, ../sass/modules/_tables.scss */
+  /* line 111, ../sass/modules/_tables.scss */
   .listing--wide th, #referrals .listing th, .listing--wide td, #referrals .listing td {
     padding-right: 12px; }
-    /* line 115, ../sass/modules/_tables.scss */
+    /* line 113, ../sass/modules/_tables.scss */
     .listing--wide th:last-child, #referrals .listing th:last-child, .listing--wide td:last-child, #referrals .listing td:last-child {
       padding-right: 0; }
 
-/* line 121, ../sass/modules/_tables.scss */
+/* line 119, ../sass/modules/_tables.scss */
 .listing-pager {
   font-size: 14px;
   font-size: 0.85rem;
@@ -4326,15 +4326,15 @@ tbody td {
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   border-top: 1px solid #CCC; }
-  /* line 125, ../sass/modules/_tables.scss */
+  /* line 123, ../sass/modules/_tables.scss */
   .listing-pager td {
     border: none; }
 
-/* line 130, ../sass/modules/_tables.scss */
+/* line 128, ../sass/modules/_tables.scss */
 .center {
   text-align: center; }
 
-/* line 134, ../sass/modules/_tables.scss */
+/* line 132, ../sass/modules/_tables.scss */
 .action, .pkp_controllers_grid .hidetext {
   font-size: 14px;
   font-size: 0.85rem;
@@ -4347,50 +4347,50 @@ tbody td {
     border-bottom: none;
     text-decoration: none; }
 
-/* line 141, ../sass/modules/_tables.scss */
+/* line 139, ../sass/modules/_tables.scss */
 .nowrap {
   white-space: nowrap; }
 
 @media (max-width: 768px) {
-  /* line 147, ../sass/modules/_tables.scss */
+  /* line 145, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table thead, .ui-dialog-content table thead {
     display: none; }
-  /* line 150, ../sass/modules/_tables.scss */
+  /* line 148, ../sass/modules/_tables.scss */
   .pkp_controllers_grid table tbody, .ui-dialog-content table tbody, .pkp_controllers_grid table td, .ui-dialog-content table td, .pkp_controllers_grid table tr, .ui-dialog-content table tr {
     display: block; } }
 
-/* line 156, ../sass/modules/_tables.scss */
+/* line 154, ../sass/modules/_tables.scss */
 #referrals {
   overflow-x: auto; }
 
 @media (max-width: 768px) {
-  /* line 160, ../sass/modules/_tables.scss */
+  /* line 158, ../sass/modules/_tables.scss */
   #referrals .listing {
     /* Force table to not be like tables anymore */ }
-    /* line 164, ../sass/modules/_tables.scss */
+    /* line 162, ../sass/modules/_tables.scss */
     #referrals .listing table {
       display: table; }
-    /* line 167, ../sass/modules/_tables.scss */
+    /* line 165, ../sass/modules/_tables.scss */
     #referrals .listing thead,
     #referrals .listing tbody {
       display: table-row-group; }
-    /* line 171, ../sass/modules/_tables.scss */
+    /* line 169, ../sass/modules/_tables.scss */
     #referrals .listing th,
     #referrals .listing td {
       display: table-cell; }
-    /* line 175, ../sass/modules/_tables.scss */
+    /* line 173, ../sass/modules/_tables.scss */
     #referrals .listing tr {
       display: table-row; }
-    /* line 178, ../sass/modules/_tables.scss */
+    /* line 176, ../sass/modules/_tables.scss */
     #referrals .listing tbody td:last-child {
       text-align: right; }
-    /* line 181, ../sass/modules/_tables.scss */
+    /* line 179, ../sass/modules/_tables.scss */
     #referrals .listing thead tr {
       position: static; }
-    /* line 185, ../sass/modules/_tables.scss */
+    /* line 183, ../sass/modules/_tables.scss */
     #referrals .listing tr {
       margin-bottom: 0; }
-    /* line 189, ../sass/modules/_tables.scss */
+    /* line 187, ../sass/modules/_tables.scss */
     #referrals .listing td {
       /* Behave  like a "row" */
       border: none;
@@ -4399,7 +4399,7 @@ tbody td {
       padding-left: 0;
       white-space: normal;
       text-align: inherit; }
-    /* line 199, ../sass/modules/_tables.scss */
+    /* line 197, ../sass/modules/_tables.scss */
     #referrals .listing td:before {
       display: none; } }
 

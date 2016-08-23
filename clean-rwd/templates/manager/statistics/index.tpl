@@ -17,11 +17,9 @@
 
 {include file="manager/statistics/statistics.tpl"}
 
-<div class="separator">&nbsp;</div>
 
 
-
-<div id="reports">
+<section id="reports">
 	<h3>{translate key="manager.statistics.reports"}</h3>
 	<p>{translate key="manager.statistics.reports.description"}</p>
 	
@@ -31,8 +29,8 @@
 	{/foreach}
 	</ul>
 	{if !empty($availableMetricTypes)}	
-		<p><a href="{url op="reportGenerator"}">{translate key="manager.statistics.reports.generateReport"}</a></p>
+		<div class="buttons"><a class="button" href="{url op="reportGenerator"}">{translate key="manager.statistics.reports.generateReport"}</a></div>
 	{/if}
-</div>
+</section>
 {include file="common/footer.tpl"}
 
