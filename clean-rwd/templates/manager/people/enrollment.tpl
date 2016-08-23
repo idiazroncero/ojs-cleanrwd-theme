@@ -100,7 +100,7 @@ function confirmAndPrompt(userId) {
 
 
 {else}
-<p><a href="{url path="all"}" class="action">{translate key="manager.people.allUsers"}</a></p>
+<ul><li><a href="{url path="all"}">{translate key="manager.people.allUsers"}</a></li></ul>
 {/if}
 
 <form id="people" action="{url page="user" op="email"}" method="post">
