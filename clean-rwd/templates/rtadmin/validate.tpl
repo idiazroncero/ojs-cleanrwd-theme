@@ -18,22 +18,21 @@
 {iterate from=versions item=version}
 	<div id="version">
 	<h3>{$version->getTitle()|escape}</h3>
-	<ul>
 	{foreach from=$version->getContexts() item=context}
+	<ul>
 		<li>{$context->getTitle()|escape}
 		{assign var=errors value=0}
 		{foreach from=$context->getSearches() item=search}
 			{assign var=errors value=$search|validate_url:$errors}.
 		{/foreach}
 		{foreach from=$errors item=error}
-			
 			{translate key="rt.admin.validateUrls.urlIsInvalid" url=$error.url|truncate:50|escape}&nbsp;&nbsp;<a href="{url op="editSearch" path=$version->getVersionId()|to_array:$context->getContextId():$error.id}" class="action">{translate key="common.edit"}</a>
 		{foreachelse}
 			{translate key="rt.admin.validateUrls.ok"}
 		{/foreach}
 		</li>
-	{/foreach}
 	</ul>
+	{/foreach}
 	</div>
 {/iterate}
 <p>{translate key="rt.admin.validateUrls.complete"}</p>
