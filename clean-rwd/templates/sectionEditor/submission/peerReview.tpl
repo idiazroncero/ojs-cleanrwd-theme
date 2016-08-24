@@ -124,13 +124,13 @@
 	{assign var="reviewIndex" value=$reviewIndexes[$reviewId]}
 
 
-<div class="reviewer">
+<section class="reviewer">
 	<p class="reviewer__id">{translate key="user.role.reviewer"} - {$reviewIndex+$start|chr}</p>
 	<h4>{$reviewAssignment->getReviewerFullName()|escape}</h4>
 
 	
 	<div class="form-row">
-	<p class="label">{translate key="submission.reviewForm"}</p>
+		<p class="label">{translate key="submission.reviewForm"}</p>
 		{if $reviewAssignment->getReviewFormId()}
 			{assign var="reviewFormId" value=$reviewAssignment->getReviewFormId()}
 			{$reviewFormTitles[$reviewFormId]}
@@ -264,7 +264,7 @@
 	{/if}
 
 	{if (($reviewAssignment->getRecommendation() === null || $reviewAssignment->getRecommendation() === '') || !$reviewAssignment->getDateConfirmed()) && $reviewAssignment->getDateNotified() && !$reviewAssignment->getDeclined()}
-	
+
 	<div class="form-row">
 		<p class="label">{translate key="reviewer.article.editorToEnter"}</p>
 				{if !$reviewAssignment->getDateConfirmed()}
@@ -287,8 +287,8 @@
 					<a class="button button--small" href="{url op="enterReviewerRecommendation" articleId=$submission->getId() reviewId=$reviewAssignment->getId()}">{translate key="editor.article.recommendation"}</a>
 				</div>
 				{/if}
+		</div>
 	{/if}
-	</div>
 
 	{if $reviewAssignment->getDateNotified() && !$reviewAssignment->getDeclined() && $rateReviewerOnQuality}
 		<div class="form-row">
@@ -325,7 +325,6 @@
 		<a href="{url op="cancelReview" articleId=$submission->getId() reviewId=$reviewAssignment->getId()}" class="button button--cancel">{translate key="editor.article.cancelReview"}</a>
 	{/if}
 
-</div>
 
 {/foreach}
 
