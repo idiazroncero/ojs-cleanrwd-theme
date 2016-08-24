@@ -33,27 +33,23 @@ function confirmSubmissionCheck() {
 </script>
 <div id="submissionToBeReviewed">
 <h3>{translate key="reviewer.article.submissionToBeReviewed"}</h3>
+<dl>
 
-<table class="data">
-<tr >
-	<td width="20%" class="label">{translate key="article.title"}</td>
-	<td width="80%" class="value">{$submission->getLocalizedTitle()|strip_unsafe_html}</td>
-</tr>
-<tr >
-	<td class="label">{translate key="article.journalSection"}</td>
-	<td class="value">{$submission->getSectionTitle()|escape}</td>
-</tr>
-<tr >
-	<td class="label">{translate key="article.abstract"}</td>
-	<td class="value">{$submission->getLocalizedAbstract()|strip_unsafe_html|nl2br}</td>
-</tr>
+	<dt>{translate key="article.title"}</dt>
+	<dd>{$submission->getLocalizedTitle()|strip_unsafe_html}</dd>
+
+	<dt>{translate key="article.journalSection"}</dt>
+	<dd>{$submission->getSectionTitle()|escape}</dd>
+
+	<dt>{translate key="article.abstract"}</dt>
+	<dd>{$submission->getLocalizedAbstract()|strip_unsafe_html|nl2br}</dd>
+
 {assign var=editAssignments value=$submission->getEditAssignments()}
 {foreach from=$editAssignments item=editAssignment}
 	{if !$notFirstEditAssignment}
 		{assign var=notFirstEditAssignment value=1}
-		<tr >
-			<td class="label">{translate key="reviewer.article.submissionEditor"}</td>
-			<td class="value">
+			<dt>{translate key="reviewer.article.submissionEditor"}</dt>
+			<dd>
 	{/if}
 			{assign var=emailString value=$editAssignment->getEditorFullName()|concat:" <":$editAssignment->getEditorEmail():">"}
 			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl subject=$submission->getLocalizedTitle()|strip_tags articleId=$articleId}
@@ -68,18 +64,17 @@ function confirmSubmissionCheck() {
 			
 {/foreach}
 {if $notFirstEditAssignment}
-		</td>
-	</tr>
+		</dd>
+
 {/if}
-	<tr >
-	       <td class="label">{translate key="submission.metadata"}</td>
-	       <td class="value">
-		       <a href="{url op="viewMetadata" path=$reviewId|to_array:$articleId}" class="action" target="_new">{translate key="submission.viewMetadata"}</a>
-	       </td>
-	</tr>
-</table>
+	       <dt>{translate key="submission.metadata"}</dt>
+	       <dd>
+		       <i class="fa fa-link"></i> <a href="{url op="viewMetadata" path=$reviewId|to_array:$articleId}" target="_new">{translate key="submission.viewMetadata"}</a>
+	       </dd>
+</dl>
+
 </div>
-<div class="separator"></div>
+
 <div id="reviewSchedule">
 <h3>{translate key="reviewer.article.reviewSchedule"}</h3>
 <table class="data">
