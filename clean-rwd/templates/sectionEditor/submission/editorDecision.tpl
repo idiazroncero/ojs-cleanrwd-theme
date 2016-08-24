@@ -142,7 +142,6 @@
 		</div>
 	{/foreach}
 	<div class="form-row">
-		<p class="label">&nbsp;</p>
 		<div class="form-group">
 			<input type="file" name="upload" class="uploadField" />
 			<input type="submit" name="submit" value="{translate key="common.upload"}" class="button" />

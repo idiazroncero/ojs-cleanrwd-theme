@@ -26,9 +26,10 @@
 
 	<dt>{translate key="user.role.editor"}</dt>
 	<dd>
+		<ul>
 			{assign var=editAssignments value=$submission->getEditAssignments()}
 			{foreach from=$editAssignments item=editAssignment}
-				{assign var=emailString value=$editAssignment->getEditorFullName()|concat:" <":$editAssignment->getEditorEmail():">"}
+				<li>{assign var=emailString value=$editAssignment->getEditorFullName()|concat:" <":$editAssignment->getEditorEmail():">"}
 				{url|assign:"url" page="user" op="email" redirectUrl=$currentUrl to=$emailString|to_array subject=$submission->getLocalizedTitle|strip_tags articleId=$submission->getId()}
 				{$editAssignment->getEditorFullName()|escape} {icon name="mail" url=$url}
 				{if !$editAssignment->getCanEdit() || !$editAssignment->getCanReview()}
@@ -37,19 +38,20 @@
 					{else}
 						({translate key="submission.review"})
 					{/if}
-				{/if}
+				{/if}</li>
 				
 			{foreachelse}
-				{translate key="common.noneAssigned"}
+				<li>{translate key="common.noneAssigned"}</li>
 			{/foreach}
+		</ul>
 	<dd>
 
 	<dt>{translate key="submission.reviewVersion"}</dt>
 
 		{if $reviewFile}
 			<dd>
-				<a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewFile->getFileId():$reviewFile->getRevision()}" class="file">{$reviewFile->getFileName()|escape}</a>&nbsp;&nbsp;
-				{$reviewFile->getDateModified()|date_format:$dateFormatShort}{if $currentJournal->getSetting('showEnsuringLink')}&nbsp;&nbsp;&nbsp;&nbsp;<a class="action" href="javascript:openHelp('{get_help_id key="editorial.sectionEditorsRole.review.blindPeerReview" url="true"}')">{translate key="reviewer.article.ensuringBlindReview"}</a>{/if}
+				<div class="form-group"><i class="fa fa-file-o"></i> <a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewFile->getFileId():$reviewFile->getRevision()}" class="file">{$reviewFile->getFileName()|escape}</a>&nbsp;&nbsp;
+				{$reviewFile->getDateModified()|date_format:$dateFormatShort}{if $currentJournal->getSetting('showEnsuringLink')}&nbsp;&nbsp;&nbsp;&nbsp;<a class="action" href="javascript:openHelp('{get_help_id key="editorial.sectionEditorsRole.review.blindPeerReview" url="true"}')">{translate key="reviewer.article.ensuringBlindReview"}</a>{/if}</div>
 			</dd>
 		{else}
 			<dd>{translate key="common.none"}</dd>
@@ -70,17 +72,27 @@
 				<dt>{translate key="article.suppFilesAbbrev"}</dt>
 				{assign var=notFirstSuppFile value=1}
 			{/if}
-			<dd
+			<dd>
 				<form method="post" action="{url op="setSuppFileVisibility"}">
 				<input type="hidden" name="articleId" value="{$submission->getId()}" />
 				<input type="hidden" name="fileId" value="{$suppFile->getId()}" />
 
-				{if $suppFile->getFileId() > 0}<a href="{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId():$suppFile->getRevision()}" class="file">{$suppFile->getFileName()|escape}</a>&nbsp;&nbsp;
-				{$suppFile->getDateModified()|date_format:$dateFormatShort}
-				{elseif $suppFile->getRemoteURL() != ''}<a href="{$suppFile->getRemoteURL()|escape}" target="_blank">{$suppFile->getRemoteURL()|truncate:20:"..."|escape}</a>{/if}
-				&nbsp;&nbsp;
-				<label for="show">{translate key="editor.article.showSuppFile"}</label>
-				<input type="checkbox" name="show" id="show" value="1"{if $suppFile->getShowReviewers()==1} checked="checked"{/if}/>
+				{if $suppFile->getFileId() > 0}
+					<div class="form-group">
+						<i class="fa fa-file-o"></i> <a href="{url op="downloadFile" path=$submission->getId()|to_array:$suppFile->getFileId():$suppFile->getRevision()}" class="file">{$suppFile->getFileName()|escape}</a>
+					&nbsp;&nbsp;
+					{$suppFile->getDateModified()|date_format:$dateFormatShort}</div>
+				{elseif $suppFile->getRemoteURL() != ''}
+					<div class="form-group">
+						<i class="fa fa-file-o"></i> <a href="{$suppFile->getRemoteURL()|escape}" target="_blank">{$suppFile->getRemoteURL()|truncate:20:"..."|escape}</a>
+					</div>
+				{/if}
+				<div class="form-subrow">
+					<div class="form-group">
+						<label for="show">{translate key="editor.article.showSuppFile"}</label>
+						<input type="checkbox" name="show" id="show" value="1"{if $suppFile->getShowReviewers()==1} checked="checked"{/if}/>
+					</div>
+				</div>
 				<input type="submit" name="submit" value="{translate key="common.record"}" class="button" />
 				</form>
 			</dd>
@@ -91,15 +103,17 @@
 
 </section>
 
-<section id="peerReview">
-	
+<section class="section" id="peerReview">
+
 	<h3>{translate key="submission.peerReview"}</h3>
 	<h4>{translate key="submission.round" round=$round}</h4>
 
-<div class="buttons">
-	<a href="{url op="selectReviewer" path=$submission->getId()}" class="button">{translate key="editor.article.selectReviewer"}</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="{url op="submissionRegrets" path=$submission->getId()}" class="button">{translate|escape key="sectionEditor.regrets.link"}</a>
-</div>
+	<div class="buttons marginless">
+		<a href="{url op="selectReviewer" path=$submission->getId()}" class="button">{translate key="editor.article.selectReviewer"}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+		<a href="{url op="submissionRegrets" path=$submission->getId()}" class="button">{translate|escape key="sectionEditor.regrets.link"}</a>
+	</div>
+
+</section>
 
 
 {assign var="start" value="A"|ord}
