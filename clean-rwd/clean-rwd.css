@@ -4062,7 +4062,7 @@ input:disabled, .disabled {
       color: #cccccc; }
 
 /* line 84, ../sass/modules/_sidebar.scss */
-#sidebarLanguageToggle select, #sidebarLanguageToggle .button, #sidebarLanguageToggle .pkp_controllers_grid .row_controls a, .pkp_controllers_grid .row_controls #sidebarLanguageToggle a {
+#sidebarLanguageToggle .select, #sidebarLanguageToggle select, #sidebarLanguageToggle .button, #sidebarLanguageToggle .pkp_controllers_grid .row_controls a, .pkp_controllers_grid .row_controls #sidebarLanguageToggle a {
   width: 100%; }
 /* line 87, ../sass/modules/_sidebar.scss */
 #sidebarLanguageToggle select {

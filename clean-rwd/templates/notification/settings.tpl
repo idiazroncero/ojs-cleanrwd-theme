@@ -43,7 +43,10 @@
 	
 {/foreach}
 
-<p><input type="submit" value="{translate key="form.submit"}" class="button defaultButton" />  <input type="button" value="{translate key="common.cancel"}" class="button" onclick="document.location.href='{url page="notification" escape=false}'" /></p>
+<div class="buttons">
+	<input type="submit" value="{translate key="form.submit"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="document.location.href='{url page="notification" escape=false}'" />
+</div>
 
 </form>
 
