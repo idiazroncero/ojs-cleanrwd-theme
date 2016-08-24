@@ -235,15 +235,14 @@ function confirmSubmissionCheck() {
 						{if ($submission->getRecommendation() === null || $submission->getRecommendation() === '') && (!$submission->getCancelled())}
 						<a class="action" href="{url op="deleteReviewerVersion" path=$reviewId|to_array:$reviewerFile->getFileId():$reviewerFile->getRevision()}">{translate key="common.delete"}</a>
 						{/if}
-
+				</div>
 				{foreachelse}
-
+				<div class="form-group">
 						{translate key="reviewer.article.uploadedFile"}
 
 						{translate key="common.none"}
-
-				{/foreach}
 				</div>
+				{/foreach}
 			</div>
 			<div class="form-group">
 				{if $submission->getRecommendation() === null || $submission->getRecommendation() === ''}

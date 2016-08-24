@@ -18,28 +18,27 @@
 <p>{translate key="editor.article.designateDueDateDescription"}</p>
 
 <form method="post" action="{url op=$actionHandler path=$articleId|to_array:$reviewId}">
-	<table class="data" width="100%">
-		<tr >
-			<td class="label" width="20%">{translate key="editor.article.todaysDate"}</td>
-			<td class="value" width="80%">{$todaysDate|escape}</td>
-		</tr>
-		<tr >
-			<td class="label">{translate key="editor.article.requestedByDate"}</td>
-			<td class="value">
+
+		<div class="form-row">
+			<p class="label">{translate key="editor.article.todaysDate"}</p>
+			{$todaysDate|escape}
+		</div>
+		<div class="form-row">
+			<p class="label">{translate key="editor.article.requestedByDate"}</p>
 				<input type="text" size="11" maxlength="10" name="dueDate" value="{if $dueDate}{$dueDate|date_format:"%Y-%m-%d"}{/if}" class="textField" onfocus="this.form.numWeeks.value=''" />
-				<span class="instruct">{translate key="editor.article.dueDateFormat"}</span>
-			</td>
-		</tr>
-		<tr >
-			<td>&nbsp;</td>
-			<td class="value"><span class="instruct">{translate key="common.or"}</span></td>
-		</tr>
-		<tr >
-			<td class="label">{translate key="editor.article.numberOfWeeks"}</td>
-			<td class="value"><input type="text" name="numWeeks" value="{if not $dueDate}{$numWeeksPerReview|escape}{/if}" size="3" maxlength="2" class="textField" onfocus="this.form.dueDate.value=''" /></td>
-		</tr>
-	</table>
-<p><input type="submit" value="{translate key="common.continue"}" class="button defaultButton" /> <input type="button" class="button" onclick="history.go(-1)" value="{translate key="common.cancel"}" /></p>
+				<p class="instruct">{translate key="editor.article.dueDateFormat"}</p>
+		</div>
+		<p class="form-row">{translate key="common.or"}</p>
+		<div class="form-row">
+			<p class="label">{translate key="editor.article.numberOfWeeks"}</p>
+			<input type="text" name="numWeeks" value="{if not $dueDate}{$numWeeksPerReview|escape}{/if}" size="3" maxlength="2" class="textField" onfocus="this.form.dueDate.value=''" />
+		</div>
+
+<div class="buttons">
+	<input type="submit" value="{translate key="common.continue"}" class="button defaultButton" />
+	<input type="button" class="button button--cancel" onclick="history.go(-1)" value="{translate key="common.cancel"}" />
+</div>
+
 </form>
 </div>
 {include file="common/footer.tpl"}
