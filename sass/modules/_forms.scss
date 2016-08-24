@@ -133,6 +133,16 @@ button {
 	}
 }
 
+a.button {
+	@if $button-style == fill  {
+		border:none;
+	} @else if $button-style == outline {
+		border:$button-border-width solid $button-color;
+	} @else {
+		@error "Invalid value for $button-style in _init.scss. It must be either outline or fill"
+	}
+}
+
 .button--cancel {
 	@if $button-style == fill  {
 		background-color: $button-cancel-color;
