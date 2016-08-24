@@ -35,7 +35,7 @@ function moveAuthor(dir, authorIndex) {
 {/literal}
 
 {if count($formLocales) > 1}
-<section class="section" id="locales">
+<section id="locales">
 
 	<div class="form-row">
 		{fieldLabel name="formLocale" key="form.formLanguage"}
@@ -58,7 +58,7 @@ function moveAuthor(dir, authorIndex) {
 			<p class="instruct">{translate key="form.formLanguage.description"}</p>
 	</div>
 
-</div>
+</section>
 {/if}
 
 <section class="section" id="authors">
@@ -415,7 +415,7 @@ function moveAuthor(dir, authorIndex) {
 			</select>
 	</div>
 
-</secion>
+</section>
 
 <section id="permissions">
 <h3>{translate key="submission.permissions"}</h3>
