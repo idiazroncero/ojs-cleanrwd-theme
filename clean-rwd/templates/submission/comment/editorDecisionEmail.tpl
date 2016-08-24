@@ -59,11 +59,10 @@ function deleteAttachment(fileId) {
 	
 {/if}
 
-<table class="data" width="100%">
+
 {if $addressFieldsEnabled}
-<tr >
-	<td class="label" width="20%">{fieldLabel name="to" key="email.to"}</td>
-	<td width="80%" class="value">
+<div class="form-row">
+	{fieldLabel name="to" key="email.to"}
 		{foreach from=$to item=toAddress}
 			<input type="text" name="to[]" id="to" value="{if $toAddress.name != ''}{$toAddress.name|escape} &lt;{$toAddress.email|escape}&gt;{else}{$toAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" />
 		{foreachelse}
@@ -73,11 +72,10 @@ function deleteAttachment(fileId) {
 		{if $blankTo}
 			<input type="text" name="to[]" id="to" size="40" maxlength="120" class="textField" />
 		{/if}
-	</td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="cc" key="email.cc"}</td>
-	<td class="value">
+</div>
+
+<div class="form-row">
+	{fieldLabel name="cc" key="email.cc"}
 		{foreach from=$cc item=ccAddress}
 			<input type="text" name="cc[]" id="cc" value="{if $ccAddress.name != ''}{$ccAddress.name|escape} &lt;{$ccAddress.email|escape}&gt;{else}{$ccAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" />
 		{foreachelse}
@@ -87,11 +85,10 @@ function deleteAttachment(fileId) {
 		{if $blankCc}
 			<input type="text" name="cc[]" id="cc" size="40" maxlength="120" class="textField" />
 		{/if}
-	</td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="bcc" key="email.bcc"}</td>
-	<td class="value">
+</div>
+
+<div class="form-row">
+	{fieldLabel name="bcc" key="email.bcc"}
 		{foreach from=$bcc item=bccAddress}
 			<input type="text" name="bcc[]" id="bcc" value="{if $bccAddress.name != ''}{$bccAddress.name|escape} &lt;{$bccAddress.email|escape}&gt;{else}{$bccAddress.email|escape}{/if}" size="40" maxlength="120" class="textField" />
 		{foreachelse}
@@ -101,29 +98,27 @@ function deleteAttachment(fileId) {
 		{if $blankBcc}
 			<input type="text" name="bcc[]" id="bcc" size="40" maxlength="120" class="textField" />
 		{/if}
-	</td>
-</tr>
-<tr >
-	<td></td>
-	<td class="value">
+</div>
+
+		{if $senderEmail}
+			<div class="form-row">
+				<input type="checkbox" name="bccSender" id="bccSender" value="1"{if $bccSender} checked{/if} /><label class="label--inline" for="bccSender">
+				{translate key="email.bccSender" address=$senderEmail|escape}</label>
+			</div>
+		{/if}
+
+<div class="buttons">
 		<input type="submit" name="blankTo" class="button" value="{translate key="email.addToRecipient"}"/>
 		<input type="submit" name="blankCc" class="button" value="{translate key="email.addCcRecipient"}"/>
 		<input type="submit" name="blankBcc" class="button" value="{translate key="email.addBccRecipient"}"/>
-		{if $senderEmail}
-			
-			<input type="checkbox" name="bccSender" id="bccSender" value="1"{if $bccSender} checked{/if} />&nbsp;&nbsp;<label for="bccSender">{translate key="email.bccSender" address=$senderEmail|escape}</label>
-		{/if}
-	</td>
-</tr>
+</div>
+
 {/if}{* addressFieldsEnabled *}
 
 {if $attachmentsEnabled}
-<tr >
-	<td colspan="2">&nbsp;</td>
-</tr>
-<tr >
-	<td class="label">{translate key="email.attachments"}</td>
-	<td class="value">
+
+<div class="form-row">
+	{translate key="email.attachments"}
 		{assign var=attachmentNum value=1}
 		{foreach from=$persistAttachments item=temporaryFile}
 			{$attachmentNum|escape}.&nbsp;{$temporaryFile->getOriginalFileName()|escape}&nbsp;
@@ -136,43 +131,40 @@ function deleteAttachment(fileId) {
 		{if $attachmentNum != 1}{/if}
 
 		<input type="file" name="newAttachment" class="uploadField" /> <input name="addAttachment" type="submit" class="button" value="{translate key="common.upload"}" />
-	</td>
-</tr>
+</div>
+
 {/if}
 {if $isAnEditor}
-	<tr >
-		<td colspan="2">&nbsp;</td>
-	</tr>
-	<tr >
-		<td class="label">&nbsp;</td>
-		<td class="value">
+	<div class="form-row">
 			<input type="submit" name="importPeerReviews" class="button defaultButton" value="{translate key="submission.comments.importPeerReviews"}"/>
-		</td>
-	</tr>
+	</div>
 {/if}
-<tr >
-	<td colspan="2">&nbsp;</td>
-</tr>
-<tr >
-	<td class="label">{translate key="email.from"}</td>
-	<td class="value">{$from|escape}</td>
-</tr>
-<tr >
-	<td width="20%" class="label">{fieldLabel name="subject" key="email.subject"}</td>
-	<td width="80%" class="value"><input type="text" id="subject" name="subject" value="{$subject|escape}" size="60" maxlength="90" class="textField" /></td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="body" key="email.body"}</td>
-	<td class="value"><textarea name="body" cols="60" rows="15" class="textArea">{$body|escape}</textarea></td>
-</tr>
+
+<div class="form-row">
+	{translate key="email.from"}
+	{$from|escape}
+</div>
+<div class="form-row">
+	{fieldLabel name="subject" key="email.subject"}
+	<input type="text" id="subject" name="subject" value="{$subject|escape}" size="60" maxlength="90" class="textField" />
+</div>
+<div class="form-row">
+	{fieldLabel name="body" key="email.body"}
+	<textarea name="body" cols="60" rows="15" class="textArea">{$body|escape}</textarea>
+</div>
 
 {if $isAnEditor}
-	<td class="label">&nbsp;</td>
-	<td class="value"><input type="checkbox" name="blindCcReviewers" value="1" id="blindCcReviewers"/>&nbsp;&nbsp;<label for="blindCcReviewers">{translate key="submission.comments.blindCcReviewers"}</label></td>
+<div class="form-row">
+	<input type="checkbox" name="blindCcReviewers" value="1" id="blindCcReviewers"/>&nbsp;&nbsp;<label class="label--inline" for="blindCcReviewers">{translate key="submission.comments.blindCcReviewers"}</label>
 {/if}
-</table>
+</div>
 
-<p><input name="send" type="submit" value="{translate key="email.send"}" class="button defaultButton" /> <input type="button" value="{translate key="common.cancel"}" class="button" onclick="history.go(-1)" />{if !$disableSkipButton} <input name="send[skip]" type="submit" value="{translate key="email.skip"}" class="button" />{/if}</p>
+<div class="buttons">
+	<input name="send" type="submit" value="{translate key="email.send"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.cancel"}" class="button button--cancel" onclick="history.go(-1)" />
+	{if !$disableSkipButton}<input name="send[skip]" type="submit" value="{translate key="email.skip"}" class="button" />
+	{/if}
+</div>
 </form>
 </div>
 {include file="common/footer.tpl"}
