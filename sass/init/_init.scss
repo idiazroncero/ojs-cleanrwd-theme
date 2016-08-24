@@ -64,7 +64,7 @@ $base-font-family: $serif;
 // Choose an alternate font to combine with the main font.
 // We will also use $headlines for the headings and $monospace for code.
 $alt-font-family: $headlines;
-// Choose the font for the butons
+// Choose the font for the buttons
 $font-button: $headlines;
 
 // The font sizes for h1-h6.
@@ -191,15 +191,15 @@ $sidebar-opacity: 0.8;
 // 6 - FORMS
 //
 
-$border-radius: 0px; // In px.
+$border-radius: 3px; // In px.
 
 // Buttons
-$button-style: outline;		// Possible values:
+$button-style: fill;		// Possible values:
 							// outline: only border, gets background-color on :hover
 							// fill: background-color, gets darker on :hover, no border
 $button-color: $main-color ; // Background or border color
 $button-cancel-color: $main-color-red;
-$button-border-width: 1px; // Want plain buttons? Set this value to 0
+$button-border-width: 3px; // Want plain buttons? Set this value to 0
 $button-border-radius: $border-radius; // Want square buttons? Se tthis value to 0
 
 

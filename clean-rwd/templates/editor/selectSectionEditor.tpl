@@ -27,24 +27,26 @@
 	<input type="text" name="search" class="textField" value="{$search|escape}" />&nbsp;<input type="submit" value="{translate key="common.search"}" class="button" />
 </form>
 
-<p>{foreach from=$alphaList item=letter}<a href="{url op="assignEditor" path=$rolePath articleId=$articleId searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op="assignEditor" articleId=$articleId}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
+<p class="alphabet">{foreach from=$alphaList item=letter}<a href="{url op="assignEditor" path=$rolePath articleId=$articleId searchInitial=$letter}">{if $letter == $searchInitial}<strong>{$letter|escape}</strong>{else}{$letter|escape}{/if}</a> {/foreach}<a href="{url op="assignEditor" articleId=$articleId}">{if $searchInitial==''}<strong>{translate key="common.all"}</strong>{else}{translate key="common.all"}{/if}</a></p>
 
 <div id="editors">
 <table class="listing">
-<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
+<thead>
 <tr >
-	<td class="heading" width="30%">{translate key="user.name"}</td>
-	<td class="heading" width="20%">{translate key="section.sections"}</td>
-	<td class="heading" width="20%">{translate key="submissions.completed"}</td>
-	<td class="heading" width="20%">{translate key="submissions.active"}</td>
-	<td class="heading" width="10%">{translate key="common.action"}</td>
+	<th>{translate key="user.name"}</th>
+	<th>{translate key="section.sections"}</th>
+	<th>{translate key="submissions.completed"}</th>
+	<th>{translate key="submissions.active"}</th>
+	<th>{translate key="common.action"}</th>
 </tr>
-<tr><td colspan="5" class="headseparator">&nbsp;</td></tr>
+</thead>
+
+<tbody>
 {iterate from=editors item=editor}
 {assign var=editorId value=$editor->getId()}
 <tr >
-	<td><a class="action" href="{url op="userProfile" path=$editorId}">{$editor->getFullName()|escape}</a></td>
-	<td>
+	<td data-title='{translate key="user.name"}'><a href="{url op="userProfile" path=$editorId}">{$editor->getFullName()|escape}</a></td>
+	<td data-title='{translate key="section.sections"}'>
 		{assign var=thisEditorSections value=$editorSections[$editorId]}
 		{foreach from=$thisEditorSections item=section}
 			{$section->getLocalizedAbbrev()|escape}&nbsp;
@@ -52,35 +54,35 @@
 			&mdash;
 		{/foreach}
 	</td>
-	<td>
+	<td data-title='{translate key="submissions.completed"}'>
 		{if $editorStatistics[$editorId] && $editorStatistics[$editorId].complete}
 			{$editorStatistics[$editorId].complete}
 		{else}
 			0
 		{/if}
 	</td>
-	<td>
+	<td data-title='{translate key="submissions.active"}'>
 		{if $editorStatistics[$editorId] && $editorStatistics[$editorId].incomplete}
 			{$editorStatistics[$editorId].incomplete}
 		{else}
 			0
 		{/if}
 	</td>
-	<td><a class="action" href="{url op="assignEditor" articleId=$articleId editorId=$editorId}">{translate key="common.assign"}</a></td>
+	<td data-title='{translate key="common.action"}'><a class="action" href="{url op="assignEditor" articleId=$articleId editorId=$editorId}">{translate key="common.assign"}</a></td>
 </tr>
-<tr><td colspan="5" class="{if $editors->eof()}end{/if}separator">&nbsp;</td></tr>
+
 {/iterate}
 {if $editors->wasEmpty()}
 <tr>
 <td colspan="5" class="nodata">{translate key="manager.people.noneEnrolled"}</td>
 </tr>
-<tr><td colspan="5" class="{if $editors->eof()}end{/if}separator">&nbsp;</td></tr>
 {else}
-	<tr>
-		<td colspan="2" align="left">{page_info iterator=$editors}</td>
-		<td colspan="3" align="right">{page_links anchor="editors" name="editors" iterator=$editors searchInitial=$searchInitial searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth articleId=$articleId}</td>
+	<tr class="listing-pager">
+		<td colspan="2">{page_info iterator=$editors}</td>
+		<td colspan="3">{page_links anchor="editors" name="editors" iterator=$editors searchInitial=$searchInitial searchField=$searchField searchMatch=$searchMatch search=$search dateFromDay=$dateFromDay dateFromYear=$dateFromYear dateFromMonth=$dateFromMonth dateToDay=$dateToDay dateToYear=$dateToYear dateToMonth=$dateToMonth articleId=$articleId}</td>
 	</tr>
 {/if}
+</tbody>
 </table>
 </div>
 {include file="common/footer.tpl"}

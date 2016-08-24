@@ -51,10 +51,8 @@
 					{$suppFile->getDateSubmitted()|date_format:$dateFormatShort}&nbsp;&nbsp;
 				{/if}
 				<a href="{url op="editSuppFile" from="submission" path=$submission->getId()|to_array:$suppFile->getId()}" class="button button--small">{translate key="common.edit"}</a>
-				&nbsp;|&nbsp;
 				<a href="{url op="deleteSuppFile" from="submission" path=$submission->getId()|to_array:$suppFile->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="author.submit.confirmDeleteSuppFile"}')" class="button button--small">{translate key="common.delete"}</a>
 				{if !$notFirst}
-					&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="{url op="addSuppFile" from="submission" path=$submission->getId()}" class="button button--small">{translate key="submission.addSuppFile"}</a>
 				{/if}
 				

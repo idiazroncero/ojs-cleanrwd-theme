@@ -3641,7 +3641,7 @@ select {
   line-height: 30px;
   line-height: 1.875rem;
   background-color: transparent;
-  border-radius: 0px;
+  border-radius: 3px;
   border: 1px solid #cccccc;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -3708,40 +3708,42 @@ button {
   line-height: 1.875rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  border-radius: 0px;
+  border-radius: 3px;
   cursor: pointer;
   text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #3C7861;
-  color: #333; }
+  background-color: #3C7861;
+  border: none;
+  color: #fff; }
   /* line 95, ../sass/modules/_forms.scss */
   .button:hover, .pkp_controllers_grid .row_controls a:hover,
   button:hover {
     text-decoration: none; }
-  /* line 120, ../sass/modules/_forms.scss */
+  /* line 109, ../sass/modules/_forms.scss */
   .button:link, .pkp_controllers_grid .row_controls a:link, .button:visited, .pkp_controllers_grid .row_controls a:visited, .button:focus, .pkp_controllers_grid .row_controls a:focus, .button:active, .pkp_controllers_grid .row_controls a:active,
   button:link,
   button:visited,
   button:focus,
   button:active {
-    color: #333; }
-  /* line 123, ../sass/modules/_forms.scss */
+    color: #fff; }
+  /* line 113, ../sass/modules/_forms.scss */
   .button:hover, .pkp_controllers_grid .row_controls a:hover,
   button:hover {
-    background: #3C7861;
-    color: #fff; }
+    background: #285041; }
 
 /* line 136, ../sass/modules/_forms.scss */
 a.button, .pkp_controllers_grid .row_controls a {
-  border: 1px solid #3C7861; }
+  border: none; }
 
 /* line 146, ../sass/modules/_forms.scss */
 .button--cancel, .pkp_controllers_grid .row_controls a.delete {
-  border: 1px solid #A34531; }
-  /* line 166, ../sass/modules/_forms.scss */
-  .button--cancel:hover, .pkp_controllers_grid .row_controls a.delete:hover {
-    background: #A34531;
+  background-color: #A34531;
+  color: #fff; }
+  /* line 157, ../sass/modules/_forms.scss */
+  .button--cancel:link, .pkp_controllers_grid .row_controls a.delete:link, .button--cancel:visited, .pkp_controllers_grid .row_controls a.delete:visited, .button--cancel:focus, .pkp_controllers_grid .row_controls a.delete:focus, .button--cancel:active, .pkp_controllers_grid .row_controls a.delete:active {
     color: #fff; }
+  /* line 161, ../sass/modules/_forms.scss */
+  .button--cancel:hover, .pkp_controllers_grid .row_controls a.delete:hover {
+    background: #6d2e21; }
 
 /* line 179, ../sass/modules/_forms.scss */
 .button--small, .pkp_controllers_grid .row_controls a {
