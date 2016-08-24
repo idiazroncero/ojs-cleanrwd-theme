@@ -86,7 +86,7 @@
 						<a href="{url journal=$journalPath page="sectionEditor" op="index" path="submissionsInReview"}">{$sectionEditorSubmissionsCount[0]} {translate key="common.queue.short.submissionsInReview"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInReview"}</span>{/if}
 				</div>
-				<div class="journal-admin__actions">
+				<div class="journal-admin__count">
 					{if $sectionEditorSubmissionsCount[1]}
 						<a class="button button--small" href="{url journal=$journalPath page="sectionEditor" op="index" path="submissionsInEditing"}">{$sectionEditorSubmissionsCount[1]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
@@ -162,7 +162,7 @@
 				</div>
 				<div class="journal-admin__count">
 					{if $reviewerSubmissionsCount[0]}
-						<a class="button button--small" href="{url journal=$journalPath page="reviewer"}">{$reviewerSubmissionsCount[0]} {translate key="common.queue.short.active"}</a>
+						<a href="{url journal=$journalPath page="reviewer"}">{$reviewerSubmissionsCount[0]} {translate key="common.queue.short.active"}</a>
 					{else}<span class=" disabled">0 {translate key="common.queue.short.active"}</span>{/if}
 				</div>
 			</div>
