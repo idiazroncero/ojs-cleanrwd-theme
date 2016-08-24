@@ -36,7 +36,7 @@
 
 {foreach from=$reviewFormElements name=reviewFormElements item=reviewFormElement}
 <div class="form-row">
-	<p class="label">{$reviewFormElement->getLocalizedQuestion()}{if $reviewFormElement->getRequired()}*{/if}</p>
+	<div class="form-group">{$reviewFormElement->getLocalizedQuestion()}{if $reviewFormElement->getRequired()}*{/if}</div>
 	<div class="form-subrow">
 		{if $reviewFormElement->getElementType() == REVIEW_FORM_ELEMENT_TYPE_SMALL_TEXT_FIELD}
 			<div class="form-group">
@@ -83,7 +83,9 @@
 
 
 <form id="previewReviewForm" method="post" action="{if !$canEdit}{url op="reviewForms"}{else}{url op="editReviewForm" path=$reviewFormId}{/if}">
-	<div class="buttons"><input type="submit" value="{translate key="common.close"}" class="button defaultButton" /></div>
+	<div class="buttons">
+		<input type="submit" value="{translate key="common.close"}" class="button defaultButton" />
+	</div>
 </form>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
