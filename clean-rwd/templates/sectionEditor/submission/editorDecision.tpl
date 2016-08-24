@@ -148,20 +148,24 @@
 		</div>
 	</div>
 
-<div class="buttons">
+
 
 {if $lastDecision == SUBMISSION_EDITOR_DECISION_RESUBMIT}
-	{translate key="editor.article.resubmitFileForPeerReview"}
+<div class="buttons">
+	<p>{translate key="editor.article.resubmitFileForPeerReview"}</p>
 	<input type="submit" name="resubmit" {if !($editorRevisionExists or $authorRevisionExists or $reviewVersionExists)}disabled="disabled" {/if}value="{translate key="form.resubmit"}" class="button" />
+</div>
 {elseif $lastDecision == SUBMISSION_EDITOR_DECISION_ACCEPT}
-	{if !($editorRevisionExists or $authorRevisionExists or $reviewVersionExists) or !$submission->getMostRecentEditorDecisionComment()}{assign var=copyeditingUnavailable value=1}{else}{assign var=copyeditingUnavailable value=0}{/if}
+<div class="buttons">
+	<p>{if !($editorRevisionExists or $authorRevisionExists or $reviewVersionExists) or !$submission->getMostRecentEditorDecisionComment()}{assign var=copyeditingUnavailable value=1}{else}{assign var=copyeditingUnavailable value=0}{/if}</p>
 	<input type="submit" {if $copyeditingUnavailable}disabled="disabled" {/if}name="setCopyeditFile" value="{translate key="editor.submissionReview.sendToCopyediting"}" class="button" />
 	{if $copyeditingUnavailable}
 		<p class="instruct">{translate key="editor.submissionReview.cannotSendToCopyediting"}</p>
 			{/if}
+</div>
 {/if}
 
-</div>
+
 
 </form>
 

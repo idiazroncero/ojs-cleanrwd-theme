@@ -21,49 +21,32 @@ window.opener.location.reload();
 // -->
 {/literal}
 </script>
-<div id="articleComments">
-<table class="data" width="100%">
+
+<section class="comments "id="articleComments">
 {foreach from=$articleComments item=comment}
-<tr >
-	<td width="25%">
-		<div class="commentRole">
-			{if $showReviewLetters and $comment->getRoleId() eq $reviewer}
-				{assign var="start" value="A"|ord}
-				{assign var="reviewId" value=$comment->getAssocId()}
-				{translate key=$comment->getRoleName()} {$reviewLetters[$reviewId]+$start|chr}
-			{else}
-				{translate key=$comment->getRoleName()}
-			{/if}
+<article class="comment">
+	{if $comment->getCommentTitle() neq ""}
+		<h4>{translate key="submission.comments.subject"}: {$comment->getCommentTitle()|escape}</h4>
+	{/if}
+	
+	<p class="comment__details">
+		{translate key=$comment->getRoleName()}
+		{$comment->getDatePosted()|date_format:$datetimeFormatShort}
+	</p>
+	<p class="comment__text">
+		{$comment->getComments()|strip_unsafe_html|nl2br}
+	</p>
+	{if $comment->getAuthorId() eq $userId and not $isLocked}
+		<div>
+			<a href="{if $reviewId}{url op="editComment" path=$articleId|to_array:$comment->getId() reviewId=$reviewId}{else}{url op="editComment" path=$articleId|to_array:$comment->getId()}{/if}" class="button button--small">{translate key="common.edit"}</a>
+			<a href="{url op="deleteComment" path=$articleId|to_array:$comment->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.comments.confirmDelete"}')" class="button button--small button--cancel">{translate key="common.delete"}</a>
 		</div>
-		<div class="commentDate">{$comment->getDatePosted()|date_format:$datetimeFormatShort}</div>
-		
-		<div class="commentNote">
-			{if $comment->getViewable()}
-				{translate key="submission.comments.canShareWithAuthor"}
-			{else}
-				{translate key="submission.comments.cannotShareWithAuthor"}
-			{/if}
-		</div>
-	</td>
-	<td width="75%">
-		{if $comment->getAuthorId() eq $userId and not $isLocked}
-			<div style="float: right"><a href="{if $reviewId}{url op="editComment" path=$articleId|to_array:$comment->getId() reviewId=$reviewId}{else}{url op="editComment" path=$articleId|to_array:$comment->getId()}{/if}" class="action">{translate key="common.edit"}</a> <a href="{if $reviewId}{url op="deleteComment" path=$articleId|to_array:$comment->getId() reviewId=$reviewId}{else}{url op="deleteComment" path=$articleId|to_array:$comment->getId()}{/if}" onclick="return confirm('{translate|escape:"jsparam" key="submission.comments.confirmDelete"}')" class="action">{translate key="common.delete"}</a></div>
-		{/if}
-		<div id="{$comment->getId()}"></a>
-		{if $comment->getCommentTitle()}
-			<div class="commentTitle">{translate key="submission.comments.subject"}: {$comment->getCommentTitle()|escape}</div>
-		{/if}
-		</div>
-		<div class="comments">{$comment->getComments()|strip_unsafe_html|nl2br}</div>
-	</td>
-</tr>
+	{/if}
+	</article>
 {foreachelse}
-<tr>
-	<td class="nodata">{translate key="submission.comments.noReviews"}</td>
-</tr>
+<p>{translate key="submission.comments.noReviews"}</p>
 {/foreach}
-</table>
-</div>
+</section>
 
 
 
@@ -79,22 +62,24 @@ window.opener.location.reload();
 <div id="new">
 {include file="common/formErrors.tpl"}
 
-<table class="data" width="100%">
-<tr >
-	<td class="label">{fieldLabel name="commentTitle" key="submission.comments.subject"}</td>
-	<td class="value"><input type="text" name="commentTitle" id="commentTitle" value="{$commentTitle|escape}" size="50" maxlength="255" class="textField" /></td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="authorComments"}{translate key="submission.comments.forAuthorEditor"}</td>
-	<td class="value"><textarea id="authorComments" name="authorComments" rows="10" cols="50" class="textArea">{$authorComments|escape}</textarea></td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="comments"}{translate key="submission.comments.forEditor"}</td>
-	<td class="value"><textarea id="comments" name="comments" rows="10" cols="50" class="textArea">{$comments|escape}</textarea></td>
-</tr>
-</table>
+<div class="form-row">
+	{fieldLabel name="commentTitle" key="submission.comments.subject"}
+	<input type="text" name="commentTitle" id="commentTitle" value="{$commentTitle|escape}" size="50" maxlength="255" class="textField" />
+</div>
+<div class="form-row">
+	{fieldLabel name="authorComments"}{translate key="submission.comments.forAuthorEditor"}
+	<textarea id="authorComments" name="authorComments" rows="10" cols="50" class="textArea">{$authorComments|escape}</textarea>
+</div>
 
-<p><input type="submit" name="save" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.close"}" class="button" onclick="window.close()" /></p>
+<div class="form-row">
+	{fieldLabel name="comments"}{translate key="submission.comments.forEditor"}
+	<textarea id="comments" name="comments" rows="10" cols="50" class="textArea">{$comments|escape}</textarea>
+</div>
+
+<div class="buttons">
+	<input type="submit" name="save" value="{translate key="common.save"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.close"}" class="button button--cancel" onclick="window.close()" />
+</div>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
 </div>

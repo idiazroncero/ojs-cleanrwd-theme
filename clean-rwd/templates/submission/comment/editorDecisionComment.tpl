@@ -61,18 +61,20 @@ window.opener.location.reload();
 <div id="new">
 {include file="common/formErrors.tpl"}
 
-<table class="data" width="100%">
-<tr >
-	<td class="label">{fieldLabel name="commentTitle" key="submission.comments.subject"}</td>
-	<td class="value"><input type="text" name="commentTitle" id="commentTitle" value="{$commentTitle|escape}" size="50" maxlength="255" class="textField" /></td>
-</tr>
-<tr >
-	<td class="label">{fieldLabel name="comments" key="submission.comments.addComment"}</td>
-	<td class="value"><textarea id="comments" name="comments" rows="10" cols="50" class="textArea">{$comments|escape}</textarea></td>
-</tr>
-</table>
 
-<p><input type="submit" name="save" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.close"}" class="button" onclick="window.close()" /></p>
+<div class="form-row">
+	{fieldLabel name="commentTitle" key="submission.comments.subject"}
+	<input type="text" name="commentTitle" id="commentTitle" value="{$commentTitle|escape}" size="50" maxlength="255" class="textField" />
+</div>
+<div class="form-row">
+	{fieldLabel name="comments" key="submission.comments.addComment"}
+	<textarea id="comments" name="comments" rows="10" cols="50" class="textArea">{$comments|escape}</textarea>
+</div>
+
+<div class="buttons">
+	<input type="submit" name="save" value="{translate key="common.save"}" class="button defaultButton" />
+	<input type="button" value="{translate key="common.close"}" class="button button--cancel" onclick="window.close()" />
+</div>
 
 <p><span class="form-required">{translate key="common.requiredField"}</span></p>
 </div>

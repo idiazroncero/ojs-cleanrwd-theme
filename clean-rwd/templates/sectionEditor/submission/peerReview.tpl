@@ -239,27 +239,32 @@
 		{/if}
 		<div class="form-row">
 			<p class="label">{translate key="reviewer.article.uploadedFile"}</p>
-				<table class="data">
-					{foreach from=$reviewAssignment->getReviewerFileRevisions() item=reviewerFile key=key}
-					<tr >
-						<td valign="middle">
-							<form id="authorView{$reviewAssignment->getId()}" method="post" action="{url op="makeReviewerFileViewable"}">
-								<a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewerFile->getFileId():$reviewerFile->getRevision()}" class="file">{$reviewerFile->getFileName()|escape}</a>&nbsp;&nbsp;{$reviewerFile->getDateModified()|date_format:$dateFormatShort}
-								<input type="hidden" name="reviewId" value="{$reviewAssignment->getId()}" />
-								<input type="hidden" name="articleId" value="{$submission->getId()}" />
-								<input type="hidden" name="fileId" value="{$reviewerFile->getFileId()}" />
-								<input type="hidden" name="revision" value="{$reviewerFile->getRevision()}" />
-								{translate key="editor.article.showAuthor"} <input type="checkbox" name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if} />
-								<input type="submit" value="{translate key="common.record"}" class="button" />
-							</form>
-						</td>
-					</tr>
-					{foreachelse}
-					<tr >
-						<td>{translate key="common.none"}</td>
-					</tr>
-					{/foreach}
-				</table>
+			<div class="form-subrow">
+			{foreach from=$reviewAssignment->getReviewerFileRevisions() item=reviewerFile key=key}
+			
+				<div class="form-group">
+					<form id="authorView{$reviewAssignment->getId()}" method="post" action="{url op="makeReviewerFileViewable"}">
+						<div class="form-group">
+							<a href="{url op="downloadFile" path=$submission->getId()|to_array:$reviewerFile->getFileId():$reviewerFile->getRevision()}" class="file">{$reviewerFile->getFileName()|escape}</a>
+							&nbsp;{$reviewerFile->getDateModified()|date_format:$dateFormatShort}
+						</div>
+						<div class="form-group">
+							<input type="checkbox" name="viewable" value="1"{if $reviewerFile->getViewable()} checked="checked"{/if} />
+							<input type="hidden" name="reviewId" value="{$reviewAssignment->getId()}" />
+							<input type="hidden" name="articleId" value="{$submission->getId()}" />
+							<input type="hidden" name="fileId" value="{$reviewerFile->getFileId()}" />
+							<input type="hidden" name="revision" value="{$reviewerFile->getRevision()}" />
+							{translate key="editor.article.showAuthor"}
+						</div>
+						<div class="form-group">
+							<input type="submit" value="{translate key="common.record"}" class="button" />
+						</div>
+					</form>
+				</div>
+			{foreachelse}
+				<p>{translate key="common.none"}</p>
+			{/foreach}
+			</div>
 		</div>
 	{/if}
 
