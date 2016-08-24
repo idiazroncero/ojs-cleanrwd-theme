@@ -4897,6 +4897,24 @@ ul.steplist li {
 #interests .tagit-new:before {
   margin-right: 5px; }
 
+/* line 4, ../sass/modules/_comments.scss */
+.comment {
+  background: #f5f5f5;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem; }
+  /* line 8, ../sass/modules/_comments.scss */
+  .comment h4 {
+    margin: 0; }
+
+/* line 13, ../sass/modules/_comments.scss */
+.comment__details {
+  margin: 0;
+  font-size: 11px;
+  font-size: 0.707rem;
+  line-height: 24px;
+  line-height: 1.5rem;
+  font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
+
 /* line 22, ../sass/init/_mixins.scss */
 #page-user-userHome #myJournals h4 a:link, #page-user-userHome #myJournals h4 a:visited, #page-user-userHome #myJournals h4 a:focus, #page-user-userHome #myJournals h4 a:hover, #page-user-userHome #myJournals h4 a:active {
   border-bottom: none;

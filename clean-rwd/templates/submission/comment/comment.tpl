@@ -22,14 +22,14 @@ window.opener.location.reload();
 {/literal}
 </script>
 <div id="articleComments">
-<table class="data" width="100%">
+<table class="listing">
 {foreach from=$articleComments item=comment}
 <tr >
-	<td width="25%">
+	<td>
 		<div class="commentRole">{translate key=$comment->getRoleName()}</div>
 		<div class="commentDate">{$comment->getDatePosted()|date_format:$datetimeFormatShort}</div>
 	</td>
-	<td width="75%">
+	<td>
 		{if $comment->getAuthorId() eq $userId and not $isLocked}
 			<div style="float: right"><a href="{url op="editComment" path=$articleId|to_array:$comment->getId()}" class="action">{translate key="common.edit"}</a> <a href="{url op="deleteComment" path=$articleId|to_array:$comment->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.comments.confirmDelete"}')" class="action">{translate key="common.delete"}</a></div>
 		{/if}

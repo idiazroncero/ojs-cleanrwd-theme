@@ -16,17 +16,21 @@
 	<meta http-equiv="Content-Type" content="text/html; charset={$defaultCharset|escape}" />
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 	{if $displayFavicon}<link rel="icon" href="{$faviconDir}/{$displayFavicon.uploadName|escape:"url"}" type="{$displayFavicon.mimeType|escape}" />{/if}
 
-	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
+<!-- 	<link rel="stylesheet" href="{$baseUrl}/lib/pkp/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/common.css" type="text/css" />
 	<link rel="stylesheet" href="{$baseUrl}/styles/compiled.css" type="text/css" />
-	<link rel="stylesheet" href="{$baseUrl}/styles/comments.css" type="text/css" />
+	<link rel="stylesheet" href="{$baseUrl}/styles/comments.css" type="text/css" /> -->
 
-	{foreach from=$stylesheets item=cssUrl}
+	<!-- Clean-RWD Theme Stylesheet -->
+	<link rel="stylesheet" href="{$baseUrl}/plugins/themes/clean-rwd/clean-rwd.css" type="text/css" />
+	
+<!-- 	{foreach from=$stylesheets item=cssUrl}
 		<link rel="stylesheet" href="{$cssUrl}" type="text/css" />
-	{/foreach}
+	{/foreach} -->
 
 	<!-- Base Jquery -->
 	{if $allowCDN}<script type="text/javascript" src="//www.google.com/jsapi"></script>
@@ -63,9 +67,8 @@
 </script>
 {/literal}
 
-<div id="container">
-<div id="body">
-<div id="main">
+<div id="main-wrapper">
+<main id="main">
 <h2>{translate key=$pageTitle}</h2>
 <div id="content">
 

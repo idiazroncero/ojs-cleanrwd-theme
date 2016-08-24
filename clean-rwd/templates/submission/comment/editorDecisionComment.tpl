@@ -21,35 +21,30 @@ window.opener.location.reload();
 // -->
 {/literal}
 </script>
-<div id="existingComments">
-<table class="data" width="100%">
+<section class="comments" id="existing-comments">
 {foreach from=$articleComments item=comment}
-<div id="comment">
-<tr >
-	<td width="25%">
-		<div class="commentRole">{translate key=$comment->getRoleName()}</div>
-		<div class="commentDate">{$comment->getDatePosted()|date_format:$datetimeFormatShort}</div>
-	</td>
-	<td width="75%">
-		{if $comment->getAuthorId() eq $userId and not $isLocked}
-			<div style="float: right"><a href="{url op="deleteComment" path=$articleId|to_array:$comment->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.comments.confirmDelete"}')" class="action">{translate key="common.delete"}</a></div>
-		{/if}
-		<div id="{$comment->getId()}"></a>
-		{if $comment->getCommentTitle() neq ""}
-			<div class="commentTitle">{translate key="submission.comments.subject"}: {$comment->getCommentTitle()|escape}</div>
-		{/if}
+<article class="comment">
+	{if $comment->getCommentTitle() neq ""}
+		<h4>{translate key="submission.comments.subject"}: {$comment->getCommentTitle()|escape}</h4>
+	{/if}
+	<p class="comment__details">
+		{translate key=$comment->getRoleName()}
+		{$comment->getDatePosted()|date_format:$datetimeFormatShort}
+	</p>
+	<p class="comment__text">
+		{$comment->getComments()|strip_unsafe_html|nl2br}
+	</p>
+	{if $comment->getAuthorId() eq $userId and not $isLocked}
+		<div>
+			<a href="{url op="deleteComment" path=$articleId|to_array:$comment->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.comments.confirmDelete"}')" class="button button--small">{translate key="common.delete"}</a>
 		</div>
-		<div class="comments">{$comment->getComments()|strip_unsafe_html|nl2br}</div>
-	</td>
-</tr>
-</div>
+	{/if}
+</article>
+
 {foreachelse}
-<tr>
-	<td class="nodata">{translate key="submission.comments.noComments"}</td>
-</tr>
+	<p class="nodata">{translate key="submission.comments.noComments"}
 {/foreach}
-</table>
-</div>
+</section>
 
 
 

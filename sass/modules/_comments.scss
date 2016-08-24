@@ -1,0 +1,21 @@
+.comments {
+}
+
+.comment {
+	background:$smoke;
+	padding:rhythm(0.5);
+	margin-bottom:rhythm(1);
+	h4 {
+		margin:0;
+	}
+}
+
+.comment__details {
+	margin:0;
+	@include adjust-font-size-to($h6-font-size);
+	font-family:$alt-font-family;
+}
+
+.comment__text {
+	
+}
