@@ -26,19 +26,19 @@
 		{assign var="emailSettingName" value=$notificationSetting.emailSettingName}
 		{assign var="settingKey" value=$notificationSetting.settingKey}
 
-		<ul>
-			<li>{translate key=$settingKey title=$titleVar}
-			<ul class="plain">
-				<li><span>
+		<div class="form-row">
+			<p class="label">{translate key=$settingKey title=$titleVar}</p>
+			<div class="form-subrow">
+				<div class="form-group">
 					<input id="{$settingName|escape}" type="checkbox" name="{$settingName|escape}" {if !$settingId|in_array:$blockedNotifications} checked="checked"{/if} />
 					{fieldLabel name="$settingName|escape" key="notification.allow"}
-				</span></li>
-				<li><span>
+				</div>
+				<div class="form-group">
 					<input id="{$emailSettingName|escape}" type="checkbox" name="{$emailSettingName|escape}"{if $settingId|in_array:$emailSettings} checked="checked"{/if} />
 					{fieldLabel name="$emailSettingName|escape" key="notification.email"}
-				</span></li>
-			</ul>
-		</ul>
+				</div>
+			</div>
+		</div>
 	{/foreach}
 	
 {/foreach}
