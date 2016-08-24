@@ -72,7 +72,7 @@
 <div class="buttons">{if $editorPreview}
 		<input type="button" value="{translate key="common.close"}" class="button defaultButton" onclick="window.close()" />
 	{else}
-		<input {if $disabled}disabled="disabled" {/if}type="submit" name="save" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.close"}" class="button" onclick="document.location.href='{url op="submission" path=$reviewId}'" />
+		<input {if $disabled}disabled="disabled" {/if}type="submit" name="save" value="{translate key="common.save"}" class="button defaultButton" /> <input type="button" value="{translate key="common.close"}" class="button button--cancel" onclick="document.location.href='{url op="submission" path=$reviewId}'" />
 	{/if}</div>
 
 	<p><span class="form-required">{translate key="common.requiredField"}</span></p>
