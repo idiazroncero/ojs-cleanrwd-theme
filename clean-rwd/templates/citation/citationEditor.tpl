@@ -197,7 +197,8 @@
 			// Opera vertical resize bug workaround.
 			operaVerticalResizeBugWorkaround();
 		{rdelim});
-
+		
+		$('#citationEditor').hide().delay(2000).fadeIn();
 		// Resize citation editor in fullscreen mode
 		// when the browser window is being resized.
 		$(window).resize(function() {ldelim}

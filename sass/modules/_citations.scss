@@ -177,7 +177,89 @@
   }
 }
 
+// Right Pane
+// Tengamos paciencia
 
+#citationEditorDetailCanvas {
+
+}
+
+#citationFormErrorsAndComparison {
+  margin-bottom:rhythm(0.5);
+  .citation-comparison, #editableRawCitation {
+    margin-bottom:rhythm(0.5);
+  }
+  .label {
+    font-weight:bold;
+    margin-bottom:rhythm(0.25);
+  }
+}
+
+#editableRawCitation {
+  .actions {
+    button {
+      @extend .button--small;
+    }
+  }
+}
+
+#cancelRawCitationEditing {
+  @extend .button--cancel;
+}
+
+#rawCitationWithMarkup {
+  .value {
+
+  }
+}
+
+#citationImprovement {
+  width:100%;
+  table {
+    table-layout:fixed;
+    td:last-child {
+      text-align:left;
+    }
+    .row_actions {
+      .delete {
+        @extend .fa;
+        @extend .fa-times;
+        @include pintar-link($main-color-red);
+      }
+      a:after {
+        content: attr(title);
+        @extend .action;
+      }
+    }
+  }
+}
+
+#citationImprovementManual {
+  .first_column .row_container {
+    display:flex;
+    .row_file {
+      width:100%;
+      select {
+        max-width:90%;
+      }
+    }
+  }
+}
+
+#citationImprovementQuery {
+  .option-block {
+    p {margin:0}
+    margin-bottom:rhythm(1);
+  }
+  .option-block-option {
+    li, label {
+      display:inline;
+    }
+  }
+  .actions {
+    margin:rhythm(0.5)
+  }
+}
 
 //
 // Only the needed jquery and pkp ui legacy code

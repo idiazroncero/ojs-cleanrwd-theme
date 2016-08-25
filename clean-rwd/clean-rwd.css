@@ -14,7 +14,7 @@
   font-weight: normal;
   font-style: normal; }
 /* line 4, ../sass/external/font-awesome/_core.scss */
-.fa, .pkp_controllers_fontController_smallFont, .pkp_controllers_fontController_defaultFont, .pkp_controllers_fontController_largeFont, .announcement__more, .ui-icon-closethick, #interests .tagit-close, #interests .tagit-new, #citationEditorNavPane .scrollable table .row_actions a, #pdfDownloadLinkContainer {
+.fa, .pkp_controllers_fontController_smallFont, .pkp_controllers_fontController_defaultFont, .pkp_controllers_fontController_largeFont, .announcement__more, .ui-icon-closethick, #interests .tagit-close, #interests .tagit-new, #citationEditorNavPane .scrollable table .row_actions a, #citationImprovement table .row_actions .delete, #pdfDownloadLinkContainer {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -85,10 +85,10 @@
   float: right; }
 
 /* line 14, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-left, .fa-pull-left.pkp_controllers_fontController_smallFont, .fa-pull-left.pkp_controllers_fontController_defaultFont, .fa-pull-left.pkp_controllers_fontController_largeFont, .fa-pull-left.announcement__more, .fa-pull-left.ui-icon-closethick, #interests .fa-pull-left.tagit-close, #interests .fa-pull-left.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.fa-pull-left, .fa-pull-left#pdfDownloadLinkContainer {
+.fa.fa-pull-left, .fa-pull-left.pkp_controllers_fontController_smallFont, .fa-pull-left.pkp_controllers_fontController_defaultFont, .fa-pull-left.pkp_controllers_fontController_largeFont, .fa-pull-left.announcement__more, .fa-pull-left.ui-icon-closethick, #interests .fa-pull-left.tagit-close, #interests .fa-pull-left.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.fa-pull-left, #citationImprovement table .row_actions .fa-pull-left.delete, .fa-pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 15, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.fa-pull-right, .fa-pull-right.pkp_controllers_fontController_smallFont, .fa-pull-right.pkp_controllers_fontController_defaultFont, .fa-pull-right.pkp_controllers_fontController_largeFont, .fa-pull-right.announcement__more, .fa-pull-right.ui-icon-closethick, #interests .fa-pull-right.tagit-close, #interests .fa-pull-right.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.fa-pull-right, .fa-pull-right#pdfDownloadLinkContainer {
+.fa.fa-pull-right, .fa-pull-right.pkp_controllers_fontController_smallFont, .fa-pull-right.pkp_controllers_fontController_defaultFont, .fa-pull-right.pkp_controllers_fontController_largeFont, .fa-pull-right.announcement__more, .fa-pull-right.ui-icon-closethick, #interests .fa-pull-right.tagit-close, #interests .fa-pull-right.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.fa-pull-right, #citationImprovement table .row_actions .fa-pull-right.delete, .fa-pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* Deprecated as of 4.4.0 */
@@ -101,10 +101,10 @@
   float: left; }
 
 /* line 23, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-left, .pull-left.pkp_controllers_fontController_smallFont, .pull-left.pkp_controllers_fontController_defaultFont, .pull-left.pkp_controllers_fontController_largeFont, .pull-left.announcement__more, .pull-left.ui-icon-closethick, #interests .pull-left.tagit-close, #interests .pull-left.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.pull-left, .pull-left#pdfDownloadLinkContainer {
+.fa.pull-left, .pull-left.pkp_controllers_fontController_smallFont, .pull-left.pkp_controllers_fontController_defaultFont, .pull-left.pkp_controllers_fontController_largeFont, .pull-left.announcement__more, .pull-left.ui-icon-closethick, #interests .pull-left.tagit-close, #interests .pull-left.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.pull-left, #citationImprovement table .row_actions .pull-left.delete, .pull-left#pdfDownloadLinkContainer {
   margin-right: .3em; }
 /* line 24, ../sass/external/font-awesome/_bordered-pulled.scss */
-.fa.pull-right, .pull-right.pkp_controllers_fontController_smallFont, .pull-right.pkp_controllers_fontController_defaultFont, .pull-right.pkp_controllers_fontController_largeFont, .pull-right.announcement__more, .pull-right.ui-icon-closethick, #interests .pull-right.tagit-close, #interests .pull-right.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.pull-right, .pull-right#pdfDownloadLinkContainer {
+.fa.pull-right, .pull-right.pkp_controllers_fontController_smallFont, .pull-right.pkp_controllers_fontController_defaultFont, .pull-right.pkp_controllers_fontController_largeFont, .pull-right.announcement__more, .pull-right.ui-icon-closethick, #interests .pull-right.tagit-close, #interests .pull-right.tagit-new, #citationEditorNavPane .scrollable table .row_actions a.pull-right, #citationImprovement table .row_actions .pull-right.delete, .pull-right#pdfDownloadLinkContainer {
   margin-left: .3em; }
 
 /* line 4, ../sass/external/font-awesome/_animated.scss */
@@ -262,7 +262,8 @@
 .fa-close:before,
 .fa-times:before,
 #interests .tagit-close:before,
-#citationEditorNavPane .scrollable table .row_actions a:before {
+#citationEditorNavPane .scrollable table .row_actions a:before,
+#citationImprovement table .row_actions .delete:before {
   content: ""; }
 
 /* line 20, ../sass/external/font-awesome/_icons.scss */
@@ -3396,7 +3397,7 @@ div.separator {
   display: none; }
 
 /* line 152, ../sass/init/_ojs-normalize.scss */
-.delete-actions .action, .delete-actions #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .delete-actions .hidetext, .delete-actions #citationEditorNavPane .scrollable table .row_actions a:after, #citationEditorNavPane .scrollable table .row_actions .delete-actions a:after {
+.delete-actions .action, .delete-actions #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .delete-actions .hidetext, .delete-actions #citationEditorNavPane .scrollable table .row_actions a:after, #citationEditorNavPane .scrollable table .row_actions .delete-actions a:after, .delete-actions #citationImprovement table .row_actions a:after, #citationImprovement table .row_actions .delete-actions a:after {
   font-size: inherit;
   font-family: inherit; }
 
@@ -3736,18 +3737,18 @@ a.button, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_cont
   border: none; }
 
 /* line 146, ../sass/modules/_forms.scss */
-.button--cancel, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete {
+.button--cancel, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete, #cancelRawCitationEditing {
   background-color: #A34531;
   color: #fff; }
   /* line 157, ../sass/modules/_forms.scss */
-  .button--cancel:link, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:link, .button--cancel:visited, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:visited, .button--cancel:focus, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:focus, .button--cancel:active, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:active {
+  .button--cancel:link, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:link, #cancelRawCitationEditing:link, .button--cancel:visited, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:visited, #cancelRawCitationEditing:visited, .button--cancel:focus, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:focus, #cancelRawCitationEditing:focus, .button--cancel:active, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:active, #cancelRawCitationEditing:active {
     color: #fff; }
   /* line 161, ../sass/modules/_forms.scss */
-  .button--cancel:hover, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:hover {
+  .button--cancel:hover, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a.delete:hover, #cancelRawCitationEditing:hover {
     background: #6d2e21; }
 
 /* line 179, ../sass/modules/_forms.scss */
-.button--small, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a, #citationEditorNavPane .pkp_controllers_grid > table .options a {
+.button--small, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .row_controls a, #citationEditorNavPane .pkp_controllers_grid > table .options a, #editableRawCitation .actions button {
   padding: 0 0.375rem;
   font-size: 14px;
   font-size: 0.85rem;
@@ -4307,7 +4308,7 @@ tbody td {
   text-align: center; }
 
 /* line 132, ../sass/modules/_tables.scss */
-.action, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext, #citationEditorNavPane .scrollable table .row_actions a:after {
+.action, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext, #citationEditorNavPane .scrollable table .row_actions a:after, #citationImprovement table .row_actions a:after {
   font-size: 14px;
   font-size: 0.85rem;
   line-height: 12px;
@@ -4315,7 +4316,7 @@ tbody td {
   display: inline-block;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
   /* line 22, ../sass/init/_mixins.scss */
-  .action:link, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:link, #citationEditorNavPane .scrollable table .row_actions a:link:after, .action:visited, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:visited, #citationEditorNavPane .scrollable table .row_actions a:visited:after, .action:focus, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:focus, #citationEditorNavPane .scrollable table .row_actions a:focus:after, .action:hover, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:hover, #citationEditorNavPane .scrollable table .row_actions a:hover:after, .action:active, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:active, #citationEditorNavPane .scrollable table .row_actions a:active:after {
+  .action:link, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:link, #citationEditorNavPane .scrollable table .row_actions a:link:after, #citationImprovement table .row_actions a:link:after, .action:visited, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:visited, #citationEditorNavPane .scrollable table .row_actions a:visited:after, #citationImprovement table .row_actions a:visited:after, .action:focus, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:focus, #citationEditorNavPane .scrollable table .row_actions a:focus:after, #citationImprovement table .row_actions a:focus:after, .action:hover, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:hover, #citationEditorNavPane .scrollable table .row_actions a:hover:after, #citationImprovement table .row_actions a:hover:after, .action:active, #page-manager-setup-guidingSubmissions .pkp_controllers_grid .hidetext:active, #citationEditorNavPane .scrollable table .row_actions a:active:after, #citationImprovement table .row_actions a:active:after {
     border-bottom: none;
     text-decoration: none; }
 
@@ -5078,54 +5079,107 @@ ul.steplist li {
   #citationEditorNavPane .scrollable table .row_actions a:after {
     content: attr(title); }
 
-/* line 186, ../sass/modules/_citations.scss */
+/* line 187, ../sass/modules/_citations.scss */
+#citationFormErrorsAndComparison {
+  margin-bottom: 0.75rem; }
+  /* line 189, ../sass/modules/_citations.scss */
+  #citationFormErrorsAndComparison .citation-comparison, #citationFormErrorsAndComparison #editableRawCitation {
+    margin-bottom: 0.75rem; }
+  /* line 192, ../sass/modules/_citations.scss */
+  #citationFormErrorsAndComparison .label {
+    font-weight: bold;
+    margin-bottom: 0.375rem; }
+
+/* line 216, ../sass/modules/_citations.scss */
+#citationImprovement {
+  width: 100%; }
+  /* line 218, ../sass/modules/_citations.scss */
+  #citationImprovement table {
+    table-layout: fixed; }
+    /* line 220, ../sass/modules/_citations.scss */
+    #citationImprovement table td:last-child {
+      text-align: left; }
+    /* line 32, ../sass/init/_mixins.scss */
+    #citationImprovement table .row_actions .delete:link, #citationImprovement table .row_actions .delete:visited, #citationImprovement table .row_actions .delete:focus, #citationImprovement table .row_actions .delete:hover, #citationImprovement table .row_actions .delete:active {
+      color: #A34531; }
+    /* line 229, ../sass/modules/_citations.scss */
+    #citationImprovement table .row_actions a:after {
+      content: attr(title); }
+
+/* line 238, ../sass/modules/_citations.scss */
+#citationImprovementManual .first_column .row_container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+  /* line 240, ../sass/modules/_citations.scss */
+  #citationImprovementManual .first_column .row_container .row_file {
+    width: 100%; }
+    /* line 242, ../sass/modules/_citations.scss */
+    #citationImprovementManual .first_column .row_container .row_file select {
+      max-width: 90%; }
+
+/* line 250, ../sass/modules/_citations.scss */
+#citationImprovementQuery .option-block {
+  margin-bottom: 1.5rem; }
+  /* line 251, ../sass/modules/_citations.scss */
+  #citationImprovementQuery .option-block p {
+    margin: 0; }
+/* line 255, ../sass/modules/_citations.scss */
+#citationImprovementQuery .option-block-option li, #citationImprovementQuery .option-block-option label {
+  display: inline; }
+/* line 259, ../sass/modules/_citations.scss */
+#citationImprovementQuery .actions {
+  margin: 0.75rem; }
+
+/* line 268, ../sass/modules/_citations.scss */
 .pkp_helpers_invisible {
   visibility: hidden; }
 
-/* line 187, ../sass/modules/_citations.scss */
+/* line 269, ../sass/modules/_citations.scss */
 .pkp_helpers_display_none {
   display: none !important; }
 
-/* line 188, ../sass/modules/_citations.scss */
+/* line 270, ../sass/modules/_citations.scss */
 .pkp_helpers_clear {
   clear: both; }
 
-/* line 189, ../sass/modules/_citations.scss */
+/* line 271, ../sass/modules/_citations.scss */
 .pkp_helpers_align_left {
   float: left; }
 
-/* line 190, ../sass/modules/_citations.scss */
+/* line 272, ../sass/modules/_citations.scss */
 .pkp_helpers_align_right {
   float: right; }
 
-/* line 191, ../sass/modules/_citations.scss */
+/* line 273, ../sass/modules/_citations.scss */
 .pkp_helpers_text_left {
   text-align: left; }
 
-/* line 192, ../sass/modules/_citations.scss */
+/* line 274, ../sass/modules/_citations.scss */
 .pkp_helpers_text_right {
   text-align: right; }
 
-/* line 193, ../sass/modules/_citations.scss */
+/* line 275, ../sass/modules/_citations.scss */
 .pkp_helpers_text_center {
   text-align: center; }
 
-/* line 194, ../sass/modules/_citations.scss */
+/* line 276, ../sass/modules/_citations.scss */
 .pkp_helpers_text_justify {
   text-align: justify; }
 
 /* Layout helpers
 ----------------------------------*/
-/* line 198, ../sass/modules/_citations.scss */
+/* line 280, ../sass/modules/_citations.scss */
 .ui-helper-hidden {
   display: none; }
 
-/* line 199, ../sass/modules/_citations.scss */
+/* line 281, ../sass/modules/_citations.scss */
 .ui-helper-hidden-accessible {
   position: absolute;
   left: -99999999px; }
 
-/* line 200, ../sass/modules/_citations.scss */
+/* line 282, ../sass/modules/_citations.scss */
 .ui-helper-clearfix:after {
   content: ".";
   display: block;
@@ -5133,21 +5187,21 @@ ul.steplist li {
   clear: both;
   visibility: hidden; }
 
-/* line 201, ../sass/modules/_citations.scss */
+/* line 283, ../sass/modules/_citations.scss */
 .ui-helper-clearfix {
   display: inline-block; }
 
 /* required comment for clearfix to work in Opera \*/
-/* line 203, ../sass/modules/_citations.scss */
+/* line 285, ../sass/modules/_citations.scss */
 * html .ui-helper-clearfix {
   height: 1%; }
 
-/* line 204, ../sass/modules/_citations.scss */
+/* line 286, ../sass/modules/_citations.scss */
 .ui-helper-clearfix {
   display: block; }
 
 /* end clearfix */
-/* line 206, ../sass/modules/_citations.scss */
+/* line 288, ../sass/modules/_citations.scss */
 .ui-helper-zfix {
   width: 100%;
   height: 100%;
@@ -5157,7 +5211,7 @@ ul.steplist li {
   opacity: 0;
   filter: Alpha(Opacity=0); }
 
-/* line 207, ../sass/modules/_citations.scss */
+/* line 289, ../sass/modules/_citations.scss */
 .ui-state-disabled {
   cursor: default !important; }
 
