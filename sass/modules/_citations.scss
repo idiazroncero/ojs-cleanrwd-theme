@@ -1,6 +1,7 @@
 // Fullscreen button
 
 #fullScreenButton {
+  float:right;
 }
 
 .fullscreen {
@@ -14,6 +15,9 @@
   margin:0;
   padding:rhythm(1);
   background:$white;
+  #citationEditorTabEdit {
+    overflow:scroll;
+  }
 }
 
 #citationEditorMainTabs {

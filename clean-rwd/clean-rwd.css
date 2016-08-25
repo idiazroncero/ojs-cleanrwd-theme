@@ -4915,7 +4915,11 @@ ul.steplist li {
   line-height: 1.5rem;
   font-family: "Roboto Condensed", Impact, Helvetica, Arial, sans-serif; }
 
-/* line 6, ../sass/modules/_citations.scss */
+/* line 3, ../sass/modules/_citations.scss */
+#fullScreenButton {
+  float: right; }
+
+/* line 7, ../sass/modules/_citations.scss */
 .fullscreen {
   display: block;
   position: absolute;
@@ -4927,18 +4931,21 @@ ul.steplist li {
   margin: 0;
   padding: 1.5rem;
   background: #fff; }
+  /* line 18, ../sass/modules/_citations.scss */
+  .fullscreen #citationEditorTabEdit {
+    overflow: scroll; }
 
-/* line 19, ../sass/modules/_citations.scss */
+/* line 23, ../sass/modules/_citations.scss */
 #citationEditorMainTabs {
   margin: 1.5rem 0; }
 
-/* line 25, ../sass/modules/_citations.scss */
+/* line 29, ../sass/modules/_citations.scss */
 .ui-tabs-nav {
   padding: 0;
   margin: 0;
   border-bottom: 1px solid #CCC; }
 
-/* line 31, ../sass/modules/_citations.scss */
+/* line 35, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li {
   list-style: none;
   float: left;
@@ -4950,7 +4957,7 @@ ul.steplist li {
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out; }
 
-/* line 42, ../sass/modules/_citations.scss */
+/* line 46, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li a {
   float: left;
   padding: 0 0.75rem;
@@ -4963,47 +4970,47 @@ ul.steplist li {
     text-decoration: none;
     color: #1b1b1b; }
 
-/* line 50, ../sass/modules/_citations.scss */
+/* line 54, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li:hover {
   background: #c4c4c4; }
 
-/* line 53, ../sass/modules/_citations.scss */
+/* line 57, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
   background: #f5f5f5; }
 
-/* line 56, ../sass/modules/_citations.scss */
+/* line 60, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li:hover,
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected {
   margin-bottom: 0;
   margin-top: -2px;
   padding-bottom: 2px; }
 
-/* line 63, ../sass/modules/_citations.scss */
+/* line 67, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-selected a,
 .ui-tabs .ui-tabs-nav li.ui-state-disabled a,
 .ui-tabs .ui-tabs-nav li.ui-state-processing a {
   cursor: text; }
 
-/* line 69, ../sass/modules/_citations.scss */
+/* line 73, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-nav li a,
 .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a {
   cursor: pointer; }
 
-/* line 74, ../sass/modules/_citations.scss */
+/* line 78, ../sass/modules/_citations.scss */
 .ui-tabs .ui-tabs-hide {
   display: none !important; }
 
-/* line 79, ../sass/modules/_citations.scss */
+/* line 83, ../sass/modules/_citations.scss */
 .composite-ui > .ui-tabs div.main-tabs > .canvas {
   height: 100%; }
 
-/* line 81, ../sass/modules/_citations.scss */
+/* line 85, ../sass/modules/_citations.scss */
 .composite-ui div.canvas {
   margin: 0;
   padding: 0;
   width: 100%; }
 
-/* line 87, ../sass/modules/_citations.scss */
+/* line 91, ../sass/modules/_citations.scss */
 .composite-ui div.pane {
   height: 100%;
   font-size: 14px;
@@ -5011,28 +5018,28 @@ ul.steplist li {
   line-height: 24px;
   line-height: 1.5rem; }
 
-/* line 92, ../sass/modules/_citations.scss */
+/* line 96, ../sass/modules/_citations.scss */
 .composite-ui div.pane div.help-message {
   margin: 1.5rem 1.5rem 1.5rem 0; }
 
-/* line 96, ../sass/modules/_citations.scss */
+/* line 100, ../sass/modules/_citations.scss */
 .composite-ui .scrollable {
   overflow-y: auto;
   overflow-x: hidden; }
 
-/* line 103, ../sass/modules/_citations.scss */
+/* line 107, ../sass/modules/_citations.scss */
 .composite-ui div.two-pane > div.left-pane {
   float: left;
   width: 25%;
   padding: 1.5rem 1.5rem 1.5rem 0; }
 
-/* line 109, ../sass/modules/_citations.scss */
+/* line 113, ../sass/modules/_citations.scss */
 .composite-ui div.two-pane > div.right-pane {
   float: left;
   position: relative;
   padding: 1.5rem 0 1.5rem 1.5rem; }
 
-/* line 115, ../sass/modules/_citations.scss */
+/* line 119, ../sass/modules/_citations.scss */
 .composite-ui div.two-pane > div.splitbarV {
   float: left;
   width: 6px;
@@ -5042,83 +5049,83 @@ ul.steplist li {
   border: solid 0px;
   background: #CCC; }
 
-/* line 130, ../sass/modules/_citations.scss */
+/* line 134, ../sass/modules/_citations.scss */
 #citationEditorNavPane table th, #citationEditorNavPane table td, #citationEditorNavPane table tr {
   border: none; }
-/* line 133, ../sass/modules/_citations.scss */
+/* line 137, ../sass/modules/_citations.scss */
 #citationEditorNavPane table tbody td:last-child {
   text-align: left; }
-/* line 138, ../sass/modules/_citations.scss */
+/* line 142, ../sass/modules/_citations.scss */
 #citationEditorNavPane .pkp_controllers_grid > table th {
   text-align: right !important; }
-/* line 145, ../sass/modules/_citations.scss */
+/* line 149, ../sass/modules/_citations.scss */
 #citationEditorNavPane .pkp_controllers_grid > table .options a:before {
   content: attr(title); }
-/* line 152, ../sass/modules/_citations.scss */
+/* line 156, ../sass/modules/_citations.scss */
 #citationEditorNavPane .scrollable table {
   table-layout: fixed; }
-  /* line 154, ../sass/modules/_citations.scss */
+  /* line 158, ../sass/modules/_citations.scss */
   #citationEditorNavPane .scrollable table td span {
     cursor: pointer;
     display: block; }
-    /* line 157, ../sass/modules/_citations.scss */
+    /* line 161, ../sass/modules/_citations.scss */
     #citationEditorNavPane .scrollable table td span:hover {
       background: #f5f5f5; }
   /* line 32, ../sass/init/_mixins.scss */
   #citationEditorNavPane .scrollable table .row_actions a:link, #citationEditorNavPane .scrollable table .row_actions a:visited, #citationEditorNavPane .scrollable table .row_actions a:focus, #citationEditorNavPane .scrollable table .row_actions a:hover, #citationEditorNavPane .scrollable table .row_actions a:active {
     color: #A34531; }
-  /* line 166, ../sass/modules/_citations.scss */
+  /* line 170, ../sass/modules/_citations.scss */
   #citationEditorNavPane .scrollable table .row_actions a:after {
     content: attr(title); }
 
-/* line 182, ../sass/modules/_citations.scss */
+/* line 186, ../sass/modules/_citations.scss */
 .pkp_helpers_invisible {
   visibility: hidden; }
 
-/* line 183, ../sass/modules/_citations.scss */
+/* line 187, ../sass/modules/_citations.scss */
 .pkp_helpers_display_none {
   display: none !important; }
 
-/* line 184, ../sass/modules/_citations.scss */
+/* line 188, ../sass/modules/_citations.scss */
 .pkp_helpers_clear {
   clear: both; }
 
-/* line 185, ../sass/modules/_citations.scss */
+/* line 189, ../sass/modules/_citations.scss */
 .pkp_helpers_align_left {
   float: left; }
 
-/* line 186, ../sass/modules/_citations.scss */
+/* line 190, ../sass/modules/_citations.scss */
 .pkp_helpers_align_right {
   float: right; }
 
-/* line 187, ../sass/modules/_citations.scss */
+/* line 191, ../sass/modules/_citations.scss */
 .pkp_helpers_text_left {
   text-align: left; }
 
-/* line 188, ../sass/modules/_citations.scss */
+/* line 192, ../sass/modules/_citations.scss */
 .pkp_helpers_text_right {
   text-align: right; }
 
-/* line 189, ../sass/modules/_citations.scss */
+/* line 193, ../sass/modules/_citations.scss */
 .pkp_helpers_text_center {
   text-align: center; }
 
-/* line 190, ../sass/modules/_citations.scss */
+/* line 194, ../sass/modules/_citations.scss */
 .pkp_helpers_text_justify {
   text-align: justify; }
 
 /* Layout helpers
 ----------------------------------*/
-/* line 194, ../sass/modules/_citations.scss */
+/* line 198, ../sass/modules/_citations.scss */
 .ui-helper-hidden {
   display: none; }
 
-/* line 195, ../sass/modules/_citations.scss */
+/* line 199, ../sass/modules/_citations.scss */
 .ui-helper-hidden-accessible {
   position: absolute;
   left: -99999999px; }
 
-/* line 196, ../sass/modules/_citations.scss */
+/* line 200, ../sass/modules/_citations.scss */
 .ui-helper-clearfix:after {
   content: ".";
   display: block;
@@ -5126,21 +5133,21 @@ ul.steplist li {
   clear: both;
   visibility: hidden; }
 
-/* line 197, ../sass/modules/_citations.scss */
+/* line 201, ../sass/modules/_citations.scss */
 .ui-helper-clearfix {
   display: inline-block; }
 
 /* required comment for clearfix to work in Opera \*/
-/* line 199, ../sass/modules/_citations.scss */
+/* line 203, ../sass/modules/_citations.scss */
 * html .ui-helper-clearfix {
   height: 1%; }
 
-/* line 200, ../sass/modules/_citations.scss */
+/* line 204, ../sass/modules/_citations.scss */
 .ui-helper-clearfix {
   display: block; }
 
 /* end clearfix */
-/* line 202, ../sass/modules/_citations.scss */
+/* line 206, ../sass/modules/_citations.scss */
 .ui-helper-zfix {
   width: 100%;
   height: 100%;
@@ -5150,7 +5157,7 @@ ul.steplist li {
   opacity: 0;
   filter: Alpha(Opacity=0); }
 
-/* line 203, ../sass/modules/_citations.scss */
+/* line 207, ../sass/modules/_citations.scss */
 .ui-state-disabled {
   cursor: default !important; }
 

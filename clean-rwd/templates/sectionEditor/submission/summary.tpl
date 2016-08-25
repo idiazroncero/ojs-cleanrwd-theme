@@ -11,25 +11,21 @@
 <div id="submission">
 <h3>{translate key="article.submission"}</h3>
 
-<table class="data">
-	<tr>
-		<td width="20%" class="label">{translate key="article.authors"}</td>
-		<td width="80%">
+<dl>
+	<dt>{translate key="article.authors"}</dt>
+	<dd>
 			{url|assign:"url" page="user" op="email" redirectUrl=$currentUrl to=$submission->getAuthorEmails() subject=$submission->getLocalizedTitle() articleId=$submission->getId()}
 			{$submission->getAuthorString()|escape} {icon name="mail" url=$url}
-		</td>
-	</tr>
-	<tr>
-		<td class="label">{translate key="article.title"}</td>
-		<td>{$submission->getLocalizedTitle()|strip_unsafe_html}</td>
-	</tr>
-	<tr>
-		<td class="label">{translate key="section.section"}</td>
-		<td>{$submission->getSectionTitle()|escape}</td>
-	</tr>
-	<tr>
-		<td class="label">{translate key="user.role.editor"}</td>
-		<td>
+	</dd>
+
+	<dt>{translate key="article.title"}</dt>
+	<dd>{$submission->getLocalizedTitle()|strip_unsafe_html}</dd>
+
+	<dt>{translate key="section.section"}</dt>
+	<dd>{$submission->getSectionTitle()|escape}</dd>
+
+	<dt>{translate key="user.role.editor"}</dt>
+		<dd>
 			{assign var=editAssignments value=$submission->getEditAssignments()}
 			{foreach from=$editAssignments item=editAssignment}
 				{assign var=emailString value=$editAssignment->getEditorFullName()|concat:" <":$editAssignment->getEditorEmail():">"}
@@ -46,8 +42,7 @@
 			{foreachelse}
 				{translate key="common.noneAssigned"}
 			{/foreach}
-		</td>
-	</tr>
-</table>
+		</dd>
+</dl>
 </div>
 

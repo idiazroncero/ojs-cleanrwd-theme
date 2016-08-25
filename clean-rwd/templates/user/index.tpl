@@ -88,7 +88,7 @@
 				</div>
 				<div class="journal-admin__count">
 					{if $sectionEditorSubmissionsCount[1]}
-						<a class="button button--small" href="{url journal=$journalPath page="sectionEditor" op="index" path="submissionsInEditing"}">{$sectionEditorSubmissionsCount[1]} {translate key="common.queue.short.submissionsInEditing"}</a>
+						<a href="{url journal=$journalPath page="sectionEditor" op="index" path="submissionsInEditing"}">{$sectionEditorSubmissionsCount[1]} {translate key="common.queue.short.submissionsInEditing"}</a>
 					{else}<span class="disabled">0 {translate key="common.queue.short.submissionsInEditing"}</span>{/if}
 				</div>
 			</div>

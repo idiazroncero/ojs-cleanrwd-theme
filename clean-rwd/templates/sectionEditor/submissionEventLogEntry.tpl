@@ -32,37 +32,35 @@
 <div class="separator"></div>
 <div id="submissionEventLog">
 <h3>{translate key="submission.history.submissionEventLog"}</h3>
-<table class="data">
-	<tr >
-		<td width="20%" class="label">{translate key="common.id"}</td>
-		<td width="80%" class="value">{$logEntry->getId()}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="common.date"}</td>
-		<td class="value">{$logEntry->getDateLogged()|date_format:$datetimeFormatLong}</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="common.user"}</td>
-		<td class="value">
+
+<dl>
+	<dt>{translate key="common.id"}</dt>
+	<dd>{$logEntry->getId()}</dd>
+
+	<dt>{translate key="common.date"}</dt>
+	<dd>{$logEntry->getDateLogged()|date_format:$datetimeFormatLong}</dd>
+
+	<dt>{translate key="common.user"}</dt>
+	<dd>
 			{assign var=emailString value=$logEntry->getUserFullName()|concat:" <":$logEntry->getUserEmail():">"}
 			{url|assign:"url" page="user" op="email" to=$emailString|to_array redirectUrl=$currentUrl subject=$logEntry->getEventTitle()|translate articleId=$submission->getId()}
 			{$logEntry->getUserFullName()|escape} {icon name="mail" url=$url}
-		</td>
-	</tr>
-	<tr >
-		<td class="label">{translate key="common.event"}</td>
-		<td class="value">
+	</dd>
+
+	<dt>{translate key="common.event"}</dt>
+	<dd>
 			<strong>{translate key=$logEntry->getEventTitle()}</strong>
 			
 			{$logEntry->getMessage()|strip_unsafe_html|nl2br}
-		</td>
-	</tr>
-</table>
-{if $isEditor}
-	<a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')" class="action">{translate key="submission.event.deleteLogEntry"}</a>
-{/if}
+	</dd>
+</dl>
+
+<div class="buttons">
+	{if $isEditor}
+		<a href="{url page="editor" op="clearSubmissionEventLog" path=$submission->getId()|to_array:$logEntry->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.event.confirmDeleteLogEntry"}')" class="button button--cancel">{translate key="submission.event.deleteLogEntry"}</a>
+	{/if}
+	<a class="button" href="{url op="submissionEventLog" path=$submission->getId()}">{translate key="submission.event.backToEventLog"}</a>
 </div>
-<a class="action" href="{url op="submissionEventLog" path=$submission->getId()}">{translate key="submission.event.backToEventLog"}</a>
 
 {include file="common/footer.tpl"}
 
