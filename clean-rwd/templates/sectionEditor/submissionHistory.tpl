@@ -149,15 +149,16 @@
 <div id="submissionNotes">
 <h3>{translate key="submission.notes"}</h3>
 
-<table class="listing">
-	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
-	<tr class="heading" >
-		<td width="7%">{translate key="common.date"}</td>
-		<td width="60%">{translate key="common.title"}</td>
-		<td width="25%">{translate key="submission.notes.attachedFile"}</td>
-		<td width="10%" align="right">{translate key="common.action"}</td>
-	</tr>
-	<tr><td colspan="6" class="headseparator">&nbsp;</td></tr>
+<table class="listing listing--wide">
+	<thead>
+		<tr class="heading" >
+			<th>{translate key="common.date"}</th>
+			<th>{translate key="common.title"}</th>
+			<th>{translate key="submission.notes.attachedFile"}</th>
+			<th>{translate key="common.action"}</th>
+		</tr>
+	</thead>
+	<tbody>
 {iterate from=submissionNotes item=note}
 	<script type="text/javascript">
 		<!--
@@ -165,29 +166,26 @@
 		// -->
 	</script>
 	<tr >
-		<td>{$note->getDateCreated()|date_format:$dateFormatShort}</td>
-		<td><a class="action" href="javascript:toggleNote({$note->getId()})">{$note->getTitle()|escape}</a><div style="display: none" id="{$note->getId()}" name="{$note->getId()}">{$note->getNote()|strip_unsafe_html|nl2br}</div></td>
-		<td>{if $note->getFileId()}<a class="action" href="{url op="downloadFile" path=$submission->getId()|to_array:$note->getFileId()}">{$note->getOriginalFileName()|escape}</a>{else}&mdash;{/if}</td>
-		<td align="right"><a href="{url op="submissionNotes" path=$submission->getId()|to_array:"edit":$note->getId()}" class="action">{translate key="common.view"}</a>&nbsp;|&nbsp;<a href="{url op="removeSubmissionNote" articleId=$submission->getId() noteId=$note->getId() fileId=$note->getFileId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
-	</tr>
-	<tr >
-		<td colspan="6" class="{if $submissionNotes->eof()}end{/if}separator">&nbsp;</td>
+		<td data-title='{translate key="common.date"}'>{$note->getDateCreated()|date_format:$dateFormatShort}</td>
+		<td data-title='{translate key="common.title"}'><a class="action" href="javascript:toggleNote({$note->getId()})">{$note->getTitle()|escape}</a><div style="display: none" id="{$note->getId()}" name="{$note->getId()}">{$note->getNote()|strip_unsafe_html|nl2br}</div></td>
+		<td data-title='{translate key="submission.notes.attachedFile"}'>{if $note->getFileId()}<a class="action" href="{url op="downloadFile" path=$submission->getId()|to_array:$note->getFileId()}">{$note->getOriginalFileName()|escape}</a>{else}&mdash;{/if}</td>
+		<td data-title='{translate key="common.action"}'><a href="{url op="submissionNotes" path=$submission->getId()|to_array:"edit":$note->getId()}" class="action">{translate key="common.view"}</a>&nbsp;|&nbsp;<a href="{url op="removeSubmissionNote" articleId=$submission->getId() noteId=$note->getId() fileId=$note->getFileId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
 {/iterate}
 {if $submissionNotes->wasEmpty()}
 	<tr >
 		<td colspan="6" class="nodata">{translate key="submission.notes.noSubmissionNotes"}</td>
 	</tr>
-	<tr >
-		<td colspan="6" class="endseparator">&nbsp;</td>
-	</tr>
 {/if}
+	</tbody>
 </table>
 
-<a class="action" href="{url op="submissionNotes" path=$submission->getId()}">{translate key="submission.notes.viewNotes"}</a> |
-<div style="display:inline" id="expandNotes"><a class="action" href="javascript:toggleNoteAll()">{translate key="submission.notes.expandNotes"}</a></div><div style="display: none" id="collapseNotes"><a class="action" href="javascript:toggleNoteAll()">{translate key="submission.notes.collapseNotes"}</a></div> |
-<a class="action" href="{url op="submissionNotes" path=$submission->getId()|to_array:"add"}">{translate key="submission.notes.addNewNote"}</a> |
-<a class="action" href="{url op="clearAllSubmissionNotes" articleId=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDeleteAll"}')">{translate key="submission.notes.clearAllNotes"}</a>
+<div class="buttons">
+	<a class="button" href="{url op="submissionNotes" path=$submission->getId()}">{translate key="submission.notes.viewNotes"}</a>
+	<div style="display:inline" id="expandNotes"><a class="button" href="javascript:toggleNoteAll()">{translate key="submission.notes.expandNotes"}</a></div><div style="display: none" id="collapseNotes"><a class="button" href="javascript:toggleNoteAll()">{translate key="submission.notes.collapseNotes"}</a></div>
+	<a class="button" href="{url op="submissionNotes" path=$submission->getId()|to_array:"add"}">{translate key="submission.notes.addNewNote"}</a>
+	<a class="button button--cancel" href="{url op="clearAllSubmissionNotes" articleId=$submission->getId()}" onclick="return confirm('{translate|escape:"jsparam" key="submission.notes.confirmDeleteAll"}')">{translate key="submission.notes.clearAllNotes"}</a>
+</div>
 </div>
 {include file="common/footer.tpl"}
 
