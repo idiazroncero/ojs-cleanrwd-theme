@@ -15,12 +15,10 @@
 <h3>{translate key="submission.proofreading"}</h3>
 
 {if $useProofreaders}
-<table class="data">
-	<tr>
-		<td class="label" width="20%">{translate key="user.role.proofreader"}</td>
-		<td class="value" width="80%">{if $proofSignoff->getUserId()}{$proofreader->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
-	</tr>
-</table>
+<div class="form-row">
+		<p class="label">{translate key="user.role.proofreader"}</p>
+		{if $proofSignoff->getUserId()}{$proofreader->getFullName()|escape}{else}{translate key="common.none"}{/if}
+</div>
 {/if}
 
 <p>
@@ -28,7 +26,7 @@
 	<a href="{url op="viewMetadata" path=$proofSignoff->getAssocId()}" class="action" target="_new">{translate key="submission.reviewMetadata"}</a>
 </p>
 
-<table class="listing">
+<table class="listing listing--wide">
 	<thead>
 		<tr>
 			<th>&nbsp;</th>

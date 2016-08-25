@@ -17,16 +17,14 @@
 
 {if $useLayoutEditors}
 <div id="layoutEditors">
-<table class="data">
-	<tr>
-		<td class="label" width="20%">{translate key="user.role.layoutEditor"}</td>
-		<td class="value" width="80%">{if $layoutSignoff->getUserId()}{$layoutEditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
-	</tr>
-</table>
+<div class="form-row">
+	<p class="label">{translate key="user.role.layoutEditor"}</p>
+	{if $layoutSignoff->getUserId()}{$layoutEditor->getFullName()|escape}{else}{translate key="common.none"}{/if}
+</div>
 </div>
 {/if}
 
-<table class="listing">
+<table class="listing listing--wide">
 	{if $useLayoutEditors}
 	<tr>
 		<td width="40%" colspan="2">{translate key="submission.layout.layoutVersion"}</td>
@@ -56,16 +54,16 @@
 	{/if}
 
 	<thead>
+		<th></th>
 		<th>{translate key="submission.layout.galleyFormat"}</th>
-		<th>{translate key="common.file"}</th>
-		<th colspan="2">&nbsp;</th>
+		<th colspan="2">{translate key="common.file"}</th>
 	</thead>
 	<tbody>
 	{foreach name=galleys from=$submission->getGalleys() item=galley}
 	<tr>
 		<td>{$smarty.foreach.galleys.iteration}.</td>
 		<td>{$galley->getGalleyLabel()|escape} &nbsp; <a href="{url op="proofGalley" path=$submission->getId()|to_array:$galley->getId()}" class="action">{translate key="submission.layout.viewProof"}</td>
-		<td colspan="2"><a href="{url op="downloadFile" path=$submission->getId()|to_array:$galley->getFileId()}" class="file">{$galley->getFileName()|escape}</a>&nbsp;&nbsp;{$galley->getDateModified()|date_format:$dateFormatShort}</td>
+		<td><a href="{url op="downloadFile" path=$submission->getId()|to_array:$galley->getFileId()}" class="file">{$galley->getFileName()|escape}</a>&nbsp;&nbsp;{$galley->getDateModified()|date_format:$dateFormatShort}</td>
 		<td>{$galley->getViews()}</td>
 	</tr>
 	{foreachelse}
@@ -77,7 +75,7 @@
 
 </table>
 
-<table class="listing">
+<table class="listing listing--wide">
 	<thead>
 		<tr>
 			<th></th>

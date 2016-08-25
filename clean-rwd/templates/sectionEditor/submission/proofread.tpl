@@ -11,32 +11,35 @@
 {assign var=proofSignoff value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
 {assign var=proofreader value=$submission->getUserBySignoffType('SIGNOFF_PROOFREADING_PROOFREADER')}
 
-<div id="proofread">
+<section id="proofread">
 <h3>{translate key="submission.proofreading"}</h3>
 
 {if $useProofreaders}
-<table class="data" width="100%">
-	<tr>
-		<td width="20%" class="label">{translate key="user.role.proofreader"}</td>
-		{if $proofSignoff->getUserId()}<td class="value" width="20%">{$proofreader->getFullName()|escape}</td>{/if}
-		<td class="value"><a href="{url op="selectProofreader" path=$submission->getId()}" class="action">{translate key="editor.article.selectProofreader"}</a></td>
-	</tr>
-</table>
+<div class="form-row">
+	<p class="label">{translate key="user.role.proofreader"}</p> 
+	{if $proofSignoff->getUserId()}{$proofreader->getFullName()|escape}{/if}
+	<a href="{url op="selectProofreader" path=$submission->getId()}" class="action">{translate key="editor.article.selectProofreader"}</a>
+</div>
 {/if}
 
-<table class="info">
+<table class="listing listing--wide">
+
+	<thead>
+		<tr>
+			<th>&nbsp;</th>
+			<th>&nbsp;</th>
+			<th>{translate key="submission.request"}</th>
+			<th>{translate key="submission.underway"}</th>
+			<th>{translate key="submission.complete"}</th>
+			<th>{translate key="submission.acknowledge"}</th>
+		</tr>
+	</thead>
+	<tbody>
 	<tr>
-		<td width="28%" colspan="2">&nbsp;</td>
-		<td width="18%" class="heading">{translate key="submission.request"}</td>
-		<td width="18%" class="heading">{translate key="submission.underway"}</td>
-		<td width="18%" class="heading">{translate key="submission.complete"}</td>
-		<td width="18%" class="heading">{translate key="submission.acknowledge"}</td>
-	</tr>
-	<tr>
-		<td width="2%">1.</td>
-		<td width="26%">{translate key="user.role.author"}</td>
+		<td>1.</td>
+		<td>{translate key="user.role.author"}</td>
 		{assign var="authorProofreadSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_AUTHOR')}
-		<td>
+		<td data-title='{translate key="submission.request"}'>
 			{url|assign:"url" op="notifyAuthorProofreader" articleId=$submission->getId()}
 			{if $authorProofreadSignoff->getDateUnderway()}
 				{translate|escape:"javascript"|assign:"confirmText" key="sectionEditor.author.confirmRenotify"}
@@ -47,13 +50,13 @@
 
 			{$authorProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:""}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.underway"}'>
 				{$authorProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.complete"}'>
 			{$authorProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.acknowledge"}'>
 			{if $authorProofreadSignoff->getDateCompleted() && !$authorProofreadSignoff->getDateAcknowledged()}
 				{url|assign:"url" op="thankAuthorProofreader" articleId=$submission->getId()}
 				{icon name="mail" url=$url}
@@ -67,7 +70,7 @@
 		<td>2.</td>
 		<td>{translate key="user.role.proofreader"}</td>
 		{assign var="proofreaderProofreadSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_PROOFREADER')}
-		<td>
+		<td data-title='{translate key="submission.request"}'>
 			{if $useProofreaders}
 				{if $proofSignoff->getUserId() && $authorProofreadSignoff->getDateCompleted()}
 					{url|assign:"url" op="notifyProofreader" articleId=$submission->getId()}
@@ -87,21 +90,21 @@
 			{/if}
 			{$proofreaderProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:""}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.underway"}'>
 			{if $useProofreaders}
 					{$proofreaderProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}
 			{else}
 				{translate key="common.notApplicableShort"}
 			{/if}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.complete"}'>
 			{if !$useProofreaders && !$proofreaderProofreadSignoff->getDateCompleted() && $proofreaderProofreadSignoff->getDateNotified()}
 				<a href="{url op="editorCompleteProofreader" articleId=$submission->getId()}" class="action">{translate key="common.complete"}</a>
 			{else}
 				{$proofreaderProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}
 			{/if}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.acknowledge"}'>
 			{if $useProofreaders}
 				{if $proofreaderProofreadSignoff->getDateCompleted() && !$proofreaderProofreadSignoff->getDateAcknowledged()}
 					{url|assign:"url" op="thankProofreader" articleId=$submission->getId()}
@@ -120,7 +123,7 @@
 		<td>{translate key="user.role.layoutEditor"}</td>
 		{assign var="layoutEditorProofreadSignoff" value=$submission->getSignoff('SIGNOFF_PROOFREADING_LAYOUT')}
 		{assign var="layoutSignoff" value=$submission->getSignoff('SIGNOFF_LAYOUT')}
-		<td>
+		<td data-title='{translate key="submission.request"}'>
 			{if $useLayoutEditors}
 				{if $layoutSignoff->getUserId() && $proofreaderProofreadSignoff->getDateCompleted()}
 					{url|assign:"url" op="notifyLayoutEditorProofreader" articleId=$submission->getId()}
@@ -140,14 +143,14 @@
 			{/if}
 				{$layoutEditorProofreadSignoff->getDateNotified()|date_format:$dateFormatShort|default:""}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.underway"}'>
 			{if $useLayoutEditors}
 				{$layoutEditorProofreadSignoff->getDateUnderway()|date_format:$dateFormatShort|default:"&mdash;"}
 			{else}
 				{translate key="common.notApplicableShort"}
 			{/if}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.complete"}'>
 			{if $useLayoutEditors}
 				{$layoutEditorProofreadSignoff->getDateCompleted()|date_format:$dateFormatShort|default:"&mdash;"}
 			{elseif $layoutEditorProofreadSignoff->getDateCompleted()}
@@ -158,7 +161,7 @@
 				&mdash;
 			{/if}
 		</td>
-		<td>
+		<td data-title='{translate key="submission.acknowledge"}'>
 			{if $useLayoutEditors}
 				{if $layoutEditorProofreadSignoff->getDateCompleted() && !$layoutEditorProofreadSignoff->getDateAcknowledged()}
 					{url|assign:"url" op="thankLayoutEditorProofreader" articleId=$submission->getId()}
@@ -172,9 +175,7 @@
 			{/if}
 		</td>
 	</tr>
-	<tr>
-		<td colspan="6" class="separator">&nbsp;</td>
-	</tr>
+	</tbody>
 </table>
 
 {translate key="submission.proofread.corrections"}
@@ -189,5 +190,6 @@
 &nbsp;&nbsp;
 <a href="javascript:openHelp('{url op="instructions" path="proof"}')" class="action">{translate key="submission.proofread.instructions"}</a>
 {/if}
-</div>
+
+</section>
 

@@ -12,32 +12,32 @@
 <h3>{translate key="submission.copyediting"}</h3>
 
 {if $currentJournal->getLocalizedSetting('copyeditInstructions') != ''}
-<p>
+<p class="marginless">
 	<i class="fa fa-info-circle"></i>
 	<a href="javascript:openHelp('{url op="instructions" path="copy"}')" class="action">{translate key="submission.copyedit.instructions"}</a>
 </p>
 {/if}
 
 {if $useCopyeditors}
-<table class="data" width="100%">
-	<tr>
-		<td class="label" width="20%">{translate key="user.role.copyeditor"}</td>
-		<td class="label" width="80%">{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}{$copyeditor->getFullName()|escape}{else}{translate key="common.none"}{/if}</td>
-	</tr>
-</table>
+<div class="form-row">
+	<p class="label">{translate key="user.role.copyeditor"}</p>
+	{if $submission->getUserIdBySignoffType('SIGNOFF_COPYEDITING_INITIAL')}{$copyeditor->getFullName()|escape}{else}{translate key="common.none"}{/if}
+</div>
 {/if}
 
-<p>
+<p class="marginless">
 	<i class="fa fa-info-circle"></i>
 	<a href="{url op="viewMetadata" path=$submission->getId()}" class="action">{translate key="submission.reviewMetadata"}</a>
 </p>
 
-<table class="listing">
+<table class="listing listing--wide">
 	<thead>
-		<th colspan="2"></th>
-		<th>{translate key="submission.request"}</th>
-		<th>{translate key="submission.underway"}</th>
-		<th>{translate key="submission.complete"}</th>
+		<tr>
+			<th colspan="2"></th>
+			<th>{translate key="submission.request"}</th>
+			<th>{translate key="submission.underway"}</th>
+			<th>{translate key="submission.complete"}</th>
+		</tr>
 	</thead>
 	<tbody>
 	<tr>

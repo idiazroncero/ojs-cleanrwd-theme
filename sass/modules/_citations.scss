@@ -226,6 +226,9 @@
         @extend .fa-times;
         @include pintar-link($main-color-red);
       }
+      a {
+        margin-right:3px;
+      }
       a:after {
         content: attr(title);
         @extend .action;
@@ -240,7 +243,7 @@
     .row_file {
       width:100%;
       select {
-        max-width:90%;
+        max-width:80%;
       }
     }
   }

@@ -24,19 +24,11 @@
 
 {include file="sectionEditor/submission/summary.tpl"}
 
-<div class="separator"></div>
-
 {include file="sectionEditor/submission/copyedit.tpl"}
-
-<div class="separator"></div>
 
 {include file="sectionEditor/submission/scheduling.tpl"}
 
-<div class="separator"></div>
-
 {include file="sectionEditor/submission/layout.tpl"}
-
-<div class="separator"></div>
 
 {include file="sectionEditor/submission/proofread.tpl"}
 

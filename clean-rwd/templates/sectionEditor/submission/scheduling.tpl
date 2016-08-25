@@ -11,14 +11,10 @@
 <div id="scheduling">
 <h3>{translate key="submission.scheduling"}</h3>
 
-<table class="data" width="100%">
 {if !$publicationFeeEnabled || $publicationPayment}
 	<form action="{url op="scheduleForPublication" path=$submission->getId()}" method="post">
-		<tr >
-			<td width="25%" class="label">
-				<label for="issueId">{translate key="editor.article.scheduleForPublication"}</label>
-			</td>
-			<td width="25%" class="value">
+		<div class="form-row">
+			<label for="issueId">{translate key="editor.article.scheduleForPublication"}</label>
 				{if $publishedArticle}
 					{assign var=issueId value=$publishedArticle->getIssueId()}
 				{else}
@@ -28,8 +24,6 @@
 					<option value="">{translate key="editor.article.scheduleForPublication.toBeAssigned"}</option>
 					{html_options options=$issueOptions|truncate:40:"..." selected=$issueId}
 				</select>
-			</td>
-			<td width="50%" class="value">
 				<input type="submit" value="{translate key="common.record"}" class="button defaultButton" />&nbsp;
 				{if $issueId}
 					{if $isEditor}
@@ -38,16 +32,12 @@
 						<a href="{url page="issue" op="view" path=$issueId}" class="action">{translate key="issue.toc"}</a>
 					{/if}
 				{/if}
-			</td>
-		</tr>
+		</div>
 	</form>
 	{if $publishedArticle}
 		<form action="{url op="setDatePublished" path=$submission->getId()}" method="post">
-			<tr >
-				<td width="20%" class="label">
-					<label for="issueId">{translate key="editor.issues.published"}</label>
-				</td>
-				<td class="value">
+			<div class="form-row">
+				<label for="issueId">{translate key="editor.issues.published"}</label>
 					{* Find good values for starting and ending year options *}
 					{assign var=currentYear value=$smarty.now|date_format:"%Y"}
 					{if $publishedArticle->getDatePublished()}
@@ -60,32 +50,25 @@
 						{math|assign:"maxYear" equation="x+2" x=$currentYear}
 					{/if}
 					{html_select_date prefix="datePublished" time=$publishedArticle->getDatePublished()|default:"---" all_extra="class=\"selectMenu\"" start_year=$minYear end_year=$maxYear year_empty="-" month_empty="-" day_empty="-"}
-				</td>
-				<td class="value">
 					<input type="submit" value="{translate key="common.record"}" class="button defaultButton" />&nbsp;
-				</td>
-			</tr>
+			</div>
 		</form>
 	{/if}{* $publishedArticle *}
 {else}
-	<tr>
-		<td>{translate key="editor.article.payment.publicationFeeNotPaid"}</td>
-		<td align="right">
+	<div class="form-row">
+		<p class="label">{translate key="editor.article.payment.publicationFeeNotPaid"}</p>
 			<form action="{url op="waivePublicationFee" path=$submission->getId()}" method="post">
 			<input type="hidden" name="markAsPaid" value=1 />
 			<input type="hidden" name="sendToScheduling" value=1 />
 			<input type="submit" value="{translate key="payment.paymentReceived"}" class="button defaultButton" />&nbsp;
 			</form>
-		</td>
 		{if $isEditor}
-			<td align="left">
 				<form action="{url page="editor" op="waivePublicationFee" path=$submission->getId()}" method="post">
 					<input type="hidden" name="sendToScheduling" value=1 />
 					<input type="submit" value="{translate key="payment.waive"}" class="button defaultButton" />&nbsp;
 				</form>
-			</td>	
 		{/if}
-	</tr>
+	</div>
 {/if}
-</table>
+
 </div>
