@@ -1,6 +1,6 @@
 // We don't have time to modify the controller's HTML
 // so we override it.
-
+#page-manager-setup-guidingSubmissions {
  .pkp_controllers_grid {
  	// use vertical rhythm
  	margin-bottom:rhythm(1);
@@ -39,3 +39,4 @@
  	// use vertical rhythm
  	margin-bottom:rhythm(1);
  }
+}

@@ -11,7 +11,7 @@
 // OJS overrides (deprecated)
 @import "pkp/pkp_common";
 @import "pkp/common";
-@import "pkp/compiled";
+// @import "pkp/compiled";
 
 // Modular styles (when possible)
 @import "modules/forms";
@@ -37,6 +37,7 @@
 @import "modules/issues";
 @import "modules/tagit";
 @import "modules/comments";
+@import "modules/citations";
 
 // Page-specific hacks (oftentimes, this is the only way to override the original CSS)
 @import "pages/userHome";
