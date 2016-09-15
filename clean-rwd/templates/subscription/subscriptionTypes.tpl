@@ -32,47 +32,39 @@ $(document).ready(function() { setupTableDND("#subscriptionTypesTable", "moveSub
 
 <div id="subscriptionTypes">
 <table class="listing" id="subscriptionTypesTable">
-	<tr>
-		<td colspan="5" class="headseparator">&nbsp;</td>
-	</tr>
-	<tr class="heading" >
-		<td width="40%">{translate key="manager.subscriptionTypes.name"}</td>
-		<td width="10%">{translate key="manager.subscriptionTypes.subscriptions"}</td>
-		<td width="20%">{translate key="manager.subscriptionTypes.duration"}</td>
-		<td width="15%">{translate key="manager.subscriptionTypes.cost"}</td>
-		<td width="15%">{translate key="common.action"}</td>
-	</tr>
-	<tr>
-		<td colspan="5" class="headseparator">&nbsp;</td>
-	</tr>
+	<thead>
+		<th>{translate key="manager.subscriptionTypes.name"}</th>
+		<th>{translate key="manager.subscriptionTypes.subscriptions"}</th>
+		<th>{translate key="manager.subscriptionTypes.duration"}</th>
+		<th>{translate key="manager.subscriptionTypes.cost"}</th>
+		<th>{translate key="common.action"}</th>
+	</thead>
+	<tbody>
 {iterate from=subscriptionTypes item=subscriptionType}
 	<tr  id="subtype-{$subscriptionType->getTypeId()}" class="data">
-		<td class="drag">{$subscriptionType->getSubscriptionTypeName()|escape}</td>
-		<td class="drag">{if $subscriptionType->getInstitutional()}{translate key="manager.subscriptionTypes.institutional"}{else}{translate key="manager.subscriptionTypes.individual"}{/if}</td>
-		<td class="drag">{$subscriptionType->getDurationYearsMonths()|escape}</td>
-		<td class="drag">{$subscriptionType->getCost()|string_format:"%.2f"}&nbsp;({$subscriptionType->getCurrencyStringShort()})</td>
-		<td><a href="{url op="moveSubscriptionType" id=$subscriptionType->getTypeId() dir=u}" class="action">&uarr;</a>&nbsp;<a href="{url op="moveSubscriptionType" id=$subscriptionType->getTypeId() dir=d}" class="action">&darr;</a>&nbsp;|&nbsp;<a href="{url op="editSubscriptionType" path=$subscriptionType->getTypeId()}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteSubscriptionType" path=$subscriptionType->getTypeId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.subscriptionTypes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
+		<td data-title='{translate key="manager.subscriptionTypes.name"}' class="drag">{$subscriptionType->getSubscriptionTypeName()|escape}</td>
+		<td data-title='{translate key="manager.subscriptionTypes.subscriptions"}' class="drag">{if $subscriptionType->getInstitutional()}{translate key="manager.subscriptionTypes.institutional"}{else}{translate key="manager.subscriptionTypes.individual"}{/if}</td>
+		<td data-title='{translate key="manager.subscriptionTypes.duration"}' class="drag">{$subscriptionType->getDurationYearsMonths()|escape}</td>
+		<td data-title='{translate key="manager.subscriptionTypes.cost"}' class="drag">{$subscriptionType->getCost()|string_format:"%.2f"}&nbsp;({$subscriptionType->getCurrencyStringShort()})</td>
+		<td data-title='{translate key="common.action"}'><a href="{url op="moveSubscriptionType" id=$subscriptionType->getTypeId() dir=u}" class="action">&uarr;</a>&nbsp;<a href="{url op="moveSubscriptionType" id=$subscriptionType->getTypeId() dir=d}" class="action">&darr;</a>&nbsp;|&nbsp;<a href="{url op="editSubscriptionType" path=$subscriptionType->getTypeId()}" class="action">{translate key="common.edit"}</a>&nbsp;|&nbsp;<a href="{url op="deleteSubscriptionType" path=$subscriptionType->getTypeId()}" onclick="return confirm('{translate|escape:"jsparam" key="manager.subscriptionTypes.confirmDelete"}')" class="action">{translate key="common.delete"}</a></td>
 	</tr>
-  {if $subscriptionTypes->eof()}
-  <tr><td colspan="5" class="endseparator">&nbsp;</td></tr>
-  {/if}
 {/iterate}
+</tbody>
 {if $subscriptionTypes->wasEmpty()}
 	<tr>
 		<td colspan="5" class="nodata">{translate key="manager.subscriptionTypes.noneCreated"}</td>
 	</tr>
-	<tr>
-		<td colspan="5" class="endseparator">&nbsp;</td>
-	</tr>
 {else}
-	<tr>
+	<tr class="listing-pager">
 		<td align="left">{page_info iterator=$subscriptionTypes}</td>
 		<td colspan="2" align="right">{page_links anchor="subscriptionTypes" name="subscriptionTypes" iterator=$subscriptionTypes}</td>
 	</tr>
 {/if}
 </table>
 
-<a href="{url op="createSubscriptionType"}" class="action">{translate key="manager.subscriptionTypes.create"}</a>
+<div class="buttons">
+	<a href="{url op="createSubscriptionType"}" class="button">{translate key="manager.subscriptionTypes.create"}</a>
+</div>
 </div>
 
 {include file="common/footer.tpl"}

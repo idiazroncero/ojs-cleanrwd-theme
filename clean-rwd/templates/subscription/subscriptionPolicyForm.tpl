@@ -50,112 +50,92 @@
 <div id="subscriptionContact">
 <h3>{translate key="manager.subscriptionPolicies.subscriptionContact"}</h3>
 <p>{translate key="manager.subscriptionPolicies.subscriptionContactDescription"}</p>
-<table class="data">
 {if count($formLocales) > 1}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</td>
-		<td width="80%" class="value">
+	<div class="form-row">
+		<p class="label">{fieldLabel name="formLocale" key="form.formLanguage"}</p>
 			{url|assign:"subscriptionPoliciesUrl" op="subscriptionPolicies" escape=false}
 			{form_language_chooser form="subscriptionPolicies" url=$subscriptionPoliciesUrl}
 			<span class="instruct">{translate key="form.formLanguage.description"}</span>
-		</td>
-	</tr>
+	</div>
 {/if}
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="subscriptionName" key="user.name"}</td>
-		<td width="80%" class="value"><input type="text" name="subscriptionName" id="subscriptionName" value="{$subscriptionName|escape}" size="30" maxlength="60" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="subscriptionEmail" key="user.email"}</td>
-		<td width="80%" class="value"><input type="text" name="subscriptionEmail" id="subscriptionEmail" value="{$subscriptionEmail|escape}" size="30" maxlength="90" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="subscriptionPhone" key="user.phone"}</td>
-		<td width="80%" class="value"><input type="text" name="subscriptionPhone" id="subscriptionPhone" value="{$subscriptionPhone|escape}" size="15" maxlength="24" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="subscriptionFax" key="user.fax"}</td>
-		<td width="80%" class="value"><input type="text" name="subscriptionFax" id="subscriptionFax" value="{$subscriptionFax|escape}" size="15" maxlength="24" class="textField" /></td>
-	</tr>
-	<tr >
-		<td width="20%" class="label">{fieldLabel name="subscriptionMailingAddress" key="common.mailingAddress"}</td>
-		<td width="80%" class="value"><textarea name="subscriptionMailingAddress" id="subscriptionMailingAddress" rows="6" cols="40" class="textArea">{$subscriptionMailingAddress|escape}</textarea></td>
-	</tr>
+	<div class="form-row">
+		<p class="label">{fieldLabel name="subscriptionName" key="user.name"}</p>
+		<input type="text" name="subscriptionName" id="subscriptionName" value="{$subscriptionName|escape}" size="30" maxlength="60" class="textField" />
+	</div>
+	<div class="form-row">
+		<p class="label">{fieldLabel name="subscriptionEmail" key="user.email"}</p>
+		<input type="text" name="subscriptionEmail" id="subscriptionEmail" value="{$subscriptionEmail|escape}" size="30" maxlength="90" class="textField" />
+	</div>
+	<div class="form-row">
+		<p class="label">{fieldLabel name="subscriptionPhone" key="user.phone"}</p>
+		<input type="text" name="subscriptionPhone" id="subscriptionPhone" value="{$subscriptionPhone|escape}" size="15" maxlength="24" class="textField" />
+	</div>
+	<div class="form-row">
+		<p class="label">{fieldLabel name="subscriptionFax" key="user.fax"}</p>
+		<input type="text" name="subscriptionFax" id="subscriptionFax" value="{$subscriptionFax|escape}" size="15" maxlength="24" class="textField" />
+	</div>
+	<div class="form-row">
+		<p class="label">{fieldLabel name="subscriptionMailingAddress" key="common.mailingAddress"}</p>
+		<textarea name="subscriptionMailingAddress" id="subscriptionMailingAddress" rows="6" cols="40" class="textArea">{$subscriptionMailingAddress|escape}</textarea>
+	</div>
 </table>
 </div>
-
-<div class="separator"></div>
 
 <div id="additionalInformation">
 <h3>{translate key="manager.subscriptionPolicies.subscriptionAdditionalInformation"}</h3>
 <p>{translate key="manager.subscriptionPolicies.subscriptionAdditionalInformationDescription"}</p>
-<p>
+<div class="form-row">
 	<textarea name="subscriptionAdditionalInformation[{$formLocale|escape}]" id="subscriptionAdditionalInformation" rows="12" cols="60" class="textArea">{$subscriptionAdditionalInformation[$formLocale]|escape}</textarea>
-	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
-</p>
+</div>
 </div>
 
-<div class="separator"></div>
-
-<div id="expiry">
+<section class="section" id="expiry">
 <h3>{translate key="manager.subscriptionPolicies.expiry"}</h3>
 <p>{translate key="manager.subscriptionPolicies.expiryDescription"}</p>
 
 <p>{translate key="manager.subscriptionPolicies.expirySelectOne"}</p>
 
-<table class="data">
-	<tr >
-		<td width="5%" class="label" align="right">
-			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-0" value="0"{if not $subscriptionExpiryPartial} checked="checked"{/if} />
-		</td>
-		<td width="95%" class="value">
-			<strong>{fieldLabel name="subscriptionExpiryPartial-0" key="manager.subscriptionPolicies.expiryFull"}</strong>
-			
-			<span class="instruct">{translate key="manager.subscriptionPolicies.expiryFullDescription"}</span>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" class="separator">&nbsp;</td>
-	</tr>
-	<tr >
-		<td width="5%" class="label" align="right">
-			<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-1" value="1"{if $subscriptionExpiryPartial} checked="checked"{/if} />
-		</td>
-		<td width="95%" class="value">
-			<strong>{fieldLabel name="subscriptionExpiryPartial-1" key="manager.subscriptionPolicies.expiryPartial"}</strong>
-			
-			<span class="instruct">{translate key="manager.subscriptionPolicies.expiryPartialDescription"}</span>
-		</td>
-	</tr>
-</table>
+
+<div class="form-subrow">
+	<div class="form-group">
+		<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-0" value="0"{if not $subscriptionExpiryPartial} checked="checked"{/if} />
+		<strong>{fieldLabel name="subscriptionExpiryPartial-0" key="manager.subscriptionPolicies.expiryFull"}</strong>
+		<p class="instruct">{translate key="manager.subscriptionPolicies.expiryFullDescription"}</p>
+	</div>
+	<div class="form-group">
+		<input type="radio" name="subscriptionExpiryPartial" id="subscriptionExpiryPartial-1" value="1"{if $subscriptionExpiryPartial} checked="checked"{/if} />
+		<strong>{fieldLabel name="subscriptionExpiryPartial-1" key="manager.subscriptionPolicies.expiryPartial"}</strong>
+		<p class="instruct">{translate key="manager.subscriptionPolicies.expiryPartialDescription"}</p>
+	</div>
 </div>
+</section>
 
-<div class="separator"></div>
-
-<div id="expiryReminders">
+<section class="section" id="expiryReminders">
 <h3>{translate key="manager.subscriptionPolicies.expiryReminders"}</h3>
 <p>{translate key="manager.subscriptionPolicies.expiryRemindersDescription"}</p>
-<p>
-	<input type="checkbox" name="enableSubscriptionExpiryReminderBeforeWeeks" id="enableSubscriptionExpiryReminderBeforeWeeks" value="1" onclick="toggleAllowSetBeforeWeeksReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableSubscriptionExpiryReminderBeforeWeeks} checked="checked"{/if} />&nbsp;
-	{fieldLabel name="enableSubscriptionExpiryReminderBeforeWeeks" key="manager.subscriptionPolicies.expiryReminderBeforeWeeks1"}
-	<select name="numWeeksBeforeSubscriptionExpiryReminder" id="numWeeksBeforeSubscriptionExpiryReminder" class="selectMenu"{if not $enableSubscriptionExpiryReminderBeforeWeeks || !$scheduledTasksEnabled} disabled="disabled"{/if}>{html_options options=$validWeeks selected=$numWeeksBeforeSubscriptionExpiryReminder}</select>
-	{fieldLabel name="numWeeksBeforeSubscriptionExpiryReminder" key="manager.subscriptionPolicies.expiryReminderBeforeWeeks2"}
-</p>
-<p>
-	<input type="checkbox" name="enableSubscriptionExpiryReminderAfterWeeks" id="enableSubscriptionExpiryReminderAfterWeeks" value="1" onclick="toggleAllowSetAfterWeeksReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableSubscriptionExpiryReminderAfterWeeks} checked="checked"{/if} />&nbsp;
-	{fieldLabel name="enableSubscriptionExpiryReminderAfterWeeks" key="manager.subscriptionPolicies.expiryReminderAfterWeeks1"}
-	<select name="numWeeksAfterSubscriptionExpiryReminder" id="numWeeksAfterSubscriptionExpiryReminder" class="selectMenu"{if not $enableSubscriptionExpiryReminderAfterWeeks || !$scheduledTasksEnabled} disabled="disabled"{/if}>{html_options options=$validWeeks selected=$numWeeksAfterSubscriptionExpiryReminder}</select>
-	{fieldLabel name="numWeeksAfterSubscriptionExpiryReminder" key="manager.subscriptionPolicies.expiryReminderAfterWeeks2"}
-</p>
-
-{if !$scheduledTasksEnabled}
-	
-	{translate key="manager.subscriptionPolicies.expiryRemindersDisabled"}
-{/if}
+<div class="form-subrow">
+	<div class="form-group">
+		<input type="checkbox" name="enableSubscriptionExpiryReminderBeforeWeeks" id="enableSubscriptionExpiryReminderBeforeWeeks" value="1" onclick="toggleAllowSetBeforeWeeksReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableSubscriptionExpiryReminderBeforeWeeks} checked="checked"{/if} />&nbsp;
+		{fieldLabel name="enableSubscriptionExpiryReminderBeforeWeeks" key="manager.subscriptionPolicies.expiryReminderBeforeWeeks1"}
+		<select name="numWeeksBeforeSubscriptionExpiryReminder" id="numWeeksBeforeSubscriptionExpiryReminder" class="selectMenu"{if not $enableSubscriptionExpiryReminderBeforeWeeks || !$scheduledTasksEnabled} disabled="disabled"{/if}>{html_options options=$validWeeks selected=$numWeeksBeforeSubscriptionExpiryReminder}</select>
+		{fieldLabel name="numWeeksBeforeSubscriptionExpiryReminder" key="manager.subscriptionPolicies.expiryReminderBeforeWeeks2"}
+	</div>
+	<div class="form-group">
+		<input type="checkbox" name="enableSubscriptionExpiryReminderAfterWeeks" id="enableSubscriptionExpiryReminderAfterWeeks" value="1" onclick="toggleAllowSetAfterWeeksReminder(this.form)"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableSubscriptionExpiryReminderAfterWeeks} checked="checked"{/if} />&nbsp;
+		{fieldLabel name="enableSubscriptionExpiryReminderAfterWeeks" key="manager.subscriptionPolicies.expiryReminderAfterWeeks1"}
+		<select name="numWeeksAfterSubscriptionExpiryReminder" id="numWeeksAfterSubscriptionExpiryReminder" class="selectMenu"{if not $enableSubscriptionExpiryReminderAfterWeeks || !$scheduledTasksEnabled} disabled="disabled"{/if}>{html_options options=$validWeeks selected=$numWeeksAfterSubscriptionExpiryReminder}</select>
+		{fieldLabel name="numWeeksAfterSubscriptionExpiryReminder" key="manager.subscriptionPolicies.expiryReminderAfterWeeks2"}
+	</div>
 </div>
 
-<div class="separator"></div>
+{if !$scheduledTasksEnabled}
+	<p class="instruct">
+		{translate key="manager.subscriptionPolicies.expiryRemindersDisabled"}
+	</p>
+	{/if}
+</section>
+
 
 <div id="onlinePaymentNotifications">
 <h3>{translate key="manager.subscriptionPolicies.onlinePaymentNotifications"}</h3>
@@ -163,31 +143,33 @@
 {if $journalPaymentsEnabled && $acceptSubscriptionPayments}
 {assign var=paymentsEnabled value=true}
 {/if}
-<p>
-	<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationPurchaseIndividual" id="enableSubscriptionOnlinePaymentNotificationPurchaseIndividual" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationPurchaseIndividual} checked="checked"{/if} />
-	{fieldLabel name="enableSubscriptionOnlinePaymentNotificationPurchaseIndividual" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationPurchaseIndividual"}
-</p>
-<p>
-	<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional" id="enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional} checked="checked"{/if} />
-	{fieldLabel name="enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional"}
-</p>
-<p>
-	<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationRenewIndividual" id="enableSubscriptionOnlinePaymentNotificationRenewIndividual" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationRenewIndividual} checked="checked"{/if} />
-	{fieldLabel name="enableSubscriptionOnlinePaymentNotificationRenewIndividual" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationRenewIndividual"}
-</p>
-<p>
-	<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" id="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationRenewInstitutional} checked="checked"{/if} />
-	{fieldLabel name="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationRenewInstitutional"}
-</p>
-{translate key="manager.subscriptionPolicies.onlinePaymentPurchaseInstitutionalDescription"}
+<div class="form-subrow">
+
+	<div class="form-group">
+		<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationPurchaseIndividual" id="enableSubscriptionOnlinePaymentNotificationPurchaseIndividual" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationPurchaseIndividual} checked="checked"{/if} />
+		{fieldLabel name="enableSubscriptionOnlinePaymentNotificationPurchaseIndividual" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationPurchaseIndividual"}
+	</div>
+	
+	<div class="form-group">
+		<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional" id="enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional} checked="checked"{/if} />
+		{fieldLabel name="enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationPurchaseInstitutional"}
+	</div>
+
+	<div class="form-group">
+		<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationRenewIndividual" id="enableSubscriptionOnlinePaymentNotificationRenewIndividual" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationRenewIndividual} checked="checked"{/if} />
+		{fieldLabel name="enableSubscriptionOnlinePaymentNotificationRenewIndividual" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationRenewIndividual"}
+	</div>
+
+	<div class="form-group">
+		<input type="checkbox" name="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" id="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" value="1" {if !$paymentsEnabled} disabled="disabled" {elseif $enableSubscriptionOnlinePaymentNotificationRenewInstitutional} checked="checked"{/if} />
+		{fieldLabel name="enableSubscriptionOnlinePaymentNotificationRenewInstitutional" key="manager.subscriptionPolicies.enableSubscriptionOnlinePaymentNotificationRenewInstitutional"}
+	</div>
+</div>
+<p class="instruct">{translate key="manager.subscriptionPolicies.onlinePaymentPurchaseInstitutionalDescription"}</p>
 
 {if !$paymentsEnabled}
-	
-	{translate key="manager.subscriptionPolicies.onlinePaymentDisabled"}
-{/if}
+<p class="instruct">{translate key="manager.subscriptionPolicies.onlinePaymentDisabled"}</p>{/if}
 </div>
-
-<div class="separator"></div>
 
 <div id="openAccessOptions">
 <h3>{translate key="manager.subscriptionPolicies.openAccessOptions"}</h3>
@@ -195,26 +177,34 @@
 
 	<h4>{translate key="manager.subscriptionPolicies.delayedOpenAccess"}</h4>
 	<p>{translate key="manager.subscriptionPolicies.delayedOpenAccessDescription"}</p>
-	<input type="checkbox" name="enableDelayedOpenAccess" id="enableDelayedOpenAccess" value="1" onclick="toggleAllowSetDelayedOpenAccessDuration(this.form)" {if $enableDelayedOpenAccess} checked="checked"{/if} />&nbsp;
-	{fieldLabel name="enableDelayedOpenAccess" key="manager.subscriptionPolicies.delayedOpenAccessDescription1"}
-	<select name="delayedOpenAccessDuration" id="delayedOpenAccessDuration" class="selectMenu" {if not $enableDelayedOpenAccess} disabled="disabled"{/if}>{html_options options=$validDuration selected=$delayedOpenAccessDuration}</select>
-	{fieldLabel name="delayedOpenAccessDuration" key="manager.subscriptionPolicies.delayedOpenAccessDescription2"}
-
-	<p>
+<div class="form-subrow">
+	<div class="form-group">
+		<input type="checkbox" name="enableDelayedOpenAccess" id="enableDelayedOpenAccess" value="1" onclick="toggleAllowSetDelayedOpenAccessDuration(this.form)" {if $enableDelayedOpenAccess} checked="checked"{/if} />&nbsp;
+		{fieldLabel name="enableDelayedOpenAccess" key="manager.subscriptionPolicies.delayedOpenAccessDescription1"}
+		<select name="delayedOpenAccessDuration" id="delayedOpenAccessDuration" class="selectMenu" {if not $enableDelayedOpenAccess} disabled="disabled"{/if}>{html_options options=$validDuration selected=$delayedOpenAccessDuration}</select>
+		{fieldLabel name="delayedOpenAccessDuration" key="manager.subscriptionPolicies.delayedOpenAccessDescription2"}
+	</div>
+	
+	<div class="form-group">
 	<input type="checkbox" name="enableOpenAccessNotification" id="enableOpenAccessNotification" value="1"{if !$scheduledTasksEnabled} disabled="disabled" {elseif $enableOpenAccessNotification} checked="checked"{/if} />&nbsp;
 	{fieldLabel name="enableOpenAccessNotification" key="manager.subscriptionPolicies.openAccessNotificationDescription"}
 	{if !$scheduledTasksEnabled}
 		
-		{translate key="manager.subscriptionPolicies.openAccessNotificationDisabled"}
+		<p class="instruct">{translate key="manager.subscriptionPolicies.openAccessNotificationDisabled"}</p>
 	{/if}
+	</div>
+	
+<div class="form-group">
+	<p class="instruct">
+		{translate key="manager.subscriptionPolicies.delayedOpenAccessPolicyDescription"}
 	</p>
-
-	<p>{translate key="manager.subscriptionPolicies.delayedOpenAccessPolicyDescription"}</p>
 	<p>
 	<textarea name="delayedOpenAccessPolicy[{$formLocale|escape}]" id="delayedOpenAccessPolicy" rows="12" cols="60" class="textArea">{$delayedOpenAccessPolicy[$formLocale]|escape}</textarea>
 	
 	<span class="instruct">{translate key="manager.subscriptionPolicies.htmlInstructions"}</span>
 	</p>
+</div>
+</div>
 
 	<h4>{translate key="manager.subscriptionPolicies.authorSelfArchive"}</h4>
 <p>
